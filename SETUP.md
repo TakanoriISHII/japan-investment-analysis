@@ -32,34 +32,36 @@ cd japan-investment-analysis
 
 ## Step 3: ファイルを配置
 
-ダウンロードしたファイルをリポジトリに配置：
+ダウンロードしたファイルを以下のように配置：
 
 ```
 japan-investment-analysis/
-├── CLAUDE.md
-├── README.md
-├── SETUP.md
-├── .gitignore
-├── prompts/
+├── CLAUDE.md                    ← ルート
+├── README.md                    ← ルート
+├── SETUP.md                     ← ルート
+├── prompts/                     ← フォルダ作成
 │   ├── step1_collect_events.md
+│   ├── step1_5_quality_check.md
 │   ├── step2_update_monopoly_map.md
 │   ├── step3_update_market_state.md
 │   ├── step4_analyze_market_risk.md
 │   ├── step5_analyze_top30.md
 │   └── step6_generate_report.md
-├── templates/
+├── templates/                   ← フォルダ作成
 │   └── quadrant_chart_template.html
-├── data/
+├── data/                        ← フォルダ作成
 │   ├── state.json
 │   ├── events.json
-│   ├── snapshots/
+│   ├── information_quality.json
+│   ├── asymmetry_tracker.json
+│   ├── snapshots/               ← サブフォルダ作成
 │   │   ├── monopoly_map.json
 │   │   └── market_state.json
-│   └── analysis/
+│   └── analysis/                ← サブフォルダ作成
 │       ├── market_risk.json
 │       └── top30.json
-├── reports/
-└── latest/
+├── reports/                     ← 空フォルダ作成
+└── latest/                      ← 空フォルダ作成
 ```
 
 ---
@@ -68,7 +70,7 @@ japan-investment-analysis/
 
 ```bash
 git add .
-git commit -m "Initial setup: ステートフル分析システム"
+git commit -m "Initial setup: 情報戦略分析システム"
 git push -u origin main
 ```
 
@@ -94,52 +96,29 @@ CLAUDE.mdが自動的に読み込まれます。
 
 ---
 
-## Step 7: 完了確認
+## ファイル配置チェックリスト
 
-### Git履歴の確認
-```bash
-git log --oneline -15
-```
-
-期待される出力：
-```
-abc1234 分析完了: 2025-01-26
-def5678 実行状態更新
-ghi9012 最終レポート生成: 2025-01-26
-jkl3456 4象限チャートHTML生成
-mno7890 Top30スコアリング完了
-pqr1234 市場危険度分析完了: 48/100
-stu5678 市場状態更新
-vwx9012 独占マップ更新: 初回構築
-yz01234 イベント収集完了: 25件追加
-abc5678 Initial setup: ステートフル分析システム
-```
-
-### 可視化の確認
-```bash
-open latest/quadrant_chart.html  # macOS
-xdg-open latest/quadrant_chart.html  # Linux
-```
-
-### データの確認
-```bash
-cat data/state.json
-```
-
----
-
-## 2回目以降の実行
-
-2回目以降は、システムが自動的に判断します：
-
-```
-フル分析を実行
-```
-
-- イベント収集: 前回以降の新規イベントのみ
-- 独占マップ: トリガーイベントがなければスキップ
-- 市場状態: 毎回取得
-- 分析: 最新データで再計算
+| ファイル | 配置先 |
+|----------|--------|
+| CLAUDE.md | `/` (ルート) |
+| README.md | `/` (ルート) |
+| SETUP.md | `/` (ルート) |
+| step1_collect_events.md | `/prompts/` |
+| step1_5_quality_check.md | `/prompts/` |
+| step2_update_monopoly_map.md | `/prompts/` |
+| step3_update_market_state.md | `/prompts/` |
+| step4_analyze_market_risk.md | `/prompts/` |
+| step5_analyze_top30.md | `/prompts/` |
+| step6_generate_report.md | `/prompts/` |
+| quadrant_chart_template.html | `/templates/` |
+| state.json | `/data/` |
+| events.json | `/data/` |
+| information_quality.json | `/data/` |
+| asymmetry_tracker.json | `/data/` |
+| monopoly_map.json | `/data/snapshots/` |
+| market_state.json | `/data/snapshots/` |
+| market_risk.json | `/data/analysis/` |
+| top30.json | `/data/analysis/` |
 
 ---
 
@@ -147,10 +126,6 @@ cat data/state.json
 
 ### Q: データが壊れた
 ```bash
-# 特定ファイルを初期状態に戻す
-git checkout HEAD -- data/events.json
-
-# 全データを初期状態に戻す
 git checkout HEAD -- data/
 ```
 
@@ -159,35 +134,8 @@ git checkout HEAD -- data/
 強制フル更新
 ```
 
-### Q: 特定のステップだけ再実行したい
+### Q: 情報品質に問題がある
 ```
-独占マップを更新
+情報品質を確認
 ```
-または
-```
-市場危険度を再計算
-```
-
----
-
-## 定期実行の設定（オプション）
-
-### macOS/Linux: cronで週次実行
-
-```bash
-crontab -e
-```
-
-以下を追加（毎週月曜9:00に実行）：
-```
-0 9 * * 1 cd ~/projects/japan-investment-analysis && claude --prompt "フル分析を実行" --auto
-```
-
----
-
-## 次のステップ
-
-1. **初回フル分析を実行**
-2. **レポートを確認** — `reports/YYYY-MM-DD/final_report.md`
-3. **可視化を確認** — `latest/quadrant_chart.html`
-4. **定期更新を設定** — 週次でフル分析を実行
+未検証・矛盾・陳腐化のアラートが表示されます。

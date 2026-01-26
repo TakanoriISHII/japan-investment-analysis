@@ -1,23 +1,104 @@
 {
   "as_of": null,
+  "data_quality": {
+    "all_items_retrieved": false,
+    "stale_items": [],
+    "estimated_items": []
+  },
   "fx": {
-    "usdjpy": null,
-    "source": null
+    "usdjpy": {
+      "value": null,
+      "change_1d": null,
+      "change_1w": null,
+      "source": null,
+      "as_of": null
+    },
+    "outlook": {
+      "boj_stance": null,
+      "next_meeting": null,
+      "market_expectation": null,
+      "risk_direction": null
+    }
   },
   "indices": {
-    "nikkei225": null,
-    "nikkei225_per": null,
-    "nikkei225_pbr": null,
-    "topix": null
+    "nikkei225": {
+      "value": null,
+      "change_1d_pct": null,
+      "change_1w_pct": null,
+      "source": null
+    },
+    "nikkei225_per": {
+      "value": null,
+      "historical_avg": 15.5,
+      "percentile": null,
+      "assessment": null,
+      "source": null
+    },
+    "nikkei225_pbr": {
+      "value": null,
+      "vs_1x": null,
+      "source": null
+    },
+    "topix": {
+      "value": null,
+      "change_1w_pct": null,
+      "source": null
+    }
   },
   "sentiment": {
-    "foreign_investor_flow_weekly": null,
-    "margin_buying_balance": null,
-    "arbitrage_balance": null
+    "foreign_investor": {
+      "weekly_flow": null,
+      "trend": null,
+      "cumulative_ytd": null,
+      "assessment": null,
+      "source": null,
+      "data_date": null
+    },
+    "margin_buying": {
+      "balance": null,
+      "change_1w": null,
+      "historical_percentile": null,
+      "assessment": null,
+      "source": null
+    },
+    "arbitrage": {
+      "balance": null,
+      "assessment": null,
+      "source": null
+    },
+    "overall_sentiment": null
   },
   "risks": {
-    "china_slowdown": null,
-    "taiwan_strait": null,
-    "boj_policy": null
+    "china": {
+      "level": null,
+      "score": null,
+      "factors": [],
+      "japan_exposure": null,
+      "source": null
+    },
+    "taiwan_strait": {
+      "level": null,
+      "score": null,
+      "factors": [],
+      "source": null
+    },
+    "boj_policy": {
+      "level": null,
+      "score": null,
+      "factors": [],
+      "impact_on_stocks": null,
+      "source": null
+    },
+    "us_policy": {
+      "level": null,
+      "score": null,
+      "factors": [],
+      "source": null
+    }
+  },
+  "summary": {
+    "overall_risk_level": null,
+    "key_watchpoints": [],
+    "favorable_factors": []
   }
 }

@@ -4,10 +4,17 @@
     "update_reason": "初期状態",
     "update_trigger_event_id": null,
     "next_expected_triggers": [
-      "調査機関レポート発表（SEMI, Gartner, TrendForce）",
+      "SEMI年次レポート（6月/12月）",
+      "Gartner年次レポート（4月）",
+      "TrendForceレポート（随時）",
       "M&A完了報道",
       "大型契約締結"
-    ]
+    ],
+    "data_quality": {
+      "primary_source_ratio": null,
+      "estimated_ratio": null,
+      "stale_ratio": null
+    }
   },
   "companies": {}
 }
