@@ -40,8 +40,8 @@ japan-investment-analysis/
 ├── README.md                    ← ルート
 ├── SETUP.md                     ← ルート
 ├── prompts/                     ← フォルダ作成
-│   ├── step0_discover_opportunities.md  ← 企業発掘
-│   ├── step0_5_collect_information.md   ← 広域情報収集（7カテゴリ）
+│   ├── step0_collect_information.md     ← 広域情報収集（7カテゴリ）★情報が先
+│   ├── step0_5_discover_opportunities.md ← 企業発掘（情報から発見）
 │   ├── step1_collect_events.md
 │   ├── step1_5_quality_check.md
 │   ├── step2_update_monopoly_map.md
@@ -113,8 +113,8 @@ CLAUDE.mdが自動的に読み込まれます。
 | CLAUDE.md | `/` (ルート) |
 | README.md | `/` (ルート) |
 | SETUP.md | `/` (ルート) |
-| step0_discover_opportunities.md | `/prompts/` |
-| step0_5_collect_information.md | `/prompts/` |
+| step0_collect_information.md | `/prompts/` |
+| step0_5_discover_opportunities.md | `/prompts/` |
 | step1_collect_events.md | `/prompts/` |
 | step1_5_quality_check.md | `/prompts/` |
 | step2_update_monopoly_map.md | `/prompts/` |

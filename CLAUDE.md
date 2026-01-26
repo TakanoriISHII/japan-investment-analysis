@@ -349,8 +349,8 @@ Top30の選出は以下の4軸で評価（**100点満点**）：
 | `フル分析を実行` | state.jsonを確認し、必要な部分のみ更新して分析 |
 | `強制フル更新` | 全てをゼロから再実行（キャッシュ無視） |
 | `差分レポート` | 前回からの変化点のみを表示 |
-| `企業発掘を実行` | Step 0のみを実行し、新たな投資候補を発掘 |
-| `広域情報収集` | Step 0.5のみを実行し、7カテゴリの情報を収集 |
+| `広域情報収集` | Step 0のみを実行し、7カテゴリの情報を収集 |
+| `企業発掘を実行` | Step 0.5のみを実行し、新たな投資候補を発掘 |
 | `独占マップを更新` | 独占マップを強制更新 |
 | `状態を確認` | 各コンポーネントの最終更新日時と情報品質サマリーを表示 |
 | `情報品質を確認` | 未検証情報、矛盾情報、陳腐化情報のアラートを表示 |
@@ -369,24 +369,24 @@ Top30の選出は以下の4軸で評価（**100点満点**）：
    - 前回実行日時、各コンポーネントの状態を確認
    - data/information_quality.jsonのアラートを確認
 
-2. 機会発掘（Step 0）★候補プール50社の作成
-   - prompts/step0_discover_opportunities.mdを読み込み
+2. 広域情報収集（Step 0）★情報起点のアプローチ
+   - prompts/step0_collect_information.mdを読み込み
+   - 7カテゴリ（国際情勢、市場シグナル、メガトレンド、ドメイン成長性、大型投資、見逃しスキャン、その他）
+   - 全ての情報に4次元評価を付与
+   - data/intelligence/broad_intelligence_YYYYMMDD.jsonに保存
+   - **情報から企業候補を発見**
+   - git commit "Step 0完了: 広域情報収集N件"
+
+3. 企業発掘（Step 0.5）★候補プール50社の作成
+   - prompts/step0_5_discover_opportunities.mdを読み込み
+   - **Step 0で収集した情報を基に企業を発掘**
    - data/sources/配下のマスターファイルを参照
    - 6ドメインのカバレッジバランスを診断
-   - 不足ドメインの企業を優先発掘
    - 認証リスト法、サプライチェーン逆引き法、ボトルネック・ニュース法を実行
    - 発見した候補に4次元評価を付与
    - **70-100社発掘 → スクリーニング → 50社候補プール作成**
    - data/discovery/discovery_result_YYYYMMDD.jsonに保存
-   - git commit "Step 0完了: N社発掘→候補プール50社"
-
-3. 広域情報収集（Step 0.5）★7カテゴリの情報収集
-   - prompts/step0_5_collect_information.mdを読み込み
-   - 7カテゴリ（国際情勢、市場シグナル、メガトレンド、ドメイン成長性、大型投資、見逃しスキャン、その他）
-   - 全ての情報に4次元評価を付与
-   - data/intelligence/broad_intelligence_YYYYMMDD.jsonに保存
-   - 新たな企業候補が発見されたら候補プールに追加
-   - git commit "Step 0.5完了: 広域情報収集N件"
+   - git commit "Step 0.5完了: N社発掘→候補プール50社"
 
 4. イベント収集（Step 1）
    - prompts/step1_collect_events.mdを読み込み
@@ -442,12 +442,12 @@ Top30の選出は以下の4軸で評価（**100点満点**）：
 ### ファネル構造（全体像）
 
 ```
-Step 0: 企業発掘（70-100社）
+Step 0: 広域情報収集（7カテゴリ）★情報が先
+    ↓ 情報から企業候補を発見
+    ↓
+Step 0.5: 企業発掘（70-100社）
     ↓ 一次スクリーニング
     候補プール（50社）
-    ↓
-Step 0.5: 広域情報収集（7カテゴリ）★NEW
-    ↓ 新規企業候補があれば追加
     ↓
 Step 1: 企業別イベント収集
     ↓
@@ -474,8 +474,8 @@ japan-investment-analysis/
 ├── README.md
 ├── SETUP.md
 ├── prompts/
-│   ├── step0_discover_opportunities.md # 企業発掘
-│   ├── step0_5_collect_information.md  # ★広域情報収集（NEW）
+│   ├── step0_collect_information.md    # ★広域情報収集（情報が先）
+│   ├── step0_5_discover_opportunities.md # 企業発掘（情報から発見）
 │   ├── step1_collect_events.md
 │   ├── step1_5_quality_check.md
 │   ├── step2_update_monopoly_map.md
