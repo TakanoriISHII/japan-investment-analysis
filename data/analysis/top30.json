@@ -3,10 +3,26 @@
     "date": "2026-01-26",
     "evaluation_system": "4軸評価（100点満点）",
     "axes": {
-      "monopoly": {"max": 30, "description": "グローバル独占力"},
-      "capital_efficiency": {"max": 20, "description": "資本効率・財務健全性"},
-      "synergy": {"max": 25, "description": "領域横断シナジー"},
-      "asymmetry": {"max": 25, "description": "情報の非対称性"}
+      "monopoly": {
+        "max": 30,
+        "description": "独占力（5-10年の見通しを含む）",
+        "breakdown": {"current_share": 10, "sustainability_5_10yr": 10, "entry_barrier": 10}
+      },
+      "capital_efficiency": {
+        "max": 20,
+        "description": "資本効率（事実ベースのみ、推定値禁止）",
+        "breakdown": {"roe": 8, "debt_ratio": 6, "fcf": 6}
+      },
+      "synergy": {
+        "max": 25,
+        "description": "シナジー（ドメイン横断の不可欠性）",
+        "breakdown": {"cross_domain_essentiality": 15, "convergence_value": 10}
+      },
+      "asymmetry": {
+        "max": 25,
+        "description": "非対称性（情報拡散時のアップサイド）",
+        "breakdown": {"info_gap_existence": 10, "upside_on_recognition": 15}
+      }
     },
     "market_risk_score": 52,
     "funnel_input": "候補プール50社",
