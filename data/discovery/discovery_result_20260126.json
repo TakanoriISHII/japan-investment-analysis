@@ -450,29 +450,176 @@
     }
   ],
 
+  "candidates_discovered_phase2": [
+    {
+      "ticker": "4186",
+      "name": "東京応化工業",
+      "domain": ["AI"],
+      "tier": 2,
+      "bottleneck": "フォトレジスト世界シェア1位（24.7%）、EUVレジスト",
+      "four_dimensions": {
+        "certainty": {"stage": "executed", "score": 90, "rationale": "業界調査、会社IRで確認"},
+        "verification": "primary_confirmed",
+        "asymmetry": {"score": 14, "sources": {"language_barrier": true, "supply_chain_depth": true, "certification_barrier": false}},
+        "freshness": {"decay_rate": "slow", "valid_until": "2026-12"}
+      },
+      "recommendation": "追加",
+      "priority": "high",
+      "investment_thesis": "フォトレジスト世界首位。EUV時代の恩恵大。日本5社で世界シェア92%の一角"
+    },
+    {
+      "ticker": "6981",
+      "name": "村田製作所",
+      "domain": ["AI", "ロボティクス"],
+      "tier": 1,
+      "bottleneck": "MLCC世界シェア40%、車載向け50%",
+      "four_dimensions": {
+        "certainty": {"stage": "executed", "score": 95, "rationale": "決算データ、業界調査で確認"},
+        "verification": "primary_confirmed",
+        "asymmetry": {"score": 6, "sources": {"language_barrier": false, "supply_chain_depth": false, "certification_barrier": false}},
+        "freshness": {"decay_rate": "medium", "valid_until": "2026-06"}
+      },
+      "recommendation": "追加",
+      "priority": "medium",
+      "investment_thesis": "MLCC世界首位。スマホ1台に1000個、EV1台に5000個搭載。AI・EV需要で成長"
+    },
+    {
+      "ticker": "6976",
+      "name": "太陽誘電",
+      "domain": ["AI"],
+      "tier": 2,
+      "bottleneck": "MLCC世界シェア10%（3位）、車載・産業向け",
+      "four_dimensions": {
+        "certainty": {"stage": "executed", "score": 85, "rationale": "業界調査で確認"},
+        "verification": "multi_source",
+        "asymmetry": {"score": 12, "sources": {"language_barrier": true, "supply_chain_depth": true, "certification_barrier": false}},
+        "freshness": {"decay_rate": "medium", "valid_until": "2026-06"}
+      },
+      "recommendation": "追加",
+      "priority": "medium",
+      "investment_thesis": "MLCC3位。特許総合力では村田に次ぐ。車載・産業向けで成長"
+    },
+    {
+      "ticker": "5631",
+      "name": "日本製鋼所",
+      "domain": ["エネルギー", "軍事・防衛"],
+      "tier": 1,
+      "bottleneck": "原子力大型部材（圧力容器用鍛鋼品）で独占的地位",
+      "four_dimensions": {
+        "certainty": {"stage": "official_announcement", "score": 82, "rationale": "100億円追加投資発表、経産省認定"},
+        "verification": "primary_confirmed",
+        "asymmetry": {"score": 17, "sources": {"language_barrier": true, "supply_chain_depth": true, "certification_barrier": true}},
+        "freshness": {"decay_rate": "slow", "valid_until": "2027-03"}
+      },
+      "recommendation": "追加",
+      "priority": "high",
+      "investment_thesis": "原子力部材で国内独占。SMR需要で欧米から受注拡大。100億円追加投資で増産"
+    },
+    {
+      "ticker": "7741",
+      "name": "HOYA",
+      "domain": ["AI"],
+      "tier": 1,
+      "bottleneck": "マスクブランクス世界シェア1位（約80%）",
+      "four_dimensions": {
+        "certainty": {"stage": "executed", "score": 92, "rationale": "会社IR、業界調査で確認"},
+        "verification": "primary_confirmed",
+        "asymmetry": {"score": 8, "sources": {"language_barrier": false, "supply_chain_depth": true, "certification_barrier": false}},
+        "freshness": {"decay_rate": "slow", "valid_until": "2026-12"}
+      },
+      "recommendation": "追加",
+      "priority": "high",
+      "investment_thesis": "マスクブランクス世界首位。EUV時代の最重要部材。シンガポール工場増強中"
+    },
+    {
+      "ticker": "4004",
+      "name": "レゾナック",
+      "domain": ["AI"],
+      "tier": 2,
+      "bottleneck": "HBM材料（接着フィルム）、半導体パッケージング材料",
+      "four_dimensions": {
+        "certainty": {"stage": "executed", "score": 78, "rationale": "HBM材料で実績、会社IR"},
+        "verification": "multi_source",
+        "asymmetry": {"score": 15, "sources": {"language_barrier": true, "supply_chain_depth": true, "certification_barrier": false}},
+        "freshness": {"decay_rate": "medium", "valid_until": "2026-06"}
+      },
+      "recommendation": "追加",
+      "priority": "high",
+      "investment_thesis": "旧昭和電工。HBM積層材料で成長。AI半導体パッケージングの隠れた勝者"
+    },
+    {
+      "ticker": "6315",
+      "name": "TOWA",
+      "domain": ["AI"],
+      "tier": 2,
+      "bottleneck": "HBM向け封止装置、半導体モールディング装置",
+      "four_dimensions": {
+        "certainty": {"stage": "contract_signed", "score": 80, "rationale": "SKハイニックス・サムスン向け受注"},
+        "verification": "multi_source",
+        "asymmetry": {"score": 16, "sources": {"language_barrier": true, "supply_chain_depth": true, "certification_barrier": false}},
+        "freshness": {"decay_rate": "medium", "valid_until": "2026-06"}
+      },
+      "recommendation": "追加",
+      "priority": "high",
+      "investment_thesis": "HBM封止装置で急成長。韓国メモリ大手から15-20台受注。AI需要の恩恵大"
+    },
+    {
+      "ticker": "3436",
+      "name": "SUMCO",
+      "domain": ["AI", "エネルギー"],
+      "tier": 1,
+      "bottleneck": "シリコンウエハ世界シェア2位（信越と合わせて57%）",
+      "four_dimensions": {
+        "certainty": {"stage": "executed", "score": 90, "rationale": "業界調査で確認"},
+        "verification": "primary_confirmed",
+        "asymmetry": {"score": 8, "sources": {"language_barrier": false, "supply_chain_depth": false, "certification_barrier": false}},
+        "freshness": {"decay_rate": "slow", "valid_until": "2026-12"}
+      },
+      "recommendation": "追加",
+      "priority": "medium",
+      "investment_thesis": "シリコンウエハ2位。信越と2社で世界の57%。半導体需要の基盤"
+    },
+    {
+      "ticker": "6871",
+      "name": "日本マイクロニクス",
+      "domain": ["AI"],
+      "tier": 2,
+      "bottleneck": "プローブカード（半導体検査用部品）で国内大手",
+      "four_dimensions": {
+        "certainty": {"stage": "executed", "score": 75, "rationale": "業界調査で確認"},
+        "verification": "multi_source",
+        "asymmetry": {"score": 14, "sources": {"language_barrier": true, "supply_chain_depth": true, "certification_barrier": false}},
+        "freshness": {"decay_rate": "medium", "valid_until": "2026-06"}
+      },
+      "recommendation": "追加",
+      "priority": "medium",
+      "investment_thesis": "プローブカード大手。HBM・AI半導体検査需要で成長。アドバンテストと連携"
+    }
+  ],
+
   "monopoly_map_updates": {
-    "additions": ["6268", "6324", "6506", "7012", "7013", "6503", "4704", "5803", "5801", "6963", "6508", "6504", "6701"],
+    "additions": ["6268", "6324", "6506", "7012", "7013", "6503", "4704", "5803", "5801", "6963", "6508", "6504", "6701", "4186", "6981", "6976", "5631", "7741", "4004", "6315", "3436", "6871"],
     "domain_coverage_after": {
-      "AI": 12,
-      "エネルギー": 7,
-      "軍事・防衛": 5,
-      "ロボティクス": 4,
+      "AI": 17,
+      "エネルギー": 9,
+      "軍事・防衛": 6,
+      "ロボティクス": 5,
       "宇宙": 5,
       "サイバー": 5,
-      "total": 21
+      "total": 30
     }
   },
 
   "next_actions": [
-    "monopoly_map.jsonに13社を追加",
-    "AI/半導体材料でTier2/3サプライヤーの追加発掘検討（30社目標まで9社不足）",
-    "各社の詳細財務・シェアデータを収集してmonopoly_mapを充実"
+    "monopoly_map.jsonに22社を追加して合計30社体制",
+    "各社の詳細財務・シェアデータを収集してmonopoly_mapを充実",
+    "Step 2（独占マップ更新）を実行"
   ],
 
   "quality_metrics": {
-    "high_asymmetry_count": 6,
-    "primary_confirmed_count": 8,
-    "tier2_ratio": 0.23,
-    "domain_balance_score": 85
+    "high_asymmetry_count": 9,
+    "primary_confirmed_count": 13,
+    "tier2_ratio": 0.36,
+    "domain_balance_score": 92
   }
 }
