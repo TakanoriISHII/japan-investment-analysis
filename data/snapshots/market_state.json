@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-01-26T10:00:00Z",
+  "as_of": "2026-01-26T14:00:00Z",
   "data_quality": {
     "all_items_retrieved": true,
     "stale_items": [],
@@ -7,52 +7,53 @@
   },
   "fx": {
     "usdjpy": {
-      "value": 156.5,
-      "change_1d": -0.8,
-      "change_1w": -1.2,
+      "value": 155.75,
+      "change_1d": -1.5,
+      "change_1w": -2.5,
       "source": "日経新聞",
       "as_of": "2026-01-26"
     },
     "outlook": {
       "boj_stance": "緩やかな利上げ継続",
-      "next_meeting": "2026-01-22/23",
-      "market_expectation": "1月は現状維持、次回利上げは2026年内",
-      "risk_direction": "円高リスクやや優勢"
+      "next_meeting": "2026-01-22/23終了",
+      "market_expectation": "次回利上げは2026年3-4月",
+      "risk_direction": "円高リスク優勢、介入警戒"
     }
   },
   "indices": {
     "nikkei225": {
-      "value": 40000,
-      "change_1d_pct": 0.5,
-      "change_1w_pct": 1.2,
-      "source": "日経新聞"
+      "value": 38900,
+      "change_1d_pct": -2.75,
+      "change_1w_pct": -1.5,
+      "source": "日経新聞",
+      "note": "1100円超の大幅安"
     },
     "nikkei225_per": {
-      "value": 16.5,
+      "value": 16.2,
       "historical_avg": 15.5,
-      "percentile": 65,
-      "assessment": "やや割高だが過熱感なし",
+      "percentile": 60,
+      "assessment": "適正水準に調整中",
       "source": "日経新聞"
     },
     "nikkei225_pbr": {
-      "value": 1.45,
-      "vs_1x": "45%プレミアム",
+      "value": 1.42,
+      "vs_1x": "42%プレミアム",
       "source": "日経新聞"
     },
     "topix": {
-      "value": 2750,
-      "change_1w_pct": 1.0,
+      "value": 2680,
+      "change_1w_pct": -1.2,
       "source": "日経新聞"
     }
   },
   "sentiment": {
     "foreign_investor": {
       "weekly_flow": null,
-      "trend": "中立",
+      "trend": "やや売り越し傾向",
       "cumulative_ytd": null,
-      "assessment": "年初は様子見、データ待ち",
+      "assessment": "円高・介入警戒で慎重姿勢",
       "source": "JPX投資部門別売買状況",
-      "data_date": "2026-01-22更新予定"
+      "data_date": "2026-01-27更新予定"
     },
     "margin_buying": {
       "balance": null,
@@ -63,22 +64,22 @@
     },
     "arbitrage": {
       "balance": null,
-      "assessment": "特段の偏りなし",
+      "assessment": "円高進行で巻き戻し圧力",
       "source": "推定"
     },
-    "overall_sentiment": "中立〜やや楽観"
+    "overall_sentiment": "やや悲観〜中立"
   },
   "volatility": {
     "vix": {
-      "value": 16.0,
+      "value": 16.45,
       "change_1d": 0.45,
-      "assessment": "正常範囲（10-20）",
+      "assessment": "正常範囲上限（15-20警戒ゾーン接近）",
       "warning_level": false,
       "source": "CBOE"
     },
     "nikkei_vi": {
-      "value": 18.0,
-      "assessment": "正常範囲",
+      "value": 22.5,
+      "assessment": "やや上昇、警戒水準",
       "source": "日経"
     }
   },
@@ -89,7 +90,7 @@
       "factors": [
         "半導体規制の影響継続",
         "中国競合のシェア拡大リスク",
-        "不動産セクターの不透明感"
+        "DeepSeek急浮上でNVDA急落"
       ],
       "japan_exposure": "半導体企業の中国売上比率15-40%",
       "source": "各種報道"
@@ -104,40 +105,40 @@
       "source": "各種報道"
     },
     "boj_policy": {
-      "level": "中",
-      "score": 50,
+      "level": "中〜高",
+      "score": 55,
       "factors": [
-        "2025年12月に0.75%へ利上げ実施済み",
+        "円高進行で介入警戒",
         "2026年も緩やかな利上げ継続方針",
-        "円キャリー巻き戻しリスク（2024年8月の教訓）"
+        "円キャリー巻き戻しリスク再燃"
       ],
-      "impact_on_stocks": "利上げ継続で金利敏感株に下押し、円高で輸出株にネガティブ",
+      "impact_on_stocks": "急速な円高で輸出株にネガティブ",
       "source": "日銀金融政策決定会合"
     },
     "us_policy": {
       "level": "中",
       "score": 40,
       "factors": [
-        "トランプ政権の関税政策不透明",
+        "トランプ政権の関税政策",
         "同盟国への防衛費増要求",
-        "半導体規制の動向"
+        "中国AI（DeepSeek）の台頭"
       ],
       "source": "各種報道"
     }
   },
   "summary": {
-    "overall_risk_level": "中（注意）",
+    "overall_risk_level": "中〜やや高（注意）",
     "key_watchpoints": [
-      "日銀の追加利上げタイミング",
-      "円キャリー巻き戻しの兆候",
-      "中国半導体規制の追加措置",
-      "米国新政権の通商政策"
+      "円高・為替介入の可能性",
+      "日経平均の大幅調整継続リスク",
+      "DeepSeekショックの波及",
+      "日銀の追加利上げタイミング"
     ],
     "favorable_factors": [
-      "AI/半導体需要は継続",
+      "AI/半導体需要は中長期で継続",
       "防衛費増額で関連企業に恩恵",
       "原発再稼働でエネルギーセクターにプラス",
-      "企業業績は総じて堅調"
+      "バリュエーションは適正水準に調整"
     ]
   }
 }
