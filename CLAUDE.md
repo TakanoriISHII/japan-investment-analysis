@@ -234,10 +234,12 @@
 | `フル分析を実行` | state.jsonを確認し、必要な部分のみ更新して分析 |
 | `強制フル更新` | 全てをゼロから再実行（キャッシュ無視） |
 | `差分レポート` | 前回からの変化点のみを表示 |
+| `企業発掘を実行` | Step 0のみを実行し、新たな投資候補を発掘 |
 | `独占マップを更新` | 独占マップを強制更新 |
 | `状態を確認` | 各コンポーネントの最終更新日時と情報品質サマリーを表示 |
 | `情報品質を確認` | 未検証情報、矛盾情報、陳腐化情報のアラートを表示 |
 | `非対称性を確認` | アクティブな非対称性と解消リスクを表示 |
+| `ドメインカバレッジ` | 6ドメインの企業カバレッジ状況を表示 |
 
 ---
 
@@ -251,49 +253,60 @@
    - 前回実行日時、各コンポーネントの状態を確認
    - data/information_quality.jsonのアラートを確認
 
-2. イベント収集（Step 1）
+2. 機会発掘（Step 0）★動的発掘
+   - prompts/step0_discover_opportunities.mdを読み込み
+   - data/sources/配下のマスターファイルを参照
+   - 6ドメインのカバレッジバランスを診断
+   - 不足ドメインの企業を優先発掘
+   - 認証リスト法、サプライチェーン逆引き法、ボトルネック・ニュース法を実行
+   - 発見した候補に4次元評価を付与
+   - data/discovery/discovery_result_YYYYMMDD.jsonに保存
+   - git commit "Step 0完了: N社発掘"
+
+3. イベント収集（Step 1）
    - prompts/step1_collect_events.mdを読み込み
+   - Step 0で発見した企業も対象に含める
    - 前回収集日以降の新規イベントを検索
    - 4次元評価（確度・検証度・非対称性・鮮度）を付与
    - 報道→一次資料の検証を実行
    - data/events.jsonに追記
    - git commit "イベント収集完了: N件追加（確度A: X件）"
 
-3. 情報品質チェック（Step 1.5）
+4. 情報品質チェック（Step 1.5）
    - 矛盾検知、陳腐化検知を実行
    - data/information_quality.jsonを更新
    - 重大なアラートがあれば報告
 
-4. 独占マップ判定（Step 2）
-   - if トリガーイベントあり OR 前回更新から30日超過:
-       → 該当部分を更新
-   - else:
-       → スキップ、理由を通知
+5. 独占マップ更新（Step 2）
+   - Step 0の発掘結果を反映
+   - トリガーイベントがあれば既存企業を更新
+   - data/snapshots/monopoly_map.jsonを更新
+   - git commit "独占マップ更新: N社追加/更新"
 
-5. 市場状態取得（Step 3）
+6. 市場状態取得（Step 3）
    - 動的データを取得
    - data/snapshots/market_state.jsonを上書き
 
-6. 市場危険度分析（Step 4）
+7. 市場危険度分析（Step 4）
    - 入力: events.json + market_state.json
-   - 8項目をスコアリング
+   - Tier別重みづけでスコアリング（100点満点）
    - data/analysis/market_risk.jsonを更新
 
-7. Top30スコアリング（Step 5）
+8. Top30スコアリング（Step 5）
    - 入力: 全データ
    - 情報確度×非対称性マトリックスを適用
    - data/analysis/top30.jsonを更新
    - 非対称性トラッカーを更新
 
-8. HTML可視化生成（Step 5.5）
+9. HTML可視化生成（Step 5.5）
    - reports/[TODAY]/quadrant_chart.htmlに出力
 
-9. 最終レポート生成（Step 6）
-   - 変化点を明示
-   - 情報品質サマリーを含める
-   - reports/[TODAY]/に出力
+10. 最終レポート生成（Step 6）
+    - 変化点を明示
+    - 情報品質サマリーを含める
+    - reports/[TODAY]/に出力
 
-10. 完了処理
+11. 完了処理
     - state.json更新
     - latest/フォルダ更新
     - git push
@@ -309,7 +322,9 @@ japan-investment-analysis/
 ├── README.md
 ├── SETUP.md
 ├── prompts/
+│   ├── step0_discover_opportunities.md # ★動的発掘プロンプト
 │   ├── step1_collect_events.md
+│   ├── step1_5_quality_check.md
 │   ├── step2_update_monopoly_map.md
 │   ├── step3_update_market_state.md
 │   ├── step4_analyze_market_risk.md
@@ -320,8 +335,14 @@ japan-investment-analysis/
 ├── data/
 │   ├── state.json                      # 実行状態
 │   ├── events.json                     # イベントログ（append-only）
-│   ├── information_quality.json        # ★情報品質監視
-│   ├── asymmetry_tracker.json          # ★非対称性追跡
+│   ├── information_quality.json        # 情報品質監視
+│   ├── asymmetry_tracker.json          # 非対称性追跡
+│   ├── sources/                        # ★情報源マスター
+│   │   ├── primary_sources.json        # 一次情報源定義
+│   │   ├── discovery_queries.json      # 発掘クエリ体系
+│   │   └── verification_protocols.json # 検証プロトコル
+│   ├── discovery/                      # ★発掘結果
+│   │   └── discovery_result_YYYYMMDD.json
 │   ├── snapshots/
 │   │   ├── monopoly_map.json
 │   │   └── market_state.json
