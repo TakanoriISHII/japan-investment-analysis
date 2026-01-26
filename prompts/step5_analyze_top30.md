@@ -2,20 +2,41 @@
 
 ## ミッション
 
-独占マップ（静的）+ イベントログ（動的）+ 市場状態を統合し、Top30銘柄をスコアリングして4象限に配置する。
+独占マップ（静的）+ イベントログ（動的）+ 市場状態を統合し、**Top30銘柄**をスコアリングして4象限に配置する。
 **情報の確度と非対称性を投資判断の核心に据える。**
+
+---
+
+## 前提条件：30社の確保
+
+**⚠️ monopoly_mapの企業数が30社未満の場合**:
+- Step 0（動的発掘）の結果を確認
+- 不足分はStep 0で発掘された候補から補完
+- 6ドメインのバランスを考慮
+
+### 目標カバレッジ
+
+| ドメイン | 目標企業数 | 備考 |
+|---------|-----------|------|
+| AI | 8-10 | 製造装置、材料、部品 |
+| エネルギー | 5-7 | 原子力、送配電、パワー半導体 |
+| 軍事・防衛 | 5-7 | 装備品、Tier2サプライヤー |
+| ロボティクス | 4-6 | 減速機、サーボ、本体 |
+| 宇宙 | 3-5 | ロケット、衛星部品 |
+| サイバー | 3-5 | 量子、光通信、センサー |
 
 ---
 
 ## 入力データ
 
 1. `data/snapshots/monopoly_map.json` — 独占マップ
-2. `data/events.json` — イベントログ（4次元評価済み）
-3. `data/snapshots/market_state.json` — 市場状態
-4. `data/analysis/market_risk.json` — 市場危険度
-5. `data/information_quality.json` — 情報品質
-6. `data/asymmetry_tracker.json` — 非対称性トラッカー（更新用）
-7. `data/analysis/top30.json` — 前回スコアリング（比較用）
+2. `data/discovery/discovery_result_*.json` — Step 0発掘結果 ★新規
+3. `data/events.json` — イベントログ（4次元評価済み）
+4. `data/snapshots/market_state.json` — 市場状態
+5. `data/analysis/market_risk.json` — 市場危険度
+6. `data/information_quality.json` — 情報品質
+7. `data/asymmetry_tracker.json` — 非対称性トラッカー（更新用）
+8. `data/analysis/top30.json` — 前回スコアリング（比較用）
 
 ---
 

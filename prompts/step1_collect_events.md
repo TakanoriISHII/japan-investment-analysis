@@ -8,6 +8,39 @@
 
 ---
 
+## 参照ファイル
+
+```
+data/sources/primary_sources.json      # 情報源マスター（どこを見るべきか）
+data/sources/discovery_queries.json    # 検索クエリ体系
+data/sources/verification_protocols.json # 4次元評価の検証プロトコル
+data/discovery/discovery_result_*.json # Step 0の発掘結果（新規企業を含める）
+```
+
+---
+
+## 情報収集の技術的制約
+
+**重要**: 多くのWebサイトへの直接アクセス（WebFetch）は403エラーで失敗する。
+
+### 使用可能な方法
+
+| 方法 | 可否 | 用途 |
+|------|------|------|
+| **WebSearch** | ✅ | 主要な情報収集手段 |
+| WebFetch | ❌ | ほとんどのサイトで403 |
+
+### 実行可能なフロー
+
+```
+1. WebSearchで検索クエリを実行
+2. 検索結果から情報を抽出
+3. 検索結果に含まれるPDF直リンクがあれば取得を試みる
+4. 4次元評価を付与
+```
+
+---
+
 ## バフェット的情報収集の原則
 
 **「自分の目をつけた株を重点的に追う。当該企業の製品・サービス、業界での位置、競合他社との比較の仕方を理解する」**
@@ -107,6 +140,17 @@
 1. `data/state.json`から前回収集日を取得
 2. `data/events.json`から最後のイベントIDを取得
 3. `data/information_quality.json`の未検証アラートを確認（追加検証の機会）
+4. **Step 0の発掘結果を確認** — 新規発掘企業も収集対象に含める
+
+### Step 0発掘企業の統合
+
+```
+data/discovery/discovery_result_YYYYMMDD.json を読み込み、
+candidates_discovered の企業を収集対象に追加する。
+
+例: ロボティクスドメインで「ナブテスコ」が発掘された場合
+→ "ナブテスコ 決算" "ナブテスコ 受注" 等のクエリも実行
+```
 
 ---
 
