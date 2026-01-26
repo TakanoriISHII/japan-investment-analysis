@@ -1,48 +1,67 @@
-# 外部LLM出力の統合ガイド（Claude用）
+# 情報統合ガイド（Claude + 外部LLM）
 
 ## このファイルの目的
 
-このファイルは、外部LLMから収集した情報をClaudeが統合・処理する際の手順を定義します。
+このファイルは、Claude自身および外部LLMから収集した情報を統合・処理する際の手順を定義します。
+
+**重要**: Claudeも外部LLMも**同じフォーマット**で出力し、同じ統合プロセスで処理されます。
 
 ---
 
 ## 統合の全体フロー
 
 ```
-外部LLM出力（4タイプ）
-    ↓
-data/intelligence/raw/ に保存
-    ↓
-Claude: 品質チェック
-    ↓
-Claude: 重複排除・矛盾解決
-    ↓
-Claude: 4次元評価の統一
-    ↓
-統合済みデータの保存
-    ↓
-既存フローへの統合
+┌─────────────────────────────────────────────────────────┐
+│              情報収集フェーズ（並列実行可能）              │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  Claude                    外部LLM                      │
+│  「企業発掘を収集」         Gemini/GPT-4/Perplexity      │
+│  「広域情報を収集」                                      │
+│  「独占情報を収集」                                      │
+│  「財務情報を収集」                                      │
+│         ↓                        ↓                     │
+│  claude_YYYYMMDD.md        [llm名]_YYYYMMDD.md         │
+│         ↓                        ↓                     │
+│         └────────────┬───────────┘                     │
+│                      ↓                                  │
+│            data/intelligence/raw/                       │
+└─────────────────────────────────────────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────────────────┐
+│              統合フェーズ（「情報を統合」コマンド）        │
+├─────────────────────────────────────────────────────────┤
+│  1. 全ファイル読み込み（Claude + 外部LLM）               │
+│  2. 品質チェック                                        │
+│  3. 重複排除・矛盾解決                                   │
+│  4. 検証度昇格（複数ソース→multi_source）                │
+│  5. consolidated_*.json 生成                            │
+└─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
 ## ファイル配置
 
-### 入力（外部LLM出力）
+### 入力（Claude + 外部LLM出力）
 
 ```
 data/intelligence/raw/
 ├── company_discovery/
-│   ├── gemini_20250126.md
+│   ├── claude_20250126.md      ★Claude出力
+│   ├── gemini_20250126.md      外部LLM出力
 │   ├── gpt4_20250126.md
 │   └── perplexity_20250126.md
 ├── broad_intelligence/
+│   ├── claude_20250126.md      ★Claude出力
 │   ├── gemini_20250126.md
 │   └── gpt4_20250126.md
 ├── monopoly_info/
+│   ├── claude_20250126.md      ★Claude出力
 │   ├── gemini_20250126.md
 │   └── gpt4_20250126.md
 └── financial_management/
+    ├── claude_20250126.md      ★Claude出力
     ├── gemini_20250126.md
     └── gpt4_20250126.md
 ```
@@ -59,6 +78,50 @@ data/intelligence/
 
 ---
 
+## Claude情報収集の実行手順
+
+### 「企業発掘を収集」コマンド実行時
+
+```
+1. prompts/external/00_common_instructions.md を読み込み
+2. prompts/external/01_company_discovery.md を読み込み
+3. Web検索を活用して50社を発掘
+4. 統一フォーマット（Markdownテンプレート）で出力
+5. data/intelligence/raw/company_discovery/claude_YYYYMMDD.md に保存
+```
+
+### 「広域情報を収集」コマンド実行時
+
+```
+1. prompts/external/00_common_instructions.md を読み込み
+2. prompts/external/02_broad_intelligence.md を読み込み
+3. Web検索を活用して7カテゴリの情報を収集
+4. 統一フォーマットで出力
+5. data/intelligence/raw/broad_intelligence/claude_YYYYMMDD.md に保存
+```
+
+### 「独占情報を収集」コマンド実行時
+
+```
+1. prompts/external/00_common_instructions.md を読み込み
+2. prompts/external/03_monopoly_info.md を読み込み
+3. Web検索を活用してシェア・参入障壁情報を収集
+4. 統一フォーマットで出力
+5. data/intelligence/raw/monopoly_info/claude_YYYYMMDD.md に保存
+```
+
+### 「財務情報を収集」コマンド実行時
+
+```
+1. prompts/external/00_common_instructions.md を読み込み
+2. prompts/external/04_financial_management.md を読み込み
+3. Web検索を活用してROE/FCF/経営評価を収集
+4. 統一フォーマットで出力
+5. data/intelligence/raw/financial_management/claude_YYYYMMDD.md に保存
+```
+
+---
+
 ## 統合処理の詳細
 
 ### Step 1: 品質チェック
@@ -67,26 +130,27 @@ data/intelligence/
 
 | チェック項目 | 対応 |
 |-------------|------|
-| メタデータがあるか | なければ警告、手動補完 |
+| メタデータがあるか | なければ警告、ファイル名からLLM名・日付を推定 |
 | 4次元評価があるか | なければ該当情報を除外または低スコア付与 |
 | ソースが明記されているか | なければ検証度を single_unverified に |
-| フォーマットが正しいか | パースエラーは手動修正を要求 |
+| フォーマットが正しいか | パースエラーは警告、可能な範囲で処理 |
 
 ### Step 2: 重複排除
 
 **企業発掘の場合**:
 ```
 1. 証券コードで重複を検出
-2. 同一企業が複数LLMから発掘された場合:
+2. 同一企業が複数ソース（Claude含む）から発掘された場合:
    - 4次元評価の高い方を採用
    - 両方の情報をマージ
-   - 「複数LLMで発見」フラグを付与
+   - discovered_by に全ソースを記録
+   - 検証度を multi_source に昇格
 ```
 
 **情報の場合**:
 ```
 1. タイトル・内容の類似度で重複を検出
-2. 同一情報が複数LLMから報告された場合:
+2. 同一情報が複数ソースから報告された場合:
    - 検証度を multi_source に昇格
    - より詳細な方を採用
    - ソースをマージ
@@ -96,23 +160,23 @@ data/intelligence/
 
 **シェア情報の矛盾**:
 ```
-LLM-A: 「A社のシェアは91%」
-LLM-B: 「A社のシェアは85%」
+ソースA: 「A社のシェアは91%」
+ソースB: 「A社のシェアは85%」
 
 解決手順:
-1. 各LLMのソースを確認
-2. 一次資料を優先
+1. 各ソースの出典を確認
+2. 一次資料（SEMI、Gartner等）を優先
 3. 一次資料がない場合、範囲として記録（85-91%）
 4. conflictフラグを付与、追加調査を推奨
 ```
 
 **評価スコアの矛盾**:
 ```
-LLM-A: 確度 score: 80
-LLM-B: 確度 score: 50
+ソースA: 確度 score: 80
+ソースB: 確度 score: 50
 
 解決手順:
-1. 各LLMの根拠を確認
+1. 各ソースの根拠を確認
 2. ソースの信頼性で判断
 3. 中間値は取らない（根拠のある方を採用）
 ```
@@ -124,7 +188,7 @@ LLM-B: 確度 score: 50
 | 項目 | 統合ルール |
 |------|-----------|
 | 確度 | 一次資料ありの方を優先。なければソースの信頼性で判断 |
-| 検証度 | 複数LLMで同一情報→ multi_source に昇格 |
+| 検証度 | 複数ソース（Claude+外部LLM）で同一情報→ multi_source に昇格 |
 | 非対称性 | 保守的に評価（低い方を採用、ただし根拠を確認） |
 | 鮮度 | 最新の情報を優先、valid_until は短い方を採用 |
 
@@ -139,18 +203,19 @@ LLM-B: 確度 score: 50
   "metadata": {
     "consolidated_date": "YYYY-MM-DD",
     "source_files": [
+      {"llm": "claude", "file": "claude_20250126.md", "companies": 50},
       {"llm": "gemini", "file": "gemini_20250126.md", "companies": 50},
       {"llm": "gpt4", "file": "gpt4_20250126.md", "companies": 50}
     ],
-    "total_before_dedup": 100,
-    "total_after_dedup": 75,
-    "multi_llm_discovered": 25
+    "total_before_dedup": 150,
+    "total_after_dedup": 85,
+    "multi_source_discovered": 35
   },
   "companies": [
     {
       "ticker": "8035",
       "name": "東京エレクトロン",
-      "discovered_by": ["gemini", "gpt4"],
+      "discovered_by": ["claude", "gemini", "gpt4"],
       "discovery_method": "SC逆引き法",
       "domains": ["AI"],
       "monopoly_position": {
@@ -162,7 +227,7 @@ LLM-B: 確度 score: 50
       "verification": {"level": "multi_source"},
       "asymmetry": {"score": 8},
       "freshness": {"valid_until": "2025-06-30"},
-      "consolidation_note": "2LLMで発見。シェア情報一致。"
+      "consolidation_note": "3ソースで発見。シェア情報一致。"
     }
   ]
 }
@@ -175,15 +240,15 @@ LLM-B: 確度 score: 50
   "metadata": {
     "consolidated_date": "YYYY-MM-DD",
     "source_files": [...],
-    "total_items": 80,
+    "total_items": 120,
     "by_category": {
-      "A_international": 12,
-      "B_market_signals": 10,
-      "C_megatrends": 15,
-      "D_domain_growth": 18,
-      "E_large_investments": 12,
-      "F_overlooked_scan": 8,
-      "G_others": 5
+      "A_international": 18,
+      "B_market_signals": 15,
+      "C_megatrends": 22,
+      "D_domain_growth": 25,
+      "E_large_investments": 20,
+      "F_overlooked_scan": 12,
+      "G_others": 8
     }
   },
   "items": [
@@ -192,13 +257,83 @@ LLM-B: 確度 score: 50
       "category": "A_international",
       "title": "米中半導体規制強化",
       "detail": "...",
-      "reported_by": ["gemini", "gpt4"],
+      "reported_by": ["claude", "gemini"],
       "certainty": {"stage": "official_announcement", "score": 85},
       "verification": {"level": "multi_source"},
       "asymmetry": {"score": 8},
       "freshness": {"valid_until": "2025-06-30"},
       "sources": [...],
-      "consolidation_note": "2LLMで報告。詳細はgemini版を採用。"
+      "consolidation_note": "2ソースで報告。詳細はclaude版を採用。"
+    }
+  ]
+}
+```
+
+### consolidated_monopoly_YYYYMMDD.json
+
+```json
+{
+  "metadata": {
+    "consolidated_date": "YYYY-MM-DD",
+    "source_files": [...],
+    "total_products": 60,
+    "primary_source_ratio": 0.72,
+    "conflicts_count": 3
+  },
+  "products": [
+    {
+      "id": "monopoly_semi_001",
+      "category": "semiconductor_equipment",
+      "product_name": "コータ/デベロッパ",
+      "top_company": {
+        "ticker": "8035",
+        "name": "東京エレクトロン",
+        "share": 91,
+        "share_range": null
+      },
+      "competitors": [...],
+      "entry_barrier": {
+        "years": 10,
+        "strength": "極めて強い"
+      },
+      "reported_by": ["claude", "gemini"],
+      "certainty": {...},
+      "verification": {"level": "multi_source"},
+      "sources": [...]
+    }
+  ]
+}
+```
+
+### consolidated_financial_YYYYMMDD.json
+
+```json
+{
+  "metadata": {
+    "consolidated_date": "YYYY-MM-DD",
+    "source_files": [...],
+    "total_companies": 50,
+    "data_as_of": "2024-12",
+    "average_capital_efficiency_score": 14.2
+  },
+  "companies": [
+    {
+      "ticker": "8035",
+      "name": "東京エレクトロン",
+      "financial_data": {
+        "roe": {"value": 22.5, "trend": "安定", "score": 8},
+        "debt_ratio": {"value": 18.3, "trend": "改善", "score": 6},
+        "fcf": {"5year_positive": true, "trend": "成長", "score": 6}
+      },
+      "capital_efficiency_score": 20,
+      "management_evaluation": {
+        "mid_term_plan_achievement": "高",
+        "shareholder_return": "積極的"
+      },
+      "reported_by": ["claude", "gemini"],
+      "certainty": {"stage": "executed", "score": 95},
+      "verification": {"level": "primary_confirmed"},
+      "sources": [...]
     }
   ]
 }
@@ -206,36 +341,14 @@ LLM-B: 確度 score: 50
 
 ---
 
-## 既存フローへの統合
+## 統合データの活用先
 
-### 統合データの活用先
-
-| 統合データ | 活用先Step | 活用方法 |
-|-----------|-----------|----------|
-| consolidated_companies | Step 0.5 | 候補プール50社の選定に使用 |
-| consolidated_intelligence | Step 0, Step 1 | 広域情報として使用、イベント収集の補完 |
-| consolidated_monopoly | Step 2 | 独占マップの更新データとして使用 |
-| consolidated_financial | Step 5 | 資本効率評価に使用 |
-
-### Step 0での活用
-
-```
-通常のStep 0（広域情報収集）実行時:
-1. data/intelligence/raw/ に外部LLM出力があるか確認
-2. あれば統合処理を実行
-3. consolidated_*.json を生成
-4. Step 0の出力（broad_intelligence_*.json）と統合
-```
-
-### Step 0.5での活用
-
-```
-通常のStep 0.5（企業発掘）実行時:
-1. consolidated_companies_*.json があるか確認
-2. あれば外部LLM発見企業を候補に含める
-3. Claude独自発掘と統合
-4. 重複排除→70-100社→スクリーニング→50社
-```
+| 統合データ | 活用先Phase | 活用方法 |
+|-----------|------------|----------|
+| consolidated_companies | Phase 4: 候補プール作成 | 50社候補プールの選定に使用 |
+| consolidated_intelligence | Phase 4: 市場危険度分析 | 広域情報として使用 |
+| consolidated_monopoly | Phase 4: 独占マップ更新 | 独占マップの更新データとして使用 |
+| consolidated_financial | Phase 4: Top30スコアリング | 資本効率評価に使用 |
 
 ---
 
@@ -243,8 +356,8 @@ LLM-B: 確度 score: 50
 
 | コマンド | 動作 |
 |----------|------|
-| `外部情報を統合` | data/intelligence/raw/配下を処理し、統合済みデータを生成 |
-| `統合状態を確認` | 外部LLM出力の有無と統合状況を表示 |
+| `情報を統合` | data/intelligence/raw/配下の全ファイル（Claude+外部LLM）を統合 |
+| `統合状態を確認` | raw/配下の出力状況と統合状況を表示 |
 
 ---
 
@@ -252,9 +365,9 @@ LLM-B: 確度 score: 50
 
 | 状況 | 対応 |
 |------|------|
-| メタデータなし | 警告を出力、手動でLLM名・日付を確認 |
+| メタデータなし | 警告を出力、ファイル名から推定 |
 | 4次元評価なし | 該当情報をスキップ、または低スコア（30）を付与 |
-| フォーマットエラー | エラー箇所を特定、手動修正を要求 |
+| フォーマットエラー | エラー箇所を特定、可能な範囲で処理 |
 | 重大な矛盾 | 両方の情報を保持、conflictフラグ付与 |
 | ソースなし | 検証度を single_unverified に設定 |
 
@@ -265,17 +378,17 @@ LLM-B: 確度 score: 50
 統合完了時に以下を出力：
 
 ```markdown
-## 外部情報統合レポート
+## 情報統合レポート
 
 ### 処理サマリー
 - 処理ファイル数: X件
-- 処理LLM: [gemini, gpt4, perplexity]
+- 処理ソース: [claude, gemini, gpt4, perplexity]
 - 処理日時: YYYY-MM-DD HH:MM
 
 ### 企業発掘
 - 統合前: XXX社（重複含む）
 - 統合後: XX社
-- 複数LLMで発見: XX社
+- 複数ソースで発見: XX社（検証度昇格）
 - 矛盾解決: X件
 
 ### 広域情報
@@ -290,7 +403,7 @@ LLM-B: 確度 score: 50
 
 ### 財務情報
 - 企業数: XX社
-- 資本効率スコア平均: XX点
+- 資本効率スコア平均: XX点/20点
 
 ### 警告
 - [警告リスト]
