@@ -3,9 +3,9 @@
   "mcpServers": {
     "fetch": {
       "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-server-fetch"],
-      "description": "Enhanced web fetching with better compatibility"
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "description": "Web content fetching - converts HTML to markdown"
     }
   }
 }

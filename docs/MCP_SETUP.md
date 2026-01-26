@@ -17,7 +17,7 @@
 
 ## MCP拡張による解決
 
-### Phase 1: 基本拡張
+### Phase 1: 基本拡張（Fetch Server）
 
 **.mcp.json（現在の設定）:**
 
@@ -26,8 +26,9 @@
   "mcpServers": {
     "fetch": {
       "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-server-fetch"]
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "description": "Web content fetching - converts HTML to markdown"
     }
   }
 }
@@ -36,15 +37,20 @@
 **セットアップ手順:**
 
 ```bash
-# 1. Node.js環境の確認
-node --version  # v18以上推奨
+# 1. uvx（Python パッケージランナー）の確認
+uvx --version
 
-# 2. MCPサーバーの有効化確認
-claude mcp list
+# 2. mcp-server-fetchの動作確認
+uvx mcp-server-fetch --help
 
-# 3. サーバー状態確認（Claude Code内で）
+# 3. Claude Code再起動後、MCPツールが利用可能に
 /mcp
 ```
+
+**利用可能なオプション:**
+- `--user-agent USER_AGENT`: カスタムUser-Agent文字列
+- `--ignore-robots-txt`: robots.txt制限を無視
+- `--proxy-url PROXY_URL`: プロキシURL指定
 
 ---
 
