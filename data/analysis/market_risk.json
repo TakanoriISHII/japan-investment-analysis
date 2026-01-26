@@ -1,0 +1,115 @@
+{
+  "history": [
+    {
+      "date": "2026-01-26",
+      "total_score": 52,
+      "previous_score": 48,
+      "recommendation": "やや慎重姿勢（優良株を選別、押し目買い模索）",
+      "items": {
+        "tier1_financial_policy": {
+          "name": "金融政策転換リスク",
+          "weight": 15,
+          "score": 9,
+          "assessment": "円急伸（155円台）で介入警戒高まる。円キャリー巻き戻しリスク再燃。2024年8月の教訓を想起",
+          "historical_pattern": "金融政策転換型（2024年8月）と部分的に類似",
+          "source": "日銀金融政策決定会合"
+        },
+        "tier1_leverage": {
+          "name": "レバレッジ崩壊リスク",
+          "weight": 15,
+          "score": 6,
+          "assessment": "急速な円高進行で巻き戻し圧力。ただし2024年8月ほどの規模ではない",
+          "historical_pattern": "レバレッジ崩壊型の部分的兆候あり",
+          "source": "推定"
+        },
+        "tier2_valuation": {
+          "name": "バリュエーション過熱",
+          "weight": 10,
+          "score": 5,
+          "assessment": "日経225 PER 16.2倍に調整。1100円安で適正水準に接近",
+          "historical_pattern": "バリュエーション過熱型には該当しない",
+          "source": "日経新聞"
+        },
+        "tier2_vix": {
+          "name": "VIX・ボラティリティ",
+          "weight": 10,
+          "score": 5,
+          "assessment": "VIX 16.45、日経VI 22.5。やや上昇だが警戒水準未達",
+          "historical_pattern": "ボラティリティ上昇の初期兆候",
+          "source": "CBOE"
+        },
+        "tier2_foreign_flow": {
+          "name": "外国人売買動向",
+          "weight": 10,
+          "score": 6,
+          "assessment": "円高・介入警戒で慎重姿勢。売り越し傾向",
+          "historical_pattern": "円高局面での外国人売り",
+          "source": "JPX"
+        },
+        "tier3_china_risk": {
+          "name": "中国・新興国リスク",
+          "weight": 10,
+          "score": 7,
+          "assessment": "DeepSeekショック発生。中国AI台頭でNVDA急落、日本半導体関連に波及",
+          "historical_pattern": "新興国発の技術ディスラプション",
+          "source": "各種報道"
+        },
+        "tier3_geopolitics": {
+          "name": "地政学リスク",
+          "weight": 10,
+          "score": 5,
+          "assessment": "台湾海峡は安定。トランプ政権の政策不透明は継続",
+          "historical_pattern": "外部ショック型の兆候は限定的",
+          "source": "各種報道"
+        },
+        "tier3_liquidity": {
+          "name": "市場流動性",
+          "weight": 10,
+          "score": 4,
+          "assessment": "流動性は正常水準。特段の懸念なし",
+          "historical_pattern": "アルゴ・流動性危機型の兆候なし",
+          "source": "推定"
+        },
+        "tier3_fx": {
+          "name": "為替リスク",
+          "weight": 10,
+          "score": 7,
+          "assessment": "ドル円155円台へ急落。介入警戒で円高継続リスク。輸出企業に逆風",
+          "historical_pattern": "急速な円高は輸出株急落を伴う",
+          "source": "各種報道"
+        }
+      },
+      "historical_pattern_check": {
+        "valuation_overheating": {
+          "match": false,
+          "comment": "PER 16.2倍は適正水準"
+        },
+        "policy_shift": {
+          "match": "partial",
+          "comment": "円高進行は2024年8月と類似するが、規模は小さい"
+        },
+        "leverage_collapse": {
+          "match": "partial",
+          "comment": "円キャリー巻き戻し圧力あり"
+        },
+        "external_shock": {
+          "match": "partial",
+          "comment": "DeepSeekショックが新たな不確実性"
+        },
+        "em_crisis": {
+          "match": false,
+          "comment": "中国発だが危機レベルではない"
+        },
+        "algo_liquidity": {
+          "match": false,
+          "comment": "流動性は正常"
+        }
+      },
+      "buffett_guidance": {
+        "score_interpretation": "46-60点：やや慎重姿勢",
+        "cash_position": "やや縮小（60-80%投資）",
+        "action": "高品質銘柄を選別。急落時は押し目買いの好機。防衛関連は為替影響少なく有望"
+      }
+    }
+  ]
+}

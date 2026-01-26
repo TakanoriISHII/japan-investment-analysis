@@ -1,0 +1,47 @@
+{
+  "last_execution": "2026-01-26T14:30:00Z",
+  "events": {
+    "last_collected": "2026-01-26T14:00:00Z",
+    "total_count": 25,
+    "last_event_id": "evt_20260126_025"
+  },
+  "information_quality": {
+    "last_check": "2026-01-26T14:00:00Z",
+    "quality_score": 87,
+    "active_alerts": 1
+  },
+  "monopoly_map": {
+    "last_update": "2026-01-26",
+    "update_reason": "候補プール50社を反映",
+    "pending_triggers": []
+  },
+  "market_state": {
+    "last_update": "2026-01-26T14:00:00Z"
+  },
+  "analysis": {
+    "market_risk": {
+      "last_update": "2026-01-26T14:00:00Z",
+      "last_score": 52
+    },
+    "top30": {
+      "last_update": "2026-01-26T14:00:00Z",
+      "top_conviction": "2802"
+    }
+  },
+  "asymmetry": {
+    "last_check": "2026-01-26T14:00:00Z",
+    "active_count": 9,
+    "high_value_count": 4
+  },
+  "funnel_status": {
+    "candidate_pool": 50,
+    "top30": 30,
+    "watchlist": 20,
+    "quadrant_distribution": {
+      "最優先": 22,
+      "安定": 8,
+      "要検証": 0,
+      "様子見": 0
+    }
+  }
+}

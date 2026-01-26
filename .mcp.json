@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/mcp.json",
+  "mcpServers": {
+    "fetch": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "description": "Web content fetching - converts HTML to markdown"
+    }
+  }
+}
