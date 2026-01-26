@@ -370,8 +370,9 @@ git add data/discovery/discovery_result_YYYYMMDD.json
 git commit -m "Step 0完了: 発掘N社→候補プール50社作成"
 ```
 
-次のステップ: Step 1（イベント収集）→ Step 2（独占マップ更新）→ ... → **Step 5（Top30選出）**
+次のステップ: **Step 0.5（広域情報収集）** → Step 1（イベント収集）→ Step 2（独占マップ更新）→ ... → **Step 5（Top30選出）**
 
+- **Step 0.5**: 7カテゴリの広域情報収集（情報起点のアプローチ）
 - Step 1: 候補プール50社を対象にイベント収集を実行
 - Step 2: 候補プール50社を独占マップに反映
 - Step 5: 4軸評価（100点満点）でTop30を選出
