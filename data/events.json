@@ -1,3 +1,682 @@
 {
-  "events": []
+  "events": [
+    {
+      "id": "evt_20260126_001",
+      "date": "2026-01-26",
+      "type": "policy",
+      "content": {
+        "title": "2026年度予算案：経産省関連3兆693億円、AI・半導体に1兆2,390億円",
+        "detail": "政府は2026年度予算案で経産省関連を総額3兆693億円（前年度比1.5倍）とし、国産AIや半導体関連予算を1兆2,390億円とする方針を決定。",
+        "affected_tickers": ["8035", "6857", "6146", "7735", "4063"]
+      },
+      "certainty": {
+        "stage": "official_announcement",
+        "score": 80,
+        "rationale": "時事通信による予算案報道、閣議決定前の最終調整段階",
+        "upgrade_trigger": "閣議決定で90に上昇",
+        "downgrade_risk": "予算修正リスクは低い"
+      },
+      "verification": {
+        "level": "multi_source",
+        "sources": [
+          {"type": "secondary", "name": "時事ドットコム", "date": "2025-12-22"},
+          {"type": "secondary", "name": "日経新聞", "date": "2025-12-22"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 8,
+        "sources": {
+          "language_barrier": true,
+          "supply_chain_depth": false,
+          "certification_barrier": false
+        },
+        "detail": "予算案の詳細は日本語メディアで先行報道されるが、主要数字は英語メディアでも報道される",
+        "known_by": ["日本機関投資家", "一部グローバル投資家"],
+        "unknown_to": ["個別企業への影響度は未分析"],
+        "resolution_trigger": "英語メディアでの詳細報道",
+        "estimated_resolution": "1-2週間"
+      },
+      "freshness": {
+        "event_date": "2025-12-22",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "slow",
+        "valid_until": "2026-03-31"
+      },
+      "management": {
+        "relevant": false
+      },
+      "business_complexity": "low",
+      "is_trigger_for": null
+    },
+    {
+      "id": "evt_20260126_002",
+      "date": "2026-01-26",
+      "type": "policy",
+      "content": {
+        "title": "ラピダスへの政府支援、累計2.9兆円に（2026-27年度に約1兆円追加）",
+        "detail": "経産省は2025年11月21日、ラピダスへの政府支援を2026〜27年度に約1兆円追加すると発表。2026年度に約6,300億円支援＋IPA経由1,500億円以上出資。累計支援額2.9兆円。",
+        "affected_tickers": ["8035", "6857", "4063", "7741"]
+      },
+      "certainty": {
+        "stage": "official_announcement",
+        "score": 78,
+        "rationale": "経産省発表による公式情報、予算成立前",
+        "upgrade_trigger": "予算成立で90に上昇",
+        "downgrade_risk": "政権交代リスク"
+      },
+      "verification": {
+        "level": "primary_confirmed",
+        "sources": [
+          {"type": "primary", "name": "経済産業省", "date": "2025-11-21"},
+          {"type": "secondary", "name": "日経新聞", "date": "2025-11-21"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 6,
+        "sources": {
+          "language_barrier": false,
+          "supply_chain_depth": false,
+          "certification_barrier": false
+        },
+        "detail": "大型政策として国際的にも報道済み",
+        "known_by": ["グローバル投資家"],
+        "unknown_to": [],
+        "resolution_trigger": "既に広く認知",
+        "estimated_resolution": "N/A"
+      },
+      "freshness": {
+        "event_date": "2025-11-21",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "slow",
+        "valid_until": "2027-03-31"
+      },
+      "management": {
+        "relevant": false
+      },
+      "business_complexity": "medium",
+      "is_trigger_for": null
+    },
+    {
+      "id": "evt_20260126_003",
+      "date": "2026-01-26",
+      "type": "policy",
+      "content": {
+        "title": "2026年度防衛費、初の9兆円台（9兆353億円）閣議決定",
+        "detail": "2025年12月26日閣議決定。防衛関係費9兆353億円（前年比3.8%増）。無人アセットに2,773億円（前年比約2倍）、スタンド・オフ防衛能力に9,733億円を配分。",
+        "affected_tickers": ["7011", "7012", "7013", "6503", "6701"]
+      },
+      "certainty": {
+        "stage": "contract_signed",
+        "score": 90,
+        "rationale": "閣議決定済み、国会審議で成立見込み",
+        "upgrade_trigger": "予算成立で95に上昇",
+        "downgrade_risk": "国会で大幅修正の可能性は低い"
+      },
+      "verification": {
+        "level": "primary_confirmed",
+        "sources": [
+          {"type": "primary", "name": "防衛省", "url": "https://www.mod.go.jp/j/budget/yosan_gaiyo/fy2026/yosan_20251226.pdf", "date": "2025-12-26"},
+          {"type": "secondary", "name": "Bloomberg", "date": "2025-12-26"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 5,
+        "sources": {
+          "language_barrier": false,
+          "supply_chain_depth": false,
+          "certification_barrier": false
+        },
+        "detail": "国際的にも広く報道済み",
+        "known_by": ["グローバル投資家"],
+        "unknown_to": [],
+        "resolution_trigger": "既に認知済み",
+        "estimated_resolution": "N/A"
+      },
+      "freshness": {
+        "event_date": "2025-12-26",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "slow",
+        "valid_until": "2027-03-31"
+      },
+      "management": {
+        "relevant": false
+      },
+      "business_complexity": "low",
+      "is_trigger_for": null
+    },
+    {
+      "id": "evt_20260126_004",
+      "date": "2026-01-26",
+      "type": "earnings",
+      "content": {
+        "title": "東京エレクトロン 2025年3月期：売上高2兆4,315億円（+32.8%）、営業利益6,973億円（+52.8%）",
+        "detail": "売上総利益が初めて1兆円突破。売上総利益率47.1%。中国市場が総収入の39.1%を占める。DRAMはHBM向け先端投資が好調。",
+        "affected_tickers": ["8035"]
+      },
+      "certainty": {
+        "stage": "executed",
+        "score": 98,
+        "rationale": "決算発表済み、確定数値",
+        "upgrade_trigger": "N/A",
+        "downgrade_risk": "N/A"
+      },
+      "verification": {
+        "level": "primary_confirmed",
+        "sources": [
+          {"type": "primary", "name": "東京エレクトロン IR", "url": "https://www.tel.co.jp/ir/library/report/index.html", "date": "2025-04-30"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 4,
+        "sources": {
+          "language_barrier": false,
+          "supply_chain_depth": false,
+          "certification_barrier": false
+        },
+        "detail": "決算情報は国際的に公開済み",
+        "known_by": ["グローバル投資家"],
+        "unknown_to": [],
+        "resolution_trigger": "N/A",
+        "estimated_resolution": "N/A"
+      },
+      "freshness": {
+        "event_date": "2025-04-30",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "medium",
+        "valid_until": "2026-04-30"
+      },
+      "management": {
+        "relevant": true,
+        "ceo_statement": "市場成長をアウトパフォームする業績",
+        "track_record": "言行一致",
+        "shareholder_alignment": "高"
+      },
+      "business_complexity": "medium",
+      "is_trigger_for": null
+    },
+    {
+      "id": "evt_20260126_005",
+      "date": "2026-01-26",
+      "type": "policy",
+      "content": {
+        "title": "日銀、政策金利を0.75%に引き上げ（2025年12月）",
+        "detail": "2025年12月18-19日の金融政策決定会合で0.50%から0.75%に引き上げ。約30年ぶりの水準。2026年1月会合では現状維持の公算。",
+        "affected_tickers": []
+      },
+      "certainty": {
+        "stage": "executed",
+        "score": 99,
+        "rationale": "日銀による決定済み、実行済み",
+        "upgrade_trigger": "N/A",
+        "downgrade_risk": "N/A"
+      },
+      "verification": {
+        "level": "primary_confirmed",
+        "sources": [
+          {"type": "primary", "name": "日本銀行", "date": "2025-12-19"},
+          {"type": "secondary", "name": "日経新聞", "date": "2025-12-19"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 2,
+        "sources": {
+          "language_barrier": false,
+          "supply_chain_depth": false,
+          "certification_barrier": false
+        },
+        "detail": "中央銀行政策は世界中で注目",
+        "known_by": ["全投資家"],
+        "unknown_to": [],
+        "resolution_trigger": "N/A",
+        "estimated_resolution": "N/A"
+      },
+      "freshness": {
+        "event_date": "2025-12-19",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "slow",
+        "valid_until": "2026-06-30"
+      },
+      "management": {
+        "relevant": false
+      },
+      "business_complexity": "low",
+      "is_trigger_for": null
+    },
+    {
+      "id": "evt_20260126_006",
+      "date": "2026-01-26",
+      "type": "policy",
+      "content": {
+        "title": "柏崎刈羽原発6号機、2026年1月20日頃に再稼働へ（東電初、14年ぶり）",
+        "detail": "新潟県議会が2025年12月22日に知事信任を決定。東電は2026年1月20日前後の原子炉起動を調整中。東日本大震災後15基目の再稼働。",
+        "affected_tickers": ["9501", "6501", "7011"]
+      },
+      "certainty": {
+        "stage": "contract_signed",
+        "score": 88,
+        "rationale": "地元同意完了、再稼働手続き進行中",
+        "upgrade_trigger": "実際の再稼働で95に上昇",
+        "downgrade_risk": "技術的問題発生リスク"
+      },
+      "verification": {
+        "level": "primary_confirmed",
+        "sources": [
+          {"type": "secondary", "name": "日経新聞", "date": "2025-12-22"},
+          {"type": "secondary", "name": "日経新聞", "date": "2025-12-17"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 10,
+        "sources": {
+          "language_barrier": true,
+          "supply_chain_depth": false,
+          "certification_barrier": false
+        },
+        "detail": "国内報道は詳細だが、英語メディアでは概要のみ。原発部品サプライヤーへの波及効果は日本語情報のみ",
+        "known_by": ["日本機関投資家"],
+        "unknown_to": ["グローバルマクロファンド"],
+        "resolution_trigger": "英語メディアでの詳細報道",
+        "estimated_resolution": "再稼働後1-2週間"
+      },
+      "freshness": {
+        "event_date": "2025-12-22",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "medium",
+        "valid_until": "2026-03-31"
+      },
+      "management": {
+        "relevant": false
+      },
+      "business_complexity": "medium",
+      "is_trigger_for": null
+    },
+    {
+      "id": "evt_20260126_007",
+      "date": "2026-01-26",
+      "type": "market_data",
+      "content": {
+        "title": "半導体製造装置市場、2025年1,255億ドル（+7.4%）、2027年に1,500億ドル超へ",
+        "detail": "SEMI調査。2026年は1,381億ドル（過去最高更新）、2027年に初の1,500億ドル突破見込み。AI需要が投資を牽引。",
+        "affected_tickers": ["8035", "6857", "6146", "7735", "6920"]
+      },
+      "certainty": {
+        "stage": "official_announcement",
+        "score": 75,
+        "rationale": "SEMI公式予測、実績は市況次第",
+        "upgrade_trigger": "四半期実績で確認",
+        "downgrade_risk": "景気後退で下方修正リスク"
+      },
+      "verification": {
+        "level": "primary_confirmed",
+        "sources": [
+          {"type": "primary", "name": "SEMI", "url": "https://www.semi.org/jp/news-resources/press/20251216-2", "date": "2025-12-16"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 4,
+        "sources": {
+          "language_barrier": false,
+          "supply_chain_depth": false,
+          "certification_barrier": false
+        },
+        "detail": "SEMI発表は英語で広く報道",
+        "known_by": ["グローバル投資家"],
+        "unknown_to": [],
+        "resolution_trigger": "N/A",
+        "estimated_resolution": "N/A"
+      },
+      "freshness": {
+        "event_date": "2025-12-16",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "medium",
+        "valid_until": "2026-06-30"
+      },
+      "management": {
+        "relevant": false
+      },
+      "business_complexity": "low",
+      "is_trigger_for": "monopoly_map"
+    },
+    {
+      "id": "evt_20260126_008",
+      "date": "2026-01-26",
+      "type": "market_data",
+      "content": {
+        "title": "レーザーテック、EUVマスク検査装置で世界シェア100%維持",
+        "detail": "ACTISシリーズ（EUVパターンマスク検査）、ABICSシリーズ（EUVマスクブランクス検査）ともに世界唯一。2025年6月期：売上高2,514億円（+17.8%）、営業利益1,228億円（+51.0%）。KLAは開発遅延で少なくとも2027年まで独占継続見込み。",
+        "affected_tickers": ["6920"]
+      },
+      "certainty": {
+        "stage": "executed",
+        "score": 95,
+        "rationale": "シェア100%は複数ソースで確認、決算数値は確定",
+        "upgrade_trigger": "N/A",
+        "downgrade_risk": "KLA参入による競争激化リスク（2027年以降）"
+      },
+      "verification": {
+        "level": "multi_source",
+        "sources": [
+          {"type": "primary", "name": "レーザーテック IR", "date": "2025-08"},
+          {"type": "secondary", "name": "日経ビジネス", "date": "2025"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 12,
+        "sources": {
+          "language_barrier": true,
+          "supply_chain_depth": true,
+          "certification_barrier": false
+        },
+        "detail": "独占状況は知られているが、KLAの開発遅延詳細や今後の技術ロードマップは日本語情報が詳しい",
+        "known_by": ["半導体専門投資家"],
+        "unknown_to": ["一般的なグローバル投資家"],
+        "resolution_trigger": "英語アナリストレポート発行",
+        "estimated_resolution": "3-6ヶ月"
+      },
+      "freshness": {
+        "event_date": "2025-10-01",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "slow",
+        "valid_until": "2026-06-30"
+      },
+      "management": {
+        "relevant": true,
+        "ceo_statement": "新製品ACTIS A200 HiTでスループット3倍向上",
+        "track_record": "言行一致",
+        "shareholder_alignment": "高"
+      },
+      "business_complexity": "high",
+      "is_trigger_for": "monopoly_map"
+    },
+    {
+      "id": "evt_20260126_009",
+      "date": "2026-01-26",
+      "type": "earnings",
+      "content": {
+        "title": "三菱重工、防衛・宇宙受注高1.9兆円（防衛費増額前の3倍超）、受注残10.7兆円",
+        "detail": "2025年3月期の防衛・宇宙事業は前期比36%増収。2024年度の防衛装備品契約実績1兆4,567億円（業界首位、2位川崎重工の2倍以上）。",
+        "affected_tickers": ["7011"]
+      },
+      "certainty": {
+        "stage": "executed",
+        "score": 97,
+        "rationale": "決算発表済み、防衛装備庁データで確認",
+        "upgrade_trigger": "N/A",
+        "downgrade_risk": "N/A"
+      },
+      "verification": {
+        "level": "primary_confirmed",
+        "sources": [
+          {"type": "primary", "name": "三菱重工IR", "date": "2025-05"},
+          {"type": "primary", "name": "防衛装備庁", "date": "2025"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 14,
+        "sources": {
+          "language_barrier": true,
+          "supply_chain_depth": false,
+          "certification_barrier": true
+        },
+        "detail": "防衛契約の詳細は日本語のみ。認証企業リストと個別契約内容は非公開情報が多い",
+        "known_by": ["日本機関投資家", "防衛専門アナリスト"],
+        "unknown_to": ["一般グローバル投資家"],
+        "resolution_trigger": "英語IR資料の充実、海外アナリストカバレッジ",
+        "estimated_resolution": "継続的"
+      },
+      "freshness": {
+        "event_date": "2025-05-01",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "medium",
+        "valid_until": "2026-05-31"
+      },
+      "management": {
+        "relevant": true,
+        "ceo_statement": "防衛需要の取り込みに注力",
+        "track_record": "言行一致",
+        "shareholder_alignment": "中"
+      },
+      "business_complexity": "medium",
+      "is_trigger_for": null
+    },
+    {
+      "id": "evt_20260126_010",
+      "date": "2026-01-26",
+      "type": "contract",
+      "content": {
+        "title": "味の素ABF（半導体基板材料）、2030年までに250億円超投資で生産能力1.5倍",
+        "detail": "高性能半導体パッケージングの95%以上で使用。年間成長率18%見込み。2026年以降は新工場能力フル寄与とミックス改善で全社利益率上昇期待。",
+        "affected_tickers": ["2802"]
+      },
+      "certainty": {
+        "stage": "official_announcement",
+        "score": 78,
+        "rationale": "会社発表の投資計画",
+        "upgrade_trigger": "設備投資進捗で確度上昇",
+        "downgrade_risk": "半導体需要減少リスク"
+      },
+      "verification": {
+        "level": "primary_confirmed",
+        "sources": [
+          {"type": "secondary", "name": "日経新聞", "date": "2025-03"},
+          {"type": "primary", "name": "味の素IR", "date": "2025"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 18,
+        "sources": {
+          "language_barrier": true,
+          "supply_chain_depth": true,
+          "certification_barrier": false
+        },
+        "detail": "ABF事業の詳細タイムライン、利益率見通しは日本語決算説明会情報のみ。食品企業として認識され、半導体材料の強みは見落とされがち",
+        "known_by": ["日本機関投資家", "一部セルサイド"],
+        "unknown_to": ["グローバルマクロファンド", "パッシブファンド"],
+        "resolution_trigger": "英語決算説明会での詳細言及、海外アナリストレポート",
+        "estimated_resolution": "2026年Q2"
+      },
+      "freshness": {
+        "event_date": "2025-03-01",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "slow",
+        "valid_until": "2026-12-31"
+      },
+      "management": {
+        "relevant": true,
+        "ceo_statement": "電子材料を第二の柱に育成",
+        "track_record": "言行一致",
+        "shareholder_alignment": "中"
+      },
+      "business_complexity": "medium",
+      "is_trigger_for": null
+    },
+    {
+      "id": "evt_20260126_011",
+      "date": "2026-01-26",
+      "type": "market_data",
+      "content": {
+        "title": "信越化学、シリコンウエハ世界シェア42.49%で首位（2024年）",
+        "detail": "2位SUMCO（18.04%）と合わせ日本勢が過半数。5,000億円の自己株式取得を決定（時価総額の6.4%）。",
+        "affected_tickers": ["4063", "3436"]
+      },
+      "certainty": {
+        "stage": "executed",
+        "score": 92,
+        "rationale": "シェアデータは業界調査で確認、自社株買いは発表済み",
+        "upgrade_trigger": "N/A",
+        "downgrade_risk": "中国メーカーのシェア拡大リスク"
+      },
+      "verification": {
+        "level": "multi_source",
+        "sources": [
+          {"type": "secondary", "name": "業界調査", "date": "2025"},
+          {"type": "primary", "name": "信越化学IR", "date": "2025-04-25"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 8,
+        "sources": {
+          "language_barrier": true,
+          "supply_chain_depth": false,
+          "certification_barrier": false
+        },
+        "detail": "シェア首位は知られているが、中国競合の詳細動向は日本語情報が詳しい",
+        "known_by": ["半導体投資家"],
+        "unknown_to": ["一般投資家"],
+        "resolution_trigger": "四半期決算での中国動向言及",
+        "estimated_resolution": "継続的"
+      },
+      "freshness": {
+        "event_date": "2025-04-25",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "slow",
+        "valid_until": "2026-06-30"
+      },
+      "management": {
+        "relevant": true,
+        "ceo_statement": "株主還元強化",
+        "track_record": "言行一致",
+        "shareholder_alignment": "高"
+      },
+      "business_complexity": "medium",
+      "is_trigger_for": "monopoly_map"
+    },
+    {
+      "id": "evt_20260126_012",
+      "date": "2026-01-26",
+      "type": "market_data",
+      "content": {
+        "title": "ディスコ、ダイシング装置世界シェア70-80%、先端品はほぼ100%",
+        "detail": "グラインダ・ポリッシャも60-70%シェア。消耗品（ダイシングブレード）は世界唯一の技術で代替不可。東京精密も同社からブレード購入。営業利益率36.1%。",
+        "affected_tickers": ["6146"]
+      },
+      "certainty": {
+        "stage": "executed",
+        "score": 93,
+        "rationale": "業界調査と企業開示で確認",
+        "upgrade_trigger": "N/A",
+        "downgrade_risk": "N/A"
+      },
+      "verification": {
+        "level": "multi_source",
+        "sources": [
+          {"type": "secondary", "name": "業界分析", "date": "2025"},
+          {"type": "primary", "name": "ディスコIR", "date": "2025"}
+        ],
+        "cross_checked": true,
+        "conflicts": null
+      },
+      "asymmetry": {
+        "score": 15,
+        "sources": {
+          "language_barrier": true,
+          "supply_chain_depth": true,
+          "certification_barrier": false
+        },
+        "detail": "ダイシングブレードの技術的独占性、消耗品ビジネスモデルの詳細は日本語情報に詳しい",
+        "known_by": ["半導体専門投資家"],
+        "unknown_to": ["一般グローバル投資家"],
+        "resolution_trigger": "英語IRの充実",
+        "estimated_resolution": "継続的"
+      },
+      "freshness": {
+        "event_date": "2025-06-01",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "slow",
+        "valid_until": "2026-12-31"
+      },
+      "management": {
+        "relevant": true,
+        "ceo_statement": "AI半導体需要を確実に取り込む",
+        "track_record": "言行一致",
+        "shareholder_alignment": "高"
+      },
+      "business_complexity": "medium",
+      "is_trigger_for": "monopoly_map"
+    },
+    {
+      "id": "evt_20260126_013",
+      "date": "2026-01-26",
+      "type": "market_data",
+      "content": {
+        "title": "ドル円相場、2026年1月時点で155-157円台、年末150円程度への円高予想多数",
+        "detail": "日銀利上げ継続と米利下げで日米金利差縮小見込み。野村證券は年末140円予想。2025年は「ドル安でも円安」という珍現象が発生。",
+        "affected_tickers": []
+      },
+      "certainty": {
+        "stage": "report_confirmed",
+        "score": 55,
+        "rationale": "複数機関の予測、実際の為替は不確実",
+        "upgrade_trigger": "N/A",
+        "downgrade_risk": "予測は外れる可能性あり"
+      },
+      "verification": {
+        "level": "multi_source",
+        "sources": [
+          {"type": "secondary", "name": "三井住友DS", "date": "2025-12-26"},
+          {"type": "secondary", "name": "野村證券", "date": "2025-12"}
+        ],
+        "cross_checked": true,
+        "conflicts": "予測値に幅あり（140-160円）"
+      },
+      "asymmetry": {
+        "score": 3,
+        "sources": {
+          "language_barrier": false,
+          "supply_chain_depth": false,
+          "certification_barrier": false
+        },
+        "detail": "為替予測は広く公開",
+        "known_by": ["全投資家"],
+        "unknown_to": [],
+        "resolution_trigger": "N/A",
+        "estimated_resolution": "N/A"
+      },
+      "freshness": {
+        "event_date": "2026-01-26",
+        "recorded_at": "2026-01-26T10:00:00Z",
+        "decay_rate": "fast",
+        "valid_until": "2026-02-28"
+      },
+      "management": {
+        "relevant": false
+      },
+      "business_complexity": "low",
+      "is_trigger_for": null
+    }
+  ],
+  "metadata": {
+    "collection_date": "2026-01-26",
+    "total_events": 13,
+    "by_type": {
+      "policy": 5,
+      "earnings": 2,
+      "market_data": 5,
+      "contract": 1
+    },
+    "high_certainty_70plus": 10,
+    "high_asymmetry_16plus": 1
+  }
 }
