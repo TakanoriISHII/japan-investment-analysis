@@ -1,36 +1,36 @@
 {
-  "last_execution": null,
+  "last_execution": "2026-01-26T10:30:00Z",
   "events": {
-    "last_collected": null,
-    "total_count": 0,
-    "last_event_id": null
+    "last_collected": "2026-01-26T10:00:00Z",
+    "total_count": 13,
+    "last_event_id": "evt_20260126_013"
   },
   "information_quality": {
-    "last_check": null,
-    "quality_score": null,
-    "active_alerts": 0
+    "last_check": "2026-01-26T10:30:00Z",
+    "quality_score": 82,
+    "active_alerts": 1
   },
   "monopoly_map": {
-    "last_update": null,
-    "update_reason": null,
+    "last_update": "2026-01-26",
+    "update_reason": "初回フル構築",
     "pending_triggers": []
   },
   "market_state": {
-    "last_update": null
+    "last_update": "2026-01-26T10:00:00Z"
   },
   "analysis": {
     "market_risk": {
-      "last_update": null,
-      "last_score": null
+      "last_update": "2026-01-26T10:30:00Z",
+      "last_score": 48
     },
     "top30": {
-      "last_update": null,
-      "top_conviction": null
+      "last_update": "2026-01-26T10:30:00Z",
+      "top_conviction": "2802"
     }
   },
   "asymmetry": {
-    "last_check": null,
-    "active_count": 0,
-    "high_value_count": 0
+    "last_check": "2026-01-26T10:30:00Z",
+    "active_count": 4,
+    "high_value_count": 1
   }
 }

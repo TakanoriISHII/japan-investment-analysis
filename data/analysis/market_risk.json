@@ -1,3 +1,114 @@
 {
-  "history": []
+  "history": [
+    {
+      "date": "2026-01-26",
+      "total_score": 48,
+      "recommendation": "通常ポジション（優良株を選別）",
+      "items": {
+        "tier1_financial_policy": {
+          "name": "金融政策転換リスク",
+          "weight": 15,
+          "score": 8,
+          "assessment": "日銀は0.75%まで利上げ済み。追加利上げ継続方針だが、ペースは緩やか。2024年8月の円キャリー巻き戻し教訓を考慮すると警戒必要",
+          "historical_pattern": "金融政策転換型（バブル崩壊、2024年8月）に類似する兆候あり",
+          "source": "日銀金融政策決定会合"
+        },
+        "tier1_leverage": {
+          "name": "レバレッジ崩壊リスク",
+          "weight": 15,
+          "score": 5,
+          "assessment": "円キャリーポジションは2024年8月巻き戻し後に縮小。信用残は中立水準。急激な巻き戻しリスクは低下",
+          "historical_pattern": "レバレッジ崩壊型（リーマン、2024年8月）の兆候は限定的",
+          "source": "推定"
+        },
+        "tier2_valuation": {
+          "name": "バリュエーション過熱",
+          "weight": 10,
+          "score": 6,
+          "assessment": "日経225 PER 16.5倍は歴史的平均（15.5倍）をやや上回る。バブル的過熱ではないが、割安ではない",
+          "historical_pattern": "バリュエーション過熱型（バブル崩壊）には該当しない",
+          "source": "日経新聞"
+        },
+        "tier2_vix": {
+          "name": "VIX・ボラティリティ",
+          "weight": 10,
+          "score": 4,
+          "assessment": "VIX 16は正常範囲（10-20）。低位安定は楽観の象徴として警戒すべきだが、現在は適正水準",
+          "historical_pattern": "VIX低位からの急騰リスクは常に存在",
+          "source": "CBOE"
+        },
+        "tier2_foreign_flow": {
+          "name": "外国人売買動向",
+          "weight": 10,
+          "score": 5,
+          "assessment": "年初のため明確なトレンドなし。データ待ち状態",
+          "historical_pattern": "N/A",
+          "source": "JPX"
+        },
+        "tier3_china_risk": {
+          "name": "中国・新興国リスク",
+          "weight": 10,
+          "score": 6,
+          "assessment": "中国経済の不透明感継続。日本半導体企業の中国エクスポージャー（15-40%）は懸念材料",
+          "historical_pattern": "新興国危機型の連鎖リスクは中程度",
+          "source": "各種報道"
+        },
+        "tier3_geopolitics": {
+          "name": "地政学リスク",
+          "weight": 10,
+          "score": 5,
+          "assessment": "台湾海峡は現時点で緊張高まりなし。米中関係は対話継続。ただし、トランプ政権の政策不透明",
+          "historical_pattern": "外部ショック型は予測困難だが、現時点で兆候なし",
+          "source": "各種報道"
+        },
+        "tier3_liquidity": {
+          "name": "市場流動性",
+          "weight": 10,
+          "score": 4,
+          "assessment": "流動性は正常水準。特段の懸念なし",
+          "historical_pattern": "アルゴ・流動性危機型の兆候なし",
+          "source": "推定"
+        },
+        "tier3_fx": {
+          "name": "為替リスク",
+          "weight": 10,
+          "score": 5,
+          "assessment": "ドル円156円台。年末に向けて円高予想が多数（140-150円）。輸出企業には逆風の可能性",
+          "historical_pattern": "円高は輸出株にネガティブだが、急激な変動でなければ吸収可能",
+          "source": "各種予測"
+        }
+      },
+      "historical_pattern_check": {
+        "valuation_overheating": {
+          "match": false,
+          "comment": "PER 16.5倍は過熱水準（PER 30倍超）には遠い"
+        },
+        "policy_shift": {
+          "match": "partial",
+          "comment": "日銀利上げ継続は2024年8月と類似するが、市場は織り込み済み"
+        },
+        "leverage_collapse": {
+          "match": false,
+          "comment": "円キャリー巻き戻しは2024年8月に発生済み。現在は縮小"
+        },
+        "external_shock": {
+          "match": false,
+          "comment": "パンデミック、テロ等の兆候なし"
+        },
+        "em_crisis": {
+          "match": "partial",
+          "comment": "中国リスクは継続だが、危機レベルではない"
+        },
+        "algo_liquidity": {
+          "match": false,
+          "comment": "流動性は正常"
+        }
+      },
+      "buffett_guidance": {
+        "score_interpretation": "26-45点：優良株を選別投資",
+        "cash_position": "通常ポジション（70-100%投資可）",
+        "action": "割安な優良株を選別。市場全体への楽観は禁物。個別銘柄のファンダメンタルズ重視"
+      }
+    }
+  ]
 }

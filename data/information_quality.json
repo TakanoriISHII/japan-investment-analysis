@@ -1,30 +1,70 @@
 {
-  "last_updated": null,
+  "last_updated": "2026-01-26T10:30:00Z",
   "summary": {
-    "total_events": 0,
+    "total_events": 13,
     "by_certainty_stage": {
-      "executed": 0,
-      "contract_signed": 0,
-      "official_announcement": 0,
-      "report_confirmed": 0,
+      "executed": 6,
+      "contract_signed": 2,
+      "official_announcement": 4,
+      "report_confirmed": 1,
       "report_unconfirmed": 0,
       "rumor": 0
     },
     "by_verification_level": {
-      "primary_confirmed": 0,
-      "multi_source": 0,
+      "primary_confirmed": 8,
+      "multi_source": 5,
       "single_reliable": 0,
       "single_unverified": 0
     },
-    "average_certainty_score": null,
-    "high_confidence_ratio": null
+    "average_certainty_score": 86,
+    "high_confidence_ratio": 0.77
   },
   "alerts": {
     "unverified": [],
-    "conflicts": [],
+    "conflicts": [
+      {
+        "topic": "2026年ドル円相場予測",
+        "event_ids": ["evt_20260126_013"],
+        "values": ["野村證券: 140円", "三井住友DS: 150円", "みずほ: 150円台後半"],
+        "action": "為替予測は本質的に不確実。参考情報として扱い、投資判断の主軸としない"
+      }
+    ],
     "stale": []
   },
-  "quality_score": null,
-  "quality_trend": null,
-  "recommendations": []
+  "quality_score": 82,
+  "quality_trend": "初回収集",
+  "recommendations": [
+    {
+      "priority": "高",
+      "action": "味の素ABF増産計画（evt_20260126_010）の一次資料確認",
+      "reason": "非対称性スコア18と高いが、日経報道ベース。IR資料で詳細確認推奨"
+    },
+    {
+      "priority": "中",
+      "action": "柏崎刈羽原発再稼働（evt_20260126_006）の進捗確認",
+      "reason": "1月20日の再稼働実施後に確度を95に更新"
+    },
+    {
+      "priority": "中",
+      "action": "ディスコのダイシングブレード技術独占性の追加検証",
+      "reason": "非対称性スコア15。英語ソースでの裏取り推奨"
+    }
+  ],
+  "quality_assessment": {
+    "strengths": [
+      "13件中10件が確度70以上の高確度情報",
+      "8件が一次資料で確認済み（primary_confirmed）",
+      "矛盾情報は為替予測のみ（本質的に不確実な分野）"
+    ],
+    "weaknesses": [
+      "非対称性スコア16以上の情報は1件のみ（味の素ABF）",
+      "防衛関連の一次資料アクセスに限界あり",
+      "中国関連リスク情報の深掘り不足"
+    ],
+    "next_collection_focus": [
+      "決算説明会Q&A（非対称性の宝庫）",
+      "経産省・防衛省の詳細資料",
+      "業界専門紙（日刊工業新聞、電波新聞）"
+    ]
+  }
 }

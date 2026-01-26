@@ -1,3 +1,177 @@
 {
-  "history": []
+  "history": [
+    {
+      "date": "2026-01-26",
+      "market_risk_score": 48,
+      "top_conviction": "2802",
+      "rankings": [
+        {
+          "rank": 1,
+          "ticker": "2802",
+          "name": "味の素",
+          "total_score": 88,
+          "quadrant": "最優先",
+          "scores": {
+            "monopoly": 28,
+            "capital_efficiency": 16,
+            "synergy": 22,
+            "asymmetry": 22
+          },
+          "certainty_score": 78,
+          "asymmetry_score": 18,
+          "rationale": "ABF（味の素ビルドアップフィルム）で先端半導体パッケージングの95%をカバーする事実上の独占。食品企業イメージが強く、半導体材料の強みが外国人投資家に見落とされている。非対称性スコア最高。2026年以降は新工場能力フル寄与で利益率改善期待。",
+          "risks": ["半導体需要の減速", "競合材料の登場（可能性低い）"],
+          "catalyst": "英語決算説明会でABF詳細言及、海外アナリストレポート発行"
+        },
+        {
+          "rank": 2,
+          "ticker": "6920",
+          "name": "レーザーテック",
+          "total_score": 86,
+          "quadrant": "最優先",
+          "scores": {
+            "monopoly": 30,
+            "capital_efficiency": 18,
+            "synergy": 20,
+            "asymmetry": 18
+          },
+          "certainty_score": 95,
+          "asymmetry_score": 12,
+          "rationale": "EUVマスク検査装置で世界シェア100%の完全独占。営業利益率48.8%の超高収益。KLA参入リスクは2027年以降で、当面は独占継続。技術ロードマップの詳細は日本語情報に詳しい。",
+          "risks": ["KLA参入（2027年以降）", "High-NA投資先送りによる需要減速"],
+          "catalyst": "新製品ACTIS A200 HiTの受注拡大"
+        },
+        {
+          "rank": 3,
+          "ticker": "6146",
+          "name": "ディスコ",
+          "total_score": 84,
+          "quadrant": "最優先",
+          "scores": {
+            "monopoly": 28,
+            "capital_efficiency": 18,
+            "synergy": 20,
+            "asymmetry": 18
+          },
+          "certainty_score": 93,
+          "asymmetry_score": 15,
+          "rationale": "ダイシング装置で世界シェア70-80%、先端品はほぼ100%。消耗品（ダイシングブレード）は世界唯一の技術で競合も同社から購入。安定した収益構造。AI半導体需要の恩恵大。",
+          "risks": ["後工程の技術変化"],
+          "catalyst": "AI半導体向け需要の継続確認"
+        },
+        {
+          "rank": 4,
+          "ticker": "7011",
+          "name": "三菱重工業",
+          "total_score": 82,
+          "quadrant": "最優先",
+          "scores": {
+            "monopoly": 26,
+            "capital_efficiency": 14,
+            "synergy": 24,
+            "asymmetry": 18
+          },
+          "certainty_score": 97,
+          "asymmetry_score": 14,
+          "rationale": "防衛装備品で国内首位、契約実績は2位の2倍超。受注残10.7兆円。防衛費9兆円時代の最大受益者。原発再稼働でもエネルギー部門に恩恵。防衛認証が最大の参入障壁。",
+          "risks": ["防衛費増額の継続性", "コスト増によるマージン圧迫"],
+          "catalyst": "2026年度防衛予算成立、新規契約発表"
+        },
+        {
+          "rank": 5,
+          "ticker": "8035",
+          "name": "東京エレクトロン",
+          "total_score": 80,
+          "quadrant": "安定",
+          "scores": {
+            "monopoly": 28,
+            "capital_efficiency": 18,
+            "synergy": 24,
+            "asymmetry": 10
+          },
+          "certainty_score": 98,
+          "asymmetry_score": 4,
+          "rationale": "コータ/デベロッパで91%シェア。半導体製造装置で国内最大手。AI/HBM需要で成長。ただし中国売上比率39%がリスク。国際的に広く認知されており非対称性は低い。",
+          "risks": ["中国規制の影響", "設備投資サイクルの減速"],
+          "catalyst": "中国規制の緩和、AI需要の継続"
+        },
+        {
+          "rank": 6,
+          "ticker": "4063",
+          "name": "信越化学工業",
+          "total_score": 78,
+          "quadrant": "安定",
+          "scores": {
+            "monopoly": 26,
+            "capital_efficiency": 18,
+            "synergy": 22,
+            "asymmetry": 12
+          },
+          "certainty_score": 92,
+          "asymmetry_score": 8,
+          "rationale": "シリコンウエハで世界シェア42.5%首位。5,000億円の自社株買いで株主還元強化。塩ビでも世界首位。広く認知されているが、中国競合の動向詳細は日本語情報に詳しい。",
+          "risks": ["中国メーカーのシェア拡大", "ウエハ需要の減速"],
+          "catalyst": "半導体需要回復、株主還元継続"
+        },
+        {
+          "rank": 7,
+          "ticker": "6857",
+          "name": "アドバンテスト",
+          "total_score": 76,
+          "quadrant": "安定",
+          "scores": {
+            "monopoly": 24,
+            "capital_efficiency": 18,
+            "synergy": 22,
+            "asymmetry": 12
+          },
+          "certainty_score": 90,
+          "asymmetry_score": 6,
+          "rationale": "半導体テスタでSoC/メモリともに首位。AI/HBM需要で成長。国際的に認知度高く非対称性は限定的。",
+          "risks": ["テスト需要の変動", "競合激化"],
+          "catalyst": "AI半導体テスト需要の継続"
+        },
+        {
+          "rank": 8,
+          "ticker": "7735",
+          "name": "SCREEN",
+          "total_score": 72,
+          "quadrant": "安定",
+          "scores": {
+            "monopoly": 22,
+            "capital_efficiency": 16,
+            "synergy": 20,
+            "asymmetry": 14
+          },
+          "certainty_score": 85,
+          "asymmetry_score": 10,
+          "rationale": "枚葉洗浄装置で35%シェア首位。中国エクスポージャー30%がリスク。",
+          "risks": ["中国規制の影響", "競合激化"],
+          "catalyst": "先端プロセス向け需要"
+        }
+      ],
+      "quadrant_summary": {
+        "top_priority": {
+          "count": 4,
+          "tickers": ["2802", "6920", "6146", "7011"],
+          "description": "確度高＆非対称性高。即座にポジション構築検討"
+        },
+        "stable": {
+          "count": 4,
+          "tickers": ["8035", "4063", "6857", "7735"],
+          "description": "確度高だが非対称性低。αは小さいが確実性高い"
+        },
+        "needs_verification": {
+          "count": 0,
+          "tickers": [],
+          "description": "非対称性高だが確度低。追加調査で確度を上げる"
+        },
+        "watch": {
+          "count": 0,
+          "tickers": [],
+          "description": "確度・非対称性とも低。情報不足で判断保留"
+        }
+      }
+    }
+  ]
 }

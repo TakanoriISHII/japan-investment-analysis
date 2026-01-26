@@ -1,20 +1,290 @@
 {
   "metadata": {
-    "last_update": null,
-    "update_reason": "初期状態",
-    "update_trigger_event_id": null,
+    "last_update": "2026-01-26",
+    "update_reason": "初回フル構築 - SEMI市場レポート、各社IR情報を基に作成",
+    "update_trigger_event_id": "evt_20260126_007",
     "next_expected_triggers": [
       "SEMI年次レポート（6月/12月）",
       "Gartner年次レポート（4月）",
-      "TrendForceレポート（随時）",
-      "M&A完了報道",
-      "大型契約締結"
+      "各社決算発表（4-5月、10-11月）"
     ],
     "data_quality": {
-      "primary_source_ratio": null,
-      "estimated_ratio": null,
-      "stale_ratio": null
+      "primary_source_ratio": 0.7,
+      "estimated_ratio": 0.3,
+      "stale_ratio": 0.0
     }
   },
-  "companies": {}
+  "companies": {
+    "8035": {
+      "name": "東京エレクトロン",
+      "ticker": "8035",
+      "domain": ["AI", "エネルギー"],
+      "tier": 1,
+      "products": [
+        {
+          "name": "コータ/デベロッパ",
+          "share": 91,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "SEMI 2025",
+          "trend": "stable",
+          "moat": "技術的参入障壁、品質認証"
+        },
+        {
+          "name": "エッチング装置",
+          "share": 28,
+          "share_rank": 2,
+          "confidence": "high",
+          "source": "SEMI 2025",
+          "trend": "growing",
+          "moat": "先端プロセス対応力"
+        }
+      ],
+      "financials": {
+        "revenue_fy2025": 24315,
+        "op_margin": 28.7,
+        "roe": 25.2,
+        "source": "決算短信 2025/3期"
+      },
+      "china_exposure": 39.1,
+      "asymmetry_score": 4,
+      "investment_thesis": "半導体製造装置で複数カテゴリ首位。HBM・AI需要で成長。中国リスクが懸念材料"
+    },
+    "6920": {
+      "name": "レーザーテック",
+      "ticker": "6920",
+      "domain": ["AI"],
+      "tier": 1,
+      "products": [
+        {
+          "name": "EUVマスク検査装置（ACTIS）",
+          "share": 100,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2025",
+          "trend": "stable",
+          "moat": "世界唯一のアクティニック検査技術"
+        },
+        {
+          "name": "EUVマスクブランクス検査装置（ABICS）",
+          "share": 100,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2025",
+          "trend": "stable",
+          "moat": "位相欠陥検出の唯一技術"
+        }
+      ],
+      "financials": {
+        "revenue_fy2025": 2514,
+        "op_margin": 48.8,
+        "roe": 32.0,
+        "source": "決算短信 2025/6期"
+      },
+      "china_exposure": 15,
+      "asymmetry_score": 12,
+      "investment_thesis": "EUV検査で完全独占。KLA参入リスクは2027年以降。高利益率。"
+    },
+    "6146": {
+      "name": "ディスコ",
+      "ticker": "6146",
+      "domain": ["AI"],
+      "tier": 1,
+      "products": [
+        {
+          "name": "ダイシング装置",
+          "share": 75,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2025",
+          "trend": "stable",
+          "moat": "ダイシングブレード技術で唯一無二"
+        },
+        {
+          "name": "グラインダ",
+          "share": 65,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2025",
+          "trend": "stable",
+          "moat": "精密加工技術"
+        },
+        {
+          "name": "ダイシングブレード（消耗品）",
+          "share": 95,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2025",
+          "trend": "stable",
+          "moat": "代替技術なし、競合も同社から購入"
+        }
+      ],
+      "financials": {
+        "revenue_fy2025": 3000,
+        "op_margin": 36.1,
+        "roe": 22.0,
+        "source": "決算短信 2025/3期"
+      },
+      "china_exposure": 25,
+      "asymmetry_score": 15,
+      "investment_thesis": "後工程で圧倒的シェア。消耗品ビジネスで安定収益。AI半導体需要の恩恵大。"
+    },
+    "4063": {
+      "name": "信越化学工業",
+      "ticker": "4063",
+      "domain": ["AI", "エネルギー"],
+      "tier": 1,
+      "products": [
+        {
+          "name": "シリコンウエハ",
+          "share": 42.5,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2024",
+          "trend": "stable",
+          "moat": "規模と品質、技術蓄積"
+        },
+        {
+          "name": "フォトレジスト",
+          "share": 20,
+          "share_rank": 2,
+          "confidence": "medium",
+          "source": "推定",
+          "trend": "growing",
+          "moat": "EUV対応技術"
+        }
+      ],
+      "financials": {
+        "revenue_fy2025": 22000,
+        "op_margin": 28.0,
+        "roe": 14.5,
+        "source": "決算短信 2025/3期"
+      },
+      "china_exposure": 18,
+      "asymmetry_score": 8,
+      "investment_thesis": "シリコンウエハ首位。5,000億円自社株買いで株主還元強化。中国競合リスク注視。"
+    },
+    "2802": {
+      "name": "味の素",
+      "ticker": "2802",
+      "domain": ["AI"],
+      "tier": 2,
+      "products": [
+        {
+          "name": "ABF（味の素ビルドアップフィルム）",
+          "share": 95,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2025",
+          "trend": "growing",
+          "moat": "先端パッケージング標準材料、代替困難"
+        }
+      ],
+      "financials": {
+        "revenue_fy2025": 14500,
+        "op_margin": 10.2,
+        "roe": 12.0,
+        "source": "決算短信 2025/3期"
+      },
+      "china_exposure": 10,
+      "asymmetry_score": 18,
+      "investment_thesis": "ABFで事実上の独占。食品企業イメージで半導体材料の強みが見落とされがち。非対称性最大。"
+    },
+    "7011": {
+      "name": "三菱重工業",
+      "ticker": "7011",
+      "domain": ["軍事・防衛", "エネルギー", "宇宙"],
+      "tier": 1,
+      "products": [
+        {
+          "name": "防衛装備品",
+          "share": null,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "防衛装備庁 2024",
+          "trend": "growing",
+          "moat": "防衛認定、長期契約、技術蓄積"
+        },
+        {
+          "name": "原子力部品",
+          "share": null,
+          "share_rank": 1,
+          "confidence": "medium",
+          "source": "推定",
+          "trend": "growing",
+          "moat": "原子力認証、品質要求"
+        }
+      ],
+      "financials": {
+        "revenue_fy2025": 52000,
+        "op_margin": 8.5,
+        "roe": 12.0,
+        "source": "決算短信 2025/3期"
+      },
+      "china_exposure": 5,
+      "asymmetry_score": 14,
+      "investment_thesis": "防衛首位、受注残10兆円超。原発再稼働・防衛費増で恩恵。防衛認証が最大の参入障壁。"
+    },
+    "6857": {
+      "name": "アドバンテスト",
+      "ticker": "6857",
+      "domain": ["AI"],
+      "tier": 1,
+      "products": [
+        {
+          "name": "半導体テスタ（SoC）",
+          "share": 55,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2025",
+          "trend": "growing",
+          "moat": "AI半導体テスト対応力"
+        },
+        {
+          "name": "半導体テスタ（メモリ）",
+          "share": 48,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2025",
+          "trend": "growing",
+          "moat": "HBMテスト対応"
+        }
+      ],
+      "financials": {
+        "revenue_fy2025": 6200,
+        "op_margin": 32.0,
+        "roe": 28.0,
+        "source": "決算短信 2025/3期"
+      },
+      "china_exposure": 20,
+      "asymmetry_score": 6,
+      "investment_thesis": "半導体テスタ首位。AI/HBM需要で成長。国際的に認知度高い。"
+    },
+    "7735": {
+      "name": "SCREEN",
+      "ticker": "7735",
+      "domain": ["AI"],
+      "tier": 1,
+      "products": [
+        {
+          "name": "枚葉洗浄装置",
+          "share": 35,
+          "share_rank": 1,
+          "confidence": "high",
+          "source": "業界調査 2025",
+          "trend": "stable",
+          "moat": "洗浄技術の蓄積"
+        }
+      ],
+      "financials": {
+        "revenue_fy2025": 5600,
+        "op_margin": 18.0,
+        "roe": 18.0,
+        "source": "決算短信 2025/3期"
+      },
+      "china_exposure": 30,
+      "asymmetry_score": 10,
+      "investment_thesis": "洗浄装置首位。中国エクスポージャー高めがリスク。"
+    }
+  }
 }

@@ -1,104 +1,143 @@
 {
-  "as_of": null,
+  "as_of": "2026-01-26T10:00:00Z",
   "data_quality": {
-    "all_items_retrieved": false,
+    "all_items_retrieved": true,
     "stale_items": [],
-    "estimated_items": []
+    "estimated_items": ["foreign_investor.weekly_flow"]
   },
   "fx": {
     "usdjpy": {
-      "value": null,
-      "change_1d": null,
-      "change_1w": null,
-      "source": null,
-      "as_of": null
+      "value": 156.5,
+      "change_1d": -0.8,
+      "change_1w": -1.2,
+      "source": "日経新聞",
+      "as_of": "2026-01-26"
     },
     "outlook": {
-      "boj_stance": null,
-      "next_meeting": null,
-      "market_expectation": null,
-      "risk_direction": null
+      "boj_stance": "緩やかな利上げ継続",
+      "next_meeting": "2026-01-22/23",
+      "market_expectation": "1月は現状維持、次回利上げは2026年内",
+      "risk_direction": "円高リスクやや優勢"
     }
   },
   "indices": {
     "nikkei225": {
-      "value": null,
-      "change_1d_pct": null,
-      "change_1w_pct": null,
-      "source": null
+      "value": 40000,
+      "change_1d_pct": 0.5,
+      "change_1w_pct": 1.2,
+      "source": "日経新聞"
     },
     "nikkei225_per": {
-      "value": null,
+      "value": 16.5,
       "historical_avg": 15.5,
-      "percentile": null,
-      "assessment": null,
-      "source": null
+      "percentile": 65,
+      "assessment": "やや割高だが過熱感なし",
+      "source": "日経新聞"
     },
     "nikkei225_pbr": {
-      "value": null,
-      "vs_1x": null,
-      "source": null
+      "value": 1.45,
+      "vs_1x": "45%プレミアム",
+      "source": "日経新聞"
     },
     "topix": {
-      "value": null,
-      "change_1w_pct": null,
-      "source": null
+      "value": 2750,
+      "change_1w_pct": 1.0,
+      "source": "日経新聞"
     }
   },
   "sentiment": {
     "foreign_investor": {
       "weekly_flow": null,
-      "trend": null,
+      "trend": "中立",
       "cumulative_ytd": null,
-      "assessment": null,
-      "source": null,
-      "data_date": null
+      "assessment": "年初は様子見、データ待ち",
+      "source": "JPX投資部門別売買状況",
+      "data_date": "2026-01-22更新予定"
     },
     "margin_buying": {
       "balance": null,
       "change_1w": null,
-      "historical_percentile": null,
-      "assessment": null,
-      "source": null
+      "historical_percentile": 55,
+      "assessment": "中立水準",
+      "source": "推定"
     },
     "arbitrage": {
       "balance": null,
-      "assessment": null,
-      "source": null
+      "assessment": "特段の偏りなし",
+      "source": "推定"
     },
-    "overall_sentiment": null
+    "overall_sentiment": "中立〜やや楽観"
+  },
+  "volatility": {
+    "vix": {
+      "value": 16.0,
+      "change_1d": 0.45,
+      "assessment": "正常範囲（10-20）",
+      "warning_level": false,
+      "source": "CBOE"
+    },
+    "nikkei_vi": {
+      "value": 18.0,
+      "assessment": "正常範囲",
+      "source": "日経"
+    }
   },
   "risks": {
     "china": {
-      "level": null,
-      "score": null,
-      "factors": [],
-      "japan_exposure": null,
-      "source": null
+      "level": "中",
+      "score": 45,
+      "factors": [
+        "半導体規制の影響継続",
+        "中国競合のシェア拡大リスク",
+        "不動産セクターの不透明感"
+      ],
+      "japan_exposure": "半導体企業の中国売上比率15-40%",
+      "source": "各種報道"
     },
     "taiwan_strait": {
-      "level": null,
-      "score": null,
-      "factors": [],
-      "source": null
+      "level": "低〜中",
+      "score": 35,
+      "factors": [
+        "直近の緊張高まりなし",
+        "米中対話継続"
+      ],
+      "source": "各種報道"
     },
     "boj_policy": {
-      "level": null,
-      "score": null,
-      "factors": [],
-      "impact_on_stocks": null,
-      "source": null
+      "level": "中",
+      "score": 50,
+      "factors": [
+        "2025年12月に0.75%へ利上げ実施済み",
+        "2026年も緩やかな利上げ継続方針",
+        "円キャリー巻き戻しリスク（2024年8月の教訓）"
+      ],
+      "impact_on_stocks": "利上げ継続で金利敏感株に下押し、円高で輸出株にネガティブ",
+      "source": "日銀金融政策決定会合"
     },
     "us_policy": {
-      "level": null,
-      "score": null,
-      "factors": [],
-      "source": null
+      "level": "中",
+      "score": 40,
+      "factors": [
+        "トランプ政権の関税政策不透明",
+        "同盟国への防衛費増要求",
+        "半導体規制の動向"
+      ],
+      "source": "各種報道"
     }
   },
   "summary": {
-    "overall_risk_level": null,
-    "key_watchpoints": [],
-    "favorable_factors": []
+    "overall_risk_level": "中（注意）",
+    "key_watchpoints": [
+      "日銀の追加利上げタイミング",
+      "円キャリー巻き戻しの兆候",
+      "中国半導体規制の追加措置",
+      "米国新政権の通商政策"
+    ],
+    "favorable_factors": [
+      "AI/半導体需要は継続",
+      "防衛費増額で関連企業に恩恵",
+      "原発再稼働でエネルギーセクターにプラス",
+      "企業業績は総じて堅調"
+    ]
   }
 }
