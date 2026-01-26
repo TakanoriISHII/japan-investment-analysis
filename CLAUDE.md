@@ -356,6 +356,62 @@ Top30の選出は以下の4軸で評価（**100点満点**）：
 | `情報品質を確認` | 未検証情報、矛盾情報、陳腐化情報のアラートを表示 |
 | `非対称性を確認` | アクティブな非対称性と解消リスクを表示 |
 | `ドメインカバレッジ` | 6ドメインの企業カバレッジ状況を表示 |
+| `外部情報を統合` | data/intelligence/raw/配下の外部LLM出力を統合処理 |
+| `統合状態を確認` | 外部LLM出力の有無と統合状況を表示 |
+
+---
+
+## 外部LLM連携 ★情報収集の強化★
+
+複数のLLM（Gemini、GPT-4、Perplexity等）を活用して情報収集を強化する。
+
+### 4つの情報収集タイプ
+
+| # | タイプ | プロンプト | 対応評価軸 |
+|---|--------|-----------|-----------|
+| 1 | **企業発掘** | `01_company_discovery.md` | 独占力、シナジー |
+| 2 | **7カテゴリ広域情報** | `02_broad_intelligence.md` | シナジー、非対称性 |
+| 3 | **独占マップ情報** | `03_monopoly_info.md` | 独占力 |
+| 4 | **財務・経営評価** | `04_financial_management.md` | 資本効率 |
+
+### ワークフロー
+
+```
+1. prompts/external/配下のプロンプトを外部LLMにコピー
+   - まず 00_common_instructions.md（共通指示書）
+   - 次に タスク別プロンプト（01〜04）
+
+2. 外部LLMの出力をMarkdownファイルとして保存
+   data/intelligence/raw/
+   ├── company_discovery/gemini_YYYYMMDD.md
+   ├── broad_intelligence/gpt4_YYYYMMDD.md
+   └── ...
+
+3. Claudeで「外部情報を統合」コマンドを実行
+   - 品質チェック
+   - 重複排除・矛盾解決
+   - 4次元評価の統一
+   - 統合済みデータの生成
+
+4. 通常フロー（Step 0〜6）で統合済みデータを活用
+```
+
+### 統合処理のポイント
+
+- **重複排除**: 同一企業・情報を検出し、4次元評価の高い方を採用
+- **矛盾解決**: シェア情報等の矛盾は一次資料を優先、範囲として記録
+- **検証度昇格**: 複数LLMで同一情報→ multi_source に昇格
+- **品質アラート**: 4次元評価なし、ソースなしの情報は警告
+
+### 外部LLM出力の必須要件
+
+全ての情報に以下を含めること（含まれていない情報は使用不可）：
+
+1. **4次元評価**: 確度、検証度、非対称性、鮮度
+2. **ソース**: 情報源の名称、URL、日付
+3. **メタデータ**: LLM名、実行日、情報件数
+
+詳細は `prompts/external/00_common_instructions.md` を参照。
 
 ---
 
@@ -369,9 +425,16 @@ Top30の選出は以下の4軸で評価（**100点満点**）：
    - 前回実行日時、各コンポーネントの状態を確認
    - data/information_quality.jsonのアラートを確認
 
+1.5. 外部LLM情報の統合（任意）★情報収集の強化
+   - data/intelligence/raw/配下に外部LLM出力があるか確認
+   - あれば統合処理を実行（品質チェック、重複排除、矛盾解決）
+   - consolidated_*.jsonを生成
+   - なければスキップ
+
 2. 広域情報収集（Step 0）★情報起点のアプローチ
    - prompts/step0_collect_information.mdを読み込み
    - 7カテゴリ（国際情勢、市場シグナル、メガトレンド、ドメイン成長性、大型投資、見逃しスキャン、その他）
+   - **外部LLM統合データ（consolidated_intelligence_*.json）があれば活用**
    - 全ての情報に4次元評価を付与
    - data/intelligence/broad_intelligence_YYYYMMDD.jsonに保存
    - **情報から企業候補を発見**
@@ -380,6 +443,7 @@ Top30の選出は以下の4軸で評価（**100点満点**）：
 3. 企業発掘（Step 0.5）★候補プール50社の作成
    - prompts/step0_5_discover_opportunities.mdを読み込み
    - **Step 0で収集した情報を基に企業を発掘**
+   - **外部LLM統合データ（consolidated_companies_*.json）があれば候補に含める**
    - data/sources/配下のマスターファイルを参照
    - 6ドメインのカバレッジバランスを診断
    - 認証リスト法、サプライチェーン逆引き法、ボトルネック・ニュース法を実行
@@ -482,7 +546,14 @@ japan-investment-analysis/
 │   ├── step3_update_market_state.md
 │   ├── step4_analyze_market_risk.md
 │   ├── step5_analyze_top30.md
-│   └── step6_generate_report.md
+│   ├── step6_generate_report.md
+│   └── external/                       # ★外部LLM用プロンプト
+│       ├── 00_common_instructions.md   # 共通指示書
+│       ├── 01_company_discovery.md     # 企業発掘（50社）
+│       ├── 02_broad_intelligence.md    # 7カテゴリ広域情報
+│       ├── 03_monopoly_info.md         # 独占マップ情報
+│       ├── 04_financial_management.md  # 財務・経営評価
+│       └── 05_consolidation_guide.md   # 統合処理ガイド
 ├── templates/
 │   └── quadrant_chart_template.html
 ├── data/
@@ -494,8 +565,14 @@ japan-investment-analysis/
 │   │   ├── primary_sources.json
 │   │   ├── discovery_queries.json
 │   │   └── verification_protocols.json
-│   ├── intelligence/                   # ★広域情報（NEW）
-│   │   └── broad_intelligence_YYYYMMDD.json
+│   ├── intelligence/                   # ★広域情報
+│   │   ├── broad_intelligence_YYYYMMDD.json
+│   │   ├── consolidated_*.json         # 統合済みデータ
+│   │   └── raw/                        # 外部LLM出力（生データ）
+│   │       ├── company_discovery/
+│   │       ├── broad_intelligence/
+│   │       ├── monopoly_info/
+│   │       └── financial_management/
 │   ├── discovery/                      # 発掘結果
 │   │   └── discovery_result_YYYYMMDD.json
 │   ├── snapshots/
