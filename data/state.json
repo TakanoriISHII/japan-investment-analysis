@@ -1,0 +1,26 @@
+{
+  "last_execution": null,
+  "events": {
+    "last_collected": null,
+    "total_count": 0,
+    "last_event_id": null
+  },
+  "monopoly_map": {
+    "last_update": null,
+    "update_reason": null,
+    "pending_triggers": []
+  },
+  "market_state": {
+    "last_update": null
+  },
+  "analysis": {
+    "market_risk": {
+      "last_update": null,
+      "last_score": null
+    },
+    "top30": {
+      "last_update": null,
+      "top_conviction": null
+    }
+  }
+}

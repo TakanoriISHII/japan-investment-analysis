@@ -1,0 +1,23 @@
+{
+  "as_of": null,
+  "fx": {
+    "usdjpy": null,
+    "source": null
+  },
+  "indices": {
+    "nikkei225": null,
+    "nikkei225_per": null,
+    "nikkei225_pbr": null,
+    "topix": null
+  },
+  "sentiment": {
+    "foreign_investor_flow_weekly": null,
+    "margin_buying_balance": null,
+    "arbitrage_balance": null
+  },
+  "risks": {
+    "china_slowdown": null,
+    "taiwan_strait": null,
+    "boj_policy": null
+  }
+}
