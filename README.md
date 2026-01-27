@@ -40,6 +40,8 @@
 | ファイル | 内容 |
 |----------|------|
 | `latest/final_report.md` | 最終レポート（Top30、市場分析） |
+| `latest/executive_summary.md` | エグゼクティブサマリー（1ページ要約） |
+| `latest/quadrant_chart.html` | **4象限マトリックス可視化（インタラクティブ）** |
 | `data/analysis/top30.json` | Top30ランキング（4軸スコア付き） |
 | `data/analysis/market_risk.json` | 市場危険度スコア（100点満点） |
 
@@ -69,6 +71,32 @@
 ```
 
 情報が先、企業が後。**情報から企業を発見する**アプローチで、既知のバイアスを排除する。
+
+### マルチLLMアーキテクチャ
+
+複数のLLMから情報を収集し、Claudeが統合・分析する:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  外部LLM（情報収集係）                                   │
+│  - Claude, Gemini, GPT-4, Grok 等                       │
+│  - 2種類の情報を収集:                                    │
+│    1. company_info/: 企業・独占・財務情報               │
+│    2. broad_info/: 広域情報（市場・政策）               │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│  Claude（分析係）                                        │
+│  - 全LLMの出力を読み込み・統合                           │
+│  - 重複排除、矛盾解決、4次元評価                         │
+│  - 4軸評価、Top30選出、レポート生成                      │
+│  - HTML可視化（4象限マトリックス）                       │
+└─────────────────────────────────────────────────────────┘
+```
+
+**データ保存先**:
+- `data/intelligence/raw/company_info/[llm名]_cd.md`
+- `data/intelligence/raw/broad_info/[llm名]_mi.md`
 
 ### 「何を買うか」の前に「今買うべきか」
 
@@ -319,6 +347,8 @@ Step 5: Top30スコアリング（4軸評価・100点満点）
     └→ 監視リスト(31-50位)
     ↓
 Step 6: 最終レポート生成
+    ↓
+Step 7: HTML可視化生成 ← ★4象限マトリックス（確実性×アップサイド）
 ```
 
 ### 各Stepの詳細
@@ -333,7 +363,8 @@ Step 6: 最終レポート生成
 | **Step 3** | 動的データ取得 | `data/snapshots/market_state.json` |
 | **Step 4** | 市場危険度スコアリング | `data/analysis/market_risk.json` |
 | **Step 5** | 4軸評価でTop30選出 | `data/analysis/top30.json` |
-| **Step 6** | 最終レポート生成 | `reports/[日付]/`, `latest/` |
+| **Step 6** | 最終レポート生成 | `reports/[日付]/final_report.md` |
+| **Step 7** | HTML可視化生成 | `reports/[日付]/quadrant_chart.html`, `latest/` |
 
 ---
 
@@ -392,8 +423,18 @@ japan-investment-analysis/
 │   ├── events.json                     # イベントログ（4次元評価付き）
 │   ├── information_quality.json        # 情報品質監視
 │   ├── asymmetry_tracker.json          # 非対称性追跡
-│   ├── intelligence/                   # ★広域情報（7カテゴリ）
-│   │   └── broad_intelligence_YYYYMMDD.json
+│   ├── intelligence/                   # ★広域情報
+│   │   └── raw/                        # 外部LLM出力（生データ）
+│   │       ├── company_info/           # 企業・独占・財務情報
+│   │       │   ├── claude_cd.md
+│   │       │   ├── gemini_cd.md
+│   │       │   ├── gpt_cd.md
+│   │       │   └── grok_cd.md
+│   │       └── broad_info/             # 広域情報（市場・政策）
+│   │           ├── claude_mi.md
+│   │           ├── gemini_mi.md
+│   │           ├── chatgpt_mi.md
+│   │           └── grok_mi.md
 │   ├── discovery/                      # 発掘結果
 │   ├── sources/                        # 情報源マスター
 │   ├── snapshots/
@@ -402,14 +443,20 @@ japan-investment-analysis/
 │   └── analysis/
 │       ├── market_risk.json            # 市場危険度
 │       └── top30.json                  # Top30ランキング
-├── prompts/                            # Step別プロンプト
-│   ├── step0_collect_information.md    # ★広域情報収集（情報が先）
-│   ├── step0_5_discover_opportunities.md # 企業発掘（情報から発見）
-│   ├── step1_collect_events.md
-│   └── ...
+├── prompts/
+│   ├── external/                       # ★外部LLM用プロンプト
+│   │   ├── prompt_company_info.md      # 企業・独占・財務情報収集用
+│   │   └── prompt_broad_info.md        # 広域情報収集用
+│   └── ...                             # Step別プロンプト
 ├── reports/                            # 日付別レポート
 │   └── [YYYY-MM-DD]/
+│       ├── final_report.md
+│       ├── executive_summary.md
+│       └── quadrant_chart.html         # ★4象限マトリックス可視化
 └── latest/                             # 最新レポート
+    ├── final_report.md
+    ├── executive_summary.md
+    └── quadrant_chart.html
 ```
 
 ---

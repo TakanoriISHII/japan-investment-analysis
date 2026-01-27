@@ -518,20 +518,26 @@ Phase 4: 分析（従来のStep 1-6）
    - **50社をランキング → Top30選出 + 監視リスト(31-50位)**
    - data/analysis/top30.jsonを更新
 
-4-8. HTML可視化生成
-   - reports/[TODAY]/quadrant_chart.htmlに出力
-
-4-9. 最終レポート生成
+4-8. 最終レポート生成
    - 変化点を明示
    - 情報品質サマリーを含める
-   - reports/[TODAY]/に出力
+   - reports/[TODAY]/final_report.md
+   - reports/[TODAY]/executive_summary.md
+
+4-9. HTML可視化生成 ★必須★
+   - Top30を4象限マトリックスで可視化
+   - 確実性(横軸) × アップサイド(縦軸)
+   - ホバーで各銘柄の詳細表示
+   - ドメイン別フィルター機能
+   - reports/[TODAY]/quadrant_chart.html に出力
+   - latest/quadrant_chart.html にもコピー
 
 ========================================
 Phase 5: 完了処理
 ========================================
 - state.json更新
-- latest/フォルダ更新
-- git push
+- latest/フォルダ更新（final_report.md, executive_summary.md, quadrant_chart.html）
+- git commit & push
 ```
 
 ### ファネル構造（全体像）
