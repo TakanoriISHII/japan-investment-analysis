@@ -14,7 +14,7 @@
 data/sources/primary_sources.json      # 情報源マスター（どこを見るべきか）
 data/sources/discovery_queries.json    # 検索クエリ体系
 data/sources/verification_protocols.json # 4次元評価の検証プロトコル
-data/discovery/discovery_result_*.json # Step 0の発掘結果（新規企業を含める）
+data/discovery/discovery_result_*.json # Step 0.5の発掘結果（新規企業を含める）
 ```
 
 ---
@@ -140,9 +140,9 @@ data/discovery/discovery_result_*.json # Step 0の発掘結果（新規企業を
 1. `data/state.json`から前回収集日を取得
 2. `data/events.json`から最後のイベントIDを取得
 3. `data/information_quality.json`の未検証アラートを確認（追加検証の機会）
-4. **Step 0の発掘結果を確認** — 新規発掘企業も収集対象に含める
+4. **Step 0.5の発掘結果を確認** — 新規発掘企業も収集対象に含める
 
-### Step 0発掘企業の統合
+### Step 0.5発掘企業の統合
 
 ```
 data/discovery/discovery_result_YYYYMMDD.json を読み込み、

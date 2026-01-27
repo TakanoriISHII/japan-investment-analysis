@@ -40,6 +40,8 @@ japan-investment-analysis/
 ├── README.md                    ← ルート
 ├── SETUP.md                     ← ルート
 ├── prompts/                     ← フォルダ作成
+│   ├── step0_collect_information.md     ← 広域情報収集（7カテゴリ）★情報が先
+│   ├── step0_5_discover_opportunities.md ← 企業発掘（情報から発見）
 │   ├── step1_collect_events.md
 │   ├── step1_5_quality_check.md
 │   ├── step2_update_monopoly_map.md
@@ -54,6 +56,14 @@ japan-investment-analysis/
 │   ├── events.json
 │   ├── information_quality.json
 │   ├── asymmetry_tracker.json
+│   ├── sources/                 ← サブフォルダ作成（情報源マスター）
+│   │   ├── primary_sources.json
+│   │   ├── discovery_queries.json
+│   │   └── verification_protocols.json
+│   ├── intelligence/            ← サブフォルダ作成（広域情報）
+│   │   └── broad_intelligence_YYYYMMDD.json
+│   ├── discovery/               ← サブフォルダ作成（発掘結果）
+│   │   └── discovery_result_YYYYMMDD.json
 │   ├── snapshots/               ← サブフォルダ作成
 │   │   ├── monopoly_map.json
 │   │   └── market_state.json
@@ -103,6 +113,8 @@ CLAUDE.mdが自動的に読み込まれます。
 | CLAUDE.md | `/` (ルート) |
 | README.md | `/` (ルート) |
 | SETUP.md | `/` (ルート) |
+| step0_collect_information.md | `/prompts/` |
+| step0_5_discover_opportunities.md | `/prompts/` |
 | step1_collect_events.md | `/prompts/` |
 | step1_5_quality_check.md | `/prompts/` |
 | step2_update_monopoly_map.md | `/prompts/` |
@@ -115,6 +127,11 @@ CLAUDE.mdが自動的に読み込まれます。
 | events.json | `/data/` |
 | information_quality.json | `/data/` |
 | asymmetry_tracker.json | `/data/` |
+| primary_sources.json | `/data/sources/` |
+| discovery_queries.json | `/data/sources/` |
+| verification_protocols.json | `/data/sources/` |
+| broad_intelligence_*.json | `/data/intelligence/` |
+| discovery_result_*.json | `/data/discovery/` |
 | monopoly_map.json | `/data/snapshots/` |
 | market_state.json | `/data/snapshots/` |
 | market_risk.json | `/data/analysis/` |

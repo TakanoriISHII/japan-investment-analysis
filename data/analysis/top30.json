@@ -3,10 +3,30 @@
     "date": "2026-01-26",
     "evaluation_system": "4軸評価（100点満点）",
     "axes": {
-      "monopoly": {"max": 30, "description": "グローバル独占力"},
-      "capital_efficiency": {"max": 20, "description": "資本効率・財務健全性"},
-      "synergy": {"max": 25, "description": "領域横断シナジー"},
-      "asymmetry": {"max": 25, "description": "情報の非対称性"}
+      "monopoly": {
+        "max": 30,
+        "description": "独占力（5-10年の見通しを含む）",
+        "breakdown": {"current_share_points": 10, "sustainability_5_10yr_points": 10, "entry_barrier_points": 10},
+        "formula": "現在シェア(10点) + 5-10年持続性(10点) + 参入障壁(10点)"
+      },
+      "capital_efficiency": {
+        "max": 20,
+        "description": "資本効率（事実ベースのみ、推定値禁止）",
+        "breakdown": {"roe_points": 8, "debt_ratio_points": 6, "fcf_points": 6},
+        "formula": "ROE(8点) + 負債比率(6点) + FCF(6点)"
+      },
+      "synergy": {
+        "max": 25,
+        "description": "シナジー（ドメイン横断の不可欠性）",
+        "breakdown": {"cross_domain_essentiality_points": 15, "convergence_value_points": 10},
+        "formula": "ドメイン横断不可欠性(15点) + 収斂価値増幅(10点)"
+      },
+      "asymmetry": {
+        "max": 25,
+        "description": "非対称性（情報拡散時のアップサイド）",
+        "breakdown": {"info_gap_existence_points": 10, "upside_on_recognition_points": 15},
+        "formula": "情報格差存在(10点) + 情報拡散時アップサイド(15点)"
+      }
     },
     "market_risk_score": 52,
     "funnel_input": "候補プール50社",
