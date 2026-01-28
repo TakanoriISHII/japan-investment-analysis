@@ -176,5 +176,309 @@
       "competitors": ["TE Connectivity", "Molex"],
       "sources": ["APH IR", "Industry reports"]
     }
+  },
+  "japan_companies": {
+    "_description": "日本上場企業（日本市場特化版の主対象）",
+    "7011.T": {
+      "name": "三菱重工業",
+      "domain": ["防衛", "エネルギー", "宇宙"],
+      "moat": {
+        "type": "国内独占的ポジション",
+        "market_share": "防衛装備品国内シェア首位（約25%）",
+        "description": "次期戦闘機（GCAP）主契約者、イージス艦、原子力プラント、H3ロケット。国内唯一の総合防衛プライム。"
+      },
+      "certifications": ["防衛省認定プライムコントラクター", "原子力規制委員会認可", "JAXA認定"],
+      "barriers_to_entry": ["防衛省との70年+の取引関係", "原子力・宇宙の認証取得困難", "技術秘密保全適格性"],
+      "competitors": ["川崎重工（一部）", "IHI（エンジン）"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 1.8,
+        "equity_ratio": 35
+      },
+      "sources": ["有価証券報告書", "防衛省契約情報"]
+    },
+    "8035.T": {
+      "name": "東京エレクトロン",
+      "domain": ["AI", "ロボティクス"],
+      "moat": {
+        "type": "半導体製造装置グローバルリーダー",
+        "market_share": "コータ/デベロッパ世界シェア90%+、エッチング装置30%+",
+        "description": "EUV対応先端工程で不可欠。TSMCの主要サプライヤー。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["20年+のプロセスノウハウ", "顧客との共同開発関係", "クリーンルーム製造技術"],
+      "competitors": ["ASML（異なる装置）", "Lam Research", "Applied Materials"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0,
+        "equity_ratio": 75,
+        "note": "実質無借金経営"
+      },
+      "sources": ["有価証券報告書", "Gartner", "SEMI"]
+    },
+    "6954.T": {
+      "name": "ファナック",
+      "domain": ["ロボティクス", "AI"],
+      "moat": {
+        "type": "CNC/ロボット世界首位",
+        "market_share": "CNC装置世界シェア50%+、産業用ロボット世界4位",
+        "description": "工作機械の頭脳を独占。自動化の基盤技術。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["40年+のソフトウェア蓄積", "サービスネットワーク", "信頼性実績"],
+      "competitors": ["Siemens（CNC）", "ABB（ロボット）", "安川電機（ロボット）"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0,
+        "equity_ratio": 87,
+        "note": "無借金経営、キャッシュリッチ"
+      },
+      "sources": ["有価証券報告書", "Industry reports"]
+    },
+    "6861.T": {
+      "name": "キーエンス",
+      "domain": ["ロボティクス", "AI"],
+      "moat": {
+        "type": "FAセンサー国内独占",
+        "market_share": "FAセンサー国内シェア首位、高利益率",
+        "description": "直販モデルで営業利益率50%+。代替困難な高精度センサー。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["直販モデル", "顧客密着提案力", "製品開発スピード"],
+      "competitors": ["オムロン", "パナソニック（一部）"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0,
+        "equity_ratio": 95,
+        "operating_margin": 55,
+        "note": "無借金、営業利益率55%"
+      },
+      "sources": ["有価証券報告書"]
+    },
+    "6506.T": {
+      "name": "安川電機",
+      "domain": ["ロボティクス"],
+      "moat": {
+        "type": "ACサーボ世界首位",
+        "market_share": "ACサーボモータ世界シェア約20%、産業用ロボット世界4位",
+        "description": "ロボット・サーボ・インバータの三本柱。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["モーション制御技術", "グローバルサービス網"],
+      "competitors": ["ファナック", "ABB", "KUKA"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0.5,
+        "equity_ratio": 55
+      },
+      "sources": ["有価証券報告書"]
+    },
+    "6857.T": {
+      "name": "アドバンテスト",
+      "domain": ["AI"],
+      "moat": {
+        "type": "半導体テスタ世界首位",
+        "market_share": "メモリテスタ世界シェア50%+、SoCテスタ30%+",
+        "description": "HBM/AI半導体テストで不可欠。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["テスト技術の複雑性", "顧客認定プロセス"],
+      "competitors": ["Teradyne"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0,
+        "equity_ratio": 70,
+        "note": "実質無借金"
+      },
+      "sources": ["有価証券報告書", "SEMI"]
+    },
+    "6920.T": {
+      "name": "レーザーテック",
+      "domain": ["AI"],
+      "moat": {
+        "type": "EUVマスク検査装置唯一の供給者",
+        "market_share": "EUVマスク欠陥検査装置世界シェア100%",
+        "description": "EUV量産に不可欠な唯一の検査装置メーカー。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["光学技術の独自性", "TSMCとの共同開発", "代替なし"],
+      "competitors": ["なし（EUVマスク検査では唯一）"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0,
+        "equity_ratio": 75,
+        "operating_margin": 45,
+        "note": "無借金、高利益率"
+      },
+      "sources": ["有価証券報告書", "SEMI"]
+    },
+    "6146.T": {
+      "name": "ディスコ",
+      "domain": ["AI"],
+      "moat": {
+        "type": "ダイシング装置世界独占",
+        "market_share": "ダイシングソー世界シェア80%+、グラインダ70%+",
+        "description": "半導体ウェハの切断・研削で圧倒的シェア。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["精密加工技術", "消耗品ビジネスモデル"],
+      "competitors": ["TOKYO SEIMITSU（一部）"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0,
+        "equity_ratio": 85,
+        "operating_margin": 38,
+        "note": "無借金"
+      },
+      "sources": ["有価証券報告書"]
+    },
+    "6758.T": {
+      "name": "ソニーグループ",
+      "domain": ["AI", "エンターテインメント"],
+      "moat": {
+        "type": "CMOSイメージセンサ世界首位",
+        "market_share": "CMOSイメージセンサ世界シェア50%+",
+        "description": "スマートフォン・車載カメラ向けセンサーで独占的地位。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["積層技術", "量産能力", "顧客関係"],
+      "competitors": ["Samsung", "OmniVision"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 1.5,
+        "equity_ratio": 40
+      },
+      "sources": ["有価証券報告書"]
+    },
+    "7012.T": {
+      "name": "川崎重工業",
+      "domain": ["防衛", "ロボティクス", "エネルギー"],
+      "moat": {
+        "type": "防衛・航空・水素の多角化",
+        "market_share": "潜水艦建造2社独占（三菱重工と）、航空機体国内首位級",
+        "description": "潜水艦、P-1哨戒機、水素液化プラント。"
+      },
+      "certifications": ["防衛省認定", "原子力規制委員会認可"],
+      "barriers_to_entry": ["潜水艦建造技術", "航空機体製造認定"],
+      "competitors": ["三菱重工"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 2.5,
+        "equity_ratio": 30
+      },
+      "sources": ["有価証券報告書", "防衛省"]
+    },
+    "7013.T": {
+      "name": "IHI",
+      "domain": ["防衛", "エネルギー", "宇宙"],
+      "moat": {
+        "type": "航空エンジン国内独占",
+        "market_share": "航空機エンジン（民間）国内唯一の量産メーカー",
+        "description": "F110/F135エンジンライセンス生産。GE/P&Wとの提携。"
+      },
+      "certifications": ["防衛省認定", "JAXA認定", "原子力規制委員会認可"],
+      "barriers_to_entry": ["航空エンジン技術", "ライセンス生産権"],
+      "competitors": ["なし（国内航空エンジン量産では唯一）"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 2.0,
+        "equity_ratio": 28
+      },
+      "sources": ["有価証券報告書", "防衛省"]
+    },
+    "6501.T": {
+      "name": "日立製作所",
+      "domain": ["エネルギー", "AI", "ロボティクス"],
+      "moat": {
+        "type": "原子力・送変電インフラ",
+        "market_share": "国内HVDC首位、原子力プラント2強（GEと）",
+        "description": "Lumada（DX）、送変電、原子力。グリッド近代化の中核。"
+      },
+      "certifications": ["原子力規制委員会認可", "電力会社認定"],
+      "barriers_to_entry": ["原子力技術（GE連携）", "社会インフラ実績"],
+      "competitors": ["三菱電機", "東芝"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 1.5,
+        "equity_ratio": 42
+      },
+      "sources": ["有価証券報告書"]
+    },
+    "6503.T": {
+      "name": "三菱電機",
+      "domain": ["防衛", "ロボティクス", "エネルギー"],
+      "moat": {
+        "type": "防衛電子機器・FA国内首位",
+        "market_share": "防衛電子機器国内シェア首位、FA機器国内2位",
+        "description": "レーダー、誘導装置、パワー半導体。"
+      },
+      "certifications": ["防衛省認定", "特定秘密取扱適格性"],
+      "barriers_to_entry": ["防衛電子技術", "認定プロセス"],
+      "competitors": ["NEC（一部）", "富士通（一部）"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0.5,
+        "equity_ratio": 50
+      },
+      "sources": ["有価証券報告書", "防衛省"]
+    },
+    "6701.T": {
+      "name": "NEC",
+      "domain": ["サイバー", "防衛", "AI"],
+      "moat": {
+        "type": "サイバーセキュリティ・防衛通信",
+        "market_share": "政府向けサイバーセキュリティ国内首位級",
+        "description": "防衛通信システム、顔認証、海底ケーブル。"
+      },
+      "certifications": ["防衛省認定", "政府情報システム認定"],
+      "barriers_to_entry": ["政府調達実績", "秘密保全適格性"],
+      "competitors": ["富士通", "日立"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 1.0,
+        "equity_ratio": 40
+      },
+      "sources": ["有価証券報告書"]
+    },
+    "6273.T": {
+      "name": "SMC",
+      "domain": ["ロボティクス"],
+      "moat": {
+        "type": "空圧機器世界首位",
+        "market_share": "空圧機器世界シェア40%",
+        "description": "製造ラインの血管。自動化に不可欠。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["製品ラインナップ80万種", "グローバルネットワーク"],
+      "competitors": ["Festo", "Parker Hannifin"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0,
+        "equity_ratio": 90,
+        "operating_margin": 23,
+        "note": "無借金、キャッシュリッチ"
+      },
+      "sources": ["有価証券報告書"]
+    },
+    "4063.T": {
+      "name": "信越化学工業",
+      "domain": ["AI", "エネルギー"],
+      "moat": {
+        "type": "シリコンウェハ世界首位",
+        "market_share": "シリコンウェハ世界シェア30%+、塩ビ世界首位",
+        "description": "半導体の基板材料で独占的地位。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["純度技術", "量産規模", "顧客認定"],
+      "competitors": ["SUMCO", "GlobalWafers"],
+      "financial_health": {
+        "fcf_positive": true,
+        "debt_ebitda": 0,
+        "equity_ratio": 85,
+        "operating_margin": 35,
+        "note": "無借金"
+      },
+      "sources": ["有価証券報告書"]
+    }
   }
 }

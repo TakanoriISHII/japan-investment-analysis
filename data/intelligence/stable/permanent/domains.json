@@ -1,40 +1,266 @@
 {
   "metadata": {
-    "description": "ドメイン基礎情報（技術基盤、規制環境、サプライチェーン）- 年単位で変化",
-    "last_updated": null,
-    "next_review": null,
-    "schema_version": "1.0"
+    "description": "ドメイン基礎情報（技術基盤、規制環境、サプライチェーン）- 日本市場特化版",
+    "last_updated": "2026-01-28",
+    "next_review": "2027-01-28",
+    "schema_version": "1.1"
   },
   "domains": {
     "AI": {
-      "regulatory_environment": null,
-      "technology_base": null,
-      "supply_chain_structure": null
+      "regulatory_environment": {
+        "key_regulations": [
+          "AI事業者ガイドライン（経産省/総務省）",
+          "生成AI開発・利用に関する考え方（内閣府）",
+          "次世代AI基盤整備（NEDO）"
+        ],
+        "trend": "strengthening",
+        "policy_support": {
+          "ai_strategy": "AI戦略2022（第5期）",
+          "compute_infrastructure": "AI計算基盤整備事業（2024～）",
+          "key_initiatives": ["AIデータセンター国内誘致", "国産LLM開発支援"]
+        },
+        "source": "経産省/総務省/内閣府"
+      },
+      "technology_base": {
+        "key_technologies": ["半導体製造装置", "HBM検査装置", "AIチップ設計"],
+        "japan_strengths": [
+          "半導体製造装置（東京エレクトロン、アドバンテスト、レーザーテック）",
+          "検査・計測装置（アドバンテスト、ディスコ）",
+          "素材（信越化学、JSR、TOK）"
+        ],
+        "maturity": "growth",
+        "source": "業界分析"
+      },
+      "supply_chain_structure": {
+        "critical_nodes": [
+          "TSMC熊本工場（ロジック）",
+          "ラピダス（先端2nm）",
+          "キオクシア（NAND）"
+        ],
+        "japan_position": "装置・素材で世界シェア上位",
+        "vulnerabilities": ["先端ロジック製造は海外依存", "HBM製造は韓国依存"],
+        "opportunities": ["半導体国内回帰", "後工程の重要性増大"],
+        "source": "経産省半導体戦略"
+      }
     },
     "エネルギー": {
-      "regulatory_environment": null,
-      "technology_base": null,
-      "supply_chain_structure": null
+      "regulatory_environment": {
+        "key_regulations": [
+          "GX推進法（2023年）",
+          "GX脱炭素電源法（2023年）",
+          "次世代革新炉開発ロードマップ"
+        ],
+        "trend": "strengthening",
+        "policy_support": {
+          "gx_transition_bonds": "GX経済移行債（20兆円規模）",
+          "nuclear_restart": "原発再稼働推進、運転期間延長",
+          "key_initiatives": ["高温ガス炉開発", "革新軽水炉", "核融合戦略"]
+        },
+        "source": "経産省/資源エネルギー庁"
+      },
+      "technology_base": {
+        "key_technologies": ["高温ガス炉", "革新軽水炉", "蓄電システム"],
+        "japan_strengths": [
+          "原子力技術（三菱重工、日立GE、東芝）",
+          "変圧器・重電（日立、三菱電機）",
+          "蓄電システム（パナソニック、GSユアサ）"
+        ],
+        "maturity": "mature_with_innovation",
+        "source": "業界分析"
+      },
+      "supply_chain_structure": {
+        "critical_nodes": [
+          "三菱重工（原子力プラント）",
+          "日立製作所（変圧器・グリッド）",
+          "JERA（LNG調達）"
+        ],
+        "japan_position": "原子力技術・重電で世界トップクラス",
+        "vulnerabilities": ["LNG輸入依存", "再エネ設備の海外依存"],
+        "opportunities": ["アジア原発輸出", "水素サプライチェーン構築"],
+        "source": "資源エネルギー庁"
+      }
     },
     "防衛": {
-      "regulatory_environment": null,
-      "technology_base": null,
-      "supply_chain_structure": null
+      "regulatory_environment": {
+        "key_regulations": [
+          "防衛装備移転三原則（改定）",
+          "国家安全保障戦略（2022年改定）",
+          "防衛力整備計画（2023～2027）"
+        ],
+        "trend": "dramatic_expansion",
+        "policy_support": {
+          "budget_increase": "防衛費GDP比2%（43兆円/5年）",
+          "key_areas": ["スタンドオフ防衛能力", "統合防空ミサイル防衛", "無人アセット"],
+          "export_policy": "殺傷能力のある武器の輸出条件緩和"
+        },
+        "source": "防衛省/内閣府"
+      },
+      "technology_base": {
+        "key_technologies": ["長射程ミサイル", "無人機", "艦船", "航空機"],
+        "japan_strengths": [
+          "艦船（三菱重工、川崎重工）",
+          "航空機（三菱重工、IHI、川崎重工）",
+          "ミサイル（三菱重工、川崎重工）",
+          "防衛エレクトロニクス（三菱電機、NEC）"
+        ],
+        "maturity": "growth",
+        "source": "防衛白書"
+      },
+      "supply_chain_structure": {
+        "critical_nodes": [
+          "三菱重工（主契約者）",
+          "川崎重工（潜水艦・航空機）",
+          "IHI（航空エンジン）"
+        ],
+        "japan_position": "国内防衛産業基盤の強化中",
+        "vulnerabilities": ["部品の海外依存", "量産能力不足"],
+        "opportunities": ["装備品輸出解禁", "日米共同開発", "GCAP（次期戦闘機）"],
+        "source": "防衛装備庁"
+      }
     },
     "ロボティクス": {
-      "regulatory_environment": null,
-      "technology_base": null,
-      "supply_chain_structure": null
+      "regulatory_environment": {
+        "key_regulations": [
+          "ロボット新戦略（経産省）",
+          "物流革新に向けた政策パッケージ",
+          "介護ロボット導入支援事業"
+        ],
+        "trend": "strengthening",
+        "policy_support": {
+          "labor_shortage": "人手不足対策としてのロボット導入促進",
+          "key_areas": ["製造業自動化", "物流自動化", "介護ロボット"],
+          "subsidies": "ものづくり補助金、IT導入補助金"
+        },
+        "source": "経産省"
+      },
+      "technology_base": {
+        "key_technologies": ["産業用ロボット", "サーボモーター", "減速機", "センサー"],
+        "japan_strengths": [
+          "産業用ロボット（ファナック、安川電機、川崎重工）",
+          "精密減速機（ハーモニックドライブ、ナブテスコ）",
+          "サーボモーター（安川電機、三菱電機）",
+          "空気圧機器（SMC）"
+        ],
+        "maturity": "mature_dominant",
+        "global_share": "日本企業が世界シェア50%超",
+        "source": "IFR統計"
+      },
+      "supply_chain_structure": {
+        "critical_nodes": [
+          "ファナック（産業用ロボット世界首位）",
+          "安川電機（サーボ・ロボット）",
+          "SMC（空気圧機器世界首位）"
+        ],
+        "japan_position": "産業用ロボットで圧倒的世界シェア",
+        "vulnerabilities": ["中国市場依存", "ヒューマノイドは米国勢が先行"],
+        "opportunities": ["協働ロボット市場拡大", "サービスロボット"],
+        "source": "日本ロボット工業会"
+      }
     },
     "宇宙": {
-      "regulatory_environment": null,
-      "technology_base": null,
-      "supply_chain_structure": null
+      "regulatory_environment": {
+        "key_regulations": [
+          "宇宙基本法",
+          "宇宙資源法（2021年）",
+          "宇宙安全保障構想（2023年）"
+        ],
+        "trend": "strengthening",
+        "policy_support": {
+          "budget": "宇宙関連予算増額（約5000億円/年）",
+          "key_programs": ["H3ロケット", "月極域探査（LUPEX）", "準天頂衛星"],
+          "security": "宇宙状況監視（SSA）、早期警戒衛星"
+        },
+        "source": "内閣府宇宙政策委員会"
+      },
+      "technology_base": {
+        "key_technologies": ["ロケット", "衛星", "深宇宙探査", "宇宙ステーション"],
+        "japan_strengths": [
+          "ロケット（三菱重工H3、IHIイプシロン）",
+          "衛星（三菱電機、NEC）",
+          "深宇宙探査（JAXA、三菱重工）"
+        ],
+        "maturity": "growth",
+        "source": "JAXA"
+      },
+      "supply_chain_structure": {
+        "critical_nodes": [
+          "三菱重工（H3ロケット主契約者）",
+          "IHI（ロケットエンジン）",
+          "三菱電機（衛星）"
+        ],
+        "japan_position": "独自の宇宙アクセス能力保有",
+        "vulnerabilities": ["商業打上げ競争力（SpaceX対比）", "衛星コンステレーション遅れ"],
+        "opportunities": ["月面探査", "アルテミス計画参画", "安全保障宇宙"],
+        "source": "宇宙基本計画"
+      }
     },
     "サイバー": {
-      "regulatory_environment": null,
-      "technology_base": null,
-      "supply_chain_structure": null
+      "regulatory_environment": {
+        "key_regulations": [
+          "サイバーセキュリティ基本法",
+          "経済安全保障推進法（2022年）",
+          "重要インフラ防護"
+        ],
+        "trend": "strengthening",
+        "policy_support": {
+          "active_defense": "能動的サイバー防御の法整備検討",
+          "key_areas": ["重要インフラ防護", "サプライチェーンセキュリティ"],
+          "organizations": ["NISC", "サイバーセキュリティ統括組織新設検討"]
+        },
+        "source": "内閣サイバーセキュリティセンター"
+      },
+      "technology_base": {
+        "key_technologies": ["暗号化", "ネットワーク監視", "脅威インテリジェンス"],
+        "japan_strengths": [
+          "通信機器（NEC、富士通）",
+          "セキュリティサービス（NRI、SCSK）",
+          "量子暗号（東芝、NEC）"
+        ],
+        "maturity": "growth",
+        "weakness": "セキュリティ専門人材不足",
+        "source": "業界分析"
+      },
+      "supply_chain_structure": {
+        "critical_nodes": [
+          "NEC（通信・セキュリティ）",
+          "富士通（ITインフラ）",
+          "東芝（量子暗号）"
+        ],
+        "japan_position": "量子暗号で先行、汎用セキュリティは海外依存",
+        "vulnerabilities": ["海外セキュリティベンダー依存", "人材不足"],
+        "opportunities": ["経済安保関連需要", "量子暗号通信"],
+        "source": "経産省/総務省"
+      }
     }
+  },
+  "cross_domain_synergies": {
+    "description": "ドメイン間の相乗効果（日本企業の強み）",
+    "key_convergences": [
+      {
+        "domains": ["AI", "ロボティクス"],
+        "synergy": "AIによる自律制御ロボット",
+        "japan_leaders": ["ファナック", "安川電機", "キーエンス"]
+      },
+      {
+        "domains": ["防衛", "宇宙"],
+        "synergy": "宇宙安全保障（早期警戒、ISR）",
+        "japan_leaders": ["三菱重工", "三菱電機", "NEC"]
+      },
+      {
+        "domains": ["エネルギー", "AI"],
+        "synergy": "データセンター電力需要対応",
+        "japan_leaders": ["日立製作所", "三菱電機", "東芝"]
+      },
+      {
+        "domains": ["防衛", "ロボティクス"],
+        "synergy": "無人アセット（ドローン、UUV）",
+        "japan_leaders": ["三菱重工", "川崎重工", "IHI"]
+      },
+      {
+        "domains": ["AI", "サイバー"],
+        "synergy": "AIセキュリティ、脅威検知",
+        "japan_leaders": ["NEC", "富士通", "東芝"]
+      }
+    ]
   }
 }
