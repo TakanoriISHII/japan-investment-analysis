@@ -1,4 +1,54 @@
 {
+  "japan_government": {
+    "_description": "日本の一次情報源（日本市場特化版で最優先）",
+    "disclosure": {
+      "edinet": "https://disclosure.edinet-fsa.go.jp/",
+      "tdnet": "https://www.release.tdnet.info/",
+      "jpx_timely": "https://www.jpx.co.jp/listing/disclosure/",
+      "kanpo": "https://kanpou.npb.go.jp/"
+    },
+    "regulatory": {
+      "fsa": "https://www.fsa.go.jp/",
+      "nra": "https://www.nra.go.jp/",
+      "meti": "https://www.meti.go.jp/",
+      "mod": "https://www.mod.go.jp/",
+      "boj": "https://www.boj.or.jp/",
+      "mof": "https://www.mof.go.jp/",
+      "cao": "https://www.cao.go.jp/"
+    },
+    "procurement": {
+      "mod_procurement": "https://www.mod.go.jp/atla/souhon/supply/",
+      "atla": "https://www.mod.go.jp/atla/",
+      "gov_procurement": "https://www.chotatujoho.go.jp/"
+    },
+    "statistics": {
+      "stat_go": "https://www.stat.go.jp/",
+      "esri": "https://www.esri.cao.go.jp/",
+      "boj_stat": "https://www.boj.or.jp/statistics/"
+    },
+    "industry_policy": {
+      "meti_gx": "https://www.meti.go.jp/policy/energy_environment/global_warming/",
+      "meti_semiconductor": "https://www.meti.go.jp/policy/mono_info_service/joho/",
+      "meti_gnt": "https://www.meti.go.jp/policy/mono_info_service/mono/gnt100/"
+    }
+  },
+  "japan_trade_media": {
+    "_description": "日本の主要経済メディア",
+    "nikkei": "https://www.nikkei.com/",
+    "toyo_keizai": "https://toyokeizai.net/",
+    "diamond": "https://diamond.jp/",
+    "shikiho": "https://shikiho.toyokeizai.net/",
+    "kabutan": "https://kabutan.jp/",
+    "minkabu": "https://minkabu.jp/"
+  },
+  "japan_research": {
+    "_description": "日本のシンクタンク・調査機関",
+    "nri": "https://www.nri.com/jp/",
+    "mri": "https://www.mri.co.jp/",
+    "jri": "https://www.jri.co.jp/",
+    "dir": "https://www.dir.co.jp/",
+    "smdam": "https://www.smd-am.co.jp/"
+  },
   "government": {
     "defense": {
       "dod_main": "https://www.defense.gov/",
