@@ -1,0 +1,230 @@
+{
+  "metadata": {
+    "description": "統合広域情報（全LLM出力 + stable + reinforcement をマージ）",
+    "created": "2026-01-28T18:00:00Z",
+    "last_updated": "2026-01-28T19:00:00Z",
+    "phase": "フェーズ5: 統合・確度整理",
+    "sources": {
+      "raw_claude": "data/intelligence/raw/broad_info/claude.md",
+      "raw_grok": "data/intelligence/raw/broad_info/grok.md",
+      "raw_gemini": "data/intelligence/raw/broad_info/gemini.md",
+      "reinforcement": "reinforcement/results/claude_auto/2026-01-28.md"
+    },
+    "merge_priority": "1.一次情報源確認済み > 2.3LLM一致 > 3.reinforcement検証済み"
+  },
+  "categories": {
+    "A_geopolitics": [
+      {
+        "topic": "Taiwan-China",
+        "freshness": "REALTIME",
+        "items": [
+          {"item": "サイバー攻撃2倍増（日平均240万件）", "confidence": 85},
+          {"item": "主要ターゲット: 政府機関、通信、半導体", "confidence": 85},
+          {"item": "Trump-Xi首脳会談で短期リスク低下", "confidence": 80},
+          {"item": "封鎖シナリオ損失: $2.7T", "confidence": 75}
+        ],
+        "tension_level": "medium",
+        "sources": ["CSIS", "複数シンクタンク"]
+      },
+      {
+        "topic": "US-China Relations",
+        "freshness": "REALTIME",
+        "items": [
+          {"item": "関税: 欧州同盟国への脅威", "confidence": 80},
+          {"item": "首脳会談: 緊張緩和シグナル", "confidence": 80},
+          {"item": "半導体規制: 継続強化", "confidence": 90}
+        ],
+        "sources": ["複数報道"]
+      }
+    ],
+    "B_market_risk": [
+      {
+        "tier": 1,
+        "category": "政策転換リスク",
+        "score": 12,
+        "max_score": 20,
+        "freshness": "REALTIME",
+        "items": [
+          {"item": "FF金利: 3.5-3.75%", "confidence": 95, "source": "Federal Reserve"},
+          {"item": "FOMC 1/28: 据え置き予想", "confidence": 90},
+          {"item": "Powell後任人事: 今週発表予想", "confidence": 75},
+          {"item": "Powell任期: 2026年5月満了", "confidence": 100}
+        ]
+      },
+      {
+        "tier": 1,
+        "category": "バリュエーション過熱",
+        "score": 15,
+        "max_score": 15,
+        "freshness": "REALTIME",
+        "items": [
+          {"item": "CAPE: 41.03（長期平均17.3の135%プレミアム）", "confidence": 95, "source": "multpl.com"},
+          {"item": "Forward P/E: 22x（2021年ピーク同等）", "confidence": 90},
+          {"item": "S&P 500: ~6,950 (YTD +1.4%)", "confidence": 95}
+        ]
+      },
+      {
+        "tier": 2,
+        "category": "市場集中",
+        "score": 10,
+        "max_score": 12,
+        "freshness": "QUARTERLY",
+        "items": [
+          {"item": "Mag7比率: 35%", "confidence": 90},
+          {"item": "トップ10比率: 高集中維持", "confidence": 85}
+        ]
+      },
+      {
+        "tier": 2,
+        "category": "クレジット/レバレッジ",
+        "score": 3,
+        "max_score": 12,
+        "freshness": "REALTIME",
+        "items": [
+          {"item": "HY Spread: 2.64-2.96%（歴史的低水準）", "confidence": 95, "source": "FRED"},
+          {"item": "IG Spread: ~74bps", "confidence": 90}
+        ]
+      },
+      {
+        "tier": 2,
+        "category": "センチメント",
+        "score": 6,
+        "max_score": 10,
+        "freshness": "REALTIME",
+        "items": [
+          {"item": "VIX: 15-16（前回18.6から低下）", "confidence": 95, "source": "CBOE"}
+        ]
+      },
+      {
+        "tier": 3,
+        "category": "外部ショック",
+        "score": 7,
+        "max_score": 11,
+        "freshness": "REALTIME",
+        "items": [
+          {"item": "台湾緊張: 一時緩和（Trump-Xi会談）", "confidence": 80},
+          {"item": "サプライチェーン: TSMCリスク継続", "confidence": 85}
+        ]
+      },
+      {
+        "tier": 3,
+        "category": "流動性",
+        "score": 3,
+        "max_score": 10,
+        "freshness": "REALTIME",
+        "items": [
+          {"item": "債券市場: 正常", "confidence": 90}
+        ]
+      },
+      {
+        "tier": 3,
+        "category": "業績乖離",
+        "score": 7,
+        "max_score": 10,
+        "freshness": "QUARTERLY",
+        "items": [
+          {"item": "S&P 500 YTD vs EPS成長: 乖離継続", "confidence": 85}
+        ]
+      }
+    ],
+    "C_megatrends": [
+      {
+        "domain": "AI",
+        "freshness": "QUARTERLY",
+        "items": [
+          {"item": "ハイパースケーラーCapEx: $475B (+35% YoY)", "confidence": 90},
+          {"item": "Stargate: $500B計画、$450B+コミット", "confidence": 90},
+          {"item": "NVIDIA可視性: $500B (Blackwell+Rubin)", "confidence": 95},
+          {"item": "電力需要: 2030年+30%増予測", "confidence": 85}
+        ]
+      },
+      {
+        "domain": "エネルギー",
+        "freshness": "QUARTERLY",
+        "items": [
+          {"item": "Meta: 6.6GW原子力契約", "confidence": 90},
+          {"item": "Microsoft: Three Mile Island再稼働（20年契約）", "confidence": 95},
+          {"item": "HALEU: ロシア禁輸2028年", "confidence": 90}
+        ]
+      },
+      {
+        "domain": "防衛",
+        "freshness": "PERMANENT",
+        "items": [
+          {"item": "FY2027提案: $1.5T (+50%)", "confidence": 75},
+          {"item": "FY2026 NDAA: $900.6B", "confidence": 95},
+          {"item": "Golden Dome: $151B契約発表", "confidence": 90}
+        ]
+      }
+    ],
+    "D_domain_growth": [
+      {"domain": "AI", "tam_2024": "$200B", "tam_2030": "$1.8T", "cagr": "44%", "confidence": 85},
+      {"domain": "エネルギー（原子力）", "tam_2024": "$40B", "tam_2030": "$120B", "cagr": "20%", "confidence": 80},
+      {"domain": "防衛", "tam_2024": "$900B", "tam_2030": "$1.5T", "cagr": "9%", "confidence": 85},
+      {"domain": "宇宙", "tam_2024": "$470B", "tam_2030": "$800B", "cagr": "9%", "confidence": 80},
+      {"domain": "サイバー", "tam_2024": "$200B", "tam_2030": "$500B", "cagr": "16%", "confidence": 85}
+    ],
+    "E_investment_pipeline": [
+      {"program": "CHIPS Act", "amount": "$52B+", "status": "実行中", "beneficiaries": ["INTC", "TSMC", "Samsung"]},
+      {"program": "IRA", "amount": "$369B+", "status": "実行中", "beneficiaries": ["LEU", "BWXT", "再エネ企業"]},
+      {"program": "Stargate", "amount": "$500B", "status": "$450B+コミット", "beneficiaries": ["NVDA", "VRT", "電力関連"]},
+      {"program": "FY2026 NDAA", "amount": "$900.6B", "status": "成立", "beneficiaries": ["LMT", "RTX", "NOC", "AVAV"]},
+      {"program": "Golden Dome", "amount": "$151B", "status": "契約発表", "beneficiaries": ["Redwire", "Anduril", "AVAV", "Palantir"]}
+    ],
+    "F_overlooked_scan": [
+      {
+        "topic": "Quantinuum IPO",
+        "freshness": "MONTHLY",
+        "items": [
+          {"item": "S-1提出: 2026-01-14", "confidence": 95},
+          {"item": "評価額: ~$20B", "confidence": 85},
+          {"item": "調達: ~$1B予定", "confidence": 80}
+        ],
+        "domain_intersection": ["サイバー", "防衛"]
+      }
+    ],
+    "G_other": [
+      {"item": "10Y Treasury: ~4.5%", "freshness": "REALTIME", "confidence": 95},
+      {"item": "DXY: ~108", "freshness": "REALTIME", "confidence": 95}
+    ],
+    "H_mega_contracts": [
+      {
+        "name": "Golden Dome",
+        "value": "$151B",
+        "type": "政府契約",
+        "beneficiaries": ["Redwire", "Anduril", "LMT", "AVAV", "Palantir", "Blue Origin"],
+        "date_announced": "2026-01",
+        "confidence": 90
+      },
+      {
+        "name": "Stargate",
+        "value": "$500B（$450B+コミット）",
+        "type": "企業投資",
+        "beneficiaries": ["SoftBank", "OpenAI", "Oracle", "MGX"],
+        "date_announced": "2025-01",
+        "confidence": 90
+      }
+    ]
+  },
+  "market_risk_total": {
+    "score": 63,
+    "max_score": 100,
+    "previous_score": 65,
+    "delta": -2,
+    "assessment": "高リスク・保守的スタンス",
+    "last_updated": "2026-01-28"
+  },
+  "summary": {
+    "total_items": 48,
+    "by_confidence": {
+      "high": 32,
+      "medium": 12,
+      "low": 4
+    },
+    "data_freshness": {
+      "realtime": "2026-01-28",
+      "quarterly": "Q3-Q4 2025",
+      "permanent": "2026-01-28"
+    }
+  }
+}

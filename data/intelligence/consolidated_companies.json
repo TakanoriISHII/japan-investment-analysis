@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "description": "統合企業情報（全LLM出力 + stable + reinforcement をマージ）",
+    "created": "2026-01-28T18:00:00Z",
+    "last_updated": "2026-01-28T19:00:00Z",
+    "phase": "フェーズ5: 統合・確度整理",
+    "sources": {
+      "raw_claude": "data/intelligence/raw/company_info/claude.md",
+      "raw_grok": "data/intelligence/raw/company_info/grok.md",
+      "raw_gemini": "data/intelligence/raw/company_info/gemini.md",
+      "stable_permanent": "data/intelligence/stable/permanent/companies.json",
+      "stable_quarterly": "data/intelligence/stable/quarterly/financials.json",
+      "stable_monthly": "data/intelligence/stable/monthly/contracts.json",
+      "reinforcement": "reinforcement/results/claude_auto/2026-01-28.md"
+    },
+    "merge_priority": "1.一次情報源確認済み > 2.stable/permanent > 3.stable/quarterly > 4.stable/monthly > 5.3LLM一致 > 6.reinforcement"
+  },
+  "companies": [
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "domains": ["AI", "データセンター"],
+      "permanent": {
+        "moat_type": "独占的技術・エコシステム",
+        "market_share": "90-98%（データセンターGPU）",
+        "barriers": ["CUDA 20年のエコシステム", "HBM統合技術", "TSMCパートナーシップ"],
+        "certifications": [],
+        "competitors": ["AMD MI300シリーズ（シェア2-5%）"]
+      },
+      "quarterly": {
+        "period": "Q3 FY2026",
+        "revenue": "$57B",
+        "revenue_yoy": "+62%",
+        "data_center": "$51.2B (89.8%)",
+        "guidance_q4": "$65B (+14% QoQ)",
+        "key_notes": "Blackwell完売、$500B visibility through CY2026"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": ["GB300がBlackwell売上の2/3"]
+      },
+      "confidence": {
+        "overall": 95,
+        "sources_confirmed": ["NVIDIA IR Q3決算", "TrendForce"],
+        "last_verified": "2026-01-28"
+      }
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co",
+      "domains": ["AI", "データセンター"],
+      "permanent": {
+        "moat_type": "技術的リーダーシップ",
+        "market_share": "データセンター冷却トップ3",
+        "barriers": ["液冷技術の先行", "NVIDIAパートナーシップ"],
+        "certifications": [],
+        "competitors": ["Schneider Electric", "Eaton"]
+      },
+      "quarterly": {
+        "period": "Q3 2025",
+        "revenue": "$2,676M",
+        "revenue_yoy": "+29%",
+        "backlog": "$9.5B",
+        "orders_yoy": "+60% organic",
+        "book_to_bill": "1.4x",
+        "guidance_2025": ">$10B revenue, $4.10 adj EPS",
+        "key_notes": "液冷売上+100%。NVIDIA GB200参照アーキテクチャ共同開発。"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": []
+      },
+      "confidence": {
+        "overall": 88,
+        "sources_confirmed": ["Vertiv IR Q3決算"],
+        "last_verified": "2026-01-28"
+      }
+    },
+    {
+      "ticker": "LEU",
+      "name": "Centrus Energy Corp",
+      "domains": ["エネルギー", "原子力"],
+      "permanent": {
+        "moat_type": "唯一の供給者",
+        "market_share": "100%（米国内HALEU商用生産）",
+        "barriers": ["NRC認証（取得に数年）", "HALEU製造技術"],
+        "certifications": ["NRC License（Piketon, Ohio）"],
+        "competitors": []
+      },
+      "quarterly": {
+        "period": "Q4 2025",
+        "production_rate": "900kg HALEU/year",
+        "key_notes": "唯一の米国内HALEU商用生産者"
+      },
+      "monthly": {
+        "contracts": [
+          {
+            "name": "DOE HALEU Phase III",
+            "value": "$110M",
+            "counterparty": "DOE",
+            "duration": "Through June 30, 2026",
+            "date_announced": "2025-06-17"
+          }
+        ],
+        "announcements": []
+      },
+      "confidence": {
+        "overall": 92,
+        "sources_confirmed": ["DOE発表", "LEU IR"],
+        "last_verified": "2026-01-28"
+      }
+    },
+    {
+      "ticker": "BWXT",
+      "name": "BWX Technologies, Inc.",
+      "domains": ["エネルギー", "防衛", "原子力"],
+      "permanent": {
+        "moat_type": "唯一の認定供給者",
+        "market_share": "100%（米海軍原子炉部品）",
+        "barriers": ["海軍認定（競合参入ほぼ不可能）", "70年の技術蓄積"],
+        "certifications": ["Naval Nuclear Propulsion Program認定", "NRC License", "NNSA契約者"],
+        "competitors": []
+      },
+      "quarterly": {
+        "period": "Q3 FY2025",
+        "revenue_yoy": "+29%",
+        "backlog": "$7.4B",
+        "backlog_yoy": "+119%",
+        "guidance_2026": "Low-double-digit to low-teens EBITDA growth",
+        "key_notes": "6-8年収益可視性"
+      },
+      "monthly": {
+        "contracts": [
+          {
+            "name": "Naval Nuclear Reactor Components",
+            "value": "$2.6B",
+            "counterparty": "US Navy",
+            "duration": "Multi-year with options",
+            "date_announced": "2025-07"
+          }
+        ],
+        "announcements": ["Rolls-Royce SMR燃料製造パートナーシップ"]
+      },
+      "confidence": {
+        "overall": 95,
+        "sources_confirmed": ["BWXT IR Q3決算", "DoD契約発表"],
+        "last_verified": "2026-01-28"
+      }
+    },
+    {
+      "ticker": "AVAV",
+      "name": "AeroVironment, Inc.",
+      "domains": ["防衛", "ロボティクス", "ドローン"],
+      "permanent": {
+        "moat_type": "Replicator選定・量産能力",
+        "market_share": "徘徊型弾薬市場リーダー",
+        "barriers": ["Replicator公式選定", "12州製造拠点", "実戦実績"],
+        "certifications": ["ITAR対応", "DoD認定"],
+        "competitors": ["Anduril（異なるセグメント）"]
+      },
+      "quarterly": {
+        "period": "FY2025",
+        "production_expansion": "2x by FY27",
+        "key_notes": "ソルトレイクシティ新工場建設中"
+      },
+      "monthly": {
+        "contracts": [
+          {
+            "name": "Switchblade IDIQ",
+            "value": "$990M + $743M ceiling",
+            "counterparty": "US Army",
+            "duration": "Multi-year",
+            "date_announced": "2024-08"
+          },
+          {
+            "name": "Golden Dome参加",
+            "value": "$151B (total program)",
+            "counterparty": "DoD",
+            "duration": "Multi-year",
+            "date_announced": "2026-01"
+          }
+        ],
+        "announcements": ["Replicator選定", "1000基以上調達予定"]
+      },
+      "confidence": {
+        "overall": 90,
+        "sources_confirmed": ["DoD発表", "AVAV IR"],
+        "last_verified": "2026-01-28"
+      }
+    },
+    {
+      "ticker": "RKLB",
+      "name": "Rocket Lab USA, Inc.",
+      "domains": ["宇宙", "防衛"],
+      "permanent": {
+        "moat_type": "小型打上げ市場リーダー",
+        "market_share": "小型衛星打上げ2位（SpaceX次点）",
+        "barriers": ["打上げ実績100+成功", "垂直統合", "Photon衛星バス"],
+        "certifications": ["FAA Launch License", "SDA認定"],
+        "competitors": ["SpaceX（大型）", "Relativity（開発中）"]
+      },
+      "quarterly": {
+        "period": "Q3 2025",
+        "backlog": ">$2B",
+        "sda_contracts": "$1.3B+",
+        "electron_missions_2025": 21,
+        "development_cost": "$360M (Neutron)",
+        "key_notes": "Neutronタンク破裂(1/21)で遅延リスク"
+      },
+      "monthly": {
+        "contracts": [
+          {
+            "name": "SDA Tranche 3 Satellites",
+            "value": "$816M",
+            "counterparty": "Space Development Agency",
+            "duration": "Multi-year",
+            "date_announced": "2025-12"
+          }
+        ],
+        "announcements": ["Neutron初飛行mid-2026以降に遅延可能性"]
+      },
+      "confidence": {
+        "overall": 75,
+        "sources_confirmed": ["RKLB IR", "SDA契約発表"],
+        "last_verified": "2026-01-28",
+        "risk_note": "Neutron開発リスク"
+      }
+    },
+    {
+      "ticker": "LHX",
+      "name": "L3Harris Technologies, Inc.",
+      "domains": ["防衛", "宇宙"],
+      "permanent": {
+        "moat_type": "戦略ミサイル独占",
+        "market_share": "SRM（固体ロケットモーター）でRTXと複占",
+        "barriers": ["SRM技術独占", "70年の実績", "機密クリアランス"],
+        "certifications": ["ITAR対応", "DoD認定プライムコントラクター", "NASA認定"],
+        "competitors": ["RTX（Aerojet Rocketdyne）"]
+      },
+      "quarterly": {
+        "period": "FY2025",
+        "missile_solutions_revenue": "$3.6-3.8B",
+        "missile_solutions_employees": 7000,
+        "key_notes": "初のGo Direct to Supplier"
+      },
+      "monthly": {
+        "contracts": [
+          {
+            "name": "Pentagon Missile Solutions Investment",
+            "value": "$1B",
+            "counterparty": "Department of Defense",
+            "duration": "Convertible to IPO equity",
+            "date_announced": "2026-01-13"
+          }
+        ],
+        "announcements": ["Missile Solutions IPO発表 - H2 2026"]
+      },
+      "confidence": {
+        "overall": 95,
+        "sources_confirmed": ["LHX IR", "DoD発表"],
+        "last_verified": "2026-01-28"
+      }
+    }
+  ],
+  "summary": {
+    "total_companies": 7,
+    "by_domain": {
+      "AI": 2,
+      "エネルギー": 3,
+      "防衛": 4,
+      "ロボティクス": 1,
+      "宇宙": 2,
+      "サイバー": 0
+    },
+    "by_confidence": {
+      "high": 5,
+      "medium": 1,
+      "low": 1
+    },
+    "data_freshness": {
+      "permanent": "2026-01-28",
+      "quarterly": "Q3 2025/FY2026",
+      "monthly": "2026-01-28"
+    }
+  }
+}

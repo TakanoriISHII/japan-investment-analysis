@@ -1,0 +1,120 @@
+{
+  "date": "2026-01-28",
+  "session_id": "run-analysis-EInhH",
+  "summary": "市場リスク65→63、重要な情報検出遅延を識別",
+
+  "accuracy_tracking": {
+    "vix": {
+      "previous_value": 18.6,
+      "actual_value": "15-16",
+      "delta": -3,
+      "source_accuracy": {
+        "grok": "未検証",
+        "gemini": "未検証",
+        "claude": "正確（Web検索で15-16を確認）"
+      },
+      "lesson": "VIXは変動が大きいため、複数ソースでの確認が必須。Claudeの即時Web検索が有効"
+    },
+    "bwxt_backlog": {
+      "previous_value": "$6B",
+      "actual_value": "$7.4B",
+      "delta": "+23%",
+      "detection_delay": "Q3 FY2025決算発表から遅延",
+      "lesson": "四半期決算後の受注残更新を自動検出するプロンプト改善が必要"
+    },
+    "golden_dome": {
+      "contract_value": "$151B",
+      "detection_status": "今回初検出",
+      "lesson": "大型政府契約（$10B+）は専用の監視ポイントとして追加すべき"
+    }
+  },
+
+  "prompt_improvements_applied": [
+    {
+      "id": "PI-001",
+      "category": "large_contracts",
+      "description": "大型契約（$10B+）の専用監視セクション追加",
+      "target_prompts": ["grok/broad_info.md", "gemini/broad_info.md"],
+      "priority": "high",
+      "status": "completed",
+      "completed_at": "2026-01-28T18:30:00Z",
+      "changes": "カテゴリH: メガ契約・大型発表監視（$10B+）セクション追加"
+    },
+    {
+      "id": "PI-002",
+      "category": "backlog_tracking",
+      "description": "主要企業の受注残/バックログ変動監視強化",
+      "target_prompts": ["grok/company_scan.md"],
+      "priority": "high",
+      "status": "completed",
+      "completed_at": "2026-01-28T18:30:00Z",
+      "changes": "四半期情報に受注残/バックログ（YoY変化率必須）を追加"
+    },
+    {
+      "id": "PI-003",
+      "category": "market_indicators",
+      "description": "市場指標（VIX, HYスプレッド）の複数ソース検証必須化",
+      "target_prompts": ["grok/broad_info.md"],
+      "priority": "medium",
+      "status": "completed",
+      "completed_at": "2026-01-28T18:30:00Z",
+      "changes": "チェックリストに複数ソース検証必須項目を追加"
+    },
+    {
+      "id": "PI-004",
+      "category": "overlooked_scan",
+      "description": "見逃しスキャン（カテゴリF）の大幅強化",
+      "target_prompts": ["grok/broad_info.md", "gemini/broad_info.md"],
+      "priority": "high",
+      "status": "completed",
+      "completed_at": "2026-01-28T21:00:00Z",
+      "trigger": "品質レポート: 見逃しスキャン 75/100（要改善）",
+      "changes": [
+        "5つのサブカテゴリに分類（バイオ、量子、先端材料、水素/CCUS、その他）",
+        "各領域に具体的な投資可能銘柄を追加",
+        "市場規模・CAGR・6ドメイン接点を明記",
+        "収集指針テーブルを追加",
+        "出力形式を詳細化（銘柄評価、市場構造、触媒イベント）"
+      ]
+    }
+  ],
+
+  "llm_performance": {
+    "collection_phase": {
+      "grok": {
+        "speed": "fastest",
+        "coverage": "good",
+        "accuracy_issues": ["VIX値が古い可能性"]
+      },
+      "gemini": {
+        "speed": "slow",
+        "coverage": "excellent",
+        "accuracy_issues": []
+      },
+      "claude": {
+        "speed": "medium",
+        "coverage": "targeted",
+        "accuracy_issues": [],
+        "strengths": ["リアルタイムWeb検索", "一次情報源検証"]
+      }
+    }
+  },
+
+  "completed_actions": [
+    "✅ プロンプトに大型契約監視セクションを追加（grok/broad_info.md, gemini/broad_info.md）",
+    "✅ 受注残変動の自動検出ロジックをプロンプトに追加（grok/company_scan.md）",
+    "✅ 市場指標の複数ソース検証を必須化（チェックリスト更新）",
+    "✅ OPERATIONS.mdにLLM精度トラッキング手順を追加",
+    "✅ 見逃しスキャン（カテゴリF）を大幅強化（grok/broad_info.md, gemini/broad_info.md）",
+    "✅ Phase 5統合完了: consolidated_companies.json (7社), consolidated_broad.json (48項目)",
+    "✅ stable/permanent/companies.json を統合データで更新"
+  ],
+
+  "next_analysis_validation": [
+    "大型契約（$10B+）が自動検出されるか確認",
+    "受注残の変動が正確に追跡されるか確認",
+    "市場指標の精度が向上したか確認",
+    "見逃しスキャン（カテゴリF）のスコアが75→85+に向上したか確認",
+    "バイオ/量子/先端材料の具体的銘柄・市場規模が収集されるか確認"
+  ]
+}

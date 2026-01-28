@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-28T23:30:00Z",
+    "version": "1.0",
+    "sources": ["grok", "gemini", "claude", "chatgpt", "claude_supplemental"],
+    "quality_score": 92
+  },
+  "market_environment": {
+    "risk_level": "elevated",
+    "score": 62,
+    "key_indicators": {
+      "cape": {"value": 40.32, "assessment": "extreme_high", "confidence": 95},
+      "vix": {"value": 16.07, "assessment": "low", "confidence": 95},
+      "fed_rate": {"value": "3.50-3.75%", "assessment": "hold", "confidence": 97},
+      "hy_spread": {"value": 2.64, "assessment": "tight", "confidence": 95},
+      "aaii_bulls": {"value": 43.2, "assessment": "above_average", "confidence": 90}
+    },
+    "key_events": [
+      {"date": "2026-01-28", "event": "FOMC Meeting", "impact": "hold_expected"},
+      {"date": "2026-01-20", "event": "Greenland VIX Spike", "impact": "recovered"},
+      {"date": "2026-01-23", "event": "US-Russia-Ukraine Trilateral", "impact": "positive_signal"}
+    ]
+  },
+  "geopolitical": {
+    "taiwan_china": {
+      "tension_level": "medium_high",
+      "recent_events": ["China military exercises", "$11B US arms package", "China sanctions on 20 US defense firms"],
+      "risk_assessment": "grey_zone_persistent"
+    },
+    "ukraine_russia": {
+      "status": "peace_talks_progress",
+      "recent_events": ["Paris Coalition signed", "Trilateral talks 1/23", "Zelensky 90% agreement claim"],
+      "outlook": "cautiously_optimistic"
+    },
+    "middle_east": {
+      "status": "stable_post_june_2025",
+      "oil_impact": "limited",
+      "wti_range": "$67-76/bbl"
+    }
+  },
+  "megatrends": {
+    "ai_infrastructure": {
+      "hyperscaler_capex_2026": "$600B+",
+      "ai_portion": "75%",
+      "breakdown": {
+        "amazon": "$125B",
+        "microsoft": "$92-93B",
+        "google": "$91-93B",
+        "meta": "$70-100B"
+      },
+      "nvidia_rubin": "H2 2026 production",
+      "confidence": 90
+    },
+    "nuclear_renaissance": {
+      "total_contracted_gw": 10.5,
+      "key_deals": [
+        {"customer": "Meta", "capacity": "6.6GW", "suppliers": ["Vistra", "Constellation", "Oklo", "TerraPower"]},
+        {"customer": "Microsoft", "capacity": "835MW", "supplier": "Constellation (TMI)"},
+        {"customer": "Google", "capacity": "500MW", "supplier": "Kairos Power"}
+      ],
+      "smr_progress": {
+        "nuscale": "RoPower FID Q2 2026-early 2027",
+        "china_linglong": "2026 operation start"
+      },
+      "confidence": 90
+    },
+    "defense": {
+      "golden_dome": "$151-175B",
+      "lh_missile_solutions_ipo": "H2 2026",
+      "pentagon_direct_invest": "$1B (first ever)",
+      "switchblade_expansion": "500→1200/month",
+      "confidence": 85
+    },
+    "space": {
+      "rocket_lab": {
+        "sda_contract": "$816M",
+        "neutron_status": "tank_rupture_1/21_delay_risk"
+      },
+      "stargate": {
+        "total_committed": "$500B",
+        "capacity_gw": "7+",
+        "status": "abilene_operational"
+      },
+      "confidence": 85
+    },
+    "cyber_quantum": {
+      "quantinuum_ipo": {"valuation": "$20B", "status": "S-1 filed"},
+      "cyberark_acquisition": "PANW approved 99.8%",
+      "palantir_army": "$10B TITAN",
+      "confidence": 90
+    }
+  },
+  "investment_pipeline": {
+    "government": {
+      "golden_dome": "$151B",
+      "chips_act": "$52B",
+      "doe_haleu": "$2.7B",
+      "sda_tranche3": "$2B+"
+    },
+    "corporate_capex": {
+      "total_hyperscaler": "$600B+",
+      "stargate": "$500B"
+    }
+  },
+  "key_changes_from_previous": [
+    {
+      "category": "geopolitical",
+      "change": "Ukraine trilateral talks progress",
+      "impact": "positive",
+      "confidence": 75
+    },
+    {
+      "category": "space",
+      "change": "Rocket Lab Neutron tank rupture",
+      "impact": "negative",
+      "confidence": 85
+    },
+    {
+      "category": "ai",
+      "change": "NVIDIA Rubin CES announcement",
+      "impact": "positive",
+      "confidence": 90
+    },
+    {
+      "category": "nuclear",
+      "change": "Meta 6.6GW portfolio announced",
+      "impact": "positive",
+      "confidence": 95
+    }
+  ],
+  "pending_verification": [
+    {"item": "SpaceX Golden Dome $2B contract", "source": "WSJ", "confidence": 75},
+    {"item": "Powell successor announcement timing", "source": "CNBC", "confidence": 70}
+  ]
+}

@@ -1,521 +1,463 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>マルチドメイン・コンバージェンス Top30 4象限マトリックス【日本企業版】</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      min-height: 100vh;
-      padding: 20px;
-      color: #fff;
-    }
-    @keyframes glow {
-      0%, 100% { filter: drop-shadow(0 0 8px #ffd700); }
-      50% { filter: drop-shadow(0 0 16px #ffd700); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マルチドメイン・コンバージェンス Top30 4象限マトリックス【{{DATE}}】</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
+        }
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 8px #ffd700); }
+            50% { filter: drop-shadow(0 0 16px #ffd700); }
+        }
+    </style>
 </head>
 <body>
-  <div id="root"></div>
-  
-  <script type="text/babel">
-    const { useState } = React;
-    
-    /*
-    評価基準（レポートより）:
-    
-    【確実性（横軸）】
-    高確実性: 長期契約・バックログ確定、シェア安定（5年変動5%以内）、資本効率改善実績
-    低確実性: 競争激化リスク、経営改革未着手、地政学リスク
-    
-    【アップサイド（縦軸）】= 情報の非対称性スコア（25点満点）に連動
-    高: 非対称性16点以上、外国人認識ギャップ大
-    低: 既に認識済み、バリュエーション割高
-    
-    【総合スコア】= 独占力(30) + 資本効率(20) + シナジー(25) + 非対称性(25)
-    */
-    
-    const stockData = [
-      // 1位: 東京エレクトロン - 独占30, 資本17, シナジー23, 非対称22 = 92
-      // 確実性: 高（シェア91%安定、TSMC等長期契約）、アップサイド: 高（非対称22点）
-      { rank: 1, ticker: "8035", name: "東京エレクトロン", certainty: 92, upside: 92, score: 92, monopoly: 30, capital: 17, synergy: 23, asymmetry: 22, quadrant: "prime", domain: "半導体", note: "⭐コータ91%独占・最高確信" },
-      
-      // 2位: アドバンテスト - 独占28, 資本18, シナジー22, 非対称20 = 88
-      // 確実性: 高（シェア55%安定、HBM需要確定）、アップサイド: 高（非対称20点）
-      { rank: 2, ticker: "6857", name: "アドバンテスト", certainty: 88, upside: 85, score: 88, monopoly: 28, capital: 18, synergy: 22, asymmetry: 20, quadrant: "prime", domain: "半導体", note: "テスター55%・HBM検査需要爆発" },
-      
-      // 3位: 三菱重工業 - 独占26, 資本16, シナジー24, 非対称20 = 86
-      // 確実性: 高（防衛予算GDP2%確定、GCAP長期契約）、アップサイド: 高（非対称20点、防衛の非公開性）
-      { rank: 3, ticker: "7011", name: "三菱重工業", certainty: 90, upside: 85, score: 86, monopoly: 26, capital: 16, synergy: 24, asymmetry: 20, quadrant: "prime", domain: "防衛", note: "防衛調達額首位・GCAP" },
-      
-      // 4位: 味の素 - 独占30, 資本14, シナジー18, 非対称22 = 84
-      // 確実性: 高（シェア95%、代替品なし）、アップサイド: 高（非対称22点、食品会社認識で過小評価）
-      { rank: 4, ticker: "2802", name: "味の素", certainty: 94, upside: 88, score: 84, monopoly: 30, capital: 14, synergy: 18, asymmetry: 22, quadrant: "prime", domain: "素材", note: "ABF95%独占・AI半導体爆食" },
-      
-      // 5位: 日立製作所 - 独占27, 資本16, シナジー23, 非対称17 = 83 ★追加
-      // 確実性: 高（HVDC150GW実績、欧州・インド受注確定）、アップサイド: 中〜高（非対称17点、コングロマリットに埋没）
-      { rank: 5, ticker: "6501", name: "日立製作所", certainty: 88, upside: 75, score: 83, monopoly: 27, capital: 16, synergy: 23, asymmetry: 17, quadrant: "prime", domain: "エネルギー", note: "★HVDC世界リーダー・150GW連系" },
-      
-      // 6位: フェローテック - 独占28, 資本15, シナジー17, 非対称22 = 82
-      // 確実性: 中（シェア65%だが中国依存40%超、地政学リスク）、アップサイド: 高（非対称22点、Tier2不可視性）
-      // → 中国リスクにより確実性は「中」、投機的機会象限
-      { rank: 6, ticker: "6890", name: "フェローテック", certainty: 72, upside: 88, score: 82, monopoly: 28, capital: 15, synergy: 17, asymmetry: 22, quadrant: "speculative", domain: "半導体", note: "真空シール65%・中国依存40%リスク" },
-      
-      // 7位: ナブテスコ - 独占28, 資本14, シナジー20, 非対称18 = 80
-      // 確実性: 高（シェア60%安定、産業ロボット継続需要）、アップサイド: 中〜高（非対称18点）
-      { rank: 7, ticker: "6268", name: "ナブテスコ", certainty: 85, upside: 78, score: 80, monopoly: 28, capital: 14, synergy: 20, asymmetry: 18, quadrant: "prime", domain: "ロボティクス", note: "RV減速機60%・ヒューマノイド" },
-      
-      // 8位: ディスコ - 独占27, 資本16, シナジー18, 非対称18 = 79
-      // 確実性: 高（シェア70%安定）、アップサイド: 中（非対称18点だが既に認知度高い）
-      { rank: 8, ticker: "6146", name: "ディスコ", certainty: 88, upside: 72, score: 79, monopoly: 27, capital: 16, synergy: 18, asymmetry: 18, quadrant: "stable", domain: "半導体", note: "ダイシング70%・先端パッケージ" },
-      
-      // 9位: 信越化学工業 - 独占26, 資本17, シナジー17, 非対称18 = 78
-      // 確実性: 高（シェア30%安定、高収益体質）、アップサイド: 低〜中（非対称18点だが既に認知）
-      { rank: 9, ticker: "4063", name: "信越化学工業", certainty: 94, upside: 65, score: 78, monopoly: 26, capital: 17, synergy: 17, asymmetry: 18, quadrant: "stable", domain: "素材", note: "シリコンウェハ30%・安定高収益" },
-      
-      // 10位: ハーモニック・ドライブ - 独占26, 資本13, シナジー20, 非対称18 = 77
-      // 確実性: 中（シェア50%だが中国競合台頭、価格競争激化）、アップサイド: 高（ヒューマノイド期待）
-      { rank: 10, ticker: "6324", name: "ハーモニック", certainty: 70, upside: 82, score: 77, monopoly: 26, capital: 13, synergy: 20, asymmetry: 18, quadrant: "speculative", domain: "ロボティクス", note: "波動歯車50%・中国競合台頭" },
-      
-      // 11位: 荏原製作所 - 独占24, 資本15, シナジー19, 非対称18 = 76
-      // 確実性: 高（シェア37%安定）、アップサイド: 中（非対称18点）
-      { rank: 11, ticker: "6361", name: "荏原製作所", certainty: 85, upside: 72, score: 76, monopoly: 24, capital: 15, synergy: 19, asymmetry: 18, quadrant: "stable", domain: "半導体", note: "CMP37%・先端プロセス必須" },
-      
-      // 12位: 川崎重工業 - 独占22, 資本14, シナジー22, 非対称17 = 75
-      // 確実性: 高（防衛契約、潜水艦独占）、アップサイド: 中（非対称17点）
-      { rank: 12, ticker: "7012", name: "川崎重工業", certainty: 85, upside: 72, score: 75, monopoly: 22, capital: 14, synergy: 22, asymmetry: 17, quadrant: "stable", domain: "防衛", note: "潜水艦・P-1・ロボット" },
-      
-      // 13位: 住友電工 - 独占25, 資本14, シナジー17, 非対称18 = 74 ★追加
-      // 確実性: 中〜高（GaN HEMTトップだがSiCウェハ撤退）、アップサイド: 中〜高（非対称18点、ワイヤーハーネス認識）
-      { rank: 13, ticker: "5802", name: "住友電工", certainty: 78, upside: 75, score: 74, monopoly: 25, capital: 14, synergy: 17, asymmetry: 18, quadrant: "stable", domain: "半導体", note: "★GaN HEMTトップ・SiC装置90%国内" },
-      
-      // 14位: 富士通 - 独占20, 資本16, シナジー20, 非対称17 = 73
-      // 確実性: 中（量子コンピュータ未実証）、アップサイド: 中〜高（非対称17点）
-      { rank: 14, ticker: "6702", name: "富士通", certainty: 72, upside: 75, score: 73, monopoly: 20, capital: 16, synergy: 20, asymmetry: 17, quadrant: "speculative", domain: "AI/サイバー", note: "量子コンピュータ・防衛IT" },
-      
-      // 15位: 安川電機 - 独占22, 資本15, シナジー19, 非対称16 = 72
-      // 確実性: 高（シェア安定）、アップサイド: 中（非対称16点、既に認知）
-      { rank: 15, ticker: "6506", name: "安川電機", certainty: 82, upside: 68, score: 72, monopoly: 22, capital: 15, synergy: 19, asymmetry: 16, quadrant: "stable", domain: "ロボティクス", note: "サーボモーター・産業ロボット" },
-      
-      // 16位: ファナック - 独占23, 資本14, シナジー18, 非対称16 = 71
-      // 確実性: 高（CNC50%安定）、アップサイド: 低（非対称16点、既に十分認知、中国減速影響）
-      { rank: 16, ticker: "6954", name: "ファナック", certainty: 88, upside: 62, score: 71, monopoly: 23, capital: 14, synergy: 18, asymmetry: 16, quadrant: "stable", domain: "ロボティクス", note: "CNC50%・FA世界首位・中国減速" },
-      
-      // 17位: 三菱電機 - 独占20, 資本14, シナジー20, 非対称16 = 70
-      // 確実性: 高（防衛契約安定）、アップサイド: 中（非対称16点）
-      { rank: 17, ticker: "6503", name: "三菱電機", certainty: 82, upside: 68, score: 70, monopoly: 20, capital: 14, synergy: 20, asymmetry: 16, quadrant: "stable", domain: "防衛", note: "防衛電子・FA・パワー半導体" },
-      
-      // 18位: IHI - 独占20, 資本13, シナジー21, 非対称15 = 69
-      // 確実性: 高（H3ロケット、航空エンジン）、アップサイド: 中（非対称15点）
-      { rank: 18, ticker: "7013", name: "IHI", certainty: 80, upside: 68, score: 69, monopoly: 20, capital: 13, synergy: 21, asymmetry: 15, quadrant: "stable", domain: "防衛/宇宙", note: "航空エンジン・H3ロケット" },
-      
-      // 19位: 横河電機 - 独占22, 資本14, シナジー17, 非対称15 = 68
-      // 確実性: 高（DCS国内1位安定）、アップサイド: 低〜中（非対称15点）
-      { rank: 19, ticker: "6841", name: "横河電機", certainty: 85, upside: 62, score: 68, monopoly: 22, capital: 14, synergy: 17, asymmetry: 15, quadrant: "stable", domain: "エネルギー", note: "DCS国内1位・AI制御統合" },
-      
-      // 20位: 関東電化工業 - 独占24, 資本12, シナジー14, 非対称17 = 67
-      // 確実性: 中（環境規制リスク）、アップサイド: 中〜高（非対称17点、小型株で認知度低い）
-      { rank: 20, ticker: "4188", name: "関東電化工業", certainty: 72, upside: 75, score: 67, monopoly: 24, capital: 12, synergy: 14, asymmetry: 17, quadrant: "speculative", domain: "素材", note: "エッチングガス50%・環境規制リスク" },
-      
-      // 21位: 日東電工 - 独占20, 資本14, シナジー16, 非対称16 = 66
-      { rank: 21, ticker: "6988", name: "日東電工", certainty: 80, upside: 65, score: 66, monopoly: 20, capital: 14, synergy: 16, asymmetry: 16, quadrant: "stable", domain: "素材", note: "偏光板・光学フィルム" },
-      
-      // 22位: ソニーG - 独占22, 資本15, シナジー14, 非対称14 = 65
-      // 確実性: 高（イメージセンサー50%）、アップサイド: 低（既に十分認知、バリュエーション高め）
-      { rank: 22, ticker: "6758", name: "ソニーG", certainty: 88, upside: 58, score: 65, monopoly: 22, capital: 15, synergy: 14, asymmetry: 14, quadrant: "stable", domain: "半導体", note: "イメージセンサー50%・認知済" },
-      
-      // 23位: レーザーテック - 独占24, 資本14, シナジー12, 非対称14 = 64
-      // 確実性: 中（EUV依存、ASML動向に左右）、アップサイド: 中（非対称14点だが成長期待）
-      { rank: 23, ticker: "6920", name: "レーザーテック", certainty: 68, upside: 75, score: 64, monopoly: 24, capital: 14, synergy: 12, asymmetry: 14, quadrant: "speculative", domain: "半導体", note: "EUVマスク検査・ASML依存" },
-      
-      // 24位: 村田製作所 - 独占20, 資本14, シナジー14, 非対称14 = 62
-      // 確実性: 高（MLCC40%安定）、アップサイド: 低（既に十分認知、価格競争懸念）
-      { rank: 24, ticker: "6981", name: "村田製作所", certainty: 85, upside: 55, score: 62, monopoly: 20, capital: 14, synergy: 14, asymmetry: 14, quadrant: "stable", domain: "半導体", note: "MLCC40%・価格競争懸念" },
-      
-      // 25位: ヤマハ発動機 - 独占16, 資本14, シナジー16, 非対称14 = 60
-      { rank: 25, ticker: "7272", name: "ヤマハ発動機", certainty: 70, upside: 65, score: 60, monopoly: 16, capital: 14, synergy: 16, asymmetry: 14, quadrant: "speculative", domain: "ロボティクス", note: "ドローン・無人機" },
-      
-      // 26位: デンソー - 独占18, 資本14, シナジー15, 非対称12 = 59
-      { rank: 26, ticker: "6902", name: "デンソー", certainty: 85, upside: 55, score: 59, monopoly: 18, capital: 14, synergy: 15, asymmetry: 12, quadrant: "stable", domain: "ロボティクス", note: "車載半導体・ADAS" },
-      
-      // 27位: ミネベアミツミ - 独占18, 資本13, シナジー14, 非対称13 = 58
-      { rank: 27, ticker: "6479", name: "ミネベア", certainty: 75, upside: 62, score: 58, monopoly: 18, capital: 13, synergy: 14, asymmetry: 13, quadrant: "speculative", domain: "ロボティクス", note: "ベアリング・モーター" },
-      
-      // 28位: SCREEN - 独占18, 資本14, シナジー13, 非対称12 = 57
-      { rank: 28, ticker: "7735", name: "SCREEN", certainty: 80, upside: 58, score: 57, monopoly: 18, capital: 14, synergy: 13, asymmetry: 12, quadrant: "stable", domain: "半導体", note: "洗浄装置・コータ" },
-      
-      // 29位: 日本電産 - 独占16, 資本12, シナジー16, 非対称12 = 56
-      // 確実性: 低（EV減速、M&A統合リスク）、アップサイド: 中（EV回復期待）
-      { rank: 29, ticker: "6594", name: "日本電産", certainty: 62, upside: 68, score: 56, monopoly: 16, capital: 12, synergy: 16, asymmetry: 12, quadrant: "speculative", domain: "ロボティクス", note: "EV用モーター・M&Aリスク" },
-      
-      // 30位: トヨタ自動車 - 独占18, 資本12, シナジー14, 非対称11 = 55
-      // 確実性: 高（ブランド力、財務健全）、アップサイド: 低（十分認知、EV転換遅れ懸念）
-      { rank: 30, ticker: "7203", name: "トヨタ自動車", certainty: 92, upside: 50, score: 55, monopoly: 18, capital: 12, synergy: 14, asymmetry: 11, quadrant: "stable", domain: "ロボティクス", note: "EV転換・認知済" },
-    ];
-    
-    const allStocks = stockData;
-    
-    // 色の定義
-    const domainColors = {
-      "半導体": "#a855f7",
-      "防衛": "#3b82f6",
-      "素材": "#eab308",
-      "エネルギー": "#22c55e",
-      "ロボティクス": "#f97316",
-      "AI/サイバー": "#ec4899",
-      "防衛/宇宙": "#06b6d4",
-    };
-    
-    const quadrantColors = {
-      prime: { bg: "rgba(34, 197, 94, 0.15)", border: "#22c55e", label: "最優先投資" },
-      stable: { bg: "rgba(59, 130, 246, 0.15)", border: "#3b82f6", label: "安定成長" },
-      speculative: { bg: "rgba(249, 115, 22, 0.15)", border: "#f97316", label: "投機的機会" },
-      avoid: { bg: "rgba(239, 68, 68, 0.15)", border: "#ef4444", label: "回避/様子見" },
-    };
-    
-    function QuadrantChart() {
-      const [hoveredStock, setHoveredStock] = useState(null);
-      const [selectedDomain, setSelectedDomain] = useState("all");
-      
-      const chartWidth = 800;
-      const chartHeight = 600;
-      const padding = 60;
-      
-      const filteredStocks = selectedDomain === "all" 
-        ? allStocks 
-        : allStocks.filter(s => s.domain.includes(selectedDomain));
-      
-      // 確実性60-100、アップサイド45-95の範囲でスケーリング
-      const scaleX = (certainty) => padding + ((certainty - 55) / 45) * (chartWidth - 2 * padding);
-      const scaleY = (upside) => chartHeight - padding - ((upside - 45) / 50) * (chartHeight - 2 * padding);
-      
-      const domains = [...new Set(allStocks.map(s => s.domain.split("/")[0]))];
-      
-      // ホバー中の銘柄を最後に描画するためにソート
-      const sortedStocks = [...filteredStocks].sort((a, b) => {
-        if (a.ticker === hoveredStock) return 1;
-        if (b.ticker === hoveredStock) return -1;
-        return 0;
-      });
-      
-      // ホバー中の銘柄データを取得
-      const hoveredStockData = hoveredStock ? allStocks.find(s => s.ticker === hoveredStock) : null;
-      
-      return (
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <h1 style={{ textAlign: "center", fontSize: "24px", marginBottom: "8px", color: "#fff" }}>
-            🇯🇵 マルチドメイン・コンバージェンス Top30【日本企業版】
-          </h1>
-          <h2 style={{ textAlign: "center", fontSize: "18px", marginBottom: "12px", color: "#94a3b8", fontWeight: "normal" }}>
-            4象限マトリックス（確実性 × アップサイド）| 住友電工・日立追加版
-          </h2>
-          
-          {/* 市場危険度アラート */}
-          <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
-            <div style={{
-              background: "linear-gradient(135deg, #f97316, #c2410c)",
-              padding: "8px 20px",
-              borderRadius: "20px",
-              fontSize: "13px",
-              fontWeight: "bold",
-              boxShadow: "0 4px 15px rgba(249, 115, 22, 0.4)"
-            }}>
-              ⚠️ 市場危険度 52/100（中〜高リスク）| 日経PBR 1.77倍 | 中国リスク8.0 | 円相場リスク7.5
-            </div>
-          </div>
-          
-          {/* フィルター */}
-          <div style={{ display: "flex", justifyContent: "center", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
-            <button
-              onClick={() => setSelectedDomain("all")}
-              style={{
-                padding: "6px 14px",
-                borderRadius: "20px",
-                border: "none",
-                background: selectedDomain === "all" ? "#fff" : "#334155",
-                color: selectedDomain === "all" ? "#1a1a2e" : "#94a3b8",
-                cursor: "pointer",
-                fontSize: "12px",
-                fontWeight: selectedDomain === "all" ? "bold" : "normal"
-              }}
-            >
-              すべて
-            </button>
-            {domains.map(domain => (
-              <button
-                key={domain}
-                onClick={() => setSelectedDomain(domain)}
-                style={{
-                  padding: "6px 14px",
-                  borderRadius: "20px",
-                  border: `1px solid ${domainColors[domain] || "#888"}`,
-                  background: selectedDomain === domain ? (domainColors[domain] || "#888") : "transparent",
-                  color: selectedDomain === domain ? "#fff" : (domainColors[domain] || "#888"),
-                  cursor: "pointer",
-                  fontSize: "12px"
-                }}
-              >
-                {domain}
-              </button>
-            ))}
-          </div>
-          
-          {/* チャート */}
-          <div style={{ position: "relative", background: "#0f172a", borderRadius: "12px", padding: "10px" }}>
-            <svg width={chartWidth} height={chartHeight} style={{ display: "block", margin: "0 auto" }}>
-              {/* 背景の象限 */}
-              <rect x={padding} y={padding} width={(chartWidth - 2 * padding) / 2} height={(chartHeight - 2 * padding) / 2} fill={quadrantColors.speculative.bg} />
-              <rect x={padding + (chartWidth - 2 * padding) / 2} y={padding} width={(chartWidth - 2 * padding) / 2} height={(chartHeight - 2 * padding) / 2} fill={quadrantColors.prime.bg} />
-              <rect x={padding} y={padding + (chartHeight - 2 * padding) / 2} width={(chartWidth - 2 * padding) / 2} height={(chartHeight - 2 * padding) / 2} fill={quadrantColors.avoid.bg} />
-              <rect x={padding + (chartWidth - 2 * padding) / 2} y={padding + (chartHeight - 2 * padding) / 2} width={(chartWidth - 2 * padding) / 2} height={(chartHeight - 2 * padding) / 2} fill={quadrantColors.stable.bg} />
-              
-              {/* 象限ラベル */}
-              <text x={padding + 10} y={padding + 25} fill={quadrantColors.speculative.border} fontSize="13" fontWeight="bold">📈 投機的機会</text>
-              <text x={chartWidth - padding - 100} y={padding + 25} fill={quadrantColors.prime.border} fontSize="13" fontWeight="bold">⭐ 最優先投資</text>
-              <text x={padding + 10} y={chartHeight - padding - 10} fill={quadrantColors.avoid.border} fontSize="13" fontWeight="bold">🚫 回避/様子見</text>
-              <text x={chartWidth - padding - 85} y={chartHeight - padding - 10} fill={quadrantColors.stable.border} fontSize="13" fontWeight="bold">🛡️ 安定成長</text>
-              
-              {/* 軸 */}
-              <line x1={padding} y1={chartHeight / 2} x2={chartWidth - padding} y2={chartHeight / 2} stroke="#475569" strokeDasharray="4" />
-              <line x1={chartWidth / 2} y1={padding} x2={chartWidth / 2} y2={chartHeight - padding} stroke="#475569" strokeDasharray="4" />
-              
-              {/* 軸ラベル */}
-              <text x={chartWidth / 2} y={chartHeight - 15} textAnchor="middle" fill="#94a3b8" fontSize="12">確実性（シェア安定・契約確定）→</text>
-              <text x={15} y={chartHeight / 2} textAnchor="middle" fill="#94a3b8" fontSize="12" transform={`rotate(-90, 15, ${chartHeight / 2})`}>アップサイド（情報非対称性）→</text>
-              
-              {/* 銘柄プロット */}
-              {sortedStocks.map((stock) => {
-                const x = scaleX(stock.certainty);
-                const y = scaleY(stock.upside);
-                const color = domainColors[stock.domain.split("/")[0]] || domainColors[stock.domain] || "#888";
-                const isHovered = hoveredStock === stock.ticker;
-                const isTop1 = stock.rank === 1;
-                const isNew = stock.ticker === "6501" || stock.ticker === "5802";
-                
-                return (
-                  <g key={stock.ticker} style={{ cursor: "pointer" }}>
-                    <circle
-                      cx={x}
-                      cy={y}
-                      r={isTop1 ? 26 : isNew ? 24 : isHovered ? 26 : 18}
-                      fill={isTop1 ? `#ffd700cc` : isNew ? `${color}dd` : `${color}${isHovered ? "dd" : "99"}`}
-                      stroke={isTop1 ? "#ffd700" : isNew ? "#00ff88" : isHovered ? "#fff" : color}
-                      strokeWidth={isTop1 ? 3 : isNew ? 2 : isHovered ? 3 : 1}
-                      style={{ transition: "all 0.2s" }}
-                      onMouseEnter={() => setHoveredStock(stock.ticker)}
-                      onMouseLeave={() => setHoveredStock(null)}
-                    />
-                    {/* ティッカー */}
-                    <text
-                      x={x}
-                      y={y + 1}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      fill={isTop1 ? "#1a1a2e" : "#fff"}
-                      fontSize={isTop1 ? "9" : isHovered ? "9" : "7"}
-                      fontWeight="bold"
-                      style={{ pointerEvents: "none" }}
-                    >
-                      {stock.ticker}
-                    </text>
-                    {/* 順位 */}
-                    <text
-                      x={x}
-                      y={y - (isTop1 ? 34 : 26)}
-                      textAnchor="middle"
-                      fill={isTop1 ? "#ffd700" : isNew ? "#00ff88" : "#94a3b8"}
-                      fontSize={isTop1 ? "11" : "9"}
-                      fontWeight={isTop1 || isNew ? "bold" : "normal"}
-                      style={{ pointerEvents: "none" }}
-                    >
-                      {isTop1 ? "⭐#1" : isNew ? `★#${stock.rank}` : `#${stock.rank}`}
-                    </text>
-                  </g>
-                );
-              })}
-            </svg>
-            
-            {/* ホバー情報 */}
-            {hoveredStockData && (
-              <div style={{
-                position: "absolute",
-                top: "20px",
-                right: "20px",
-                background: "#1e293b",
-                border: "1px solid #475569",
-                borderRadius: "8px",
-                padding: "12px",
-                minWidth: "280px",
-                boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
-                zIndex: 100
-              }}>
-                {(() => {
-                  const stock = hoveredStockData;
-                  const color = domainColors[stock.domain.split("/")[0]] || domainColors[stock.domain] || "#888";
-                  const isNew = stock.ticker === "6501" || stock.ticker === "5802";
-                  return (
-                    <>
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                        <span style={{ fontSize: "18px", fontWeight: "bold", color: stock.rank === 1 ? "#ffd700" : color }}>
-                          {stock.ticker}
-                        </span>
-                        {stock.rank === 1 && <span>⭐</span>}
-                        {isNew && <span style={{ background: "#00ff88", color: "#000", padding: "2px 6px", borderRadius: "4px", fontSize: "10px" }}>NEW</span>}
-                      </div>
-                      <div style={{ fontSize: "14px", color: "#94a3b8", marginBottom: "8px" }}>{stock.name}</div>
-                      <div style={{ fontSize: "12px", color: "#cbd5e1" }}>
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px" }}>
-                          <div>順位: #{stock.rank}</div>
-                          <div>総合: {stock.score}点</div>
-                          <div>確実性: {stock.certainty}</div>
-                          <div>アップサイド: {stock.upside}</div>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        /*
+        マルチドメイン・コンバージェンス分析フレームワーク（100点満点）
+
+        【5軸評価】
+        1. 物理的独占力（30点）: 市場シェア、代替不可能性
+        2. 政策耐性（20点）: 超党派支持、規制リスク
+        3. クロスドメイン・シナジー（25点）: 6ドメイン横断需要
+        4. 情報非対称性（15点）: 認識ギャップ、カタリスト
+        5. 資本効率（10点）: FCF、希薄化リスク
+
+        【4象限分類】
+        - Prime（最優先投資）: certainty>=80 AND upside>=58
+        - Stable（安定成長）: certainty>=80 AND upside<58
+        - Speculative（投機的機会）: certainty<80 AND upside>=58
+        - Avoid（様子見）: certainty<80 AND upside<58
+        */
+
+        // プレースホルダー: 実際のデータ生成時に置換される
+        const analysisDate = "{{DATE}}";
+        const marketRiskScore = {{MARKET_RISK_SCORE}};
+        const marketRiskLevel = "{{MARKET_RISK_LEVEL}}";
+
+        const stockData = {{COMPANIES_DATA}};
+
+        const allStocks = stockData;
+
+        // 色の定義
+        const domainColors = {
+            "AI": "#a855f7",
+            "防衛": "#3b82f6",
+            "エネルギー": "#22c55e",
+            "ロボティクス": "#f97316",
+            "宇宙": "#06b6d4",
+            "サイバー": "#ec4899",
+        };
+
+        const quadrantColors = {
+            prime: { bg: "rgba(34, 197, 94, 0.15)", border: "#22c55e", label: "最優先投資" },
+            stable: { bg: "rgba(59, 130, 246, 0.15)", border: "#3b82f6", label: "安定成長" },
+            speculative: { bg: "rgba(249, 115, 22, 0.15)", border: "#f97316", label: "投機的機会" },
+            avoid: { bg: "rgba(239, 68, 68, 0.15)", border: "#ef4444", label: "回避/様子見" },
+        };
+
+        function QuadrantChart() {
+            const [hoveredStock, setHoveredStock] = useState(null);
+            const [selectedDomain, setSelectedDomain] = useState("all");
+
+            const chartWidth = 900;
+            const chartHeight = 650;
+            const padding = 70;
+
+            const filteredStocks = selectedDomain === "all"
+                ? allStocks
+                : allStocks.filter(s => s.domain === selectedDomain);
+
+            // 確実性70-100、アップサイド30-85の範囲でスケーリング
+            const scaleX = (certainty) => padding + ((certainty - 70) / 30) * (chartWidth - 2 * padding);
+            const scaleY = (upside) => chartHeight - padding - ((upside - 30) / 55) * (chartHeight - 2 * padding);
+
+            // 象限の境界線の位置（certainty=80, upside=58）
+            const boundaryX = scaleX(80);
+            const boundaryY = scaleY(58);
+
+            const domains = [...new Set(allStocks.map(s => s.domain))];
+
+            // ホバー中の銘柄を最後に描画するためにソート
+            const sortedStocks = [...filteredStocks].sort((a, b) => {
+                if (a.ticker === hoveredStock) return 1;
+                if (b.ticker === hoveredStock) return -1;
+                return 0;
+            });
+
+            // ホバー中の銘柄データを取得
+            const hoveredStockData = hoveredStock ? allStocks.find(s => s.ticker === hoveredStock) : null;
+
+            // 象限ごとの企業数
+            const quadrantCounts = {
+                prime: allStocks.filter(s => s.quadrant === "prime").length,
+                stable: allStocks.filter(s => s.quadrant === "stable").length,
+                speculative: allStocks.filter(s => s.quadrant === "speculative").length,
+                avoid: allStocks.filter(s => s.quadrant === "avoid").length,
+            };
+
+            // 市場リスクに応じた色
+            const riskColor = marketRiskScore >= 75 ? "#ef4444" : marketRiskScore >= 50 ? "#f97316" : marketRiskScore >= 25 ? "#fbbf24" : "#22c55e";
+
+            return (
+                <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+                    <h1 style={{ textAlign: "center", fontSize: "24px", marginBottom: "8px", color: "#fff" }}>
+                        マルチドメイン・コンバージェンス分析 Top30【米国企業版】
+                    </h1>
+                    <h2 style={{ textAlign: "center", fontSize: "16px", marginBottom: "12px", color: "#94a3b8", fontWeight: "normal" }}>
+                        4象限マトリックス（確実性 × アップサイド）| {analysisDate}
+                    </h2>
+
+                    {/* 市場危険度アラート */}
+                    <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                        <div style={{
+                            background: `linear-gradient(135deg, ${riskColor}, ${riskColor}99)`,
+                            padding: "8px 20px",
+                            borderRadius: "20px",
+                            fontSize: "13px",
+                            fontWeight: "bold",
+                            boxShadow: `0 4px 15px ${riskColor}66`
+                        }}>
+                            市場リスク {marketRiskScore}/100（{marketRiskLevel}）| 評価軸: 独占力(30)+政策耐性(20)+シナジー(25)+非対称性(15)+資本効率(10)
                         </div>
-                        <div style={{ marginTop: "6px", paddingTop: "6px", borderTop: "1px solid #475569", fontSize: "11px" }}>
-                          <div>独占力: {stock.monopoly}/30 | 資本効率: {stock.capital}/20</div>
-                          <div>シナジー: {stock.synergy}/25 | 非対称性: {stock.asymmetry}/25</div>
+                    </div>
+
+                    {/* フィルター */}
+                    <div style={{ display: "flex", justifyContent: "center", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
+                        <button
+                            onClick={() => setSelectedDomain("all")}
+                            style={{
+                                padding: "6px 14px",
+                                borderRadius: "20px",
+                                border: "none",
+                                background: selectedDomain === "all" ? "#fff" : "#334155",
+                                color: selectedDomain === "all" ? "#1a1a2e" : "#94a3b8",
+                                cursor: "pointer",
+                                fontSize: "12px",
+                                fontWeight: selectedDomain === "all" ? "bold" : "normal"
+                            }}
+                        >
+                            すべて
+                        </button>
+                        {domains.map(domain => (
+                            <button
+                                key={domain}
+                                onClick={() => setSelectedDomain(domain)}
+                                style={{
+                                    padding: "6px 14px",
+                                    borderRadius: "20px",
+                                    border: `1px solid ${domainColors[domain] || "#888"}`,
+                                    background: selectedDomain === domain ? (domainColors[domain] || "#888") : "transparent",
+                                    color: selectedDomain === domain ? "#fff" : (domainColors[domain] || "#888"),
+                                    cursor: "pointer",
+                                    fontSize: "12px"
+                                }}
+                            >
+                                {domain}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* チャート */}
+                    <div style={{ position: "relative", background: "#0f172a", borderRadius: "12px", padding: "10px" }}>
+                        <svg width={chartWidth} height={chartHeight} style={{ display: "block", margin: "0 auto" }}>
+                            {/* 背景の象限 */}
+                            <rect x={padding} y={padding} width={boundaryX - padding} height={boundaryY - padding}
+                                fill={quadrantColors.speculative.bg} />
+                            <rect x={boundaryX} y={padding} width={chartWidth - padding - boundaryX} height={boundaryY - padding}
+                                fill={quadrantColors.prime.bg} />
+                            <rect x={padding} y={boundaryY} width={boundaryX - padding} height={chartHeight - padding - boundaryY}
+                                fill={quadrantColors.avoid.bg} />
+                            <rect x={boundaryX} y={boundaryY} width={chartWidth - padding - boundaryX} height={chartHeight - padding - boundaryY}
+                                fill={quadrantColors.stable.bg} />
+
+                            {/* 象限ラベル */}
+                            <text x={padding + 10} y={padding + 25} fill={quadrantColors.speculative.border} fontSize="13" fontWeight="bold">投機的機会</text>
+                            <text x={chartWidth - padding - 100} y={padding + 25} fill={quadrantColors.prime.border} fontSize="13" fontWeight="bold">最優先投資</text>
+                            <text x={padding + 10} y={chartHeight - padding - 10} fill={quadrantColors.avoid.border} fontSize="13" fontWeight="bold">回避/様子見</text>
+                            <text x={chartWidth - padding - 85} y={chartHeight - padding - 10} fill={quadrantColors.stable.border} fontSize="13" fontWeight="bold">安定成長</text>
+
+                            {/* 境界線 */}
+                            <line x1={boundaryX} y1={padding} x2={boundaryX} y2={chartHeight - padding} stroke="#475569" strokeDasharray="4" />
+                            <line x1={padding} y1={boundaryY} x2={chartWidth - padding} y2={boundaryY} stroke="#475569" strokeDasharray="4" />
+
+                            {/* 外枠 */}
+                            <rect x={padding} y={padding} width={chartWidth - 2 * padding} height={chartHeight - 2 * padding}
+                                fill="none" stroke="#475569" strokeWidth="1" />
+
+                            {/* 軸ラベル */}
+                            <text x={chartWidth / 2} y={chartHeight - 20} textAnchor="middle" fill="#94a3b8" fontSize="12">
+                                確実性（契約確定・シェア安定・競争優位持続）
+                            </text>
+                            <text x={20} y={chartHeight / 2} textAnchor="middle" fill="#94a3b8" fontSize="12"
+                                transform={`rotate(-90, 20, ${chartHeight / 2})`}>
+                                アップサイド（非対称性・収斂加速性）
+                            </text>
+
+                            {/* 軸目盛り */}
+                            {[70, 75, 80, 85, 90, 95, 100].map(v => (
+                                <g key={`x-${v}`}>
+                                    <line x1={scaleX(v)} y1={chartHeight - padding} x2={scaleX(v)} y2={chartHeight - padding + 5} stroke="#64748b" />
+                                    <text x={scaleX(v)} y={chartHeight - padding + 18} textAnchor="middle" fill="#64748b" fontSize="10">{v}</text>
+                                </g>
+                            ))}
+                            {[30, 40, 50, 58, 70, 80].map(v => (
+                                <g key={`y-${v}`}>
+                                    <line x1={padding - 5} y1={scaleY(v)} x2={padding} y2={scaleY(v)} stroke="#64748b" />
+                                    <text x={padding - 10} y={scaleY(v) + 4} textAnchor="end" fill="#64748b" fontSize="10">{v}</text>
+                                </g>
+                            ))}
+
+                            {/* 銘柄プロット */}
+                            {sortedStocks.map((stock) => {
+                                const x = scaleX(stock.certainty);
+                                const y = scaleY(stock.upside);
+                                const color = domainColors[stock.domain] || "#888";
+                                const isHovered = hoveredStock === stock.ticker;
+                                const isTop1 = stock.rank === 1;
+                                const isHighMonopoly = stock.monopoly >= 27;
+
+                                return (
+                                    <g key={stock.ticker} style={{ cursor: "pointer" }}>
+                                        <circle
+                                            cx={x}
+                                            cy={y}
+                                            r={isTop1 ? 28 : isHighMonopoly ? 24 : isHovered ? 26 : 20}
+                                            fill={isTop1 ? `#ffd700cc` : `${color}${isHovered ? "dd" : "99"}`}
+                                            stroke={isTop1 ? "#ffd700" : isHighMonopoly ? "#ff6b6b" : isHovered ? "#fff" : color}
+                                            strokeWidth={isTop1 ? 3 : isHighMonopoly ? 2 : isHovered ? 3 : 1}
+                                            style={{ transition: "all 0.2s" }}
+                                            onMouseEnter={() => setHoveredStock(stock.ticker)}
+                                            onMouseLeave={() => setHoveredStock(null)}
+                                        />
+                                        {/* ティッカー */}
+                                        <text
+                                            x={x}
+                                            y={y + 1}
+                                            textAnchor="middle"
+                                            dominantBaseline="middle"
+                                            fill={isTop1 ? "#1a1a2e" : "#fff"}
+                                            fontSize={isTop1 ? "9" : isHovered ? "9" : "8"}
+                                            fontWeight="bold"
+                                            style={{ pointerEvents: "none" }}
+                                        >
+                                            {stock.ticker}
+                                        </text>
+                                        {/* 順位 */}
+                                        <text
+                                            x={x}
+                                            y={y - (isTop1 ? 36 : 28)}
+                                            textAnchor="middle"
+                                            fill={isTop1 ? "#ffd700" : isHighMonopoly ? "#ff6b6b" : "#94a3b8"}
+                                            fontSize={isTop1 ? "11" : "9"}
+                                            fontWeight={isTop1 || isHighMonopoly ? "bold" : "normal"}
+                                            style={{ pointerEvents: "none" }}
+                                        >
+                                            {isTop1 ? "#1" : `#${stock.rank}`}
+                                        </text>
+                                    </g>
+                                );
+                            })}
+                        </svg>
+
+                        {/* ホバー情報 */}
+                        {hoveredStockData && (
+                            <div style={{
+                                position: "absolute",
+                                top: "20px",
+                                right: "20px",
+                                background: "#1e293b",
+                                border: "1px solid #475569",
+                                borderRadius: "8px",
+                                padding: "12px",
+                                minWidth: "320px",
+                                boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
+                                zIndex: 100
+                            }}>
+                                {(() => {
+                                    const stock = hoveredStockData;
+                                    const color = domainColors[stock.domain] || "#888";
+                                    const isHighMonopoly = stock.monopoly >= 27;
+                                    return (
+                                        <>
+                                            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                                <span style={{ fontSize: "18px", fontWeight: "bold", color: stock.rank === 1 ? "#ffd700" : color }}>
+                                                    {stock.ticker}
+                                                </span>
+                                                {stock.rank === 1 && <span style={{ background: "#ffd700", color: "#000", padding: "2px 6px", borderRadius: "4px", fontSize: "10px" }}>最高評価</span>}
+                                                {isHighMonopoly && <span style={{ background: "#ff6b6b", color: "#000", padding: "2px 6px", borderRadius: "4px", fontSize: "10px" }}>高独占</span>}
+                                            </div>
+                                            <div style={{ fontSize: "14px", color: "#94a3b8", marginBottom: "4px" }}>{stock.name}</div>
+                                            <div style={{ fontSize: "11px", color: "#64748b", marginBottom: "8px" }}>{stock.core_tech}</div>
+
+                                            <div style={{ fontSize: "12px", color: "#cbd5e1" }}>
+                                                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px" }}>
+                                                    <div>順位: #{stock.rank}</div>
+                                                    <div>総合: {stock.total}点</div>
+                                                    <div>確実性: {stock.certainty}</div>
+                                                    <div>アップサイド: {stock.upside}</div>
+                                                </div>
+
+                                                <div style={{ marginTop: "6px", paddingTop: "6px", borderTop: "1px solid #475569", fontSize: "11px" }}>
+                                                    <div>独占力: {stock.monopoly}/30 | 政策耐性: {stock.resilience}/20</div>
+                                                    <div>シナジー: {stock.synergy}/25 | 非対称性: {stock.asymmetry}/15</div>
+                                                    <div>資本効率: {stock.capital}/10</div>
+                                                </div>
+
+                                                <div style={{ marginTop: "6px", color: "#fbbf24" }}>{stock.note}</div>
+                                                <div style={{ marginTop: "4px", color: "#94a3b8", fontSize: "10px" }}>{stock.thesis}</div>
+                                            </div>
+                                        </>
+                                    );
+                                })()}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* 凡例 */}
+                    <div style={{ display: "flex", justifyContent: "center", gap: "16px", marginTop: "16px", flexWrap: "wrap" }}>
+                        {Object.entries(domainColors).map(([domain, color]) => (
+                            <div key={domain} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                                <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: color }} />
+                                <span style={{ fontSize: "12px", color: "#94a3b8" }}>{domain}</span>
+                            </div>
+                        ))}
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                            <div style={{ width: "12px", height: "12px", borderRadius: "50%", border: "2px solid #ff6b6b", background: "transparent" }} />
+                            <span style={{ fontSize: "12px", color: "#ff6b6b" }}>高独占(27+)</span>
                         </div>
-                        <div style={{ marginTop: "6px", color: "#fbbf24" }}>{stock.note}</div>
-                      </div>
-                    </>
-                  );
-                })()}
-              </div>
-            )}
-          </div>
-          
-          {/* 凡例 */}
-          <div style={{ display: "flex", justifyContent: "center", gap: "16px", marginTop: "16px", flexWrap: "wrap" }}>
-            {Object.entries(domainColors).filter(([k]) => !k.includes("/")).map(([domain, color]) => (
-              <div key={domain} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: color }} />
-                <span style={{ fontSize: "12px", color: "#94a3b8" }}>{domain}</span>
-              </div>
-            ))}
-            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <div style={{ width: "12px", height: "12px", borderRadius: "50%", border: "2px solid #00ff88", background: "transparent" }} />
-              <span style={{ fontSize: "12px", color: "#00ff88" }}>NEW（追加銘柄）</span>
-            </div>
-          </div>
-          
-          {/* 評価基準の説明 */}
-          <div style={{ 
-            marginTop: "16px",
-            background: "rgba(71, 85, 105, 0.3)",
-            border: "1px solid #475569",
-            borderRadius: "8px",
-            padding: "10px",
-            fontSize: "11px",
-            color: "#94a3b8"
-          }}>
-            <div style={{ fontWeight: "bold", marginBottom: "4px" }}>📊 評価基準</div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-              <div><span style={{ color: "#22c55e" }}>横軸（確実性）</span>: シェア安定性、長期契約・バックログ、地政学リスク</div>
-              <div><span style={{ color: "#f97316" }}>縦軸（アップサイド）</span>: 情報の非対称性スコア（外国人投資家の認識ギャップ）</div>
-            </div>
-          </div>
-          
-          {/* 最高確信銘柄ハイライト */}
-          <div style={{ 
-            marginTop: "16px",
-            background: "linear-gradient(135deg, rgba(255,215,0,0.15), rgba(34,197,94,0.1))",
-            border: "2px solid #ffd700",
-            borderRadius: "10px",
-            padding: "14px"
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-              <span style={{ fontSize: "20px" }}>⭐</span>
-              <span style={{ fontSize: "16px", fontWeight: "bold", color: "#ffd700" }}>最高確信銘柄：8035 東京エレクトロン</span>
-            </div>
-            <div style={{ fontSize: "12px", color: "#cbd5e1", lineHeight: "1.6" }}>
-              コータ/デベロッパで世界シェア91%を独占。AI半導体需要の爆発的拡大で受注拡大確実。
-              微細化が進むほど技術的難易度が上がり、参入障壁はさらに高まる。
-              <span style={{ color: "#fbbf24" }}>「先端半導体なしにAIなし、コータなしに先端半導体なし」= グローバル・ボトルネック支配</span>
-            </div>
-          </div>
-          
-          {/* 追加銘柄ハイライト */}
-          <div style={{ 
-            marginTop: "12px",
-            background: "linear-gradient(135deg, rgba(0,255,136,0.1), rgba(34,197,94,0.05))",
-            border: "1px solid #00ff88",
-            borderRadius: "10px",
-            padding: "12px"
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-              <span style={{ fontSize: "16px" }}>★</span>
-              <span style={{ fontSize: "14px", fontWeight: "bold", color: "#00ff88" }}>追加銘柄</span>
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", fontSize: "12px", color: "#cbd5e1" }}>
-              <div>
-                <div style={{ color: "#00ff88", fontWeight: "bold" }}>6501 日立製作所（#5・最優先投資）</div>
-                <div>HVDC世界リーダー（150GW連系）。確実性高（長期契約多数）、アップサイド中〜高（コングロマリットに埋没）</div>
-              </div>
-              <div>
-                <div style={{ color: "#00ff88", fontWeight: "bold" }}>5802 住友電工（#13・安定成長）</div>
-                <div>GaN HEMTトップ、SiC装置90%。確実性中〜高、アップサイド中〜高（ワイヤーハーネス認識）</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* フェローテックの説明 */}
-          <div style={{ 
-            marginTop: "12px",
-            background: "rgba(249, 115, 22, 0.1)",
-            border: "1px solid #f97316",
-            borderRadius: "10px",
-            padding: "12px"
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-              <span style={{ fontSize: "16px" }}>📈</span>
-              <span style={{ fontSize: "14px", fontWeight: "bold", color: "#f97316" }}>6890 フェローテック（#6・投機的機会）</span>
-            </div>
-            <div style={{ fontSize: "12px", color: "#cbd5e1" }}>
-              真空シール65%独占で独占力は高いが、<span style={{ color: "#f97316" }}>中国依存40%超の地政学リスク</span>により確実性は「中」。
-              一方、Tier2の不可視性により情報の非対称性は22点と高く、アップサイドは「高」。
-              <span style={{ color: "#fbbf24" }}>→ 高順位でも確実性リスクにより「投機的機会」象限に配置</span>
-            </div>
-          </div>
-          
-          {/* 戦略サマリー */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "12px", marginTop: "20px" }}>
-            <div style={{ background: `${quadrantColors.prime.bg}`, border: `1px solid ${quadrantColors.prime.border}`, borderRadius: "8px", padding: "12px" }}>
-              <div style={{ color: quadrantColors.prime.border, fontWeight: "bold", marginBottom: "4px" }}>⭐ 最優先投資（コア）</div>
-              <div style={{ fontSize: "12px", color: "#ffd700" }}>8035 東京エレクトロン（最高確信）</div>
-              <div style={{ fontSize: "12px", color: "#cbd5e1" }}>6857アドバンテスト, 7011三菱重工, 2802味の素, 6501日立★, 6268ナブテスコ</div>
-            </div>
-            <div style={{ background: `${quadrantColors.stable.bg}`, border: `1px solid ${quadrantColors.stable.border}`, borderRadius: "8px", padding: "12px" }}>
-              <div style={{ color: quadrantColors.stable.border, fontWeight: "bold", marginBottom: "4px" }}>🛡️ 安定成長（分散）</div>
-              <div style={{ fontSize: "12px", color: "#cbd5e1" }}>6146ディスコ, 4063信越化学, 6361荏原, 7012川崎重工, 5802住友電工★, 6506安川, 6954ファナック, 6503三菱電機, 7013IHI, 6841横河電機, 6758ソニー, 6981村田</div>
-            </div>
-            <div style={{ background: `${quadrantColors.speculative.bg}`, border: `1px solid ${quadrantColors.speculative.border}`, borderRadius: "8px", padding: "12px" }}>
-              <div style={{ color: quadrantColors.speculative.border, fontWeight: "bold", marginBottom: "4px" }}>📈 投機的機会（小ポジ）</div>
-              <div style={{ fontSize: "12px", color: "#cbd5e1" }}>6890フェローテック(#6), 6324ハーモニック(#10), 6702富士通(#14), 4188関東電化(#20), 6920レーザーテック, 6594日本電産</div>
-            </div>
-            <div style={{ background: `${quadrantColors.avoid.bg}`, border: `1px solid ${quadrantColors.avoid.border}`, borderRadius: "8px", padding: "12px" }}>
-              <div style={{ color: quadrantColors.avoid.border, fontWeight: "bold", marginBottom: "4px" }}>🚫 回避/様子見</div>
-              <div style={{ fontSize: "12px", color: "#cbd5e1" }}>PBR1倍割れ放置、資本効率改善意思なし、地政学リスク過大で確実性・アップサイドとも低い銘柄</div>
-            </div>
-          </div>
-          
-          <div style={{ textAlign: "center", marginTop: "20px", fontSize: "11px", color: "#64748b" }}>
-            2026年1月25日時点 | 評価軸: 独占力(30)+資本効率(20)+シナジー(25)+非対称性(25)=100点 | ホバーで詳細表示 | ★=追加銘柄
-          </div>
-        </div>
-      );
-    }
-    
-    ReactDOM.render(<QuadrantChart />, document.getElementById('root'));
-  </script>
+                    </div>
+
+                    {/* 評価基準の説明 */}
+                    <div style={{
+                        marginTop: "16px",
+                        background: "rgba(71, 85, 105, 0.3)",
+                        border: "1px solid #475569",
+                        borderRadius: "8px",
+                        padding: "10px",
+                        fontSize: "11px",
+                        color: "#94a3b8"
+                    }}>
+                        <div style={{ fontWeight: "bold", marginBottom: "4px" }}>マルチドメイン・コンバージェンス評価フレームワーク（100点満点）</div>
+                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
+                            <div><span style={{ color: "#ff6b6b" }}>物理的独占力(30点)</span>: 市場シェア + 代替不可能性</div>
+                            <div><span style={{ color: "#3b82f6" }}>政策耐性(20点)</span>: 超党派支持 + 規制リスク耐性</div>
+                            <div><span style={{ color: "#22c55e" }}>シナジー(25点)</span>: 6ドメイン横断需要 + 相乗効果</div>
+                        </div>
+                        <div style={{ marginTop: "4px" }}>
+                            <span style={{ color: "#f97316" }}>核心の問い</span>: この技術がなくなったら何が止まるか？ / 何社が依存？ / 競合が追いつくのに何年？
+                        </div>
+                    </div>
+
+                    {/* 最高評価銘柄ハイライト */}
+                    {allStocks.length > 0 && (
+                        <div style={{
+                            marginTop: "16px",
+                            background: "linear-gradient(135deg, rgba(255,215,0,0.15), rgba(34,197,94,0.1))",
+                            border: "2px solid #ffd700",
+                            borderRadius: "10px",
+                            padding: "14px"
+                        }}>
+                            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                                <span style={{ fontSize: "20px" }}>1</span>
+                                <span style={{ fontSize: "16px", fontWeight: "bold", color: "#ffd700" }}>
+                                    最高評価銘柄：{allStocks[0].ticker} {allStocks[0].name}
+                                </span>
+                            </div>
+                            <div style={{ fontSize: "12px", color: "#cbd5e1", lineHeight: "1.6" }}>
+                                {allStocks[0].thesis}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* 高独占銘柄 */}
+                    <div style={{
+                        marginTop: "12px",
+                        background: "linear-gradient(135deg, rgba(255,107,107,0.1), rgba(239,68,68,0.05))",
+                        border: "1px solid #ff6b6b",
+                        borderRadius: "10px",
+                        padding: "12px"
+                    }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                            <span style={{ fontSize: "14px", fontWeight: "bold", color: "#ff6b6b" }}>高独占銘柄（27点以上）</span>
+                        </div>
+                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px", fontSize: "11px", color: "#cbd5e1" }}>
+                            {allStocks.filter(s => s.monopoly >= 27).map(stock => (
+                                <div key={stock.ticker}>
+                                    <span style={{ color: "#ff6b6b" }}>{stock.ticker}</span> {stock.name.split(' ')[0]}: {stock.note}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* 戦略サマリー */}
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "12px", marginTop: "20px" }}>
+                        <div style={{ background: `${quadrantColors.prime.bg}`, border: `1px solid ${quadrantColors.prime.border}`, borderRadius: "8px", padding: "12px" }}>
+                            <div style={{ color: quadrantColors.prime.border, fontWeight: "bold", marginBottom: "4px" }}>最優先投資（Prime）: {quadrantCounts.prime}社</div>
+                            <div style={{ fontSize: "11px", color: "#cbd5e1" }}>
+                                {allStocks.filter(s => s.quadrant === "prime").map(s => s.ticker).join(", ")}
+                            </div>
+                        </div>
+                        <div style={{ background: `${quadrantColors.stable.bg}`, border: `1px solid ${quadrantColors.stable.border}`, borderRadius: "8px", padding: "12px" }}>
+                            <div style={{ color: quadrantColors.stable.border, fontWeight: "bold", marginBottom: "4px" }}>安定成長（Stable）: {quadrantCounts.stable}社</div>
+                            <div style={{ fontSize: "11px", color: "#cbd5e1" }}>
+                                {allStocks.filter(s => s.quadrant === "stable").map(s => s.ticker).join(", ")}
+                            </div>
+                        </div>
+                        <div style={{ background: `${quadrantColors.speculative.bg}`, border: `1px solid ${quadrantColors.speculative.border}`, borderRadius: "8px", padding: "12px" }}>
+                            <div style={{ color: quadrantColors.speculative.border, fontWeight: "bold", marginBottom: "4px" }}>投機的機会（Speculative）: {quadrantCounts.speculative}社</div>
+                            <div style={{ fontSize: "11px", color: "#cbd5e1" }}>
+                                {allStocks.filter(s => s.quadrant === "speculative").map(s => s.ticker).join(", ") || "該当なし"}
+                            </div>
+                        </div>
+                        <div style={{ background: `${quadrantColors.avoid.bg}`, border: `1px solid ${quadrantColors.avoid.border}`, borderRadius: "8px", padding: "12px" }}>
+                            <div style={{ color: quadrantColors.avoid.border, fontWeight: "bold", marginBottom: "4px" }}>回避/様子見（Avoid）: {quadrantCounts.avoid}社</div>
+                            <div style={{ fontSize: "11px", color: "#cbd5e1" }}>
+                                {allStocks.filter(s => s.quadrant === "avoid").map(s => s.ticker).join(", ") || "Top30内に該当なし"}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Key Insights - プレースホルダー */}
+                    <div style={{
+                        marginTop: "16px",
+                        background: "rgba(168, 85, 247, 0.1)",
+                        border: "1px solid #a855f7",
+                        borderRadius: "10px",
+                        padding: "12px"
+                    }}>
+                        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#a855f7", marginBottom: "8px" }}>Key Insights</div>
+                        <div style={{ fontSize: "11px", color: "#cbd5e1", lineHeight: "1.8" }}>
+                            {{KEY_INSIGHTS}}
+                        </div>
+                    </div>
+
+                    <div style={{ textAlign: "center", marginTop: "20px", fontSize: "11px", color: "#64748b" }}>
+                        {analysisDate} | マルチドメイン・コンバージェンス分析 | ホバーで詳細表示
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<QuadrantChart />, document.getElementById('root'));
+    </script>
 </body>
 </html>

@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "description": "企業基礎情報（認証、モート、競争構造）- 年単位で変化",
+    "last_updated": "2026-01-28",
+    "update_reason": "Phase 5統合: raw/company_info/*からPERMANENT情報を抽出",
+    "next_review": "2027-01-28",
+    "schema_version": "1.0"
+  },
+  "companies": {
+    "NVDA": {
+      "name": "NVIDIA Corporation",
+      "domain": ["AI", "データセンター"],
+      "moat": {
+        "type": "独占的技術・エコシステム",
+        "market_share": "90-98%（データセンターGPU）",
+        "description": "CUDA独占、HBM統合、Blackwell/Rubin技術リード"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["CUDA 20年のエコシステム", "HBM統合技術", "TSMCパートナーシップ"],
+      "competitors": ["AMD MI300シリーズ（年間$5B規模、シェア2-5%）"],
+      "sources": ["TrendForce", "NVIDIA IR", "各社決算"]
+    },
+    "LEU": {
+      "name": "Centrus Energy Corp",
+      "domain": ["エネルギー", "原子力"],
+      "moat": {
+        "type": "唯一の供給者",
+        "market_share": "100%（米国内HALEU商用生産）",
+        "description": "米国内唯一のHALEU商用生産者。NRC認証済み施設。"
+      },
+      "certifications": ["NRC License（Piketon, Ohio）"],
+      "barriers_to_entry": ["NRC認証（取得に数年）", "HALEU製造技術", "DOEパートナーシップ"],
+      "competitors": ["なし（米国内商用では唯一）"],
+      "sources": ["DOE発表", "LEU IR"]
+    },
+    "BWXT": {
+      "name": "BWX Technologies, Inc.",
+      "domain": ["エネルギー", "防衛", "原子力"],
+      "moat": {
+        "type": "唯一の認定供給者",
+        "market_share": "100%（米海軍原子炉部品）",
+        "description": "米海軍原子炉部品の唯一の国内認定製造者。70年以上の実績。"
+      },
+      "certifications": ["Naval Nuclear Propulsion Program認定", "NRC License", "NNSA契約者"],
+      "barriers_to_entry": ["海軍認定（競合参入ほぼ不可能）", "70年の技術蓄積", "機密クリアランス"],
+      "competitors": ["なし（海軍原子炉では唯一）"],
+      "sources": ["BWXT IR", "DoD契約発表"]
+    },
+    "VRT": {
+      "name": "Vertiv Holdings Co",
+      "domain": ["AI", "データセンター"],
+      "moat": {
+        "type": "技術的リーダーシップ",
+        "market_share": "データセンター冷却でトップ3",
+        "description": "液冷技術リーダー。NVIDIA GB200参照アーキテクチャ共同開発。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["液冷技術の先行", "NVIDIAパートナーシップ", "グローバル製造・サービス網"],
+      "competitors": ["Schneider Electric", "Eaton"],
+      "sources": ["Vertiv IR", "NVIDIA発表"]
+    },
+    "AVAV": {
+      "name": "AeroVironment, Inc.",
+      "domain": ["防衛", "ロボティクス", "ドローン"],
+      "moat": {
+        "type": "Replicator選定・量産能力",
+        "market_share": "徘徊型弾薬（Switchblade）で市場リーダー",
+        "description": "Replicator公式選定。12州製造拠点。FY27までに生産能力2倍。"
+      },
+      "certifications": ["ITAR対応", "DoD認定サプライヤー"],
+      "barriers_to_entry": ["Replicator公式選定", "量産ノウハウ", "実戦実績（ウクライナ）"],
+      "competitors": ["Anduril（異なるセグメント）"],
+      "sources": ["DoD発表", "AVAV IR"]
+    },
+    "RKLB": {
+      "name": "Rocket Lab USA, Inc.",
+      "domain": ["宇宙", "防衛"],
+      "moat": {
+        "type": "小型打上げ市場リーダー",
+        "market_share": "小型衛星打上げで市場シェア2位（SpaceX次点）",
+        "description": "Electron商業化成功。SDA契約$1.3B+獲得。"
+      },
+      "certifications": ["FAA Launch License", "SDA認定"],
+      "barriers_to_entry": ["打上げ実績（100+成功）", "垂直統合", "Photon衛星バス"],
+      "competitors": ["SpaceX（大型）", "Relativity（開発中）"],
+      "sources": ["RKLB IR", "SDA契約発表"]
+    },
+    "LHX": {
+      "name": "L3Harris Technologies, Inc.",
+      "domain": ["防衛", "宇宙"],
+      "moat": {
+        "type": "戦略ミサイル独占",
+        "market_share": "SRM（固体ロケットモーター）でRTXと複占",
+        "description": "RS-25、PAC-3、THAAD、Tomahawk、SM製造。Pentagon $1B直接投資。"
+      },
+      "certifications": ["ITAR対応", "DoD認定プライムコントラクター", "NASA認定"],
+      "barriers_to_entry": ["SRM技術独占", "70年の実績", "機密クリアランス"],
+      "competitors": ["RTX（Aerojet Rocketdyne）"],
+      "sources": ["LHX IR", "DoD発表", "NASA"]
+    },
+    "VST": {
+      "name": "Vistra Corp",
+      "domain": ["エネルギー", "原子力"],
+      "moat": {
+        "type": "原子力フリート保有",
+        "market_share": "米国最大の競争的電力事業者（41GW）",
+        "description": "Meta 20年PPA（2.1GW+）。Perry, Davis-Besse, Beaver Valley原子炉。"
+      },
+      "certifications": ["NRC原子炉ライセンス（複数サイト）"],
+      "barriers_to_entry": ["原子炉ライセンス（新規取得困難）", "20年PPA固定"],
+      "competitors": ["Constellation Energy", "Duke Energy"],
+      "sources": ["VST IR", "Meta発表"]
+    },
+    "CEG": {
+      "name": "Constellation Energy",
+      "domain": ["エネルギー", "原子力"],
+      "moat": {
+        "type": "米国最大の原子力フリート",
+        "market_share": "発電量の70%が原子力",
+        "description": "Meta Clinton PPA、Microsoft Three Mile Island契約。"
+      },
+      "certifications": ["NRC原子炉ライセンス（複数サイト）"],
+      "barriers_to_entry": ["原子炉ライセンス（新規取得困難）", "長期PPA契約"],
+      "competitors": ["Vistra", "Duke Energy"],
+      "sources": ["CEG IR", "Meta/Microsoft発表"]
+    },
+    "TDG": {
+      "name": "TransDigm Group",
+      "domain": ["防衛", "航空宇宙"],
+      "moat": {
+        "type": "独占的アフターマーケット部品",
+        "market_share": "売上の90%が独占的製品",
+        "description": "EBITDAマージン約50%。代替不可能な認証済み航空機部品。"
+      },
+      "certifications": ["FAA PMA認証（多数）", "DoD認定サプライヤー"],
+      "barriers_to_entry": ["FAA認証（取得に数年）", "OEM設計ロックイン"],
+      "competitors": ["HEICO（一部重複）"],
+      "sources": ["TDG IR", "10-K"]
+    },
+    "ETN": {
+      "name": "Eaton Corporation",
+      "domain": ["エネルギー", "AI", "防衛"],
+      "moat": {
+        "type": "電気インフラリーダー",
+        "market_share": "配電・変圧器市場でトップ3",
+        "description": "グリッド近代化とAIインフラ双方を捕捉。変圧器リードタイム2年。"
+      },
+      "certifications": ["UL認証", "DoD認定サプライヤー"],
+      "barriers_to_entry": ["製造能力の制約", "長期顧客関係"],
+      "competitors": ["Schneider Electric", "ABB"],
+      "sources": ["ETN IR", "Industry reports"]
+    },
+    "CW": {
+      "name": "Curtiss-Wright Corporation",
+      "domain": ["防衛", "エネルギー", "原子力"],
+      "moat": {
+        "type": "海軍原子力独占サプライヤー",
+        "market_share": "米海軍原子力艦艇ポンプ・バルブで独占",
+        "description": "Rolls-Royce SMR、X-energyと戦略提携。軍事→民間SMR転用。"
+      },
+      "certifications": ["Naval Nuclear認定", "NRC認証"],
+      "barriers_to_entry": ["海軍認定（競合参入困難）", "原子力品質規格"],
+      "competitors": ["なし（ニッチ独占）"],
+      "sources": ["CW IR", "SMR契約発表"]
+    },
+    "APH": {
+      "name": "Amphenol Corporation",
+      "domain": ["AI", "防衛", "ロボティクス"],
+      "moat": {
+        "type": "高速コネクタ技術リーダー",
+        "market_share": "軍用コネクタ市場22.1%シェア",
+        "description": "AIサーバー内高速通信、軍用コネクタで強み。"
+      },
+      "certifications": ["MIL-SPEC認証", "AS9100"],
+      "barriers_to_entry": ["技術集積（M&A）", "顧客認定"],
+      "competitors": ["TE Connectivity", "Molex"],
+      "sources": ["APH IR", "Industry reports"]
+    }
+  }
+}

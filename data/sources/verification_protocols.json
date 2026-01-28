@@ -1,290 +1,81 @@
 {
-  "_metadata": {
-    "version": "1.0",
-    "created": "2026-01-26",
-    "purpose": "4次元評価フレームワークの検証プロトコル体系化",
-    "usage": "情報収集時に必ず参照し、評価の一貫性と品質を担保"
-  },
-
-  "certainty_verification": {
-    "_description": "確度（Certainty）の検証プロトコル",
-
-    "stage_definitions": {
-      "rumor": {
-        "score_range": [10, 20],
-        "criteria": "SNS、掲示板、「関係者によると」の単独記事",
-        "required_action": "一次資料を探す、複数ソース確認",
-        "upgrade_path": "公式発表を待つ、または複数報道で確認"
-      },
-      "report_unconfirmed": {
-        "score_range": [30, 40],
-        "criteria": "単一メディア報道、一次資料未確認",
-        "required_action": "一次資料URL検索、第2報道源確認",
-        "upgrade_path": "一次資料発見でreport_confirmedへ"
-      },
-      "report_confirmed": {
-        "score_range": [50, 60],
-        "criteria": "複数報道で確認、一次資料なし",
-        "required_action": "一次資料を継続探索",
-        "upgrade_path": "公式発表でofficial_announcementへ"
-      },
-      "official_announcement": {
-        "score_range": [70, 80],
-        "criteria": "公式発表あり（政府、企業IR）",
-        "required_action": "発表内容の詳細確認、実行条件の確認",
-        "upgrade_path": "契約締結、予算成立でcontract_signedへ"
-      },
-      "contract_signed": {
-        "score_range": [85, 95],
-        "criteria": "契約締結、予算成立、法案成立",
-        "required_action": "実行スケジュールの確認",
-        "upgrade_path": "実行完了でexecutedへ"
-      },
-      "executed": {
-        "score_range": [95, 99],
-        "criteria": "実行済み、納品済み、決算で確定",
-        "required_action": "なし（最高確度）",
-        "upgrade_path": "なし"
-      }
+  "protocols": {
+    "primary_confirmation": {
+      "description": "一次情報源による確認プロトコル",
+      "required_sources": ["政府文書", "SEC提出書類", "公式プレスリリース"],
+      "verification_steps": [
+        "公式ウェブサイトで発表を確認",
+        "SEC EDGARで関連提出書類を検索",
+        "SAM.govで契約情報を確認"
+      ],
+      "confidence_boost": 15
     },
-
-    "primary_source_checklist": {
-      "政策情報": [
-        "省庁プレスリリースのURLを取得したか",
-        "発表日を記録したか",
-        "予算額・期間等の数値を確認したか",
-        "実行条件（国会審議等）を確認したか"
+    "multi_source_confirmation": {
+      "description": "複数情報源による確認プロトコル",
+      "required_count": 2,
+      "acceptable_combinations": [
+        ["通信社", "業界メディア"],
+        ["業界メディア", "業界メディア"],
+        ["シンクタンク", "通信社"]
       ],
-      "企業情報": [
-        "適時開示（TDnet）を確認したか",
-        "有価証券報告書を参照したか",
-        "決算説明会資料を確認したか",
-        "IR問い合わせ先を記録したか"
+      "confidence_boost": 10
+    },
+    "conflict_resolution": {
+      "description": "情報矛盾の解決プロトコル",
+      "steps": [
+        "全情報源の日付を確認（最新を優先）",
+        "一次情報源の有無を確認（あれば優先）",
+        "情報の具体性を比較（詳細な方を優先）",
+        "解決不能な場合はconflictingとしてマーク"
       ],
-      "シェアデータ": [
-        "調査機関名を特定したか",
-        "調査時期を確認したか",
-        "対象市場の定義を確認したか",
-        "調査方法（推計 or 実績）を確認したか"
-      ]
+      "confidence_penalty": -50
+    },
+    "staleness_check": {
+      "description": "情報の陳腐化チェックプロトコル",
+      "thresholds": {
+        "market_share": 180,
+        "policy": "execution_deadline",
+        "guidance": "next_earnings",
+        "market_state": 1
+      },
+      "action": "stale_alertを発行し、更新を要求"
     }
   },
-
-  "verification_level": {
-    "_description": "検証度（Verification）の判定プロトコル",
-
-    "level_definitions": {
-      "primary_confirmed": {
-        "criteria": "一次資料（政府発表、企業開示）で確認",
-        "trust_level": "最高",
-        "standalone_ok": true,
-        "required_evidence": ["一次資料URL", "発表日", "発表元"]
-      },
-      "multi_source": {
-        "criteria": "独立した2ソース以上で確認",
-        "trust_level": "高",
-        "standalone_ok": true,
-        "required_evidence": ["ソース1の詳細", "ソース2の詳細", "矛盾なしの確認"]
-      },
-      "single_reliable": {
-        "criteria": "単一だが信頼できるソース（大手報道機関等）",
-        "trust_level": "中",
-        "standalone_ok": "条件付き可",
-        "required_evidence": ["ソース詳細", "7日以内に追加検証の予定"]
-      },
-      "single_unverified": {
-        "criteria": "単一ソース、未検証",
-        "trust_level": "低",
-        "standalone_ok": false,
-        "required_evidence": ["追加検証が必要"]
-      },
-      "conflicting": {
-        "criteria": "複数ソースで情報が矛盾",
-        "trust_level": "要注意",
-        "standalone_ok": false,
-        "required_evidence": ["矛盾内容の記録", "解決方法の検討"]
-      }
+  "source_reliability": {
+    "tier_a": {
+      "description": "最高信頼性（単独使用可）",
+      "sources": ["政府文書", "SEC提出書類", "契約データベース"],
+      "examples": ["Federal Register", "10-K/10-Q", "SAM.gov", "FPDS"]
     },
-
-    "source_reliability_ranking": {
-      "tier1_highest": [
-        "日本政府省庁プレスリリース",
-        "企業適時開示（TDnet）",
-        "有価証券報告書",
-        "決算短信",
-        "米国SEC提出書類"
-      ],
-      "tier2_high": [
-        "企業IR資料",
-        "決算説明会資料・書き起こし",
-        "業界団体公式発表",
-        "調査機関公式レポート（SEMI、Gartner等）"
-      ],
-      "tier3_medium": [
-        "日経新聞、ロイター、Bloomberg",
-        "専門紙（日刊工業、電波新聞等）",
-        "NHK、主要テレビ局"
-      ],
-      "tier4_low": [
-        "一般Webメディア",
-        "個人ブログ・note",
-        "SNS（単独では採用不可）"
-      ]
+    "tier_b_plus": {
+      "description": "高信頼性（複数推奨）",
+      "sources": ["業界専門メディア"],
+      "examples": ["Defense News", "SpaceNews", "Utility Dive", "The Information"]
     },
-
-    "cross_check_protocol": {
-      "step1": "一次資料を検索（政府サイト、EDINET、TDnet）",
-      "step2": "見つからない場合、信頼性Tier2以上のソースを2つ探す",
-      "step3": "2つのソースで数値・内容が一致するか確認",
-      "step4": "矛盾がある場合はconflictingとして記録",
-      "step5": "7日以内に一次資料が見つからなければ確度を10%減少"
+    "tier_b": {
+      "description": "信頼性あり（複数必須）",
+      "sources": ["通信社", "シンクタンク"],
+      "examples": ["Reuters", "Bloomberg", "CSIS", "RAND"]
+    },
+    "tier_c": {
+      "description": "単独使用禁止",
+      "sources": ["ソーシャルメディア", "フォーラム", "個人ブログ", "アナリスト予想"],
+      "note": "センチメント分析にのみ使用可"
     }
   },
-
-  "asymmetry_evaluation": {
-    "_description": "非対称性（Asymmetry）の評価プロトコル",
-
-    "score_calculation": {
-      "base_score": 5,
-      "language_barrier": {
-        "add_points": 8,
-        "criteria": "日本語のみの情報源、英訳なし",
-        "check_method": "Bloomberg/Reuters英語版で検索して報道なし"
-      },
-      "supply_chain_depth": {
-        "add_points": 7,
-        "criteria": "Tier2/Tier3のサプライヤー、最終製品から不可視",
-        "check_method": "最終製品メーカーのIRで言及なし"
-      },
-      "certification_barrier": {
-        "add_points": 5,
-        "criteria": "防衛・原子力・航空宇宙等の認証が参入障壁",
-        "check_method": "認定取得企業リストの確認"
-      }
+  "automation_rules": {
+    "auto_upgrade": {
+      "trigger": "primary_source_found",
+      "action": "verification_levelをprimary_confirmedに変更",
+      "certainty_adjustment": "+15"
     },
-
-    "english_coverage_check": {
-      "search_targets": [
-        "Bloomberg Terminal（site:bloomberg.com）",
-        "Reuters（site:reuters.com）",
-        "Financial Times（site:ft.com）",
-        "Wall Street Journal（site:wsj.com）",
-        "Seeking Alpha（site:seekingalpha.com）"
-      ],
-      "check_items": [
-        "英語での報道有無",
-        "英語アナリストレポートの有無",
-        "英語IR資料の有無",
-        "外国人保有比率の推移"
-      ],
-      "result_interpretation": {
-        "no_english_coverage": "非対称性+8",
-        "limited_english_coverage": "非対称性+4",
-        "full_english_coverage": "非対称性+0"
-      }
+    "auto_downgrade": {
+      "trigger": "single_unverified_after_7_days",
+      "action": "certainty.scoreを10%減少"
     },
-
-    "resolution_risk_assessment": {
-      "high_risk_triggers": [
-        "大手英語メディアで報道",
-        "海外アナリストがカバレッジ開始",
-        "決算説明会で英語質疑あり",
-        "外国人保有比率が急上昇"
-      ],
-      "monitoring_items": [
-        "Google News英語検索",
-        "外国人保有比率（四半期）",
-        "英語アナリストレポート発行"
-      ]
-    }
-  },
-
-  "freshness_management": {
-    "_description": "鮮度（Freshness）の管理プロトコル",
-
-    "decay_rates": {
-      "very_fast": {
-        "examples": ["株価", "為替", "需給データ"],
-        "valid_period": "1日",
-        "update_frequency": "毎日"
-      },
-      "fast": {
-        "examples": ["外国人売買動向", "信用残高"],
-        "valid_period": "1週間",
-        "update_frequency": "週次"
-      },
-      "medium": {
-        "examples": ["決算・ガイダンス", "政策発表"],
-        "valid_period": "次回更新まで",
-        "update_frequency": "イベントドリブン"
-      },
-      "slow": {
-        "examples": ["世界シェア", "市場規模"],
-        "valid_period": "6ヶ月〜1年",
-        "update_frequency": "半年〜年次"
-      },
-      "very_slow": {
-        "examples": ["認証・参入障壁", "技術優位性"],
-        "valid_period": "数年",
-        "update_frequency": "年次"
-      }
-    },
-
-    "staleness_alerts": {
-      "rules": [
-        {
-          "data_type": "シェアデータ",
-          "threshold_days": 180,
-          "action": "最新調査データを検索"
-        },
-        {
-          "data_type": "政策情報",
-          "threshold": "実行期限超過",
-          "action": "結果を確認し更新"
-        },
-        {
-          "data_type": "ガイダンス",
-          "threshold": "次回決算後",
-          "action": "新ガイダンスで更新"
-        },
-        {
-          "data_type": "市場状態",
-          "threshold_days": 1,
-          "action": "毎日更新"
-        }
-      ]
-    }
-  },
-
-  "automated_quality_checks": {
-    "_description": "自動品質チェックのルール",
-
-    "on_event_creation": [
-      "確度stageとscoreの整合性チェック",
-      "検証levelと採用可否の整合性チェック",
-      "一次資料URLの有無チェック",
-      "affected_tickersの妥当性チェック"
-    ],
-
-    "periodic_checks": {
-      "daily": [
-        "market_stateの更新確認"
-      ],
-      "weekly": [
-        "single_unverifiedイベントの7日超過チェック",
-        "非対称性解消リスクの確認"
-      ],
-      "monthly": [
-        "シェアデータの陳腐化チェック",
-        "monopoly_mapの網羅性チェック（6ドメイン）"
-      ]
-    },
-
-    "alert_thresholds": {
-      "unverified_7days": "single_unverifiedで7日経過 → 確度10%減少",
-      "conflict_detected": "矛盾検知 → 即時アラート",
-      "stale_share_data": "180日超過 → 更新必要アラート",
-      "domain_imbalance": "特定ドメインが0社 → カバレッジアラート"
+    "auto_flag": {
+      "trigger": "conflict_detected",
+      "action": "verification_levelをconflictingに変更、アラート発行"
     }
   }
 }

@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "description": "契約・受注情報 - 月次で更新",
+    "last_updated": "2026-01-28",
+    "next_update": "2026-02-28",
+    "schema_version": "1.0"
+  },
+  "contracts": [
+    {
+      "id": "CON-001",
+      "company": "LEU",
+      "ticker": "LEU",
+      "contract_name": "DOE HALEU Phase III",
+      "value": "$110M",
+      "counterparty": "Department of Energy",
+      "duration": "Through June 30, 2026",
+      "date_announced": "2025-06-17",
+      "status": "active",
+      "notes": "唯一の米国内HALEU商用生産者。年900kg生産。"
+    },
+    {
+      "id": "CON-002",
+      "company": "BWXT",
+      "ticker": "BWXT",
+      "contract_name": "Naval Nuclear Reactor Components",
+      "value": "$2.6B",
+      "counterparty": "US Navy",
+      "duration": "Multi-year with options",
+      "date_announced": "2025-07",
+      "status": "active",
+      "notes": "潜水艦・空母向け原子炉部品。受注残$7.4B。"
+    },
+    {
+      "id": "CON-003",
+      "company": "RKLB",
+      "ticker": "RKLB",
+      "contract_name": "SDA Tranche 3 Satellites",
+      "value": "$816M",
+      "counterparty": "Space Development Agency",
+      "duration": "Multi-year",
+      "date_announced": "2025-12",
+      "status": "active",
+      "notes": "18衛星製造。累計SDA契約$1.3B+。"
+    },
+    {
+      "id": "CON-004",
+      "company": "AVAV",
+      "ticker": "AVAV",
+      "contract_name": "Switchblade IDIQ",
+      "value": "$990M + $743M ceiling",
+      "counterparty": "US Army",
+      "duration": "Multi-year",
+      "date_announced": "2024-08",
+      "status": "active",
+      "notes": "Replicator選定。1000基以上調達予定。"
+    },
+    {
+      "id": "CON-005",
+      "company": "LHX",
+      "ticker": "LHX",
+      "contract_name": "Pentagon Missile Solutions Investment",
+      "value": "$1B",
+      "counterparty": "Department of Defense",
+      "duration": "Convertible to IPO equity",
+      "date_announced": "2026-01-13",
+      "status": "new",
+      "notes": "初のGo Direct to Supplier実施。IPO 2026年H2予定。"
+    },
+    {
+      "id": "CON-006",
+      "company": "Meta Nuclear",
+      "ticker": "VST/CEG/OKLO",
+      "contract_name": "Meta 6.6GW Nuclear Agreements",
+      "value": "6.6GW capacity",
+      "counterparty": "Meta Platforms",
+      "duration": "20-year PPAs",
+      "date_announced": "2026-01-09",
+      "status": "active",
+      "notes": "Vistra 2.1GW+, Constellation Clinton, Oklo 1.2GW, TerraPower 690MW"
+    },
+    {
+      "id": "CON-007",
+      "company": "Golden Dome",
+      "ticker": "Multiple",
+      "contract_name": "Golden Dome SHIELD",
+      "value": "$151B",
+      "counterparty": "Department of Defense",
+      "duration": "Multi-year",
+      "date_announced": "2026-01",
+      "status": "active",
+      "notes": "Tranche 2発行。受注者: Redwire, Anduril, LMT, AVAV, Palantir, Blue Origin, SpaceX"
+    },
+    {
+      "id": "CON-008",
+      "company": "SpaceX",
+      "ticker": "Private",
+      "contract_name": "Golden Dome Satellites (Reported)",
+      "value": "$2B (報道)",
+      "counterparty": "Department of Defense",
+      "duration": "Multi-year",
+      "date_announced": "2026-01 (WSJ報道)",
+      "status": "unconfirmed",
+      "certainty": 75,
+      "notes": "600衛星・Air Moving Target Indicator。WSJ報道のみ、公式確認待ち。"
+    },
+    {
+      "id": "CON-009",
+      "company": "LEU",
+      "ticker": "LEU",
+      "contract_name": "DOE HALEU Expansion",
+      "value": "$900M",
+      "counterparty": "Department of Energy",
+      "duration": "Extended through 2030s",
+      "date_announced": "2026-01",
+      "status": "active",
+      "notes": "HALEU生産能力拡張。$2.7B DOEプログラムの一部。"
+    },
+    {
+      "id": "CON-010",
+      "company": "PLTR",
+      "ticker": "PLTR",
+      "contract_name": "Army TITAN Ground System",
+      "value": "$10B",
+      "counterparty": "US Army",
+      "duration": "10-year",
+      "date_announced": "2024-11",
+      "status": "active",
+      "notes": "ソフトウェア企業初の防衛プライム。Azure統合。"
+    }
+  ]
+}
