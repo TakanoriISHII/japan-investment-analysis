@@ -1,12 +1,12 @@
 {
   "metadata": {
     "created": "2026-01-28",
-    "last_updated": "2026-01-28T23:30:00Z",
-    "source": "フル分析 Phase 8",
-    "total_tasks": 8,
+    "last_updated": "2026-01-28T20:30:00Z",
+    "source": "フル分析 Phase 8 v2.0（日本市場追加）",
+    "total_tasks": 11,
     "priority_distribution": {
-      "high": 2,
-      "medium": 5,
+      "high": 3,
+      "medium": 7,
       "low": 1
     }
   },
@@ -98,6 +98,39 @@
       "rationale": "和平成立時の市場・防衛銘柄への影響大。エネルギー価格にも影響。",
       "status": "pending",
       "due_date": "2026-02-15"
+    },
+    {
+      "id": "RF-012",
+      "priority": "high",
+      "category": "monitoring",
+      "domain": "日本/エネルギー",
+      "description": "柏崎刈羽原発運転再開監視",
+      "action": "制御棒不具合の調査完了後の運転再開日程を追跡。東京電力HD（9501.T）への影響評価。",
+      "rationale": "日本の原子力ルネサンスの象徴的イベント。世界最大の原発（821.2万kW）。",
+      "status": "pending",
+      "due_date": "2026-02-28"
+    },
+    {
+      "id": "RF-013",
+      "priority": "medium",
+      "category": "monitoring",
+      "domain": "日本/金融政策",
+      "description": "日銀3月会合の利上げ判断監視",
+      "action": "NRI・三井住友DSの7-9月利上げ予想を検証。展望レポートの上方修正継続かを確認。",
+      "rationale": "銀行セクター・不動産・REITへの影響大。円高リスク評価にも影響。",
+      "status": "pending",
+      "due_date": "2026-03-20"
+    },
+    {
+      "id": "RF-014",
+      "priority": "medium",
+      "category": "monitoring",
+      "domain": "日本/防衛",
+      "description": "次期戦闘機開発進捗監視（GCAP）",
+      "action": "日英伊共同開発の進捗、三菱重工業・IHIへの発注状況を追跡。",
+      "rationale": "防衛予算9.04兆円の主要配分先。2035年就役予定。",
+      "status": "pending",
+      "due_date": "2026-03-31"
     }
   ],
   "completed_tasks": [
@@ -127,6 +160,15 @@
       "description": "Stargate $500B計画の進捗検証",
       "completed_date": "2026-01-28",
       "result": "Claude自動補強完了。$450B+コミット、8GW+計画確認。Abilene運用開始、5新規サイト発表。予定通り進行中。"
+    },
+    {
+      "id": "RF-JP001",
+      "priority": "high",
+      "category": "gap_fill",
+      "domain": "日本市場",
+      "description": "日本市場分析の新規追加",
+      "completed_date": "2026-01-28",
+      "result": "Claude自動補強完了。日本企業12社収集、Top10スコアリング完了。日本市場リスク58/100。consolidated_companies.json、top30.jsonに反映済み。"
     }
   ]
 }

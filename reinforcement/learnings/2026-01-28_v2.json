@@ -1,0 +1,93 @@
+{
+  "date": "2026-01-28",
+  "version": "2.0",
+  "session": "フル分析（日本市場追加）",
+  "summary": {
+    "us_companies_analyzed": 30,
+    "japan_companies_analyzed": 10,
+    "total_companies": 40,
+    "us_market_risk": 62,
+    "japan_market_risk": 58,
+    "contradictions_resolved": 10,
+    "gaps_filled": 15
+  },
+  "quality_scores": {
+    "us_overall": 92,
+    "japan_overall": 97,
+    "categories": {
+      "international_situation": 95,
+      "market_risk": 92,
+      "megatrends": 94,
+      "domain_growth": 90,
+      "investment_pipeline": 96,
+      "missed_scan": 75,
+      "other": 85
+    }
+  },
+  "key_learnings": [
+    {
+      "id": "LRN-001",
+      "category": "coverage",
+      "learning": "日本市場分析を追加することで、グローバル視点のカバレッジが向上",
+      "impact": "high",
+      "action": "次回も日本市場の継続監視を実施"
+    },
+    {
+      "id": "LRN-002",
+      "category": "verification",
+      "learning": "日本企業の時価総額はGrokの$ベース推定より、円ベースで直接計算した方が正確",
+      "impact": "medium",
+      "action": "日本企業は円ベースで評価し、必要時のみ換算"
+    },
+    {
+      "id": "LRN-003",
+      "category": "timeliness",
+      "learning": "ファナック決算（1/26）は直後に反映でき、情報鮮度99%を達成",
+      "impact": "high",
+      "action": "決算直後の分析を優先的に実施"
+    },
+    {
+      "id": "LRN-004",
+      "category": "gap",
+      "learning": "見逃しスキャン（カテゴリF）は75/100と改善余地あり",
+      "impact": "medium",
+      "action": "次回Grok補強で新興銘柄スキャンを強化"
+    }
+  ],
+  "prompt_improvements": [
+    {
+      "id": "PI-005",
+      "target": "prompts/grok/prompt_broad_info.md",
+      "change": "日本市場セクション追加済み（前回改善）",
+      "result": "日本市場情報収集が円滑に実行"
+    },
+    {
+      "id": "PI-006",
+      "target": "prompts/gemini/prompt_new_intelligence.md",
+      "change": "日本版プロンプトへの変換完了",
+      "result": "日本企業情報の深掘りが改善"
+    }
+  ],
+  "verification_items": {
+    "short_term": [
+      "柏崎刈羽運転再開時期",
+      "日銀3月会合",
+      "ファナックQ4決算"
+    ],
+    "medium_term": [
+      "次期戦闘機開発進捗",
+      "防衛装備移転（英・伊）",
+      "NuScale商用化（IHI関連）"
+    ],
+    "long_term": [
+      "日本SMR市場形成",
+      "防衛予算2%GDP達成（2027年度）"
+    ]
+  },
+  "next_analysis_priorities": [
+    "Mag7決算シーズンの影響評価",
+    "日銀3月会合後の市場反応",
+    "Neutron初打ち上げ結果",
+    "Fed議長後任人事"
+  ]
+}
