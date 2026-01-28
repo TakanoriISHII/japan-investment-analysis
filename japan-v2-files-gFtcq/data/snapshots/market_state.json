@@ -1,0 +1,25 @@
+{
+  "last_updated": null,
+  "indices": {
+    "sp500": null,
+    "nasdaq": null,
+    "russell2000": null
+  },
+  "volatility": {
+    "vix": null,
+    "vix_term_structure": null
+  },
+  "rates": {
+    "fed_funds_rate": null,
+    "us_10y": null,
+    "us_2y": null
+  },
+  "credit": {
+    "ig_spread": null,
+    "hy_spread": null
+  },
+  "positioning": {
+    "margin_debt": null,
+    "put_call_ratio": null
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "description": "LLM出力間の矛盾検出結果",
+    "created": "2026-01-27",
+    "last_updated": "2026-01-28",
+    "phase": "フェーズ3: Claude比較分析",
+    "session": "フル分析 2026-01-28 PM"
+  },
+  "contradictions": [
+    {
+      "id": "CTR-001",
+      "type": "market_share",
+      "company": "Wolfspeed (WOLF)",
+      "field": "SiC市場シェア",
+      "sources": {
+        "gemini": "世界のSiC生産の約60%に関与",
+        "grok": "データなし",
+        "verified": "34% (SiC基板市場、2024年)"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "34%（SiC基板市場シェア、TrendForce 2024年データ）",
+        "notes": "重大な発見: Wolfspeedは2025年にChapter 11破産申請。投資テーゼに重大な影響。",
+        "verification_source": "TrendForce, Yole Group",
+        "action": "投資候補リストから除外"
+      }
+    },
+    {
+      "id": "CTR-002",
+      "type": "market_share",
+      "company": "NVIDIA (NVDA)",
+      "field": "AI GPU市場シェア",
+      "sources": {
+        "gemini": "AI計算基盤で80%以上",
+        "grok": "85% (AI data center GPUs)",
+        "claude": "85-90%"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "90-98%（データセンターGPU市場、2025-2026年）",
+        "notes": "Q3 FY2026でデータセンター売上$51.2B、全売上の89.8%。Blackwell完売状態。",
+        "verification_source": "NVIDIA IR, SEC filings, Futurum Group",
+        "action": "シェア数値を上方修正、独占的地位を確認"
+      }
+    },
+    {
+      "id": "CTR-003",
+      "type": "market_risk",
+      "field": "CAPE比率",
+      "sources": {
+        "gemini_broad": "39.8（2025年12月）",
+        "grok_broad": "40.38",
+        "claude": "41.03（2026年1月28日）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "41.03（2026年1月28日時点、最新）",
+        "notes": "前回分析(40.58)からさらに上昇。過去155年で2度目の40超え継続。歴史的にCAOE39超え後は2年で-20%、3年で-30%のリターン。",
+        "verification_source": "Multpl.com, GuruFocus",
+        "action": "市場リスク評価のバリュエーション項目を最高リスクに維持"
+      }
+    },
+    {
+      "id": "CTR-004",
+      "type": "financial",
+      "company": "TSMC",
+      "field": "CoWoS生産能力",
+      "sources": {
+        "gemini_broad": "2026年に月産13万〜14万枚へ約4倍に急拡大",
+        "grok_broad": "詳細なし"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "2026年末までに月産12万〜14万枚（2024年後半の3.5万枚から）",
+        "notes": "NVIDIAが60%以上を確保、Rubin/Blackwell量産体制",
+        "verification_source": "DigiTimes, TrendForce, Tiger Brokers",
+        "action": "先端パッケージング関連銘柄の評価を維持"
+      }
+    },
+    {
+      "id": "CTR-005",
+      "type": "market_risk",
+      "field": "ハイイールド信用スプレッド",
+      "sources": {
+        "gemini_broad": "2.85%（285bp、2026年1月23日）",
+        "grok_broad": "2.68%"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "2.64-2.85%（2026年1月、範囲）",
+        "notes": "歴史的に非常にタイトな水準。リスク・オンのセンチメント継続。",
+        "verification_source": "FRED, Penn Mutual",
+        "action": "クレジットリスク項目は低リスクとして評価"
+      }
+    },
+    {
+      "id": "CTR-006",
+      "type": "market_risk",
+      "field": "市場リスク総合スコア",
+      "sources": {
+        "grok_broad": "73/100 (高リスク)",
+        "前回分析": "62/100"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "65/100（今回推定）",
+        "notes": "CAPE上昇(40.58→41.03)、Fed不確実性（Powell任期2026年5月満了）を反映。Grokの73は保守的過ぎる可能性。",
+        "verification_source": "複合分析",
+        "action": "保守的スタンスを維持"
+      }
+    },
+    {
+      "id": "CTR-007",
+      "type": "financial",
+      "company": "Vertiv (VRT)",
+      "field": "受注残高",
+      "sources": {
+        "grok": "記載なし",
+        "gemini": "記載なし",
+        "claude": "$9.5B（過去最高）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "$9.5B（2026年1月、公式IR）",
+        "notes": "液冷需要年率25-40%成長、NVIDIA GB200 NVL72の公式冷却パートナー",
+        "verification_source": "Vertiv IR, Yahoo Finance",
+        "action": "Vertivの評価を維持・強化"
+      }
+    }
+  ],
+  "summary": {
+    "total_contradictions": 7,
+    "resolved": 7,
+    "pending": 0,
+    "critical_findings": [
+      "Wolfspeed Chapter 11破産: 投資候補から除外確定",
+      "CAPE 41.03: 前回からさらに上昇、歴史的極値継続",
+      "NVIDIA独占強化: シェア90-98%、Q3 FY2026で$57B売上",
+      "Vertiv受注残$9.5B: AI冷却需要の強さを確認"
+    ]
+  }
+}

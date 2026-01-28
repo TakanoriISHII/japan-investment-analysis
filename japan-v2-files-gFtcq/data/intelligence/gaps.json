@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-01-28T23:00:00Z",
+  "total_gaps": 5,
+  "filled": 4,
+  "pending": 1,
+  "items": [
+    {
+      "id": "GAP-001",
+      "topic": "Ukraine Peace Talks - Trilateral Details",
+      "description": "米露ウ三者協議（1/23）の具体的内容と進展状況",
+      "affected_sources": ["grok", "gemini", "chatgpt"],
+      "filled_by": "claude",
+      "status": "filled",
+      "summary": "Paris Coalition英仏軍隊派遣署名、三者協議「建設的」評価、ゼレンスキー「90%合意」発言、€682B経済支援パッケージ合意"
+    },
+    {
+      "id": "GAP-002",
+      "topic": "Rocket Lab Neutron Tank Rupture",
+      "description": "1/21のNeutronタンク破裂事故と開発影響",
+      "affected_sources": ["grok", "gemini", "chatgpt"],
+      "filled_by": "claude_web_search",
+      "status": "filled",
+      "summary": "1/21にテスト中タンク破裂。mid-2026初飛行予定に遅延リスク。$816M SDA契約への影響は限定的（Electron継続）"
+    },
+    {
+      "id": "GAP-003",
+      "topic": "Meta Nuclear 6.6GW Portfolio Details",
+      "description": "Vistra/TerraPower/Oklo各社との契約詳細",
+      "affected_sources": ["gemini", "chatgpt"],
+      "filled_by": "claude",
+      "status": "filled",
+      "summary": "Vistra 2.1GW+ (Perry/Davis-Besse/Beaver Valley 20年契約、433MW uprate)、TerraPower次世代炉、Oklo 1.2GW Pike County、Constellation Clinton 1,121MW（2027年6月開始）"
+    },
+    {
+      "id": "GAP-004",
+      "topic": "Intel Ohio Delay Timeline",
+      "description": "シリコンハートランド遅延の最新状況",
+      "affected_sources": ["grok", "claude", "chatgpt"],
+      "filled_by": "gemini",
+      "status": "filled",
+      "summary": "稼働開始2030-2031年に延期（当初2025年予定）。資金調達・実行能力への懸念継続。TSMC Arizonaの優位性強化"
+    },
+    {
+      "id": "GAP-005",
+      "topic": "SpaceX Golden Dome Contract Details",
+      "description": "$2B・600衛星契約の確認",
+      "affected_sources": ["all"],
+      "filled_by": "claude_supplemental",
+      "status": "filled_partial",
+      "summary": "WSJ報道確認（$2B・600衛星・Air Moving Target Indicator）。SHIELD $151Bの一部。公式契約発表は未実施。確度75%で採用、次回monitoring継続"
+    }
+  ]
+}

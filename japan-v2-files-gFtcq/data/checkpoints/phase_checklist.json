@@ -1,0 +1,193 @@
+{
+  "description": "フェーズ完了検証チェックリスト - 各フェーズで必要な出力ファイルを定義",
+  "version": "1.1",
+  "notes": {
+    "required": "Claude自動生成 - 必ず存在すべき",
+    "optional": "手動入力 - 存在する場合は統合される",
+    "conditional": "条件付き - タスクがある場合に生成"
+  },
+  "phases": {
+    "1": {
+      "name": "状態確認",
+      "required_inputs": [],
+      "required_outputs": [],
+      "validation": {
+        "checks": [
+          "data/state.json が存在し読み取り可能"
+        ]
+      }
+    },
+    "2": {
+      "name": "インテリジェンス収集",
+      "execution_mode": "Claude自動 + 手動（Grok/Gemini）",
+      "required_outputs": [
+        "data/intelligence/raw/broad_info/claude.md"
+      ],
+      "optional_outputs": {
+        "description": "手動で収集した場合に存在",
+        "files": [
+          "data/intelligence/raw/broad_info/grok.md",
+          "data/intelligence/raw/broad_info/gemini.md",
+          "data/intelligence/raw/company_info/grok.md",
+          "data/intelligence/raw/company_info/gemini.md",
+          "data/intelligence/raw/company_info/claude.md"
+        ]
+      },
+      "validation": {
+        "checks": [
+          "Claude broad_infoは必須（Web検索で自動収集）",
+          "Grok/Geminiは任意（手動実行の場合のみ）"
+        ]
+      }
+    },
+    "3": {
+      "name": "比較分析",
+      "execution_mode": "Claude自動",
+      "required_outputs": [
+        "data/analysis/contradictions.json",
+        "data/analysis/gaps.json"
+      ],
+      "validation": {
+        "checks": [
+          "contradictions.json が存在",
+          "gaps.json が存在",
+          "複数LLM出力がある場合は比較分析を実施"
+        ]
+      }
+    },
+    "4": {
+      "name": "補足調査",
+      "execution_mode": "Claude自動",
+      "required_outputs": [
+        "data/intelligence/claude_supplemental.md"
+      ],
+      "validation": {
+        "checks": [
+          "矛盾・ギャップがある場合は補足調査を実施"
+        ]
+      }
+    },
+    "5": {
+      "name": "統合・確度整理",
+      "execution_mode": "Claude自動",
+      "required_outputs": [
+        "data/intelligence/consolidated_companies.json",
+        "data/intelligence/consolidated_broad.json"
+      ],
+      "optional_inputs": {
+        "description": "前回の補強調査結果（存在する場合は統合）",
+        "files": [
+          "reinforcement/results/grok/*.md",
+          "reinforcement/results/gemini/*.md"
+        ]
+      },
+      "validation": {
+        "checks": [
+          "利用可能な全情報を統合",
+          "補強結果が存在する場合は統合に含める"
+        ]
+      }
+    },
+    "6": {
+      "name": "分析・評価",
+      "execution_mode": "Claude自動",
+      "required_outputs": [
+        "data/analysis/market_risk.json",
+        "data/analysis/top30.json"
+      ],
+      "validation": {
+        "checks": [
+          "market_risk.json に total_score フィールドが存在",
+          "top30.json に top30 配列が存在"
+        ]
+      }
+    },
+    "7": {
+      "name": "レポート生成",
+      "execution_mode": "Claude自動（必須）",
+      "required_outputs": [
+        "reports/[DATE]/executive_summary.md",
+        "reports/[DATE]/final_report.md",
+        "reports/[DATE]/information_quality_report.md",
+        "reports/[DATE]/quadrant_chart.html"
+      ],
+      "validation": {
+        "checks": [
+          "4ファイル全て存在することを確認",
+          "latest シンボリックリンクを更新"
+        ]
+      }
+    },
+    "8": {
+      "name": "継続的改善",
+      "execution_mode": "Claude自動 + プロンプト生成",
+      "required_outputs": [
+        "reinforcement/pending_tasks.json",
+        "reinforcement/results/claude_auto/[DATE].md"
+      ],
+      "conditional_outputs": {
+        "description": "補強タスクがある場合に生成（次回手動実行用）",
+        "condition": "pending_tasks.json にタスクが存在する場合",
+        "files": [
+          "reinforcement/prompts/grok/[DATE]_tasks.md",
+          "reinforcement/prompts/gemini/[DATE]_tasks.md"
+        ]
+      },
+      "validation": {
+        "checks": [
+          "pending_tasks.json は常に生成（タスク0件でも）",
+          "Claude自動補強結果は常に生成",
+          "Grok/Geminiプロンプトは該当タスクがある場合のみ"
+        ]
+      }
+    },
+    "9": {
+      "name": "完了",
+      "execution_mode": "Claude自動",
+      "required_outputs": [
+        "data/state.json（更新済み）"
+      ],
+      "validation": {
+        "checks": [
+          "state.json の last_execution が今日の日付",
+          "Phase 7の4ファイルが存在",
+          "Phase 8の必須2ファイルが存在",
+          "git commit & push 完了"
+        ]
+      }
+    }
+  },
+  "summary": {
+    "always_required": {
+      "description": "Claude自動生成 - 毎回必ず存在すべきファイル",
+      "phase_7": [
+        "reports/[DATE]/executive_summary.md",
+        "reports/[DATE]/final_report.md",
+        "reports/[DATE]/information_quality_report.md",
+        "reports/[DATE]/quadrant_chart.html"
+      ],
+      "phase_8": [
+        "reinforcement/pending_tasks.json",
+        "reinforcement/results/claude_auto/[DATE].md"
+      ]
+    },
+    "conditional": {
+      "description": "タスクがある場合のみ生成",
+      "phase_8_prompts": [
+        "reinforcement/prompts/grok/[DATE]_tasks.md（Grok用タスクがある場合）",
+        "reinforcement/prompts/gemini/[DATE]_tasks.md（Gemini用タスクがある場合）"
+      ]
+    },
+    "manual_input": {
+      "description": "ユーザーが手動で追加 - 次回分析で統合",
+      "intelligence": [
+        "data/intelligence/raw/*/grok.md",
+        "data/intelligence/raw/*/gemini.md"
+      ],
+      "reinforcement_results": [
+        "reinforcement/results/grok/[DATE].md",
+        "reinforcement/results/gemini/[DATE].md"
+      ]
+    }
+  }
+}

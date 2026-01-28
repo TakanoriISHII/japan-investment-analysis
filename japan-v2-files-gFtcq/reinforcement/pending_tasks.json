@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "created": "2026-01-28",
+    "last_updated": "2026-01-28T23:30:00Z",
+    "source": "フル分析 Phase 8",
+    "total_tasks": 8,
+    "priority_distribution": {
+      "high": 2,
+      "medium": 5,
+      "low": 1
+    }
+  },
+  "tasks": [
+    {
+      "id": "RF-002",
+      "priority": "high",
+      "category": "verification",
+      "domain": "エネルギー",
+      "description": "NuScale Power商用化進捗の検証",
+      "action": "ルーマニアRoPower FID決定状況を確認（2026年後半〜2027年初頭予定）",
+      "rationale": "唯一のNRC承認SMRだが商用化リスクが高い。FEED Phase 2進行中。",
+      "status": "pending",
+      "due_date": "2026-02-15"
+    },
+    {
+      "id": "RF-004",
+      "priority": "medium",
+      "category": "monitoring",
+      "domain": "量子",
+      "description": "Quantinuum IPO進捗モニタリング",
+      "action": "S-1提出済み（2026年1月14日）。$20B評価額、2026年中の上場予定。IPO価格帯・上場日を追跡。",
+      "rationale": "量子コンピューティング分野最大のIPO",
+      "status": "in_progress",
+      "due_date": "2026-03-31"
+    },
+    {
+      "id": "RF-005",
+      "priority": "low",
+      "category": "enhancement",
+      "domain": "全般",
+      "description": "パフォーマンス検証フレームワーク構築",
+      "action": "前回分析の予測精度を検証する仕組みを構築",
+      "rationale": "継続的改善サイクルの基盤構築",
+      "status": "pending",
+      "due_date": "2026-02-28"
+    },
+    {
+      "id": "RF-006",
+      "priority": "medium",
+      "category": "monitoring",
+      "domain": "防衛",
+      "description": "Missile Solutions IPO進捗モニタリング",
+      "action": "L3Harris ロケットモーター事業スピンオフのIPO準備状況を追跡。$1B Pentagon投資発表済み。2026年下半期予定。",
+      "rationale": "DoD 10億ドル投資、SRM市場の複占化で戦略的重要性高い",
+      "status": "in_progress",
+      "due_date": "2026-06-01"
+    },
+    {
+      "id": "RF-008",
+      "priority": "high",
+      "category": "monitoring",
+      "domain": "宇宙",
+      "description": "Rocket Lab Neutron開発状況監視",
+      "action": "タンク破裂（1/21）後の開発スケジュール更新を追跡。初飛行mid-2026以降に遅延可能性。",
+      "rationale": "SDA $1.3B+契約の実行に影響。Electron堅調だがNeutron遅延は株価リスク。",
+      "status": "pending",
+      "due_date": "2026-02-28"
+    },
+    {
+      "id": "RF-009",
+      "priority": "medium",
+      "category": "verification",
+      "domain": "AI",
+      "description": "Powell後任人事・Fed政策の影響評価",
+      "action": "Powell後任発表（今週予想）後のFed政策見通し変化を評価。候補: Warsh, Hassett, Waller, Rieder",
+      "rationale": "市場リスク評価に直接影響。刑事捜査開示で不確実性増。",
+      "status": "pending",
+      "due_date": "2026-02-07"
+    },
+    {
+      "id": "RF-010",
+      "priority": "medium",
+      "category": "verification",
+      "domain": "防衛",
+      "description": "SpaceX Golden Dome契約の公式確認",
+      "action": "WSJ報道（$2B・600衛星）の公式契約発表を待機。DoD発表・企業IRを監視。",
+      "rationale": "現在75%確度。SHIELD $151Bの重要構成要素だが、公式発表なし。",
+      "status": "pending",
+      "due_date": "2026-02-28"
+    },
+    {
+      "id": "RF-011",
+      "priority": "medium",
+      "category": "monitoring",
+      "domain": "地政学",
+      "description": "ウクライナ和平協議の進展監視",
+      "action": "ゼレンスキー「90%合意」発言の検証。三者協議（1/23）後の具体的進展を追跡。",
+      "rationale": "和平成立時の市場・防衛銘柄への影響大。エネルギー価格にも影響。",
+      "status": "pending",
+      "due_date": "2026-02-15"
+    }
+  ],
+  "completed_tasks": [
+    {
+      "id": "RF-001",
+      "priority": "high",
+      "category": "gap_fill",
+      "domain": "バイオ/GLP-1",
+      "description": "GLP-1関連米国上場企業の詳細分析",
+      "completed_date": "2026-01-28",
+      "result": "Grok補強調査完了。LLY推奨（53%シェア、PEG 0.97）、NVO中立（PEG 3.10）、AMGN/VKTX回避。市場$64B(2025)→$130-140B(2030)。gaps.jsonに反映済み。"
+    },
+    {
+      "id": "RF-003",
+      "priority": "medium",
+      "category": "gap_fill",
+      "domain": "クリーンテック",
+      "description": "ペロブスカイト太陽電池関連銘柄の特定",
+      "completed_date": "2026-01-28",
+      "result": "Grok補強調査完了。FSLR 10-15%エクスポージャー（Evolar買収）、ENPH <5%（間接）。Oxford PV IPO監視（高可能性）。gaps.jsonに反映済み。"
+    },
+    {
+      "id": "RF-007",
+      "priority": "high",
+      "category": "verification",
+      "domain": "AI",
+      "description": "Stargate $500B計画の進捗検証",
+      "completed_date": "2026-01-28",
+      "result": "Claude自動補強完了。$450B+コミット、8GW+計画確認。Abilene運用開始、5新規サイト発表。予定通り進行中。"
+    }
+  ]
+}

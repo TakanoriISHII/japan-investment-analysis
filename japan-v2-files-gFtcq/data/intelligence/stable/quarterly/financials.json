@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "description": "企業財務情報（売上、利益、ガイダンス）- 四半期で更新",
+    "last_updated": "2026-01-28",
+    "quarter": "Q3 FY2026 / Q3 CY2025",
+    "next_update": "2026-04-XX (Q4 earnings)",
+    "schema_version": "1.0"
+  },
+  "companies": {
+    "NVDA": {
+      "last_quarter": "Q3 FY2026",
+      "revenue": "$57B",
+      "revenue_yoy": "+62%",
+      "data_center": "$51.2B",
+      "data_center_pct": "89.8%",
+      "guidance_q4": "$65B",
+      "guidance_yoy": "+14% QoQ",
+      "key_notes": "Blackwell完売、$500B visibility through CY2026",
+      "confidence": 95
+    },
+    "VRT": {
+      "last_quarter": "Q3 2025",
+      "revenue": "$2,676M",
+      "revenue_yoy": "+29%",
+      "backlog": "$9.5B",
+      "orders_yoy": "+60% organic",
+      "book_to_bill": "1.4x",
+      "guidance_2025": ">$10B revenue, $4.10 adj EPS",
+      "key_notes": "液冷売上+100%。NVIDIA GB200参照アーキテクチャ共同開発。",
+      "confidence": 88
+    },
+    "BWXT": {
+      "last_quarter": "Q3 FY2025",
+      "revenue_yoy": "+29%",
+      "backlog": "$7.4B",
+      "backlog_yoy": "+119%",
+      "guidance_2026": "Low-double-digit to low-teens EBITDA growth",
+      "key_notes": "$2.6B海軍契約。6-8年収益可視性。",
+      "confidence": 95
+    },
+    "RKLB": {
+      "last_quarter": "Q3 2025",
+      "backlog": ">$2B",
+      "sda_contracts": "$1.3B+",
+      "electron_missions_2025": 21,
+      "key_notes": "Neutronタンク破裂(1/21)で遅延リスク。開発コスト$360M。",
+      "confidence": 75
+    },
+    "LEU": {
+      "haleu_contract": "$110M through June 2026",
+      "production_rate": "900kg HALEU/year",
+      "key_notes": "唯一の米国内HALEU商用生産者。",
+      "confidence": 92
+    },
+    "AVAV": {
+      "switchblade_contract": "$990M + $743M ceiling",
+      "replicator_status": "Selected",
+      "units_planned": "1000+",
+      "production_expansion": "2x by FY27",
+      "key_notes": "12州製造拠点。ソルトレイクシティ新工場建設中。",
+      "confidence": 90
+    },
+    "LHX": {
+      "missile_solutions_revenue": "$3.6-3.8B",
+      "missile_solutions_employees": 7000,
+      "pentagon_investment": "$1B",
+      "ipo_timing": "H2 2026",
+      "key_notes": "初のGo Direct to Supplier。SRM市場複占化。",
+      "confidence": 95
+    },
+    "VST": {
+      "last_quarter": "Q3 2025",
+      "total_capacity": "41GW",
+      "meta_ppa": "2.1GW+ (20-year)",
+      "nuclear_plants": ["Perry", "Davis-Besse", "Beaver Valley"],
+      "key_notes": "Meta核契約で原子力価値再評価。ライセンス20年延長。",
+      "confidence": 88
+    },
+    "CEG": {
+      "last_quarter": "Q3 2025",
+      "nuclear_pct": "70%",
+      "meta_ppa": "Clinton Clean Energy Center (2027年開始)",
+      "microsoft_ppa": "Three Mile Island契約",
+      "key_notes": "米国最大の原子力フリート。ハイパースケーラーPPA拡大。",
+      "confidence": 90
+    },
+    "TDG": {
+      "last_quarter": "Q3 FY2025",
+      "proprietary_revenue_pct": "90%",
+      "ebitda_margin": "~50%",
+      "key_notes": "独占的航空部品。アフターマーケット需要継続。",
+      "confidence": 95
+    },
+    "ETN": {
+      "last_quarter": "Q3 2025",
+      "electrical_orders_yoy": "+25%",
+      "aerospace_orders_yoy": "+24%",
+      "transformer_lead_time": "2年以上",
+      "key_notes": "グリッド近代化+AIインフラで記録的受注。",
+      "confidence": 90
+    },
+    "CW": {
+      "last_quarter": "Q3 2025",
+      "defense_segment_growth": "+12%",
+      "smr_partnerships": ["Rolls-Royce SMR", "X-energy"],
+      "key_notes": "海軍原子力独占。SMR商用化で成長機会。",
+      "confidence": 88
+    },
+    "APH": {
+      "last_quarter": "Q3 2025",
+      "revenue_yoy": "+53%",
+      "organic_growth": "+41%",
+      "military_connector_share": "22.1%",
+      "key_notes": "AI関連コネクタ需要急増。M&Aによる技術集積。",
+      "confidence": 88
+    }
+  }
+}

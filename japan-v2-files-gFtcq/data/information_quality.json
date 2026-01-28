@@ -1,0 +1,27 @@
+{
+  "last_updated": null,
+  "summary": {
+    "total_events": 0,
+    "by_certainty_stage": {
+      "executed": 0,
+      "contract_signed": 0,
+      "official_announcement": 0,
+      "report_confirmed": 0,
+      "report_unconfirmed": 0,
+      "rumor": 0
+    },
+    "by_verification_level": {
+      "primary_confirmed": 0,
+      "multi_source": 0,
+      "single_reliable": 0,
+      "single_unverified": 0
+    },
+    "high_confidence_ratio": null
+  },
+  "alerts": {
+    "unverified": [],
+    "conflicts": [],
+    "stale": []
+  },
+  "quality_score": null
+}

@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-01-28T23:00:00Z",
+  "total_contradictions": 3,
+  "resolved": 3,
+  "pending": 0,
+  "items": [
+    {
+      "id": "CONT-001",
+      "topic": "CAPE Ratio Value",
+      "sources": {
+        "grok": "40.55",
+        "gemini": "40.86",
+        "claude": "40.32",
+        "chatgpt": "39.85"
+      },
+      "severity": "low",
+      "resolution": "GuruFocus公式値40.32を採用（Claude一致）。差異はデータ取得タイミングによるもの。いずれも40前後で歴史的極値という評価は一致。",
+      "resolved": true,
+      "final_value": "40.32",
+      "confidence": 95
+    },
+    {
+      "id": "CONT-002",
+      "topic": "Hyperscaler CapEx 2026",
+      "sources": {
+        "grok": "$600B",
+        "gemini": "$627B",
+        "claude": "$600B+",
+        "chatgpt": "~$500B"
+      },
+      "severity": "medium",
+      "resolution": "ChatGPTの$500Bは旧予測。IEEE ComSoc, Goldman Sachs, CreditSightsの最新consensus $527-600B（75%がAI向け）を採用。",
+      "resolved": true,
+      "final_value": "$600B+ (75% AI)",
+      "confidence": 90
+    },
+    {
+      "id": "CONT-003",
+      "topic": "VIX Current Value",
+      "sources": {
+        "grok": "16.15",
+        "gemini": "16.15",
+        "claude": "16.07",
+        "chatgpt": "16.24"
+      },
+      "severity": "low",
+      "resolution": "差異は取得時刻によるもの。1/28終値16.07（CBOE公式）を採用。全ソースで16前後の「低位安定」という評価は一致。",
+      "resolved": true,
+      "final_value": "16.07",
+      "confidence": 95
+    }
+  ]
+}

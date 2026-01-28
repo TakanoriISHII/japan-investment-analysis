@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "description": "ドメイン基礎情報（技術基盤、規制環境、サプライチェーン）- 年単位で変化",
+    "last_updated": null,
+    "next_review": null,
+    "schema_version": "1.0"
+  },
+  "domains": {
+    "AI": {
+      "regulatory_environment": null,
+      "technology_base": null,
+      "supply_chain_structure": null
+    },
+    "エネルギー": {
+      "regulatory_environment": null,
+      "technology_base": null,
+      "supply_chain_structure": null
+    },
+    "防衛": {
+      "regulatory_environment": null,
+      "technology_base": null,
+      "supply_chain_structure": null
+    },
+    "ロボティクス": {
+      "regulatory_environment": null,
+      "technology_base": null,
+      "supply_chain_structure": null
+    },
+    "宇宙": {
+      "regulatory_environment": null,
+      "technology_base": null,
+      "supply_chain_structure": null
+    },
+    "サイバー": {
+      "regulatory_environment": null,
+      "technology_base": null,
+      "supply_chain_structure": null
+    }
+  }
+}
