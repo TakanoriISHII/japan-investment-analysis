@@ -219,18 +219,18 @@
 ### 一次情報源（優先）
 | 情報源 | 内容 | 鮮度 |
 |--------|------|------|
-| SEC EDGAR | 10-K、8-K、セグメント詳細 | [QUARTERLY] |
-| SAM.gov | 連邦契約 | [MONTHLY] |
-| DoD契約発表 | 防衛契約 | [MONTHLY] |
+| EDINET/TDnet | 有報、決算短信、適時開示 | [QUARTERLY] |
+| e-Gov（官公需情報） | 政府調達契約 | [MONTHLY] |
+| 防衛装備庁契約発表 | 防衛契約 | [MONTHLY] |
 | 企業IR資料 | セグメント内訳、TAM | [QUARTERLY] |
-| NRC | 原子力認証 | [PERMANENT] |
+| 原子力規制委員会 | 原子力認証 | [PERMANENT] |
 
 ### 二次情報源
 | 情報源 | 内容 | 鮮度 |
 |--------|------|------|
-| Defense News | 防衛業界 | [MONTHLY] |
-| SpaceNews | 宇宙業界 | [MONTHLY] |
-| Utility Dive | エネルギー/ユーティリティ | [MONTHLY] |
+| 日刊工業新聞 | 製造業・防衛業界 | [MONTHLY] |
+| 日経ビジネス | 産業全般 | [MONTHLY] |
+| 電気新聞/ガスエネルギー新聞 | エネルギー/ユーティリティ | [MONTHLY] |
 
 ---
 
