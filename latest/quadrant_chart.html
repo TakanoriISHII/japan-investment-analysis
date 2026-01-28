@@ -98,7 +98,7 @@
         function QuadrantChart() {
             const [hoveredStock, setHoveredStock] = useState(null);
             const [selectedDomain, setSelectedDomain] = useState("all");
-            const [marketType, setMarketType] = useState("us"); // us or japan
+            const [marketType, setMarketType] = useState("japan"); // japan or us（日本をデフォルト）
 
             const chartWidth = 900;
             const chartHeight = 650;
@@ -136,29 +136,13 @@
             return (
                 <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
                     <h1 style={{ textAlign: "center", fontSize: "24px", marginBottom: "8px", color: "#fff" }}>
-                        マルチドメイン・コンバージェンス分析 {marketType === "us" ? "Top30【米国企業版】" : "Top10【日本企業版】"}
+                        日本マルチドメイン・コンバージェンス分析 {marketType === "japan" ? "Top10" : "【参考】米国 Top30"}
                     </h1>
                     <h2 style={{ textAlign: "center", fontSize: "16px", marginBottom: "12px", color: "#94a3b8", fontWeight: "normal" }}>
                         4象限マトリックス（確実性 x アップサイド）| 2026年1月28日
                     </h2>
 
                     <div style={{ display: "flex", justifyContent: "center", gap: "12px", marginBottom: "16px" }}>
-                        <button
-                            onClick={() => { setMarketType("us"); setSelectedDomain("all"); }}
-                            style={{
-                                padding: "10px 24px",
-                                borderRadius: "25px",
-                                border: "none",
-                                background: marketType === "us" ? "linear-gradient(135deg, #3b82f6, #2563eb)" : "#334155",
-                                color: "#fff",
-                                cursor: "pointer",
-                                fontSize: "14px",
-                                fontWeight: "bold",
-                                boxShadow: marketType === "us" ? "0 4px 15px rgba(59, 130, 246, 0.4)" : "none"
-                            }}
-                        >
-                            米国 Top 30
-                        </button>
                         <button
                             onClick={() => { setMarketType("japan"); setSelectedDomain("all"); }}
                             style={{
@@ -174,6 +158,22 @@
                             }}
                         >
                             日本 Top 10
+                        </button>
+                        <button
+                            onClick={() => { setMarketType("us"); setSelectedDomain("all"); }}
+                            style={{
+                                padding: "10px 24px",
+                                borderRadius: "25px",
+                                border: "none",
+                                background: marketType === "us" ? "linear-gradient(135deg, #3b82f6, #2563eb)" : "#334155",
+                                color: "#fff",
+                                cursor: "pointer",
+                                fontSize: "14px",
+                                fontWeight: "bold",
+                                boxShadow: marketType === "us" ? "0 4px 15px rgba(59, 130, 246, 0.4)" : "none"
+                            }}
+                        >
+                            参考: 米国 Top 30
                         </button>
                     </div>
 

@@ -1,7 +1,7 @@
 {
-  "last_execution": "2026-01-28T20:30:00Z",
-  "session": "run_analysis_full_v2_japan",
-  "version": "2.0",
+  "last_execution": "2026-01-28T21:00:00Z",
+  "session": "run_analysis_full_v3_japan_focused",
+  "version": "3.0",
   "events": {
     "last_collected": "2026-01-28",
     "total_count": 40,
@@ -74,6 +74,8 @@
     "pending": 0
   },
   "critical_findings": [
+    "【v3.0】全レポート日本特化版へ全面改訂（米国情報は影響範囲に限定）",
+    "【v3.0】japan_market_risk.json独立ファイル作成（6カテゴリ、3階層評価）",
     "【新規】日本市場分析追加（Top10、市場リスク58/100、バランス型スタンス）",
     "【新規】防衛予算9.04兆円承認（過去最高、初の9兆円超え）",
     "【新規】柏崎刈羽原発1/21再稼働→1/22一時停止（制御棒不具合）",
