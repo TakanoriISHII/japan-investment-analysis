@@ -1,370 +1,74 @@
 {
-  "_metadata": {
-    "version": "1.0",
-    "created": "2026-01-26",
-    "purpose": "情報源の体系化 - どこを見るべきかを明確化",
-    "usage": "Step 0（動的発掘）およびStep 1（イベント収集）で参照"
-  },
-
-  "government_sources": {
-    "_description": "政府・行政機関の一次情報源（最高信頼度）",
-
-    "経済産業省": {
-      "url": "https://www.meti.go.jp/",
-      "press_releases": "https://www.meti.go.jp/press/",
-      "check_frequency": "daily",
-      "language": "ja",
-      "asymmetry": "high",
-      "relevant_domains": ["AI", "エネルギー", "ロボティクス"],
-      "key_pages": [
-        {"name": "半導体・デジタル産業戦略", "url": "https://www.meti.go.jp/policy/mono_info_service/joho/"},
-        {"name": "GX政策", "url": "https://www.meti.go.jp/policy/energy_environment/global_warming/GX-league/"}
-      ]
+  "government": {
+    "defense": {
+      "dod_main": "https://www.defense.gov/",
+      "dod_contracts": "https://www.defense.gov/News/Contracts/",
+      "sam_gov": "https://sam.gov/",
+      "fpds": "https://www.fpds.gov/",
+      "army_budget": "https://www.asafm.army.mil/Budget-Materials/",
+      "navy_budget": "https://www.secnav.navy.mil/fmc/fmb/",
+      "air_force_budget": "https://www.saffm.hq.af.mil/Budget/"
     },
-
-    "防衛省・防衛装備庁": {
-      "url": "https://www.mod.go.jp/",
-      "press_releases": "https://www.mod.go.jp/j/press/",
-      "atla_url": "https://www.mod.go.jp/atla/",
-      "check_frequency": "weekly",
-      "language": "ja",
-      "asymmetry": "very_high",
-      "relevant_domains": ["軍事・防衛", "宇宙", "サイバー"],
-      "key_pages": [
-        {"name": "予算概要", "url": "https://www.mod.go.jp/j/budget/"},
-        {"name": "契約実績", "url": "https://www.mod.go.jp/atla/souhon/supply/jisseki/"},
-        {"name": "調達情報", "url": "https://www.mod.go.jp/atla/choutatsu.html"}
-      ]
+    "energy": {
+      "doe_main": "https://www.energy.gov/",
+      "doe_lpo": "https://www.energy.gov/lpo/",
+      "nrc": "https://www.nrc.gov/",
+      "ferc": "https://www.ferc.gov/",
+      "eia": "https://www.eia.gov/"
     },
-
-    "内閣府・宇宙政策": {
-      "url": "https://www8.cao.go.jp/space/",
-      "check_frequency": "weekly",
-      "language": "ja",
-      "asymmetry": "very_high",
-      "relevant_domains": ["宇宙"],
-      "key_pages": [
-        {"name": "宇宙基本計画", "url": "https://www8.cao.go.jp/space/plan/plan.html"},
-        {"name": "宇宙産業振興", "url": "https://www8.cao.go.jp/space/industry/"}
-      ]
+    "commerce": {
+      "commerce_main": "https://www.commerce.gov/",
+      "bis_export": "https://www.bis.doc.gov/",
+      "chips_program": "https://www.nist.gov/chips"
     },
-
-    "原子力規制委員会": {
-      "url": "https://www.nra.go.jp/",
-      "check_frequency": "weekly",
-      "language": "ja",
-      "asymmetry": "very_high",
-      "relevant_domains": ["エネルギー"],
-      "key_pages": [
-        {"name": "審査状況", "url": "https://www.nra.go.jp/activity/regulation/reactor/"},
-        {"name": "認可情報", "url": "https://www.nra.go.jp/jimusho/"}
-      ]
+    "congress": {
+      "congress_gov": "https://www.congress.gov/",
+      "cbo": "https://www.cbo.gov/",
+      "crs": "https://crsreports.congress.gov/",
+      "gao": "https://www.gao.gov/"
     },
-
-    "金融庁・EDINET": {
-      "url": "https://disclosure2.edinet-fsa.go.jp/",
-      "check_frequency": "daily",
-      "language": "ja",
-      "asymmetry": "medium",
-      "relevant_domains": ["全ドメイン"],
-      "key_pages": [
-        {"name": "有価証券報告書検索", "url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx"}
-      ]
+    "sec": {
+      "edgar": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "sec_filings": "https://www.sec.gov/",
+      "13f_search": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=13F"
     },
-
-    "JAXA": {
-      "url": "https://www.jaxa.jp/",
-      "press_releases": "https://www.jaxa.jp/press/",
-      "check_frequency": "weekly",
-      "language": "ja",
-      "asymmetry": "high",
-      "relevant_domains": ["宇宙"],
-      "key_pages": [
-        {"name": "調達情報", "url": "https://www.jaxa.jp/about/procurement/"},
-        {"name": "プロジェクト", "url": "https://www.jaxa.jp/projects/"}
-      ]
-    },
-
-    "NEDO": {
-      "url": "https://www.nedo.go.jp/",
-      "check_frequency": "weekly",
-      "language": "ja",
-      "asymmetry": "high",
-      "relevant_domains": ["AI", "エネルギー", "ロボティクス"],
-      "key_pages": [
-        {"name": "プロジェクト一覧", "url": "https://www.nedo.go.jp/activities/index.html"}
-      ]
+    "space": {
+      "nasa": "https://www.nasa.gov/",
+      "space_force": "https://www.spaceforce.mil/"
     }
   },
-
-  "certification_lists": {
-    "_description": "認証・認定企業リスト（参入障壁の可視化、発掘に最重要）",
-
-    "防衛認定事業者": {
-      "source": "防衛装備庁",
-      "url": "https://www.mod.go.jp/atla/souhon/supply/jisseki/",
-      "type": "certification",
-      "asymmetry": "very_high",
-      "discovery_potential": "very_high",
-      "relevant_domains": ["軍事・防衛"],
-      "notes": "契約実績から主要サプライヤーを特定可能"
+  "trade_media": {
+    "defense": {
+      "defense_news": "https://www.defensenews.com/",
+      "breaking_defense": "https://breakingdefense.com/",
+      "janes": "https://www.janes.com/",
+      "defense_one": "https://www.defenseone.com/"
     },
-
-    "原子力関連認定": {
-      "source": "原子力規制委員会",
-      "type": "certification",
-      "asymmetry": "very_high",
-      "discovery_potential": "high",
-      "relevant_domains": ["エネルギー"],
-      "notes": "原子力部品は長期認定プロセスが参入障壁"
+    "space": {
+      "spacenews": "https://spacenews.com/",
+      "space_com": "https://www.space.com/"
     },
-
-    "航空宇宙品質JISQ9100": {
-      "source": "JAB（日本適合性認定協会）",
-      "url": "https://www.jab.or.jp/",
-      "type": "certification",
-      "asymmetry": "high",
-      "discovery_potential": "high",
-      "relevant_domains": ["宇宙", "軍事・防衛"],
-      "notes": "航空宇宙産業のサプライヤー認証"
+    "energy": {
+      "utility_dive": "https://www.utilitydive.com/",
+      "power_magazine": "https://www.powermag.com/",
+      "world_nuclear_news": "https://www.world-nuclear-news.org/"
     },
-
-    "医療機器認証": {
-      "source": "PMDA",
-      "url": "https://www.pmda.go.jp/",
-      "type": "certification",
-      "asymmetry": "medium",
-      "discovery_potential": "medium",
-      "relevant_domains": ["ロボティクス"],
-      "notes": "手術支援ロボット等"
+    "technology": {
+      "the_information": "https://www.theinformation.com/",
+      "semafor": "https://www.semafor.com/",
+      "semiconductor_engineering": "https://semiengineering.com/"
     }
   },
-
-  "industry_associations": {
-    "_description": "業界団体（会員企業リストから隠れたプレイヤーを発見）",
-
-    "SEMI Japan": {
-      "url": "https://www.semi.org/jp",
-      "type": "industry_association",
-      "relevant_domains": ["AI"],
-      "asymmetry": "low",
-      "discovery_potential": "medium",
-      "key_data": ["市場予測", "装置出荷統計", "会員企業リスト"]
-    },
-
-    "JEITA": {
-      "url": "https://www.jeita.or.jp/",
-      "type": "industry_association",
-      "relevant_domains": ["AI", "サイバー"],
-      "asymmetry": "medium",
-      "discovery_potential": "medium",
-      "key_data": ["電子部品出荷統計", "会員企業リスト"]
-    },
-
-    "日本ロボット工業会": {
-      "url": "https://www.jara.jp/",
-      "type": "industry_association",
-      "relevant_domains": ["ロボティクス"],
-      "asymmetry": "high",
-      "discovery_potential": "high",
-      "key_data": ["ロボット統計", "会員企業リスト", "技術動向"]
-    },
-
-    "日本航空宇宙工業会": {
-      "url": "https://www.sjac.or.jp/",
-      "type": "industry_association",
-      "relevant_domains": ["宇宙", "軍事・防衛"],
-      "asymmetry": "high",
-      "discovery_potential": "high",
-      "key_data": ["航空宇宙産業データ", "会員企業リスト"]
-    },
-
-    "電気事業連合会": {
-      "url": "https://www.fepc.or.jp/",
-      "type": "industry_association",
-      "relevant_domains": ["エネルギー"],
-      "asymmetry": "medium",
-      "discovery_potential": "low",
-      "key_data": ["電力需給データ", "原子力情報"]
-    },
-
-    "日本防衛装備工業会": {
-      "url": "https://www.bsk-z.or.jp/",
-      "type": "industry_association",
-      "relevant_domains": ["軍事・防衛"],
-      "asymmetry": "very_high",
-      "discovery_potential": "very_high",
-      "key_data": ["会員企業リスト", "防衛産業情報"]
-    }
+  "wire_services": {
+    "reuters": "https://www.reuters.com/",
+    "bloomberg": "https://www.bloomberg.com/",
+    "wsj": "https://www.wsj.com/",
+    "ft": "https://www.ft.com/"
   },
-
-  "specialized_media": {
-    "_description": "専門メディア（日本語のみの情報源＝高い非対称性）",
-
-    "日刊工業新聞": {
-      "url": "https://www.nikkan.co.jp/",
-      "type": "specialized_media",
-      "language": "ja",
-      "asymmetry": "very_high",
-      "relevant_domains": ["全ドメイン"],
-      "strength": "製造業・技術の深掘り記事"
-    },
-
-    "電波新聞": {
-      "url": "https://dempa-digital.com/",
-      "type": "specialized_media",
-      "language": "ja",
-      "asymmetry": "very_high",
-      "relevant_domains": ["AI", "サイバー"],
-      "strength": "電子部品・半導体の専門報道"
-    },
-
-    "化学工業日報": {
-      "url": "https://www.chemicaldaily.co.jp/",
-      "type": "specialized_media",
-      "language": "ja",
-      "asymmetry": "very_high",
-      "relevant_domains": ["AI", "エネルギー"],
-      "strength": "素材・化学の専門報道"
-    },
-
-    "日経エレクトロニクス": {
-      "url": "https://xtech.nikkei.com/",
-      "type": "specialized_media",
-      "language": "ja",
-      "asymmetry": "high",
-      "relevant_domains": ["AI", "ロボティクス"],
-      "strength": "技術動向の深掘り"
-    },
-
-    "Aviation Wire": {
-      "url": "https://www.aviationwire.jp/",
-      "type": "specialized_media",
-      "language": "ja",
-      "asymmetry": "high",
-      "relevant_domains": ["宇宙", "軍事・防衛"],
-      "strength": "航空宇宙専門"
-    }
-  },
-
-  "global_research_firms": {
-    "_description": "グローバル調査機関（シェアデータの一次情報源）",
-
-    "SEMI": {
-      "url": "https://www.semi.org/",
-      "type": "research",
-      "data_type": ["市場規模", "シェア", "予測"],
-      "relevant_domains": ["AI"],
-      "asymmetry": "low",
-      "credibility": "very_high"
-    },
-
-    "Gartner": {
-      "url": "https://www.gartner.com/",
-      "type": "research",
-      "data_type": ["市場規模", "シェア", "予測"],
-      "relevant_domains": ["AI", "サイバー"],
-      "asymmetry": "low",
-      "credibility": "very_high"
-    },
-
-    "TrendForce": {
-      "url": "https://www.trendforce.com/",
-      "type": "research",
-      "data_type": ["半導体市場データ"],
-      "relevant_domains": ["AI"],
-      "asymmetry": "low",
-      "credibility": "high"
-    },
-
-    "IFR": {
-      "url": "https://ifr.org/",
-      "type": "research",
-      "data_type": ["ロボット統計", "シェア"],
-      "relevant_domains": ["ロボティクス"],
-      "asymmetry": "low",
-      "credibility": "very_high"
-    },
-
-    "Omdia": {
-      "url": "https://omdia.tech.informa.com/",
-      "type": "research",
-      "data_type": ["電子部品市場"],
-      "relevant_domains": ["AI", "サイバー"],
-      "asymmetry": "low",
-      "credibility": "high"
-    }
-  },
-
-  "patent_databases": {
-    "_description": "特許データベース（技術的独占の検証）",
-
-    "J-PlatPat": {
-      "url": "https://www.j-platpat.inpit.go.jp/",
-      "type": "patent",
-      "language": "ja",
-      "asymmetry": "high",
-      "discovery_potential": "high",
-      "usage": "特定技術領域の出願企業ランキング、被引用数分析"
-    },
-
-    "Google Patents": {
-      "url": "https://patents.google.com/",
-      "type": "patent",
-      "language": "en/ja",
-      "asymmetry": "low",
-      "discovery_potential": "medium",
-      "usage": "グローバル特許検索"
-    }
-  },
-
-  "supply_chain_entry_points": {
-    "_description": "サプライチェーン逆引きの起点（既知企業から上流を辿る）",
-
-    "半導体製造装置": {
-      "tier1_companies": ["8035", "6857", "6920", "6146", "7735"],
-      "trace_targets": ["部品", "材料", "サブシステム"],
-      "search_queries": [
-        "{company} サプライヤー",
-        "{company} 部品調達",
-        "{company} 協力会社"
-      ]
-    },
-
-    "EUV関連": {
-      "entry_point": "ASML",
-      "japanese_suppliers_to_find": ["光学部品", "ステージ機構", "真空技術"],
-      "search_queries": [
-        "ASML 日本 サプライヤー",
-        "EUV 日本企業 部品"
-      ]
-    },
-
-    "HBM_AI半導体": {
-      "entry_point": "SK Hynix, Samsung, Micron",
-      "japanese_suppliers_to_find": ["ABF", "ボンディングワイヤ", "テスト装置"],
-      "search_queries": [
-        "HBM 材料 日本企業",
-        "先端パッケージング サプライヤー 日本"
-      ]
-    },
-
-    "防衛装備": {
-      "tier1_companies": ["7011", "7012", "6503"],
-      "trace_targets": ["電子部品", "素材", "センサー"],
-      "search_queries": [
-        "防衛装備 サプライチェーン",
-        "{company} 協力会社 防衛"
-      ]
-    },
-
-    "ロボット": {
-      "tier1_companies": ["6954", "6506"],
-      "trace_targets": ["減速機", "サーボモータ", "センサー"],
-      "search_queries": [
-        "産業用ロボット 部品 シェア",
-        "減速機 世界シェア 日本"
-      ]
-    }
+  "think_tanks": {
+    "csis": "https://www.csis.org/",
+    "rand": "https://www.rand.org/",
+    "iea": "https://www.iea.org/",
+    "brookings": "https://www.brookings.edu/"
   }
 }

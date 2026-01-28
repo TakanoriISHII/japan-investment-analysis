@@ -1,232 +1,168 @@
 {
-  "history": [
-    {
-      "date": "2026-01-27",
-      "total_score": 55,
-      "previous_score": 52,
-      "recommendation": "やや慎重姿勢（優良株を選別、円高・DeepSeek影響を監視）",
-      "items": {
-        "tier1_financial_policy": {
-          "name": "金融政策転換リスク",
-          "weight": 15,
-          "score": 10,
-          "assessment": "日銀0.75%へ利上げ済み、7月に1.0%予想。植田総裁は追加利上げに前向き。円高進行（154-155円）で2024年8月型暴落の再現リスク継続",
-          "historical_pattern": "金融政策転換型（2024年8月）と類似パターン継続",
-          "source": "日銀政策決定会合、Bloomberg、Gemini/Grok/Claude MI"
-        },
-        "tier1_leverage": {
-          "name": "レバレッジ崩壊リスク",
-          "weight": 15,
-          "score": 8,
-          "assessment": "円キャリー規模40兆円超（IMF推計）。日銀利上げ継続で巻き戻し圧力蓄積。ただし2024年8月のような一斉巻き戻しには至っていない",
-          "historical_pattern": "レバレッジ崩壊型の予兆段階",
-          "source": "IMF、JPモルガン推計、各LLM MI統合"
-        },
-        "tier2_valuation": {
-          "name": "バリュエーション過熱",
-          "weight": 10,
-          "score": 5,
-          "assessment": "日経225 PER 15.8-16.2倍、TOPIX PBR 1.4倍。過熱感なし、適正水準。DeepSeek後の調整で割高感解消",
-          "historical_pattern": "バリュエーション過熱型には該当しない",
-          "source": "日経新聞、Bloomberg"
-        },
-        "tier2_vix": {
-          "name": "VIX・ボラティリティ",
-          "weight": 10,
-          "score": 5,
-          "assessment": "VIX 15-17水準、日経VI 22-23。警戒水準未達だが、低位安定は逆に突発的急騰リスク。DeepSeekショックでVIXスパイクした直後",
-          "historical_pattern": "ボラティリティ上昇後の沈静化段階",
-          "source": "CBOE、Grok MI"
-        },
-        "tier2_foreign_flow": {
-          "name": "外国人売買動向",
-          "weight": 10,
-          "score": 6,
-          "assessment": "円高・利上げ警戒で外国人は慎重姿勢継続。売り越し基調だが大規模ではない。日本株への長期的関心は維持",
-          "historical_pattern": "円高局面での外国人様子見",
-          "source": "JPX、各LLM MI統合"
-        },
-        "tier3_china_risk": {
-          "name": "中国・新興国リスク",
-          "weight": 10,
-          "score": 8,
-          "assessment": "DeepSeekショック継続。NVIDIA▲17%、日本半導体関連も連鎖下落。中国AI台頭は米国・日本のAI投資見直しリスク。ただし製造装置は影響限定的",
-          "historical_pattern": "中国発技術ディスラプション（新パターン）",
-          "source": "各種報道、4LLM MI統合"
-        },
-        "tier3_geopolitics": {
-          "name": "地政学リスク",
-          "weight": 10,
-          "score": 6,
-          "assessment": "台湾海峡は2026年も安定見通し。トランプ政権2期目の関税政策（25%メキシコ・カナダ、10%追加中国）が日本企業に間接影響。ウクライナ戦争長期化",
-          "historical_pattern": "外部ショック型の兆候は中程度",
-          "source": "CSIS、各種報道、Gemini MI"
-        },
-        "tier3_liquidity": {
-          "name": "市場流動性",
-          "weight": 10,
-          "score": 4,
-          "assessment": "流動性は正常水準維持。DeepSeek後も市場機能は健全。特段の懸念なし",
-          "historical_pattern": "アルゴ・流動性危機型の兆候なし",
-          "source": "推定"
-        },
-        "tier3_fx": {
-          "name": "為替リスク",
-          "weight": 10,
-          "score": 7,
-          "assessment": "ドル円154-156円で推移。日銀利上げ継続で中期的に150円割れリスク。輸出企業は想定レート140-145円で影響軽微だが、150円割れは要警戒",
-          "historical_pattern": "円高基調は輸出株の重石",
-          "source": "各種報道、Claude MI"
-        }
-      },
-      "historical_pattern_check": {
-        "valuation_overheating": {
-          "match": false,
-          "comment": "PER 16倍は適正水準、過熱感なし"
-        },
-        "policy_shift": {
-          "match": "partial",
-          "comment": "日銀利上げ継続、2024年8月型リスク継続"
-        },
-        "leverage_collapse": {
-          "match": "partial",
-          "comment": "円キャリー40兆円、巻き戻し圧力蓄積中"
-        },
-        "external_shock": {
-          "match": "active",
-          "comment": "DeepSeekショックが現在進行形。AI・半導体銘柄に影響"
-        },
-        "em_crisis": {
-          "match": false,
-          "comment": "中国発だが金融危機レベルではない"
-        },
-        "algo_liquidity": {
-          "match": false,
-          "comment": "流動性は正常"
-        }
-      },
-      "buffett_guidance": {
-        "score_interpretation": "46-60点：やや慎重姿勢",
-        "cash_position": "やや縮小（60-80%投資）",
-        "action": "高品質銘柄を選別。DeepSeek影響限定的な防衛・エネルギー関連は有望。AI・半導体は短期乱高下に注意しつつ押し目狙い"
-      },
-      "key_catalysts": [
-        {"event": "日銀金融政策決定会合（3月）", "impact": "利上げなら円高加速、キャリー巻き戻しリスク"},
-        {"event": "トランプ関税発動（2月以降）", "impact": "サプライチェーン混乱、間接影響あり"},
-        {"event": "DeepSeekの実力検証", "impact": "過大評価なら半導体反発、実力なら長期影響"},
-        {"event": "防衛予算成立（3月）", "impact": "9兆円規模確定で防衛銘柄上昇"}
-      ]
+  "date": "2026-01-28",
+  "update_time": "23:45 UTC",
+  "total_score": 62,
+  "previous_score": 63,
+  "delta": -1,
+  "risk_level": "high",
+  "recommended_stance": "conservative",
+  "categories": {
+    "policy_pivot": {
+      "score": 13,
+      "max": 20,
+      "tier": 1,
+      "detail": "FRB据え置き継続。Powell議長任期2026年5月満了で後任人事リスク。FF金利3.5-3.75%。2026年追加利下げは1回のみ見込み。",
+      "indicators": {
+        "fed_stance": "据え置き、1月FOMC 97%据え置き織込",
+        "fed_chair_transition": "Powell任期2026年5月15日満了、後任指名で不確実性",
+        "fiscal_policy": "FY2027国防予算$1.5T提案、FY2026 $1.01T執行中",
+        "tariff_risk": "対中半導体25%関税継続、追加関税リスク中程度"
+      }
     },
-    {
-      "date": "2026-01-26",
-      "total_score": 52,
-      "previous_score": 48,
-      "recommendation": "やや慎重姿勢（優良株を選別、押し目買い模索）",
-      "items": {
-        "tier1_financial_policy": {
-          "name": "金融政策転換リスク",
-          "weight": 15,
-          "score": 9,
-          "assessment": "円急伸（155円台）で介入警戒高まる。円キャリー巻き戻しリスク再燃。2024年8月の教訓を想起",
-          "historical_pattern": "金融政策転換型（2024年8月）と部分的に類似",
-          "source": "日銀金融政策決定会合"
-        },
-        "tier1_leverage": {
-          "name": "レバレッジ崩壊リスク",
-          "weight": 15,
-          "score": 6,
-          "assessment": "急速な円高進行で巻き戻し圧力。ただし2024年8月ほどの規模ではない",
-          "historical_pattern": "レバレッジ崩壊型の部分的兆候あり",
-          "source": "推定"
-        },
-        "tier2_valuation": {
-          "name": "バリュエーション過熱",
-          "weight": 10,
-          "score": 5,
-          "assessment": "日経225 PER 16.2倍に調整。1100円安で適正水準に接近",
-          "historical_pattern": "バリュエーション過熱型には該当しない",
-          "source": "日経新聞"
-        },
-        "tier2_vix": {
-          "name": "VIX・ボラティリティ",
-          "weight": 10,
-          "score": 5,
-          "assessment": "VIX 16.45、日経VI 22.5。やや上昇だが警戒水準未達",
-          "historical_pattern": "ボラティリティ上昇の初期兆候",
-          "source": "CBOE"
-        },
-        "tier2_foreign_flow": {
-          "name": "外国人売買動向",
-          "weight": 10,
-          "score": 6,
-          "assessment": "円高・介入警戒で慎重姿勢。売り越し傾向",
-          "historical_pattern": "円高局面での外国人売り",
-          "source": "JPX"
-        },
-        "tier3_china_risk": {
-          "name": "中国・新興国リスク",
-          "weight": 10,
-          "score": 7,
-          "assessment": "DeepSeekショック発生。中国AI台頭でNVDA急落、日本半導体関連に波及",
-          "historical_pattern": "新興国発の技術ディスラプション",
-          "source": "各種報道"
-        },
-        "tier3_geopolitics": {
-          "name": "地政学リスク",
-          "weight": 10,
-          "score": 5,
-          "assessment": "台湾海峡は安定。トランプ政権の政策不透明は継続",
-          "historical_pattern": "外部ショック型の兆候は限定的",
-          "source": "各種報道"
-        },
-        "tier3_liquidity": {
-          "name": "市場流動性",
-          "weight": 10,
-          "score": 4,
-          "assessment": "流動性は正常水準。特段の懸念なし",
-          "historical_pattern": "アルゴ・流動性危機型の兆候なし",
-          "source": "推定"
-        },
-        "tier3_fx": {
-          "name": "為替リスク",
-          "weight": 10,
-          "score": 7,
-          "assessment": "ドル円155円台へ急落。介入警戒で円高継続リスク。輸出企業に逆風",
-          "historical_pattern": "急速な円高は輸出株急落を伴う",
-          "source": "各種報道"
-        }
-      },
-      "historical_pattern_check": {
-        "valuation_overheating": {
-          "match": false,
-          "comment": "PER 16.2倍は適正水準"
-        },
-        "policy_shift": {
-          "match": "partial",
-          "comment": "円高進行は2024年8月と類似するが、規模は小さい"
-        },
-        "leverage_collapse": {
-          "match": "partial",
-          "comment": "円キャリー巻き戻し圧力あり"
-        },
-        "external_shock": {
-          "match": "partial",
-          "comment": "DeepSeekショックが新たな不確実性"
-        },
-        "em_crisis": {
-          "match": false,
-          "comment": "中国発だが危機レベルではない"
-        },
-        "algo_liquidity": {
-          "match": false,
-          "comment": "流動性は正常"
-        }
-      },
-      "buffett_guidance": {
-        "score_interpretation": "46-60点：やや慎重姿勢",
-        "cash_position": "やや縮小（60-80%投資）",
-        "action": "高品質銘柄を選別。急落時は押し目買いの好機。防衛関連は為替影響少なく有望"
+    "valuation": {
+      "score": 15,
+      "max": 15,
+      "tier": 1,
+      "detail": "CAPE 41.03は1871年以来155年間で2度目の40超え継続。歴史的にCAPE39超え後は2年で-20%、3年で-30%のリターン。3年正リターンは過去ゼロ。",
+      "indicators": {
+        "cape": 41.03,
+        "forward_pe": 22.4,
+        "historical_percentile": 99,
+        "historical_pattern": "CAPE39超え後の3年正リターンは過去ゼロ"
+      }
+    },
+    "concentration": {
+      "score": 10,
+      "max": 12,
+      "tier": 2,
+      "detail": "Mag7がS&P500時価総額の約35%を占める異常な集中。2025年1-9月でMag7以外の寄与度は58.6%まで回復も依然高リスク。",
+      "indicators": {
+        "top10_weight": "38%",
+        "mag7_contribution": "Mag7が時価総額の34%、2025年リターンの41%を牽引"
+      }
+    },
+    "leverage": {
+      "score": 3,
+      "max": 12,
+      "tier": 2,
+      "detail": "HYスプレッド2.64%は歴史的にタイト（1997年以来最低水準に近い）。IG スプレッド71bp。リスク・オンだが、反転時の急拡大リスク。",
+      "indicators": {
+        "margin_debt": "中程度",
+        "ig_spread": "71bp（1997年以来最低）",
+        "hy_spread": "2.64%（歴史的タイト）"
+      }
+    },
+    "sentiment": {
+      "score": 6,
+      "max": 10,
+      "tier": 2,
+      "detail": "VIX 16.09は低ボラティリティ環境を示唆。AAII強気派43.2%は歴史的平均37.5%を上回るが、前週比6.3pt低下で陰り。",
+      "indicators": {
+        "vix": 16.09,
+        "bullish_ratio": 43.2,
+        "ipo_activity": "中程度（Starlink IPO待機）"
+      }
+    },
+    "external": {
+      "score": 8,
+      "max": 11,
+      "tier": 3,
+      "detail": "台湾リスク中-高継続（サイバー攻撃激化報告）。封鎖シナリオで世界GDP -2.8%、$2.7T損失試算。中東は供給過剰で価格影響限定的。",
+      "indicators": {
+        "taiwan_risk": "中-高（サイバー攻撃激化、グレーゾーン活動常態化）",
+        "taiwan_economic_impact": "封鎖シナリオで$2.7T損失、全面侵攻で$10T損失",
+        "supply_chain": "AI半導体はCoWoS緩和傾向、変圧器リードタイム50週以上",
+        "pandemic": "低リスク"
+      }
+    },
+    "liquidity": {
+      "score": 3,
+      "max": 10,
+      "tier": 3,
+      "detail": "債券市場・レポ市場は正常に機能。10年債利回り4.22%。ドル調達に問題なし。",
+      "indicators": {
+        "bond_market": "正常（10年債4.22%）",
+        "repo_market": "正常",
+        "dollar_funding": "正常"
+      }
+    },
+    "earnings_divergence": {
+      "score": 6,
+      "max": 10,
+      "tier": 3,
+      "detail": "S&P500 YTD +23.6%に対しEPS成長+14.7%。ギャップは拡大傾向。2026年EPS成長14-15%予想はMag7以外の回復に依存。",
+      "indicators": {
+        "price_vs_eps_gap": "9pt（株価リターンがEPS成長を上回る）",
+        "revision_trend": "やや下方（ハイパースケーラーCapEx ROI懸念）"
       }
     }
-  ]
+  },
+  "tier_summary": {
+    "tier1_highest_impact": {
+      "score": 28,
+      "max": 35,
+      "components": "政策転換13/20 + バリュエーション15/15",
+      "assessment": "バリュエーション極端、Fed議長交代リスク追加"
+    },
+    "tier2_high_impact": {
+      "score": 19,
+      "max": 34,
+      "components": "集中10/12 + レバレッジ3/12 + センチメント6/10",
+      "assessment": "集中リスク高いが、クレジット市場は健全"
+    },
+    "tier3_moderate_impact": {
+      "score": 18,
+      "max": 31,
+      "components": "外部8/11 + 流動性3/10 + 業績乖離7/10",
+      "assessment": "台湾サイバー攻撃激化で外部リスク微増"
+    }
+  },
+  "historical_analog": "1999-2000年ドットコムバブル後期に類似（CAPE水準）。ただし、収益基盤はより堅実（Mag7は実際のキャッシュフロー創出）。",
+  "key_watchpoints": [
+    "FRB議長人事（2026年5月Powell任期満了）",
+    "Mag7決算シーズン（AI CapEx ROIへの市場反応）",
+    "台湾へのサイバー攻撃・グレーゾーン活動エスカレーション",
+    "HYスプレッドの反転（300bp超えで警戒）",
+    "トランプ政権の追加関税発動",
+    "Meta/Microsoft/Amazon等のAI CapEx計画（合計$475B）"
+  ],
+  "scenario_probabilities": {
+    "base": {
+      "probability": 55,
+      "description": "FRB据え置き継続、Mag7決算は堅調だがガイダンス慎重。S&P500は年末に向け横ばい〜小幅上昇。",
+      "sp500_target": "6800-7200"
+    },
+    "bull": {
+      "probability": 20,
+      "description": "AI収益化が加速、Mag7以外の業績回復、インフレ鈍化でFRB利下げ。",
+      "sp500_target": "7500+"
+    },
+    "bear": {
+      "probability": 25,
+      "description": "AI CapExへの懸念拡大、Mag7業績ミス、インフレ再加速または外部ショック（台湾、中東）。バリュエーション調整。",
+      "sp500_target": "5800-6200"
+    }
+  },
+  "investment_stance": {
+    "recommended": "conservative",
+    "rationale": "CAPE 41.03という歴史的極値、Fed議長交代リスクを踏まえ、確実性と政策耐性を優先。高非対称性銘柄への投機的ポジションは縮小。",
+    "asset_allocation_guidance": {
+      "core_positions": "60%（高独占+高耐性銘柄）",
+      "opportunistic": "25%（中確度カタリスト銘柄）",
+      "cash_or_defensive": "15%（調整局面への備え）"
+    }
+  },
+  "changes_from_previous": {
+    "date": "2026-01-27",
+    "previous_score": 65,
+    "current_score": 63,
+    "delta": "-2",
+    "key_changes": [
+      "VIX: 18.6 → 15-16 (センチメント低下)",
+      "Trump-Xi首脳会談で台湾軍事リスク一時低下",
+      "FOMC 1/28据え置き確定的",
+      "政策転換リスク: 13 → 12 (-1)",
+      "外部リスク: 8 → 7 (-1)"
+    ]
+  }
 }

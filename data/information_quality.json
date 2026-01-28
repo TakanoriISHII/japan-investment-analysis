@@ -1,132 +1,27 @@
 {
-  "last_updated": "2026-01-26T14:00:00Z",
+  "last_updated": null,
   "summary": {
-    "total_events": 25,
+    "total_events": 0,
     "by_certainty_stage": {
-      "executed": 11,
-      "contract_signed": 6,
-      "official_announcement": 7,
-      "report_confirmed": 1,
+      "executed": 0,
+      "contract_signed": 0,
+      "official_announcement": 0,
+      "report_confirmed": 0,
       "report_unconfirmed": 0,
       "rumor": 0
     },
     "by_verification_level": {
-      "primary_confirmed": 17,
-      "multi_source": 8,
+      "primary_confirmed": 0,
+      "multi_source": 0,
       "single_reliable": 0,
       "single_unverified": 0
     },
-    "average_certainty_score": 87,
-    "high_confidence_ratio": 0.88
+    "high_confidence_ratio": null
   },
   "alerts": {
     "unverified": [],
-    "conflicts": [
-      {
-        "topic": "2026年ドル円相場予測",
-        "event_ids": ["evt_20260126_013"],
-        "values": ["野村證券: 140円", "三井住友DS: 150円", "みずほ: 150円台後半"],
-        "action": "為替予測は本質的に不確実。参考情報として扱い、投資判断の主軸としない"
-      }
-    ],
+    "conflicts": [],
     "stale": []
   },
-  "quality_score": 87,
-  "quality_trend": "上昇（82→87）",
-  "recommendations": [
-    {
-      "priority": "高",
-      "action": "味の素ABF増産計画（evt_20260126_010）の一次資料確認",
-      "reason": "非対称性スコア18と高いが、日経報道ベース。IR資料で詳細確認推奨"
-    },
-    {
-      "priority": "高",
-      "action": "大阪有機化学工業のEUV用モノマー量産状況確認",
-      "reason": "非対称性スコア20と最高クラス。進捗の追加検証推奨"
-    },
-    {
-      "priority": "中",
-      "action": "湖北工業の新材料（PLZT）採用動向モニタリング",
-      "reason": "非対称性スコア20。顧客採用状況の続報確認推奨"
-    },
-    {
-      "priority": "中",
-      "action": "柏崎刈羽原発再稼働（evt_20260126_006）の進捗確認",
-      "reason": "1月20日の再稼働実施後に確度を95に更新済みか確認"
-    }
-  ],
-  "quality_assessment": {
-    "strengths": [
-      "25件中22件が確度70以上の高確度情報（88%）",
-      "17件が一次資料で確認済み（primary_confirmed）",
-      "非対称性スコア16以上の情報が9件に増加",
-      "候補プール50社の主要企業を網羅"
-    ],
-    "weaknesses": [
-      "防衛関連の一次資料アクセスに限界あり",
-      "川崎重工の不正問題による経営評価の不確実性",
-      "為替予測の不確実性"
-    ],
-    "next_collection_focus": [
-      "Q3決算シーズン（2-3月）の業績アップデート",
-      "防衛装備品輸出の最終契約締結動向",
-      "SMR関連の追加受注情報"
-    ]
-  },
-  "high_asymmetry_events": [
-    {
-      "event_id": "evt_20260126_020",
-      "title": "大阪有機化学工業 ArFモノマー70%シェア",
-      "asymmetry_score": 20,
-      "investment_relevance": "Tier2の隠れた独占企業"
-    },
-    {
-      "event_id": "evt_20260126_021",
-      "title": "湖北工業 光アイソレータ50%超シェア",
-      "asymmetry_score": 20,
-      "investment_relevance": "グローバルニッチトップ企業"
-    },
-    {
-      "event_id": "evt_20260126_010",
-      "title": "味の素ABF 95%シェア、増産計画",
-      "asymmetry_score": 18,
-      "investment_relevance": "食品企業イメージで見落とされる半導体独占"
-    },
-    {
-      "event_id": "evt_20260126_014",
-      "title": "ナブテスコ・ハーモニックドライブ 減速機90%シェア",
-      "asymmetry_score": 18,
-      "investment_relevance": "ヒューマノイド市場の隠れた受益者"
-    },
-    {
-      "event_id": "evt_20260126_015",
-      "title": "日本製鋼所 SMR部材初受注",
-      "asymmetry_score": 17,
-      "investment_relevance": "原子力部材の独占的地位"
-    },
-    {
-      "event_id": "evt_20260126_017",
-      "title": "古河電工 ITLA50%超シェア",
-      "asymmetry_score": 17,
-      "investment_relevance": "光通信の隠れた独占"
-    },
-    {
-      "event_id": "evt_20260126_018",
-      "title": "高砂熱学工業 液冷技術55%シェア",
-      "asymmetry_score": 17,
-      "investment_relevance": "DC建設ブームの恩恵"
-    },
-    {
-      "event_id": "evt_20260126_019",
-      "title": "TOWA HBM封止装置66%シェア",
-      "asymmetry_score": 16,
-      "investment_relevance": "世界唯一のコンプレッション方式"
-    },
-    {
-      "event_id": "evt_20260126_012",
-      "title": "ディスコ ダイシングブレード95%シェア",
-      "asymmetry_score": 15,
-      "investment_relevance": "消耗品ビジネスの独占"
-    }
-  ]
+  "quality_score": null
 }
