@@ -129,14 +129,68 @@
     }
   ],
   "summary": {
-    "total_contradictions": 7,
-    "resolved": 7,
+    "total_contradictions": 10,
+    "resolved": 10,
     "pending": 0,
     "critical_findings": [
       "Wolfspeed Chapter 11破産: 投資候補から除外確定",
       "CAPE 41.03: 前回からさらに上昇、歴史的極値継続",
       "NVIDIA独占強化: シェア90-98%、Q3 FY2026で$57B売上",
-      "Vertiv受注残$9.5B: AI冷却需要の強さを確認"
+      "Vertiv受注残$9.5B: AI冷却需要の強さを確認",
+      "日銀1月会合: 据え置き決定、高田委員のみ1.0%への利上げ主張（8対1）",
+      "柏崎刈羽原発: 2026/1/21再稼働→1/22制御棒不具合で一時停止",
+      "MHI受注高: 防衛・宇宙1兆8,768億円（2024年度）、2022年度の3倍超"
     ]
-  }
+  },
+  "japan_market_contradictions": [
+    {
+      "id": "CTR-JP001",
+      "type": "market_data",
+      "field": "日経平均株価",
+      "sources": {
+        "gemini": "53,358円（2026年1月28日）",
+        "grok": "記載なし",
+        "claude": "直接確認なし"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "53,358円（Gemini確認済み）",
+        "verification_source": "Gemini broad_info",
+        "action": "市場リスク評価に反映"
+      }
+    },
+    {
+      "id": "CTR-JP002",
+      "type": "policy",
+      "field": "日銀政策金利",
+      "sources": {
+        "gemini": "0.75%、利上げ観測あり",
+        "grok": "0.75%据え置き",
+        "claude": "0.75%据え置き（1月会合8対1で決定）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "0.75%据え置き、高田委員のみ1.0%への引上げ主張",
+        "verification_source": "日銀公式発表、NRI分析",
+        "action": "次回利上げは2026年7-9月と予想"
+      }
+    },
+    {
+      "id": "CTR-JP003",
+      "type": "company_data",
+      "company": "三菱重工業 (7011.T)",
+      "field": "時価総額",
+      "sources": {
+        "grok": "$50B（約7.5兆円）",
+        "claude": "約5兆円"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "約5兆円（2026年1月時点、最新確認）",
+        "notes": "Grokの$50Bは過大評価の可能性",
+        "verification_source": "株価x発行済株式数で再計算",
+        "action": "Claude値を採用"
+      }
+    }
+  ]
 }

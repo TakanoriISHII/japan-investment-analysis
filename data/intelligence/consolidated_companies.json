@@ -263,18 +263,18 @@
     }
   ],
   "summary": {
-    "total_companies": 7,
+    "total_companies": 19,
     "by_domain": {
-      "AI": 2,
-      "エネルギー": 3,
-      "防衛": 4,
-      "ロボティクス": 1,
-      "宇宙": 2,
-      "サイバー": 0
+      "AI": 5,
+      "エネルギー": 6,
+      "防衛": 7,
+      "ロボティクス": 4,
+      "宇宙": 4,
+      "サイバー": 3
     },
     "by_confidence": {
-      "high": 5,
-      "medium": 1,
+      "high": 14,
+      "medium": 4,
       "low": 1
     },
     "data_freshness": {
@@ -282,5 +282,275 @@
       "quarterly": "Q3 2025/FY2026",
       "monthly": "2026-01-28"
     }
-  }
+  },
+  "japan_companies": [
+    {
+      "ticker": "7011.T",
+      "name": "三菱重工業",
+      "domains": ["防衛", "エネルギー", "宇宙"],
+      "permanent": {
+        "moat_type": "防衛プライム首位",
+        "market_share": "防衛装備品契約実績1位（1兆4,567億円/年）",
+        "barriers": ["防衛省認定", "原子力規制委員会認証", "日英伊次期戦闘機共同開発"],
+        "certifications": ["防衛省認定", "JAXA認定"],
+        "competitors": ["川崎重工業", "IHI"]
+      },
+      "quarterly": {
+        "period": "FY2024",
+        "defense_orders": "1兆8,768億円（2022年度の3倍超）",
+        "op_profit_forecast": "4,200億円（FY2026）",
+        "key_notes": "防衛・宇宙部門利益4割増計画"
+      },
+      "monthly": {
+        "contracts": [
+          {"name": "地上発射型ミサイル開発", "value": "323億円", "date": "2025-04"},
+          {"name": "潜水艦発射型誘導弾", "value": "29億円", "date": "2025-10"},
+          {"name": "12式艦艇発射型", "value": "250億円", "date": "2025-10"},
+          {"name": "GPI開発", "value": "560億円", "date": "2024-11"}
+        ]
+      },
+      "confidence": {"overall": 95, "sources_confirmed": ["日経新聞", "防衛省発表", "MHI IR"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "6954.T",
+      "name": "ファナック",
+      "domains": ["ロボティクス", "AI"],
+      "permanent": {
+        "moat_type": "CNC・ロボット世界トップ",
+        "market_share": "CNC世界首位、産業用ロボット大手",
+        "barriers": ["技術蓄積", "ブランド力", "グローバルネットワーク"],
+        "certifications": [],
+        "competitors": ["安川電機", "KUKA", "ABB"]
+      },
+      "quarterly": {
+        "period": "Q3 FY2025（2026年1月発表）",
+        "revenue_q3": "6,233億円",
+        "revenue_fy": "8,407億円（通期予想）",
+        "op_profit_q3": "1,277億円",
+        "key_notes": "ロボット受注+39%、中国売上+87%"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": ["米州投資再開で恩恵期待"]
+      },
+      "confidence": {"overall": 99, "sources_confirmed": ["ファナックIR", "日経新聞"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "6501.T",
+      "name": "日立製作所",
+      "domains": ["エネルギー", "AI", "防衛"],
+      "permanent": {
+        "moat_type": "グリッド・HVDC技術",
+        "market_share": "グリッド変圧器40%、HVDC技術で優位",
+        "barriers": ["高資本要件", "JAXA認定"],
+        "certifications": ["JAXA認定"],
+        "competitors": ["Siemens"]
+      },
+      "quarterly": {
+        "period": "継続成長",
+        "key_notes": "データセンター・グリッド向け需要堅調"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": ["GE-Hitachi BWRX-300ライセンス申請中"]
+      },
+      "confidence": {"overall": 90, "sources_confirmed": ["Grok", "Gemini"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "9432.T",
+      "name": "NTT",
+      "domains": ["AI", "サイバー"],
+      "permanent": {
+        "moat_type": "通信インフラ独占",
+        "market_share": "国内データセンター60%",
+        "barriers": ["政府認証", "ネットワーク支配"],
+        "certifications": [],
+        "competitors": ["KDDI"]
+      },
+      "quarterly": {
+        "period": "継続",
+        "key_notes": "IOWN量子安全技術統合"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": ["NTT DATA Rubrikパートナーシップ"]
+      },
+      "confidence": {"overall": 90, "sources_confirmed": ["NTT公式"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "6701.T",
+      "name": "NEC",
+      "domains": ["サイバー", "AI", "防衛"],
+      "permanent": {
+        "moat_type": "政府向けサイバーセキュリティ信頼",
+        "market_share": "政府・防衛向けで高シェア",
+        "barriers": ["政府認証", "日本語対応"],
+        "certifications": [],
+        "competitors": ["富士通", "NTT"]
+      },
+      "quarterly": {
+        "period": "継続",
+        "key_notes": "サイバーセキュリティ事業強化中"
+      },
+      "monthly": {
+        "contracts": [
+          {"name": "KDDI-NECサイバー協業", "value": "非公開", "date": "2025-05", "notes": "国内最大規模目指す"}
+        ],
+        "announcements": ["Cyber Intelligence & Operation Center設立（2025年10月）"]
+      },
+      "confidence": {"overall": 95, "sources_confirmed": ["KDDI Newsroom", "NEC公式"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "6506.T",
+      "name": "安川電機",
+      "domains": ["ロボティクス", "AI"],
+      "permanent": {
+        "moat_type": "サーボモータ世界首位",
+        "market_share": "サーボモータ世界首位、産業用ロボット大手",
+        "barriers": ["技術力", "グローバルネットワーク"],
+        "certifications": [],
+        "competitors": ["ファナック", "KUKA"]
+      },
+      "quarterly": {
+        "period": "Q3 FY2025",
+        "key_notes": "インバータ大口受注獲得、ロボット増収"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": ["きゅうり収穫ロボット製品化", "アステラス製薬との細胞医療協業"]
+      },
+      "confidence": {"overall": 95, "sources_confirmed": ["安川電機IR"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "9348.T",
+      "name": "ispace",
+      "domains": ["宇宙"],
+      "permanent": {
+        "moat_type": "民間月面探査先駆者",
+        "market_share": "日本民間月面探査首位",
+        "barriers": ["技術蓄積", "NASAとの関係"],
+        "certifications": [],
+        "competitors": ["Astroscale", "Intuitive Machines"]
+      },
+      "quarterly": {
+        "period": "FY2026",
+        "revenue_growth": "+42%（予想）",
+        "key_notes": "直近2年で3桁成長、当面赤字継続"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": ["2026年NASAスポンサードミッション開始予定"]
+      },
+      "confidence": {"overall": 85, "sources_confirmed": ["Dividend Japan"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "186A.T",
+      "name": "Astroscale HD",
+      "domains": ["宇宙"],
+      "permanent": {
+        "moat_type": "軌道上サービス世界リーダー",
+        "market_share": "デブリ除去で唯一の実績",
+        "barriers": ["技術力", "JAXA・ESA協力関係"],
+        "certifications": [],
+        "competitors": []
+      },
+      "quarterly": {
+        "period": "上場後",
+        "key_notes": "2024年6月5日東証上場、初日60%上昇"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": ["2027年JAXAデブリ除去ミッション予定"]
+      },
+      "confidence": {"overall": 85, "sources_confirmed": ["TS2 Space Report"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "domains": ["AI", "半導体"],
+      "permanent": {
+        "moat_type": "半導体製造装置世界トップ3",
+        "market_share": "コータ/デベロッパ首位",
+        "barriers": ["技術力", "顧客関係"],
+        "certifications": [],
+        "competitors": ["ASML", "Applied Materials", "Lam Research"]
+      },
+      "quarterly": {
+        "period": "継続成長",
+        "capex": "2,400億円（2025年10月発表）",
+        "key_notes": "AI半導体需要で恩恵"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": []
+      },
+      "confidence": {"overall": 95, "sources_confirmed": ["TEL IR"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "7012.T",
+      "name": "川崎重工業",
+      "domains": ["防衛", "航空宇宙", "ロボティクス"],
+      "permanent": {
+        "moat_type": "防衛プライム2位",
+        "market_share": "防衛装備品契約実績2位",
+        "barriers": ["防衛省認定", "航空機製造認証"],
+        "certifications": ["防衛省認定"],
+        "competitors": ["三菱重工業", "IHI"]
+      },
+      "quarterly": {
+        "period": "継続",
+        "key_notes": "日英伊次期戦闘機共同開発参画"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": []
+      },
+      "confidence": {"overall": 90, "sources_confirmed": ["Naval News"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "7013.T",
+      "name": "IHI",
+      "domains": ["エネルギー", "防衛", "宇宙"],
+      "permanent": {
+        "moat_type": "航空エンジン・ロケット技術",
+        "market_share": "航空エンジン部品、ロケットエンジン",
+        "barriers": ["防衛省認定", "JAXA認定"],
+        "certifications": ["防衛省認定", "JAXA認定"],
+        "competitors": []
+      },
+      "quarterly": {
+        "period": "継続",
+        "key_notes": "NuScale SMRパートナー"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": ["中部電力NuScale出資（2024年11月）"]
+      },
+      "confidence": {"overall": 90, "sources_confirmed": ["World Nuclear Association"], "last_verified": "2026-01-28"}
+    },
+    {
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "domains": ["エネルギー"],
+      "permanent": {
+        "moat_type": "最大電力会社",
+        "market_share": "関東圏電力独占",
+        "barriers": ["地域独占", "インフラ基盤"],
+        "certifications": [],
+        "competitors": []
+      },
+      "quarterly": {
+        "period": "継続",
+        "key_notes": "柏崎刈羽再稼働で収益改善期待"
+      },
+      "monthly": {
+        "contracts": [],
+        "announcements": [
+          "2026/1/21柏崎刈羽7号機再稼働（14年ぶり）",
+          "2026/1/22制御棒不具合で一時停止"
+        ]
+      },
+      "confidence": {"overall": 90, "sources_confirmed": ["Al Jazeera", "UPI"], "last_verified": "2026-01-28"}
+    }
+  ]
 }
