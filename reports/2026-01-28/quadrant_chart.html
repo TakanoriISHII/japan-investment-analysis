@@ -67,16 +67,36 @@
         const allStocks = stockData;
 
         const japanStockData = [
-            { rank: 1, ticker: "7011.T", name: "三菱重工業", certainty: 95, upside: 45, total: 88, monopoly: 28, resilience: 19, synergy: 22, asymmetry: 12, capital: 7, quadrant: "prime", domain: "防衛", note: "防衛契約首位1.87兆円", core_tech: "防衛装備品、原子力、航空宇宙", thesis: "防衛装備品契約首位（1兆4,567億円）。受注1.87兆円、2022年度の3倍超。" },
-            { rank: 2, ticker: "8035.T", name: "東京エレクトロン", certainty: 95, upside: 40, total: 86, monopoly: 27, resilience: 17, synergy: 22, asymmetry: 12, capital: 8, quadrant: "stable", domain: "AI", note: "コータ/デベロッパ世界首位", core_tech: "半導体製造装置", thesis: "コータ/デベロッパ世界首位。AI半導体需要継続でデータセンター投資恩恵。" },
-            { rank: 3, ticker: "6954.T", name: "ファナック", certainty: 99, upside: 38, total: 84, monopoly: 26, resilience: 16, synergy: 20, asymmetry: 14, capital: 8, quadrant: "stable", domain: "ロボティクス", note: "Q3ロボ受注+39%、中国+87%", core_tech: "CNC、産業用ロボット", thesis: "CNC世界首位。Q3ロボット受注+39%、中国売上+87%（大幅回復）。" },
-            { rank: 4, ticker: "6501.T", name: "日立製作所", certainty: 90, upside: 42, total: 82, monopoly: 25, resilience: 17, synergy: 21, asymmetry: 11, capital: 8, quadrant: "prime", domain: "エネルギー", note: "グリッド変圧器40%、BWRX-300", core_tech: "グリッド、HVDC、データセンター", thesis: "グリッド変圧器40%シェア。GE-Hitachi BWRX-300でSMR市場参入。" },
-            { rank: 5, ticker: "9432.T", name: "NTT", certainty: 90, upside: 30, total: 80, monopoly: 25, resilience: 18, synergy: 18, asymmetry: 10, capital: 9, quadrant: "stable", domain: "AI", note: "DC 60%シェア、IOWN", core_tech: "通信インフラ、データセンター、IOWN", thesis: "国内データセンター60%シェア。IOWN量子安全技術統合。" },
-            { rank: 6, ticker: "6506.T", name: "安川電機", certainty: 95, upside: 40, total: 79, monopoly: 24, resilience: 16, synergy: 19, asymmetry: 12, capital: 8, quadrant: "prime", domain: "ロボティクス", note: "サーボモータ世界首位", core_tech: "サーボモータ、産業用ロボット", thesis: "サーボモータ世界首位。中国・アジア自動車市場設備投資で増収。" },
-            { rank: 7, ticker: "6701.T", name: "NEC", certainty: 95, upside: 45, total: 78, monopoly: 23, resilience: 18, synergy: 18, asymmetry: 11, capital: 8, quadrant: "prime", domain: "サイバー", note: "KDDI協業、サイバー強化", core_tech: "サイバーセキュリティ、防衛システム", thesis: "政府向けサイバーセキュリティで信頼。KDDI-NECサイバー協業。" },
-            { rank: 8, ticker: "7012.T", name: "川崎重工業", certainty: 90, upside: 42, total: 76, monopoly: 24, resilience: 17, synergy: 18, asymmetry: 10, capital: 7, quadrant: "prime", domain: "防衛", note: "防衛契約2位、次期戦闘機", core_tech: "防衛装備品、航空宇宙、ロボット", thesis: "防衛装備品契約2位。日英伊次期戦闘機共同開発参画。" },
-            { rank: 9, ticker: "7013.T", name: "IHI", certainty: 90, upside: 48, total: 75, monopoly: 23, resilience: 17, synergy: 18, asymmetry: 10, capital: 7, quadrant: "prime", domain: "エネルギー", note: "航空エンジン、NuScaleパートナー", core_tech: "航空エンジン、ロケット、SMR", thesis: "航空エンジン部品、ロケットエンジンで強み。NuScale SMRパートナー。" },
-            { rank: 10, ticker: "186A.T", name: "Astroscale HD", certainty: 85, upside: 80, total: 74, monopoly: 26, resilience: 14, synergy: 17, asymmetry: 13, capital: 4, quadrant: "speculative", domain: "宇宙", note: "軌道上サービス唯一の実績", core_tech: "軌道上サービス、デブリ除去", thesis: "軌道上サービス世界リーダー。デブリ除去で唯一の実績。" },
+            { rank: 1, ticker: "7011.T", name: "三菱重工業", certainty: 95, upside: 45, total: 88, monopoly: 28, resilience: 19, synergy: 22, asymmetry: 12, capital: 7, quadrant: "prime", domain: "防衛", note: "防衛契約首位1.87兆円", core_tech: "防衛装備品、原子力、航空宇宙", thesis: "防衛装備品契約首位。受注1.87兆円、2022年度の3倍超。" },
+            { rank: 2, ticker: "8035.T", name: "東京エレクトロン", certainty: 95, upside: 40, total: 86, monopoly: 27, resilience: 17, synergy: 22, asymmetry: 12, capital: 8, quadrant: "stable", domain: "AI", note: "コータ/デベロッパ世界首位90%", core_tech: "半導体製造装置", thesis: "コータ/デベロッパ世界首位。AI半導体需要継続。" },
+            { rank: 3, ticker: "6954.T", name: "ファナック", certainty: 99, upside: 38, total: 84, monopoly: 26, resilience: 16, synergy: 20, asymmetry: 14, capital: 8, quadrant: "stable", domain: "ロボティクス", note: "Q3ロボ受注+39%、中国+87%", core_tech: "CNC、産業用ロボット", thesis: "CNC世界首位。Q3中国売上+87%回復。" },
+            { rank: 4, ticker: "6501.T", name: "日立製作所", certainty: 90, upside: 42, total: 82, monopoly: 25, resilience: 17, synergy: 21, asymmetry: 11, capital: 8, quadrant: "prime", domain: "エネルギー", note: "グリッド変圧器40%、BWRX-300", core_tech: "グリッド、HVDC、データセンター", thesis: "グリッド変圧器40%シェア。GE-Hitachi SMR。" },
+            { rank: 5, ticker: "9432.T", name: "NTT", certainty: 90, upside: 30, total: 80, monopoly: 25, resilience: 18, synergy: 18, asymmetry: 10, capital: 9, quadrant: "stable", domain: "AI", note: "DC 60%シェア、IOWN", core_tech: "通信インフラ、データセンター、IOWN", thesis: "国内DC60%シェア。IOWN量子安全技術。" },
+            { rank: 6, ticker: "6506.T", name: "安川電機", certainty: 95, upside: 40, total: 79, monopoly: 24, resilience: 16, synergy: 19, asymmetry: 12, capital: 8, quadrant: "prime", domain: "ロボティクス", note: "サーボモータ世界首位", core_tech: "サーボモータ、産業用ロボット", thesis: "サーボモータ世界首位。中国回復恩恵。" },
+            { rank: 7, ticker: "6701.T", name: "NEC", certainty: 95, upside: 45, total: 78, monopoly: 23, resilience: 18, synergy: 18, asymmetry: 11, capital: 8, quadrant: "prime", domain: "サイバー", note: "KDDI協業、サイバー強化", core_tech: "サイバーセキュリティ、防衛システム", thesis: "政府向けサイバー信頼。KDDI協業。" },
+            { rank: 8, ticker: "7012.T", name: "川崎重工業", certainty: 90, upside: 42, total: 76, monopoly: 24, resilience: 17, synergy: 18, asymmetry: 10, capital: 7, quadrant: "prime", domain: "防衛", note: "防衛契約2位、次期戦闘機", core_tech: "防衛装備品、航空宇宙、ロボット", thesis: "防衛契約2位。GCAP共同開発参画。" },
+            { rank: 9, ticker: "7013.T", name: "IHI", certainty: 90, upside: 48, total: 75, monopoly: 23, resilience: 17, synergy: 18, asymmetry: 10, capital: 7, quadrant: "prime", domain: "エネルギー", note: "航空エンジン、NuScaleパートナー", core_tech: "航空エンジン、ロケット、SMR", thesis: "航空エンジン部品。NuScale SMRパートナー。" },
+            { rank: 10, ticker: "186A.T", name: "Astroscale HD", certainty: 85, upside: 80, total: 74, monopoly: 26, resilience: 14, synergy: 17, asymmetry: 13, capital: 4, quadrant: "speculative", domain: "宇宙", note: "軌道上サービス唯一の実績", core_tech: "軌道上サービス、デブリ除去", thesis: "軌道上サービス世界リーダー。デブリ除去唯一実績。" },
+            { rank: 11, ticker: "6920.T", name: "レーザーテック", certainty: 92, upside: 45, total: 73, monopoly: 25, resilience: 15, synergy: 18, asymmetry: 9, capital: 6, quadrant: "prime", domain: "AI", note: "EUVマスク検査100%独占", core_tech: "EUVマスク検査装置", thesis: "EUVマスク検査装置で世界100%独占。" },
+            { rank: 12, ticker: "6503.T", name: "三菱電機", certainty: 88, upside: 38, total: 72, monopoly: 22, resilience: 17, synergy: 18, asymmetry: 9, capital: 6, quadrant: "stable", domain: "防衛", note: "防衛エレクトロニクス、レーダー", core_tech: "防衛エレクトロニクス、FA機器、衛星", thesis: "防衛エレクトロニクス（レーダー、誘導）。" },
+            { rank: 13, ticker: "6146.T", name: "ディスコ", certainty: 90, upside: 42, total: 71, monopoly: 24, resilience: 15, synergy: 17, asymmetry: 9, capital: 6, quadrant: "stable", domain: "AI", note: "半導体切断研磨80%シェア", core_tech: "ダイサー、グラインダー", thesis: "半導体切断・研磨装置で世界80%シェア。" },
+            { rank: 14, ticker: "6758.T", name: "ソニーグループ", certainty: 85, upside: 35, total: 70, monopoly: 23, resilience: 16, synergy: 16, asymmetry: 8, capital: 7, quadrant: "stable", domain: "AI", note: "イメージセンサー50%首位", core_tech: "CMOSイメージセンサー、ゲーム", thesis: "イメージセンサー世界首位（50%シェア）。" },
+            { rank: 15, ticker: "6857.T", name: "アドバンテスト", certainty: 88, upside: 40, total: 69, monopoly: 22, resilience: 15, synergy: 17, asymmetry: 9, capital: 6, quadrant: "stable", domain: "AI", note: "半導体テスト装置世界2位", core_tech: "半導体テスター（SoC、メモリ）", thesis: "半導体テスト装置世界2位。AI複雑化で需要増。" },
+            { rank: 16, ticker: "6861.T", name: "キーエンス", certainty: 85, upside: 32, total: 68, monopoly: 21, resilience: 17, synergy: 15, asymmetry: 7, capital: 8, quadrant: "stable", domain: "ロボティクス", note: "FAセンサー首位、利益率50%", core_tech: "FAセンサー、画像処理、計測機器", thesis: "FAセンサー世界首位。営業利益率50%超。" },
+            { rank: 17, ticker: "6723.T", name: "ルネサス", certainty: 82, upside: 45, total: 67, monopoly: 21, resilience: 14, synergy: 17, asymmetry: 9, capital: 6, quadrant: "prime", domain: "AI", note: "車載半導体世界3位", core_tech: "車載MCU、パワー半導体", thesis: "車載半導体世界3位。自動運転・EVで拡大。" },
+            { rank: 18, ticker: "7735.T", name: "SCREEN HD", certainty: 85, upside: 40, total: 66, monopoly: 21, resilience: 14, synergy: 17, asymmetry: 8, capital: 6, quadrant: "stable", domain: "AI", note: "半導体洗浄装置60%首位", core_tech: "半導体洗浄装置", thesis: "半導体洗浄装置で世界首位（60%シェア）。" },
+            { rank: 19, ticker: "6273.T", name: "SMC", certainty: 85, upside: 35, total: 65, monopoly: 22, resilience: 15, synergy: 15, asymmetry: 7, capital: 6, quadrant: "stable", domain: "ロボティクス", note: "空圧機器40%世界首位", core_tech: "空圧機器、真空機器", thesis: "空圧機器世界首位（40%シェア）。" },
+            { rank: 20, ticker: "9501.T", name: "東京電力HD", certainty: 75, upside: 55, total: 64, monopoly: 20, resilience: 15, synergy: 15, asymmetry: 10, capital: 4, quadrant: "speculative", domain: "エネルギー", note: "柏崎刈羽821万kW再稼働", core_tech: "原子力、送配電", thesis: "柏崎刈羽（世界最大821万kW）再稼働期待。" },
+            { rank: 21, ticker: "6702.T", name: "富士通", certainty: 82, upside: 38, total: 63, monopoly: 19, resilience: 16, synergy: 15, asymmetry: 8, capital: 5, quadrant: "stable", domain: "サイバー", note: "政府向けIT、量子コンピュータ", core_tech: "ITサービス、量子コンピュータ", thesis: "政府向けIT。量子コンピュータで先行。" },
+            { rank: 22, ticker: "5631.T", name: "日本製鋼所", certainty: 85, upside: 48, total: 62, monopoly: 21, resilience: 15, synergy: 14, asymmetry: 8, capital: 4, quadrant: "prime", domain: "防衛", note: "戦車砲身・艦砲国内独占", core_tech: "防衛装備品（砲身）、素材", thesis: "戦車砲身・艦砲で国内独占。防衛予算増恩恵。" },
+            { rank: 23, ticker: "9348.T", name: "ispace", certainty: 70, upside: 85, total: 61, monopoly: 22, resilience: 12, synergy: 15, asymmetry: 10, capital: 2, quadrant: "speculative", domain: "宇宙", note: "民間月面探査先行", core_tech: "月面着陸機、月面探査", thesis: "民間月面探査で先行。NASA CLPSプログラム参画。" },
+            { rank: 24, ticker: "1963.T", name: "日揮HD", certainty: 80, upside: 42, total: 60, monopoly: 19, resilience: 14, synergy: 15, asymmetry: 8, capital: 4, quadrant: "prime", domain: "エネルギー", note: "LNGプラント世界大手", core_tech: "プラントエンジニアリング、LNG", thesis: "LNGプラント世界大手。水素・アンモニア関連。" },
+            { rank: 25, ticker: "6268.T", name: "ナブテスコ", certainty: 82, upside: 38, total: 59, monopoly: 20, resilience: 14, synergy: 14, asymmetry: 7, capital: 4, quadrant: "stable", domain: "ロボティクス", note: "精密減速機60%世界首位", core_tech: "精密減速機、航空機器", thesis: "精密減速機世界首位（60%シェア）。" },
+            { rank: 26, ticker: "6481.T", name: "THK", certainty: 80, upside: 40, total: 58, monopoly: 19, resilience: 14, synergy: 14, asymmetry: 7, capital: 4, quadrant: "stable", domain: "ロボティクス", note: "LMガイド世界首位", core_tech: "LMガイド、ボールねじ", thesis: "リニアモーションガイド世界首位。" },
+            { rank: 27, ticker: "4704.T", name: "トレンドマイクロ", certainty: 78, upside: 35, total: 57, monopoly: 18, resilience: 15, synergy: 13, asymmetry: 7, capital: 4, quadrant: "stable", domain: "サイバー", note: "サイバーセキュリティ世界大手", core_tech: "セキュリティソフト、XDR", thesis: "サイバーセキュリティ世界大手。日本発。" },
+            { rank: 28, ticker: "9503.T", name: "関西電力", certainty: 80, upside: 35, total: 56, monopoly: 18, resilience: 15, synergy: 13, asymmetry: 6, capital: 4, quadrant: "stable", domain: "エネルギー", note: "原子力稼働率国内最高", core_tech: "原子力、送配電", thesis: "原子力稼働率国内最高（7基稼働）。" },
+            { rank: 29, ticker: "6324.T", name: "ハーモニック", certainty: 78, upside: 45, total: 55, monopoly: 20, resilience: 12, synergy: 13, asymmetry: 7, capital: 3, quadrant: "prime", domain: "ロボティクス", note: "波動歯車減速機80%独占", core_tech: "波動歯車減速機", thesis: "波動歯車減速機で世界80%独占。" },
+            { rank: 30, ticker: "7003.T", name: "三井E&S", certainty: 75, upside: 50, total: 54, monopoly: 18, resilience: 13, synergy: 13, asymmetry: 7, capital: 3, quadrant: "prime", domain: "防衛", note: "護衛艦・潜水艦建造", core_tech: "艦船建造、港湾クレーン", thesis: "護衛艦・潜水艦建造。防衛予算増恩恵。" },
         ];
 
         const domainColors = {
@@ -136,7 +156,7 @@
             return (
                 <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
                     <h1 style={{ textAlign: "center", fontSize: "24px", marginBottom: "8px", color: "#fff" }}>
-                        日本マルチドメイン・コンバージェンス分析 {marketType === "japan" ? "Top10" : "【参考】米国 Top30"}
+                        日本マルチドメイン・コンバージェンス分析 {marketType === "japan" ? "Top30" : "【参考】米国 Top30"}
                     </h1>
                     <h2 style={{ textAlign: "center", fontSize: "16px", marginBottom: "12px", color: "#94a3b8", fontWeight: "normal" }}>
                         4象限マトリックス（確実性 x アップサイド）| 2026年1月28日
@@ -157,7 +177,7 @@
                                 boxShadow: marketType === "japan" ? "0 4px 15px rgba(239, 68, 68, 0.4)" : "none"
                             }}
                         >
-                            日本 Top 10
+                            日本 Top 30
                         </button>
                         <button
                             onClick={() => { setMarketType("us"); setSelectedDomain("all"); }}
