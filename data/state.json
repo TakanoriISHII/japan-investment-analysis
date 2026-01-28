@@ -1,34 +1,41 @@
 {
-  "last_execution": "2026-01-28T23:30:00Z",
-  "session": "run_analysis_full_late",
+  "last_execution": "2026-01-28T20:30:00Z",
+  "session": "run_analysis_full_v2_japan",
+  "version": "2.0",
   "events": {
     "last_collected": "2026-01-28",
-    "total_count": 35,
-    "last_event_id": "evt_20260128_010"
+    "total_count": 40,
+    "last_event_id": "evt_20260128_015"
   },
   "broad_intelligence": {
     "last_collected": "2026-01-28",
-    "total_items": 102
+    "total_items": 120,
+    "japan_items": 18
   },
   "information_quality": {
     "last_check": "2026-01-28",
-    "quality_score": 92,
+    "us_quality_score": 92,
+    "japan_quality_score": 97,
     "active_alerts": 0
   },
   "monopoly_map": {
     "last_update": "2026-01-28",
-    "update_reason": "定期フル分析（BWXT $7.4B受注残更新、Golden Dome $151B、L3Harris $1B投資反映）",
+    "update_reason": "日本市場分析追加（10社Top10、市場リスク58/100）",
     "pending_triggers": []
   },
   "market_state": {
-    "last_update": "2026-01-28"
+    "last_update": "2026-01-28",
+    "us_market_risk": 62,
+    "japan_market_risk": 58
   },
   "stable_update": {
     "last_update": "2026-01-28",
     "permanent_companies": 14,
     "quarterly_financials": 14,
     "monthly_contracts": 7,
+    "japan_companies": 10,
     "companies_added": ["VST", "CEG", "TDG", "ETN", "CW", "APH"],
+    "japan_companies_added": ["7011.T", "8035.T", "6954.T", "6501.T", "9432.T", "6506.T", "6701.T", "7012.T", "7013.T", "186A.T"],
     "next_review": {
       "permanent": "2027-01-28",
       "quarterly": "2026-04-28",
@@ -38,38 +45,42 @@
   "analysis": {
     "market_risk": {
       "last_update": "2026-01-28",
-      "last_score": 62,
-      "previous_score": 63,
-      "delta": "-1"
+      "us_score": 62,
+      "japan_score": 58,
+      "us_previous": 63,
+      "japan_previous": null
     },
     "top30": {
       "last_update": "2026-01-28",
-      "top_conviction": "NVDA",
-      "thesis_updates": 12
+      "us_top_conviction": "NVDA",
+      "japan_top_conviction": "7011.T",
+      "us_thesis_updates": 12,
+      "japan_thesis_updates": 10
     }
   },
   "gap_analysis": {
     "last_check": "2026-01-28",
-    "companies_supplemented": 8,
-    "gaps_filled": 4,
-    "gaps_partial": 1,
+    "companies_supplemented": 12,
+    "gaps_filled": 15,
+    "gaps_partial": 0,
     "gaps_pending": 0
   },
   "contradictions": {
     "last_check": "2026-01-28",
-    "total_found": 3,
-    "resolved": 3,
+    "us_total": 7,
+    "us_resolved": 7,
+    "japan_total": 3,
+    "japan_resolved": 3,
     "pending": 0
   },
   "critical_findings": [
-    "市場リスクスコア 63→62（VIX 16.07安定、ウクライナ和平90%合意報道）",
-    "FOMC 1/28: FF金利3.5-3.75%据え置き（97.2%確率）",
-    "CAPE 40.32（GuruFocus確認、歴史的極値継続）",
-    "Meta Nuclear 6.6GW発表（Vistra 2.1GW+、Constellation、TerraPower、Oklo）",
-    "ウクライナ三者協議（1/23）「建設的」、ゼレンスキー「90%合意」発言",
-    "SpaceX Golden Dome $2B・600衛星（WSJ報道、公式未確認、75%確度）",
-    "Hyperscaler CapEx 2026 $600B+（75%がAI向け）",
-    "Rocket Lab Neutronタンク破裂（1/21）、mid-2026遅延リスク",
-    "Powell後任候補: Warsh, Hassett, Waller, Rieder（今週発表見込み）"
+    "【新規】日本市場分析追加（Top10、市場リスク58/100、バランス型スタンス）",
+    "【新規】防衛予算9.04兆円承認（過去最高、初の9兆円超え）",
+    "【新規】柏崎刈羽原発1/21再稼働→1/22一時停止（制御棒不具合）",
+    "【新規】日銀0.75%据え置き（8対1、高田委員のみ1.0%主張）",
+    "【新規】ファナックQ3決算：ロボット受注+39%、中国売上+87%回復",
+    "【継続】米国市場リスク62/100（CAPE 41.03、保守的スタンス）",
+    "【継続】Meta Nuclear 6.6GW発表（Vistra 2.1GW+、Constellation、TerraPower、Oklo）",
+    "【継続】Rocket Lab Neutronタンク破裂（1/21）、mid-2026遅延リスク"
   ]
 }
