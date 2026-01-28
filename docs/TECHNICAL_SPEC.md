@@ -18,7 +18,7 @@
 ## ディレクトリ構造
 
 ```
-us-investment-analysis/
+japan-investment-analysis/
 ├── CLAUDE.md                           # エントリーポイント（クイックリファレンス）
 ├── README.md                           # プロジェクト概要
 │
@@ -298,7 +298,7 @@ Top 30企業の評価結果。
       "concentration": {
         "score": 8,
         "max": 12,
-        "detail": "トップ10がS&P 500の35%",
+        "detail": "トップ10が日経平均の35%",
         "indicators": ["Top 10 weight", "HHI"]
       },
       "leverage": {
@@ -371,13 +371,13 @@ Top 30企業の評価結果。
       "certainty": {
         "stage": "official_announcement",
         "score": 75,
-        "rationale": "DoDプレスリリースで確認",
+        "rationale": "防衛省プレスリリースで確認",
         "upgrade_trigger": "契約締結で90に上昇"
       },
       "verification": {
         "level": "primary_confirmed",
         "sources": [
-          {"type": "primary", "name": "DoD", "url": "https://..."},
+          {"type": "primary", "name": "防衛省", "url": "https://..."},
           {"type": "secondary", "name": "Defense News", "date": "2025-01-26"}
         ]
       },
@@ -434,14 +434,14 @@ Top 30企業の評価結果。
           "last_updated": "2026-01-15"
         },
         "certifications": {
-          "value": ["ITAR", "DoD Secret"],
+          "value": ["防衛関連認証", "秘密取扱適格性"],
           "confidence": "high",
           "source": "stable/permanent",
           "last_verified": "2025-12-01"
         },
         "recent_contracts": [
           {
-            "value": "$500M DoD contract",
+            "value": "防衛省500億円契約",
             "confidence": "high",
             "source": "SAM.gov",
             "date": "2026-01-20"
@@ -879,7 +879,7 @@ Top 30企業の評価結果。
 | PPA | 電力購入契約 |
 | SAM.gov | 連邦契約データベース（System for Award Management） |
 | FPDS | 連邦調達データシステム |
-| 13F | 機関投資家保有状況を示すSEC提出書類 |
+| 大量保有報告書 | 機関投資家保有状況を示す開示書類 |
 
 ### 評価用語
 
@@ -897,7 +897,7 @@ Top 30企業の評価結果。
 
 | 用語 | 定義 |
 |------|------|
-| 一次情報源 | 政府、SEC、公式発表など直接的な情報源 |
+| 一次情報源 | 政府、有報、公式発表など直接的な情報源 |
 | 二次情報源 | 通信社、業界メディアなど一次を引用する情報源 |
 | LLM一致 | 複数のLLMが同一の情報を報告 |
 | 確度重み | 情報の信頼性に基づく評価への重み付け係数 |
