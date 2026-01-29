@@ -33,9 +33,9 @@
     "permanent_companies": 14,
     "quarterly_financials": 14,
     "monthly_contracts": 9,
-    "japan_companies": 10,
+    "japan_companies": 30,
     "companies_added": ["VST", "CEG", "TDG", "ETN", "CW", "APH"],
-    "japan_companies_added": ["7011.T", "8035.T", "6954.T", "6501.T", "9432.T", "6506.T", "6701.T", "7012.T", "7013.T", "186A.T"],
+    "japan_companies_added": ["7011.T", "8035.T", "6954.T", "6501.T", "9432.T", "6506.T", "6701.T", "7012.T", "7013.T", "186A.T", "6920.T", "6857.T", "6861.T", "7735.T", "6273.T", "6503.T", "6702.T", "9433.T", "6758.T", "5631.T", "6141.T", "6645.T", "6723.T", "6807.T", "6361.T", "9501.T", "7224.T", "7739.T", "1963.T", "6779.T"],
     "next_review": {
       "permanent": "2027-01-28",
       "quarterly": "2026-04-28",
@@ -74,6 +74,7 @@
     "pending": 0
   },
   "critical_findings": [
+    "【2026-01-29】Japan Top 30構築完了：10社→30社に拡張（Prime 18社、Stable Growth 9社、Speculative 3社）",
     "【2026-01-29】ファナックQ3確定：ロボット受注+38%、中国+87%、ガイダンス+10%上方修正（確度99%）",
     "【2026-01-29】TSMC熊本第2工場：6-7nm→4nm（AI向け）計画変更検討中",
     "【2026-01-29】KDDI-NEC合弁「Protect.jp」設立：国内最大サイバーセキュリティ事業",
