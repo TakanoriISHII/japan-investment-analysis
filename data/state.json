@@ -89,5 +89,43 @@
   "next_analysis": {
     "recommended_date": "2026-02-06",
     "trigger": "東京エレクトロンQ3決算発表"
+  },
+  "performance_verification": {
+    "predictions_recorded": true,
+    "snapshot_date": "2026-01-29",
+    "snapshot_path": "data/performance/predictions/2026-01-29/",
+    "verification_schedule": {
+      "1_month": {"date": "2026-02-28", "status": "pending"},
+      "3_months": {"date": "2026-04-29", "status": "pending"},
+      "6_months": {"date": "2026-07-29", "status": "pending"},
+      "1_year": {"date": "2027-01-29", "status": "pending"}
+    },
+    "last_verified": null
+  },
+  "approval_workflow": {
+    "top30_status": "approved",
+    "approved_date": "2026-01-29",
+    "approved_by": "system_auto",
+    "pending_review": false,
+    "notes": "初回承認フロー導入前のため自動承認"
+  },
+  "escalation_log": [],
+  "scenario_status": {
+    "current_scenario": "base",
+    "last_evaluated": "2026-01-29",
+    "scenario_probabilities": {
+      "base": 55,
+      "bull": 25,
+      "bear": 20
+    },
+    "key_indicators": {
+      "boj_policy_rate": 0.75,
+      "usd_jpy": 156.2,
+      "nikkei_per": 16.0,
+      "nikkei_vi": 34,
+      "foreign_investor_trend": "neutral"
+    },
+    "trigger_alerts": [],
+    "last_scenario_change": null
   }
 }

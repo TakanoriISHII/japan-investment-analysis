@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "snapshot_date": "2026-01-29",
+    "verification_dates": {
+      "1_month": "2026-02-28",
+      "3_months": "2026-04-29"
+    }
+  },
+  "market_risk_prediction": {
+    "current_score": 58,
+    "stance": "balanced",
+    "tier1_forecast": {
+      "boj_policy": {
+        "current": "0.75%据え置き",
+        "prediction": "7-9月に0.5%利上げの可能性",
+        "confidence": 75
+      },
+      "valuation": {
+        "current": "日経PER 16倍",
+        "prediction": "16-18倍で推移",
+        "confidence": 80
+      }
+    },
+    "tier2_forecast": {
+      "geopolitics": {
+        "current": "中国対日規制強化",
+        "prediction": "追加規制の可能性あり、台湾リスク継続",
+        "confidence": 70
+      },
+      "fx": {
+        "current": "ドル円152.5円",
+        "prediction": "145-158円レンジ、協調介入警戒",
+        "confidence": 65
+      }
+    }
+  },
+  "scenario_predictions": {
+    "base": {
+      "probability": 55,
+      "nikkei_range": "52000-56000",
+      "triggers": ["日銀7-9月利上げ", "円145-155円", "防衛・半導体堅調"]
+    },
+    "bull": {
+      "probability": 25,
+      "nikkei_range": "58000+",
+      "triggers": ["中国回復継続", "円安継続", "政策加速"]
+    },
+    "bear": {
+      "probability": 20,
+      "nikkei_range": "45000-50000",
+      "triggers": ["台湾有事", "日銀急速利上げ", "中国規制拡大"]
+    }
+  }
+}

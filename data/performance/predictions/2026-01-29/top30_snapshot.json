@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "snapshot_date": "2026-01-29",
+    "analysis_version": "3.1",
+    "purpose": "パフォーマンス検証用予測スナップショット",
+    "verification_schedule": {
+      "1_month": "2026-02-28",
+      "3_months": "2026-04-29",
+      "6_months": "2026-07-29",
+      "1_year": "2027-01-29"
+    }
+  },
+  "market_risk": {
+    "score": 58,
+    "previous": 62,
+    "delta": -4,
+    "stance": "balanced"
+  },
+  "japan_top30_predictions": [
+    {
+      "rank": 1,
+      "ticker": "7011.T",
+      "name": "三菱重工業",
+      "total": 88,
+      "certainty": 95,
+      "upside": 45,
+      "quadrant": "prime",
+      "key_catalyst": "次期戦闘機開発進展、スタンドオフミサイル量産",
+      "prediction_1m": "GCAP予算承認で株価堅調維持",
+      "prediction_3m": "防衛予算9兆円執行開始でさらに上昇",
+      "prediction_6m": "豪州フリゲート本契約で海外輸出実績確定"
+    },
+    {
+      "rank": 2,
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "total": 86,
+      "certainty": 95,
+      "upside": 40,
+      "quadrant": "stable_growth",
+      "key_catalyst": "先端半導体需要継続、Rapidus量産開始",
+      "prediction_1m": "Q3決算（2/6）でガイダンス確認",
+      "prediction_3m": "TSMC熊本第2工場計画確定で受注増",
+      "prediction_6m": "Rapidus向け装置納入開始"
+    },
+    {
+      "rank": 3,
+      "ticker": "6954.T",
+      "name": "ファナック",
+      "total": 85,
+      "certainty": 99,
+      "upside": 42,
+      "quadrant": "stable_growth",
+      "key_catalyst": "中国回復継続（+87%確認済み）、北米リショアリング需要",
+      "prediction_1m": "中国回復トレンド継続確認",
+      "prediction_3m": "Q4決算で通期ガイダンス達成確認",
+      "prediction_6m": "中国EV関連投資の持続性確認"
+    },
+    {
+      "rank": 4,
+      "ticker": "6501.T",
+      "name": "日立製作所",
+      "total": 82,
+      "certainty": 90,
+      "upside": 42,
+      "quadrant": "prime",
+      "key_catalyst": "BWRX-300商業化、グリッド近代化需要",
+      "prediction_1m": "グリッド投資需要継続",
+      "prediction_3m": "Lumada成長継続",
+      "prediction_6m": "SMR商業化進展次第で評価上方修正"
+    },
+    {
+      "rank": 5,
+      "ticker": "9432.T",
+      "name": "NTT",
+      "total": 80,
+      "certainty": 90,
+      "upside": 30,
+      "quadrant": "stable_growth",
+      "key_catalyst": "IOWN商業化、データセンター需要",
+      "prediction_1m": "配当安定性継続",
+      "prediction_3m": "IOWN進捗発表",
+      "prediction_6m": "データセンター需要で収益安定"
+    },
+    {
+      "rank": 6,
+      "ticker": "6506.T",
+      "name": "安川電機",
+      "total": 79,
+      "certainty": 95,
+      "upside": 40,
+      "quadrant": "prime",
+      "key_catalyst": "中国EV自動化需要、細胞医療事業",
+      "prediction_1m": "ファナック同様、中国回復恩恵",
+      "prediction_3m": "インバータ大口受注効果",
+      "prediction_6m": "新興国自動化需要拡大"
+    },
+    {
+      "rank": 7,
+      "ticker": "6701.T",
+      "name": "NEC",
+      "total": 78,
+      "certainty": 95,
+      "upside": 45,
+      "quadrant": "prime",
+      "key_catalyst": "サイバー事業拡大、政府DX需要",
+      "prediction_1m": "Protect.jp設立効果の初期評価",
+      "prediction_3m": "政府向けサイバー契約増",
+      "prediction_6m": "国内サイバーセキュリティ市場シェア拡大"
+    },
+    {
+      "rank": 8,
+      "ticker": "7012.T",
+      "name": "川崎重工業",
+      "total": 76,
+      "certainty": 90,
+      "upside": 42,
+      "quadrant": "prime",
+      "key_catalyst": "防衛予算増額継続、次期戦闘機",
+      "prediction_1m": "防衛関連受注継続",
+      "prediction_3m": "潜水艦・哨戒機受注確認",
+      "prediction_6m": "水素事業進捗"
+    },
+    {
+      "rank": 9,
+      "ticker": "7013.T",
+      "name": "IHI",
+      "total": 75,
+      "certainty": 90,
+      "upside": 48,
+      "quadrant": "prime",
+      "key_catalyst": "SMR商業化、航空需要回復",
+      "prediction_1m": "航空エンジン需要継続",
+      "prediction_3m": "NuScale出資効果評価",
+      "prediction_6m": "SMR商業化進捗で評価上方修正可能"
+    },
+    {
+      "rank": 10,
+      "ticker": "186A.T",
+      "name": "Astroscale HD",
+      "total": 74,
+      "certainty": 85,
+      "upside": 80,
+      "quadrant": "speculative",
+      "key_catalyst": "JAXAミッション成功、規制強化",
+      "prediction_1m": "開発進捗継続",
+      "prediction_3m": "JAXAとの協業進展",
+      "prediction_6m": "デブリ除去規制強化で市場拡大"
+    },
+    {
+      "rank": 11,
+      "ticker": "6920.T",
+      "name": "レーザーテック",
+      "total": 73,
+      "certainty": 90,
+      "upside": 55,
+      "quadrant": "prime",
+      "key_catalyst": "EUV世代進化、High-NA EUV対応",
+      "prediction_1m": "受注残継続",
+      "prediction_3m": "High-NA対応製品発表",
+      "prediction_6m": "TSMC等へのHigh-NA対応装置納入"
+    },
+    {
+      "rank": 12,
+      "ticker": "6857.T",
+      "name": "アドバンテスト",
+      "total": 72,
+      "certainty": 90,
+      "upside": 45,
+      "quadrant": "stable_growth",
+      "key_catalyst": "AI半導体テスト需要、HBM量産",
+      "prediction_1m": "HBMテスト需要継続",
+      "prediction_3m": "AI半導体関連受注拡大",
+      "prediction_6m": "先端パッケージング対応強化"
+    },
+    {
+      "rank": 13,
+      "ticker": "6861.T",
+      "name": "キーエンス",
+      "total": 71,
+      "certainty": 92,
+      "upside": 35,
+      "quadrant": "stable_growth",
+      "key_catalyst": "製造業自動化、EV生産拡大",
+      "prediction_1m": "営業利益率50%+維持",
+      "prediction_3m": "FA需要堅調",
+      "prediction_6m": "新製品投入効果"
+    },
+    {
+      "rank": 14,
+      "ticker": "7735.T",
+      "name": "SCREEN HD",
+      "total": 70,
+      "certainty": 88,
+      "upside": 45,
+      "quadrant": "stable_growth",
+      "key_catalyst": "先端プロセス需要、国内fab稼働",
+      "prediction_1m": "洗浄装置需要継続",
+      "prediction_3m": "TSMC熊本向け受注",
+      "prediction_6m": "Rapidus向け装置納入開始"
+    },
+    {
+      "rank": 15,
+      "ticker": "6273.T",
+      "name": "SMC",
+      "total": 69,
+      "certainty": 90,
+      "upside": 38,
+      "quadrant": "stable_growth",
+      "key_catalyst": "半導体fab増設、EV生産拡大",
+      "prediction_1m": "空圧機器需要安定",
+      "prediction_3m": "半導体関連受注継続",
+      "prediction_6m": "グローバル製造業回復で需要増"
+    },
+    {
+      "rank": 26,
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "total": 58,
+      "certainty": 70,
+      "upside": 65,
+      "quadrant": "speculative",
+      "key_catalyst": "柏崎刈羽全基再稼働",
+      "prediction_1m": "6号機調査結果発表",
+      "prediction_3m": "再稼働スケジュール再設定",
+      "prediction_6m": "設定ミス解消後の再稼働判断",
+      "risk_flag": "30年前設定ミス発覚、再稼働時期不透明"
+    }
+  ],
+  "key_catalysts_to_verify": [
+    {
+      "date": "2026-02-06",
+      "event": "東京エレクトロン Q3決算",
+      "impact": "半導体セクター全体の方向性確認"
+    },
+    {
+      "date": "2026-03",
+      "event": "日銀金融政策決定会合",
+      "impact": "次回利上げ判断の確認"
+    },
+    {
+      "date": "2026-04",
+      "event": "防衛予算FY2026執行開始",
+      "impact": "三菱重工/川崎重工/IHI受注実現"
+    },
+    {
+      "date": "2026-Q2",
+      "event": "TSMC熊本第2工場計画正式発表",
+      "impact": "4nm計画変更確定で半導体装置需要増"
+    },
+    {
+      "date": "2026-H2",
+      "event": "柏崎刈羽再稼働再開判断",
+      "impact": "東京電力HD評価の決定要因"
+    }
+  ]
+}
