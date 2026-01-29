@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "契約・受注情報 - 月次で更新",
-    "last_updated": "2026-01-29",
+    "last_updated": "2026-01-30",
     "next_update": "2026-02-28",
     "schema_version": "1.0"
   },
@@ -186,6 +186,32 @@
       "date_announced": "2025",
       "status": "active",
       "notes": "SMR格納容器・構造物製造パートナー。JGCと共同JNI設立。"
+    },
+    {
+      "id": "CON-JP006",
+      "company": "TSMC/JASM",
+      "ticker": "JASM（非上場）",
+      "contract_name": "熊本第2工場計画変更",
+      "value": "$23B（投資総額）",
+      "counterparty": "日本政府",
+      "duration": "2027年稼働目標",
+      "date_announced": "2026-01（報道）",
+      "status": "planning_change",
+      "certainty": 90,
+      "notes": "当初計画6-7nm→4nm（AI向け）に変更検討中。建設一時停止。"
+    },
+    {
+      "id": "CON-JP007",
+      "company": "JAXA/三菱重工業",
+      "ticker": "7011.T",
+      "contract_name": "H3ロケット9号機",
+      "value": "非公開",
+      "counterparty": "JAXA",
+      "duration": "延期中",
+      "date_announced": "2026-01",
+      "status": "delayed",
+      "certainty": 99,
+      "notes": "8号機失敗（2026-01-08）を受け9号機延期。原因調査中。"
     }
   ]
 }

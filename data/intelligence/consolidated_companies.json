@@ -2,8 +2,8 @@
   "metadata": {
     "description": "統合企業情報（全LLM出力 + stable + reinforcement をマージ）",
     "created": "2026-01-28T18:00:00Z",
-    "last_updated": "2026-01-29T18:00:00Z",
-    "phase": "フェーズ5: 統合・確度整理",
+    "last_updated": "2026-01-30T12:00:00Z",
+    "phase": "フェーズ5: 統合・確度整理（2026-01-30更新）",
     "sources": {
       "raw_claude": "data/intelligence/raw/company_info/claude.md",
       "raw_grok": "data/intelligence/raw/company_info/grok.md",
@@ -293,6 +293,14 @@
       "日銀: 0.75%据え置き（8対1）、次回利上げ7-9月予想",
       "GCAP/JAIEC: 次期戦闘機産業構造確立、Tier2/3支援ハブ設立",
       "Rapidus: 2024/12月EUV搬入完了、2025/4月パイロット稼働、2027年量産目標"
+    ],
+    "japan_updates_20260130": [
+      "三菱重工業: 時価総額15.7兆円確認（Yahoo Finance）、豪州もがみ型フリゲート受注",
+      "TSMC熊本第2工場: 4nm計画変更（確度90%）、建設一時停止中",
+      "H3ロケット: 9号機延期（8号機失敗、2026/1/8による）、JAXA調査中",
+      "ファナック: CRX-H1ヒューマノイドロボット発表（2026年後半量産）",
+      "安川電機: MOTOMAN-HMヒューマノイド開発（倉庫物流向け実証）",
+      "HALEU: 日本企業直接製造なし、IHI/三菱重工がNuScale経由で間接恩恵"
     ]
   },
   "japan_companies": [
@@ -309,19 +317,21 @@
       },
       "quarterly": {
         "period": "FY2024",
+        "market_cap": "15.7兆円（2026-01-30確認）",
         "defense_orders": "1兆8,768億円（2022年度の3倍超）",
         "op_profit_forecast": "4,200億円（FY2026）",
-        "key_notes": "防衛・宇宙部門利益4割増計画"
+        "key_notes": "防衛・宇宙部門利益4割増計画。時価総額15.7兆円（Yahoo Finance確認）。"
       },
       "monthly": {
         "contracts": [
           {"name": "地上発射型ミサイル開発", "value": "323億円", "date": "2025-04"},
           {"name": "潜水艦発射型誘導弾", "value": "29億円", "date": "2025-10"},
           {"name": "12式艦艇発射型", "value": "250億円", "date": "2025-10"},
-          {"name": "GPI開発", "value": "560億円", "date": "2024-11"}
+          {"name": "GPI開発", "value": "560億円", "date": "2024-11"},
+          {"name": "オーストラリアもがみ型フリゲート", "value": "非公開", "date": "2026-01", "notes": "日本初の主要水上艦輸出"}
         ]
       },
-      "confidence": {"overall": 95, "sources_confirmed": ["日経新聞", "防衛省発表", "MHI IR"], "last_verified": "2026-01-28"}
+      "confidence": {"overall": 95, "sources_confirmed": ["日経新聞", "防衛省発表", "MHI IR", "Yahoo Finance"], "last_verified": "2026-01-30"}
     },
     {
       "ticker": "6954.T",
@@ -346,9 +356,13 @@
       },
       "monthly": {
         "contracts": [],
-        "announcements": ["米州リショアリング需要増", "12月国際ロボット展でAIロボティクス技術展示"]
+        "announcements": [
+          "米州リショアリング需要増",
+          "12月国際ロボット展でAIロボティクス技術展示",
+          "CRX-H1ヒューマノイドロボット発表（2026年後半量産開始予定）"
+        ]
       },
-      "confidence": {"overall": 99, "sources_confirmed": ["ファナックIR公式決算", "Morningstar"], "last_verified": "2026-01-29"}
+      "confidence": {"overall": 99, "sources_confirmed": ["ファナックIR公式決算", "Morningstar"], "last_verified": "2026-01-30"}
     },
     {
       "ticker": "6501.T",
@@ -432,9 +446,13 @@
       },
       "monthly": {
         "contracts": [],
-        "announcements": ["きゅうり収穫ロボット製品化", "アステラス製薬との細胞医療協業"]
+        "announcements": [
+          "きゅうり収穫ロボット製品化",
+          "アステラス製薬との細胞医療協業",
+          "MOTOMAN-HMヒューマノイドロボット開発（倉庫物流向け、実証段階）"
+        ]
       },
-      "confidence": {"overall": 95, "sources_confirmed": ["安川電機IR"], "last_verified": "2026-01-28"}
+      "confidence": {"overall": 95, "sources_confirmed": ["安川電機IR"], "last_verified": "2026-01-30"}
     },
     {
       "ticker": "9348.T",

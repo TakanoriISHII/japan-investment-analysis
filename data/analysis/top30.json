@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "date": "2026-01-29",
+    "date": "2026-01-30",
     "evaluation_system": "5軸評価（100点満点）",
     "axes": {
       "monopoly": {"max": 30, "description": "物理的独占力"},
@@ -9,10 +9,10 @@
       "asymmetry": {"max": 15, "description": "情報非対称性"},
       "capital": {"max": 10, "description": "資本効率"}
     },
-    "market_risk_score": 58,
-    "previous_market_risk": 62,
+    "market_risk_score": 57,
+    "previous_market_risk": 58,
     "attack_defense_stance": "balanced",
-    "last_updated": "2026-01-29T18:30:00Z"
+    "last_updated": "2026-01-30T12:00:00Z"
   },
   "top30": [
     {
@@ -645,22 +645,19 @@
     }
   ],
   "changes_from_previous": {
-    "date": "2026-01-28",
+    "date": "2026-01-29",
     "new_entries": [],
     "dropped": [],
     "rank_changes": [],
     "thesis_updates": [
-      "日本市場リスク: 62→58（-4）、日銀据え置き確定・ファナック好決算",
-      "ファナック: Q3決算確認（ロボット受注+38%、中国+87%、ガイダンス+10%上方修正）",
-      "東京電力HD: 柏崎刈羽6号機1/21再稼働→1/22停止、30年前設定ミス判明",
-      "TSMC熊本: 第2工場6-7nm→4nm AI向け計画変更検討、建設一時停止",
-      "NEC: KDDI合弁「Protect.jp」設立（国内最大サイバーセキュリティ）",
-      "日銀1月会合: 0.75%据え置き（8対1）、次回利上げ7-9月予想",
-      "中国規制: 対日デュアルユース製品禁止、ジクロロシラン反ダンピング調査",
-      "H3ロケット: 9号機（みちびき7号機）打上げ延期、8号機失敗原因究明中",
-      "三菱重工: オーストラリアもがみ型フリゲート受注、GPI開発契約560億円",
-      "IHI: NuScale SMR出資$40M、受注残1.896兆円（航空+69.9% YoY）確認",
-      "Rapidus: 2027年パイロットライン開始目標、NEC/TEL/ASML等サプライチェーン構築中"
+      "日本市場リスク: 58→57（-1）、継続的な改善傾向",
+      "三菱重工業: 時価総額15.7兆円確認（Yahoo Finance）、豪州もがみ型フリゲート受注",
+      "TSMC熊本: 第2工場4nm計画変更確認（確度90%、日経報道）",
+      "H3ロケット: 9号機延期（8号機失敗、JAXA調査中）→宇宙セクター見通し慎重化",
+      "ファナック: CRX-H1ヒューマノイドロボット発表（2026年後半量産開始予定）",
+      "安川電機: MOTOMAN-HMヒューマノイド開発進行（倉庫物流向け実証段階）",
+      "HALEU: 日本企業直接製造なし確認（IHI/MHIはSMR経由の間接恩恵のみ）",
+      "柏崎刈羽: 調査継続中、再稼働時期引き続き不透明"
     ]
   },
   "quadrant_distribution": {
@@ -712,19 +709,19 @@
       "rank": 3,
       "ticker": "6954.T",
       "name": "ファナック",
-      "core_technology": "CNC、産業用ロボット",
+      "core_technology": "CNC、産業用ロボット、ヒューマノイドロボット",
       "total": 85,
       "monopoly": 26,
       "resilience": 17,
-      "synergy": 20,
+      "synergy": 21,
       "asymmetry": 14,
-      "capital": 8,
+      "capital": 7,
       "certainty": 99,
-      "upside": 42,
+      "upside": 45,
       "quadrant": "stable_growth",
-      "thesis": "CNC世界首位。Q3ロボット受注+38% YoY確認。中国売上+87%（EV関連投資回復）。営業利益ガイダンス+10%上方修正。通期売上8,407億円、営業利益1,729億円予想。",
+      "thesis": "CNC世界首位。Q3ロボット受注+38% YoY確認。中国売上+87%（EV関連投資回復）。CRX-H1ヒューマノイドロボット発表（2026年後半量産）。通期営業利益1,729億円（+10%上方修正）。",
       "domains_impacted": ["ロボティクス", "AI"],
-      "key_catalyst": "中国回復継続（+87%確認済み）、北米リショアリング需要、欧州自動化投資",
+      "key_catalyst": "中国回復継続（+87%確認済み）、CRX-H1量産開始（2026年H2）、北米リショアリング",
       "risk": "中国経済減速、米中関係、トランプ関税"
     },
     {
@@ -769,19 +766,19 @@
       "rank": 6,
       "ticker": "6506.T",
       "name": "安川電機",
-      "core_technology": "サーボモータ、産業用ロボット",
+      "core_technology": "サーボモータ、産業用ロボット、ヒューマノイドロボット",
       "total": 79,
       "monopoly": 24,
       "resilience": 16,
-      "synergy": 19,
-      "asymmetry": 12,
+      "synergy": 20,
+      "asymmetry": 11,
       "capital": 8,
       "certainty": 95,
-      "upside": 40,
+      "upside": 42,
       "quadrant": "prime",
-      "thesis": "サーボモータ世界首位。中国・アジア自動車市場設備投資で増収。インバータ大口受注獲得。",
+      "thesis": "サーボモータ世界首位。MOTOMAN-HMヒューマノイド開発進行（倉庫物流向け実証段階）。インバータ大口受注獲得。",
       "domains_impacted": ["ロボティクス", "AI"],
-      "key_catalyst": "中国EV自動化需要、細胞医療事業",
+      "key_catalyst": "中国EV自動化需要、MOTOMAN-HM商用化、細胞医療事業",
       "risk": "中国競合激化"
     },
     {
@@ -1265,9 +1262,9 @@
     }
   ],
   "japan_market_risk": {
-    "total_score": 58,
-    "previous_score": 62,
-    "delta": -4,
+    "total_score": 57,
+    "previous_score": 58,
+    "delta": -1,
     "tier1": {
       "boj_policy": {"score": 10, "max": 15, "detail": "政策金利0.75%据え置き（8対1、高田委員のみ1.0%主張）、次回利上げ2026年7-9月予想"},
       "valuation": {"score": 11, "max": 15, "detail": "日経平均53,115円（1/29）、PER16-17倍はやや割高だが脱デフレプレミアム。過去最高54,341円（1/14）から-2.3%"}
@@ -1289,6 +1286,14 @@
       "TSMC熊本: 第2工場4nm AI向け検討（計画変更）",
       "中国規制: デュアルユース製品禁止、ジクロロシラン反ダンピング調査",
       "日米介入: NY Fed rate check実施、協調介入の可能性浮上"
+    ],
+    "key_updates_20260130": [
+      "三菱重工業: 時価総額15.7兆円確認、豪州もがみ型フリゲート受注",
+      "TSMC熊本: 第2工場4nm計画変更（確度90%確定）",
+      "H3ロケット: 9号機延期（8号機失敗原因調査中）",
+      "ファナック: CRX-H1ヒューマノイドロボット発表（2026年H2量産）",
+      "安川電機: MOTOMAN-HMヒューマノイド開発（倉庫物流向け実証）",
+      "HALEU: 日本企業直接製造なし（SMR経由の間接恩恵のみ）"
     ]
   }
 }

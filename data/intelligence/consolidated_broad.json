@@ -2,8 +2,8 @@
   "metadata": {
     "description": "統合広域情報（全LLM出力 + stable + reinforcement をマージ）",
     "created": "2026-01-28T18:00:00Z",
-    "last_updated": "2026-01-29T12:00:00Z",
-    "phase": "フェーズ5: 統合・確度整理",
+    "last_updated": "2026-01-30T12:00:00Z",
+    "phase": "フェーズ5: 統合・確度整理（2026-01-30更新）",
     "sources": {
       "raw_claude": "data/intelligence/raw/broad_info/claude.md",
       "raw_grok": "data/intelligence/raw/broad_info/grok.md",
@@ -258,6 +258,13 @@
       "ファナックQ3：ロボット受注+38%、中国+87%",
       "KDDI-NEC合弁「Protect.jp」設立",
       "中国対日輸出規制強化（レアアース、ジクロロシラン）"
+    ],
+    "japan_updates_20260130": [
+      "三菱重工業時価総額15.7兆円確認（Yahoo Finance）",
+      "TSMC熊本第2工場：4nm計画変更（確度90%、日経報道）",
+      "H3ロケット9号機延期（8号機失敗、JAXA調査中）",
+      "ファナック/安川電機ヒューマノイドロボット開発進行",
+      "日本企業HALEU直接製造なし（IHI/MHIはSMR経由の間接恩恵）"
     ]
   }
 }

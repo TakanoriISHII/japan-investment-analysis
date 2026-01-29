@@ -1,53 +1,165 @@
 {
-  "generated_at": "2026-01-28T23:00:00Z",
-  "total_contradictions": 3,
-  "resolved": 3,
-  "pending": 0,
+  "generated_at": "2026-01-30T09:00:00Z",
+  "last_updated": "2026-01-30",
+  "analysis_version": "v3.2",
+  "total_contradictions": 8,
+  "resolved": 5,
+  "pending": 3,
+  "japan_contradictions": {
+    "total": 5,
+    "resolved": 3,
+    "pending": 2
+  },
   "items": [
     {
-      "id": "CONT-001",
-      "topic": "CAPE Ratio Value",
+      "id": "CTR-JP001",
+      "topic": "IHI受注残/バックログ",
       "sources": {
-        "grok": "40.55",
-        "gemini": "40.86",
-        "claude": "40.32",
-        "chatgpt": "39.85"
-      },
-      "severity": "low",
-      "resolution": "GuruFocus公式値40.32を採用（Claude一致）。差異はデータ取得タイミングによるもの。いずれも40前後で歴史的極値という評価は一致。",
-      "resolved": true,
-      "final_value": "40.32",
-      "confidence": 95
-    },
-    {
-      "id": "CONT-002",
-      "topic": "Hyperscaler CapEx 2026",
-      "sources": {
-        "grok": "$600B",
-        "gemini": "$627B",
-        "claude": "$600B+",
-        "chatgpt": "~$500B"
+        "grok": "4兆円 (YoY +15%)",
+        "gemini": "1.896兆円 (航空・宇宙・防衛セグメント)",
+        "claude": "1.896兆円確認（航空宇宙・防衛）",
+        "chatgpt": "記載なし"
       },
       "severity": "medium",
-      "resolution": "ChatGPTの$500Bは旧予測。IEEE ComSoc, Goldman Sachs, CreditSightsの最新consensus $527-600B（75%がAI向け）を採用。",
+      "category": "財務数値",
+      "resolution": "Grokの4兆円は全社バックログ、Gemini/Claudeの1.896兆円は航空・宇宙・防衛セグメントのみ。セグメント別で使い分け。航空宇宙・防衛は1.896兆円（+69.9% YoY）を採用。",
       "resolved": true,
-      "final_value": "$600B+ (75% AI)",
-      "confidence": 90
+      "final_value": "1.896兆円（航空・宇宙・防衛セグメント）",
+      "confidence": 95,
+      "resolved_date": "2026-01-30"
     },
     {
-      "id": "CONT-003",
-      "topic": "VIX Current Value",
+      "id": "CTR-JP002",
+      "topic": "三菱重工 時価総額",
       "sources": {
-        "grok": "16.15",
-        "gemini": "16.15",
-        "claude": "16.07",
-        "chatgpt": "16.24"
+        "grok": "13兆円",
+        "gemini": "記載なし",
+        "claude": "約5兆円",
+        "chatgpt": "記載なし"
+      },
+      "severity": "high",
+      "category": "財務数値",
+      "resolution": "Yahoo Finance/Bloomberg確認必要。株価変動により差異発生の可能性。最新株価で再計算要。",
+      "resolved": false,
+      "final_value": "要確認",
+      "confidence": 50,
+      "verification_action": "Phase 4で一次情報源確認"
+    },
+    {
+      "id": "CTR-JP003",
+      "topic": "東京エレクトロン コータ/デベロッパー世界シェア",
+      "sources": {
+        "grok": "記載なし",
+        "gemini": "約90%",
+        "claude": "90%",
+        "chatgpt": "記載なし"
       },
       "severity": "low",
-      "resolution": "差異は取得時刻によるもの。1/28終値16.07（CBOE公式）を採用。全ソースで16前後の「低位安定」という評価は一致。",
+      "category": "市場シェア",
+      "resolution": "Gemini/Claude一致。90%を採用。",
       "resolved": true,
-      "final_value": "16.07",
-      "confidence": 95
+      "final_value": "90%",
+      "confidence": 95,
+      "resolved_date": "2026-01-30"
+    },
+    {
+      "id": "CTR-JP004",
+      "topic": "日経平均PER",
+      "sources": {
+        "grok": "19.88",
+        "gemini": "記載なし",
+        "claude": "16-17倍",
+        "chatgpt": "記載なし"
+      },
+      "severity": "medium",
+      "category": "市場指標",
+      "resolution": "前回分析（2026-01-29）で解消済み。Grokの19.88はNikkeiプロファイル直接参照、Claudeの16倍はニッセイ基礎研計算。計算方法の違い。16-17倍（加重平均ベース）を採用。",
+      "resolved": true,
+      "final_value": "16-17倍（加重平均ベース）",
+      "confidence": 90,
+      "resolved_date": "2026-01-29"
+    },
+    {
+      "id": "CTR-JP005",
+      "topic": "ファナック 時価総額",
+      "sources": {
+        "grok": "記載なし",
+        "gemini": "記載なし",
+        "claude": "約$38.3B（約5.8兆円）",
+        "chatgpt": "記載なし"
+      },
+      "severity": "low",
+      "category": "財務数値",
+      "resolution": "Claude単独情報。Yahoo Finance確認で$38.3Bは妥当。採用。",
+      "resolved": true,
+      "final_value": "$38.3B（約5.8兆円）",
+      "confidence": 90,
+      "resolved_date": "2026-01-30"
+    },
+    {
+      "id": "CTR-JP006",
+      "topic": "ナブテスコ RV減速機世界シェア",
+      "sources": {
+        "grok": "記載なし",
+        "gemini": "約60%",
+        "claude": "記載なし",
+        "chatgpt": "記載なし"
+      },
+      "severity": "low",
+      "category": "市場シェア",
+      "resolution": "Gemini単独だが、Nabtesco Value Report 2022で確認可能。60%を採用。",
+      "resolved": true,
+      "final_value": "60%",
+      "confidence": 85,
+      "resolved_date": "2026-01-30"
+    },
+    {
+      "id": "CTR-JP007",
+      "topic": "TSMC熊本第2工場 計画変更詳細",
+      "sources": {
+        "grok": "記載なし",
+        "gemini": "記載なし",
+        "claude": "6-7nm→4nm（AI向け）計画変更検討中",
+        "chatgpt": "記載なし"
+      },
+      "severity": "high",
+      "category": "プロジェクト",
+      "resolution": "Claude単独情報。Phase 4で追加検証必要。報道ベースで確度75%。",
+      "resolved": false,
+      "final_value": "4nm計画変更検討中（確度75%）",
+      "confidence": 75,
+      "verification_action": "Phase 4でTSMC/JASM公式発表確認"
+    },
+    {
+      "id": "CTR-JP008",
+      "topic": "柏崎刈羽原発 設定ミス詳細",
+      "sources": {
+        "grok": "記載なし",
+        "gemini": "記載なし",
+        "claude": "30年前からの設定ミス発覚",
+        "chatgpt": "記載なし"
+      },
+      "severity": "medium",
+      "category": "イベント",
+      "resolution": "Claude単独情報。NHK/東京電力発表で確認済み。採用。",
+      "resolved": true,
+      "final_value": "30年前からの設定ミス（1/22発覚）",
+      "confidence": 95,
+      "resolved_date": "2026-01-30"
     }
-  ]
+  ],
+  "summary": {
+    "high_severity_pending": 2,
+    "categories": {
+      "財務数値": 3,
+      "市場シェア": 2,
+      "市場指標": 1,
+      "プロジェクト": 1,
+      "イベント": 1
+    },
+    "next_actions": [
+      "CTR-JP002: 三菱重工時価総額を最新株価で確認",
+      "CTR-JP007: TSMC熊本4nm計画を公式発表確認"
+    ]
+  }
 }

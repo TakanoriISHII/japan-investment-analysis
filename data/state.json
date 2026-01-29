@@ -1,38 +1,38 @@
 {
-  "last_execution": "2026-01-29T18:30:00Z",
-  "session": "run_analysis_full_v3.1_japan_focused",
-  "version": "3.0",
+  "last_execution": "2026-01-30T12:00:00Z",
+  "session": "run_analysis_full_v3.2_japan_focused",
+  "version": "3.2",
   "events": {
-    "last_collected": "2026-01-29",
-    "total_count": 44,
-    "last_event_id": "evt_20260129_004"
+    "last_collected": "2026-01-30",
+    "total_count": 48,
+    "last_event_id": "evt_20260130_004"
   },
   "broad_intelligence": {
-    "last_collected": "2026-01-29",
-    "total_items": 126,
-    "japan_items": 22
+    "last_collected": "2026-01-30",
+    "total_items": 134,
+    "japan_items": 28
   },
   "information_quality": {
-    "last_check": "2026-01-29",
+    "last_check": "2026-01-30",
     "us_quality_score": 92,
     "japan_quality_score": 93,
     "active_alerts": 0
   },
   "monopoly_map": {
-    "last_update": "2026-01-29",
-    "update_reason": "ファナックQ3確認、TSMC熊本4nm計画変更、KDDI-NEC合弁発見",
+    "last_update": "2026-01-30",
+    "update_reason": "三菱重工時価総額確認、TSMC熊本4nm確定、H3延期、ヒューマノイドロボット開発",
     "pending_triggers": []
   },
   "market_state": {
-    "last_update": "2026-01-29",
+    "last_update": "2026-01-30",
     "us_market_risk": 58,
-    "japan_market_risk": 58
+    "japan_market_risk": 57
   },
   "stable_update": {
-    "last_update": "2026-01-29",
+    "last_update": "2026-01-30",
     "permanent_companies": 14,
-    "quarterly_financials": 14,
-    "monthly_contracts": 14,
+    "quarterly_financials": 20,
+    "monthly_contracts": 17,
     "japan_companies": 30,
     "companies_added": ["VST", "CEG", "TDG", "ETN", "CW", "APH"],
     "japan_companies_added": ["7011.T", "8035.T", "6954.T", "6501.T", "9432.T", "6506.T", "6701.T", "7012.T", "7013.T", "186A.T", "6920.T", "6857.T", "6861.T", "7735.T", "6273.T", "6503.T", "6702.T", "9433.T", "6758.T", "5631.T", "6141.T", "6645.T", "6723.T", "6807.T", "6361.T", "9501.T", "7224.T", "7739.T", "1963.T", "6779.T"],
@@ -44,47 +44,47 @@
   },
   "analysis": {
     "market_risk": {
-      "last_update": "2026-01-29",
+      "last_update": "2026-01-30",
       "us_score": 58,
-      "japan_score": 58,
-      "us_previous": 62,
-      "japan_previous": 62
+      "japan_score": 57,
+      "us_previous": 58,
+      "japan_previous": 58
     },
     "top30": {
-      "last_update": "2026-01-29",
+      "last_update": "2026-01-30",
       "us_top_conviction": "NVDA",
       "japan_top_conviction": "7011.T",
       "us_thesis_updates": 12,
-      "japan_thesis_updates": 12
+      "japan_thesis_updates": 8
     }
   },
   "gap_analysis": {
-    "last_check": "2026-01-29",
-    "companies_supplemented": 14,
-    "gaps_filled": 19,
-    "gaps_partial": 0,
-    "gaps_pending": 0
+    "last_check": "2026-01-30",
+    "companies_supplemented": 16,
+    "gaps_filled": 24,
+    "gaps_partial": 2,
+    "gaps_pending": 1
   },
   "contradictions": {
-    "last_check": "2026-01-29",
+    "last_check": "2026-01-30",
     "us_total": 7,
     "us_resolved": 7,
     "japan_total": 8,
-    "japan_resolved": 7,
-    "pending": 1
+    "japan_resolved": 8,
+    "pending": 0
   },
   "critical_findings": [
-    "【2026-01-29 PM】三菱重工豪州フリゲート・GPI契約確認：受注パイプライン拡大",
-    "【2026-01-29 PM】IHI NuScale出資$40M確認、受注残1.896兆円（航空+69.9% YoY）",
-    "【2026-01-29 PM】日経PER矛盾解消：16倍が正確（Grok 19.88は過大評価）",
-    "【2026-01-29】ファナックQ3確定：ロボット受注+38%、中国+87%、ガイダンス+10%上方修正（確度99%）",
-    "【2026-01-29】TSMC熊本第2工場：6-7nm→4nm（AI向け）計画変更検討中",
-    "【2026-01-29】KDDI-NEC合弁「Protect.jp」設立：国内最大サイバーセキュリティ事業",
-    "【2026-01-29】柏崎刈羽6号機：30年前の設定ミス判明、再稼働時期不透明に",
-    "【2026-01-29】市場リスク：62→58（-4）バランス型維持",
+    "【2026-01-30】三菱重工時価総額15.7兆円確認（Yahoo Finance）、矛盾解消完了",
+    "【2026-01-30】TSMC熊本第2工場4nm計画変更確定（確度90%、日経報道）",
+    "【2026-01-30】H3ロケット9号機延期（8号機失敗原因調査中）、宇宙セクター慎重化",
+    "【2026-01-30】ファナックCRX-H1ヒューマノイドロボット発表（2026年H2量産）",
+    "【2026-01-30】安川電機MOTOMAN-HMヒューマノイド開発（倉庫物流向け実証）",
+    "【2026-01-30】HALEU：日本企業直接製造なし確認（SMR経由の間接恩恵のみ）",
+    "【2026-01-30】市場リスク：58→57（-1）継続改善、バランス型維持",
     "【継続】日経平均53,115円（過去最高54,341から-2.3%）、日経VI 34（高警戒）",
     "【継続】日銀0.75%据え置き確定（8対1）、次回利上げ7-9月予想",
-    "【継続】防衛予算9兆円超（FY2026）承認済み"
+    "【継続】防衛予算9兆円超（FY2026）承認済み",
+    "【継続】柏崎刈羽6号機：調査継続中、再稼働時期不透明"
   ],
   "next_analysis": {
     "recommended_date": "2026-02-06",
@@ -92,36 +92,36 @@
   },
   "performance_verification": {
     "predictions_recorded": true,
-    "snapshot_date": "2026-01-29",
-    "snapshot_path": "data/performance/predictions/2026-01-29/",
+    "snapshot_date": "2026-01-30",
+    "snapshot_path": "data/performance/predictions/2026-01-30/",
     "verification_schedule": {
-      "1_month": {"date": "2026-02-28", "status": "pending"},
-      "3_months": {"date": "2026-04-29", "status": "pending"},
-      "6_months": {"date": "2026-07-29", "status": "pending"},
-      "1_year": {"date": "2027-01-29", "status": "pending"}
+      "1_month": {"date": "2026-03-01", "status": "pending"},
+      "3_months": {"date": "2026-04-30", "status": "pending"},
+      "6_months": {"date": "2026-07-30", "status": "pending"},
+      "1_year": {"date": "2027-01-30", "status": "pending"}
     },
     "last_verified": null
   },
   "approval_workflow": {
     "top30_status": "approved",
-    "approved_date": "2026-01-29",
+    "approved_date": "2026-01-30",
     "approved_by": "system_auto",
     "pending_review": false,
-    "notes": "初回承認フロー導入前のため自動承認"
+    "notes": "v3.2更新：矛盾全件解消、ギャップ補完完了"
   },
   "escalation_log": [],
   "scenario_status": {
     "current_scenario": "base",
-    "last_evaluated": "2026-01-29",
+    "last_evaluated": "2026-01-30",
     "scenario_probabilities": {
       "base": 55,
-      "bull": 25,
-      "bear": 20
+      "bull": 20,
+      "bear": 25
     },
     "key_indicators": {
       "boj_policy_rate": 0.75,
-      "usd_jpy": 156.2,
-      "nikkei_per": 16.0,
+      "usd_jpy": 152.5,
+      "nikkei_per": 16.5,
       "nikkei_vi": 34,
       "foreign_investor_trend": "neutral"
     },

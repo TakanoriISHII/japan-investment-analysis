@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "企業財務情報（売上、利益、ガイダンス）- 四半期で更新",
-    "last_updated": "2026-01-28",
+    "last_updated": "2026-01-30",
     "quarter": "Q3 FY2026 / Q3 CY2025",
     "next_update": "2026-04-XX (Q4 earnings)",
     "schema_version": "1.0"
@@ -113,6 +113,61 @@
       "military_connector_share": "22.1%",
       "key_notes": "AI関連コネクタ需要急増。M&Aによる技術集積。",
       "confidence": 88
+    }
+  },
+  "japan_companies": {
+    "7011.T": {
+      "name": "三菱重工業",
+      "last_quarter": "FY2024",
+      "market_cap": "15.7兆円",
+      "defense_orders": "1兆8,768億円",
+      "op_profit_forecast": "4,200億円（FY2026）",
+      "backlog": ">10兆円",
+      "key_notes": "時価総額15.7兆円確認（2026-01-30）。豪州もがみ型フリゲート受注。",
+      "confidence": 95
+    },
+    "6954.T": {
+      "name": "ファナック",
+      "last_quarter": "Q3 FY2025",
+      "revenue_q3": "6,233億円",
+      "op_profit_q3": "1,277億円",
+      "revenue_fy_forecast": "8,407億円",
+      "op_profit_fy_forecast": "1,729億円（+10%上方修正）",
+      "robot_orders_yoy": "+38%",
+      "china_sales_yoy": "+87%",
+      "key_notes": "ロボット受注好調、中国EV投資回復。CRX-H1ヒューマノイド発表。",
+      "confidence": 99
+    },
+    "8035.T": {
+      "name": "東京エレクトロン",
+      "last_quarter": "Q2 FY2025",
+      "capex_plan": "2,400億円（2025年10月発表）",
+      "market_share_coater": "90%+",
+      "key_notes": "Q3決算2026-02-06発表予定。TSMC熊本4nm計画変更で追加需要可能性。",
+      "confidence": 95
+    },
+    "7013.T": {
+      "name": "IHI",
+      "last_quarter": "FY2024",
+      "aero_defense_backlog": "1.896兆円",
+      "aero_defense_backlog_yoy": "+69.9%",
+      "nuscale_investment": "$40M（追加$20M可能）",
+      "key_notes": "航空宇宙・防衛受注残が急増。NuScale SMRパートナー。",
+      "confidence": 92
+    },
+    "6506.T": {
+      "name": "安川電機",
+      "last_quarter": "Q3 FY2025",
+      "key_notes": "インバータ大口受注。MOTOMAN-HMヒューマノイド開発進行。",
+      "confidence": 95
+    },
+    "9501.T": {
+      "name": "東京電力HD",
+      "last_quarter": "継続",
+      "kashiwazaki_status": "作業停止中",
+      "kashiwazaki_restart": "2026-01-21（13年10ヶ月ぶり）→1/22停止",
+      "key_notes": "制御棒設定ミス（30年前から）で調査中。再稼働時期不透明。",
+      "confidence": 95
     }
   }
 }

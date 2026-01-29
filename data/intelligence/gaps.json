@@ -1,53 +1,116 @@
 {
-  "generated_at": "2026-01-28T23:00:00Z",
-  "total_gaps": 5,
-  "filled": 4,
-  "pending": 1,
+  "generated_at": "2026-01-30T09:00:00Z",
+  "last_updated": "2026-01-30",
+  "analysis_version": "v3.2",
+  "total_gaps": 8,
+  "filled": 5,
+  "pending": 3,
+  "japan_gaps": {
+    "total": 5,
+    "filled": 2,
+    "pending": 3
+  },
   "items": [
     {
-      "id": "GAP-001",
-      "topic": "Ukraine Peace Talks - Trilateral Details",
-      "description": "米露ウ三者協議（1/23）の具体的内容と進展状況",
-      "affected_sources": ["grok", "gemini", "chatgpt"],
-      "filled_by": "claude",
+      "id": "GAP-JP001",
+      "topic": "宇宙ドメイン カバレッジ",
+      "description": "日本の宇宙関連企業の詳細情報（QPS研究所、ispace等）",
+      "affected_sources": ["grok", "chatgpt"],
+      "covered_by": ["gemini", "claude"],
       "status": "filled",
-      "summary": "Paris Coalition英仏軍隊派遣署名、三者協議「建設的」評価、ゼレンスキー「90%合意」発言、€682B経済支援パッケージ合意"
+      "summary": "Gemini: QPS研究所（5595）SAR衛星コンステレーション、ispace（9348）月面探査。Claude: Astroscale HD（186A）軌道上サービス、スカパーJSAT（9412）衛星通信。計4社で宇宙ドメインカバー。",
+      "filled_date": "2026-01-30"
     },
     {
-      "id": "GAP-002",
-      "topic": "Rocket Lab Neutron Tank Rupture",
-      "description": "1/21のNeutronタンク破裂事故と開発影響",
-      "affected_sources": ["grok", "gemini", "chatgpt"],
-      "filled_by": "claude_web_search",
+      "id": "GAP-JP002",
+      "topic": "サイバーセキュリティドメイン 詳細",
+      "description": "日本のサイバーセキュリティ企業の市場シェアと認証情報",
+      "affected_sources": ["grok", "chatgpt"],
+      "covered_by": ["gemini"],
       "status": "filled",
-      "summary": "1/21にテスト中タンク破裂。mid-2026初飛行予定に遅延リスク。$816M SDA契約への影響は限定的（Electron継続）"
+      "summary": "Gemini詳細: トレンドマイクロ（4704）グローバル、デジタルアーツ（2326）国内首位、FFRIセキュリティ（3692）純国産、サイバーセキュリティクラウド（4493）WAF首位、GMOグローバルサイン（3788）電子認証。",
+      "filled_date": "2026-01-30"
     },
     {
-      "id": "GAP-003",
-      "topic": "Meta Nuclear 6.6GW Portfolio Details",
-      "description": "Vistra/TerraPower/Oklo各社との契約詳細",
-      "affected_sources": ["gemini", "chatgpt"],
-      "filled_by": "claude",
+      "id": "GAP-JP003",
+      "topic": "小型株（GNT企業）財務詳細",
+      "description": "FCF、自己資本比率、有利子負債/EBITDAの詳細数値",
+      "affected_sources": ["gemini", "claude", "chatgpt"],
+      "covered_by": ["grok"],
       "status": "filled",
-      "summary": "Vistra 2.1GW+ (Perry/Davis-Besse/Beaver Valley 20年契約、433MW uprate)、TerraPower次世代炉、Oklo 1.2GW Pike County、Constellation Clinton 1,121MW（2027年6月開始）"
+      "summary": "Grok: 各社のFCF、有利子負債/EBITDA、自己資本比率を詳細収集。51社中21社が小型株3条件（GNT or 30%シェア、営業利益率15%+、FCF黒字・実質無借金・自己資本比率50%超）を満たす。",
+      "filled_date": "2026-01-30"
     },
     {
-      "id": "GAP-004",
-      "topic": "Intel Ohio Delay Timeline",
-      "description": "シリコンハートランド遅延の最新状況",
-      "affected_sources": ["grok", "claude", "chatgpt"],
-      "filled_by": "gemini",
-      "status": "filled",
-      "summary": "稼働開始2030-2031年に延期（当初2025年予定）。資金調達・実行能力への懸念継続。TSMC Arizonaの優位性強化"
+      "id": "GAP-JP004",
+      "topic": "防衛Tier2/3サプライヤー",
+      "description": "防衛プライム以外のサプライチェーン企業",
+      "affected_sources": ["claude", "chatgpt"],
+      "covered_by": ["grok", "gemini"],
+      "status": "partial",
+      "summary": "Grok: 日本製鋼所（5631）大型鍛造80%シェア、細谷火工（4274）火工品。Gemini: 日本アビオニクス（6946）、東京計器（7721）ジャイロ/レーダー警戒。追加でセンサー・弾薬メーカーの詳細確認必要。",
+      "pending_items": ["弾薬メーカー詳細", "防衛電子部品Tier3"]
     },
     {
-      "id": "GAP-005",
-      "topic": "SpaceX Golden Dome Contract Details",
-      "description": "$2B・600衛星契約の確認",
+      "id": "GAP-JP005",
+      "topic": "原子力サプライチェーン詳細",
+      "description": "SMR部品サプライヤー、HALEU燃料関連企業",
+      "affected_sources": ["grok", "chatgpt"],
+      "covered_by": ["gemini"],
+      "status": "partial",
+      "summary": "Gemini: 日本製鋼所（5631）原子炉圧力容器80%シェア、岡野バルブ（6492）高温高圧バルブ、日本ピラー工業（6490）メカニカルシール。HALEU燃料の日本企業は限定的。",
+      "pending_items": ["HALEU関連の日本企業有無確認"]
+    },
+    {
+      "id": "GAP-JP006",
+      "topic": "H3ロケット9号機日程",
+      "description": "2026年の打ち上げスケジュールと商業化進捗",
       "affected_sources": ["all"],
-      "filled_by": "claude_supplemental",
-      "status": "filled_partial",
-      "summary": "WSJ報道確認（$2B・600衛星・Air Moving Target Indicator）。SHIELD $151Bの一部。公式契約発表は未実施。確度75%で採用、次回monitoring継続"
+      "covered_by": ["none"],
+      "status": "pending",
+      "summary": "全LLMで詳細日程の記載なし。JAXA公式発表確認必要。",
+      "verification_action": "Phase 4でJAXA公式確認"
+    },
+    {
+      "id": "GAP-JP007",
+      "topic": "日銀利上げシナリオ詳細",
+      "description": "0.75%→次回利上げの市場コンセンサス",
+      "affected_sources": ["gemini", "chatgpt"],
+      "covered_by": ["grok", "claude"],
+      "status": "filled",
+      "summary": "Grok: 0.75%維持（1/23決定、8-1票）、次回7-9月利上げ予想。Claude: NRI・三井住友DSのコンセンサスは7-9月。3月会合は様子見の見通し。",
+      "filled_date": "2026-01-30"
+    },
+    {
+      "id": "GAP-JP008",
+      "topic": "ロボティクス・ヒューマノイド関連",
+      "description": "日本企業のヒューマノイドロボット開発状況",
+      "affected_sources": ["grok", "claude", "chatgpt"],
+      "covered_by": ["gemini"],
+      "status": "partial",
+      "summary": "Gemini: ハーモニック・ドライブ（6324）波動歯車がヒューマノイドの関節に必須、ナブテスコ（6268）RV減速機。ただし日本企業のヒューマノイド完成機開発は限定的（トヨタ、ホンダは研究段階）。",
+      "pending_items": ["ファナック/安川のヒューマノイド戦略確認"]
     }
+  ],
+  "coverage_summary": {
+    "by_domain": {
+      "AI": {"coverage": 95, "sources": ["all"]},
+      "エネルギー": {"coverage": 90, "sources": ["all"]},
+      "防衛": {"coverage": 85, "sources": ["grok", "gemini"], "gap": "Tier2/3詳細"},
+      "ロボティクス": {"coverage": 90, "sources": ["all"]},
+      "宇宙": {"coverage": 80, "sources": ["gemini", "claude"], "gap": "打ち上げ日程"},
+      "サイバー": {"coverage": 85, "sources": ["gemini"], "gap": "Grok/ChatGPT未詳細"}
+    },
+    "by_company_tier": {
+      "大型（>5兆円）": {"coverage": 95, "count": 12},
+      "中型（1-5兆円）": {"coverage": 90, "count": 18},
+      "小型（<1兆円）": {"coverage": 80, "count": 21, "gap": "財務詳細一部欠落"}
+    }
+  },
+  "next_actions": [
+    "GAP-JP004: 防衛Tier2/3サプライヤー追加確認",
+    "GAP-JP005: HALEU関連日本企業調査",
+    "GAP-JP006: JAXA H3ロケット9号機日程確認",
+    "GAP-JP008: ヒューマノイド関連戦略確認"
   ]
 }
