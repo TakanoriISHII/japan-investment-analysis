@@ -2,13 +2,13 @@
   "metadata": {
     "description": "統合広域情報（全LLM出力 + stable + reinforcement をマージ）",
     "created": "2026-01-28T18:00:00Z",
-    "last_updated": "2026-01-28T19:00:00Z",
+    "last_updated": "2026-01-29T12:00:00Z",
     "phase": "フェーズ5: 統合・確度整理",
     "sources": {
       "raw_claude": "data/intelligence/raw/broad_info/claude.md",
       "raw_grok": "data/intelligence/raw/broad_info/grok.md",
       "raw_gemini": "data/intelligence/raw/broad_info/gemini.md",
-      "reinforcement": "reinforcement/results/claude_auto/2026-01-28.md"
+      "reinforcement": "reinforcement/results/claude_auto/2026-01-28_v2.md"
     },
     "merge_priority": "1.一次情報源確認済み > 2.3LLM一致 > 3.reinforcement検証済み"
   },
@@ -207,24 +207,57 @@
     ]
   },
   "market_risk_total": {
-    "score": 63,
+    "score": 58,
     "max_score": 100,
-    "previous_score": 65,
-    "delta": -2,
-    "assessment": "高リスク・保守的スタンス",
-    "last_updated": "2026-01-28"
+    "previous_score": 63,
+    "delta": -5,
+    "assessment": "バランス型（日本市場リスク）",
+    "last_updated": "2026-01-29",
+    "japan_specific": {
+      "nikkei_225": 53115,
+      "nikkei_ath": 54341,
+      "nikkei_per": "16-17",
+      "nikkei_vi": 34,
+      "usdjpy": 152.5,
+      "boj_rate": 0.75,
+      "next_hike_expected": "2026-07 to 2026-09",
+      "key_risks": [
+        "日米協調為替介入リスク",
+        "中国対日輸出規制（レアアース等）",
+        "柏崎刈羽原発再稼働の不確実性",
+        "高市政権の財政政策懸念"
+      ],
+      "key_catalysts": [
+        "防衛予算9兆円超（FY2026）",
+        "TSMC熊本第1工場稼働開始",
+        "ファナック業績回復（中国+87%）",
+        "KDDI-NECサイバーセキュリティ合弁"
+      ]
+    }
   },
   "summary": {
-    "total_items": 48,
+    "total_items": 56,
     "by_confidence": {
-      "high": 32,
-      "medium": 12,
+      "high": 38,
+      "medium": 14,
       "low": 4
     },
     "data_freshness": {
-      "realtime": "2026-01-28",
+      "realtime": "2026-01-29",
       "quarterly": "Q3-Q4 2025",
-      "permanent": "2026-01-28"
-    }
+      "permanent": "2026-01-29"
+    },
+    "japan_updates_20260129": [
+      "日経平均53,115円（過去最高54,341から下落）",
+      "日経VI 34（高警戒水準）",
+      "日銀0.75%据え置き（8対1、次回利上げ7-9月予想）",
+      "ドル円152.5円（日米介入警戒）",
+      "柏崎刈羽6号機：1/21再稼働→1/22制御棒警報で停止",
+      "TSMC熊本第2工場：6-7nm→4nm（AI向け）計画変更検討",
+      "防衛予算9兆円超（FY2026）承認",
+      "ファナックQ3：ロボット受注+38%、中国+87%",
+      "KDDI-NEC合弁「Protect.jp」設立",
+      "中国対日輸出規制強化（レアアース、ジクロロシラン）"
+    ]
   }
 }

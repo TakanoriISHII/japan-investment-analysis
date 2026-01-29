@@ -1,11 +1,11 @@
 {
-  "date": "2026-01-28",
-  "update_time": "23:45 UTC",
-  "total_score": 62,
-  "previous_score": 63,
-  "delta": -1,
-  "risk_level": "high",
-  "recommended_stance": "conservative",
+  "date": "2026-01-29",
+  "update_time": "12:00 UTC",
+  "total_score": 58,
+  "previous_score": 62,
+  "delta": -4,
+  "risk_level": "moderate",
+  "recommended_stance": "balanced",
   "categories": {
     "policy_pivot": {
       "score": 13,
@@ -153,16 +153,19 @@
     }
   },
   "changes_from_previous": {
-    "date": "2026-01-27",
-    "previous_score": 65,
-    "current_score": 63,
-    "delta": "-2",
+    "date": "2026-01-28",
+    "previous_score": 62,
+    "current_score": 58,
+    "delta": "-4",
     "key_changes": [
-      "VIX: 18.6 → 15-16 (センチメント低下)",
-      "Trump-Xi首脳会談で台湾軍事リスク一時低下",
-      "FOMC 1/28据え置き確定的",
-      "政策転換リスク: 13 → 12 (-1)",
-      "外部リスク: 8 → 7 (-1)"
+      "日本市場リスクスコア更新: 62 → 58 (-4)",
+      "日経平均: 53,358 → 53,115 (過去最高54,341から-2.3%)",
+      "日経VI: 34.14（高警戒水準継続）",
+      "日銀1月会合: 0.75%据え置き確定（8対1）",
+      "ドル円: 152.5円（日米協調介入警戒）",
+      "柏崎刈羽6号機: 1/21再稼働→1/22制御棒警報で停止（30年前設定ミス判明）",
+      "ファナックQ3: ロボット受注+38%確認、ガイダンス+10%上方修正",
+      "TSMC熊本第2工場: 6-7nm→4nm（AI向け）計画変更検討"
     ]
   }
 }

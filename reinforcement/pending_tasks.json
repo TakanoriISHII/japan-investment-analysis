@@ -1,12 +1,12 @@
 {
   "metadata": {
     "created": "2026-01-28",
-    "last_updated": "2026-01-28T20:30:00Z",
-    "source": "フル分析 Phase 8 v2.0（日本市場追加）",
-    "total_tasks": 11,
+    "last_updated": "2026-01-29T12:30:00Z",
+    "source": "フル分析 Phase 8 v3.0（2026-01-29更新）",
+    "total_tasks": 13,
     "priority_distribution": {
-      "high": 3,
-      "medium": 7,
+      "high": 4,
+      "medium": 8,
       "low": 1
     }
   },
@@ -131,6 +131,28 @@
       "rationale": "防衛予算9.04兆円の主要配分先。2035年就役予定。",
       "status": "pending",
       "due_date": "2026-03-31"
+    },
+    {
+      "id": "RF-015",
+      "priority": "high",
+      "category": "monitoring",
+      "domain": "日本/半導体",
+      "description": "TSMC熊本第2工場計画最終確認",
+      "action": "6-7nm→4nm（AI向け）計画変更の最終決定を監視。建設再開時期を追跡。",
+      "rationale": "AI半導体シフトで東京エレクトロン等に追加需要の可能性。$23B投資の方向性。",
+      "status": "pending",
+      "due_date": "2026-03-31"
+    },
+    {
+      "id": "RF-016",
+      "priority": "medium",
+      "category": "verification",
+      "domain": "日本/半導体",
+      "description": "東京エレクトロンQ3決算検証",
+      "action": "2026年2月6日発表予定のQ3決算を検証。WFE市場成長率、AI半導体向け受注を確認。",
+      "rationale": "TSMC熊本4nm計画変更の影響を含め、AI半導体需要を検証。",
+      "status": "pending",
+      "due_date": "2026-02-10"
     }
   ],
   "completed_tasks": [
