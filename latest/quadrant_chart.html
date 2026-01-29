@@ -70,12 +70,9 @@
                 offsetY: 0
             }));
 
-            // ランク順にソート（小さい順 = 上位順）
             positions.sort((a, b) => a.rank - b.rank);
+            const minDistance = baseRadius * 2.3;
 
-            const minDistance = baseRadius * 2.6;
-
-            // 各バブルについて、より上位のバブルとの衝突をチェック
             for (let i = 0; i < positions.length; i++) {
                 for (let j = 0; j < i; j++) {
                     const dx = (positions[i].cx + positions[i].offsetX) - (positions[j].cx + positions[j].offsetX);
@@ -84,9 +81,8 @@
 
                     if (distance < minDistance) {
                         const overlap = minDistance - distance;
-                        // 上位のバブル(j)を右上方向にオフセット
-                        positions[j].offsetX += overlap * 0.5 + 2;
-                        positions[j].offsetY -= overlap * 0.4 + 1;
+                        positions[j].offsetX += overlap * 0.6 + 4;
+                        positions[j].offsetY -= overlap * 0.5 + 3;
                     }
                 }
             }
@@ -95,9 +91,9 @@
         }
 
         function QuadrantChart() {
+            const [selectedStock, setSelectedStock] = React.useState(null);
             const [hoveredStock, setHoveredStock] = React.useState(null);
             const [selectedDomain, setSelectedDomain] = React.useState("all");
-            const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
 
             const width = 1100;
             const height = 750;
@@ -105,19 +101,15 @@
             const chartWidth = width - margin.left - margin.right;
             const chartHeight = height - margin.top - margin.bottom;
 
-            // 30社の相対的な位置関係を見やすくするため、スケールをデータ範囲に合わせる
-            // Certainty: 70-100 (実データ70-99)
-            // Upside: 25-85 (実データ30-80)
             const xMin = 68, xMax = 102;
             const yMin = 25, yMax = 85;
 
             const xScale = (c) => margin.left + ((c - xMin) / (xMax - xMin)) * chartWidth;
             const yScale = (u) => margin.top + chartHeight - ((u - yMin) / (yMax - yMin)) * chartHeight;
 
-            // 中央値を閾値として使用（30社内での相対的な基準）
-            const certThreshold = 87;  // certaintyの中央値付近
-            const upsideThreshold = 44; // upsideの中央値付近
-            const baseRadius = 14;
+            const certThreshold = 87;
+            const upsideThreshold = 44;
+            const baseRadius = 22; // 大幅に拡大
 
             const filteredData = selectedDomain === "all" ? japanTop30Data : japanTop30Data.filter(s => s.domain === selectedDomain);
 
@@ -141,8 +133,10 @@
                 avoid: japanTop30Data.filter(s => s.certainty < certThreshold && s.upside < upsideThreshold).length
             };
 
-            // ランク順でソート（下位から描画し、上位が手前に来るように）
             const sortedFilteredData = [...filteredData].sort((a, b) => b.rank - a.rank);
+
+            // 表示するストック（クリックまたはホバー）
+            const displayStock = selectedStock || hoveredStock;
 
             return (
                 <div style={{ padding: "16px", maxWidth: "1200px", margin: "0 auto" }}>
@@ -156,7 +150,7 @@
                             <span>更新: 2026-01-30</span>
                         </div>
                         <div style={{ fontSize: "11px", color: "#6b7280", marginTop: "4px" }}>
-                            ※ 軸は30社内での相対位置 | 閾値: 確実性87% / アップサイド44%（中央値基準）
+                            ※ 軸は30社内での相対位置 | 閾値: 確実性87% / アップサイド44%（中央値基準）| クリックで詳細固定
                         </div>
                     </div>
 
@@ -175,175 +169,240 @@
                         ))}
                     </div>
 
-                    <div style={{ background: "rgba(30, 41, 59, 0.4)", borderRadius: "12px", padding: "12px", border: "1px solid rgba(255,255,255,0.1)" }}>
-                        <svg width={width} height={height} onMouseMove={(e) => {
-                            const rect = e.currentTarget.getBoundingClientRect();
-                            setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-                        }} style={{ display: "block", margin: "0 auto" }}>
+                    <div style={{ display: "flex", gap: "16px" }}>
+                        {/* チャート部分 */}
+                        <div style={{ background: "rgba(30, 41, 59, 0.4)", borderRadius: "12px", padding: "12px", border: "1px solid rgba(255,255,255,0.1)", flex: "1" }}>
+                            <svg width={width} height={height} style={{ display: "block", margin: "0 auto" }}
+                                onClick={(e) => {
+                                    if (e.target.tagName === 'svg' || e.target.tagName === 'rect' || e.target.tagName === 'line') {
+                                        setSelectedStock(null);
+                                    }
+                                }}>
 
-                            {quadrantBgs.map((q, i) => (
-                                <g key={i}>
-                                    <rect x={q.x} y={q.y} width={q.w} height={q.h} fill={q.color} />
-                                    <text x={q.x + q.w/2} y={q.y + 22} fill="rgba(255,255,255,0.35)" fontSize="15" textAnchor="middle" fontWeight="bold">{q.label}</text>
-                                    <text x={q.x + q.w/2} y={q.y + 38} fill="rgba(255,255,255,0.2)" fontSize="10" textAnchor="middle">{q.sublabel}</text>
-                                </g>
-                            ))}
-
-                            {/* グリッド線 */}
-                            {[70, 75, 80, 85, 90, 95, 100].map(v => (
-                                <line key={`xg${v}`} x1={xScale(v)} y1={margin.top} x2={xScale(v)} y2={height - margin.bottom} stroke="rgba(255,255,255,0.08)" />
-                            ))}
-                            {[30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80].map(v => (
-                                <line key={`yg${v}`} x1={margin.left} y1={yScale(v)} x2={width - margin.right} y2={yScale(v)} stroke="rgba(255,255,255,0.08)" />
-                            ))}
-
-                            {/* 閾値線 */}
-                            <line x1={xScale(certThreshold)} y1={margin.top} x2={xScale(certThreshold)} y2={height - margin.bottom} stroke="rgba(255,255,255,0.35)" strokeWidth="2" strokeDasharray="8,4" />
-                            <line x1={margin.left} y1={yScale(upsideThreshold)} x2={width - margin.right} y2={yScale(upsideThreshold)} stroke="rgba(255,255,255,0.35)" strokeWidth="2" strokeDasharray="8,4" />
-
-                            {/* 軸ラベル */}
-                            <text x={width / 2} y={height - 10} fill="#9ca3af" fontSize="13" textAnchor="middle">確実性 (Certainty) % →</text>
-                            <text x={18} y={height / 2} fill="#9ca3af" fontSize="13" textAnchor="middle" transform={`rotate(-90, 18, ${height / 2})`}>アップサイド (Upside) % →</text>
-
-                            {/* 軸目盛り */}
-                            {[70, 75, 80, 85, 90, 95, 100].map(v => (
-                                <text key={`xt${v}`} x={xScale(v)} y={height - margin.bottom + 18} fill="#6b7280" fontSize="11" textAnchor="middle">{v}</text>
-                            ))}
-                            {[30, 40, 50, 60, 70, 80].map(v => (
-                                <text key={`yt${v}`} x={margin.left - 8} y={yScale(v) + 4} fill="#6b7280" fontSize="11" textAnchor="end">{v}</text>
-                            ))}
-
-                            {/* 15位ライン（参考線） */}
-                            <line x1={margin.left} y1={margin.top} x2={margin.left} y2={height - margin.bottom} stroke="transparent" />
-
-                            {sortedFilteredData.map((s) => {
-                                const pos = positionMap[s.ticker];
-                                const cx = pos.cx + pos.offsetX;
-                                const cy = pos.cy + pos.offsetY;
-                                const isHovered = hoveredStock?.ticker === s.ticker;
-                                const isTop1 = s.rank === 1;
-                                const isTop15 = s.rank <= 15;
-                                const isHighMono = s.monopoly >= 26;
-                                const r = isHovered ? baseRadius + 3 : baseRadius;
-
-                                // 15位以下は少し薄く表示
-                                const opacity = isTop15 ? 0.95 : 0.6;
-
-                                return (
-                                    <g key={s.ticker}>
-                                        {isHighMono && <circle cx={cx} cy={cy} r={r + 6} fill="none" stroke="#ef4444" strokeWidth="2" strokeDasharray="4,3" opacity={isTop15 ? 0.7 : 0.4} />}
-                                        {isTop1 && <circle cx={cx} cy={cy} r={r + 10} fill="rgba(234, 179, 8, 0.35)" />}
-                                        <circle
-                                            cx={cx} cy={cy} r={r}
-                                            fill={domainColors[s.domain]}
-                                            fillOpacity={isHovered ? 1 : opacity}
-                                            stroke={isTop1 ? "#fbbf24" : isHovered ? "#fff" : isTop15 ? "rgba(255,255,255,0.6)" : "rgba(255,255,255,0.3)"}
-                                            strokeWidth={isTop1 ? 3 : isHovered ? 2.5 : isTop15 ? 1.5 : 1}
-                                            style={{ cursor: "pointer", transition: "all 0.15s" }}
-                                            onMouseEnter={() => setHoveredStock(s)}
-                                            onMouseLeave={() => setHoveredStock(null)}
-                                        />
-                                        {/* ランク番号を表示 */}
-                                        <text
-                                            x={cx} y={cy + 4}
-                                            fill="#fff"
-                                            fontSize={isTop15 ? "10" : "9"}
-                                            textAnchor="middle"
-                                            fontWeight="bold"
-                                            style={{ pointerEvents: "none", textShadow: "0 1px 2px rgba(0,0,0,0.9)", opacity: isTop15 ? 1 : 0.7 }}
-                                        >
-                                            {s.rank}
-                                        </text>
-                                        {/* ホバー時に名前を上に表示 */}
-                                        {isHovered && (
-                                            <text x={cx} y={cy - r - 6} fill="#fff" fontSize="12" textAnchor="middle" fontWeight="bold"
-                                                style={{ textShadow: "0 1px 3px rgba(0,0,0,0.9)" }}>
-                                                {s.name}
-                                            </text>
-                                        )}
+                                {quadrantBgs.map((q, i) => (
+                                    <g key={i}>
+                                        <rect x={q.x} y={q.y} width={q.w} height={q.h} fill={q.color} />
+                                        <text x={q.x + q.w/2} y={q.y + 26} fill="rgba(255,255,255,0.4)" fontSize="18" textAnchor="middle" fontWeight="bold">{q.label}</text>
+                                        <text x={q.x + q.w/2} y={q.y + 46} fill="rgba(255,255,255,0.25)" fontSize="11" textAnchor="middle">{q.sublabel}</text>
                                     </g>
-                                );
-                            })}
+                                ))}
 
-                            {hoveredStock && (
-                                <foreignObject
-                                    x={Math.min(mousePos.x + 15, width - 265)}
-                                    y={Math.max(10, Math.min(mousePos.y - 95, height - 200))}
-                                    width="255" height="190"
-                                >
-                                    <div style={{
-                                        background: "rgba(15, 23, 42, 0.97)",
-                                        border: `2px solid ${domainColors[hoveredStock.domain]}`,
-                                        borderRadius: "8px", padding: "12px", fontSize: "11px", color: "#e0e0e0",
-                                        boxShadow: "0 4px 20px rgba(0,0,0,0.6)"
-                                    }}>
-                                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                                            <b style={{ fontSize: "14px", color: "#fff" }}>
-                                                <span style={{ color: hoveredStock.rank <= 15 ? "#22c55e" : "#9ca3af" }}>#{hoveredStock.rank}</span> {hoveredStock.name}
-                                            </b>
-                                            <span style={{ color: domainColors[hoveredStock.domain], fontSize: "11px" }}>{hoveredStock.domain}</span>
+                                {[70, 75, 80, 85, 90, 95, 100].map(v => (
+                                    <line key={`xg${v}`} x1={xScale(v)} y1={margin.top} x2={xScale(v)} y2={height - margin.bottom} stroke="rgba(255,255,255,0.08)" />
+                                ))}
+                                {[30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80].map(v => (
+                                    <line key={`yg${v}`} x1={margin.left} y1={yScale(v)} x2={width - margin.right} y2={yScale(v)} stroke="rgba(255,255,255,0.08)" />
+                                ))}
+
+                                <line x1={xScale(certThreshold)} y1={margin.top} x2={xScale(certThreshold)} y2={height - margin.bottom} stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeDasharray="8,4" />
+                                <line x1={margin.left} y1={yScale(upsideThreshold)} x2={width - margin.right} y2={yScale(upsideThreshold)} stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeDasharray="8,4" />
+
+                                <text x={width / 2} y={height - 10} fill="#9ca3af" fontSize="13" textAnchor="middle">確実性 (Certainty) % →</text>
+                                <text x={18} y={height / 2} fill="#9ca3af" fontSize="13" textAnchor="middle" transform={`rotate(-90, 18, ${height / 2})`}>アップサイド (Upside) % →</text>
+
+                                {[70, 75, 80, 85, 90, 95, 100].map(v => (
+                                    <text key={`xt${v}`} x={xScale(v)} y={height - margin.bottom + 18} fill="#6b7280" fontSize="11" textAnchor="middle">{v}</text>
+                                ))}
+                                {[30, 40, 50, 60, 70, 80].map(v => (
+                                    <text key={`yt${v}`} x={margin.left - 8} y={yScale(v) + 4} fill="#6b7280" fontSize="11" textAnchor="end">{v}</text>
+                                ))}
+
+                                {sortedFilteredData.map((s) => {
+                                    const pos = positionMap[s.ticker];
+                                    const cx = pos.cx + pos.offsetX;
+                                    const cy = pos.cy + pos.offsetY;
+                                    const isSelected = selectedStock?.ticker === s.ticker;
+                                    const isHovered = hoveredStock?.ticker === s.ticker;
+                                    const isActive = isSelected || isHovered;
+                                    const isTop1 = s.rank === 1;
+                                    const isTop15 = s.rank <= 15;
+                                    const isHighMono = s.monopoly >= 26;
+                                    const r = isActive ? baseRadius + 4 : baseRadius;
+
+                                    const opacity = isTop15 ? 0.95 : 0.65;
+
+                                    return (
+                                        <g key={s.ticker}
+                                            style={{ cursor: "pointer" }}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setSelectedStock(isSelected ? null : s);
+                                            }}
+                                            onMouseEnter={() => setHoveredStock(s)}
+                                            onMouseLeave={() => setHoveredStock(null)}>
+                                            {isHighMono && <circle cx={cx} cy={cy} r={r + 8} fill="none" stroke="#ef4444" strokeWidth="2.5" strokeDasharray="5,3" opacity={isTop15 ? 0.8 : 0.5} />}
+                                            {isTop1 && <circle cx={cx} cy={cy} r={r + 12} fill="rgba(234, 179, 8, 0.4)" />}
+                                            <circle
+                                                cx={cx} cy={cy} r={r}
+                                                fill={domainColors[s.domain]}
+                                                fillOpacity={isActive ? 1 : opacity}
+                                                stroke={isSelected ? "#fff" : isTop1 ? "#fbbf24" : isHovered ? "#fff" : isTop15 ? "rgba(255,255,255,0.6)" : "rgba(255,255,255,0.35)"}
+                                                strokeWidth={isSelected ? 4 : isTop1 ? 3.5 : isHovered ? 3 : isTop15 ? 2 : 1.5}
+                                                style={{ transition: "all 0.15s" }}
+                                            />
+                                            <text
+                                                x={cx} y={cy + 5}
+                                                fill="#fff"
+                                                fontSize={isTop15 ? "13" : "11"}
+                                                textAnchor="middle"
+                                                fontWeight="bold"
+                                                style={{ pointerEvents: "none", textShadow: "0 1px 3px rgba(0,0,0,0.9)" }}
+                                            >
+                                                {s.rank}
+                                            </text>
+                                            {isActive && (
+                                                <text x={cx} y={cy - r - 8} fill="#fff" fontSize="13" textAnchor="middle" fontWeight="bold"
+                                                    style={{ pointerEvents: "none", textShadow: "0 2px 4px rgba(0,0,0,0.9)" }}>
+                                                    {s.name}
+                                                </text>
+                                            )}
+                                        </g>
+                                    );
+                                })}
+                            </svg>
+                        </div>
+
+                        {/* 右側の詳細パネル（常に表示エリアを確保） */}
+                        <div style={{ width: "280px", flexShrink: 0 }}>
+                            {displayStock ? (
+                                <div style={{
+                                    background: "rgba(15, 23, 42, 0.97)",
+                                    border: `3px solid ${domainColors[displayStock.domain]}`,
+                                    borderRadius: "12px",
+                                    padding: "16px",
+                                    boxShadow: "0 4px 20px rgba(0,0,0,0.5)"
+                                }}>
+                                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
+                                        <div>
+                                            <span style={{
+                                                fontSize: "24px",
+                                                fontWeight: "bold",
+                                                color: displayStock.rank <= 15 ? "#22c55e" : "#9ca3af"
+                                            }}>#{displayStock.rank}</span>
+                                            <span style={{ fontSize: "18px", fontWeight: "bold", color: "#fff", marginLeft: "8px" }}>{displayStock.name}</span>
                                         </div>
-                                        <div style={{ color: "#9ca3af", marginBottom: "8px", fontSize: "10px" }}>
-                                            {hoveredStock.ticker} | {hoveredStock.core_tech}
-                                        </div>
-                                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px", marginBottom: "8px", fontSize: "10px" }}>
-                                            <div>独占: <span style={{color: "#22c55e"}}>{hoveredStock.monopoly}/30</span></div>
-                                            <div>耐性: <span style={{color: "#3b82f6"}}>{hoveredStock.resilience}/20</span></div>
-                                            <div>シナジー: <span style={{color: "#a855f7"}}>{hoveredStock.synergy}/25</span></div>
-                                            <div>非対称: <span style={{color: "#f97316"}}>{hoveredStock.asymmetry}/15</span></div>
-                                            <div>資本効率: <span style={{color: "#ec4899"}}>{hoveredStock.capital}/10</span></div>
-                                            <div><b>合計: <span style={{color: "#fbbf24"}}>{hoveredStock.total}/100</span></b></div>
-                                        </div>
-                                        <div style={{ display: "flex", gap: "12px", marginBottom: "6px", fontSize: "10px", color: "#9ca3af" }}>
-                                            <span>確実性: <b style={{color: "#fff"}}>{hoveredStock.certainty}%</b></span>
-                                            <span>アップサイド: <b style={{color: "#fff"}}>{hoveredStock.upside}%</b></span>
-                                        </div>
-                                        <div style={{ borderTop: "1px solid #374151", paddingTop: "6px", fontSize: "10px", color: "#9ca3af", lineHeight: 1.4 }}>
-                                            {hoveredStock.thesis}
-                                        </div>
-                                        {hoveredStock.rank > 15 && (
-                                            <div style={{ marginTop: "6px", padding: "4px 8px", background: "rgba(249, 115, 22, 0.2)", borderRadius: "4px", fontSize: "9px", color: "#f97316" }}>
-                                                ⚠ 16位以下：攻めの姿勢時のみ検討
-                                            </div>
+                                        {selectedStock && (
+                                            <button onClick={() => setSelectedStock(null)} style={{
+                                                background: "rgba(255,255,255,0.1)",
+                                                border: "none",
+                                                borderRadius: "50%",
+                                                width: "24px",
+                                                height: "24px",
+                                                color: "#9ca3af",
+                                                cursor: "pointer",
+                                                fontSize: "14px"
+                                            }}>✕</button>
                                         )}
                                     </div>
-                                </foreignObject>
+                                    <div style={{
+                                        display: "inline-block",
+                                        padding: "3px 10px",
+                                        background: `${domainColors[displayStock.domain]}30`,
+                                        borderRadius: "12px",
+                                        color: domainColors[displayStock.domain],
+                                        fontSize: "12px",
+                                        marginBottom: "10px"
+                                    }}>{displayStock.domain}</div>
+                                    <div style={{ color: "#9ca3af", marginBottom: "12px", fontSize: "12px" }}>
+                                        {displayStock.ticker} | {displayStock.core_tech}
+                                    </div>
+
+                                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "12px" }}>
+                                        <div style={{ background: "rgba(34, 197, 94, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>独占力</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#22c55e" }}>{displayStock.monopoly}/30</div>
+                                        </div>
+                                        <div style={{ background: "rgba(59, 130, 246, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>政策耐性</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#3b82f6" }}>{displayStock.resilience}/20</div>
+                                        </div>
+                                        <div style={{ background: "rgba(168, 85, 247, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>シナジー</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#a855f7" }}>{displayStock.synergy}/25</div>
+                                        </div>
+                                        <div style={{ background: "rgba(249, 115, 22, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>非対称性</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#f97316" }}>{displayStock.asymmetry}/15</div>
+                                        </div>
+                                        <div style={{ background: "rgba(236, 72, 153, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>資本効率</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#ec4899" }}>{displayStock.capital}/10</div>
+                                        </div>
+                                        <div style={{ background: "rgba(234, 179, 8, 0.15)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>合計スコア</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#fbbf24" }}>{displayStock.total}/100</div>
+                                        </div>
+                                    </div>
+
+                                    <div style={{ display: "flex", gap: "16px", marginBottom: "12px", padding: "10px", background: "rgba(255,255,255,0.05)", borderRadius: "6px" }}>
+                                        <div>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>確実性</div>
+                                            <div style={{ fontSize: "18px", fontWeight: "bold", color: "#fff" }}>{displayStock.certainty}%</div>
+                                        </div>
+                                        <div>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>アップサイド</div>
+                                            <div style={{ fontSize: "18px", fontWeight: "bold", color: "#fff" }}>{displayStock.upside}%</div>
+                                        </div>
+                                    </div>
+
+                                    <div style={{ fontSize: "12px", color: "#d1d5db", lineHeight: 1.5, borderTop: "1px solid #374151", paddingTop: "12px" }}>
+                                        {displayStock.thesis}
+                                    </div>
+
+                                    {displayStock.rank > 15 && (
+                                        <div style={{ marginTop: "12px", padding: "8px 12px", background: "rgba(249, 115, 22, 0.2)", borderRadius: "6px", fontSize: "11px", color: "#f97316" }}>
+                                            ⚠ 16位以下：攻めの姿勢時のみ検討
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <div style={{
+                                    background: "rgba(30, 41, 59, 0.4)",
+                                    border: "1px dashed rgba(255,255,255,0.2)",
+                                    borderRadius: "12px",
+                                    padding: "24px",
+                                    textAlign: "center",
+                                    color: "#6b7280"
+                                }}>
+                                    <div style={{ fontSize: "14px", marginBottom: "8px" }}>バブルをクリックまたはホバー</div>
+                                    <div style={{ fontSize: "12px" }}>で詳細を表示</div>
+                                </div>
                             )}
-                        </svg>
+                        </div>
                     </div>
 
                     <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginTop: "12px", fontSize: "12px", flexWrap: "wrap" }}>
                         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
                             <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                                <span style={{ width: "12px", height: "12px", background: "#22c55e", borderRadius: "50%", opacity: 0.9 }}></span>
+                                <span style={{ width: "14px", height: "14px", background: "#22c55e", borderRadius: "50%", opacity: 0.9 }}></span>
                                 最優先: {counts.prime}
                             </span>
                             <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                                <span style={{ width: "12px", height: "12px", background: "#3b82f6", borderRadius: "50%", opacity: 0.9 }}></span>
+                                <span style={{ width: "14px", height: "14px", background: "#3b82f6", borderRadius: "50%", opacity: 0.9 }}></span>
                                 安定: {counts.stable}
                             </span>
                             <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                                <span style={{ width: "12px", height: "12px", background: "#f97316", borderRadius: "50%", opacity: 0.9 }}></span>
+                                <span style={{ width: "14px", height: "14px", background: "#f97316", borderRadius: "50%", opacity: 0.9 }}></span>
                                 投機的: {counts.spec}
                             </span>
                             <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                                <span style={{ width: "12px", height: "12px", background: "#ef4444", borderRadius: "50%", opacity: 0.9 }}></span>
+                                <span style={{ width: "14px", height: "14px", background: "#ef4444", borderRadius: "50%", opacity: 0.9 }}></span>
                                 慎重: {counts.avoid}
                             </span>
                         </div>
                         <span style={{ color: "#4b5563" }}>|</span>
                         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                             <span style={{ display: "flex", alignItems: "center", gap: "4px", color: "#9ca3af" }}>
-                                <span style={{ width: "14px", height: "14px", border: "2px dashed #ef4444", borderRadius: "50%" }}></span>
+                                <span style={{ width: "16px", height: "16px", border: "2.5px dashed #ef4444", borderRadius: "50%" }}></span>
                                 高独占 (≥26)
                             </span>
                             <span style={{ display: "flex", alignItems: "center", gap: "4px", color: "#9ca3af" }}>
-                                <span style={{ width: "14px", height: "14px", background: "rgba(234, 179, 8, 0.4)", borderRadius: "50%", border: "2.5px solid #fbbf24" }}></span>
+                                <span style={{ width: "16px", height: "16px", background: "rgba(234, 179, 8, 0.4)", borderRadius: "50%", border: "3px solid #fbbf24" }}></span>
                                 #1
                             </span>
                             <span style={{ display: "flex", alignItems: "center", gap: "4px", color: "#6b7280" }}>
-                                <span style={{ width: "12px", height: "12px", background: "#6b7280", borderRadius: "50%", opacity: 0.5 }}></span>
-                                16位以下（薄表示）
+                                <span style={{ width: "14px", height: "14px", background: "#6b7280", borderRadius: "50%", opacity: 0.5 }}></span>
+                                16位以下
                             </span>
                         </div>
                     </div>
