@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "契約・受注情報 - 月次で更新",
-    "last_updated": "2026-01-28",
+    "last_updated": "2026-01-29",
     "next_update": "2026-02-28",
     "schema_version": "1.0"
   },
@@ -126,6 +126,66 @@
       "date_announced": "2024-11",
       "status": "active",
       "notes": "ソフトウェア企業初の防衛プライム。Azure統合。"
+    },
+    {
+      "id": "CON-JP001",
+      "company": "三菱重工業",
+      "ticker": "7011.T",
+      "contract_name": "GCAP 次期戦闘機",
+      "value": "数兆円規模（総額）",
+      "counterparty": "防衛省",
+      "duration": "2035年配備目標",
+      "date_announced": "継続",
+      "status": "active",
+      "notes": "日英伊共同開発。FY2026予算1,600億円以上計上。"
+    },
+    {
+      "id": "CON-JP002",
+      "company": "三菱重工業",
+      "ticker": "7011.T",
+      "contract_name": "GPI（滑空段階迎撃弾）開発",
+      "value": "560億円",
+      "counterparty": "防衛省",
+      "duration": "Multi-year",
+      "date_announced": "2024-11",
+      "status": "active",
+      "notes": "極超音速ミサイル迎撃システム開発。"
+    },
+    {
+      "id": "CON-JP003",
+      "company": "三菱重工業",
+      "ticker": "7011.T",
+      "contract_name": "オーストラリア もがみ型フリゲート",
+      "value": "非公開",
+      "counterparty": "オーストラリア海軍",
+      "duration": "Multi-year",
+      "date_announced": "2026-01",
+      "status": "active",
+      "notes": "日本初の主要水上艦輸出契約。"
+    },
+    {
+      "id": "CON-JP004",
+      "company": "NEC",
+      "ticker": "6701.T",
+      "contract_name": "KDDI-NEC合弁「Protect.jp」",
+      "value": "非公開",
+      "counterparty": "KDDI",
+      "duration": "継続",
+      "date_announced": "2026-01",
+      "status": "active",
+      "notes": "国内最大サイバーセキュリティ事業。生成AI「cotomi」90%自動化。"
+    },
+    {
+      "id": "CON-JP005",
+      "company": "IHI",
+      "ticker": "7013.T",
+      "contract_name": "NuScale Power出資",
+      "value": "$20M + $20M（追加可能）",
+      "counterparty": "NuScale Power",
+      "duration": "継続",
+      "date_announced": "2025",
+      "status": "active",
+      "notes": "SMR格納容器・構造物製造パートナー。JGCと共同JNI設立。"
     }
   ]
 }

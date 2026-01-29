@@ -2,7 +2,7 @@
   "metadata": {
     "description": "統合企業情報（全LLM出力 + stable + reinforcement をマージ）",
     "created": "2026-01-28T18:00:00Z",
-    "last_updated": "2026-01-29T12:00:00Z",
+    "last_updated": "2026-01-29T18:00:00Z",
     "phase": "フェーズ5: 統合・確度整理",
     "sources": {
       "raw_claude": "data/intelligence/raw/company_info/claude.md",
@@ -285,9 +285,14 @@
     "japan_updates_20260129": [
       "ファナック: ロボット受注+38%確認、ガイダンス+10%上方修正",
       "東京電力HD: 柏崎刈羽6号機再稼働→翌日停止（30年前設定ミス判明）",
-      "三菱重工業: 防衛予算9兆円超でFY2026受注増期待",
-      "NEC: KDDI合弁「Protect.jp」で国内最大サイバーセキュリティ事業へ",
-      "TSMC/JASM: 第2工場計画変更（6-7nm→4nm AI向け検討）"
+      "三菱重工業: 防衛予算9兆円超、受注残>10兆円確認（Gemini検証）",
+      "NEC: KDDI合弁「Protect.jp」設立、国内最大サイバーセキュリティ",
+      "TSMC/JASM: 第2工場計画変更（6-7nm→4nm AI向け検討中）",
+      "IHI: 航空宇宙・防衛受注残1.9兆円（+69.9% YoY）確認",
+      "東京エレクトロン: コータ/デベロッパ90%世界シェア確認",
+      "日銀: 0.75%据え置き（8対1）、次回利上げ7-9月予想",
+      "GCAP/JAIEC: 次期戦闘機産業構造確立、Tier2/3支援ハブ設立",
+      "Rapidus: 2024/12月EUV搬入完了、2025/4月パイロット稼働、2027年量産目標"
     ]
   },
   "japan_companies": [

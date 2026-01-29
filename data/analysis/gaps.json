@@ -109,6 +109,58 @@
         },
         "action": "NEC（6701.T）、KDDI（9433.T）のサイバーセキュリティ評価を上方修正",
         "filled": true
+      },
+      {
+        "id": "GAP-C009",
+        "company": "Rapidusサプライチェーン",
+        "status": "new_discovery",
+        "issue": "Gemini broadで詳細なTier 1-3サプライチェーン構造が明らかに",
+        "details": {
+          "prime": "Rapidus（2nm、2027年量産目標）",
+          "tier1_equipment": "ASML（EUV）、東京エレクトロン、SCREEN HD",
+          "tier1_materials": "東京応化工業、JSR、大日本印刷",
+          "tier1_packaging": "Resonac（JOINT2）",
+          "tier2_3": "味の素ファインテクノ（ABF）、新光電気工業",
+          "milestone": "2024年12月ASML EUV搬入完了、2025年4月パイロットライン稼働"
+        },
+        "action": "半導体素材・装置銘柄の評価に反映",
+        "filled": true
+      },
+      {
+        "id": "GAP-C010",
+        "company": "GCAP/JAIEC",
+        "status": "new_discovery",
+        "issue": "次期戦闘機GCAPの産業構造が明確化。JAIECが日本航空宇宙サプライチェーン強化のハブとして設立。",
+        "details": {
+          "gigo": "日英伊政府間機関、英国本部、初代CEO日本人",
+          "jv": "三菱重工×BAE Systems×Leonardo",
+          "jaiec": "MHI・SJAC出資、Tier 2/3企業のGCAP参入支援",
+          "technology_areas": {
+            "airframe": "MHI、SUBARU、川崎重工、東レ（CFRP）",
+            "engine": "IHI×ロールス・ロイス×アビオ",
+            "avionics": "三菱電機×レオナルド（ISANKE & ICS）"
+          }
+        },
+        "action": "防衛関連企業（MHI、IHI、三菱電機、東レ）の評価に反映",
+        "filled": true
+      },
+      {
+        "id": "GAP-C011",
+        "company": "合成生物学スタートアップ",
+        "status": "new_discovery",
+        "issue": "Gemini broadで日本のバイオものづくり市場（CAGR 18.3%、2兆円規模）と主要スタートアップを特定",
+        "details": {
+          "market_size": "2030年に2兆円規模（CAGR 18.3%）",
+          "startups": [
+            "Bacchus Bio innovation（神戸大発、バイオファウンドリ）",
+            "Spiber（構造タンパク質素材）",
+            "Chitose Bio Evolution（藻類バイオ生産）",
+            "Logomix（大規模ゲノム編集）",
+            "bitBiome（早稲田大発、シングルセルゲノム解析）"
+          ]
+        },
+        "action": "見逃しスキャン銘柄として監視リストに追加",
+        "filled": true
       }
     ],
     "domains": [
@@ -168,8 +220,8 @@
         "id": "GAP-I001",
         "category": "A: 国際情勢",
         "status": "well_covered",
-        "coverage_score": 95,
-        "notes": "Gemini broad、Grok broad、Claude broadで十分にカバー"
+        "coverage_score": 96,
+        "notes": "Gemini/Grok/Claude broadで十分にカバー。中国輸出規制強化、台湾海峡緊張、日本輸出管理強化（キャッチオール規制）を詳細に収集"
       },
       {
         "id": "GAP-I002",
@@ -216,23 +268,26 @@
     ]
   },
   "summary": {
-    "total_gaps": 17,
-    "filled": 17,
+    "total_gaps": 20,
+    "filled": 20,
     "pending": 0,
     "coverage_assessment": {
-      "overall_score": 95,
+      "overall_score": 96,
       "strong_areas": [
-        "国際情勢（日中関係緊張、輸出規制）",
-        "市場リスク（日銀政策、為替介入リスク）",
+        "国際情勢（日中関係緊張、輸出規制、キャッチオール規制強化）",
+        "市場リスク（日銀政策、為替介入リスク、VI 34高警戒）",
         "大型投資パイプライン",
         "AI/エネルギー/防衛セクター",
         "原子力（柏崎刈羽再稼働動向）",
         "バイオ/GLP-1（Grok補強調査完了）",
         "ペロブスカイト太陽電池（Grok補強調査完了）",
-        "日本サイバーセキュリティ（KDDI-NEC合弁）"
+        "日本サイバーセキュリティ（KDDI-NEC合弁）",
+        "半導体サプライチェーン（Rapidus、東京エレクトロン90%独占）",
+        "防衛産業（GCAP、JAIEC設立、9兆円予算）",
+        "全固体電池（トヨタ-出光提携）"
       ],
       "weak_areas": [
-        "日経平均PER: 複数ソース間で乖離あり（要検証）"
+        "日経平均PER: 複数ソース間で乖離あり（Grok 19.88 vs Claude 16倍超）- 要検証"
       ],
       "completed_actions": [
         "Meta核契約受益企業（Vistra, Constellation）の評価強化済み",
@@ -245,7 +300,12 @@
         "TSMC熊本第2工場計画変更（4nm AI向け検討）反映済み",
         "KDDI-NEC合弁「Protect.jp」発見・反映済み",
         "ファナックQ3決算（+38%、ガイダンス上方修正）確認済み",
-        "日米協調為替介入リスク反映済み"
+        "日米協調為替介入リスク反映済み",
+        "Rapidusサプライチェーン（東京応化、Resonac等）特定済み",
+        "GCAP/JAIEC産業構造（日英伊分業体制）整理済み",
+        "日本合成生物学スタートアップ5社特定済み",
+        "東京エレクトロン90%独占確認済み",
+        "MHI/IHI受注残高を正確な数値に修正済み"
       ]
     }
   }

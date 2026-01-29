@@ -129,8 +129,8 @@
     }
   ],
   "summary": {
-    "total_contradictions": 12,
-    "resolved": 11,
+    "total_contradictions": 15,
+    "resolved": 14,
     "pending": 1,
     "critical_findings": [
       "Wolfspeed Chapter 11破産: 投資候補から除外確定",
@@ -139,11 +139,13 @@
       "Vertiv受注残$9.5B: AI冷却需要の強さを確認",
       "日銀1月会合: 据え置き決定、高田委員のみ1.0%への利上げ主張（8対1）",
       "柏崎刈羽原発: 2026/1/21再稼働→1/22制御棒不具合で一時停止（30年前からの設定ミス判明）",
-      "MHI受注高: 防衛・宇宙1兆8,768億円（2024年度）、2022年度の3倍超",
+      "MHI受注高: 防衛・宇宙1兆8,768億円（2024年度）、全社10兆円超",
       "日経平均: 53,115円（1/29）、過去最高54,341円（1/14）記録",
       "日米協調介入: NY Fed rate check実施、1/26-27で4%円高",
       "TSMC熊本第2工場: 6-7nm→4nm（AI向け）へ計画変更検討中",
-      "ファナックQ3: ロボット受注+38% YoY、ガイダンス+10%上方修正"
+      "ファナックQ3: ロボット受注+38% YoY、ガイダンス+10%上方修正",
+      "東京エレクトロン: コータ/デベロッパ90%独占確認",
+      "IHI受注残: 1.9兆円（航空宇宙・防衛+69.9%）確定"
     ]
   },
   "japan_market_contradictions": [
@@ -161,6 +163,59 @@
         "correct_value": "53,115円（2026年1月29日）、過去最高値54,341円（1月14日）",
         "verification_source": "Trading Economics, CNBC",
         "action": "市場リスク評価に反映"
+      }
+    },
+    {
+      "id": "CTR-JP006",
+      "type": "company_data",
+      "company": "三菱重工業 (7011.T)",
+      "field": "受注残高",
+      "sources": {
+        "grok": "18兆円（YoY +20%）",
+        "gemini": ">10兆円（YoY +5.8%）",
+        "claude": "防衛受注残1.87兆円（防衛のみ）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "全体10兆円超（Gemini）、防衛・宇宙セグメントのみ1.87兆円",
+        "notes": "Grokの18兆円は過大評価。Geminiの>10兆円が公式IR報告と一致。Claudeは防衛セグメントのみの数字。",
+        "verification_source": "MHI IR Report 2025",
+        "action": "Gemini値を採用、セグメント別で整理"
+      }
+    },
+    {
+      "id": "CTR-JP007",
+      "type": "company_data",
+      "company": "IHI (7013.T)",
+      "field": "受注残高",
+      "sources": {
+        "grok": "4兆円（YoY +15%）",
+        "gemini": "1.896兆円（Aero/Defense +69.9% YoY）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "約1.9兆円（航空宇宙・防衛セグメント、+69.9% YoY）",
+        "notes": "Grokの4兆円は全社合計の可能性があるが、Geminiの1.896兆円は公式レポートと一致",
+        "verification_source": "IHI Integrated Report 2025",
+        "action": "Gemini値を採用"
+      }
+    },
+    {
+      "id": "CTR-JP008",
+      "type": "company_data",
+      "company": "東京エレクトロン (8035.T)",
+      "field": "市場シェア（コータ/デベロッパ）",
+      "sources": {
+        "gemini": "約90%（独占的）",
+        "grok": "データなし",
+        "claude": "90%"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "約90%（コータ/デベロッパで世界独占）",
+        "notes": "Gemini・Claude一致。複数業界ソースで確認済み。",
+        "verification_source": "業界レポート、TEL IR",
+        "action": "90%を採用、モート評価に反映"
       }
     },
     {
