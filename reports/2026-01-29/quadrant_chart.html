@@ -3,310 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japan Top 30 - 4象限チャート (2026-01-29)</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>マルチドメイン・コンバージェンス Japan Top30 4象限マトリックス【2026年1月29日】</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        .chart-container {
-            background: white;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            height: 600px;
+            color: #fff;
         }
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 8px #ffd700); }
+            50% { filter: drop-shadow(0 0 16px #ffd700); }
         }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-        }
-        .summary {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f8f9fa;
-        }
-        .prime { color: #2ecc71; font-weight: bold; }
-        .stable { color: #3498db; font-weight: bold; }
-        .speculative { color: #e74c3c; font-weight: bold; }
-        .updated { background-color: #fff3cd; }
-        .quadrant-summary {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        .quadrant-box {
-            flex: 1;
-            min-width: 200px;
-            padding: 15px;
-            border-radius: 8px;
-            color: white;
-        }
-        .quadrant-box.prime-box { background: #2ecc71; }
-        .quadrant-box.stable-box { background: #3498db; }
-        .quadrant-box.speculative-box { background: #e74c3c; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Japan Top 30 - 4象限マトリックス</h1>
-        <p style="text-align: center; color: #666;">2026年1月29日 | 市場リスクスコア: 58/100 (バランス型)</p>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
 
-        <div class="quadrant-summary">
-            <div class="quadrant-box prime-box">
-                <h3>Prime: 18社</h3>
-                <p>高確実性 × 高アップサイド</p>
-            </div>
-            <div class="quadrant-box stable-box">
-                <h3>Stable Growth: 9社</h3>
-                <p>高確実性 × 安定リターン</p>
-            </div>
-            <div class="quadrant-box speculative-box">
-                <h3>Speculative: 3社</h3>
-                <p>低確実性 × 高アップサイド</p>
-            </div>
-        </div>
-
-        <div class="chart-container">
-            <canvas id="quadrantChart"></canvas>
-        </div>
-
-        <div class="legend">
-            <div class="legend-item">
-                <div class="legend-color" style="background: #2ecc71;"></div>
-                <span>Prime (高確実性/高リターン)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: #3498db;"></div>
-                <span>Stable Growth (高確実性/安定リターン)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background: #e74c3c;"></div>
-                <span>Speculative (低確実性/高リターン)</span>
-            </div>
-        </div>
-
-        <div class="summary">
-            <h2>Japan Top 30 企業一覧</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>順位</th>
-                        <th>ティッカー</th>
-                        <th>企業名</th>
-                        <th>スコア</th>
-                        <th>確度</th>
-                        <th>UP</th>
-                        <th>象限</th>
-                        <th>主要ドメイン</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>7011.T</td><td>三菱重工業</td><td>88</td><td>95%</td><td>45%</td><td class="prime">Prime</td><td>防衛/エネルギー/宇宙</td></tr>
-                    <tr><td>2</td><td>8035.T</td><td>東京エレクトロン</td><td>86</td><td>95%</td><td>40%</td><td class="stable">Stable</td><td>AI/半導体</td></tr>
-                    <tr class="updated"><td>3</td><td>6954.T</td><td>ファナック</td><td><strong>85 ↑</strong></td><td><strong>99%</strong></td><td>42%</td><td class="stable">Stable</td><td>ロボティクス</td></tr>
-                    <tr><td>4</td><td>6501.T</td><td>日立製作所</td><td>82</td><td>90%</td><td>42%</td><td class="prime">Prime</td><td>エネルギー/AI</td></tr>
-                    <tr><td>5</td><td>9432.T</td><td>NTT</td><td>80</td><td>90%</td><td>30%</td><td class="stable">Stable</td><td>サイバー/AI</td></tr>
-                    <tr><td>6</td><td>6506.T</td><td>安川電機</td><td>79</td><td>95%</td><td>40%</td><td class="prime">Prime</td><td>ロボティクス</td></tr>
-                    <tr class="updated"><td>7</td><td>6701.T</td><td>NEC</td><td>78</td><td>95%</td><td>45%</td><td class="prime">Prime</td><td>サイバー/防衛</td></tr>
-                    <tr><td>8</td><td>7012.T</td><td>川崎重工業</td><td>76</td><td>90%</td><td>42%</td><td class="prime">Prime</td><td>防衛/宇宙</td></tr>
-                    <tr><td>9</td><td>7013.T</td><td>IHI</td><td>75</td><td>90%</td><td>48%</td><td class="prime">Prime</td><td>エネルギー/防衛</td></tr>
-                    <tr><td>10</td><td>186A.T</td><td>Astroscale HD</td><td>74</td><td>85%</td><td>80%</td><td class="speculative">Spec</td><td>宇宙</td></tr>
-                    <tr><td>11</td><td>6920.T</td><td>レーザーテック</td><td>73</td><td>90%</td><td>55%</td><td class="prime">Prime</td><td>半導体</td></tr>
-                    <tr><td>12</td><td>6857.T</td><td>アドバンテスト</td><td>72</td><td>90%</td><td>45%</td><td class="stable">Stable</td><td>半導体</td></tr>
-                    <tr><td>13</td><td>6861.T</td><td>キーエンス</td><td>71</td><td>92%</td><td>35%</td><td class="stable">Stable</td><td>ロボティクス</td></tr>
-                    <tr><td>14</td><td>7735.T</td><td>SCREEN HD</td><td>70</td><td>88%</td><td>45%</td><td class="stable">Stable</td><td>半導体</td></tr>
-                    <tr><td>15</td><td>6273.T</td><td>SMC</td><td>69</td><td>90%</td><td>38%</td><td class="stable">Stable</td><td>ロボティクス</td></tr>
-                    <tr><td>16</td><td>6503.T</td><td>三菱電機</td><td>68</td><td>88%</td><td>40%</td><td class="stable">Stable</td><td>防衛/FA</td></tr>
-                    <tr><td>17</td><td>6702.T</td><td>富士通</td><td>67</td><td>85%</td><td>42%</td><td class="prime">Prime</td><td>サイバー/AI</td></tr>
-                    <tr class="updated"><td>18</td><td>9433.T</td><td>KDDI</td><td>66</td><td>90%</td><td>32%</td><td class="stable">Stable</td><td>サイバー</td></tr>
-                    <tr><td>19</td><td>6758.T</td><td>ソニーG</td><td>65</td><td>88%</td><td>35%</td><td class="stable">Stable</td><td>AI/宇宙</td></tr>
-                    <tr><td>20</td><td>5631.T</td><td>日本製鋼所</td><td>64</td><td>85%</td><td>50%</td><td class="prime">Prime</td><td>エネルギー/防衛</td></tr>
-                    <tr><td>21</td><td>6141.T</td><td>DMG森精機</td><td>63</td><td>85%</td><td>42%</td><td class="prime">Prime</td><td>ロボティクス</td></tr>
-                    <tr><td>22</td><td>6645.T</td><td>オムロン</td><td>62</td><td>85%</td><td>40%</td><td class="prime">Prime</td><td>ロボティクス</td></tr>
-                    <tr><td>23</td><td>6723.T</td><td>ルネサス</td><td>61</td><td>85%</td><td>45%</td><td class="prime">Prime</td><td>半導体</td></tr>
-                    <tr><td>24</td><td>6807.T</td><td>日本航空電子</td><td>60</td><td>85%</td><td>45%</td><td class="prime">Prime</td><td>防衛/宇宙</td></tr>
-                    <tr><td>25</td><td>6361.T</td><td>荏原製作所</td><td>59</td><td>85%</td><td>42%</td><td class="prime">Prime</td><td>エネルギー</td></tr>
-                    <tr class="updated"><td>26</td><td>9501.T</td><td>東京電力HD</td><td>58</td><td><strong>70% ↓</strong></td><td>65%</td><td class="speculative">Spec</td><td>エネルギー</td></tr>
-                    <tr><td>27</td><td>7224.T</td><td>新明和工業</td><td>57</td><td>82%</td><td>48%</td><td class="prime">Prime</td><td>防衛</td></tr>
-                    <tr><td>28</td><td>7739.T</td><td>キヤノン電子</td><td>56</td><td>78%</td><td>55%</td><td class="speculative">Spec</td><td>宇宙</td></tr>
-                    <tr><td>29</td><td>1963.T</td><td>日揮HD</td><td>55</td><td>82%</td><td>45%</td><td class="prime">Prime</td><td>エネルギー</td></tr>
-                    <tr><td>30</td><td>6779.T</td><td>日本電波工業</td><td>54</td><td>80%</td><td>48%</td><td class="prime">Prime</td><td>宇宙/サイバー</td></tr>
-                </tbody>
-            </table>
-            <p style="margin-top: 15px; color: #666; font-size: 0.9em;">
-                ※ 黄色背景: 本日更新あり（ファナックQ3確認、NEC-KDDI合弁、東京電力HD確度低下）
-            </p>
-        </div>
-    </div>
-
-    <script>
-        const ctx = document.getElementById('quadrantChart').getContext('2d');
-
-        const companies = [
-            { name: '三菱重工業', ticker: '7011.T', certainty: 95, upside: 45, score: 88, quadrant: 'prime' },
-            { name: '東京エレクトロン', ticker: '8035.T', certainty: 95, upside: 40, score: 86, quadrant: 'stable' },
-            { name: 'ファナック', ticker: '6954.T', certainty: 99, upside: 42, score: 85, quadrant: 'stable' },
-            { name: '日立製作所', ticker: '6501.T', certainty: 90, upside: 42, score: 82, quadrant: 'prime' },
-            { name: 'NTT', ticker: '9432.T', certainty: 90, upside: 30, score: 80, quadrant: 'stable' },
-            { name: '安川電機', ticker: '6506.T', certainty: 95, upside: 40, score: 79, quadrant: 'prime' },
-            { name: 'NEC', ticker: '6701.T', certainty: 95, upside: 45, score: 78, quadrant: 'prime' },
-            { name: '川崎重工業', ticker: '7012.T', certainty: 90, upside: 42, score: 76, quadrant: 'prime' },
-            { name: 'IHI', ticker: '7013.T', certainty: 90, upside: 48, score: 75, quadrant: 'prime' },
-            { name: 'Astroscale', ticker: '186A.T', certainty: 85, upside: 80, score: 74, quadrant: 'speculative' },
-            { name: 'レーザーテック', ticker: '6920.T', certainty: 90, upside: 55, score: 73, quadrant: 'prime' },
-            { name: 'アドバンテスト', ticker: '6857.T', certainty: 90, upside: 45, score: 72, quadrant: 'stable' },
-            { name: 'キーエンス', ticker: '6861.T', certainty: 92, upside: 35, score: 71, quadrant: 'stable' },
-            { name: 'SCREEN HD', ticker: '7735.T', certainty: 88, upside: 45, score: 70, quadrant: 'stable' },
-            { name: 'SMC', ticker: '6273.T', certainty: 90, upside: 38, score: 69, quadrant: 'stable' },
-            { name: '三菱電機', ticker: '6503.T', certainty: 88, upside: 40, score: 68, quadrant: 'stable' },
-            { name: '富士通', ticker: '6702.T', certainty: 85, upside: 42, score: 67, quadrant: 'prime' },
-            { name: 'KDDI', ticker: '9433.T', certainty: 90, upside: 32, score: 66, quadrant: 'stable' },
-            { name: 'ソニーG', ticker: '6758.T', certainty: 88, upside: 35, score: 65, quadrant: 'stable' },
-            { name: '日本製鋼所', ticker: '5631.T', certainty: 85, upside: 50, score: 64, quadrant: 'prime' },
-            { name: 'DMG森精機', ticker: '6141.T', certainty: 85, upside: 42, score: 63, quadrant: 'prime' },
-            { name: 'オムロン', ticker: '6645.T', certainty: 85, upside: 40, score: 62, quadrant: 'prime' },
-            { name: 'ルネサス', ticker: '6723.T', certainty: 85, upside: 45, score: 61, quadrant: 'prime' },
-            { name: '日本航空電子', ticker: '6807.T', certainty: 85, upside: 45, score: 60, quadrant: 'prime' },
-            { name: '荏原製作所', ticker: '6361.T', certainty: 85, upside: 42, score: 59, quadrant: 'prime' },
-            { name: '東京電力HD', ticker: '9501.T', certainty: 70, upside: 65, score: 58, quadrant: 'speculative' },
-            { name: '新明和工業', ticker: '7224.T', certainty: 82, upside: 48, score: 57, quadrant: 'prime' },
-            { name: 'キヤノン電子', ticker: '7739.T', certainty: 78, upside: 55, score: 56, quadrant: 'speculative' },
-            { name: '日揮HD', ticker: '1963.T', certainty: 82, upside: 45, score: 55, quadrant: 'prime' },
-            { name: '日本電波工業', ticker: '6779.T', certainty: 80, upside: 48, score: 54, quadrant: 'prime' }
+        const stockData = [
+            { rank: 1, ticker: "7011.T", name: "三菱重工業", certainty: 95, upside: 45, total: 88, monopoly: 28, resilience: 19, synergy: 22, asymmetry: 12, capital: 7, quadrant: "prime", domain: "防衛", note: "防衛予算9兆円超、受注残1.87兆円", core_tech: "防衛装備品、原子力、航空宇宙", thesis: "日本最大の防衛企業。F-35/F-3、潜水艦、H3ロケット製造。防衛予算9.04兆円の最大受益者。受注残1.87兆円（過去最高）。" },
+            { rank: 2, ticker: "8035.T", name: "東京エレクトロン", certainty: 95, upside: 40, total: 86, monopoly: 27, resilience: 17, synergy: 22, asymmetry: 12, capital: 8, quadrant: "stable", domain: "AI", note: "TSMC熊本4nm計画変更で追加需要", core_tech: "半導体製造装置（コータ/デベロッパ）", thesis: "コータ/デベロッパで世界シェア87%。TSMC熊本第2工場4nm計画で追加需要。Q3決算2/6発表予定。" },
+            { rank: 3, ticker: "6954.T", name: "ファナック", certainty: 99, upside: 42, total: 85, monopoly: 26, resilience: 17, synergy: 20, asymmetry: 14, capital: 8, quadrant: "stable", domain: "ロボティクス", note: "Q3確認: 受注+38%、中国+87%", core_tech: "産業用ロボット、CNC、サーボモータ", thesis: "CNC世界シェア50%、産業用ロボット世界首位。Q3ロボット受注+38% YoY、中国売上+87%。ガイダンス+10%上方修正。確度99%。" },
+            { rank: 4, ticker: "6501.T", name: "日立製作所", certainty: 90, upside: 42, total: 82, monopoly: 25, resilience: 17, synergy: 21, asymmetry: 11, capital: 8, quadrant: "prime", domain: "エネルギー", note: "GE Vernova提携、BWRX-300", core_tech: "原子力（BWRX-300）、送配電、IT", thesis: "GE Vernovaと小型炉BWRX-300で提携。送配電（日立エナジー）でグリッド近代化需要。Lumada AIプラットフォーム。" },
+            { rank: 5, ticker: "9432.T", name: "NTT", certainty: 90, upside: 30, total: 80, monopoly: 25, resilience: 18, synergy: 18, asymmetry: 10, capital: 9, quadrant: "stable", domain: "サイバー", note: "IOWN光通信、政府向けサイバー", core_tech: "通信インフラ、IOWN、サイバーセキュリティ", thesis: "日本最大の通信事業者。IOWN次世代光通信で先行。政府向けサイバーセキュリティ。高配当・安定収益。" },
+            { rank: 6, ticker: "6506.T", name: "安川電機", certainty: 95, upside: 40, total: 79, monopoly: 24, resilience: 16, synergy: 19, asymmetry: 12, capital: 8, quadrant: "prime", domain: "ロボティクス", note: "サーボモータ世界首位、ヒューマノイド", core_tech: "サーボモータ、産業用ロボット", thesis: "サーボモータ世界シェア25%で首位。産業用ロボット世界4大メーカー。ヒューマノイドロボット開発中。" },
+            { rank: 7, ticker: "6701.T", name: "NEC", certainty: 95, upside: 45, total: 78, monopoly: 23, resilience: 18, synergy: 18, asymmetry: 11, capital: 8, quadrant: "prime", domain: "サイバー", note: "KDDI合弁「Protect.jp」設立", core_tech: "サイバーセキュリティ、防衛システム", thesis: "KDDI合弁「Protect.jp」設立で国内最大サイバーセキュリティ事業構築。防衛・宇宙システム。顔認証世界トップ。" },
+            { rank: 8, ticker: "7012.T", name: "川崎重工業", certainty: 90, upside: 42, total: 76, monopoly: 24, resilience: 17, synergy: 18, asymmetry: 10, capital: 7, quadrant: "prime", domain: "防衛", note: "潜水艦、P-1/C-2、水素", core_tech: "潜水艦、航空機、水素関連", thesis: "潜水艦製造の2社寡占（MHIと）。P-1哨戒機、C-2輸送機製造。水素サプライチェーンで先行。" },
+            { rank: 9, ticker: "7013.T", name: "IHI", certainty: 90, upside: 48, total: 75, monopoly: 23, resilience: 17, synergy: 18, asymmetry: 10, capital: 7, quadrant: "prime", domain: "エネルギー", note: "航空エンジン、SMR、アンモニア", core_tech: "航空エンジン、原子力、アンモニア燃焼", thesis: "GE/P&W向け航空エンジン部品。SMR・アンモニア燃焼技術。防衛（ミサイル、艦艇用ガスタービン）。" },
+            { rank: 10, ticker: "186A.T", name: "Astroscale HD", certainty: 85, upside: 80, total: 74, monopoly: 26, resilience: 14, synergy: 17, asymmetry: 13, capital: 4, quadrant: "speculative", domain: "宇宙", note: "デブリ除去世界リーダー", core_tech: "軌道上サービス、デブリ除去", thesis: "軌道上サービス世界リーダー。デブリ除去で唯一の実績。2027年JAXAデブリ除去ミッション予定。H3遅延リスクあり。" },
+            { rank: 11, ticker: "6920.T", name: "レーザーテック", certainty: 90, upside: 55, total: 73, monopoly: 28, resilience: 14, synergy: 18, asymmetry: 8, capital: 5, quadrant: "prime", domain: "AI", note: "EUVマスク検査装置100%シェア", core_tech: "EUVマスク検査装置", thesis: "EUVマスクブランクス検査装置で世界シェア100%。先端半導体製造に不可欠。TSMC・Samsung・Intel全てが顧客。" },
+            { rank: 12, ticker: "6857.T", name: "アドバンテスト", certainty: 90, upside: 45, total: 72, monopoly: 24, resilience: 16, synergy: 18, asymmetry: 7, capital: 7, quadrant: "stable", domain: "AI", note: "SoCテスター世界首位、HBMテスト", core_tech: "半導体テスター", thesis: "SoCテスター世界首位。AI半導体の複雑化でテスト時間増加、需要拡大。HBMテスト需要急増。" },
+            { rank: 13, ticker: "6861.T", name: "キーエンス", certainty: 92, upside: 35, total: 71, monopoly: 24, resilience: 16, synergy: 17, asymmetry: 6, capital: 8, quadrant: "stable", domain: "ロボティクス", note: "営業利益率50%超、ファブレス", core_tech: "FAセンサー、計測機器", thesis: "FA用センサーで世界トップクラス。営業利益率50%超。ファブレスモデルで高収益。自動化需要で成長継続。" },
+            { rank: 14, ticker: "7735.T", name: "SCREEN HD", certainty: 88, upside: 45, total: 70, monopoly: 25, resilience: 15, synergy: 17, asymmetry: 6, capital: 7, quadrant: "stable", domain: "AI", note: "ウェーハ洗浄装置世界首位", core_tech: "半導体洗浄装置", thesis: "ウェーハ洗浄装置世界首位。先端プロセスで洗浄工程増加。TSMC熊本・Rapidus向け受注期待。" },
+            { rank: 15, ticker: "6273.T", name: "SMC", certainty: 90, upside: 38, total: 69, monopoly: 26, resilience: 15, synergy: 15, asymmetry: 6, capital: 7, quadrant: "stable", domain: "ロボティクス", note: "空圧機器世界シェア40%", core_tech: "空圧機器、FA部品", thesis: "空圧機器世界シェア40%で圧倒的首位。半導体・EV・自動化全ての製造ラインに必須。" },
+            { rank: 16, ticker: "6503.T", name: "三菱電機", certainty: 88, upside: 40, total: 68, monopoly: 22, resilience: 17, synergy: 17, asymmetry: 6, capital: 6, quadrant: "stable", domain: "防衛", note: "レーダー、誘導装置、FA", core_tech: "防衛エレクトロニクス、FA", thesis: "防衛エレクトロニクス（レーダー、誘導装置）で強み。FA機器でもグローバル展開。" },
+            { rank: 17, ticker: "6702.T", name: "富士通", certainty: 85, upside: 42, total: 67, monopoly: 21, resilience: 17, synergy: 17, asymmetry: 6, capital: 6, quadrant: "prime", domain: "サイバー", note: "量子コンピュータ、富岳後継", core_tech: "量子コンピュータ、サイバーセキュリティ", thesis: "国産量子コンピュータ開発。政府向けサイバーセキュリティ。富岳後継機開発。" },
+            { rank: 18, ticker: "9433.T", name: "KDDI", certainty: 90, upside: 32, total: 66, monopoly: 22, resilience: 17, synergy: 16, asymmetry: 5, capital: 6, quadrant: "stable", domain: "サイバー", note: "NEC合弁「Protect.jp」", core_tech: "通信インフラ、サイバーセキュリティ", thesis: "NEC合弁「Protect.jp」設立で国内最大サイバーセキュリティ事業構築。5G・AI需要で成長。" },
+            { rank: 19, ticker: "6758.T", name: "ソニーグループ", certainty: 88, upside: 35, total: 65, monopoly: 24, resilience: 15, synergy: 16, asymmetry: 4, capital: 6, quadrant: "stable", domain: "AI", note: "CMOSセンサー世界50%シェア", core_tech: "イメージセンサー、宇宙光通信", thesis: "CMOSイメージセンサー世界シェア50%。車載・産業用で成長。ソニースペースコミュニケーションズで衛星光通信。" },
+            { rank: 20, ticker: "5631.T", name: "日本製鋼所", certainty: 85, upside: 50, total: 64, monopoly: 26, resilience: 16, synergy: 14, asymmetry: 4, capital: 4, quadrant: "prime", domain: "エネルギー", note: "原子力圧力容器世界80%シェア", core_tech: "原子力圧力容器、防衛", thesis: "原子力圧力容器で世界シェア80%。SMR向け小型圧力容器需要。防衛装備品も手掛ける。" },
+            { rank: 21, ticker: "6141.T", name: "DMG森精機", certainty: 85, upside: 42, total: 63, monopoly: 22, resilience: 15, synergy: 16, asymmetry: 5, capital: 5, quadrant: "prime", domain: "ロボティクス", note: "5軸加工機で世界トップクラス", core_tech: "工作機械、5軸加工", thesis: "5軸加工機で世界トップクラス。航空宇宙・防衛向け高精度加工で強み。" },
+            { rank: 22, ticker: "6645.T", name: "オムロン", certainty: 85, upside: 40, total: 62, monopoly: 21, resilience: 15, synergy: 16, asymmetry: 5, capital: 5, quadrant: "prime", domain: "ロボティクス", note: "協働ロボット、自律移動ロボット", core_tech: "FA制御機器、ロボティクス", thesis: "FA制御機器で世界トップクラス。協働ロボット、自律移動ロボットに注力。" },
+            { rank: 23, ticker: "6723.T", name: "ルネサスエレクトロニクス", certainty: 85, upside: 45, total: 61, monopoly: 22, resilience: 14, synergy: 16, asymmetry: 4, capital: 5, quadrant: "prime", domain: "AI", note: "車載マイコン世界首位級", core_tech: "車載半導体、マイコン", thesis: "車載マイコン世界首位級。EV・ADAS需要で成長。積極的M&Aで製品ポートフォリオ拡大。" },
+            { rank: 24, ticker: "6807.T", name: "日本航空電子工業", certainty: 85, upside: 45, total: 60, monopoly: 22, resilience: 16, synergy: 14, asymmetry: 4, capital: 4, quadrant: "prime", domain: "防衛", note: "F-35向け部品供給", core_tech: "コネクタ、防衛電子機器", thesis: "航空・防衛向け高信頼性コネクタ。F-35向け部品供給。民間航空機需要回復で恩恵。" },
+            { rank: 25, ticker: "6361.T", name: "荏原製作所", certainty: 85, upside: 42, total: 59, monopoly: 22, resilience: 15, synergy: 14, asymmetry: 4, capital: 4, quadrant: "prime", domain: "エネルギー", note: "原子力ポンプ国内独占、CMP", core_tech: "ポンプ、原子力機器", thesis: "原子力プラント向けポンプで国内独占。CMP装置（半導体研磨）でも成長。" },
+            { rank: 26, ticker: "9501.T", name: "東京電力HD", certainty: 70, upside: 65, total: 58, monopoly: 24, resilience: 12, synergy: 12, asymmetry: 6, capital: 4, quadrant: "speculative", domain: "エネルギー", note: "柏崎刈羽：30年前設定ミス判明", core_tech: "原子力発電、送配電", thesis: "柏崎刈羽原発7基保有。再稼働すれば収益大幅改善。ただし1/22に6号機で制御棒警報、30年前設定ミス発覚。確度低下。" },
+            { rank: 27, ticker: "7224.T", name: "新明和工業", certainty: 82, upside: 48, total: 57, monopoly: 24, resilience: 16, synergy: 11, asymmetry: 4, capital: 2, quadrant: "prime", domain: "防衛", note: "US-2救難飛行艇で世界唯一", core_tech: "飛行艇、特装車両", thesis: "US-2救難飛行艇で世界唯一。海上自衛隊向け独占供給。輸出解禁で成長余地。" },
+            { rank: 28, ticker: "7739.T", name: "キヤノン電子", certainty: 78, upside: 55, total: 56, monopoly: 20, resilience: 14, synergy: 14, asymmetry: 5, capital: 3, quadrant: "speculative", domain: "宇宙", note: "小型衛星、スペースワン出資", core_tech: "小型衛星、光学部品", thesis: "小型衛星開発（CE-SAT）。スペースワン（ロケット）出資。宇宙事業拡大中。" },
+            { rank: 29, ticker: "1963.T", name: "日揮HD", certainty: 82, upside: 45, total: 55, monopoly: 21, resilience: 14, synergy: 13, asymmetry: 4, capital: 3, quadrant: "prime", domain: "エネルギー", note: "LNGプラント世界トップ3", core_tech: "LNGプラント、水素", thesis: "LNGプラントEPCで世界トップ3。水素・アンモニア関連で成長。" },
+            { rank: 30, ticker: "6779.T", name: "日本電波工業", certainty: 80, upside: 48, total: 54, monopoly: 22, resilience: 13, synergy: 12, asymmetry: 4, capital: 3, quadrant: "prime", domain: "宇宙", note: "宇宙・防衛向け水晶デバイス", core_tech: "水晶デバイス、宇宙用部品", thesis: "高精度水晶デバイスで世界トップ。宇宙・防衛向け耐放射線デバイス。5G・6G需要。" },
         ];
 
-        const getColor = (quadrant) => {
-            switch(quadrant) {
-                case 'prime': return 'rgba(46, 204, 113, 0.8)';
-                case 'stable': return 'rgba(52, 152, 219, 0.8)';
-                case 'speculative': return 'rgba(231, 76, 60, 0.8)';
-                default: return 'rgba(149, 165, 166, 0.8)';
-            }
+        const allStocks = stockData;
+
+        const domainColors = {
+            "AI": "#a855f7",
+            "防衛": "#3b82f6",
+            "エネルギー": "#22c55e",
+            "ロボティクス": "#f97316",
+            "宇宙": "#06b6d4",
+            "サイバー": "#ec4899",
         };
 
-        new Chart(ctx, {
-            type: 'scatter',
-            data: {
-                datasets: [{
-                    label: 'Japan Top 30',
-                    data: companies.map(c => ({
-                        x: c.certainty,
-                        y: c.upside,
-                        name: c.name,
-                        ticker: c.ticker,
-                        score: c.score
-                    })),
-                    backgroundColor: companies.map(c => getColor(c.quadrant)),
-                    borderColor: companies.map(c => getColor(c.quadrant).replace('0.8', '1')),
-                    borderWidth: 2,
-                    pointRadius: companies.map(c => Math.max(8, c.score / 6)),
-                    pointHoverRadius: 12
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: '確実性 vs アップサイド マトリックス (Japan Top 30)',
-                        font: { size: 18 }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                const point = context.raw;
-                                return [
-                                    `${point.name} (${point.ticker})`,
-                                    `スコア: ${point.score}`,
-                                    `確度: ${point.x}%`,
-                                    `アップサイド: ${point.y}%`
-                                ];
-                            }
-                        }
-                    },
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: '確度 (%)',
-                            font: { size: 14 }
-                        },
-                        min: 65,
-                        max: 100,
-                        grid: {
-                            color: function(context) {
-                                if (context.tick.value === 85) {
-                                    return 'rgba(0,0,0,0.3)';
-                                }
-                                return 'rgba(0,0,0,0.1)';
-                            }
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'アップサイド (%)',
-                            font: { size: 14 }
-                        },
-                        min: 25,
-                        max: 85,
-                        grid: {
-                            color: function(context) {
-                                if (context.tick.value === 50) {
-                                    return 'rgba(0,0,0,0.3)';
-                                }
-                                return 'rgba(0,0,0,0.1)';
-                            }
-                        }
-                    }
-                }
-            }
-        });
+        const quadrantColors = {
+            prime: { bg: "rgba(34, 197, 94, 0.15)", border: "#22c55e", label: "最優先投資" },
+            stable: { bg: "rgba(59, 130, 246, 0.15)", border: "#3b82f6", label: "安定成長" },
+            speculative: { bg: "rgba(249, 115, 22, 0.15)", border: "#f97316", label: "投機的機会" },
+            avoid: { bg: "rgba(239, 68, 68, 0.15)", border: "#ef4444", label: "回避/様子見" },
+        };
+
+        function QuadrantChart() {
+            const [hoveredStock, setHoveredStock] = useState(null);
+            const [selectedDomain, setSelectedDomain] = useState("all");
+
+            const chartWidth = 900;
+            const chartHeight = 650;
+            const padding = 70;
+
+            const filteredStocks = selectedDomain === "all"
+                ? allStocks
+                : allStocks.filter(s => s.domain === selectedDomain);
+
+            const scaleX = (certainty) => padding + ((certainty - 65) / 40) * (chartWidth - 2 * padding);
+            const scaleY = (upside) => chartHeight - padding - ((upside - 25) / 60) * (chartHeight - 2 * padding);
+
+            const boundaryX = scaleX(85);
+            const boundaryY = scaleY(45);
+
+            const domains = [...new Set(allStocks.map(s => s.domain))];
+
+            const sortedStocks = [...filteredStocks].sort((a, b) => {
+                if (a.ticker === hoveredStock) return 1;
+                if (b.ticker === hoveredStock) return -1;
+                return 0;
+            });
+
+            const hoveredStockData = hoveredStock ? allStocks.find(s => s.ticker === hoveredStock) : null;
+
+            const quadrantCounts = {
+                prime: allStocks.filter(s => s.quadrant === "prime").length,
+                stable: allStocks.filter(s => s.quadrant === "stable").length,
+                speculative: allStocks.filter(s => s.quadrant === "speculative").length,
+                avoid: allStocks.filter(s => s.quadrant === "avoid").length,
+            };
+
+            return (
+                <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+                    <h1 style={{ textAlign: "center", fontSize: "24px", marginBottom: "8px", color: "#fff" }}>
+                        マルチドメイン・コンバージェンス分析 Japan Top30
+                    </h1>
+                    <h2 style={{ textAlign: "center", fontSize: "16px", marginBottom: "12px", color: "#94a3b8", fontWeight: "normal" }}>
+                        4象限マトリックス（確実性 x アップサイド）| 2026年1月29日
+                    </h2>
+
+                    <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                        <div style={{
+                            background: "linear-gradient(135deg, #f97316, #ea580c)",
+                            padding: "8px 20px",
+                            borderRadius: "20px",
+                            fontSize: "13px",
+                            fontWeight: "bold",
+                            boxShadow: "0 4px 15px rgba(249, 115, 22, 0.4)"
+                        }}>
+                            市場リスク 58/100（バランス型 -4）| 日経平均53,115円 | 日経VI 34
+                        </div>
+                    </div>
+
+                    <div style={{ display: "flex", justifyContent: "center", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
+                        <button
+                            onClick={() => setSelectedDomain("all")}
+                            style={{
+                                padding: "6px 14px",
+                                borderRadius: "20px",
+                                border: "none",
+                                background: selectedDomain === "all" ? "#fff" : "#334155",
+                                color: selectedDomain === "all" ? "#1a1a2e" : "#94a3b8",
+                                cursor: "pointer",
+                                fontSize: "12px",
+                                fontWeight: selectedDomain === "all" ? "bold" : "normal"
+                            }}
+                        >
+                            すべて
+                        </button>
+                        {domains.map(domain => (
+                            <button
+                                key={domain}
+                                onClick={() => setSelectedDomain(domain)}
+                                style={{
+                                    padding: "6px 14px",
+                                    borderRadius: "20px",
+                                    border: `1px solid ${domainColors[domain] || "#888"}`,
+                                    background: selectedDomain === domain ? (domainColors[domain] || "#888") : "transparent",
+                                    color: selectedDomain === domain ? "#fff" : (domainColors[domain] || "#888"),
+                                    cursor: "pointer",
+                                    fontSize: "12px"
+                                }}
+                            >
+                                {domain}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div style={{ position: "relative", background: "#0f172a", borderRadius: "12px", padding: "10px" }}>
+                        <svg width={chartWidth} height={chartHeight} style={{ display: "block", margin: "0 auto" }}>
+                            <rect x={padding} y={padding} width={boundaryX - padding} height={boundaryY - padding} fill={quadrantColors.speculative.bg} />
+                            <rect x={boundaryX} y={padding} width={chartWidth - padding - boundaryX} height={boundaryY - padding} fill={quadrantColors.prime.bg} />
+                            <rect x={padding} y={boundaryY} width={boundaryX - padding} height={chartHeight - padding - boundaryY} fill={quadrantColors.avoid.bg} />
+                            <rect x={boundaryX} y={boundaryY} width={chartWidth - padding - boundaryX} height={chartHeight - padding - boundaryY} fill={quadrantColors.stable.bg} />
+
+                            <text x={padding + 10} y={padding + 25} fill={quadrantColors.speculative.border} fontSize="13" fontWeight="bold">投機的機会</text>
+                            <text x={chartWidth - padding - 100} y={padding + 25} fill={quadrantColors.prime.border} fontSize="13" fontWeight="bold">最優先投資</text>
+                            <text x={padding + 10} y={chartHeight - padding - 10} fill={quadrantColors.avoid.border} fontSize="13" fontWeight="bold">回避/様子見</text>
+                            <text x={chartWidth - padding - 85} y={chartHeight - padding - 10} fill={quadrantColors.stable.border} fontSize="13" fontWeight="bold">安定成長</text>
+
+                            <line x1={boundaryX} y1={padding} x2={boundaryX} y2={chartHeight - padding} stroke="#475569" strokeDasharray="4" />
+                            <line x1={padding} y1={boundaryY} x2={chartWidth - padding} y2={boundaryY} stroke="#475569" strokeDasharray="4" />
+
+                            <rect x={padding} y={padding} width={chartWidth - 2 * padding} height={chartHeight - 2 * padding} fill="none" stroke="#475569" strokeWidth="1" />
+
+                            <text x={chartWidth / 2} y={chartHeight - 20} textAnchor="middle" fill="#94a3b8" fontSize="12">確実性→</text>
+                            <text x={20} y={chartHeight / 2} textAnchor="middle" fill="#94a3b8" fontSize="12" transform={`rotate(-90, 20, ${chartHeight / 2})`}>アップサイド→</text>
+
+                            {[65, 70, 75, 80, 85, 90, 95, 100].map(v => (
+                                <g key={`x-${v}`}>
+                                    <line x1={scaleX(v)} y1={chartHeight - padding} x2={scaleX(v)} y2={chartHeight - padding + 5} stroke="#64748b" />
+                                    <text x={scaleX(v)} y={chartHeight - padding + 18} textAnchor="middle" fill="#64748b" fontSize="10">{v}</text>
+                                </g>
+                            ))}
+                            {[25, 35, 45, 55, 65, 75, 85].map(v => (
+                                <g key={`y-${v}`}>
+                                    <line x1={padding - 5} y1={scaleY(v)} x2={padding} y2={scaleY(v)} stroke="#64748b" />
+                                    <text x={padding - 10} y={scaleY(v) + 4} textAnchor="end" fill="#64748b" fontSize="10">{v}</text>
+                                </g>
+                            ))}
+
+                            {sortedStocks.map((stock) => {
+                                const x = scaleX(stock.certainty);
+                                const y = scaleY(stock.upside);
+                                const color = domainColors[stock.domain] || "#888";
+                                const isHovered = hoveredStock === stock.ticker;
+                                const isTop1 = stock.rank === 1;
+                                const isHighMonopoly = stock.monopoly >= 26;
+
+                                return (
+                                    <g key={stock.ticker} style={{ cursor: "pointer" }}>
+                                        <circle
+                                            cx={x}
+                                            cy={y}
+                                            r={isTop1 ? 28 : isHighMonopoly ? 24 : isHovered ? 26 : 20}
+                                            fill={isTop1 ? `#ffd700cc` : `${color}${isHovered ? "dd" : "99"}`}
+                                            stroke={isTop1 ? "#ffd700" : isHighMonopoly ? "#ff6b6b" : isHovered ? "#fff" : color}
+                                            strokeWidth={isTop1 ? 3 : isHighMonopoly ? 2 : isHovered ? 3 : 1}
+                                            style={{ transition: "all 0.2s" }}
+                                            onMouseEnter={() => setHoveredStock(stock.ticker)}
+                                            onMouseLeave={() => setHoveredStock(null)}
+                                        />
+                                        <text x={x} y={y + 1} textAnchor="middle" dominantBaseline="middle" fill={isTop1 ? "#1a1a2e" : "#fff"} fontSize={isTop1 ? "8" : isHovered ? "8" : "7"} fontWeight="bold" style={{ pointerEvents: "none" }}>
+                                            {stock.ticker.replace('.T', '')}
+                                        </text>
+                                        <text x={x} y={y - (isTop1 ? 36 : 28)} textAnchor="middle" fill={isTop1 ? "#ffd700" : isHighMonopoly ? "#ff6b6b" : "#94a3b8"} fontSize={isTop1 ? "11" : "9"} fontWeight={isTop1 || isHighMonopoly ? "bold" : "normal"} style={{ pointerEvents: "none" }}>
+                                            {isTop1 ? "#1" : `#${stock.rank}`}
+                                        </text>
+                                    </g>
+                                );
+                            })}
+                        </svg>
+
+                        {hoveredStockData && (
+                            <div style={{
+                                position: "absolute",
+                                top: "20px",
+                                right: "20px",
+                                background: "#1e293b",
+                                border: "1px solid #475569",
+                                borderRadius: "8px",
+                                padding: "12px",
+                                minWidth: "320px",
+                                boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
+                                zIndex: 100
+                            }}>
+                                {(() => {
+                                    const stock = hoveredStockData;
+                                    const color = domainColors[stock.domain] || "#888";
+                                    const isHighMonopoly = stock.monopoly >= 26;
+                                    return (
+                                        <>
+                                            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                                <span style={{ fontSize: "18px", fontWeight: "bold", color: stock.rank === 1 ? "#ffd700" : color }}>
+                                                    {stock.ticker}
+                                                </span>
+                                                {stock.rank === 1 && <span style={{ background: "#ffd700", color: "#000", padding: "2px 6px", borderRadius: "4px", fontSize: "10px" }}>最高評価</span>}
+                                                {isHighMonopoly && <span style={{ background: "#ff6b6b", color: "#000", padding: "2px 6px", borderRadius: "4px", fontSize: "10px" }}>高独占</span>}
+                                            </div>
+                                            <div style={{ fontSize: "14px", color: "#94a3b8", marginBottom: "4px" }}>{stock.name}</div>
+                                            <div style={{ fontSize: "11px", color: "#64748b", marginBottom: "8px" }}>{stock.core_tech}</div>
+
+                                            <div style={{ fontSize: "12px", color: "#cbd5e1" }}>
+                                                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px" }}>
+                                                    <div>順位: #{stock.rank}</div>
+                                                    <div>総合: {stock.total}点</div>
+                                                    <div>確実性: {stock.certainty}</div>
+                                                    <div>アップサイド: {stock.upside}</div>
+                                                </div>
+
+                                                <div style={{ marginTop: "6px", paddingTop: "6px", borderTop: "1px solid #475569", fontSize: "11px" }}>
+                                                    <div>独占力: {stock.monopoly}/30 | 政策耐性: {stock.resilience}/20</div>
+                                                    <div>シナジー: {stock.synergy}/25 | 非対称性: {stock.asymmetry}/15</div>
+                                                    <div>資本効率: {stock.capital}/10</div>
+                                                </div>
+
+                                                <div style={{ marginTop: "6px", color: "#fbbf24" }}>{stock.note}</div>
+                                                <div style={{ marginTop: "4px", color: "#94a3b8", fontSize: "10px" }}>{stock.thesis}</div>
+                                            </div>
+                                        </>
+                                    );
+                                })()}
+                            </div>
+                        )}
+                    </div>
+
+                    <div style={{ display: "flex", justifyContent: "center", gap: "16px", marginTop: "16px", flexWrap: "wrap" }}>
+                        {Object.entries(domainColors).map(([domain, color]) => (
+                            <div key={domain} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                                <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: color }} />
+                                <span style={{ fontSize: "12px", color: "#94a3b8" }}>{domain}</span>
+                            </div>
+                        ))}
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                            <div style={{ width: "12px", height: "12px", borderRadius: "50%", border: "2px solid #ff6b6b", background: "transparent" }} />
+                            <span style={{ fontSize: "12px", color: "#ff6b6b" }}>高独占(26+)</span>
+                        </div>
+                    </div>
+
+                    <div style={{
+                        marginTop: "16px",
+                        background: "linear-gradient(135deg, rgba(255,215,0,0.15), rgba(34,197,94,0.1))",
+                        border: "2px solid #ffd700",
+                        borderRadius: "10px",
+                        padding: "14px"
+                    }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                            <span style={{ fontSize: "16px", fontWeight: "bold", color: "#ffd700" }}>Top 5: MHI(88) | TEL(86) | ファナック(85) | 日立(82) | NTT(80)</span>
+                        </div>
+                        <div style={{ fontSize: "12px", color: "#cbd5e1", lineHeight: "1.6" }}>
+                            本日の更新: ファナックQ3確認(受注+38%,中国+87%)、NEC-KDDI合弁「Protect.jp」、東京電力HD確度低下(柏崎刈羽設定ミス)、TSMC熊本4nm計画変更
+                        </div>
+                    </div>
+
+                    <div style={{
+                        marginTop: "16px",
+                        display: "grid",
+                        gridTemplateColumns: "repeat(3, 1fr)",
+                        gap: "12px"
+                    }}>
+                        <div style={{ background: "rgba(34, 197, 94, 0.2)", border: "1px solid #22c55e", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
+                            <div style={{ fontSize: "24px", fontWeight: "bold", color: "#22c55e" }}>{quadrantCounts.prime}</div>
+                            <div style={{ fontSize: "12px", color: "#94a3b8" }}>Prime（最優先）</div>
+                        </div>
+                        <div style={{ background: "rgba(59, 130, 246, 0.2)", border: "1px solid #3b82f6", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
+                            <div style={{ fontSize: "24px", fontWeight: "bold", color: "#3b82f6" }}>{quadrantCounts.stable}</div>
+                            <div style={{ fontSize: "12px", color: "#94a3b8" }}>Stable Growth</div>
+                        </div>
+                        <div style={{ background: "rgba(249, 115, 22, 0.2)", border: "1px solid #f97316", borderRadius: "8px", padding: "12px", textAlign: "center" }}>
+                            <div style={{ fontSize: "24px", fontWeight: "bold", color: "#f97316" }}>{quadrantCounts.speculative}</div>
+                            <div style={{ fontSize: "12px", color: "#94a3b8" }}>Speculative</div>
+                        </div>
+                    </div>
+
+                    <div style={{ textAlign: "center", marginTop: "20px", fontSize: "11px", color: "#64748b" }}>
+                        2026年1月29日 | マルチドメイン・コンバージェンス分析（日本市場特化版）
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<QuadrantChart />, document.getElementById('root'));
     </script>
 </body>
 </html>
