@@ -23,26 +23,27 @@
     <script type="text/babel">
         const { useState } = React;
 
+        // top30.jsonのjapan_top30から抽出（quadrantフィールドをそのまま使用）
         const japanStockData = [
             { rank: 1, ticker: "7011.T", name: "三菱重工業", certainty: 95, upside: 45, total: 88, monopoly: 28, resilience: 19, synergy: 22, asymmetry: 12, capital: 7, quadrant: "prime", domain: "防衛", note: "豪フリゲート受注、GPI 560億円", core_tech: "防衛装備品、原子力、航空宇宙", thesis: "防衛装備品契約首位。受注1.87兆円（3倍増）。日本初の主要水上艦輸出。" },
-            { rank: 2, ticker: "8035.T", name: "東京エレクトロン", certainty: 95, upside: 40, total: 86, monopoly: 27, resilience: 17, synergy: 22, asymmetry: 12, capital: 8, quadrant: "stable", domain: "AI", note: "コータ/デベロッパ世界首位90%、2/6決算", core_tech: "半導体製造装置", thesis: "コータ/デベロッパ世界首位。AI半導体需要継続。" },
-            { rank: 3, ticker: "6954.T", name: "ファナック", certainty: 99, upside: 42, total: 85, monopoly: 26, resilience: 17, synergy: 20, asymmetry: 14, capital: 8, quadrant: "stable", domain: "ロボティクス", note: "Q3ロボ受注+38%、中国+87%、ガイダンス+10%上方修正", core_tech: "CNC、産業用ロボット", thesis: "CNC世界首位。Q3決算で中国回復確認済み（99%確度）。" },
+            { rank: 2, ticker: "8035.T", name: "東京エレクトロン", certainty: 95, upside: 40, total: 86, monopoly: 27, resilience: 17, synergy: 22, asymmetry: 12, capital: 8, quadrant: "stable_growth", domain: "AI", note: "コータ/デベロッパ世界首位90%、2/6決算", core_tech: "半導体製造装置", thesis: "コータ/デベロッパ世界首位。AI半導体需要継続。" },
+            { rank: 3, ticker: "6954.T", name: "ファナック", certainty: 99, upside: 42, total: 85, monopoly: 26, resilience: 17, synergy: 20, asymmetry: 14, capital: 8, quadrant: "stable_growth", domain: "ロボティクス", note: "Q3ロボ受注+38%、中国+87%、ガイダンス+10%上方修正", core_tech: "CNC、産業用ロボット", thesis: "CNC世界首位。Q3決算で中国回復確認済み（99%確度）。" },
             { rank: 4, ticker: "6501.T", name: "日立製作所", certainty: 90, upside: 42, total: 82, monopoly: 25, resilience: 17, synergy: 21, asymmetry: 11, capital: 8, quadrant: "prime", domain: "エネルギー", note: "グリッド変圧器40%、BWRX-300", core_tech: "グリッド、HVDC、データセンター", thesis: "グリッド変圧器40%シェア。GE-Hitachi SMR。" },
-            { rank: 5, ticker: "9432.T", name: "NTT", certainty: 90, upside: 30, total: 80, monopoly: 25, resilience: 18, synergy: 18, asymmetry: 10, capital: 9, quadrant: "stable", domain: "AI", note: "DC 60%シェア、IOWN量子安全", core_tech: "通信インフラ、データセンター、IOWN", thesis: "国内DC60%シェア。IOWN量子安全技術統合。" },
+            { rank: 5, ticker: "9432.T", name: "NTT", certainty: 90, upside: 30, total: 80, monopoly: 25, resilience: 18, synergy: 18, asymmetry: 10, capital: 9, quadrant: "stable_growth", domain: "AI", note: "DC 60%シェア、IOWN量子安全", core_tech: "通信インフラ、データセンター、IOWN", thesis: "国内DC60%シェア。IOWN量子安全技術統合。" },
             { rank: 6, ticker: "6506.T", name: "安川電機", certainty: 95, upside: 40, total: 79, monopoly: 24, resilience: 16, synergy: 19, asymmetry: 12, capital: 8, quadrant: "prime", domain: "ロボティクス", note: "サーボモータ世界首位、中国回復恩恵", core_tech: "サーボモータ、産業用ロボット", thesis: "サーボモータ世界首位。ファナック中国回復と連動。" },
             { rank: 7, ticker: "6701.T", name: "NEC", certainty: 95, upside: 45, total: 78, monopoly: 23, resilience: 18, synergy: 18, asymmetry: 11, capital: 8, quadrant: "prime", domain: "サイバー", note: "Protect.jp設立、cotomi 90%自動化", core_tech: "サイバーセキュリティ、防衛システム", thesis: "KDDI合弁Protect.jp設立。国内最大サイバー事業。" },
             { rank: 8, ticker: "7012.T", name: "川崎重工業", certainty: 90, upside: 42, total: 76, monopoly: 24, resilience: 17, synergy: 18, asymmetry: 10, capital: 7, quadrant: "prime", domain: "防衛", note: "防衛契約2位、GCAP共同開発", core_tech: "防衛装備品、航空宇宙、ロボット", thesis: "防衛契約2位。GCAP共同開発参画。" },
             { rank: 9, ticker: "7013.T", name: "IHI", certainty: 90, upside: 48, total: 75, monopoly: 23, resilience: 17, synergy: 18, asymmetry: 10, capital: 7, quadrant: "prime", domain: "エネルギー", note: "NuScale $40M出資、受注残1.896兆円", core_tech: "航空エンジン、ロケット、SMR", thesis: "NuScale SMRパートナー。航空+69.9% YoY確認。" },
             { rank: 10, ticker: "186A.T", name: "Astroscale HD", certainty: 85, upside: 80, total: 74, monopoly: 26, resilience: 14, synergy: 17, asymmetry: 13, capital: 4, quadrant: "speculative", domain: "宇宙", note: "軌道上サービス唯一の実績", core_tech: "軌道上サービス、デブリ除去", thesis: "軌道上サービス世界リーダー。JAXA Kプログラム支援。" },
             { rank: 11, ticker: "6920.T", name: "レーザーテック", certainty: 90, upside: 55, total: 73, monopoly: 28, resilience: 14, synergy: 18, asymmetry: 8, capital: 5, quadrant: "prime", domain: "AI", note: "EUVマスク検査100%独占", core_tech: "EUVマスク検査装置", thesis: "EUVマスク検査装置で世界100%独占。先端半導体に不可欠。" },
-            { rank: 12, ticker: "6857.T", name: "アドバンテスト", certainty: 90, upside: 45, total: 72, monopoly: 24, resilience: 16, synergy: 18, asymmetry: 7, capital: 7, quadrant: "stable", domain: "AI", note: "半導体テスト装置世界首位級", core_tech: "SoCテスター、メモリテスター", thesis: "SoCテスター世界首位。AI複雑化でテスト時間増加。" },
-            { rank: 13, ticker: "6861.T", name: "キーエンス", certainty: 92, upside: 35, total: 71, monopoly: 24, resilience: 16, synergy: 17, asymmetry: 6, capital: 8, quadrant: "stable", domain: "ロボティクス", note: "FAセンサー首位、営業利益率50%超", core_tech: "FAセンサー、計測機器", thesis: "FA用センサー世界トップ。営業利益率50%超。" },
-            { rank: 14, ticker: "7735.T", name: "SCREEN HD", certainty: 88, upside: 45, total: 70, monopoly: 25, resilience: 15, synergy: 17, asymmetry: 6, capital: 7, quadrant: "stable", domain: "AI", note: "半導体洗浄装置世界首位60%", core_tech: "ウェーハ洗浄装置", thesis: "ウェーハ洗浄装置世界首位。先端プロセス需要。" },
-            { rank: 15, ticker: "6273.T", name: "SMC", certainty: 90, upside: 38, total: 69, monopoly: 26, resilience: 15, synergy: 15, asymmetry: 6, capital: 7, quadrant: "stable", domain: "ロボティクス", note: "空圧機器40%世界首位", core_tech: "空圧機器、FA部品", thesis: "空圧機器世界40%シェアで圧倒的首位。" },
-            { rank: 16, ticker: "6503.T", name: "三菱電機", certainty: 88, upside: 40, total: 68, monopoly: 22, resilience: 17, synergy: 17, asymmetry: 6, capital: 6, quadrant: "stable", domain: "防衛", note: "防衛エレクトロニクス、レーダー", core_tech: "防衛エレクトロニクス、FA", thesis: "防衛エレクトロニクス（レーダー、誘導装置）で強み。" },
+            { rank: 12, ticker: "6857.T", name: "アドバンテスト", certainty: 90, upside: 45, total: 72, monopoly: 24, resilience: 16, synergy: 18, asymmetry: 7, capital: 7, quadrant: "stable_growth", domain: "AI", note: "半導体テスト装置世界首位級", core_tech: "SoCテスター、メモリテスター", thesis: "SoCテスター世界首位。AI複雑化でテスト時間増加。" },
+            { rank: 13, ticker: "6861.T", name: "キーエンス", certainty: 92, upside: 35, total: 71, monopoly: 24, resilience: 16, synergy: 17, asymmetry: 6, capital: 8, quadrant: "stable_growth", domain: "ロボティクス", note: "FAセンサー首位、営業利益率50%超", core_tech: "FAセンサー、計測機器", thesis: "FA用センサー世界トップ。営業利益率50%超。" },
+            { rank: 14, ticker: "7735.T", name: "SCREEN HD", certainty: 88, upside: 45, total: 70, monopoly: 25, resilience: 15, synergy: 17, asymmetry: 6, capital: 7, quadrant: "stable_growth", domain: "AI", note: "半導体洗浄装置世界首位60%", core_tech: "ウェーハ洗浄装置", thesis: "ウェーハ洗浄装置世界首位。先端プロセス需要。" },
+            { rank: 15, ticker: "6273.T", name: "SMC", certainty: 90, upside: 38, total: 69, monopoly: 26, resilience: 15, synergy: 15, asymmetry: 6, capital: 7, quadrant: "stable_growth", domain: "ロボティクス", note: "空圧機器40%世界首位", core_tech: "空圧機器、FA部品", thesis: "空圧機器世界40%シェアで圧倒的首位。" },
+            { rank: 16, ticker: "6503.T", name: "三菱電機", certainty: 88, upside: 40, total: 68, monopoly: 22, resilience: 17, synergy: 17, asymmetry: 6, capital: 6, quadrant: "stable_growth", domain: "防衛", note: "防衛エレクトロニクス、レーダー", core_tech: "防衛エレクトロニクス、FA", thesis: "防衛エレクトロニクス（レーダー、誘導装置）で強み。" },
             { rank: 17, ticker: "6702.T", name: "富士通", certainty: 85, upside: 42, total: 67, monopoly: 21, resilience: 17, synergy: 17, asymmetry: 6, capital: 6, quadrant: "prime", domain: "サイバー", note: "量子コンピュータ、政府向けIT", core_tech: "量子コンピュータ、サイバーセキュリティ", thesis: "国産量子コンピュータ開発。政府向けサイバー。" },
-            { rank: 18, ticker: "9433.T", name: "KDDI", certainty: 90, upside: 32, total: 66, monopoly: 22, resilience: 17, synergy: 16, asymmetry: 5, capital: 6, quadrant: "stable", domain: "サイバー", note: "NEC合弁Protect.jp、5G・AI需要", core_tech: "通信インフラ、サイバーセキュリティ", thesis: "NEC合弁Protect.jp設立。国内最大サイバー事業。" },
-            { rank: 19, ticker: "6758.T", name: "ソニーグループ", certainty: 88, upside: 35, total: 65, monopoly: 24, resilience: 15, synergy: 16, asymmetry: 4, capital: 6, quadrant: "stable", domain: "AI", note: "イメージセンサー50%世界首位", core_tech: "CMOSイメージセンサー、宇宙光通信", thesis: "CMOSイメージセンサー50%シェア。車載・産業用成長。" },
+            { rank: 18, ticker: "9433.T", name: "KDDI", certainty: 90, upside: 32, total: 66, monopoly: 22, resilience: 17, synergy: 16, asymmetry: 5, capital: 6, quadrant: "stable_growth", domain: "サイバー", note: "NEC合弁Protect.jp、5G・AI需要", core_tech: "通信インフラ、サイバーセキュリティ", thesis: "NEC合弁Protect.jp設立。国内最大サイバー事業。" },
+            { rank: 19, ticker: "6758.T", name: "ソニーグループ", certainty: 88, upside: 35, total: 65, monopoly: 24, resilience: 15, synergy: 16, asymmetry: 4, capital: 6, quadrant: "stable_growth", domain: "AI", note: "イメージセンサー50%世界首位", core_tech: "CMOSイメージセンサー、宇宙光通信", thesis: "CMOSイメージセンサー50%シェア。車載・産業用成長。" },
             { rank: 20, ticker: "5631.T", name: "日本製鋼所", certainty: 85, upside: 50, total: 64, monopoly: 26, resilience: 16, synergy: 14, asymmetry: 4, capital: 4, quadrant: "prime", domain: "エネルギー", note: "原子力圧力容器世界80%シェア", core_tech: "原子力圧力容器、防衛", thesis: "原子力圧力容器で世界シェア80%。SMR需要。" },
             { rank: 21, ticker: "6141.T", name: "DMG森精機", certainty: 85, upside: 42, total: 63, monopoly: 22, resilience: 15, synergy: 16, asymmetry: 5, capital: 5, quadrant: "prime", domain: "ロボティクス", note: "5軸加工機で世界トップクラス", core_tech: "工作機械、5軸加工", thesis: "5軸加工機で世界トップ。航空宇宙・防衛向け。" },
             { rank: 22, ticker: "6645.T", name: "オムロン", certainty: 85, upside: 40, total: 62, monopoly: 21, resilience: 15, synergy: 16, asymmetry: 5, capital: 5, quadrant: "prime", domain: "ロボティクス", note: "FA制御機器、協働ロボット", core_tech: "FA制御機器、ロボティクス", thesis: "FA制御機器で世界トップクラス。" },
@@ -67,7 +68,7 @@
 
         const quadrantColors = {
             prime: { bg: "rgba(34, 197, 94, 0.15)", border: "#22c55e", label: "最優先投資" },
-            stable: { bg: "rgba(59, 130, 246, 0.15)", border: "#3b82f6", label: "安定成長" },
+            stable_growth: { bg: "rgba(59, 130, 246, 0.15)", border: "#3b82f6", label: "安定成長" },
             speculative: { bg: "rgba(249, 115, 22, 0.15)", border: "#f97316", label: "投機的機会" },
             avoid: { bg: "rgba(239, 68, 68, 0.15)", border: "#ef4444", label: "回避/様子見" },
         };
@@ -84,11 +85,14 @@
                 ? japanStockData
                 : japanStockData.filter(s => s.domain === selectedDomain);
 
+            // 軸のスケール: certainty 70-100%, upside 25-85%
             const scaleX = (certainty) => padding + ((certainty - 70) / 30) * (chartWidth - 2 * padding);
-            const scaleY = (upside) => chartHeight - padding - ((upside - 30) / 55) * (chartHeight - 2 * padding);
+            const scaleY = (upside) => chartHeight - padding - ((upside - 25) / 60) * (chartHeight - 2 * padding);
 
-            const boundaryX = scaleX(80);
-            const boundaryY = scaleY(58);
+            // 象限境界: certainty=88%, upside=43% で分割
+            // これにより prime(14社)が右上に、stable_growth(12社)が右下に配置される
+            const boundaryX = scaleX(88);
+            const boundaryY = scaleY(43);
 
             const domains = [...new Set(japanStockData.map(s => s.domain))];
 
@@ -100,9 +104,10 @@
 
             const hoveredStockData = hoveredStock ? japanStockData.find(s => s.ticker === hoveredStock) : null;
 
+            // 実際のデータのquadrantフィールドから集計
             const quadrantCounts = {
                 prime: japanStockData.filter(s => s.quadrant === "prime").length,
-                stable: japanStockData.filter(s => s.quadrant === "stable").length,
+                stable_growth: japanStockData.filter(s => s.quadrant === "stable_growth").length,
                 speculative: japanStockData.filter(s => s.quadrant === "speculative").length,
             };
 
@@ -165,55 +170,64 @@
 
                     <div style={{ position: "relative", background: "#0f172a", borderRadius: "12px", padding: "10px" }}>
                         <svg width={chartWidth} height={chartHeight} style={{ display: "block", margin: "0 auto" }}>
+                            {/* 4象限の背景 */}
                             <rect x={padding} y={padding} width={boundaryX - padding} height={boundaryY - padding} fill={quadrantColors.speculative.bg} />
                             <rect x={boundaryX} y={padding} width={chartWidth - padding - boundaryX} height={boundaryY - padding} fill={quadrantColors.prime.bg} />
                             <rect x={padding} y={boundaryY} width={boundaryX - padding} height={chartHeight - padding - boundaryY} fill={quadrantColors.avoid.bg} />
-                            <rect x={boundaryX} y={boundaryY} width={chartWidth - padding - boundaryX} height={chartHeight - padding - boundaryY} fill={quadrantColors.stable.bg} />
+                            <rect x={boundaryX} y={boundaryY} width={chartWidth - padding - boundaryX} height={chartHeight - padding - boundaryY} fill={quadrantColors.stable_growth.bg} />
 
+                            {/* 象限ラベル */}
                             <text x={padding + 10} y={padding + 25} fill={quadrantColors.speculative.border} fontSize="13" fontWeight="bold">投機的機会 ({quadrantCounts.speculative})</text>
-                            <text x={chartWidth - padding - 130} y={padding + 25} fill={quadrantColors.prime.border} fontSize="13" fontWeight="bold">最優先投資 ({quadrantCounts.prime})</text>
+                            <text x={chartWidth - padding - 140} y={padding + 25} fill={quadrantColors.prime.border} fontSize="13" fontWeight="bold">最優先投資 ({quadrantCounts.prime})</text>
                             <text x={padding + 10} y={chartHeight - padding - 10} fill={quadrantColors.avoid.border} fontSize="13" fontWeight="bold">回避/様子見</text>
-                            <text x={chartWidth - padding - 120} y={chartHeight - padding - 10} fill={quadrantColors.stable.border} fontSize="13" fontWeight="bold">安定成長 ({quadrantCounts.stable})</text>
+                            <text x={chartWidth - padding - 130} y={chartHeight - padding - 10} fill={quadrantColors.stable_growth.border} fontSize="13" fontWeight="bold">安定成長 ({quadrantCounts.stable_growth})</text>
 
+                            {/* 境界線 */}
                             <line x1={boundaryX} y1={padding} x2={boundaryX} y2={chartHeight - padding} stroke="#475569" strokeDasharray="4" />
                             <line x1={padding} y1={boundaryY} x2={chartWidth - padding} y2={boundaryY} stroke="#475569" strokeDasharray="4" />
 
+                            {/* 外枠 */}
                             <rect x={padding} y={padding} width={chartWidth - 2 * padding} height={chartHeight - 2 * padding} fill="none" stroke="#475569" strokeWidth="1" />
 
+                            {/* 軸ラベル */}
                             <text x={chartWidth / 2} y={chartHeight - 20} textAnchor="middle" fill="#94a3b8" fontSize="12">確実性 (%) →</text>
                             <text x={20} y={chartHeight / 2} textAnchor="middle" fill="#94a3b8" fontSize="12" transform={`rotate(-90, 20, ${chartHeight / 2})`}>アップサイド (%) →</text>
 
-                            {[70, 75, 80, 85, 90, 95, 100].map(v => (
+                            {/* X軸目盛り */}
+                            {[70, 75, 80, 85, 88, 90, 95, 100].map(v => (
                                 <g key={`x-${v}`}>
                                     <line x1={scaleX(v)} y1={chartHeight - padding} x2={scaleX(v)} y2={chartHeight - padding + 5} stroke="#64748b" />
-                                    <text x={scaleX(v)} y={chartHeight - padding + 18} textAnchor="middle" fill="#64748b" fontSize="10">{v}</text>
+                                    <text x={scaleX(v)} y={chartHeight - padding + 18} textAnchor="middle" fill={v === 88 ? "#22c55e" : "#64748b"} fontSize="10" fontWeight={v === 88 ? "bold" : "normal"}>{v}</text>
                                 </g>
                             ))}
-                            {[30, 40, 50, 58, 70, 80].map(v => (
+                            {/* Y軸目盛り */}
+                            {[25, 35, 43, 50, 60, 70, 80].map(v => (
                                 <g key={`y-${v}`}>
                                     <line x1={padding - 5} y1={scaleY(v)} x2={padding} y2={scaleY(v)} stroke="#64748b" />
-                                    <text x={padding - 10} y={scaleY(v) + 4} textAnchor="end" fill="#64748b" fontSize="10">{v}</text>
+                                    <text x={padding - 10} y={scaleY(v) + 4} textAnchor="end" fill={v === 43 ? "#22c55e" : "#64748b"} fontSize="10" fontWeight={v === 43 ? "bold" : "normal"}>{v}</text>
                                 </g>
                             ))}
 
+                            {/* 銘柄プロット */}
                             {sortedStocks.map((stock) => {
                                 const x = scaleX(stock.certainty);
                                 const y = scaleY(stock.upside);
                                 const color = domainColors[stock.domain] || "#888";
                                 const isHovered = hoveredStock === stock.ticker;
                                 const isTop1 = stock.rank === 1;
-                                const isHighMonopoly = stock.monopoly >= 26;
+                                const isPrime = stock.quadrant === "prime";
                                 const isHighCertainty = stock.certainty >= 99;
+                                const isHighMonopoly = stock.monopoly >= 26;
 
                                 return (
                                     <g key={stock.ticker} style={{ cursor: "pointer" }}>
                                         <circle
                                             cx={x}
                                             cy={y}
-                                            r={isTop1 ? 28 : isHighMonopoly ? 24 : isHovered ? 26 : 20}
-                                            fill={isTop1 ? `#ffd700cc` : isHighCertainty ? `#00ff88cc` : `${color}${isHovered ? "dd" : "99"}`}
-                                            stroke={isTop1 ? "#ffd700" : isHighCertainty ? "#00ff88" : isHighMonopoly ? "#ff6b6b" : isHovered ? "#fff" : color}
-                                            strokeWidth={isTop1 ? 3 : isHighCertainty ? 3 : isHighMonopoly ? 2 : isHovered ? 3 : 1}
+                                            r={isTop1 ? 28 : isPrime ? 22 : isHovered ? 24 : 18}
+                                            fill={isTop1 ? `#ffd700cc` : isHighCertainty ? `#00ff88cc` : isPrime ? `${color}cc` : `${color}88`}
+                                            stroke={isTop1 ? "#ffd700" : isHighCertainty ? "#00ff88" : isPrime ? "#22c55e" : isHovered ? "#fff" : color}
+                                            strokeWidth={isTop1 ? 3 : isPrime ? 2 : isHovered ? 3 : 1}
                                             style={{ transition: "all 0.2s" }}
                                             onMouseEnter={() => setHoveredStock(stock.ticker)}
                                             onMouseLeave={() => setHoveredStock(null)}
@@ -221,7 +235,7 @@
                                         <text x={x} y={y + 1} textAnchor="middle" dominantBaseline="middle" fill={isTop1 ? "#1a1a2e" : "#fff"} fontSize={isTop1 ? "9" : isHovered ? "9" : "8"} fontWeight="bold" style={{ pointerEvents: "none" }}>
                                             {stock.ticker.replace('.T', '')}
                                         </text>
-                                        <text x={x} y={y - (isTop1 ? 36 : 28)} textAnchor="middle" fill={isTop1 ? "#ffd700" : isHighCertainty ? "#00ff88" : isHighMonopoly ? "#ff6b6b" : "#94a3b8"} fontSize={isTop1 ? "11" : "9"} fontWeight={isTop1 || isHighMonopoly || isHighCertainty ? "bold" : "normal"} style={{ pointerEvents: "none" }}>
+                                        <text x={x} y={y - (isTop1 ? 36 : isPrime ? 30 : 26)} textAnchor="middle" fill={isTop1 ? "#ffd700" : isHighCertainty ? "#00ff88" : isPrime ? "#22c55e" : "#94a3b8"} fontSize={isTop1 ? "11" : "9"} fontWeight={isTop1 || isPrime ? "bold" : "normal"} style={{ pointerEvents: "none" }}>
                                             {isTop1 ? "#1" : `#${stock.rank}`}
                                         </text>
                                     </g>
@@ -229,6 +243,7 @@
                             })}
                         </svg>
 
+                        {/* ホバー時の詳細表示 */}
                         {hoveredStockData && (
                             <div style={{
                                 position: "absolute",
@@ -245,7 +260,7 @@
                                 {(() => {
                                     const stock = hoveredStockData;
                                     const color = domainColors[stock.domain] || "#888";
-                                    const isHighMonopoly = stock.monopoly >= 26;
+                                    const isPrime = stock.quadrant === "prime";
                                     const isHighCertainty = stock.certainty >= 99;
                                     return (
                                         <>
@@ -254,8 +269,8 @@
                                                     {stock.ticker}
                                                 </span>
                                                 {stock.rank === 1 && <span style={{ background: "#ffd700", color: "#000", padding: "2px 6px", borderRadius: "4px", fontSize: "10px" }}>最高評価</span>}
+                                                {isPrime && <span style={{ background: "#22c55e", color: "#000", padding: "2px 6px", borderRadius: "4px", fontSize: "10px" }}>Prime</span>}
                                                 {isHighCertainty && <span style={{ background: "#00ff88", color: "#000", padding: "2px 6px", borderRadius: "4px", fontSize: "10px" }}>確度99%</span>}
-                                                {isHighMonopoly && <span style={{ background: "#ff6b6b", color: "#000", padding: "2px 6px", borderRadius: "4px", fontSize: "10px" }}>高独占</span>}
                                             </div>
                                             <div style={{ fontSize: "14px", color: "#94a3b8", marginBottom: "4px" }}>{stock.name}</div>
                                             <div style={{ fontSize: "11px", color: "#64748b", marginBottom: "8px" }}>{stock.core_tech}</div>
@@ -284,6 +299,7 @@
                         )}
                     </div>
 
+                    {/* 凡例 */}
                     <div style={{ display: "flex", justifyContent: "center", gap: "16px", marginTop: "16px", flexWrap: "wrap" }}>
                         {Object.entries(domainColors).map(([domain, color]) => (
                             <div key={domain} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
@@ -292,15 +308,16 @@
                             </div>
                         ))}
                         <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                            <div style={{ width: "12px", height: "12px", borderRadius: "50%", border: "2px solid #22c55e", background: "transparent" }} />
+                            <span style={{ fontSize: "12px", color: "#22c55e" }}>Prime銘柄</span>
+                        </div>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                             <div style={{ width: "12px", height: "12px", borderRadius: "50%", border: "2px solid #00ff88", background: "transparent" }} />
                             <span style={{ fontSize: "12px", color: "#00ff88" }}>確度99%</span>
                         </div>
-                        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                            <div style={{ width: "12px", height: "12px", borderRadius: "50%", border: "2px solid #ff6b6b", background: "transparent" }} />
-                            <span style={{ fontSize: "12px", color: "#ff6b6b" }}>高独占(26+)</span>
-                        </div>
                     </div>
 
+                    {/* サマリーボックス */}
                     <div style={{
                         marginTop: "16px",
                         background: "linear-gradient(135deg, rgba(255,215,0,0.15), rgba(34,197,94,0.1))",
@@ -315,6 +332,9 @@
                         </div>
                         <div style={{ fontSize: "12px", color: "#cbd5e1", lineHeight: "1.6" }}>
                             本日の重要更新: ファナックQ3決算(+38%、中国+87%、ガイダンス+10%上方修正)、三菱重工豪フリゲート・GPI契約、NEC Protect.jp設立、柏崎刈羽30年設定ミス発覚
+                        </div>
+                        <div style={{ fontSize: "11px", color: "#94a3b8", marginTop: "6px" }}>
+                            象限分布: Prime {quadrantCounts.prime}社 | 安定成長 {quadrantCounts.stable_growth}社 | 投機的 {quadrantCounts.speculative}社
                         </div>
                     </div>
 
