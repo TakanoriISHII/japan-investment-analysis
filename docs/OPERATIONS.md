@@ -622,10 +622,14 @@ git commit "統合完了: N社、M情報項目、stable更新"
 │ 第5部: 大型投資パイプライン                                              │
 │   └── ハイパースケーラーCapEx、防衛予算、主要プロジェクト              │
 ├─────────────────────────────────────────────────────────────────────────┤
-│ 第6部: Top 30 銘柄詳細【必須】                                           │
-│   ├── 象限別分布                                                        │
-│   ├── Top 30 一覧（5軸スコア内訳 + 今回の更新）【必須】                │
-│   └── ウォッチリスト（ステータス付き）【必須】                         │
+│ 第6部: Japan Top 30 銘柄詳細【必須】                                     │
+│   ├── 4象限別サマリー（Prime/Stable Growth/Speculative/Avoid件数）     │
+│   ├── Japan Top 30 一覧表（全30社、5軸スコア内訳）【必須】             │
+│   │     Rank | Ticker | 銘柄名 | スコア | 独占 | 耐性 | シナジー |     │
+│   │     非対称 | 資本 | 確度 | UP | 象限                                │
+│   ├── ウォッチリスト（ステータス付き）【必須】                         │
+│   ├── ドメイン別分布（防衛/AI/エネルギー/ロボティクス/宇宙/サイバー） │
+│   └── 今回の主要変更点（銘柄、変更内容、影響）                         │
 ├─────────────────────────────────────────────────────────────────────────┤
 │ 第7部: 重大な発見【必須】                                                │
 │   └── 継続監視事項 + 新規発見事項（発見日、詳細、影響、ステータス）    │
@@ -683,10 +687,49 @@ git commit "統合完了: N社、M情報項目、stable更新"
      └────────────────────────────────────────┘
 ```
 
-#### 7-4. HTML可視化
+#### 7-4. HTML可視化（quadrant_chart.html）
 
 - reports/[TODAY]/quadrant_chart.html
 - 4象限マトリックス（確実性 × アップサイド）
+
+**【必須】React/JSX形式で以下を含むこと:**
+
+```html
+<!-- 必須構成 -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // Japan Top 30全銘柄のstockData配列
+        // ドメインフィルター機能（useState）
+        // ホバーで詳細表示（5軸評価、投資テーゼ）
+        // 象限サマリーボックス（Prime/Stable Growth/Speculative）
+    </script>
+</body>
+</html>
+```
+
+**必須機能:**
+1. **Japan Top 30全銘柄**: 30社全ての`stockData`配列を含む
+2. **インタラクティブ**: ドメイン別フィルタリング、ホバーで詳細表示
+3. **視覚的ハイライト**: #1（金色）、高独占26+（赤枠）
+4. **象限カウント**: Prime/Stable Growth/Speculative/Avoid の件数表示
+5. **本日の更新**: 重要な変更点をサマリーボックスで表示
+
+**stockData配列の各要素に必要なフィールド:**
+```javascript
+{
+  rank, ticker, name, certainty, upside, total,
+  monopoly, resilience, synergy, asymmetry, capital,
+  quadrant, domain, note, core_tech, thesis
+}
+```
 
 #### 7-5. latest/にコピー
 
