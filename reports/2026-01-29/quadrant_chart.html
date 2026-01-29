@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japan Top 10 - 4象限チャート (2026-01-29)</title>
+    <title>Japan Top 30 - 4象限チャート (2026-01-29)</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -12,7 +12,7 @@
             background-color: #f5f5f5;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         h1 {
@@ -25,6 +25,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            height: 600px;
         }
         .legend {
             display: flex;
@@ -53,9 +54,10 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
+            font-size: 0.9em;
         }
         th, td {
-            padding: 10px;
+            padding: 8px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
@@ -66,12 +68,43 @@
         .stable { color: #3498db; font-weight: bold; }
         .speculative { color: #e74c3c; font-weight: bold; }
         .updated { background-color: #fff3cd; }
+        .quadrant-summary {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .quadrant-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+        }
+        .quadrant-box.prime-box { background: #2ecc71; }
+        .quadrant-box.stable-box { background: #3498db; }
+        .quadrant-box.speculative-box { background: #e74c3c; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Japan Top 10 - 4象限マトリックス</h1>
+        <h1>Japan Top 30 - 4象限マトリックス</h1>
         <p style="text-align: center; color: #666;">2026年1月29日 | 市場リスクスコア: 58/100 (バランス型)</p>
+
+        <div class="quadrant-summary">
+            <div class="quadrant-box prime-box">
+                <h3>Prime: 18社</h3>
+                <p>高確実性 × 高アップサイド</p>
+            </div>
+            <div class="quadrant-box stable-box">
+                <h3>Stable Growth: 9社</h3>
+                <p>高確実性 × 安定リターン</p>
+            </div>
+            <div class="quadrant-box speculative-box">
+                <h3>Speculative: 3社</h3>
+                <p>低確実性 × 高アップサイド</p>
+            </div>
+        </div>
 
         <div class="chart-container">
             <canvas id="quadrantChart"></canvas>
@@ -93,7 +126,7 @@
         </div>
 
         <div class="summary">
-            <h2>Japan Top 10 企業一覧</h2>
+            <h2>Japan Top 30 企業一覧</h2>
             <table>
                 <thead>
                     <tr>
@@ -102,105 +135,46 @@
                         <th>企業名</th>
                         <th>スコア</th>
                         <th>確度</th>
-                        <th>アップサイド</th>
+                        <th>UP</th>
                         <th>象限</th>
+                        <th>主要ドメイン</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>7011.T</td>
-                        <td>三菱重工業</td>
-                        <td>88</td>
-                        <td>95%</td>
-                        <td>45%</td>
-                        <td class="prime">Prime</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>8035.T</td>
-                        <td>東京エレクトロン</td>
-                        <td>86</td>
-                        <td>95%</td>
-                        <td>40%</td>
-                        <td class="stable">Stable Growth</td>
-                    </tr>
-                    <tr class="updated">
-                        <td>3</td>
-                        <td>6954.T</td>
-                        <td>ファナック</td>
-                        <td><strong>85 ↑</strong></td>
-                        <td><strong>99%</strong></td>
-                        <td><strong>42% ↑</strong></td>
-                        <td class="stable">Stable Growth</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>6501.T</td>
-                        <td>日立製作所</td>
-                        <td>82</td>
-                        <td>90%</td>
-                        <td>42%</td>
-                        <td class="prime">Prime</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>9432.T</td>
-                        <td>NTT</td>
-                        <td>80</td>
-                        <td>90%</td>
-                        <td>30%</td>
-                        <td class="stable">Stable Growth</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>6506.T</td>
-                        <td>安川電機</td>
-                        <td>79</td>
-                        <td>95%</td>
-                        <td>40%</td>
-                        <td class="prime">Prime</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>6701.T</td>
-                        <td>NEC</td>
-                        <td>78</td>
-                        <td>95%</td>
-                        <td>45%</td>
-                        <td class="prime">Prime</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>7012.T</td>
-                        <td>川崎重工業</td>
-                        <td>76</td>
-                        <td>90%</td>
-                        <td>42%</td>
-                        <td class="prime">Prime</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>7013.T</td>
-                        <td>IHI</td>
-                        <td>75</td>
-                        <td>90%</td>
-                        <td>48%</td>
-                        <td class="prime">Prime</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>186A.T</td>
-                        <td>Astroscale HD</td>
-                        <td>74</td>
-                        <td>85%</td>
-                        <td>80%</td>
-                        <td class="speculative">Speculative</td>
-                    </tr>
+                    <tr><td>1</td><td>7011.T</td><td>三菱重工業</td><td>88</td><td>95%</td><td>45%</td><td class="prime">Prime</td><td>防衛/エネルギー/宇宙</td></tr>
+                    <tr><td>2</td><td>8035.T</td><td>東京エレクトロン</td><td>86</td><td>95%</td><td>40%</td><td class="stable">Stable</td><td>AI/半導体</td></tr>
+                    <tr class="updated"><td>3</td><td>6954.T</td><td>ファナック</td><td><strong>85 ↑</strong></td><td><strong>99%</strong></td><td>42%</td><td class="stable">Stable</td><td>ロボティクス</td></tr>
+                    <tr><td>4</td><td>6501.T</td><td>日立製作所</td><td>82</td><td>90%</td><td>42%</td><td class="prime">Prime</td><td>エネルギー/AI</td></tr>
+                    <tr><td>5</td><td>9432.T</td><td>NTT</td><td>80</td><td>90%</td><td>30%</td><td class="stable">Stable</td><td>サイバー/AI</td></tr>
+                    <tr><td>6</td><td>6506.T</td><td>安川電機</td><td>79</td><td>95%</td><td>40%</td><td class="prime">Prime</td><td>ロボティクス</td></tr>
+                    <tr class="updated"><td>7</td><td>6701.T</td><td>NEC</td><td>78</td><td>95%</td><td>45%</td><td class="prime">Prime</td><td>サイバー/防衛</td></tr>
+                    <tr><td>8</td><td>7012.T</td><td>川崎重工業</td><td>76</td><td>90%</td><td>42%</td><td class="prime">Prime</td><td>防衛/宇宙</td></tr>
+                    <tr><td>9</td><td>7013.T</td><td>IHI</td><td>75</td><td>90%</td><td>48%</td><td class="prime">Prime</td><td>エネルギー/防衛</td></tr>
+                    <tr><td>10</td><td>186A.T</td><td>Astroscale HD</td><td>74</td><td>85%</td><td>80%</td><td class="speculative">Spec</td><td>宇宙</td></tr>
+                    <tr><td>11</td><td>6920.T</td><td>レーザーテック</td><td>73</td><td>90%</td><td>55%</td><td class="prime">Prime</td><td>半導体</td></tr>
+                    <tr><td>12</td><td>6857.T</td><td>アドバンテスト</td><td>72</td><td>90%</td><td>45%</td><td class="stable">Stable</td><td>半導体</td></tr>
+                    <tr><td>13</td><td>6861.T</td><td>キーエンス</td><td>71</td><td>92%</td><td>35%</td><td class="stable">Stable</td><td>ロボティクス</td></tr>
+                    <tr><td>14</td><td>7735.T</td><td>SCREEN HD</td><td>70</td><td>88%</td><td>45%</td><td class="stable">Stable</td><td>半導体</td></tr>
+                    <tr><td>15</td><td>6273.T</td><td>SMC</td><td>69</td><td>90%</td><td>38%</td><td class="stable">Stable</td><td>ロボティクス</td></tr>
+                    <tr><td>16</td><td>6503.T</td><td>三菱電機</td><td>68</td><td>88%</td><td>40%</td><td class="stable">Stable</td><td>防衛/FA</td></tr>
+                    <tr><td>17</td><td>6702.T</td><td>富士通</td><td>67</td><td>85%</td><td>42%</td><td class="prime">Prime</td><td>サイバー/AI</td></tr>
+                    <tr class="updated"><td>18</td><td>9433.T</td><td>KDDI</td><td>66</td><td>90%</td><td>32%</td><td class="stable">Stable</td><td>サイバー</td></tr>
+                    <tr><td>19</td><td>6758.T</td><td>ソニーG</td><td>65</td><td>88%</td><td>35%</td><td class="stable">Stable</td><td>AI/宇宙</td></tr>
+                    <tr><td>20</td><td>5631.T</td><td>日本製鋼所</td><td>64</td><td>85%</td><td>50%</td><td class="prime">Prime</td><td>エネルギー/防衛</td></tr>
+                    <tr><td>21</td><td>6141.T</td><td>DMG森精機</td><td>63</td><td>85%</td><td>42%</td><td class="prime">Prime</td><td>ロボティクス</td></tr>
+                    <tr><td>22</td><td>6645.T</td><td>オムロン</td><td>62</td><td>85%</td><td>40%</td><td class="prime">Prime</td><td>ロボティクス</td></tr>
+                    <tr><td>23</td><td>6723.T</td><td>ルネサス</td><td>61</td><td>85%</td><td>45%</td><td class="prime">Prime</td><td>半導体</td></tr>
+                    <tr><td>24</td><td>6807.T</td><td>日本航空電子</td><td>60</td><td>85%</td><td>45%</td><td class="prime">Prime</td><td>防衛/宇宙</td></tr>
+                    <tr><td>25</td><td>6361.T</td><td>荏原製作所</td><td>59</td><td>85%</td><td>42%</td><td class="prime">Prime</td><td>エネルギー</td></tr>
+                    <tr class="updated"><td>26</td><td>9501.T</td><td>東京電力HD</td><td>58</td><td><strong>70% ↓</strong></td><td>65%</td><td class="speculative">Spec</td><td>エネルギー</td></tr>
+                    <tr><td>27</td><td>7224.T</td><td>新明和工業</td><td>57</td><td>82%</td><td>48%</td><td class="prime">Prime</td><td>防衛</td></tr>
+                    <tr><td>28</td><td>7739.T</td><td>キヤノン電子</td><td>56</td><td>78%</td><td>55%</td><td class="speculative">Spec</td><td>宇宙</td></tr>
+                    <tr><td>29</td><td>1963.T</td><td>日揮HD</td><td>55</td><td>82%</td><td>45%</td><td class="prime">Prime</td><td>エネルギー</td></tr>
+                    <tr><td>30</td><td>6779.T</td><td>日本電波工業</td><td>54</td><td>80%</td><td>48%</td><td class="prime">Prime</td><td>宇宙/サイバー</td></tr>
                 </tbody>
             </table>
             <p style="margin-top: 15px; color: #666; font-size: 0.9em;">
-                ※ 黄色背景: 本日更新あり（ファナックQ3決算確認）
+                ※ 黄色背景: 本日更新あり（ファナックQ3確認、NEC-KDDI合弁、東京電力HD確度低下）
             </p>
         </div>
     </div>
@@ -218,7 +192,27 @@
             { name: 'NEC', ticker: '6701.T', certainty: 95, upside: 45, score: 78, quadrant: 'prime' },
             { name: '川崎重工業', ticker: '7012.T', certainty: 90, upside: 42, score: 76, quadrant: 'prime' },
             { name: 'IHI', ticker: '7013.T', certainty: 90, upside: 48, score: 75, quadrant: 'prime' },
-            { name: 'Astroscale HD', ticker: '186A.T', certainty: 85, upside: 80, score: 74, quadrant: 'speculative' }
+            { name: 'Astroscale', ticker: '186A.T', certainty: 85, upside: 80, score: 74, quadrant: 'speculative' },
+            { name: 'レーザーテック', ticker: '6920.T', certainty: 90, upside: 55, score: 73, quadrant: 'prime' },
+            { name: 'アドバンテスト', ticker: '6857.T', certainty: 90, upside: 45, score: 72, quadrant: 'stable' },
+            { name: 'キーエンス', ticker: '6861.T', certainty: 92, upside: 35, score: 71, quadrant: 'stable' },
+            { name: 'SCREEN HD', ticker: '7735.T', certainty: 88, upside: 45, score: 70, quadrant: 'stable' },
+            { name: 'SMC', ticker: '6273.T', certainty: 90, upside: 38, score: 69, quadrant: 'stable' },
+            { name: '三菱電機', ticker: '6503.T', certainty: 88, upside: 40, score: 68, quadrant: 'stable' },
+            { name: '富士通', ticker: '6702.T', certainty: 85, upside: 42, score: 67, quadrant: 'prime' },
+            { name: 'KDDI', ticker: '9433.T', certainty: 90, upside: 32, score: 66, quadrant: 'stable' },
+            { name: 'ソニーG', ticker: '6758.T', certainty: 88, upside: 35, score: 65, quadrant: 'stable' },
+            { name: '日本製鋼所', ticker: '5631.T', certainty: 85, upside: 50, score: 64, quadrant: 'prime' },
+            { name: 'DMG森精機', ticker: '6141.T', certainty: 85, upside: 42, score: 63, quadrant: 'prime' },
+            { name: 'オムロン', ticker: '6645.T', certainty: 85, upside: 40, score: 62, quadrant: 'prime' },
+            { name: 'ルネサス', ticker: '6723.T', certainty: 85, upside: 45, score: 61, quadrant: 'prime' },
+            { name: '日本航空電子', ticker: '6807.T', certainty: 85, upside: 45, score: 60, quadrant: 'prime' },
+            { name: '荏原製作所', ticker: '6361.T', certainty: 85, upside: 42, score: 59, quadrant: 'prime' },
+            { name: '東京電力HD', ticker: '9501.T', certainty: 70, upside: 65, score: 58, quadrant: 'speculative' },
+            { name: '新明和工業', ticker: '7224.T', certainty: 82, upside: 48, score: 57, quadrant: 'prime' },
+            { name: 'キヤノン電子', ticker: '7739.T', certainty: 78, upside: 55, score: 56, quadrant: 'speculative' },
+            { name: '日揮HD', ticker: '1963.T', certainty: 82, upside: 45, score: 55, quadrant: 'prime' },
+            { name: '日本電波工業', ticker: '6779.T', certainty: 80, upside: 48, score: 54, quadrant: 'prime' }
         ];
 
         const getColor = (quadrant) => {
@@ -234,7 +228,7 @@
             type: 'scatter',
             data: {
                 datasets: [{
-                    label: 'Japan Top 10',
+                    label: 'Japan Top 30',
                     data: companies.map(c => ({
                         x: c.certainty,
                         y: c.upside,
@@ -245,16 +239,17 @@
                     backgroundColor: companies.map(c => getColor(c.quadrant)),
                     borderColor: companies.map(c => getColor(c.quadrant).replace('0.8', '1')),
                     borderWidth: 2,
-                    pointRadius: companies.map(c => Math.max(10, c.score / 5)),
-                    pointHoverRadius: 15
+                    pointRadius: companies.map(c => Math.max(8, c.score / 6)),
+                    pointHoverRadius: 12
                 }]
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
-                        text: '確実性 vs アップサイド マトリックス',
+                        text: '確実性 vs アップサイド マトリックス (Japan Top 30)',
                         font: { size: 18 }
                     },
                     tooltip: {
@@ -281,11 +276,11 @@
                             text: '確度 (%)',
                             font: { size: 14 }
                         },
-                        min: 80,
+                        min: 65,
                         max: 100,
                         grid: {
                             color: function(context) {
-                                if (context.tick.value === 90) {
+                                if (context.tick.value === 85) {
                                     return 'rgba(0,0,0,0.3)';
                                 }
                                 return 'rgba(0,0,0,0.1)';
@@ -298,8 +293,8 @@
                             text: 'アップサイド (%)',
                             font: { size: 14 }
                         },
-                        min: 20,
-                        max: 90,
+                        min: 25,
+                        max: 85,
                         grid: {
                             color: function(context) {
                                 if (context.tick.value === 50) {
