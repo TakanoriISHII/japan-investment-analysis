@@ -2,7 +2,7 @@
   "metadata": {
     "description": "統合企業情報（全LLM出力 + stable + reinforcement をマージ）",
     "created": "2026-01-28T18:00:00Z",
-    "last_updated": "2026-01-28T19:00:00Z",
+    "last_updated": "2026-01-29T12:00:00Z",
     "phase": "フェーズ5: 統合・確度整理",
     "sources": {
       "raw_claude": "data/intelligence/raw/company_info/claude.md",
@@ -273,15 +273,22 @@
       "サイバー": 3
     },
     "by_confidence": {
-      "high": 14,
-      "medium": 4,
+      "high": 15,
+      "medium": 3,
       "low": 1
     },
     "data_freshness": {
-      "permanent": "2026-01-28",
+      "permanent": "2026-01-29",
       "quarterly": "Q3 2025/FY2026",
-      "monthly": "2026-01-28"
-    }
+      "monthly": "2026-01-29"
+    },
+    "japan_updates_20260129": [
+      "ファナック: ロボット受注+38%確認、ガイダンス+10%上方修正",
+      "東京電力HD: 柏崎刈羽6号機再稼働→翌日停止（30年前設定ミス判明）",
+      "三菱重工業: 防衛予算9兆円超でFY2026受注増期待",
+      "NEC: KDDI合弁「Protect.jp」で国内最大サイバーセキュリティ事業へ",
+      "TSMC/JASM: 第2工場計画変更（6-7nm→4nm AI向け検討）"
+    ]
   },
   "japan_companies": [
     {
@@ -327,13 +334,16 @@
         "revenue_q3": "6,233億円",
         "revenue_fy": "8,407億円（通期予想）",
         "op_profit_q3": "1,277億円",
-        "key_notes": "ロボット受注+39%、中国売上+87%"
+        "op_profit_fy": "1,729億円（通期予想、+10%上方修正）",
+        "robot_orders_yoy": "+38%",
+        "china_sales_yoy": "+87%",
+        "key_notes": "ロボット受注+38% YoY、営業利益ガイダンス+10%上方修正。中国EV関連投資回復が牽引。"
       },
       "monthly": {
         "contracts": [],
-        "announcements": ["米州投資再開で恩恵期待"]
+        "announcements": ["米州リショアリング需要増", "12月国際ロボット展でAIロボティクス技術展示"]
       },
-      "confidence": {"overall": 99, "sources_confirmed": ["ファナックIR", "日経新聞"], "last_verified": "2026-01-28"}
+      "confidence": {"overall": 99, "sources_confirmed": ["ファナックIR公式決算", "Morningstar"], "last_verified": "2026-01-29"}
     },
     {
       "ticker": "6501.T",
@@ -541,16 +551,27 @@
       },
       "quarterly": {
         "period": "継続",
-        "key_notes": "柏崎刈羽再稼働で収益改善期待"
+        "kashiwazaki_kariwa": {
+          "unit": "6号機",
+          "capacity": "1,356MW",
+          "restart_date": "2026-01-21",
+          "status": "作業停止中（制御棒警報対応）",
+          "issue": "30年前からの設定ミス判明、制御棒205本のうち1本で警報"
+        },
+        "key_notes": "柏崎刈羽6号機13年10ヶ月ぶり再稼働も翌日停止。東電として福島事故後初の原発再稼働。"
       },
       "monthly": {
         "contracts": [],
         "announcements": [
-          "2026/1/21柏崎刈羽7号機再稼働（14年ぶり）",
-          "2026/1/22制御棒不具合で一時停止"
+          "2026/1/17: 制御棒引き抜き試験で警報不具合",
+          "2026/1/18: 設定誤り判明→復帰",
+          "2026/1/19: 30年前からの設定ミスと発表",
+          "2026/1/20: 再稼働見送り",
+          "2026/1/21: 13年10ヶ月ぶりに再稼働",
+          "2026/1/22: 制御棒作業中に再度警報→作業停止"
         ]
       },
-      "confidence": {"overall": 90, "sources_confirmed": ["Al Jazeera", "UPI"], "last_verified": "2026-01-28"}
+      "confidence": {"overall": 95, "sources_confirmed": ["日経新聞", "東京新聞", "新潟日報", "NHK"], "last_verified": "2026-01-29"}
     }
   ]
 }

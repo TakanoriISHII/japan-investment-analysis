@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Top 10 - 4象限チャート (2026-01-29)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        .summary {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        .prime { color: #2ecc71; font-weight: bold; }
+        .stable { color: #3498db; font-weight: bold; }
+        .speculative { color: #e74c3c; font-weight: bold; }
+        .updated { background-color: #fff3cd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Japan Top 10 - 4象限マトリックス</h1>
+        <p style="text-align: center; color: #666;">2026年1月29日 | 市場リスクスコア: 58/100 (バランス型)</p>
+
+        <div class="chart-container">
+            <canvas id="quadrantChart"></canvas>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #2ecc71;"></div>
+                <span>Prime (高確実性/高リターン)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #3498db;"></div>
+                <span>Stable Growth (高確実性/安定リターン)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #e74c3c;"></div>
+                <span>Speculative (低確実性/高リターン)</span>
+            </div>
+        </div>
+
+        <div class="summary">
+            <h2>Japan Top 10 企業一覧</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>ティッカー</th>
+                        <th>企業名</th>
+                        <th>スコア</th>
+                        <th>確度</th>
+                        <th>アップサイド</th>
+                        <th>象限</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>7011.T</td>
+                        <td>三菱重工業</td>
+                        <td>88</td>
+                        <td>95%</td>
+                        <td>45%</td>
+                        <td class="prime">Prime</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>8035.T</td>
+                        <td>東京エレクトロン</td>
+                        <td>86</td>
+                        <td>95%</td>
+                        <td>40%</td>
+                        <td class="stable">Stable Growth</td>
+                    </tr>
+                    <tr class="updated">
+                        <td>3</td>
+                        <td>6954.T</td>
+                        <td>ファナック</td>
+                        <td><strong>85 ↑</strong></td>
+                        <td><strong>99%</strong></td>
+                        <td><strong>42% ↑</strong></td>
+                        <td class="stable">Stable Growth</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>6501.T</td>
+                        <td>日立製作所</td>
+                        <td>82</td>
+                        <td>90%</td>
+                        <td>42%</td>
+                        <td class="prime">Prime</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>9432.T</td>
+                        <td>NTT</td>
+                        <td>80</td>
+                        <td>90%</td>
+                        <td>30%</td>
+                        <td class="stable">Stable Growth</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>6506.T</td>
+                        <td>安川電機</td>
+                        <td>79</td>
+                        <td>95%</td>
+                        <td>40%</td>
+                        <td class="prime">Prime</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>6701.T</td>
+                        <td>NEC</td>
+                        <td>78</td>
+                        <td>95%</td>
+                        <td>45%</td>
+                        <td class="prime">Prime</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>7012.T</td>
+                        <td>川崎重工業</td>
+                        <td>76</td>
+                        <td>90%</td>
+                        <td>42%</td>
+                        <td class="prime">Prime</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>7013.T</td>
+                        <td>IHI</td>
+                        <td>75</td>
+                        <td>90%</td>
+                        <td>48%</td>
+                        <td class="prime">Prime</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>186A.T</td>
+                        <td>Astroscale HD</td>
+                        <td>74</td>
+                        <td>85%</td>
+                        <td>80%</td>
+                        <td class="speculative">Speculative</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 15px; color: #666; font-size: 0.9em;">
+                ※ 黄色背景: 本日更新あり（ファナックQ3決算確認）
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('quadrantChart').getContext('2d');
+
+        const companies = [
+            { name: '三菱重工業', ticker: '7011.T', certainty: 95, upside: 45, score: 88, quadrant: 'prime' },
+            { name: '東京エレクトロン', ticker: '8035.T', certainty: 95, upside: 40, score: 86, quadrant: 'stable' },
+            { name: 'ファナック', ticker: '6954.T', certainty: 99, upside: 42, score: 85, quadrant: 'stable' },
+            { name: '日立製作所', ticker: '6501.T', certainty: 90, upside: 42, score: 82, quadrant: 'prime' },
+            { name: 'NTT', ticker: '9432.T', certainty: 90, upside: 30, score: 80, quadrant: 'stable' },
+            { name: '安川電機', ticker: '6506.T', certainty: 95, upside: 40, score: 79, quadrant: 'prime' },
+            { name: 'NEC', ticker: '6701.T', certainty: 95, upside: 45, score: 78, quadrant: 'prime' },
+            { name: '川崎重工業', ticker: '7012.T', certainty: 90, upside: 42, score: 76, quadrant: 'prime' },
+            { name: 'IHI', ticker: '7013.T', certainty: 90, upside: 48, score: 75, quadrant: 'prime' },
+            { name: 'Astroscale HD', ticker: '186A.T', certainty: 85, upside: 80, score: 74, quadrant: 'speculative' }
+        ];
+
+        const getColor = (quadrant) => {
+            switch(quadrant) {
+                case 'prime': return 'rgba(46, 204, 113, 0.8)';
+                case 'stable': return 'rgba(52, 152, 219, 0.8)';
+                case 'speculative': return 'rgba(231, 76, 60, 0.8)';
+                default: return 'rgba(149, 165, 166, 0.8)';
+            }
+        };
+
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Japan Top 10',
+                    data: companies.map(c => ({
+                        x: c.certainty,
+                        y: c.upside,
+                        name: c.name,
+                        ticker: c.ticker,
+                        score: c.score
+                    })),
+                    backgroundColor: companies.map(c => getColor(c.quadrant)),
+                    borderColor: companies.map(c => getColor(c.quadrant).replace('0.8', '1')),
+                    borderWidth: 2,
+                    pointRadius: companies.map(c => Math.max(10, c.score / 5)),
+                    pointHoverRadius: 15
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: '確実性 vs アップサイド マトリックス',
+                        font: { size: 18 }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const point = context.raw;
+                                return [
+                                    `${point.name} (${point.ticker})`,
+                                    `スコア: ${point.score}`,
+                                    `確度: ${point.x}%`,
+                                    `アップサイド: ${point.y}%`
+                                ];
+                            }
+                        }
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: '確度 (%)',
+                            font: { size: 14 }
+                        },
+                        min: 80,
+                        max: 100,
+                        grid: {
+                            color: function(context) {
+                                if (context.tick.value === 90) {
+                                    return 'rgba(0,0,0,0.3)';
+                                }
+                                return 'rgba(0,0,0,0.1)';
+                            }
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'アップサイド (%)',
+                            font: { size: 14 }
+                        },
+                        min: 20,
+                        max: 90,
+                        grid: {
+                            color: function(context) {
+                                if (context.tick.value === 50) {
+                                    return 'rgba(0,0,0,0.3)';
+                                }
+                                return 'rgba(0,0,0,0.1)';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

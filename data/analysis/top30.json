@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "date": "2026-01-28",
+    "date": "2026-01-29",
     "evaluation_system": "5軸評価（100点満点）",
     "axes": {
       "monopoly": {"max": 30, "description": "物理的独占力"},
@@ -9,10 +9,10 @@
       "asymmetry": {"max": 15, "description": "情報非対称性"},
       "capital": {"max": 10, "description": "資本効率"}
     },
-    "market_risk_score": 62,
-    "previous_market_risk": 63,
-    "attack_defense_stance": "conservative",
-    "last_updated": "2026-01-28T23:45:00Z"
+    "market_risk_score": 58,
+    "previous_market_risk": 62,
+    "attack_defense_stance": "balanced",
+    "last_updated": "2026-01-29T12:00:00Z"
   },
   "top30": [
     {
@@ -645,19 +645,19 @@
     }
   ],
   "changes_from_previous": {
-    "date": "2026-01-27",
+    "date": "2026-01-28",
     "new_entries": [],
     "dropped": [],
     "rank_changes": [],
     "thesis_updates": [
-      "BWXT: 受注残$6B→$7.4B更新（+119% YoY）、6-8年収益可視性",
-      "LHX: Missile Solutions IPO発表、$1B Pentagon投資（1/13）",
-      "RKLB: Neutronタンク破裂（1/21）で遅延リスク追加",
-      "Golden Dome: $151B契約発表（AVAV, RDW, PLTR等受注）",
-      "Quantinuum: IPO S-1提出（1/14）、$20B評価",
-      "Stargate: $450B+コミット、8GW+計画確認",
-      "Meta Nuclear: 6.6GW契約（VST/CEG/OKLO/TerraPower）詳細確認",
-      "市場リスク: 65→63（-2）、VIX低下・台湾軍事リスク一時低下"
+      "日本市場リスク: 62→58（-4）、日銀据え置き確定・ファナック好決算",
+      "ファナック: Q3決算確認（ロボット受注+38%、中国+87%、ガイダンス+10%上方修正）",
+      "東京電力HD: 柏崎刈羽6号機1/21再稼働→1/22停止、30年前設定ミス判明",
+      "TSMC熊本: 第2工場6-7nm→4nm AI向け計画変更検討、建設一時停止",
+      "NEC: KDDI合弁「Protect.jp」設立（国内最大サイバーセキュリティ）",
+      "日銀1月会合: 0.75%据え置き（8対1）、次回利上げ7-9月予想",
+      "中国規制: 対日デュアルユース製品禁止、ジクロロシラン反ダンピング調査",
+      "H3ロケット: 9号機（みちびき7号機）打上げ延期、8号機失敗原因究明中"
     ]
   },
   "quadrant_distribution": {
@@ -710,19 +710,19 @@
       "ticker": "6954.T",
       "name": "ファナック",
       "core_technology": "CNC、産業用ロボット",
-      "total": 84,
+      "total": 85,
       "monopoly": 26,
-      "resilience": 16,
+      "resilience": 17,
       "synergy": 20,
       "asymmetry": 14,
       "capital": 8,
       "certainty": 99,
-      "upside": 38,
+      "upside": 42,
       "quadrant": "stable_growth",
-      "thesis": "CNC世界首位。Q3ロボット受注+39%、中国売上+87%（大幅回復）。通期売上8,407億円予想。米州投資再開で恩恵期待。",
+      "thesis": "CNC世界首位。Q3ロボット受注+38% YoY確認。中国売上+87%（EV関連投資回復）。営業利益ガイダンス+10%上方修正。通期売上8,407億円、営業利益1,729億円予想。",
       "domains_impacted": ["ロボティクス", "AI"],
-      "key_catalyst": "中国回復継続、米州自動化投資",
-      "risk": "中国経済減速、米中関係"
+      "key_catalyst": "中国回復継続（+87%確認済み）、北米リショアリング需要、欧州自動化投資",
+      "risk": "中国経済減速、米中関係、トランプ関税"
     },
     {
       "rank": 4,
@@ -860,19 +860,29 @@
   ],
   "japan_market_risk": {
     "total_score": 58,
+    "previous_score": 62,
+    "delta": -4,
     "tier1": {
-      "boj_policy": {"score": 10, "max": 15, "detail": "政策金利0.75%据え置き、次回利上げ2026年7-9月予想"},
-      "valuation": {"score": 12, "max": 15, "detail": "日経平均53,358円、PER17.34は妥当水準"}
+      "boj_policy": {"score": 10, "max": 15, "detail": "政策金利0.75%据え置き（8対1、高田委員のみ1.0%主張）、次回利上げ2026年7-9月予想"},
+      "valuation": {"score": 11, "max": 15, "detail": "日経平均53,115円（1/29）、PER16-17倍はやや割高だが脱デフレプレミアム。過去最高54,341円（1/14）から-2.3%"}
     },
     "tier2": {
-      "geopolitics": {"score": 14, "max": 20, "detail": "中国レアアース輸出規制、台湾リスク継続"},
-      "fx": {"score": 8, "max": 12, "detail": "ドル円153円台、介入警戒150-155円"}
+      "geopolitics": {"score": 14, "max": 20, "detail": "中国対日輸出規制強化（レアアース、ジクロロシラン）、台湾リスク継続"},
+      "fx": {"score": 7, "max": 12, "detail": "ドル円152.5円、日米協調介入警戒（1/26-27で4%円高）"}
     },
     "tier3": {
-      "nikkei_vi": {"score": 8, "max": 10, "detail": "日経VI 34.14は高め"},
-      "external": {"score": 6, "max": 8, "detail": "柏崎刈羽再稼働停止等の個別リスク"}
+      "nikkei_vi": {"score": 8, "max": 10, "detail": "日経VI 34前後は高警戒水準（株価高値でVI30超は不安定性を示唆）"},
+      "external": {"score": 8, "max": 10, "detail": "柏崎刈羽6号機再稼働→停止（30年前設定ミス判明）、H3ロケット9号機延期"}
     },
     "stance": "balanced",
-    "rationale": "日銀利上げ継続観測あるも、企業業績堅調。防衛・半導体・ロボティクスに注目。"
+    "rationale": "日銀利上げ継続観測あるも、企業業績堅調（ファナック+38%、中国回復+87%）。防衛予算9兆円超でMHI/KHI/IHI恩恵。TSMC熊本4nm計画変更でAI半導体関連に上昇余地。",
+    "key_updates_20260129": [
+      "日銀: 0.75%据え置き確定、次回利上げ7-9月予想",
+      "柏崎刈羽: 30年前設定ミス判明、再稼働の不確実性継続",
+      "ファナック: Q3決算確認（+38%、ガイダンス+10%上方修正）",
+      "TSMC熊本: 第2工場4nm AI向け検討（計画変更）",
+      "中国規制: デュアルユース製品禁止、ジクロロシラン反ダンピング調査",
+      "日米介入: NY Fed rate check実施、協調介入の可能性浮上"
+    ]
   }
 }

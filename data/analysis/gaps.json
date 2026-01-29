@@ -2,8 +2,9 @@
   "metadata": {
     "description": "LLM出力間のギャップ検出結果",
     "created": "2026-01-27",
-    "last_updated": "2026-01-28",
-    "phase": "フェーズ3: Claude比較分析"
+    "last_updated": "2026-01-29",
+    "phase": "フェーズ3: Claude比較分析",
+    "session": "フル分析 2026-01-29"
   },
   "gaps": {
     "companies": [
@@ -78,6 +79,35 @@
           "neutron_debut": "2026年Q1以降"
         },
         "action": "Rocket Labの評価を維持・強化",
+        "filled": true
+      },
+      {
+        "id": "GAP-C007",
+        "company": "JASM (TSMC熊本)",
+        "status": "new_discovery",
+        "issue": "第2工場計画変更が発覚。当初計画（6-7nm自動車向け）から4nm AI向けへ検討中。建設一時停止。",
+        "details": {
+          "phase1": "12月より量産開始（12/16nm、55,000枚/月）",
+          "phase2_original": "6-7nm（自動車/イメージセンサー）、2027年稼働予定",
+          "phase2_new": "4nm（AI向け）検討中、需要変化対応",
+          "status": "建設一時停止、重機撤収、2026年通年で新規装置発注なし",
+          "investment": "$23B（政府補助1.2兆円含む）"
+        },
+        "action": "日本半導体サプライチェーン分析に反映。AI向け4nmは日本企業（東京エレクトロン等）への追加需要となる可能性。",
+        "filled": true
+      },
+      {
+        "id": "GAP-C008",
+        "company": "KDDI-NEC",
+        "status": "new_discovery",
+        "issue": "サイバーセキュリティ合弁会社「Protect.jp」設立。国内最大規模のサイバーセキュリティ事業。",
+        "details": {
+          "platform": "WAKONX（KDDI）+ BluStellar（NEC）統合",
+          "ai": "生成AI「cotomi」活用、分析〜対応90%自動化",
+          "global_expansion": "FY2026〜：APAC、欧州、米国にCyber Intelligence Center展開",
+          "regulation": "経済安全保障推進法対応"
+        },
+        "action": "NEC（6701.T）、KDDI（9433.T）のサイバーセキュリティ評価を上方修正",
         "filled": true
       }
     ],
@@ -186,21 +216,24 @@
     ]
   },
   "summary": {
-    "total_gaps": 15,
-    "filled": 15,
+    "total_gaps": 17,
+    "filled": 17,
     "pending": 0,
     "coverage_assessment": {
       "overall_score": 95,
       "strong_areas": [
-        "国際情勢",
-        "市場リスク",
+        "国際情勢（日中関係緊張、輸出規制）",
+        "市場リスク（日銀政策、為替介入リスク）",
         "大型投資パイプライン",
         "AI/エネルギー/防衛セクター",
-        "原子力（Meta 6.6GW契約で強化）",
+        "原子力（柏崎刈羽再稼働動向）",
         "バイオ/GLP-1（Grok補強調査完了）",
-        "ペロブスカイト太陽電池（Grok補強調査完了）"
+        "ペロブスカイト太陽電池（Grok補強調査完了）",
+        "日本サイバーセキュリティ（KDDI-NEC合弁）"
       ],
-      "weak_areas": [],
+      "weak_areas": [
+        "日経平均PER: 複数ソース間で乖離あり（要検証）"
+      ],
       "completed_actions": [
         "Meta核契約受益企業（Vistra, Constellation）の評価強化済み",
         "BWXT受注残$6B反映済み",
@@ -208,7 +241,11 @@
         "Wolfspeed除外確定",
         "量子コンピューティング銘柄（Quantinuum）IPO監視中",
         "GLP-1銘柄分析完了（LLY推奨、NVO中立）",
-        "ペロブスカイト銘柄特定（FSLR監視、Oxford PV IPO監視）"
+        "ペロブスカイト銘柄特定（FSLR監視、Oxford PV IPO監視）",
+        "TSMC熊本第2工場計画変更（4nm AI向け検討）反映済み",
+        "KDDI-NEC合弁「Protect.jp」発見・反映済み",
+        "ファナックQ3決算（+38%、ガイダンス上方修正）確認済み",
+        "日米協調為替介入リスク反映済み"
       ]
     }
   }

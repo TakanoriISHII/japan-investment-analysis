@@ -2,9 +2,9 @@
   "metadata": {
     "description": "LLM出力間の矛盾検出結果",
     "created": "2026-01-27",
-    "last_updated": "2026-01-28",
+    "last_updated": "2026-01-29",
     "phase": "フェーズ3: Claude比較分析",
-    "session": "フル分析 2026-01-28 PM"
+    "session": "フル分析 2026-01-29"
   },
   "contradictions": [
     {
@@ -129,17 +129,21 @@
     }
   ],
   "summary": {
-    "total_contradictions": 10,
-    "resolved": 10,
-    "pending": 0,
+    "total_contradictions": 12,
+    "resolved": 11,
+    "pending": 1,
     "critical_findings": [
       "Wolfspeed Chapter 11破産: 投資候補から除外確定",
       "CAPE 41.03: 前回からさらに上昇、歴史的極値継続",
       "NVIDIA独占強化: シェア90-98%、Q3 FY2026で$57B売上",
       "Vertiv受注残$9.5B: AI冷却需要の強さを確認",
       "日銀1月会合: 据え置き決定、高田委員のみ1.0%への利上げ主張（8対1）",
-      "柏崎刈羽原発: 2026/1/21再稼働→1/22制御棒不具合で一時停止",
-      "MHI受注高: 防衛・宇宙1兆8,768億円（2024年度）、2022年度の3倍超"
+      "柏崎刈羽原発: 2026/1/21再稼働→1/22制御棒不具合で一時停止（30年前からの設定ミス判明）",
+      "MHI受注高: 防衛・宇宙1兆8,768億円（2024年度）、2022年度の3倍超",
+      "日経平均: 53,115円（1/29）、過去最高54,341円（1/14）記録",
+      "日米協調介入: NY Fed rate check実施、1/26-27で4%円高",
+      "TSMC熊本第2工場: 6-7nm→4nm（AI向け）へ計画変更検討中",
+      "ファナックQ3: ロボット受注+38% YoY、ガイダンス+10%上方修正"
     ]
   },
   "japan_market_contradictions": [
@@ -149,14 +153,46 @@
       "field": "日経平均株価",
       "sources": {
         "gemini": "53,358円（2026年1月28日）",
-        "grok": "記載なし",
-        "claude": "直接確認なし"
+        "grok": "53,000円台",
+        "claude": "53,115円（2026年1月29日）"
       },
       "resolution": {
         "status": "resolved",
-        "correct_value": "53,358円（Gemini確認済み）",
-        "verification_source": "Gemini broad_info",
+        "correct_value": "53,115円（2026年1月29日）、過去最高値54,341円（1月14日）",
+        "verification_source": "Trading Economics, CNBC",
         "action": "市場リスク評価に反映"
+      }
+    },
+    {
+      "id": "CTR-JP004",
+      "type": "market_data",
+      "field": "日経平均PER",
+      "sources": {
+        "gemini": "歴史的平均上回る",
+        "grok": "19.88（過去平均15、乖離+32%）",
+        "claude": "16倍超（脱デフレプレミアム）"
+      },
+      "resolution": {
+        "status": "pending_verification",
+        "notes": "Grokの19.88は過大評価の可能性。IG証券など複数ソースで16倍台の報告あり。",
+        "action": "次回分析で一次情報源（日経、JPX）で検証"
+      }
+    },
+    {
+      "id": "CTR-JP005",
+      "type": "market_data",
+      "field": "日経VI",
+      "sources": {
+        "gemini": "34.14",
+        "grok": "34.78（30日平均33）",
+        "claude": "安定（具体値未確認）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "34前後（高警戒水準）",
+        "notes": "株価高値更新中にVI30超えは市場の不安定性を示唆",
+        "verification_source": "Gemini/Grokクロス検証",
+        "action": "市場リスクスコアに反映"
       }
     },
     {

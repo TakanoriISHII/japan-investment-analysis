@@ -1,38 +1,38 @@
 {
-  "last_execution": "2026-01-28T21:00:00Z",
+  "last_execution": "2026-01-29T12:30:00Z",
   "session": "run_analysis_full_v3_japan_focused",
   "version": "3.0",
   "events": {
-    "last_collected": "2026-01-28",
-    "total_count": 40,
-    "last_event_id": "evt_20260128_015"
+    "last_collected": "2026-01-29",
+    "total_count": 44,
+    "last_event_id": "evt_20260129_004"
   },
   "broad_intelligence": {
-    "last_collected": "2026-01-28",
-    "total_items": 120,
-    "japan_items": 18
+    "last_collected": "2026-01-29",
+    "total_items": 126,
+    "japan_items": 22
   },
   "information_quality": {
-    "last_check": "2026-01-28",
+    "last_check": "2026-01-29",
     "us_quality_score": 92,
-    "japan_quality_score": 97,
+    "japan_quality_score": 93,
     "active_alerts": 0
   },
   "monopoly_map": {
-    "last_update": "2026-01-28",
-    "update_reason": "日本市場分析追加（10社Top10、市場リスク58/100）",
+    "last_update": "2026-01-29",
+    "update_reason": "ファナックQ3確認、TSMC熊本4nm計画変更、KDDI-NEC合弁発見",
     "pending_triggers": []
   },
   "market_state": {
-    "last_update": "2026-01-28",
-    "us_market_risk": 62,
+    "last_update": "2026-01-29",
+    "us_market_risk": 58,
     "japan_market_risk": 58
   },
   "stable_update": {
-    "last_update": "2026-01-28",
+    "last_update": "2026-01-29",
     "permanent_companies": 14,
     "quarterly_financials": 14,
-    "monthly_contracts": 7,
+    "monthly_contracts": 9,
     "japan_companies": 10,
     "companies_added": ["VST", "CEG", "TDG", "ETN", "CW", "APH"],
     "japan_companies_added": ["7011.T", "8035.T", "6954.T", "6501.T", "9432.T", "6506.T", "6701.T", "7012.T", "7013.T", "186A.T"],
@@ -44,45 +44,45 @@
   },
   "analysis": {
     "market_risk": {
-      "last_update": "2026-01-28",
-      "us_score": 62,
+      "last_update": "2026-01-29",
+      "us_score": 58,
       "japan_score": 58,
-      "us_previous": 63,
-      "japan_previous": null
+      "us_previous": 62,
+      "japan_previous": 62
     },
     "top30": {
-      "last_update": "2026-01-28",
+      "last_update": "2026-01-29",
       "us_top_conviction": "NVDA",
       "japan_top_conviction": "7011.T",
       "us_thesis_updates": 12,
-      "japan_thesis_updates": 10
+      "japan_thesis_updates": 12
     }
   },
   "gap_analysis": {
-    "last_check": "2026-01-28",
-    "companies_supplemented": 12,
-    "gaps_filled": 15,
+    "last_check": "2026-01-29",
+    "companies_supplemented": 14,
+    "gaps_filled": 19,
     "gaps_partial": 0,
     "gaps_pending": 0
   },
   "contradictions": {
-    "last_check": "2026-01-28",
+    "last_check": "2026-01-29",
     "us_total": 7,
     "us_resolved": 7,
-    "japan_total": 3,
-    "japan_resolved": 3,
+    "japan_total": 5,
+    "japan_resolved": 5,
     "pending": 0
   },
   "critical_findings": [
-    "【v3.0】全レポート日本特化版へ全面改訂（米国情報は影響範囲に限定）",
-    "【v3.0】japan_market_risk.json独立ファイル作成（6カテゴリ、3階層評価）",
-    "【新規】日本市場分析追加（Top10、市場リスク58/100、バランス型スタンス）",
-    "【新規】防衛予算9.04兆円承認（過去最高、初の9兆円超え）",
-    "【新規】柏崎刈羽原発1/21再稼働→1/22一時停止（制御棒不具合）",
-    "【新規】日銀0.75%据え置き（8対1、高田委員のみ1.0%主張）",
-    "【新規】ファナックQ3決算：ロボット受注+39%、中国売上+87%回復",
-    "【継続】米国市場リスク62/100（CAPE 41.03、保守的スタンス）",
-    "【継続】Meta Nuclear 6.6GW発表（Vistra 2.1GW+、Constellation、TerraPower、Oklo）",
-    "【継続】Rocket Lab Neutronタンク破裂（1/21）、mid-2026遅延リスク"
+    "【2026-01-29】ファナックQ3確定：ロボット受注+38%、中国+87%、ガイダンス+10%上方修正（確度99%）",
+    "【2026-01-29】TSMC熊本第2工場：6-7nm→4nm（AI向け）計画変更検討中",
+    "【2026-01-29】KDDI-NEC合弁「Protect.jp」設立：国内最大サイバーセキュリティ事業",
+    "【2026-01-29】柏崎刈羽6号機：30年前の設定ミス判明、再稼働時期不透明に",
+    "【2026-01-29】日米協調為替介入：2011年以来初の可能性浮上（ドル円152.5円）",
+    "【2026-01-29】市場リスク：62→58（-4）バランス型維持",
+    "【継続】日経平均53,115円（過去最高54,341から-2.3%）、日経VI 34（高警戒）",
+    "【継続】日銀0.75%据え置き確定（8対1）、次回利上げ7-9月予想",
+    "【継続】防衛予算9兆円超（FY2026）承認済み",
+    "【継続】米国CAPE 41.03（歴史的極値）、保守的スタンス推奨"
   ]
 }
