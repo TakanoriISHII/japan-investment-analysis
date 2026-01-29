@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Top 30 - 4象限マトリックス【{{DATE}}】</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+        #root { width: 100%; min-height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        /*
+        Japan Top 30 4象限マトリックス テンプレート
+
+        【プレースホルダー】
+        - {{DATE}}: 分析日 (例: 2026-01-30)
+        - {{MARKET_RISK_SCORE}}: 市場リスクスコア (例: 57)
+        - {{STANCE}}: スタンス (例: バランス型)
+        - {{JAPAN_TOP30_DATA}}: japan_top30配列をJSON形式で挿入
+
+        【30社内相対評価の閾値】
+        - 確実性閾値: 30社のcertainty中央値（動的計算）
+        - アップサイド閾値: 30社のupside中央値（動的計算）
+
+        【表示ルール】
+        - バブルサイズ: baseRadius = 22px
+        - 衝突回避: 上位ランク優先で右上にオフセット
+        - 高独占銘柄(monopoly≥26): 赤い点線枠
+        - #1銘柄: ゴールド背景
+        - 16位以下: 薄く表示（攻め姿勢時のみ検討）
+        */
+
+        const analysisDate = "{{DATE}}";
+        const marketRiskScore = {{MARKET_RISK_SCORE}};
+        const stance = "{{STANCE}}";
+
+        // top30.jsonのjapan_top30から生成（Phase 7で置換）
+        const japanTop30Data = {{JAPAN_TOP30_DATA}};
+
+        const domainColors = {
+            "AI": "#a855f7", "防衛": "#3b82f6", "エネルギー": "#22c55e",
+            "ロボティクス": "#f97316", "宇宙": "#06b6d4", "サイバー": "#ec4899", "半導体": "#eab308"
+        };
+
+        // 中央値計算（30社相対評価用）
+        function calculateMedian(arr) {
+            const sorted = [...arr].sort((a, b) => a - b);
+            const mid = Math.floor(sorted.length / 2);
+            return sorted.length % 2 !== 0 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+        }
+
+        // 衝突回避: 重なりを検出し、上位（ランク小さい方）を右上にオフセット
+        function resolveCollisions(data, xScale, yScale, baseRadius) {
+            const positions = data.map(s => ({
+                ...s,
+                cx: xScale(s.certainty),
+                cy: yScale(s.upside),
+                offsetX: 0,
+                offsetY: 0
+            }));
+
+            positions.sort((a, b) => a.rank - b.rank);
+            const minDistance = baseRadius * 2.3;
+
+            for (let i = 0; i < positions.length; i++) {
+                for (let j = 0; j < i; j++) {
+                    const dx = (positions[i].cx + positions[i].offsetX) - (positions[j].cx + positions[j].offsetX);
+                    const dy = (positions[i].cy + positions[i].offsetY) - (positions[j].cy + positions[j].offsetY);
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < minDistance) {
+                        const overlap = minDistance - distance;
+                        positions[j].offsetX += overlap * 0.6 + 4;
+                        positions[j].offsetY -= overlap * 0.5 + 3;
+                    }
+                }
+            }
+
+            return positions;
+        }
+
+        function QuadrantChart() {
+            const [selectedStock, setSelectedStock] = React.useState(null);
+            const [hoveredStock, setHoveredStock] = React.useState(null);
+            const [selectedDomain, setSelectedDomain] = React.useState("all");
+
+            const width = 1100;
+            const height = 750;
+            const margin = { top: 50, right: 40, bottom: 50, left: 55 };
+            const chartWidth = width - margin.left - margin.right;
+            const chartHeight = height - margin.top - margin.bottom;
+
+            // 30社のデータ範囲に基づくスケール（動的計算）
+            const certValues = japanTop30Data.map(s => s.certainty);
+            const upsideValues = japanTop30Data.map(s => s.upside);
+            const xMin = Math.floor(Math.min(...certValues) - 2);
+            const xMax = Math.ceil(Math.max(...certValues) + 2);
+            const yMin = Math.floor(Math.min(...upsideValues) - 5);
+            const yMax = Math.ceil(Math.max(...upsideValues) + 5);
+
+            const xScale = (c) => margin.left + ((c - xMin) / (xMax - xMin)) * chartWidth;
+            const yScale = (u) => margin.top + chartHeight - ((u - yMin) / (yMax - yMin)) * chartHeight;
+
+            // 閾値: 30社の中央値（相対評価）
+            const certThreshold = Math.round(calculateMedian(certValues));
+            const upsideThreshold = Math.round(calculateMedian(upsideValues));
+            const baseRadius = 22;
+
+            const filteredData = selectedDomain === "all" ? japanTop30Data : japanTop30Data.filter(s => s.domain === selectedDomain);
+
+            const allPositions = resolveCollisions(japanTop30Data, xScale, yScale, baseRadius);
+            const positionMap = {};
+            allPositions.forEach(p => { positionMap[p.ticker] = p; });
+
+            const domains = [...new Set(japanTop30Data.map(s => s.domain))];
+
+            const quadrantBgs = [
+                { x: xScale(certThreshold), y: margin.top, w: xScale(xMax) - xScale(certThreshold), h: yScale(upsideThreshold) - margin.top, color: "rgba(34, 197, 94, 0.15)", label: "最優先", sublabel: "高確実×高アップサイド" },
+                { x: margin.left, y: margin.top, w: xScale(certThreshold) - margin.left, h: yScale(upsideThreshold) - margin.top, color: "rgba(249, 115, 22, 0.12)", label: "投機的", sublabel: "低確実×高アップサイド" },
+                { x: xScale(certThreshold), y: yScale(upsideThreshold), w: xScale(xMax) - xScale(certThreshold), h: yScale(yMin) - yScale(upsideThreshold), color: "rgba(59, 130, 246, 0.12)", label: "安定", sublabel: "高確実×低アップサイド" },
+                { x: margin.left, y: yScale(upsideThreshold), w: xScale(certThreshold) - margin.left, h: yScale(yMin) - yScale(upsideThreshold), color: "rgba(239, 68, 68, 0.08)", label: "慎重", sublabel: "低確実×低アップサイド" }
+            ];
+
+            const counts = {
+                prime: japanTop30Data.filter(s => s.certainty >= certThreshold && s.upside >= upsideThreshold).length,
+                stable: japanTop30Data.filter(s => s.certainty >= certThreshold && s.upside < upsideThreshold).length,
+                spec: japanTop30Data.filter(s => s.certainty < certThreshold && s.upside >= upsideThreshold).length,
+                avoid: japanTop30Data.filter(s => s.certainty < certThreshold && s.upside < upsideThreshold).length
+            };
+
+            const sortedFilteredData = [...filteredData].sort((a, b) => b.rank - a.rank);
+
+            const displayStock = selectedStock || hoveredStock;
+
+            // 市場リスクに応じた色
+            const riskColor = marketRiskScore >= 70 ? "#ef4444" : marketRiskScore >= 50 ? "#eab308" : "#22c55e";
+
+            return (
+                <div style={{ padding: "16px", maxWidth: "1500px", margin: "0 auto" }}>
+                    <div style={{ textAlign: "center", marginBottom: "12px" }}>
+                        <h1 style={{ fontSize: "24px", fontWeight: "bold", color: "#fff", marginBottom: "4px" }}>
+                            Japan Top 30 - 4象限マトリックス
+                        </h1>
+                        <div style={{ display: "flex", justifyContent: "center", gap: "24px", fontSize: "13px", color: "#9ca3af" }}>
+                            <span>市場リスク: <b style={{color: riskColor}}>{marketRiskScore}/100</b></span>
+                            <span>スタンス: {stance}</span>
+                            <span>更新: {analysisDate}</span>
+                        </div>
+                        <div style={{ fontSize: "11px", color: "#6b7280", marginTop: "4px" }}>
+                            ※ 軸は30社内での相対位置 | 閾値: 確実性{certThreshold}% / アップサイド{upsideThreshold}%（中央値基準）| クリックで詳細固定
+                        </div>
+                    </div>
+
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "12px", justifyContent: "center" }}>
+                        <button onClick={() => setSelectedDomain("all")} style={{
+                            padding: "4px 12px", borderRadius: "16px", fontSize: "12px", cursor: "pointer",
+                            border: selectedDomain === "all" ? "2px solid #fff" : "1px solid #4b5563",
+                            background: selectedDomain === "all" ? "rgba(255,255,255,0.1)" : "transparent", color: "#fff"
+                        }}>全て ({japanTop30Data.length})</button>
+                        {domains.map(d => (
+                            <button key={d} onClick={() => setSelectedDomain(d)} style={{
+                                padding: "4px 12px", borderRadius: "16px", fontSize: "12px", cursor: "pointer",
+                                border: selectedDomain === d ? `2px solid ${domainColors[d]}` : "1px solid #4b5563",
+                                background: selectedDomain === d ? `${domainColors[d]}30` : "transparent", color: domainColors[d]
+                            }}>{d} ({japanTop30Data.filter(s => s.domain === d).length})</button>
+                        ))}
+                    </div>
+
+                    <div style={{ display: "flex", gap: "16px" }}>
+                        {/* チャート部分 */}
+                        <div style={{ background: "rgba(30, 41, 59, 0.4)", borderRadius: "12px", padding: "12px", border: "1px solid rgba(255,255,255,0.1)", flex: "1" }}>
+                            <svg width={width} height={height} style={{ display: "block", margin: "0 auto" }}
+                                onClick={(e) => {
+                                    if (e.target.tagName === 'svg' || e.target.tagName === 'rect' || e.target.tagName === 'line') {
+                                        setSelectedStock(null);
+                                    }
+                                }}>
+
+                                {quadrantBgs.map((q, i) => (
+                                    <g key={i}>
+                                        <rect x={q.x} y={q.y} width={q.w} height={q.h} fill={q.color} />
+                                        <text x={q.x + q.w/2} y={q.y + 26} fill="rgba(255,255,255,0.4)" fontSize="18" textAnchor="middle" fontWeight="bold">{q.label}</text>
+                                        <text x={q.x + q.w/2} y={q.y + 46} fill="rgba(255,255,255,0.25)" fontSize="11" textAnchor="middle">{q.sublabel}</text>
+                                    </g>
+                                ))}
+
+                                {/* グリッド線（動的） */}
+                                {Array.from({length: 7}, (_, i) => Math.round(xMin + (xMax - xMin) * i / 6)).map(v => (
+                                    <line key={`xg${v}`} x1={xScale(v)} y1={margin.top} x2={xScale(v)} y2={height - margin.bottom} stroke="rgba(255,255,255,0.08)" />
+                                ))}
+                                {Array.from({length: 7}, (_, i) => Math.round(yMin + (yMax - yMin) * i / 6)).map(v => (
+                                    <line key={`yg${v}`} x1={margin.left} y1={yScale(v)} x2={width - margin.right} y2={yScale(v)} stroke="rgba(255,255,255,0.08)" />
+                                ))}
+
+                                <line x1={xScale(certThreshold)} y1={margin.top} x2={xScale(certThreshold)} y2={height - margin.bottom} stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeDasharray="8,4" />
+                                <line x1={margin.left} y1={yScale(upsideThreshold)} x2={width - margin.right} y2={yScale(upsideThreshold)} stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeDasharray="8,4" />
+
+                                <text x={width / 2} y={height - 10} fill="#9ca3af" fontSize="13" textAnchor="middle">確実性 (Certainty) % →</text>
+                                <text x={18} y={height / 2} fill="#9ca3af" fontSize="13" textAnchor="middle" transform={`rotate(-90, 18, ${height / 2})`}>アップサイド (Upside) % →</text>
+
+                                {/* X軸ラベル（動的） */}
+                                {Array.from({length: 7}, (_, i) => Math.round(xMin + (xMax - xMin) * i / 6)).map(v => (
+                                    <text key={`xt${v}`} x={xScale(v)} y={height - margin.bottom + 18} fill="#6b7280" fontSize="11" textAnchor="middle">{v}</text>
+                                ))}
+                                {/* Y軸ラベル（動的） */}
+                                {Array.from({length: 7}, (_, i) => Math.round(yMin + (yMax - yMin) * i / 6)).map(v => (
+                                    <text key={`yt${v}`} x={margin.left - 8} y={yScale(v) + 4} fill="#6b7280" fontSize="11" textAnchor="end">{v}</text>
+                                ))}
+
+                                {sortedFilteredData.map((s) => {
+                                    const pos = positionMap[s.ticker];
+                                    const cx = pos.cx + pos.offsetX;
+                                    const cy = pos.cy + pos.offsetY;
+                                    const isSelected = selectedStock?.ticker === s.ticker;
+                                    const isHovered = hoveredStock?.ticker === s.ticker;
+                                    const isActive = isSelected || isHovered;
+                                    const isTop1 = s.rank === 1;
+                                    const isTop15 = s.rank <= 15;
+                                    const isHighMono = s.monopoly >= 26;
+                                    const r = isActive ? baseRadius + 4 : baseRadius;
+
+                                    const opacity = isTop15 ? 0.95 : 0.65;
+
+                                    return (
+                                        <g key={s.ticker}
+                                            style={{ cursor: "pointer" }}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setSelectedStock(isSelected ? null : s);
+                                            }}
+                                            onMouseEnter={() => setHoveredStock(s)}
+                                            onMouseLeave={() => setHoveredStock(null)}>
+                                            {isHighMono && <circle cx={cx} cy={cy} r={r + 8} fill="none" stroke="#ef4444" strokeWidth="2.5" strokeDasharray="5,3" opacity={isTop15 ? 0.8 : 0.5} />}
+                                            {isTop1 && <circle cx={cx} cy={cy} r={r + 12} fill="rgba(234, 179, 8, 0.4)" />}
+                                            <circle
+                                                cx={cx} cy={cy} r={r}
+                                                fill={domainColors[s.domain]}
+                                                fillOpacity={isActive ? 1 : opacity}
+                                                stroke={isSelected ? "#fff" : isTop1 ? "#fbbf24" : isHovered ? "#fff" : isTop15 ? "rgba(255,255,255,0.6)" : "rgba(255,255,255,0.35)"}
+                                                strokeWidth={isSelected ? 4 : isTop1 ? 3.5 : isHovered ? 3 : isTop15 ? 2 : 1.5}
+                                                style={{ transition: "all 0.15s" }}
+                                            />
+                                            <text
+                                                x={cx} y={cy + 5}
+                                                fill="#fff"
+                                                fontSize={isTop15 ? "13" : "11"}
+                                                textAnchor="middle"
+                                                fontWeight="bold"
+                                                style={{ pointerEvents: "none", textShadow: "0 1px 3px rgba(0,0,0,0.9)" }}
+                                            >
+                                                {s.rank}
+                                            </text>
+                                            {isActive && (
+                                                <text x={cx} y={cy - r - 8} fill="#fff" fontSize="13" textAnchor="middle" fontWeight="bold"
+                                                    style={{ pointerEvents: "none", textShadow: "0 2px 4px rgba(0,0,0,0.9)" }}>
+                                                    {s.name}
+                                                </text>
+                                            )}
+                                        </g>
+                                    );
+                                })}
+                            </svg>
+                        </div>
+
+                        {/* 右側の詳細パネル */}
+                        <div style={{ width: "280px", flexShrink: 0 }}>
+                            {displayStock ? (
+                                <div style={{
+                                    background: "rgba(15, 23, 42, 0.97)",
+                                    border: `3px solid ${domainColors[displayStock.domain]}`,
+                                    borderRadius: "12px",
+                                    padding: "16px",
+                                    boxShadow: "0 4px 20px rgba(0,0,0,0.5)"
+                                }}>
+                                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
+                                        <div>
+                                            <span style={{
+                                                fontSize: "24px",
+                                                fontWeight: "bold",
+                                                color: displayStock.rank <= 15 ? "#22c55e" : "#9ca3af"
+                                            }}>#{displayStock.rank}</span>
+                                            <span style={{ fontSize: "18px", fontWeight: "bold", color: "#fff", marginLeft: "8px" }}>{displayStock.name}</span>
+                                        </div>
+                                        {selectedStock && (
+                                            <button onClick={() => setSelectedStock(null)} style={{
+                                                background: "rgba(255,255,255,0.1)",
+                                                border: "none",
+                                                borderRadius: "50%",
+                                                width: "24px",
+                                                height: "24px",
+                                                color: "#9ca3af",
+                                                cursor: "pointer",
+                                                fontSize: "14px"
+                                            }}>✕</button>
+                                        )}
+                                    </div>
+                                    <div style={{
+                                        display: "inline-block",
+                                        padding: "3px 10px",
+                                        background: `${domainColors[displayStock.domain]}30`,
+                                        borderRadius: "12px",
+                                        color: domainColors[displayStock.domain],
+                                        fontSize: "12px",
+                                        marginBottom: "10px"
+                                    }}>{displayStock.domain}</div>
+                                    <div style={{ color: "#9ca3af", marginBottom: "12px", fontSize: "12px" }}>
+                                        {displayStock.ticker} | {displayStock.core_tech}
+                                    </div>
+
+                                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "12px" }}>
+                                        <div style={{ background: "rgba(34, 197, 94, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>独占力</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#22c55e" }}>{displayStock.monopoly}/30</div>
+                                        </div>
+                                        <div style={{ background: "rgba(59, 130, 246, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>政策耐性</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#3b82f6" }}>{displayStock.resilience}/20</div>
+                                        </div>
+                                        <div style={{ background: "rgba(168, 85, 247, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>シナジー</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#a855f7" }}>{displayStock.synergy}/25</div>
+                                        </div>
+                                        <div style={{ background: "rgba(249, 115, 22, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>非対称性</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#f97316" }}>{displayStock.asymmetry}/15</div>
+                                        </div>
+                                        <div style={{ background: "rgba(236, 72, 153, 0.1)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>資本効率</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#ec4899" }}>{displayStock.capital}/10</div>
+                                        </div>
+                                        <div style={{ background: "rgba(234, 179, 8, 0.15)", padding: "8px", borderRadius: "6px" }}>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>合計スコア</div>
+                                            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#fbbf24" }}>{displayStock.total}/100</div>
+                                        </div>
+                                    </div>
+
+                                    <div style={{ display: "flex", gap: "16px", marginBottom: "12px", padding: "10px", background: "rgba(255,255,255,0.05)", borderRadius: "6px" }}>
+                                        <div>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>確実性</div>
+                                            <div style={{ fontSize: "18px", fontWeight: "bold", color: "#fff" }}>{displayStock.certainty}%</div>
+                                        </div>
+                                        <div>
+                                            <div style={{ fontSize: "10px", color: "#9ca3af" }}>アップサイド</div>
+                                            <div style={{ fontSize: "18px", fontWeight: "bold", color: "#fff" }}>{displayStock.upside}%</div>
+                                        </div>
+                                    </div>
+
+                                    <div style={{ fontSize: "12px", color: "#d1d5db", lineHeight: 1.5, borderTop: "1px solid #374151", paddingTop: "12px" }}>
+                                        {displayStock.thesis}
+                                    </div>
+
+                                    {displayStock.rank > 15 && (
+                                        <div style={{ marginTop: "12px", padding: "8px 12px", background: "rgba(249, 115, 22, 0.2)", borderRadius: "6px", fontSize: "11px", color: "#f97316" }}>
+                                            ⚠ 16位以下：攻めの姿勢時のみ検討
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <div style={{
+                                    background: "rgba(30, 41, 59, 0.4)",
+                                    border: "1px dashed rgba(255,255,255,0.2)",
+                                    borderRadius: "12px",
+                                    padding: "24px",
+                                    textAlign: "center",
+                                    color: "#6b7280"
+                                }}>
+                                    <div style={{ fontSize: "14px", marginBottom: "8px" }}>バブルをクリックまたはホバー</div>
+                                    <div style={{ fontSize: "12px" }}>で詳細を表示</div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginTop: "12px", fontSize: "12px", flexWrap: "wrap" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                            <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                                <span style={{ width: "14px", height: "14px", background: "#22c55e", borderRadius: "50%", opacity: 0.9 }}></span>
+                                最優先: {counts.prime}
+                            </span>
+                            <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                                <span style={{ width: "14px", height: "14px", background: "#3b82f6", borderRadius: "50%", opacity: 0.9 }}></span>
+                                安定: {counts.stable}
+                            </span>
+                            <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                                <span style={{ width: "14px", height: "14px", background: "#f97316", borderRadius: "50%", opacity: 0.9 }}></span>
+                                投機的: {counts.spec}
+                            </span>
+                            <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                                <span style={{ width: "14px", height: "14px", background: "#ef4444", borderRadius: "50%", opacity: 0.9 }}></span>
+                                慎重: {counts.avoid}
+                            </span>
+                        </div>
+                        <span style={{ color: "#4b5563" }}>|</span>
+                        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                            <span style={{ display: "flex", alignItems: "center", gap: "4px", color: "#9ca3af" }}>
+                                <span style={{ width: "16px", height: "16px", border: "2.5px dashed #ef4444", borderRadius: "50%" }}></span>
+                                高独占 (≥26)
+                            </span>
+                            <span style={{ display: "flex", alignItems: "center", gap: "4px", color: "#9ca3af" }}>
+                                <span style={{ width: "16px", height: "16px", background: "rgba(234, 179, 8, 0.4)", borderRadius: "50%", border: "3px solid #fbbf24" }}></span>
+                                #1
+                            </span>
+                            <span style={{ display: "flex", alignItems: "center", gap: "4px", color: "#6b7280" }}>
+                                <span style={{ width: "14px", height: "14px", background: "#6b7280", borderRadius: "50%", opacity: 0.5 }}></span>
+                                16位以下
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<QuadrantChart />);
+    </script>
+</body>
+</html>

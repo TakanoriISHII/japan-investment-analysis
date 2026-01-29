@@ -700,44 +700,51 @@ git commit "統合完了: N社、M情報項目、stable更新"
 - reports/[TODAY]/quadrant_chart.html
 - 4象限マトリックス（確実性 × アップサイド）
 
-**【必須】React/JSX形式で以下を含むこと:**
+**【必須】テンプレートから生成すること:**
 
-```html
-<!-- 必須構成 -->
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js">
-</head>
-<body>
-    <div id="root"></div>
-    <script type="text/babel">
-        // Japan Top 30全銘柄のstockData配列
-        // ドメインフィルター機能（useState）
-        // ホバーで詳細表示（5軸評価、投資テーゼ）
-        // 象限サマリーボックス（Prime/Stable Growth/Speculative）
-    </script>
-</body>
-</html>
+```
+テンプレート: templates/japan_quadrant_chart_template.html
+
+プレースホルダー置換:
+1. {{DATE}} → 分析日（例: 2026-01-30）
+2. {{MARKET_RISK_SCORE}} → japan_market_risk.total_score（例: 57）
+3. {{STANCE}} → attack_defense_stanceの日本語（例: バランス型）
+4. {{JAPAN_TOP30_DATA}} → japan_top30配列をJSON形式で挿入
 ```
 
-**必須機能:**
-1. **Japan Top 30全銘柄**: 30社全ての`stockData`配列を含む
-2. **インタラクティブ**: ドメイン別フィルタリング、ホバーで詳細表示
-3. **視覚的ハイライト**: #1（金色）、高独占26+（赤枠）
-4. **象限カウント**: Prime/Stable Growth/Speculative/Avoid の件数表示
-5. **本日の更新**: 重要な変更点をサマリーボックスで表示
-
-**stockData配列の各要素に必要なフィールド:**
+**データ変換（top30.json → japanTop30Data配列）:**
 ```javascript
+// top30.jsonのjapan_top30から以下の形式に変換
 {
-  rank, ticker, name, certainty, upside, total,
-  monopoly, resilience, synergy, asymmetry, capital,
-  quadrant, domain, note, core_tech, thesis
+  rank: 1,                        // 順位
+  ticker: "7011.T",               // ティッカー
+  name: "三菱重工業",              // 会社名
+  certainty: 95,                  // 確実性
+  upside: 45,                     // アップサイド
+  total: 88,                      // 総合スコア
+  monopoly: 28,                   // 独占力
+  resilience: 19,                 // 政策耐性
+  synergy: 22,                    // シナジー
+  asymmetry: 12,                  // 非対称性
+  capital: 7,                     // 資本効率
+  domain: "防衛",                  // domains_impacted[0]（主ドメイン）
+  core_tech: "防衛装備品、原子力、航空宇宙",  // core_technology
+  thesis: "防衛装備品契約首位..."   // thesis（投資テーゼ）
 }
 ```
+
+**テンプレートの特徴:**
+1. **30社相対評価**: 閾値は30社の中央値から動的計算
+2. **衝突回避アルゴリズム**: 重なる場合は上位ランクを右上にオフセット
+3. **バブルサイズ**: baseRadius = 22px（大きく視認性向上）
+4. **固定詳細パネル**: 右側280pxで5軸スコア・投資テーゼ表示
+5. **視覚的ハイライト**: #1（金色）、高独占≥26（赤点線枠）、16位以下（薄く表示）
+6. **ドメインフィルター**: 7ドメイン（AI/防衛/エネルギー/ロボティクス/宇宙/サイバー/半導体）
+
+**スタンスの日本語変換:**
+- aggressive → 攻撃型
+- balanced → バランス型
+- defensive → 防御型
 
 #### 7-5. latest/にコピー
 
