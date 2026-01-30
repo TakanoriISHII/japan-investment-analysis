@@ -11,9 +11,18 @@
         "description": "構造的優位性",
         "category": "investment_factors",
         "components": {
-          "market_dominance": {"max": 10, "description": "市場支配力"},
-          "barriers_to_entry": {"max": 5, "description": "参入障壁"},
-          "moat_financial_backing": {"max": 5, "description": "モート財務裏付け"}
+          "market_dominance": {
+            "max": 10,
+            "description": "市場支配力"
+          },
+          "barriers_to_entry": {
+            "max": 5,
+            "description": "参入障壁"
+          },
+          "moat_financial_backing": {
+            "max": 5,
+            "description": "モート財務裏付け"
+          }
         }
       },
       "intrinsic_value": {
@@ -21,9 +30,18 @@
         "description": "本質的価値",
         "category": "investment_factors",
         "components": {
-          "earnings_power": {"max": 6, "description": "収益力"},
-          "capital_structure": {"max": 6, "description": "資産・資本構成"},
-          "valuation": {"max": 8, "description": "バリュエーション適正度"}
+          "earnings_power": {
+            "max": 6,
+            "description": "収益力"
+          },
+          "capital_structure": {
+            "max": 6,
+            "description": "資産・資本構成"
+          },
+          "valuation": {
+            "max": 8,
+            "description": "バリュエーション適正度"
+          }
         }
       },
       "future_value": {
@@ -31,9 +49,18 @@
         "description": "将来の価値",
         "category": "speculative_factors",
         "components": {
-          "synergy": {"max": 12, "description": "シナジー（ドメイン数×2）"},
-          "growth_certainty": {"max": 8, "description": "成長確度"},
-          "management": {"max": 5, "description": "経営能力"}
+          "synergy": {
+            "max": 12,
+            "description": "シナジー（ドメイン数×2）"
+          },
+          "growth_certainty": {
+            "max": 8,
+            "description": "成長確度"
+          },
+          "management": {
+            "max": 5,
+            "description": "経営能力"
+          }
         }
       },
       "information_asymmetry": {
@@ -41,9 +68,18 @@
         "description": "情報非対称性",
         "category": "speculative_factors",
         "components": {
-          "recognition_gap": {"max": 8, "description": "認識ギャップ"},
-          "totality_premium": {"max": 6, "description": "全体性プレミアム"},
-          "recognition_trigger": {"max": 6, "description": "認識トリガー"}
+          "recognition_gap": {
+            "max": 8,
+            "description": "認識ギャップ"
+          },
+          "totality_premium": {
+            "max": 6,
+            "description": "全体性プレミアム"
+          },
+          "recognition_trigger": {
+            "max": 6,
+            "description": "認識トリガー"
+          }
         }
       },
       "policy_catalyst": {
@@ -51,8 +87,14 @@
         "description": "政策・触媒",
         "category": "speculative_factors",
         "components": {
-          "policy_acceleration": {"max": 8, "description": "政策アクセラレーション"},
-          "external_catalyst": {"max": 7, "description": "外部カタリスト"}
+          "policy_acceleration": {
+            "max": 8,
+            "description": "政策アクセラレーション"
+          },
+          "external_catalyst": {
+            "max": 7,
+            "description": "外部カタリスト"
+          }
         }
       }
     },
@@ -84,1020 +126,2142 @@
       "ticker": "7011.T",
       "name": "三菱重工業",
       "core_technology": "防衛装備品（GCAP・イージス艦・ミサイル）、原子力プラント、H3ロケット",
-      "total_score": 79,
-      "axes": {
-        "structural_advantage": 18,
-        "intrinsic_value": 14,
-        "future_value": 22,
-        "information_asymmetry": 12,
-        "policy_catalyst": 13
+      "scores": {
+        "structural_advantage": {
+          "score": 18,
+          "confidence": "A",
+          "basis": "国内唯一の総合防衛プライム、防衛装備品シェア首位約25%、GCAP主契約者、70年+の防衛省取引関係"
+        },
+        "intrinsic_value": {
+          "score": 14,
+          "confidence": "B",
+          "basis": "受注残10兆円超、売上4.84兆円、FCF黒字、OP margin 8%だが時価総額15.7兆円でPER 55x"
+        },
+        "future_value": {
+          "score": 22,
+          "confidence": "B",
+          "basis": "6ドメイン収束（防衛・エネルギー・宇宙・ロボティクス・AI・サイバー）、GCAP・SMR・H3の成長三本柱"
+        },
+        "information_asymmetry": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "防衛大手として市場に十分認知されているが、6ドメイン収束の全体像は過小評価"
+        },
+        "policy_catalyst": {
+          "score": 13,
+          "confidence": "A",
+          "basis": "防衛費GDP比2%（43兆円/5年）確定、装備品輸出解禁、GX原子力推進"
+        }
       },
       "investment_factors": 32,
       "speculative_factors": 47,
+      "total": 79,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "A",
-        "summary": "B"
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "A-",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因32/40は防衛プライム独占と受注残10兆円超の安定性に支えられ、投機的要因47/60は6ドメイン収束と防衛費GDP2%の政策確実性が牽引する。",
+      "domain": "防衛",
+      "domains": [
+        "防衛",
+        "エネルギー",
+        "宇宙",
+        "ロボティクス",
+        "AI",
+        "サイバー"
+      ],
+      "tier": 1,
+      "key_thesis": "国内唯一の総合防衛プライム。防衛受注残10兆円超、GCAP主契約者。原子力・H3ロケットで6ドメイン収束。時価総額15.7兆円。",
+      "risks": [
+        "H3ロケット9号機延期（CHG-005）",
+        "防衛調達遅延リスク"
+      ],
+      "catalysts_next_6m": [
+        "GCAP共同開発進捗",
+        "豪州フリゲート正式契約",
+        "防衛予算FY2027概算要求"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 92,
       "upside": 45,
       "quadrant": "prime",
-      "domain": "防衛",
-      "domains_impacted": ["防衛", "エネルギー", "宇宙", "ロボティクス", "AI", "サイバー"],
-      "thesis": "国内唯一の総合防衛プライム。防衛受注残10兆円超、GCAP主契約者。原子力・H3ロケットで6ドメイン収束。時価総額15.7兆円。",
-      "key_catalyst": "GCAP共同開発進捗、豪州フリゲート正式契約、防衛予算FY2027概算要求",
-      "catalyst_date": "2026-Q2",
-      "risk": "H3ロケット9号機延期（CHG-005）、防衛調達遅延リスク"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 4,
+        "llm_agreement": 4
+      }
     },
     {
       "rank": 2,
       "ticker": "8035.T",
       "name": "東京エレクトロン",
       "core_technology": "半導体製造装置（コータ/デベロッパ90%、エッチング30%+）",
-      "total_score": 72,
-      "axes": {
-        "structural_advantage": 17,
-        "intrinsic_value": 15,
-        "future_value": 20,
-        "information_asymmetry": 8,
-        "policy_catalyst": 12
+      "scores": {
+        "structural_advantage": {
+          "score": 17,
+          "confidence": "A",
+          "basis": "コータ/デベロッパ世界シェア90%+独占、EUV対応先端工程で不可欠"
+        },
+        "intrinsic_value": {
+          "score": 15,
+          "confidence": "A",
+          "basis": "実質無借金、自己資本比率75%、時価総額約15兆円、安定したFCF創出"
+        },
+        "future_value": {
+          "score": 20,
+          "confidence": "B",
+          "basis": "AI半導体需要拡大でWFE市場2桁成長、TSMC熊本4nm追加需要（CHG-006）"
+        },
+        "information_asymmetry": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "半導体装置大手として市場に完全認知済み、情報非対称性は限定的"
+        },
+        "policy_catalyst": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "TSMC熊本誘致、ラピダス2nm国策プロジェクト、半導体産業育成"
+        }
       },
       "investment_factors": 32,
       "speculative_factors": 40,
+      "total": 72,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "A",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "A"
+        "investment_factors_summary": "A",
+        "speculative_factors_summary": "B+",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因32/40はコータ90%独占と実質無借金・自己資本比率75%の財務健全性が盤石であり、投機的要因はAI半導体需要拡大の確実性が高い一方、市場認知度が高く情報非対称性は限定的。",
+      "domain": "AI",
+      "domains": [
+        "AI",
+        "ロボティクス"
+      ],
+      "tier": 1,
+      "key_thesis": "コータ/デベロッパ世界90%独占。TSMC熊本4nm計画変更で追加装置需要（CHG-006）。AI半導体投資の構造的恩恵。",
+      "risks": [
+        "半導体サイクル調整",
+        "米中輸出規制強化"
+      ],
+      "catalysts_next_6m": [
+        "Q3決算（2026-02-06）",
+        "TSMC熊本4nm正式決定"
+      ],
+      "catalyst_date": "2026-Q1",
       "certainty": 95,
       "upside": 35,
       "quadrant": "stable",
-      "domain": "AI",
-      "domains_impacted": ["AI", "ロボティクス"],
-      "thesis": "コータ/デベロッパ世界90%独占。TSMC熊本4nm計画変更で追加装置需要（CHG-006）。AI半導体投資の構造的恩恵。",
-      "key_catalyst": "Q3決算（2026-02-06）、TSMC熊本4nm正式決定",
-      "catalyst_date": "2026-Q1",
-      "risk": "半導体サイクル調整、米中輸出規制強化"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 4,
+        "llm_agreement": 4
+      }
     },
     {
       "rank": 3,
       "ticker": "6954.T",
       "name": "ファナック",
       "core_technology": "CNC装置世界首位（50%+）、産業用ロボット、CRX-H1ヒューマノイド",
-      "total_score": 71,
-      "axes": {
-        "structural_advantage": 16,
-        "intrinsic_value": 14,
-        "future_value": 21,
-        "information_asymmetry": 10,
-        "policy_catalyst": 10
+      "scores": {
+        "structural_advantage": {
+          "score": 16,
+          "confidence": "A",
+          "basis": "CNC装置世界シェア50%+独占、工作機械の頭脳を支配、40年+のソフトウェア蓄積"
+        },
+        "intrinsic_value": {
+          "score": 14,
+          "confidence": "A",
+          "basis": "無借金経営、自己資本比率87-89%、OP margin 17.8%、Graham的安全性の高い財務基盤"
+        },
+        "future_value": {
+          "score": 21,
+          "confidence": "B",
+          "basis": "CRX-H1ヒューマノイド参入、NVIDIA AI Robot共同開発、Q3ロボット受注+38%・中国+87%回復"
+        },
+        "information_asymmetry": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "CNC首位は認知済みだが、ヒューマノイド・NVIDIA協業の成長軌道は市場に未織込み"
+        },
+        "policy_catalyst": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "製造業自動化補助金、ヒューマノイドロボット新カテゴリー政策"
+        }
       },
       "investment_factors": 30,
       "speculative_factors": 41,
+      "total": 71,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "A",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "A"
+        "investment_factors_summary": "A",
+        "speculative_factors_summary": "B+",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因30/40はCNC50%+独占と無借金経営・自己資本比率87%のGraham的安全性に支えられ、投機的要因41/60はCRX-H1ヒューマノイド参入とNVIDIA AI協業による新成長軌道が評価を引き上げる。",
+      "domain": "ロボティクス",
+      "domains": [
+        "ロボティクス",
+        "AI",
+        "防衛"
+      ],
+      "tier": 1,
+      "key_thesis": "CNC世界首位。Q3ロボット受注+38%、中国+87%回復。CRX-H1ヒューマノイド発表でNVIDIA共同開発（CHG-003）。OP guidance +10%上方修正。",
+      "risks": [
+        "中国市場の景気減速リスク",
+        "ヒューマノイド商用化は長期"
+      ],
+      "catalysts_next_6m": [
+        "CRX-H1プロトタイプ公開（H2 2026）",
+        "NVIDIA AI Robot共同開発進捗"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 95,
       "upside": 42,
       "quadrant": "prime",
-      "domain": "ロボティクス",
-      "domains_impacted": ["ロボティクス", "AI", "防衛"],
-      "thesis": "CNC世界首位。Q3ロボット受注+38%、中国+87%回復。CRX-H1ヒューマノイド発表でNVIDIA共同開発（CHG-003）。OP guidance +10%上方修正。",
-      "key_catalyst": "CRX-H1プロトタイプ公開（H2 2026）、NVIDIA AI Robot共同開発進捗",
-      "catalyst_date": "2026-H2",
-      "risk": "中国市場の景気減速リスク、ヒューマノイド商用化は長期"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 4,
+        "llm_agreement": 4
+      }
     },
     {
       "rank": 4,
       "ticker": "6501.T",
       "name": "日立製作所",
       "core_technology": "グリッド変圧器（40%）、HVDC、GE-Hitachi BWRX-300 SMR、Lumada DX",
-      "total_score": 69,
-      "axes": {
-        "structural_advantage": 15,
-        "intrinsic_value": 14,
-        "future_value": 19,
-        "information_asymmetry": 9,
-        "policy_catalyst": 12
+      "scores": {
+        "structural_advantage": {
+          "score": 15,
+          "confidence": "B",
+          "basis": "HVDC/変圧器40%+シェア（GE Vernovaと2社寡占）、原子力プラントGEとの2強"
+        },
+        "intrinsic_value": {
+          "score": 14,
+          "confidence": "B",
+          "basis": "売上10.02兆円、ROE 13.72%、FCF黒字だが時価総額20-24兆円でPER 32xとプレミアム高い"
+        },
+        "future_value": {
+          "score": 19,
+          "confidence": "B",
+          "basis": "エネルギー・AI・ロボティクス3ドメイン収束、BWRX-300 SMR、Lumada DXプラットフォーム"
+        },
+        "information_asymmetry": {
+          "score": 9,
+          "confidence": "B",
+          "basis": "大型株で市場認知度高く、エネルギートランジション評価は概ね織込み済み"
+        },
+        "policy_catalyst": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "GXグリッド投資、BWRX-300推進、データセンター電力需要"
+        }
       },
       "investment_factors": 29,
       "speculative_factors": 40,
+      "total": 69,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "B+",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因29/40はグリッド変圧器40%シェアとSMR技術が安定的基盤を提供するが、時価総額20-24兆円でバリュエーションプレミアムが高い。投機的要因40/60はエネルギー・AI・ロボティクスの3ドメイン収束が評価。",
+      "domain": "エネルギー",
+      "domains": [
+        "エネルギー",
+        "AI",
+        "ロボティクス"
+      ],
+      "tier": 1,
+      "key_thesis": "グリッド変圧器40%シェア。GE-Hitachi BWRX-300でSMR市場参入。時価総額20-24兆円（CHG-002修正済）。Lumada DXとデータセンター電力の交差点。",
+      "risks": [
+        "バリュエーション高い（PER 25x+）",
+        "SMR商用化は2030年代"
+      ],
+      "catalysts_next_6m": [
+        "BWRX-300初号機建設進捗",
+        "変圧器受注残拡大"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 88,
       "upside": 38,
       "quadrant": "prime",
-      "domain": "エネルギー",
-      "domains_impacted": ["エネルギー", "AI", "ロボティクス"],
-      "thesis": "グリッド変圧器40%シェア。GE-Hitachi BWRX-300でSMR市場参入。時価総額20-24兆円（CHG-002修正済）。Lumada DXとデータセンター電力の交差点。",
-      "key_catalyst": "BWRX-300初号機建設進捗、変圧器受注残拡大",
-      "catalyst_date": "2026-Q2",
-      "risk": "バリュエーション高い（PER 25x+）、SMR商用化は2030年代"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 4,
+        "llm_agreement": 4
+      }
     },
     {
       "rank": 5,
       "ticker": "6315.T",
       "name": "TOWA",
       "core_technology": "HBMモールディング装置（世界66%シェア）、コンプレッションモールド技術",
-      "total_score": 69,
-      "axes": {
-        "structural_advantage": 16,
-        "intrinsic_value": 11,
-        "future_value": 18,
-        "information_asymmetry": 16,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 16,
+          "confidence": "B",
+          "basis": "HBMモールディング装置世界66%シェア、コンプレッション成形技術の事実上業界標準"
+        },
+        "intrinsic_value": {
+          "score": 11,
+          "confidence": "C",
+          "basis": "FCF黒字だが小型株で財務規模は限定的、成長投資段階"
+        },
+        "future_value": {
+          "score": 18,
+          "confidence": "B",
+          "basis": "AI半導体後工程のボトルネック、HBM4世代需要、SK hynix/Samsung/Micronの設備投資恩恵"
+        },
+        "information_asymmetry": {
+          "score": 16,
+          "confidence": "B",
+          "basis": "外国人投資家にほぼ未認知、HBM後工程独占の全体像は極めて過小評価"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "C",
+          "basis": "HBM需要急拡大は市場環境要因、直接的政策支援は限定的"
+        }
       },
       "investment_factors": 27,
       "speculative_factors": 42,
+      "total": 69,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "C",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "C",
-        "summary": "B"
+        "investment_factors_summary": "B",
+        "speculative_factors_summary": "B",
+        "overall": "B"
       },
       "graham_buffett_note": "投資的要因27/40はHBMモールド66%シェアの強固なモートだが財務規模が小さく本質的価値は中程度。投機的要因42/60は極めて高い情報非対称性（外国人投資家ほぼ未認知）とAI半導体需要の直接的恩恵が際立つ。",
+      "domain": "AI",
+      "domains": [
+        "AI"
+      ],
+      "tier": 1,
+      "key_thesis": "HBMモールド装置66%シェアで事実上の独占（CHG-009）。AI半導体後工程の隠れたボトルネック。外国人投資家にほぼ未認知。",
+      "risks": [
+        "HBM需要サイクルリスク",
+        "ASMPT等の競合参入",
+        "小型株の流動性リスク"
+      ],
+      "catalysts_next_6m": [
+        "HBM4世代装置受注",
+        "SK hynix/Samsung新ライン向け出荷",
+        "決算での高成長開示"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 80,
       "upside": 75,
       "quadrant": "speculative",
-      "domain": "AI",
-      "domains_impacted": ["AI"],
-      "thesis": "HBMモールド装置66%シェアで事実上の独占（CHG-009）。AI半導体後工程の隠れたボトルネック。外国人投資家にほぼ未認知。",
-      "key_catalyst": "HBM4世代装置受注、SK hynix/Samsung新ライン向け出荷、決算での高成長開示",
-      "catalyst_date": "2026-Q2",
-      "risk": "HBM需要サイクルリスク、ASMPT等の競合参入、小型株の流動性リスク"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     },
     {
       "rank": 6,
       "ticker": "6506.T",
       "name": "安川電機",
       "core_technology": "ACサーボモータ世界首位（20%）、産業用ロボット、MOTOMAN-HMヒューマノイド",
-      "total_score": 68,
-      "axes": {
-        "structural_advantage": 14,
-        "intrinsic_value": 13,
-        "future_value": 21,
-        "information_asymmetry": 10,
-        "policy_catalyst": 10
+      "scores": {
+        "structural_advantage": {
+          "score": 14,
+          "confidence": "B",
+          "basis": "ACサーボモータ世界シェア20-30%首位、産業用ロボット世界3-4位"
+        },
+        "intrinsic_value": {
+          "score": 13,
+          "confidence": "B",
+          "basis": "売上約5,500億円、OP margin 9.3%、FCF黒字、自己資本比率55-58%"
+        },
+        "future_value": {
+          "score": 21,
+          "confidence": "B",
+          "basis": "MOTOMAN-HMヒューマノイド開発、ソフトバンク提携、NVIDIA Isaac活用、インバータ大口受注"
+        },
+        "information_asymmetry": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "ロボット大手として認知済みだが、ヒューマノイド・SoftBank提携の評価は未織込み"
+        },
+        "policy_catalyst": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "防衛UUV予算、製造業自動化補助金"
+        }
       },
       "investment_factors": 27,
       "speculative_factors": 41,
+      "total": 68,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "B+",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因27/40はサーボモータ首位だがシェア20%で独占度はファナックに劣る。投機的要因41/60はMOTOMAN-HMヒューマノイド開発とソフトバンク提携による成長期待が大きい。",
+      "domain": "ロボティクス",
+      "domains": [
+        "ロボティクス",
+        "AI",
+        "防衛"
+      ],
+      "tier": 1,
+      "key_thesis": "ACサーボモータ世界首位。MOTOMAN-HMヒューマノイド開発進行、ソフトバンク提携（CHG-004）。インバータ大口受注。",
+      "risks": [
+        "中国市場の減速",
+        "ヒューマノイド実用化は長期"
+      ],
+      "catalysts_next_6m": [
+        "MOTOMAN-HMプロトタイプ発表",
+        "SoftBank協業の具体化"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 88,
       "upside": 45,
       "quadrant": "prime",
-      "domain": "ロボティクス",
-      "domains_impacted": ["ロボティクス", "AI", "防衛"],
-      "thesis": "ACサーボモータ世界首位。MOTOMAN-HMヒューマノイド開発進行、ソフトバンク提携（CHG-004）。インバータ大口受注。",
-      "key_catalyst": "MOTOMAN-HMプロトタイプ発表、SoftBank協業の具体化",
-      "catalyst_date": "2026-H2",
-      "risk": "中国市場の減速、ヒューマノイド実用化は長期"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 4,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 7,
       "ticker": "9432.T",
       "name": "NTT",
       "core_technology": "国内データセンター（60%シェア）、IOWN光電融合、量子安全通信",
-      "total_score": 67,
-      "axes": {
-        "structural_advantage": 15,
-        "intrinsic_value": 14,
-        "future_value": 17,
-        "information_asymmetry": 9,
-        "policy_catalyst": 12
+      "scores": {
+        "structural_advantage": {
+          "score": 15,
+          "confidence": "A",
+          "basis": "国内DC市場60%シェア独占、全国最大の固定・移動通信インフラ"
+        },
+        "intrinsic_value": {
+          "score": 14,
+          "confidence": "A",
+          "basis": "時価総額約14兆円、OP margin 15%、安定FCF、自己資本比率40%"
+        },
+        "future_value": {
+          "score": 17,
+          "confidence": "B",
+          "basis": "IOWN光電融合2030年商用化、AIデータセンター需要の国内最大受け皿"
+        },
+        "information_asymmetry": {
+          "score": 9,
+          "confidence": "B",
+          "basis": "大型通信株として完全認知済み、情報非対称性は限定的"
+        },
+        "policy_catalyst": {
+          "score": 12,
+          "confidence": "A",
+          "basis": "AIデータセンター国内誘致政策、IOWN構想政府支援"
+        }
       },
       "investment_factors": 29,
       "speculative_factors": 38,
+      "total": 67,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "A",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "A",
-        "summary": "A"
+        "investment_factors_summary": "A",
+        "speculative_factors_summary": "A-",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因29/40はDC60%独占と安定収益基盤に裏打ちされた高い本質的安全性。投機的要因38/60はAIデータセンター需要とIOWN技術が将来の価値を支えるが、大型株ゆえ情報非対称性は限定的。",
+      "domain": "AI",
+      "domains": [
+        "AI",
+        "サイバー"
+      ],
+      "tier": 1,
+      "key_thesis": "国内DC60%シェア。IOWN量子安全技術統合。AIデータセンター需要の国内最大の受け皿。安定配当。",
+      "risks": [
+        "通信事業のARPU低下",
+        "IOWN商用化遅延"
+      ],
+      "catalysts_next_6m": [
+        "AIデータセンター新規投資計画発表",
+        "IOWN商用化マイルストーン"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 90,
       "upside": 30,
       "quadrant": "stable",
-      "domain": "AI",
-      "domains_impacted": ["AI", "サイバー"],
-      "thesis": "国内DC60%シェア。IOWN量子安全技術統合。AIデータセンター需要の国内最大の受け皿。安定配当。",
-      "key_catalyst": "AIデータセンター新規投資計画発表、IOWN商用化マイルストーン",
-      "catalyst_date": "2026-Q2",
-      "risk": "通信事業のARPU低下、IOWN商用化遅延"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 3,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 8,
       "ticker": "6701.T",
       "name": "NEC",
       "core_technology": "サイバーセキュリティ、防衛通信システム、顔認証世界首位、海底ケーブル",
-      "total_score": 66,
-      "axes": {
-        "structural_advantage": 14,
-        "intrinsic_value": 13,
-        "future_value": 18,
-        "information_asymmetry": 10,
-        "policy_catalyst": 11
+      "scores": {
+        "structural_advantage": {
+          "score": 14,
+          "confidence": "B",
+          "basis": "政府向けサイバーセキュリティ国内首位級、防衛センサー60%、量子暗号通信世界最先端"
+        },
+        "intrinsic_value": {
+          "score": 13,
+          "confidence": "B",
+          "basis": "時価総額約2.5兆円、売上3,423億円、OP margin 8.4-10%、FCF黒字"
+        },
+        "future_value": {
+          "score": 18,
+          "confidence": "B",
+          "basis": "サイバー・防衛・AI・宇宙の4ドメイン展開、KDDI-NEC合弁Protect.jp"
+        },
+        "information_asymmetry": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "防衛通信は認知されているが、サイバーセキュリティ国産首位としての評価は過小"
+        },
+        "policy_catalyst": {
+          "score": 11,
+          "confidence": "B",
+          "basis": "能動的サイバー防御法案、経済安保推進法、防衛予算増"
+        }
       },
       "investment_factors": 27,
       "speculative_factors": 39,
+      "total": 66,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "B+",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因27/40は政府向けサイバーセキュリティの信頼関係と防衛通信の参入障壁。投機的要因39/60は能動的サイバー防御法制化と防衛エレクトロニクス需要の構造的成長が牽引。",
+      "domain": "サイバー",
+      "domains": [
+        "サイバー",
+        "防衛",
+        "AI",
+        "宇宙"
+      ],
+      "tier": 1,
+      "key_thesis": "政府向けサイバーセキュリティ国内首位級。KDDI-NEC協業。能動的サイバー防御の法整備で恩恵。",
+      "risks": [
+        "ITサービスの価格競争",
+        "防衛受注の遅延"
+      ],
+      "catalysts_next_6m": [
+        "能動的サイバー防御法案成立",
+        "防衛通信大型受注"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 88,
       "upside": 42,
       "quadrant": "prime",
-      "domain": "サイバー",
-      "domains_impacted": ["サイバー", "防衛", "AI", "宇宙"],
-      "thesis": "政府向けサイバーセキュリティ国内首位級。KDDI-NEC協業。能動的サイバー防御の法整備で恩恵。",
-      "key_catalyst": "能動的サイバー防御法案成立、防衛通信大型受注",
-      "catalyst_date": "2026-Q2",
-      "risk": "ITサービスの価格競争、防衛受注の遅延"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 4,
+        "llm_agreement": 4
+      }
     },
     {
       "rank": 9,
       "ticker": "7012.T",
       "name": "川崎重工業",
       "core_technology": "潜水艦建造（2社独占）、P-1哨戒機、水素液化プラント、ロボット",
-      "total_score": 65,
-      "axes": {
-        "structural_advantage": 15,
-        "intrinsic_value": 11,
-        "future_value": 19,
-        "information_asymmetry": 9,
-        "policy_catalyst": 11
+      "scores": {
+        "structural_advantage": {
+          "score": 15,
+          "confidence": "A",
+          "basis": "潜水艦建造で三菱重工と2社独占、P-1哨戒機・C-2輸送機、航空機体製造認定"
+        },
+        "intrinsic_value": {
+          "score": 11,
+          "confidence": "B",
+          "basis": "時価総額約1兆円、FCF黒字だが自己資本比率30%、D/E 2.5xと財務レバレッジ高い"
+        },
+        "future_value": {
+          "score": 19,
+          "confidence": "B",
+          "basis": "防衛・水素・ロボティクス・宇宙の4ドメイン展開、GCAP参画、水素液化プラント"
+        },
+        "information_asymmetry": {
+          "score": 9,
+          "confidence": "B",
+          "basis": "防衛2位として認知済みだが、水素エコシステムでの独自ポジションは過小評価"
+        },
+        "policy_catalyst": {
+          "score": 11,
+          "confidence": "A",
+          "basis": "防衛予算9兆円超、水素サプライチェーン政策、GCAP日英伊共同開発"
+        }
       },
       "investment_factors": 26,
       "speculative_factors": 39,
+      "total": 65,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "A",
-        "summary": "B"
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "A-",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因26/40は潜水艦建造独占と防衛認定の参入障壁だが財務レバレッジがやや高い。投機的要因39/60は防衛・水素・ロボティクスの3ドメイン展開力と日英伊GCAP参画。",
+      "domain": "防衛",
+      "domains": [
+        "防衛",
+        "エネルギー",
+        "ロボティクス",
+        "宇宙"
+      ],
+      "tier": 1,
+      "key_thesis": "防衛装備品契約2位。潜水艦建造で三菱重工と2社独占。日英伊次期戦闘機（GCAP）参画。水素液化プラントで脱炭素も。",
+      "risks": [
+        "財務レバレッジ高（D/E 2.5x）",
+        "利上げ局面でコスト増"
+      ],
+      "catalysts_next_6m": [
+        "潜水艦新型受注",
+        "GCAP分担契約",
+        "水素プラント大型受注"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 85,
       "upside": 42,
       "quadrant": "prime",
-      "domain": "防衛",
-      "domains_impacted": ["防衛", "エネルギー", "ロボティクス", "宇宙"],
-      "thesis": "防衛装備品契約2位。潜水艦建造で三菱重工と2社独占。日英伊次期戦闘機（GCAP）参画。水素液化プラントで脱炭素も。",
-      "key_catalyst": "潜水艦新型受注、GCAP分担契約、水素プラント大型受注",
-      "catalyst_date": "2026-Q2",
-      "risk": "財務レバレッジ高（D/E 2.5x）、利上げ局面でコスト増"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 4,
+        "llm_agreement": 4
+      }
     },
     {
       "rank": 10,
       "ticker": "7013.T",
       "name": "IHI",
       "core_technology": "航空エンジン（国内唯一の量産メーカー）、NuScale SMRパートナー、ロケット",
-      "total_score": 64,
-      "axes": {
-        "structural_advantage": 15,
-        "intrinsic_value": 10,
-        "future_value": 19,
-        "information_asymmetry": 10,
-        "policy_catalyst": 10
+      "scores": {
+        "structural_advantage": {
+          "score": 15,
+          "confidence": "A",
+          "basis": "航空エンジン国内唯一の量産メーカー、F110/F135ライセンス生産、ロケットエンジン50%"
+        },
+        "intrinsic_value": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "航空宇宙防衛受注残1.896兆円（+69.9% YoY）だが自己資本比率21.5-28%、D/E 2.0x"
+        },
+        "future_value": {
+          "score": 19,
+          "confidence": "B",
+          "basis": "NuScale SMRパートナー（$40M+投資）、航空防衛受注残急増、JNI設立（日揮と共同）"
+        },
+        "information_asymmetry": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "航空エンジン独占は認知されているが、受注残+70%の成長加速度は未織込み"
+        },
+        "policy_catalyst": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "防衛予算増、SMR推進政策"
+        }
       },
       "investment_factors": 25,
       "speculative_factors": 39,
+      "total": 64,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因25/40は航空エンジン国内唯一供給者の強固な参入障壁だが資本効率は改善途上。投機的要因39/60は航空防衛受注残1.9兆円（+70%YoY）の成長確度とNuScale SMR投資の将来性。",
+      "domain": "エネルギー",
+      "domains": [
+        "エネルギー",
+        "防衛",
+        "宇宙"
+      ],
+      "tier": 1,
+      "key_thesis": "航空エンジン国内唯一の量産メーカー。航空宇宙防衛受注残1.896兆円（+70%YoY）。NuScale SMRに$40M+投資。",
+      "risks": [
+        "財務レバレッジ（D/E 2.0x）",
+        "NuScale商用化遅延リスク"
+      ],
+      "catalysts_next_6m": [
+        "NuScale初号機進捗",
+        "F135エンジン次期契約"
+      ],
+      "catalyst_date": "2026-Q3",
       "certainty": 85,
       "upside": 48,
       "quadrant": "prime",
-      "domain": "エネルギー",
-      "domains_impacted": ["エネルギー", "防衛", "宇宙"],
-      "thesis": "航空エンジン国内唯一の量産メーカー。航空宇宙防衛受注残1.896兆円（+70%YoY）。NuScale SMRに$40M+投資。",
-      "key_catalyst": "NuScale初号機進捗、F135エンジン次期契約",
-      "catalyst_date": "2026-Q3",
-      "risk": "財務レバレッジ（D/E 2.0x）、NuScale商用化遅延リスク"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 4,
+        "llm_agreement": 4
+      }
     },
     {
       "rank": 11,
       "ticker": "6920.T",
       "name": "レーザーテック",
       "core_technology": "EUVマスク欠陥検査装置（世界100%独占）",
-      "total_score": 63,
-      "axes": {
-        "structural_advantage": 17,
-        "intrinsic_value": 13,
-        "future_value": 17,
-        "information_asymmetry": 7,
-        "policy_catalyst": 9
+      "scores": {
+        "structural_advantage": {
+          "score": 17,
+          "confidence": "A",
+          "basis": "EUVマスクブランクス検査装置世界シェア100%、TSMC/Samsung/Intel全社が依存する唯一の供給者"
+        },
+        "intrinsic_value": {
+          "score": 13,
+          "confidence": "A",
+          "basis": "営業利益率30-45%、無借金、自己資本比率75%、先端半導体不可欠インフラ"
+        },
+        "future_value": {
+          "score": 17,
+          "confidence": "B",
+          "basis": "High-NA EUV対応新製品、先端半導体需要の構造的成長"
+        },
+        "information_asymmetry": {
+          "score": 7,
+          "confidence": "B",
+          "basis": "100%独占は市場に広く認知済み、情報非対称性は限定的"
+        },
+        "policy_catalyst": {
+          "score": 9,
+          "confidence": "B",
+          "basis": "先端半導体需要拡大は市場環境、直接政策支援は間接的"
+        }
       },
       "investment_factors": 30,
       "speculative_factors": 33,
+      "total": 63,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "A",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "A"
+        "investment_factors_summary": "A",
+        "speculative_factors_summary": "B+",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因30/40はEUVマスク検査100%独占という究極の参入障壁。投機的要因33/60は先端半導体不可欠だが市場に十分認知されており非対称性は限定的。",
+      "domain": "AI",
+      "domains": [
+        "AI"
+      ],
+      "tier": 2,
+      "key_thesis": "EUVマスク検査装置で世界100%独占。先端半導体製造に不可欠。無借金、営業利益率40%+。",
+      "risks": [
+        "EUV以外の検査技術の台頭",
+        "受注の一巡リスク"
+      ],
+      "catalysts_next_6m": [
+        "High-NA EUV対応新製品",
+        "TSMC・Samsung新ライン向け出荷"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 92,
       "upside": 35,
       "quadrant": "stable",
-      "domain": "AI",
-      "domains_impacted": ["AI"],
-      "thesis": "EUVマスク検査装置で世界100%独占。先端半導体製造に不可欠。無借金、営業利益率40%+。",
-      "key_catalyst": "High-NA EUV対応新製品、TSMC・Samsung新ライン向け出荷",
-      "catalyst_date": "2026-Q2",
-      "risk": "EUV以外の検査技術の台頭、受注の一巡リスク"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 3,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 12,
       "ticker": "186A.T",
       "name": "Astroscale HD",
       "core_technology": "軌道上サービス（デブリ除去、衛星延命）、RPO技術",
-      "total_score": 63,
-      "axes": {
-        "structural_advantage": 14,
-        "intrinsic_value": 6,
-        "future_value": 18,
-        "information_asymmetry": 15,
-        "policy_catalyst": 10
+      "scores": {
+        "structural_advantage": {
+          "score": 14,
+          "confidence": "B",
+          "basis": "軌道上サービス（デブリ除去）で世界唯一の商用実績、RPO技術先行者優位"
+        },
+        "intrinsic_value": {
+          "score": 6,
+          "confidence": "D",
+          "basis": "FCF赤字の成長投資段階、時価総額約1,000億円、本質的価値は極めて低い"
+        },
+        "future_value": {
+          "score": 18,
+          "confidence": "C",
+          "basis": "宇宙安全保障市場の爆発的成長、JAXA Kプログラム参画、アルテミス計画パートナー期待"
+        },
+        "information_asymmetry": {
+          "score": 15,
+          "confidence": "B",
+          "basis": "宇宙ベンチャーとして認知は限定的、軌道上サービス市場自体が過小評価"
+        },
+        "policy_catalyst": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "宇宙安全保障構想、デブリ除去国際規制形成"
+        }
       },
       "investment_factors": 20,
       "speculative_factors": 43,
+      "total": 63,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "D",
         "future_value": "C",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "C"
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "B",
+        "overall": "B-"
       },
       "graham_buffett_note": "投資的要因20/40は軌道上サービスの先行者優位があるがFCF赤字で本質的価値は低い。投機的要因43/60は極めて高い情報非対称性と宇宙安全保障政策の追い風が際立つハイリスク・ハイリターン銘柄。",
+      "domain": "宇宙",
+      "domains": [
+        "宇宙",
+        "防衛"
+      ],
+      "tier": 2,
+      "key_thesis": "軌道上サービス世界リーダー。デブリ除去で唯一の商用実績。宇宙安全保障・アルテミス参画期待。",
+      "risks": [
+        "FCF赤字継続",
+        "資金調達リスク",
+        "技術実証の失敗リスク"
+      ],
+      "catalysts_next_6m": [
+        "JAXA大型契約",
+        "US SDA/SSSAプログラム受注"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 70,
       "upside": 85,
       "quadrant": "speculative",
-      "domain": "宇宙",
-      "domains_impacted": ["宇宙", "防衛"],
-      "thesis": "軌道上サービス世界リーダー。デブリ除去で唯一の商用実績。宇宙安全保障・アルテミス参画期待。",
-      "key_catalyst": "JAXA大型契約、US SDA/SSSAプログラム受注",
-      "catalyst_date": "2026-H2",
-      "risk": "FCF赤字継続、資金調達リスク、技術実証の失敗リスク"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 3,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 13,
       "ticker": "6503.T",
       "name": "三菱電機",
       "core_technology": "防衛エレクトロニクス（レーダー・ミサイル誘導）、FA機器、パワー半導体、衛星",
-      "total_score": 62,
-      "axes": {
-        "structural_advantage": 14,
-        "intrinsic_value": 13,
-        "future_value": 18,
-        "information_asymmetry": 8,
-        "policy_catalyst": 9
+      "scores": {
+        "structural_advantage": {
+          "score": 14,
+          "confidence": "A",
+          "basis": "防衛電子機器国内首位、衛星システム50%、FA機器国内2位、レーダー・誘導装置"
+        },
+        "intrinsic_value": {
+          "score": 13,
+          "confidence": "B",
+          "basis": "時価総額約3.5兆円、売上5,257億円、OP margin 7.1%、ROE 8.43%、PER 18.6x"
+        },
+        "future_value": {
+          "score": 18,
+          "confidence": "B",
+          "basis": "防衛・ロボティクス・宇宙・エネルギーの4ドメイン展開、SiCパワー半導体成長"
+        },
+        "information_asymmetry": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "防衛電子首位は認知済みだが、マルチドメイン展開の全体性プレミアムは未評価"
+        },
+        "policy_catalyst": {
+          "score": 9,
+          "confidence": "B",
+          "basis": "防衛予算増、宇宙安全保障"
+        }
       },
       "investment_factors": 27,
       "speculative_factors": 35,
+      "total": 62,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因27/40は防衛電子機器国内首位とFA機器の安定収益。投機的要因35/60は防衛・ロボティクス・宇宙のマルチドメイン展開だが個々のシェアがMHIほど圧倒的でない。",
+      "domain": "防衛",
+      "domains": [
+        "防衛",
+        "ロボティクス",
+        "エネルギー",
+        "宇宙"
+      ],
+      "tier": 2,
+      "key_thesis": "防衛エレクトロニクス国内首位。レーダー・誘導装置。FA機器2位でロボティクス需要も。パワー半導体成長。",
+      "risks": [
+        "品質不正問題の残余影響",
+        "利益率の低さ（OP margin 7%）"
+      ],
+      "catalysts_next_6m": [
+        "防衛エレクトロニクス大型受注",
+        "SiCパワー半導体量産拡大"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 85,
       "upside": 38,
       "quadrant": "stable",
-      "domain": "防衛",
-      "domains_impacted": ["防衛", "ロボティクス", "エネルギー", "宇宙"],
-      "thesis": "防衛エレクトロニクス国内首位。レーダー・誘導装置。FA機器2位でロボティクス需要も。パワー半導体成長。",
-      "key_catalyst": "防衛エレクトロニクス大型受注、SiCパワー半導体量産拡大",
-      "catalyst_date": "2026-Q2",
-      "risk": "品質不正問題の残余影響、利益率の低さ（OP margin 7%）"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 4,
+        "llm_agreement": 4
+      }
     },
     {
       "rank": 14,
       "ticker": "6146.T",
       "name": "ディスコ",
       "core_technology": "ダイシングソー（80%）、グラインダ（70%+）、半導体後工程独占",
-      "total_score": 62,
-      "axes": {
-        "structural_advantage": 16,
-        "intrinsic_value": 14,
-        "future_value": 17,
-        "information_asymmetry": 7,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 16,
+          "confidence": "A",
+          "basis": "ダイシングソー世界80%独占、グラインダ70%+、消耗品ブレードのリカーリング収益モデル"
+        },
+        "intrinsic_value": {
+          "score": 14,
+          "confidence": "A",
+          "basis": "無借金、自己資本比率85%、営業利益率38%、安定した高収益体質"
+        },
+        "future_value": {
+          "score": 17,
+          "confidence": "B",
+          "basis": "AI半導体の先端パッケージング需要増、HBMダイシング需要"
+        },
+        "information_asymmetry": {
+          "score": 7,
+          "confidence": "B",
+          "basis": "半導体装置大手として市場に認知済み、情報非対称性は限定的"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "先端パッケージ需要拡大は市場環境要因"
+        }
       },
       "investment_factors": 30,
       "speculative_factors": 32,
+      "total": 62,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "A",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "A"
+        "investment_factors_summary": "A",
+        "speculative_factors_summary": "B+",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因30/40はダイシング80%独占と無借金の優れた財務基盤。投機的要因32/60はAI半導体需要で恩恵を受けるが市場に十分認知されておりアップサイドは限定的。",
+      "domain": "AI",
+      "domains": [
+        "AI"
+      ],
+      "tier": 2,
+      "key_thesis": "半導体切断・研磨装置で世界80%独占。消耗品モデルで安定収益。先端パッケージング需要増。無借金。",
+      "risks": [
+        "半導体サイクル調整リスク"
+      ],
+      "catalysts_next_6m": [
+        "HBMダイシング需要拡大",
+        "先端パッケージング投資増"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 90,
       "upside": 35,
       "quadrant": "stable",
-      "domain": "AI",
-      "domains_impacted": ["AI"],
-      "thesis": "半導体切断・研磨装置で世界80%独占。消耗品モデルで安定収益。先端パッケージング需要増。無借金。",
-      "key_catalyst": "HBMダイシング需要拡大、先端パッケージング投資増",
-      "catalyst_date": "2026-Q2",
-      "risk": "半導体サイクル調整リスク"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 3,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 15,
       "ticker": "6857.T",
       "name": "アドバンテスト",
       "core_technology": "半導体テスタ（メモリ50%+、SoC 30%+）、HBMテスト",
-      "total_score": 61,
-      "axes": {
-        "structural_advantage": 15,
-        "intrinsic_value": 13,
-        "future_value": 17,
-        "information_asymmetry": 8,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 15,
+          "confidence": "A",
+          "basis": "メモリテスタ世界シェア50%+、SoCテスタ30%+、Teradyneと世界市場を二分"
+        },
+        "intrinsic_value": {
+          "score": 13,
+          "confidence": "A",
+          "basis": "実質無借金、自己資本比率70%、安定したFCF創出"
+        },
+        "future_value": {
+          "score": 17,
+          "confidence": "B",
+          "basis": "AI半導体の複雑化でテスト需要構造的増加、HBMテスト新需要"
+        },
+        "information_asymmetry": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "半導体テスト首位として市場に認知済み、情報非対称性は限定的"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "HBM/先端パッケージ需要拡大は市場環境要因"
+        }
       },
       "investment_factors": 28,
       "speculative_factors": 33,
+      "total": 61,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "A",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "A"
+        "investment_factors_summary": "A",
+        "speculative_factors_summary": "B+",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因28/40はメモリテスタ50%+と実質無借金の堅固な基盤。投機的要因33/60はAI半導体テスト需要増だが市場認知度が高い。",
+      "domain": "AI",
+      "domains": [
+        "AI"
+      ],
+      "tier": 2,
+      "key_thesis": "半導体テスト装置で世界2位。AI半導体の複雑化でテスト需要構造的増加。HBMテスト需要。実質無借金。",
+      "risks": [
+        "テスト装置サイクル",
+        "Teradyneとの競争"
+      ],
+      "catalysts_next_6m": [
+        "AI半導体テスト新型機",
+        "HBM4テスト需要"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 88,
       "upside": 35,
       "quadrant": "stable",
-      "domain": "AI",
-      "domains_impacted": ["AI"],
-      "thesis": "半導体テスト装置で世界2位。AI半導体の複雑化でテスト需要構造的増加。HBMテスト需要。実質無借金。",
-      "key_catalyst": "AI半導体テスト新型機、HBM4テスト需要",
-      "catalyst_date": "2026-Q2",
-      "risk": "テスト装置サイクル、Teradyneとの競争"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 3,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 16,
       "ticker": "6758.T",
       "name": "ソニーグループ",
       "core_technology": "CMOSイメージセンサー世界首位（50%+）、ゲーム、エンタテインメント",
-      "total_score": 60,
-      "axes": {
-        "structural_advantage": 15,
-        "intrinsic_value": 13,
-        "future_value": 16,
-        "information_asymmetry": 7,
-        "policy_catalyst": 9
+      "scores": {
+        "structural_advantage": {
+          "score": 15,
+          "confidence": "A",
+          "basis": "CMOSイメージセンサー世界首位50%+シェア、積層技術・量産能力で圧倒的優位"
+        },
+        "intrinsic_value": {
+          "score": 13,
+          "confidence": "B",
+          "basis": "多角化事業でFCF黒字、自己資本比率40%、D/E 1.5x"
+        },
+        "future_value": {
+          "score": 16,
+          "confidence": "B",
+          "basis": "自動運転・ロボットビジョン向けセンサー需要拡大、PS6世代投入"
+        },
+        "information_asymmetry": {
+          "score": 7,
+          "confidence": "B",
+          "basis": "グローバルブランドとして完全認知済み、非対称性は低い"
+        },
+        "policy_catalyst": {
+          "score": 9,
+          "confidence": "B",
+          "basis": "車載センサー需要は市場環境、直接政策支援は限定的"
+        }
       },
       "investment_factors": 28,
       "speculative_factors": 32,
+      "total": 60,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因28/40はCMOSセンサー50%独占の安定的モート。投機的要因32/60は自動運転・ロボットビジョン向け需要で成長するが、ゲーム事業のサイクル性がリスク。",
+      "domain": "AI",
+      "domains": [
+        "AI",
+        "ロボティクス"
+      ],
+      "tier": 2,
+      "key_thesis": "イメージセンサー世界首位50%シェア。自動運転・ロボットビジョン向け需要。エンタテインメント多角化。",
+      "risks": [
+        "ゲーム事業サイクル",
+        "イメージセンサー価格競争"
+      ],
+      "catalysts_next_6m": [
+        "車載センサー大型受注",
+        "PS6世代投入"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 85,
       "upside": 35,
       "quadrant": "stable",
-      "domain": "AI",
-      "domains_impacted": ["AI", "ロボティクス"],
-      "thesis": "イメージセンサー世界首位50%シェア。自動運転・ロボットビジョン向け需要。エンタテインメント多角化。",
-      "key_catalyst": "車載センサー大型受注、PS6世代投入",
-      "catalyst_date": "2026-H2",
-      "risk": "ゲーム事業サイクル、イメージセンサー価格競争"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     },
     {
       "rank": 17,
       "ticker": "5631.T",
       "name": "日本製鋼所",
       "core_technology": "原子力圧力容器（世界80%+）、防衛砲身（国内独占）、14,000tプレス",
-      "total_score": 60,
-      "axes": {
-        "structural_advantage": 16,
-        "intrinsic_value": 10,
-        "future_value": 16,
-        "information_asymmetry": 10,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 16,
+          "confidence": "A",
+          "basis": "原子力圧力容器世界80%+独占（室蘭の奇跡）、14,000tプレス世界数台のみ、防衛砲身国内独占"
+        },
+        "intrinsic_value": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "FCF黒字だが収益力は中程度、原発サイクル依存"
+        },
+        "future_value": {
+          "score": 16,
+          "confidence": "B",
+          "basis": "原発新設計画での圧力容器需要、防衛予算増での砲身増産、SMR関連"
+        },
+        "information_asymmetry": {
+          "score": 10,
+          "confidence": "B",
+          "basis": "圧力容器独占は専門家に認知されているが、一般投資家には隠れた独占銘柄"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "原子力復活政策、SMR推進、防衛予算増"
+        }
       },
       "investment_factors": 26,
       "speculative_factors": 34,
+      "total": 60,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因26/40は原子力圧力容器80%+という世界独占だが収益力は中程度。投機的要因34/60は原発再稼働・防衛増額の恩恵と隠れた独占力の非対称性。",
+      "domain": "エネルギー",
+      "domains": [
+        "エネルギー",
+        "防衛"
+      ],
+      "tier": 2,
+      "key_thesis": "原子力圧力容器で世界80%+独占。14,000tプレスは世界数台のみ。防衛向け戦車砲身も国内独占。",
+      "risks": [
+        "原発新設計画の遅延",
+        "設備稼働率の変動"
+      ],
+      "catalysts_next_6m": [
+        "原発新設計画の具体化",
+        "防衛予算での砲身増産受注"
+      ],
+      "catalyst_date": "2026-Q3",
       "certainty": 82,
       "upside": 50,
       "quadrant": "prime",
-      "domain": "エネルギー",
-      "domains_impacted": ["エネルギー", "防衛"],
-      "thesis": "原子力圧力容器で世界80%+独占。14,000tプレスは世界数台のみ。防衛向け戦車砲身も国内独占。",
-      "key_catalyst": "原発新設計画の具体化、防衛予算での砲身増産受注",
-      "catalyst_date": "2026-Q3",
-      "risk": "原発新設計画の遅延、設備稼働率の変動"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 3,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 18,
       "ticker": "6861.T",
       "name": "キーエンス",
       "core_technology": "FAセンサー国内首位、画像処理、計測機器、営業利益率55%",
-      "total_score": 59,
-      "axes": {
-        "structural_advantage": 14,
-        "intrinsic_value": 15,
-        "future_value": 16,
-        "information_asymmetry": 6,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 14,
+          "confidence": "A",
+          "basis": "FAセンサー国内首位、マシンビジョン圧倒的ブランド、直販モデルで顧客密着"
+        },
+        "intrinsic_value": {
+          "score": 15,
+          "confidence": "A",
+          "basis": "営業利益率55%、無借金、自己資本比率95%、時価総額約13.5兆円はGraham的理想企業"
+        },
+        "future_value": {
+          "score": 16,
+          "confidence": "B",
+          "basis": "AI搭載新型センサー、海外展開加速だがPER 40x+でアップサイド限定的"
+        },
+        "information_asymmetry": {
+          "score": 6,
+          "confidence": "A",
+          "basis": "市場に完全認知済み、情報非対称性は極めて低い"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "FA投資サイクル、製造業自動化"
+        }
       },
       "investment_factors": 29,
       "speculative_factors": 30,
+      "total": 59,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "A",
         "future_value": "B",
         "information_asymmetry": "A",
         "policy_catalyst": "B",
-        "summary": "A"
+        "investment_factors_summary": "A",
+        "speculative_factors_summary": "A-",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因29/40は営業利益率55%、無借金、自己資本比率95%というGraham的理想企業。投機的要因30/60は市場に完全認知済みで情報非対称性が低く、バリュエーションプレミアムも高い。",
+      "domain": "ロボティクス",
+      "domains": [
+        "ロボティクス",
+        "AI"
+      ],
+      "tier": 2,
+      "key_thesis": "FAセンサー国内首位。営業利益率55%の超高収益体質。直販モデルで顧客密着。無借金・自己資本比率95%。",
+      "risks": [
+        "高バリュエーション（PER 40x+）",
+        "成長鈍化リスク"
+      ],
+      "catalysts_next_6m": [
+        "AI搭載新型センサー",
+        "海外展開加速"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 90,
       "upside": 25,
       "quadrant": "stable",
-      "domain": "ロボティクス",
-      "domains_impacted": ["ロボティクス", "AI"],
-      "thesis": "FAセンサー国内首位。営業利益率55%の超高収益体質。直販モデルで顧客密着。無借金・自己資本比率95%。",
-      "key_catalyst": "AI搭載新型センサー、海外展開加速",
-      "catalyst_date": "2026-Q2",
-      "risk": "高バリュエーション（PER 40x+）、成長鈍化リスク"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 4,
+        "llm_agreement": 4
+      }
     },
     {
       "rank": 19,
       "ticker": "6723.T",
       "name": "ルネサスエレクトロニクス",
       "core_technology": "車載MCU世界3位、パワー半導体、アナログ半導体",
-      "total_score": 59,
-      "axes": {
-        "structural_advantage": 13,
-        "intrinsic_value": 12,
-        "future_value": 17,
-        "information_asymmetry": 9,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 13,
+          "confidence": "B",
+          "basis": "車載MCU世界3位級、自動車半導体のリーダーだがシェアは限定的"
+        },
+        "intrinsic_value": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "FCF黒字、M&Aで製品ライン拡充済み"
+        },
+        "future_value": {
+          "score": 17,
+          "confidence": "B",
+          "basis": "自動運転・EV向けMCU/パワー半導体で需要拡大、レベル3-4対応チップ"
+        },
+        "information_asymmetry": {
+          "score": 9,
+          "confidence": "B",
+          "basis": "車載半導体大手として認知済みだが、EV転換加速時の受益度は過小評価"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "車載半導体需要は市場環境、半導体国策支援"
+        }
       },
       "investment_factors": 25,
       "speculative_factors": 34,
+      "total": 59,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "B+",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因25/40は車載MCU世界3位だがシェアは限定的。投機的要因34/60は自動運転・EV需要拡大と半導体国策の恩恵。",
+      "domain": "AI",
+      "domains": [
+        "AI",
+        "ロボティクス"
+      ],
+      "tier": 2,
+      "key_thesis": "車載半導体世界3位。自動運転・EV向けMCU/パワー半導体で需要拡大。M&Aで製品ライン拡充。",
+      "risks": [
+        "車載半導体の在庫調整",
+        "M&A統合リスク"
+      ],
+      "catalysts_next_6m": [
+        "自動運転レベル3-4対応チップ量産",
+        "EV向けSiC量産"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 82,
       "upside": 42,
       "quadrant": "prime",
-      "domain": "AI",
-      "domains_impacted": ["AI", "ロボティクス"],
-      "thesis": "車載半導体世界3位。自動運転・EV向けMCU/パワー半導体で需要拡大。M&Aで製品ライン拡充。",
-      "key_catalyst": "自動運転レベル3-4対応チップ量産、EV向けSiC量産",
-      "catalyst_date": "2026-H2",
-      "risk": "車載半導体の在庫調整、M&A統合リスク"
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 1,
+        "llm_agreement": 1
+      }
     },
     {
       "rank": 20,
       "ticker": "7735.T",
       "name": "SCREEN HD",
       "core_technology": "半導体洗浄装置世界首位（60%シェア）",
-      "total_score": 58,
-      "axes": {
-        "structural_advantage": 15,
-        "intrinsic_value": 12,
-        "future_value": 16,
-        "information_asymmetry": 7,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 15,
+          "confidence": "A",
+          "basis": "半導体洗浄装置世界首位60%シェア、製造工程の約3割が洗浄でボトルネック"
+        },
+        "intrinsic_value": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "FCF黒字、安定した収益基盤"
+        },
+        "future_value": {
+          "score": 16,
+          "confidence": "B",
+          "basis": "微細化進展で洗浄回数増加、構造的需要成長"
+        },
+        "information_asymmetry": {
+          "score": 7,
+          "confidence": "B",
+          "basis": "半導体装置として認知済み、情報非対称性は限定的"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "メモリ投資回復、先端洗浄需要は市場環境"
+        }
       },
       "investment_factors": 27,
       "speculative_factors": 31,
+      "total": 58,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因27/40は洗浄装置60%首位の強固なモート。投機的要因31/60は微細化進展で構造的需要増だが市場認知度高い。",
+      "domain": "AI",
+      "domains": [
+        "AI"
+      ],
+      "tier": 2,
+      "key_thesis": "半導体洗浄装置世界首位60%シェア。先端プロセスで洗浄回数増加、構造的需要成長。",
+      "risks": [
+        "半導体装置サイクル",
+        "競合参入"
+      ],
+      "catalysts_next_6m": [
+        "先端洗浄装置新型機",
+        "TSMC熊本向け出荷"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 85,
       "upside": 35,
       "quadrant": "stable",
-      "domain": "AI",
-      "domains_impacted": ["AI"],
-      "thesis": "半導体洗浄装置世界首位60%シェア。先端プロセスで洗浄回数増加、構造的需要成長。",
-      "key_catalyst": "先端洗浄装置新型機、TSMC熊本向け出荷",
-      "catalyst_date": "2026-Q2",
-      "risk": "半導体装置サイクル、競合参入"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     },
     {
       "rank": 21,
       "ticker": "6268.T",
       "name": "ナブテスコ",
       "core_technology": "RV精密減速機世界首位（60%シェア）、航空機器",
-      "total_score": 57,
-      "axes": {
-        "structural_advantage": 15,
-        "intrinsic_value": 11,
-        "future_value": 16,
-        "information_asymmetry": 8,
-        "policy_catalyst": 7
+      "scores": {
+        "structural_advantage": {
+          "score": 15,
+          "confidence": "B",
+          "basis": "RV精密減速機世界60%シェア独占、中・大型ロボットの心臓部でファナック・安川が依存"
+        },
+        "intrinsic_value": {
+          "score": 11,
+          "confidence": "B",
+          "basis": "FCF黒字だが収益力は中程度"
+        },
+        "future_value": {
+          "score": 16,
+          "confidence": "B",
+          "basis": "ロボット需要回復、ヒューマノイド向け減速機の新規需要期待"
+        },
+        "information_asymmetry": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "減速機首位は専門家に認知されているが、ヒューマノイド新需要は未織込み"
+        },
+        "policy_catalyst": {
+          "score": 7,
+          "confidence": "C",
+          "basis": "ロボット需要拡大は市場環境、直接政策支援は限定的"
+        }
       },
       "investment_factors": 26,
       "speculative_factors": 31,
+      "total": 57,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "C",
-        "summary": "B"
+        "investment_factors_summary": "B+",
+        "speculative_factors_summary": "B",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因26/40はRV減速機60%独占の強いモートだが収益力は中程度。投機的要因31/60はロボット需要回復とヒューマノイド向け新需要期待。",
+      "domain": "ロボティクス",
+      "domains": [
+        "ロボティクス",
+        "防衛"
+      ],
+      "tier": 3,
+      "key_thesis": "RV精密減速機世界60%シェア。産業用ロボットの心臓部（CHG-010）。ヒューマノイド向け新規需要期待。",
+      "risks": [
+        "中国減速機メーカーの台頭",
+        "ロボット需要の循環性"
+      ],
+      "catalysts_next_6m": [
+        "ロボット需要回復確認",
+        "ヒューマノイド向け減速機受注"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 82,
       "upside": 38,
       "quadrant": "stable",
-      "domain": "ロボティクス",
-      "domains_impacted": ["ロボティクス", "防衛"],
-      "thesis": "RV精密減速機世界60%シェア。産業用ロボットの心臓部（CHG-010）。ヒューマノイド向け新規需要期待。",
-      "key_catalyst": "ロボット需要回復確認、ヒューマノイド向け減速機受注",
-      "catalyst_date": "2026-H2",
-      "risk": "中国減速機メーカーの台頭、ロボット需要の循環性"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     },
     {
       "rank": 22,
       "ticker": "6273.T",
       "name": "SMC",
       "core_technology": "空圧機器世界首位（40%シェア）、真空機器",
-      "total_score": 57,
-      "axes": {
-        "structural_advantage": 14,
-        "intrinsic_value": 14,
-        "future_value": 15,
-        "information_asymmetry": 6,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 14,
+          "confidence": "A",
+          "basis": "空圧機器世界首位39-40%シェア、国内約60%、80万種の製品ラインナップ"
+        },
+        "intrinsic_value": {
+          "score": 14,
+          "confidence": "A",
+          "basis": "無借金、自己資本比率90%、OP margin 23%、キャッシュリッチの盤石な財務"
+        },
+        "future_value": {
+          "score": 15,
+          "confidence": "B",
+          "basis": "半導体設備投資サイクル回復、自動化投資加速だがアップサイドカタリストに乏しい"
+        },
+        "information_asymmetry": {
+          "score": 6,
+          "confidence": "A",
+          "basis": "空圧機器首位として認知済み、情報非対称性は低い"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "工場自動化投資は市場環境"
+        }
       },
       "investment_factors": 28,
       "speculative_factors": 29,
+      "total": 57,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "A",
         "future_value": "B",
         "information_asymmetry": "A",
         "policy_catalyst": "B",
-        "summary": "A"
+        "investment_factors_summary": "A",
+        "speculative_factors_summary": "A-",
+        "overall": "A-"
       },
       "graham_buffett_note": "投資的要因28/40は空圧機器40%首位と無借金・自己資本比率90%の盤石な財務。投機的要因29/60は安定成長だがアップサイドカタリストに乏しく情報非対称性は低い。",
+      "domain": "ロボティクス",
+      "domains": [
+        "ロボティクス",
+        "AI"
+      ],
+      "tier": 3,
+      "key_thesis": "空圧機器世界首位40%。80万種の製品ライン。半導体製造装置・ロボット向け。無借金・キャッシュリッチ。",
+      "risks": [
+        "成長鈍化",
+        "製造業サイクルリスク"
+      ],
+      "catalysts_next_6m": [
+        "半導体設備投資サイクル回復",
+        "自動化投資加速"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 85,
       "upside": 30,
       "quadrant": "stable",
-      "domain": "ロボティクス",
-      "domains_impacted": ["ロボティクス", "AI"],
-      "thesis": "空圧機器世界首位40%。80万種の製品ライン。半導体製造装置・ロボット向け。無借金・キャッシュリッチ。",
-      "key_catalyst": "半導体設備投資サイクル回復、自動化投資加速",
-      "catalyst_date": "2026-Q2",
-      "risk": "成長鈍化、製造業サイクルリスク"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 3,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 23,
       "ticker": "9501.T",
       "name": "東京電力HD",
       "core_technology": "柏崎刈羽原発（821万kW）、送配電インフラ",
-      "total_score": 56,
-      "axes": {
-        "structural_advantage": 13,
-        "intrinsic_value": 8,
-        "future_value": 15,
-        "information_asymmetry": 11,
-        "policy_catalyst": 9
+      "scores": {
+        "structural_advantage": {
+          "score": 13,
+          "confidence": "B",
+          "basis": "柏崎刈羽原発7基821万kW世界最大、関東圏送配電インフラ独占"
+        },
+        "intrinsic_value": {
+          "score": 8,
+          "confidence": "C",
+          "basis": "FCF黒字だが再稼働不確実性と福島関連特別損失で財務脆弱"
+        },
+        "future_value": {
+          "score": 15,
+          "confidence": "C",
+          "basis": "柏崎刈羽再稼働実現時の収益改善幅は極めて大きい"
+        },
+        "information_asymmetry": {
+          "score": 11,
+          "confidence": "B",
+          "basis": "再稼働期待は認知されているが、実現時の収益インパクトの全容は過小評価"
+        },
+        "policy_catalyst": {
+          "score": 9,
+          "confidence": "B",
+          "basis": "原発再稼働推進政策、データセンター電力需要"
+        }
       },
       "investment_factors": 21,
       "speculative_factors": 35,
+      "total": 56,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "C",
         "future_value": "C",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "C"
+        "investment_factors_summary": "B",
+        "speculative_factors_summary": "B",
+        "overall": "B"
       },
       "graham_buffett_note": "投資的要因21/40は柏崎刈羽の資産価値はあるが再稼働不確実性と財務脆弱性が重い。投機的要因35/60は再稼働実現時の収益改善幅が大きく非対称性は高いが投機的色彩が強い。",
+      "domain": "エネルギー",
+      "domains": [
+        "エネルギー"
+      ],
+      "tier": 3,
+      "key_thesis": "柏崎刈羽（821万kW）再稼働で収益劇的改善期待。しかし制御棒設定ミス判明で停止中（CHG-007）。時期不透明。",
+      "risks": [
+        "再稼働遅延（CHG-007）",
+        "追加安全対策費",
+        "レピュテーションリスク"
+      ],
+      "catalysts_next_6m": [
+        "柏崎刈羽再稼働再開",
+        "規制委員会最終承認"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 65,
       "upside": 65,
       "quadrant": "speculative",
-      "domain": "エネルギー",
-      "domains_impacted": ["エネルギー"],
-      "thesis": "柏崎刈羽（821万kW）再稼働で収益劇的改善期待。しかし制御棒設定ミス判明で停止中（CHG-007）。時期不透明。",
-      "key_catalyst": "柏崎刈羽再稼働再開、規制委員会最終承認",
-      "catalyst_date": "2026-H2",
-      "risk": "再稼働遅延（CHG-007）、追加安全対策費、レピュテーションリスク"
+      "information_quality": {
+        "confidence": "high",
+        "sources_count": 3,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 24,
       "ticker": "6324.T",
       "name": "ハーモニック・ドライブ・システムズ",
       "core_technology": "波動歯車減速機世界独占（80%+シェア）",
-      "total_score": 56,
-      "axes": {
-        "structural_advantage": 15,
-        "intrinsic_value": 9,
-        "future_value": 16,
-        "information_asymmetry": 9,
-        "policy_catalyst": 7
+      "scores": {
+        "structural_advantage": {
+          "score": 15,
+          "confidence": "B",
+          "basis": "波動歯車減速機世界80%+独占、小型・高精度で代替困難"
+        },
+        "intrinsic_value": {
+          "score": 9,
+          "confidence": "C",
+          "basis": "小型株で本質的価値は限定的、FCF黒字"
+        },
+        "future_value": {
+          "score": 16,
+          "confidence": "C",
+          "basis": "ヒューマノイドロボット関節の必需品、需要爆発的成長期待だが実現時期不確実"
+        },
+        "information_asymmetry": {
+          "score": 9,
+          "confidence": "B",
+          "basis": "波動歯車独占は認知されているが、ヒューマノイド需要の規模は未織込み"
+        },
+        "policy_catalyst": {
+          "score": 7,
+          "confidence": "C",
+          "basis": "ロボット政策は間接的、直接政策支援は限定的"
+        }
       },
       "investment_factors": 24,
       "speculative_factors": 32,
+      "total": 56,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "C",
         "future_value": "C",
         "information_asymmetry": "B",
         "policy_catalyst": "C",
-        "summary": "C"
+        "investment_factors_summary": "B",
+        "speculative_factors_summary": "B-",
+        "overall": "B-"
       },
       "graham_buffett_note": "投資的要因24/40は波動歯車80%独占の強固なモートだが小型株で本質的価値は限定的。投機的要因32/60はヒューマノイド需要の爆発的成長期待だが実現時期は不確実。",
+      "domain": "ロボティクス",
+      "domains": [
+        "ロボティクス",
+        "宇宙"
+      ],
+      "tier": 3,
+      "key_thesis": "波動歯車減速機80%+世界独占。ヒューマノイドロボット関節の必需品。小型・高精度で代替困難。",
+      "risks": [
+        "中国新興メーカーの追い上げ",
+        "ヒューマノイド需要の不確実性"
+      ],
+      "catalysts_next_6m": [
+        "ヒューマノイドメーカーとの大型供給契約",
+        "テスラOptimus向け受注"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 75,
       "upside": 55,
       "quadrant": "speculative",
-      "domain": "ロボティクス",
-      "domains_impacted": ["ロボティクス", "宇宙"],
-      "thesis": "波動歯車減速機80%+世界独占。ヒューマノイドロボット関節の必需品。小型・高精度で代替困難。",
-      "key_catalyst": "ヒューマノイドメーカーとの大型供給契約、テスラOptimus向け受注",
-      "catalyst_date": "2026-H2",
-      "risk": "中国新興メーカーの追い上げ、ヒューマノイド需要の不確実性"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     },
     {
       "rank": 25,
       "ticker": "6702.T",
       "name": "富士通",
       "core_technology": "政府向けITシステム、量子コンピュータ、サイバーセキュリティ",
-      "total_score": 55,
-      "axes": {
-        "structural_advantage": 12,
-        "intrinsic_value": 12,
-        "future_value": 15,
-        "information_asymmetry": 8,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "政府向けITシステム大手、量子コンピュータ研究先行、サイバーセキュリティ40%"
+        },
+        "intrinsic_value": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "売上3,560億円、OP margin 7-9%、FCF黒字、自己資本比率40-62%"
+        },
+        "future_value": {
+          "score": 15,
+          "confidence": "B",
+          "basis": "量子コンピュータ商用化、経済安保IT需要拡大だが突出した独占力に欠ける"
+        },
+        "information_asymmetry": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "IT大手として認知済みだが、量子・サイバーの先行優位は過小評価"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "経済安保推進法、サイバーセキュリティ基本法"
+        }
       },
       "investment_factors": 24,
       "speculative_factors": 31,
+      "total": 55,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "B+",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因24/40は政府向けIT基盤と量子コンピュータ研究の実績。投機的要因31/60は経済安保・サイバー防御の政策追い風だが突出した独占力に欠ける。",
+      "domain": "サイバー",
+      "domains": [
+        "サイバー",
+        "AI"
+      ],
+      "tier": 3,
+      "key_thesis": "政府・防衛向けITシステム大手。量子コンピュータ研究で国内先行。経済安保法対応需要。",
+      "risks": [
+        "IT人材不足",
+        "価格競争",
+        "量子商用化は長期"
+      ],
+      "catalysts_next_6m": [
+        "量子コンピュータ商用化進捗",
+        "政府IT大型受注"
+      ],
+      "catalyst_date": "2026-Q3",
       "certainty": 80,
       "upside": 35,
       "quadrant": "stable",
-      "domain": "サイバー",
-      "domains_impacted": ["サイバー", "AI"],
-      "thesis": "政府・防衛向けITシステム大手。量子コンピュータ研究で国内先行。経済安保法対応需要。",
-      "key_catalyst": "量子コンピュータ商用化進捗、政府IT大型受注",
-      "catalyst_date": "2026-Q3",
-      "risk": "IT人材不足、価格競争、量子商用化は長期"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 4,
+        "llm_agreement": 3
+      }
     },
     {
       "rank": 26,
       "ticker": "9348.T",
       "name": "ispace",
       "core_technology": "月面着陸機、月面探査、CLPS（NASA商用月面輸送プログラム）",
-      "total_score": 55,
-      "axes": {
-        "structural_advantage": 13,
-        "intrinsic_value": 5,
-        "future_value": 16,
-        "information_asymmetry": 13,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 13,
+          "confidence": "C",
+          "basis": "月面着陸技術の先行者優位、Mission 2成功実績、CLPS参画"
+        },
+        "intrinsic_value": {
+          "score": 5,
+          "confidence": "D",
+          "basis": "FCF赤字の成長投資段階、本質的価値は極めて低い"
+        },
+        "future_value": {
+          "score": 16,
+          "confidence": "C",
+          "basis": "月面探査市場の爆発的成長ポテンシャル、アルテミス計画民間パートナー"
+        },
+        "information_asymmetry": {
+          "score": 13,
+          "confidence": "B",
+          "basis": "民間月面探査のリーダーとしての認知は限定的、市場自体が過小評価"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "C",
+          "basis": "宇宙探査政策は間接的、NASA CLPSプログラム"
+        }
       },
       "investment_factors": 18,
       "speculative_factors": 37,
+      "total": 55,
       "confidence": {
         "structural_advantage": "C",
         "intrinsic_value": "D",
         "future_value": "C",
         "information_asymmetry": "B",
         "policy_catalyst": "C",
-        "summary": "C"
+        "investment_factors_summary": "C",
+        "speculative_factors_summary": "B-",
+        "overall": "C+"
       },
       "graham_buffett_note": "投資的要因18/40は月面着陸技術の先行者優位はあるがFCF赤字で本質的価値は極めて低い。投機的要因37/60は高い情報非対称性と宇宙探査市場の爆発的成長ポテンシャルに賭ける純粋な投機銘柄。",
+      "domain": "宇宙",
+      "domains": [
+        "宇宙"
+      ],
+      "tier": 3,
+      "key_thesis": "民間月面探査で世界先行。Mission 2成功実績。NASA CLPSプログラム参画。アルテミス計画の民間パートナー。",
+      "risks": [
+        "打上げ失敗リスク",
+        "FCF赤字",
+        "資金調達リスク",
+        "技術成熟度"
+      ],
+      "catalysts_next_6m": [
+        "Mission 3打上げ・着陸成功",
+        "NASA CLPS新規受注"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 60,
       "upside": 90,
       "quadrant": "speculative",
-      "domain": "宇宙",
-      "domains_impacted": ["宇宙"],
-      "thesis": "民間月面探査で世界先行。Mission 2成功実績。NASA CLPSプログラム参画。アルテミス計画の民間パートナー。",
-      "key_catalyst": "Mission 3打上げ・着陸成功、NASA CLPS新規受注",
-      "catalyst_date": "2026-H2",
-      "risk": "打上げ失敗リスク、FCF赤字、資金調達リスク、技術成熟度"
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     },
     {
       "rank": 27,
       "ticker": "1963.T",
       "name": "日揮HD",
       "core_technology": "LNGプラント建設世界大手、水素・アンモニアプラント",
-      "total_score": 54,
-      "axes": {
-        "structural_advantage": 12,
-        "intrinsic_value": 11,
-        "future_value": 15,
-        "information_asymmetry": 8,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "LNGプラント建設世界大手EPC、水素・アンモニアサプライチェーン構築最前線"
+        },
+        "intrinsic_value": {
+          "score": 11,
+          "confidence": "B",
+          "basis": "FCF黒字、安定した収益基盤だが独占度は限定的"
+        },
+        "future_value": {
+          "score": 15,
+          "confidence": "B",
+          "basis": "水素・アンモニア経済のGX政策追い風、JNI設立（IHIと共同NuScale SMR）"
+        },
+        "information_asymmetry": {
+          "score": 8,
+          "confidence": "C",
+          "basis": "EPC大手として認知済み、水素エコシステムでのポジションはやや過小評価"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "GX推進法、水素サプライチェーン政策、GX経済移行債20兆円"
+        }
       },
       "investment_factors": 23,
       "speculative_factors": 31,
+      "total": 54,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "C",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "B+",
+        "speculative_factors_summary": "B",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因23/40はLNGプラント大手の実績だが独占度は限定的。投機的要因31/60は水素・アンモニア経済のGX政策追い風。",
+      "domain": "エネルギー",
+      "domains": [
+        "エネルギー"
+      ],
+      "tier": 3,
+      "key_thesis": "LNGプラント世界大手。GX推進法で水素・アンモニアプラント需要拡大。GX経済移行債20兆円の恩恵。",
+      "risks": [
+        "プラント建設のコスト超過リスク",
+        "水素経済の実現時期"
+      ],
+      "catalysts_next_6m": [
+        "水素・アンモニアプラント大型受注",
+        "GX投資枠具体化"
+      ],
+      "catalyst_date": "2026-Q3",
       "certainty": 78,
       "upside": 40,
       "quadrant": "prime",
-      "domain": "エネルギー",
-      "domains_impacted": ["エネルギー"],
-      "thesis": "LNGプラント世界大手。GX推進法で水素・アンモニアプラント需要拡大。GX経済移行債20兆円の恩恵。",
-      "key_catalyst": "水素・アンモニアプラント大型受注、GX投資枠具体化",
-      "catalyst_date": "2026-Q3",
-      "risk": "プラント建設のコスト超過リスク、水素経済の実現時期"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     },
     {
       "rank": 28,
       "ticker": "6481.T",
       "name": "THK",
       "core_technology": "LMガイド世界首位（50%）、ボールねじ",
-      "total_score": 54,
-      "axes": {
-        "structural_advantage": 14,
-        "intrinsic_value": 11,
-        "future_value": 15,
-        "information_asymmetry": 7,
-        "policy_catalyst": 7
+      "scores": {
+        "structural_advantage": {
+          "score": 14,
+          "confidence": "A",
+          "basis": "LMガイド世界首位50%シェア、直動案内の発明者、精密動作に不可欠"
+        },
+        "intrinsic_value": {
+          "score": 11,
+          "confidence": "B",
+          "basis": "FCF黒字だが収益力は中程度"
+        },
+        "future_value": {
+          "score": 15,
+          "confidence": "B",
+          "basis": "ロボット・半導体装置需要だがカタリストに乏しい"
+        },
+        "information_asymmetry": {
+          "score": 7,
+          "confidence": "B",
+          "basis": "LMガイド首位は認知済み、情報非対称性は限定的"
+        },
+        "policy_catalyst": {
+          "score": 7,
+          "confidence": "B",
+          "basis": "製造業サイクルは市場環境"
+        }
       },
       "investment_factors": 25,
       "speculative_factors": 29,
+      "total": 54,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因25/40はLMガイド50%の発明者優位。投機的要因29/60はロボット・半導体装置需要だがカタリストに乏しい。",
+      "domain": "ロボティクス",
+      "domains": [
+        "ロボティクス",
+        "AI"
+      ],
+      "tier": 3,
+      "key_thesis": "LMガイド世界首位50%シェア。直動案内の発明者。ロボット・半導体装置・工作機械の精密動作に不可欠。",
+      "risks": [
+        "製造業サイクル依存",
+        "中国競合の台頭"
+      ],
+      "catalysts_next_6m": [
+        "ロボット投資サイクル回復",
+        "ヒューマノイド向けLMガイド需要"
+      ],
+      "catalyst_date": "2026-H2",
       "certainty": 80,
       "upside": 35,
       "quadrant": "stable",
-      "domain": "ロボティクス",
-      "domains_impacted": ["ロボティクス", "AI"],
-      "thesis": "LMガイド世界首位50%シェア。直動案内の発明者。ロボット・半導体装置・工作機械の精密動作に不可欠。",
-      "key_catalyst": "ロボット投資サイクル回復、ヒューマノイド向けLMガイド需要",
-      "catalyst_date": "2026-H2",
-      "risk": "製造業サイクル依存、中国競合の台頭"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     },
     {
       "rank": 29,
       "ticker": "4704.T",
       "name": "トレンドマイクロ",
       "core_technology": "エンドポイントセキュリティ世界トップ3、Vision One XDR",
-      "total_score": 53,
-      "axes": {
-        "structural_advantage": 12,
-        "intrinsic_value": 12,
-        "future_value": 14,
-        "information_asymmetry": 7,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "エンドポイントセキュリティ世界トップ3、Vision One XDRプラットフォーム"
+        },
+        "intrinsic_value": {
+          "score": 12,
+          "confidence": "B",
+          "basis": "安定した収益基盤、FCF黒字"
+        },
+        "future_value": {
+          "score": 14,
+          "confidence": "B",
+          "basis": "経済安保関連のサイバーセキュリティ需要だがCrowdStrike・Palo Alto等との競争激化"
+        },
+        "information_asymmetry": {
+          "score": 7,
+          "confidence": "B",
+          "basis": "セキュリティ大手として認知済み、情報非対称性は限定的"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "経済安保関連需要、サイバーセキュリティ基本法"
+        }
       },
       "investment_factors": 24,
       "speculative_factors": 29,
+      "total": 53,
       "confidence": {
         "structural_advantage": "B",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "B+",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因24/40はグローバルセキュリティブランドの安定性。投機的要因29/60は経済安保需要だがCrowdStrike等との競争激化。",
+      "domain": "サイバー",
+      "domains": [
+        "サイバー"
+      ],
+      "tier": 3,
+      "key_thesis": "サイバーセキュリティ世界トップ3。Vision One XDRで企業向け統合セキュリティ。経済安保法対応需要。",
+      "risks": [
+        "CrowdStrike・Palo Alto等との競争激化",
+        "価格圧力"
+      ],
+      "catalysts_next_6m": [
+        "経済安保関連の大型受注",
+        "XDRプラットフォーム導入加速"
+      ],
+      "catalyst_date": "2026-Q2",
       "certainty": 78,
       "upside": 32,
       "quadrant": "stable",
-      "domain": "サイバー",
-      "domains_impacted": ["サイバー"],
-      "thesis": "サイバーセキュリティ世界トップ3。Vision One XDRで企業向け統合セキュリティ。経済安保法対応需要。",
-      "key_catalyst": "経済安保関連の大型受注、XDRプラットフォーム導入加速",
-      "catalyst_date": "2026-Q2",
-      "risk": "CrowdStrike・Palo Alto等との競争激化、価格圧力"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     },
     {
       "rank": 30,
       "ticker": "9503.T",
       "name": "関西電力",
       "core_technology": "原子力発電（7基稼働、国内最高稼働率）、送配電",
-      "total_score": 52,
-      "axes": {
-        "structural_advantage": 13,
-        "intrinsic_value": 11,
-        "future_value": 13,
-        "information_asymmetry": 7,
-        "policy_catalyst": 8
+      "scores": {
+        "structural_advantage": {
+          "score": 13,
+          "confidence": "A",
+          "basis": "原子力7基稼働で国内最高稼働率、関西圏送配電インフラ独占"
+        },
+        "intrinsic_value": {
+          "score": 11,
+          "confidence": "B",
+          "basis": "原子力稼働で収益安定、安定配当"
+        },
+        "future_value": {
+          "score": 13,
+          "confidence": "B",
+          "basis": "追加原発再稼働、データセンター向け電力供給だが成長余地は限定的"
+        },
+        "information_asymmetry": {
+          "score": 7,
+          "confidence": "B",
+          "basis": "電力大手として認知済み、情報非対称性は低い"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "B",
+          "basis": "原発推進政策、原発再稼働路線"
+        }
       },
       "investment_factors": 24,
       "speculative_factors": 28,
+      "total": 52,
       "confidence": {
         "structural_advantage": "A",
         "intrinsic_value": "B",
         "future_value": "B",
         "information_asymmetry": "B",
         "policy_catalyst": "B",
-        "summary": "B"
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
       },
       "graham_buffett_note": "投資的要因24/40は原子力7基稼働の安定した発電基盤。投機的要因28/60は原発再稼働路線の政策追い風だが成長余地は限定的。",
+      "domain": "エネルギー",
+      "domains": [
+        "エネルギー"
+      ],
+      "tier": 3,
+      "key_thesis": "原子力稼働率国内最高。7基稼働で収益安定。原発推進政策の恩恵。安定配当。",
+      "risks": [
+        "原子力規制リスク",
+        "電力自由化競争"
+      ],
+      "catalysts_next_6m": [
+        "追加原発再稼働",
+        "データセンター向け電力供給契約"
+      ],
+      "catalyst_date": "2026-Q3",
       "certainty": 80,
       "upside": 30,
       "quadrant": "stable",
-      "domain": "エネルギー",
-      "domains_impacted": ["エネルギー"],
-      "thesis": "原子力稼働率国内最高。7基稼働で収益安定。原発推進政策の恩恵。安定配当。",
-      "key_catalyst": "追加原発再稼働、データセンター向け電力供給契約",
-      "catalyst_date": "2026-Q3",
-      "risk": "原子力規制リスク、電力自由化競争"
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     }
   ],
   "watchlist": [
@@ -1105,151 +2269,531 @@
       "rank": 31,
       "ticker": "7003.T",
       "name": "三井E&S",
-      "total_score": 51,
-      "thesis": "護衛艦・潜水艦建造。防衛予算増で艦船需要拡大。港湾クレーンも。",
-      "watch_reason": "財務改善が確認されればTop30入りの可能性。防衛艦船受注次第。",
-      "axes": {
-        "structural_advantage": 12,
-        "intrinsic_value": 8,
-        "future_value": 14,
-        "information_asymmetry": 9,
-        "policy_catalyst": 8
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 12,
+          "confidence": "C",
+          "basis": "護衛艦・潜水艦建造、港湾クレーン"
+        },
+        "intrinsic_value": {
+          "score": 8,
+          "confidence": "C",
+          "basis": "財務改善が課題"
+        },
+        "future_value": {
+          "score": 14,
+          "confidence": "C",
+          "basis": "防衛予算増で艦船需要拡大"
+        },
+        "information_asymmetry": {
+          "score": 9,
+          "confidence": "C",
+          "basis": "防衛造船として限定的認知"
+        },
+        "policy_catalyst": {
+          "score": 8,
+          "confidence": "C",
+          "basis": "防衛予算増"
+        }
+      },
+      "investment_factors": 20,
+      "speculative_factors": 31,
+      "total": 51,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "護衛艦・潜水艦建造。防衛予算増で艦船需要拡大。港湾クレーンも。",
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 1,
+        "llm_agreement": 1
+      },
+      "watch_reason": "財務改善が確認されればTop30入りの可能性。防衛艦船受注次第。"
     },
     {
       "rank": 32,
       "ticker": "6807.T",
       "name": "日本航空電子工業（JAE）",
-      "total_score": 50,
-      "thesis": "防衛向け慣性航法センサ国内唯一の供給者（CHG-011）。スタンドオフミサイルの中核部品。",
-      "watch_reason": "防衛Tier2独占確認済。スタンドオフミサイル量産開始で確度上昇待ち。",
-      "axes": {
-        "structural_advantage": 14,
-        "intrinsic_value": 9,
-        "future_value": 13,
-        "information_asymmetry": 8,
-        "policy_catalyst": 6
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 14,
+          "confidence": "C",
+          "basis": "慣性航法センサ国内唯一の供給者、ミサイル・航空機姿勢制御の中核"
+        },
+        "intrinsic_value": {
+          "score": 9,
+          "confidence": "C",
+          "basis": "FCF黒字"
+        },
+        "future_value": {
+          "score": 13,
+          "confidence": "C",
+          "basis": "スタンドオフミサイル量産開始で需要急拡大期待"
+        },
+        "information_asymmetry": {
+          "score": 8,
+          "confidence": "C",
+          "basis": "防衛Tier2独占は一般には未認知"
+        },
+        "policy_catalyst": {
+          "score": 6,
+          "confidence": "C",
+          "basis": "スタンドオフミサイル9,700億円、防衛予算増"
+        }
+      },
+      "investment_factors": 23,
+      "speculative_factors": 27,
+      "total": 50,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "防衛向け慣性航法センサ国内唯一の供給者（CHG-011）。スタンドオフミサイルの中核部品。",
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      },
+      "watch_reason": "防衛Tier2独占確認済。スタンドオフミサイル量産開始で確度上昇待ち。"
     },
     {
       "rank": 33,
       "ticker": "6622.T",
       "name": "ダイヘン",
-      "total_score": 49,
-      "thesis": "変圧器国内トップシェア。グリッド近代化・EV充電・溶接ロボットの交差点。",
-      "watch_reason": "変圧器需要増でシェア確認待ち。利益率改善（OP margin 7%→）が課題。",
-      "axes": {
-        "structural_advantage": 12,
-        "intrinsic_value": 9,
-        "future_value": 14,
-        "information_asymmetry": 8,
-        "policy_catalyst": 6
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 12,
+          "confidence": "C",
+          "basis": "変圧器国内トップシェア"
+        },
+        "intrinsic_value": {
+          "score": 9,
+          "confidence": "C",
+          "basis": "利益率改善が課題（OP margin 7%）"
+        },
+        "future_value": {
+          "score": 14,
+          "confidence": "C",
+          "basis": "グリッド近代化・EV充電・溶接ロボットの交差点"
+        },
+        "information_asymmetry": {
+          "score": 8,
+          "confidence": "C",
+          "basis": "変圧器需要増の認知は限定的"
+        },
+        "policy_catalyst": {
+          "score": 6,
+          "confidence": "C",
+          "basis": "グリッド投資政策"
+        }
+      },
+      "investment_factors": 21,
+      "speculative_factors": 28,
+      "total": 49,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "変圧器国内トップシェア。グリッド近代化・EV充電・溶接ロボットの交差点。",
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 1,
+        "llm_agreement": 1
+      },
+      "watch_reason": "変圧器需要増でシェア確認待ち。利益率改善（OP margin 7%→）が課題。"
     },
     {
       "rank": 34,
       "ticker": "5802.T",
       "name": "住友電気工業",
-      "total_score": 48,
-      "thesis": "HVDCケーブル世界トップ3。洋上風力・グリッド接続で需要拡大。",
-      "watch_reason": "グリッド投資の具体化でケーブル受注増加を待つ。",
-      "axes": {
-        "structural_advantage": 12,
-        "intrinsic_value": 10,
-        "future_value": 13,
-        "information_asymmetry": 6,
-        "policy_catalyst": 7
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 12,
+          "confidence": "C",
+          "basis": "HVDCケーブル世界トップ3"
+        },
+        "intrinsic_value": {
+          "score": 10,
+          "confidence": "C",
+          "basis": "安定した収益基盤"
+        },
+        "future_value": {
+          "score": 13,
+          "confidence": "C",
+          "basis": "洋上風力・グリッド接続で需要拡大"
+        },
+        "information_asymmetry": {
+          "score": 6,
+          "confidence": "C",
+          "basis": "ケーブル大手として認知済み"
+        },
+        "policy_catalyst": {
+          "score": 7,
+          "confidence": "C",
+          "basis": "グリッド投資政策"
+        }
+      },
+      "investment_factors": 22,
+      "speculative_factors": 26,
+      "total": 48,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "HVDCケーブル世界トップ3。洋上風力・グリッド接続で需要拡大。",
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 1,
+        "llm_agreement": 1
+      },
+      "watch_reason": "グリッド投資の具体化でケーブル受注増加を待つ。"
     },
     {
       "rank": 35,
       "ticker": "5801.T",
       "name": "古河電気工業",
-      "total_score": 47,
-      "thesis": "海底ケーブル国内首位級。洋上風力接続ケーブル需要。",
-      "watch_reason": "海底ケーブル大型受注待ち。住友電工との差別化確認が必要。",
-      "axes": {
-        "structural_advantage": 11,
-        "intrinsic_value": 9,
-        "future_value": 13,
-        "information_asymmetry": 7,
-        "policy_catalyst": 7
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 11,
+          "confidence": "C",
+          "basis": "海底ケーブル国内首位級"
+        },
+        "intrinsic_value": {
+          "score": 9,
+          "confidence": "C",
+          "basis": "安定した収益基盤"
+        },
+        "future_value": {
+          "score": 13,
+          "confidence": "C",
+          "basis": "洋上風力接続ケーブル需要"
+        },
+        "information_asymmetry": {
+          "score": 7,
+          "confidence": "C",
+          "basis": "住友電工との差別化が課題"
+        },
+        "policy_catalyst": {
+          "score": 7,
+          "confidence": "C",
+          "basis": "洋上風力政策"
+        }
+      },
+      "investment_factors": 20,
+      "speculative_factors": 27,
+      "total": 47,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "海底ケーブル国内首位級。洋上風力接続ケーブル需要。",
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 1,
+        "llm_agreement": 1
+      },
+      "watch_reason": "海底ケーブル大型受注待ち。住友電工との差別化確認が必要。"
     },
     {
       "rank": 36,
       "ticker": "6282.T",
       "name": "オイレス工業",
-      "total_score": 46,
-      "thesis": "免震装置国内50%シェア。インフラ防災投資の恩恵。",
-      "watch_reason": "防災投資関連の政策具体化待ち。6ドメイン直接関連は限定的。",
-      "axes": {
-        "structural_advantage": 13,
-        "intrinsic_value": 10,
-        "future_value": 11,
-        "information_asymmetry": 7,
-        "policy_catalyst": 5
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 13,
+          "confidence": "C",
+          "basis": "免震装置国内50%シェア"
+        },
+        "intrinsic_value": {
+          "score": 10,
+          "confidence": "C",
+          "basis": "安定した収益基盤"
+        },
+        "future_value": {
+          "score": 11,
+          "confidence": "C",
+          "basis": "インフラ防災投資の恩恵"
+        },
+        "information_asymmetry": {
+          "score": 7,
+          "confidence": "C",
+          "basis": "ニッチ市場で認知限定的"
+        },
+        "policy_catalyst": {
+          "score": 5,
+          "confidence": "C",
+          "basis": "防災投資政策"
+        }
+      },
+      "investment_factors": 23,
+      "speculative_factors": 23,
+      "total": 46,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "免震装置国内50%シェア。インフラ防災投資の恩恵。",
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 1,
+        "llm_agreement": 1
+      },
+      "watch_reason": "防災投資関連の政策具体化待ち。6ドメイン直接関連は限定的。"
     },
     {
       "rank": 37,
       "ticker": "7729.T",
       "name": "SCREEN HD",
-      "total_score": 46,
-      "thesis": "半導体洗浄装置世界首位。微細化で洗浄需要構造的成長。",
-      "watch_reason": "7735.T（同名）とは別会社。独自評価で差分確認中。SCREEN HDとSCREEN Finetech統合効果待ち。",
-      "axes": {
-        "structural_advantage": 12,
-        "intrinsic_value": 10,
-        "future_value": 12,
-        "information_asymmetry": 6,
-        "policy_catalyst": 6
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 12,
+          "confidence": "C",
+          "basis": "半導体洗浄装置（SCREEN Finetech統合効果）"
+        },
+        "intrinsic_value": {
+          "score": 10,
+          "confidence": "C",
+          "basis": "安定した収益基盤"
+        },
+        "future_value": {
+          "score": 12,
+          "confidence": "C",
+          "basis": "微細化で洗浄需要構造的成長"
+        },
+        "information_asymmetry": {
+          "score": 6,
+          "confidence": "C",
+          "basis": "7735.Tとの混同リスク"
+        },
+        "policy_catalyst": {
+          "score": 6,
+          "confidence": "C",
+          "basis": "半導体投資政策"
+        }
+      },
+      "investment_factors": 22,
+      "speculative_factors": 24,
+      "total": 46,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "半導体洗浄装置世界首位。微細化で洗浄需要構造的成長。",
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 1,
+        "llm_agreement": 1
+      },
+      "watch_reason": "7735.T（同名）とは別会社。独自評価で差分確認中。SCREEN HDとSCREEN Finetech統合効果待ち。"
     },
     {
       "rank": 38,
       "ticker": "9433.T",
       "name": "KDDI",
-      "total_score": 45,
-      "thesis": "通信インフラ2位。データセンター投資、NEC協業。",
-      "watch_reason": "NTTとの差別化が不十分。DC投資の規模でNTTに劣後。",
-      "axes": {
-        "structural_advantage": 12,
-        "intrinsic_value": 12,
-        "future_value": 11,
-        "information_asymmetry": 4,
-        "policy_catalyst": 6
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 12,
+          "confidence": "C",
+          "basis": "通信インフラ2位、5G/固定、法人向けDC連携"
+        },
+        "intrinsic_value": {
+          "score": 12,
+          "confidence": "C",
+          "basis": "FCF黒字、安定配当"
+        },
+        "future_value": {
+          "score": 11,
+          "confidence": "C",
+          "basis": "データセンター投資、NEC協業Protect.jp"
+        },
+        "information_asymmetry": {
+          "score": 4,
+          "confidence": "C",
+          "basis": "NTTとの差別化が不十分で認知は限定的"
+        },
+        "policy_catalyst": {
+          "score": 6,
+          "confidence": "C",
+          "basis": "5G展開、DC需要"
+        }
+      },
+      "investment_factors": 24,
+      "speculative_factors": 21,
+      "total": 45,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "通信インフラ2位。データセンター投資、NEC協業。",
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      },
+      "watch_reason": "NTTとの差別化が不十分。DC投資の規模でNTTに劣後。"
     },
     {
       "rank": 39,
       "ticker": "6141.T",
       "name": "DMG森精機",
-      "total_score": 44,
-      "thesis": "工作機械世界大手。防衛・航空向け精密加工で需要増。",
-      "watch_reason": "防衛向け工作機械需要の具体化待ち。独占度がファナックほど高くない。",
-      "axes": {
-        "structural_advantage": 11,
-        "intrinsic_value": 10,
-        "future_value": 12,
-        "information_asymmetry": 5,
-        "policy_catalyst": 6
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 11,
+          "confidence": "C",
+          "basis": "工作機械世界大手、5軸加工機、統合製造ソリューション"
+        },
+        "intrinsic_value": {
+          "score": 10,
+          "confidence": "C",
+          "basis": "FCF黒字"
+        },
+        "future_value": {
+          "score": 12,
+          "confidence": "C",
+          "basis": "防衛・航空向け精密加工で需要増"
+        },
+        "information_asymmetry": {
+          "score": 5,
+          "confidence": "C",
+          "basis": "工作機械大手として認知済み"
+        },
+        "policy_catalyst": {
+          "score": 6,
+          "confidence": "C",
+          "basis": "製造業自動化、防衛需要"
+        }
+      },
+      "investment_factors": 21,
+      "speculative_factors": 23,
+      "total": 44,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "工作機械世界大手。防衛・航空向け精密加工で需要増。",
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 1,
+        "llm_agreement": 1
+      },
+      "watch_reason": "防衛向け工作機械需要の具体化待ち。独占度がファナックほど高くない。"
     },
     {
       "rank": 40,
       "ticker": "6645.T",
       "name": "オムロン",
-      "total_score": 43,
-      "thesis": "制御機器国内2位。AIロボティクスとの融合。",
-      "watch_reason": "キーエンスとの差別化が課題。利益率改善途上。",
-      "axes": {
-        "structural_advantage": 10,
-        "intrinsic_value": 10,
-        "future_value": 12,
-        "information_asymmetry": 5,
-        "policy_catalyst": 6
-      }
+      "scores": {
+        "structural_advantage": {
+          "score": 10,
+          "confidence": "C",
+          "basis": "FA制御・センシング国内主要プレーヤー"
+        },
+        "intrinsic_value": {
+          "score": 10,
+          "confidence": "C",
+          "basis": "FCF黒字"
+        },
+        "future_value": {
+          "score": 12,
+          "confidence": "C",
+          "basis": "AIロボティクスとの融合"
+        },
+        "information_asymmetry": {
+          "score": 5,
+          "confidence": "C",
+          "basis": "キーエンスとの差別化が課題"
+        },
+        "policy_catalyst": {
+          "score": 6,
+          "confidence": "C",
+          "basis": "FA投資サイクル"
+        }
+      },
+      "investment_factors": 20,
+      "speculative_factors": 23,
+      "total": 43,
+      "confidence": {
+        "structural_advantage": "C",
+        "intrinsic_value": "C",
+        "future_value": "C",
+        "information_asymmetry": "C",
+        "policy_catalyst": "C",
+        "investment_factors_summary": "C+",
+        "speculative_factors_summary": "C+",
+        "overall": "C+"
+      },
+      "tier": 4,
+      "key_thesis": "制御機器国内2位。AIロボティクスとの融合。",
+      "information_quality": {
+        "confidence": "low",
+        "sources_count": 1,
+        "llm_agreement": 1
+      },
+      "watch_reason": "キーエンスとの差別化が課題。利益率改善途上。"
     }
   ],
   "domain_distribution": {
@@ -1267,11 +2811,31 @@
     "avoid": 0
   },
   "scoring_summary": {
-    "highest_investment_factors": {"ticker": "8035.T", "name": "東京エレクトロン", "score": 32},
-    "highest_speculative_factors": {"ticker": "7011.T", "name": "三菱重工業", "score": 47},
-    "highest_total": {"ticker": "7011.T", "name": "三菱重工業", "score": 79},
-    "highest_information_asymmetry": {"ticker": "6315.T", "name": "TOWA", "score": 16},
-    "highest_structural_advantage": {"ticker": "7011.T", "name": "三菱重工業", "score": 18},
+    "highest_investment_factors": {
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "score": 32
+    },
+    "highest_speculative_factors": {
+      "ticker": "7011.T",
+      "name": "三菱重工業",
+      "score": 47
+    },
+    "highest_total": {
+      "ticker": "7011.T",
+      "name": "三菱重工業",
+      "score": 79
+    },
+    "highest_information_asymmetry": {
+      "ticker": "6315.T",
+      "name": "TOWA",
+      "score": 16
+    },
+    "highest_structural_advantage": {
+      "ticker": "7011.T",
+      "name": "三菱重工業",
+      "score": 18
+    },
     "average_total_score": 60.4,
     "median_total_score": 59.5
   }

@@ -208,50 +208,106 @@ japan-investment-analysis/
 
 ---
 
-### top30.json
+### japan_top30.json
 
-Top 30企業の評価結果。
+> **注意**: 旧 `top30.json`（v3.0、US企業含む旧フレームワーク）は `archive/top30_v3.0_legacy.json` に移動済み。
+
+Japan Top 30企業の評価結果（Graham分類体系統合版 v2.0.0）。
 
 ```json
 {
   "metadata": {
     "date": "YYYY-MM-DD",
+    "version": "2.0.0",
+    "framework": "Graham分類体系統合版",
+    "market": "japan",
     "evaluation_system": "Graham分類体系統合版（100点満点）",
     "axes": {
-      "structural_advantage": {"max": 20, "description": "構造的優位性", "category": "investment_factors"},
-      "intrinsic_value": {"max": 20, "description": "本質的価値", "category": "investment_factors"},
-      "future_value": {"max": 25, "description": "将来の価値", "category": "speculative_factors"},
-      "information_asymmetry": {"max": 20, "description": "情報非対称性", "category": "speculative_factors"},
-      "policy_catalyst": {"max": 15, "description": "政策・触媒", "category": "speculative_factors"}
+      "structural_advantage": {
+        "max": 20, "description": "構造的優位性", "category": "investment_factors",
+        "components": {
+          "market_dominance": {"max": 10, "description": "市場支配力"},
+          "barriers_to_entry": {"max": 5, "description": "参入障壁"},
+          "moat_financial_backing": {"max": 5, "description": "モート財務裏付け"}
+        }
+      },
+      "intrinsic_value": {
+        "max": 20, "description": "本質的価値", "category": "investment_factors",
+        "components": {
+          "earnings_power": {"max": 6, "description": "収益力"},
+          "capital_structure": {"max": 6, "description": "資産・資本構成"},
+          "valuation": {"max": 8, "description": "バリュエーション適正度"}
+        }
+      },
+      "future_value": {
+        "max": 25, "description": "将来の価値", "category": "speculative_factors",
+        "components": {
+          "synergy": {"max": 12, "description": "シナジー（ドメイン数×2）"},
+          "growth_certainty": {"max": 8, "description": "成長確度"},
+          "management": {"max": 5, "description": "経営能力"}
+        }
+      },
+      "information_asymmetry": {
+        "max": 20, "description": "情報非対称性", "category": "speculative_factors",
+        "components": {
+          "recognition_gap": {"max": 8, "description": "認識ギャップ"},
+          "totality_premium": {"max": 6, "description": "全体性プレミアム"},
+          "recognition_trigger": {"max": 6, "description": "認識トリガー"}
+        }
+      },
+      "policy_catalyst": {
+        "max": 15, "description": "政策・触媒", "category": "speculative_factors",
+        "components": {
+          "policy_acceleration": {"max": 8, "description": "政策アクセラレーション"},
+          "external_catalyst": {"max": 7, "description": "外部カタリスト"}
+        }
+      }
     },
     "investment_factors_max": 40,
     "speculative_factors_max": 60,
-    "market_risk_score": 45,
+    "market_risk_score": 57,
     "attack_defense_stance": "balanced"
   },
   "top30": [
     {
       "rank": 1,
-      "ticker": "XXXX",
-      "name": "企業名",
-      "core_technology": "主要技術/製品",
-      "total": 85,
-      "monopoly": 28,
-      "resilience": 18,
-      "synergy": 20,
-      "asymmetry": 12,
-      "capital": 7,
-      "certainty": 88,
-      "upside": 82,
-      "quadrant": "prime",
-      "thesis": "1-2文の投資テーゼ",
-      "domains_impacted": ["AI", "エネルギー", "防衛"],
-      "key_catalyst": "次のカタリストイベント",
+      "ticker": "7011.T",
+      "name": "三菱重工業",
+      "core_technology": "防衛装備品（GCAP・イージス艦・ミサイル）、原子力プラント、H3ロケット",
+      "scores": {
+        "structural_advantage": {"score": 18, "confidence": "A", "basis": "防衛装備品国内シェア首位（25%）。GCAP主契約者。原子力・H3の国内唯一ポジション。"},
+        "intrinsic_value": {"score": 14, "confidence": "B", "basis": "受注残10兆円超、FY2024売上4.84兆円。PER 55.45xは高いが防衛成長で正当化。"},
+        "future_value": {"score": 22, "confidence": "B", "basis": "6ドメイン収束（防衛・エネルギー・宇宙・ロボティクス・AI・サイバー）。防衛費GDP2%。"},
+        "information_asymmetry": {"score": 12, "confidence": "B", "basis": "防衛受注残の可視性は専門家に限定。6ドメイン全体像の評価不足。"},
+        "policy_catalyst": {"score": 13, "confidence": "A", "basis": "防衛費GDP2%（43兆円/5年）確定。装備品輸出解禁。GX原子力推進。"}
+      },
+      "investment_factors": 32,
+      "speculative_factors": 47,
+      "total": 79,
+      "confidence": {
+        "structural_advantage": "A",
+        "intrinsic_value": "B",
+        "future_value": "B",
+        "information_asymmetry": "B",
+        "policy_catalyst": "A",
+        "investment_factors_summary": "A-",
+        "speculative_factors_summary": "B+",
+        "overall": "B+"
+      },
+      "graham_buffett_note": "投資的要因32/40は防衛プライム独占と受注残10兆円超の安定性に支えられる。",
+      "domain": "防衛",
+      "domains": ["防衛", "エネルギー", "宇宙", "ロボティクス", "AI", "サイバー"],
+      "tier": 1,
+      "key_thesis": "国内唯一の総合防衛プライム。受注残10兆円超、GCAP主契約者。",
+      "risks": ["H3ロケット9号機延期", "防衛調達遅延リスク"],
+      "catalysts_next_6m": ["GCAP共同開発進捗", "豪州フリゲート正式契約", "防衛予算FY2027概算要求"],
       "catalyst_date": "2026-Q2",
-      "risk": "主要リスク要因",
+      "certainty": 92,
+      "upside": 45,
+      "quadrant": "prime",
       "information_quality": {
         "confidence": "high",
-        "sources_count": 5,
+        "sources_count": 4,
         "llm_agreement": 3
       }
     }
@@ -259,15 +315,40 @@ Top 30企業の評価結果。
   "watchlist": [
     {
       "rank": 31,
-      "ticker": "YYYY",
-      "name": "企業",
-      "total": 65,
-      "thesis": "簡潔なテーゼ",
-      "watch_reason": "確度上昇待ち"
+      "ticker": "7003.T",
+      "name": "三井E&S",
+      "total": 51,
+      "tier": 4,
+      "key_thesis": "財務改善確認でTop30入りの可能性。防衛艦船受注次第。",
+      "watch_reason": "財務改善確認待ち",
+      "information_quality": {
+        "confidence": "medium",
+        "sources_count": 2,
+        "llm_agreement": 2
+      }
     }
   ]
 }
 ```
+
+#### 旧フレームワーク（v3.0）との主要変更点
+
+| 変更 | 旧（v3.0） | 新（v2.0.0） |
+|------|-----------|-------------|
+| ファイル名 | `top30.json` | `japan_top30.json` |
+| 軸スコア構造 | フラット（`"monopoly": 28`） | ネスト（`"scores": {"structural_advantage": {"score": 18, "confidence": "A", "basis": "..."}}`） |
+| 軸名 | monopoly, resilience, synergy, asymmetry, capital | structural_advantage, intrinsic_value, future_value, information_asymmetry, policy_catalyst |
+| スコアフィールド | `total` のみ | `total` + `investment_factors` + `speculative_factors` |
+| 確度 | なし | `confidence` オブジェクト（軸別 + サマリー） |
+| Graham注記 | なし | `graham_buffett_note` |
+| ティア分類 | なし | `tier`（1-4） |
+| リスク | 文字列（`risk`） | 配列（`risks`） |
+| カタリスト | 文字列（`key_catalyst`） | 配列（`catalysts_next_6m`） + 文字列（`catalyst_date`） |
+| テーゼ | `thesis` | `key_thesis` |
+| ドメイン | `domains_impacted` | `domains`（+ `domain` プライマリ） |
+| 情報品質 | あり | あり（構造同一） |
+
+> 旧 `top30.json` は `data/analysis/archive/top30_v3.0_legacy.json` にアーカイブ済み。
 
 ---
 
@@ -404,71 +485,93 @@ Top 30企業の評価結果。
 
 ### consolidated_companies.json
 
-統合企業情報。
+統合企業情報。Japan版は `japan_companies` 配列に3層構造（permanent/quarterly/monthly）で企業データを格納する。
 
 ```json
 {
   "metadata": {
-    "generated_at": "2026-01-27T12:00:00Z",
+    "description": "統合企業情報（全LLMソース + stable + reinforcement をマージ）",
+    "created": "2026-01-31T12:00:00Z",
+    "last_updated": "2026-01-31T12:00:00Z",
+    "framework": {"version": "2.0.0", "name": "Graham分類体系統合版"},
     "sources": {
-      "llm_outputs": 6,
-      "stable_data": 9,
-      "reinforcement": 3
+      "raw_claude": "data/intelligence/raw/company_info/claude.md",
+      "raw_grok": "data/intelligence/raw/company_info/grok.md",
+      "raw_gemini": "data/intelligence/raw/company_info/gemini.md",
+      "stable_permanent": "data/intelligence/stable/permanent/companies.json",
+      "stable_quarterly": "data/intelligence/stable/quarterly/financials.json",
+      "stable_monthly": "data/intelligence/stable/monthly/contracts.json"
     },
-    "total_companies": 87,
-    "quality_summary": {
-      "high_confidence": 45,
-      "medium_confidence": 30,
-      "low_confidence": 12
-    }
+    "total_companies": {"japan_top30": 30, "japan_additional": 16, "us_tracked": 13, "total": 59}
   },
-  "companies": [
+  "japan_companies": [
     {
-      "ticker": "XXXX",
-      "name": "企業名",
-      "domains": ["AI", "エネルギー"],
-      "core_technology": "主要技術",
-      "data": {
-        "market_share": {
-          "value": "45%",
-          "confidence": "high",
-          "source": "primary_confirmed",
-          "last_updated": "2026-01-15"
+      "ticker": "7011.T",
+      "name": "三菱重工業",
+      "name_en": "Mitsubishi Heavy Industries",
+      "domains": ["防衛", "エネルギー", "宇宙"],
+      "chokepoint": true,
+      "chokepoint_detail": "国内唯一の総合防衛プライム。GCAP主契約者。原子力・H3独占的ポジション。",
+      "cross_domain_convergence": 3,
+      "permanent": {
+        "moat": {
+          "type": "国内独占的ポジション",
+          "market_share": "防衛装備品国内シェア首位（約25%）",
+          "description": "次期戦闘機（GCAP）主契約者、イージス艦、原子力プラント、H3ロケット。"
         },
-        "certifications": {
-          "value": ["防衛関連認証", "秘密取扱適格性"],
-          "confidence": "high",
-          "source": "stable/permanent",
-          "last_verified": "2025-12-01"
-        },
-        "recent_contracts": [
-          {
-            "value": "防衛省500億円契約",
-            "confidence": "high",
-            "source": "SAM.gov",
-            "date": "2026-01-20"
-          }
-        ],
-        "financials": {
-          "revenue_ttm": "$2.5B",
-          "fcf_ttm": "$300M",
-          "debt_ebitda": 1.5,
-          "confidence": "high",
-          "source": "10-K",
-          "as_of": "2025-12-31"
-        }
+        "certifications": ["防衛省認定プライムコントラクター", "原子力規制委員会認可"],
+        "barriers_to_entry": ["防衛省との70年+の取引関係", "原子力・宇宙の認証取得困難"],
+        "competitors": ["川崎重工（一部）", "IHI（エンジン）"]
       },
-      "llm_mentions": {
-        "grok": true,
-        "gemini": true,
-        "claude": true
+      "quarterly": {
+        "market_cap": "15.7兆円",
+        "revenue": "4.84兆円（FY2024）",
+        "revenue_yoy": "+5%",
+        "op_margin": "8%",
+        "fcf_positive": true,
+        "backlog": ">10兆円",
+        "per": "55.45",
+        "pbr": "2.5",
+        "roe": "10%",
+        "eps": "81.50円",
+        "dividend_yield": "0.53%",
+        "debt_ebitda": "1.0x",
+        "equity_ratio": "45%"
       },
-      "contradictions": [],
-      "gaps": ["競合詳細情報が不足"]
+      "monthly": {
+        "recent_contracts": ["GCAP次期戦闘機（FY2026予算1,600億円+）"],
+        "recent_orders": ["500B円 航空宇宙（Dec 2025）"],
+        "policy_tailwinds": ["防衛費GDP比2%（43兆円/5年）"]
+      },
+      "information_quality": {
+        "sources_count": 4,
+        "consensus_level": "4LLM一致",
+        "confidence": "A",
+        "weight": 1.0
+      },
+      "change_alerts": ["H3ロケット9号機延期"],
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     }
   ]
 }
 ```
+
+#### US版との主要フィールド差異
+
+| フィールド | Japan版 | US版 | 備考 |
+|-----------|:------:|:----:|------|
+| `chokepoint` / `chokepoint_detail` | ✅ | ✅ | v2.0.0で統一 |
+| `cross_domain_convergence` | ✅ | ✅ | v2.0.0で統一 |
+| `permanent/quarterly/monthly` 3層構造 | ✅ | ❌ | Japan版が優れる |
+| `per`, `pbr`, `roe`, `dividend_yield` 等詳細財務 | ✅ | ❌ | Japan版が優れる |
+| `change_alerts` | ✅ | ❌ | Japan版独自 |
+| `freshness` | ✅ | ❌ | Japan版独自 |
+| `coverage` (LLM別) | ❌ | ✅ | US版独自 |
+| `source_notes` | ❌ | ✅ | US版独自 |
 
 ---
 

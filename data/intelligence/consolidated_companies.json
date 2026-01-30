@@ -38,16 +38,34 @@
       "ticker": "7011.T",
       "name": "三菱重工業",
       "name_en": "Mitsubishi Heavy Industries",
-      "domains": ["防衛", "エネルギー", "宇宙"],
+      "domains": [
+        "防衛",
+        "エネルギー",
+        "宇宙"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "国内唯一の総合防衛プライム。GCAP主契約者、原子力・H3ロケット独占的ポジション。",
+      "cross_domain_convergence": 3,
       "permanent": {
         "moat": {
           "type": "国内独占的ポジション",
           "market_share": "防衛装備品国内シェア首位（約25%）、SMR/原子力50%",
           "description": "次期戦闘機（GCAP）主契約者、イージス艦、原子力プラント、H3ロケット。国内唯一の総合防衛プライム。"
         },
-        "certifications": ["防衛省認定プライムコントラクター", "原子力規制委員会認可", "JAXA認定"],
-        "barriers_to_entry": ["防衛省との70年+の取引関係", "原子力・宇宙の認証取得困難", "技術秘密保全適格性"],
-        "competitors": ["川崎重工（一部）", "IHI（エンジン）"]
+        "certifications": [
+          "防衛省認定プライムコントラクター",
+          "原子力規制委員会認可",
+          "JAXA認定"
+        ],
+        "barriers_to_entry": [
+          "防衛省との70年+の取引関係",
+          "原子力・宇宙の認証取得困難",
+          "技術秘密保全適格性"
+        ],
+        "competitors": [
+          "川崎重工（一部）",
+          "IHI（エンジン）"
+        ]
       },
       "quarterly": {
         "market_cap": "15.7兆円",
@@ -71,8 +89,14 @@
           "オーストラリアもがみ型フリゲート受注（日本初の主要水上艦輸出）",
           "SMR開発（Jan 2026, ~100B円）"
         ],
-        "recent_orders": ["500B円 航空宇宙（Dec 2025）"],
-        "policy_tailwinds": ["防衛費GDP比2%（43兆円/5年）", "GX原子力推進", "装備品輸出解禁"]
+        "recent_orders": [
+          "500B円 航空宇宙（Dec 2025）"
+        ],
+        "policy_tailwinds": [
+          "防衛費GDP比2%（43兆円/5年）",
+          "GX原子力推進",
+          "装備品輸出解禁"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -95,7 +119,12 @@
       "ticker": "8035.T",
       "name": "東京エレクトロン",
       "name_en": "Tokyo Electron",
-      "domains": ["AI"],
+      "domains": [
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "半導体コータ/デベロッパ世界シェア90%+独占。EUV対応先端工程で不可欠。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "半導体製造装置グローバルリーダー",
@@ -103,8 +132,16 @@
           "description": "EUV対応先端工程で不可欠。TSMC主要サプライヤー。"
         },
         "certifications": [],
-        "barriers_to_entry": ["20年+のプロセスノウハウ", "顧客との共同開発関係", "クリーンルーム製造技術"],
-        "competitors": ["ASML（異なる装置）", "Lam Research", "Applied Materials"]
+        "barriers_to_entry": [
+          "20年+のプロセスノウハウ",
+          "顧客との共同開発関係",
+          "クリーンルーム製造技術"
+        ],
+        "competitors": [
+          "ASML（異なる装置）",
+          "Lam Research",
+          "Applied Materials"
+        ]
       },
       "quarterly": {
         "market_cap": "約15兆円",
@@ -121,7 +158,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["TSMC熊本4nm計画変更で追加需要可能性", "ラピダス2nm向け装置需要"]
+        "policy_tailwinds": [
+          "TSMC熊本4nm計画変更で追加需要可能性",
+          "ラピダス2nm向け装置需要"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -130,7 +170,9 @@
         "weight": 1.0,
         "notes": "Q3決算2026-02-06発表予定。コータ/デベロッパ90%は全ソース一致。"
       },
-      "change_alerts": ["Q3決算2026-02-06発表予定"],
+      "change_alerts": [
+        "Q3決算2026-02-06発表予定"
+      ],
       "freshness": {
         "permanent_updated": "2026-01-31",
         "quarterly_updated": "2026-01-31",
@@ -141,7 +183,13 @@
       "ticker": "6954.T",
       "name": "ファナック",
       "name_en": "FANUC",
-      "domains": ["ロボティクス", "AI"],
+      "domains": [
+        "ロボティクス",
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "CNC装置世界シェア50%+。工作機械の頭脳を独占。",
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "CNC/ロボット世界首位",
@@ -149,8 +197,16 @@
           "description": "工作機械の頭脳を独占。自動化の基盤技術。"
         },
         "certifications": [],
-        "barriers_to_entry": ["40年+のソフトウェア蓄積", "サービスネットワーク", "信頼性実績"],
-        "competitors": ["Siemens（CNC）", "ABB（ロボット）", "安川電機（ロボット）"]
+        "barriers_to_entry": [
+          "40年+のソフトウェア蓄積",
+          "サービスネットワーク",
+          "信頼性実績"
+        ],
+        "competitors": [
+          "Siemens（CNC）",
+          "ABB（ロボット）",
+          "安川電機（ロボット）"
+        ]
       },
       "quarterly": {
         "market_cap": "約5.8兆円",
@@ -169,9 +225,17 @@
       },
       "monthly": {
         "recent_contracts": [],
-        "recent_orders": ["ロボット受注918億円（Q3、前年同期比+39%）"],
-        "policy_tailwinds": ["製造業自動化補助金", "ヒューマノイドロボット新カテゴリー"],
-        "key_developments": ["CRX-H1ヒューマノイドロボット（2026年H2発表予定）", "NVIDIA AI ロボット共同開発"]
+        "recent_orders": [
+          "ロボット受注918億円（Q3、前年同期比+39%）"
+        ],
+        "policy_tailwinds": [
+          "製造業自動化補助金",
+          "ヒューマノイドロボット新カテゴリー"
+        ],
+        "key_developments": [
+          "CRX-H1ヒューマノイドロボット（2026年H2発表予定）",
+          "NVIDIA AI ロボット共同開発"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -191,16 +255,33 @@
       "ticker": "6501.T",
       "name": "日立製作所",
       "name_en": "Hitachi",
-      "domains": ["エネルギー", "AI", "ロボティクス"],
+      "domains": [
+        "エネルギー",
+        "AI",
+        "ロボティクス"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 3,
       "permanent": {
         "moat": {
           "type": "原子力・送変電インフラ",
           "market_share": "HVDC/変圧器40%+（GE Vernovaと2社寡占）、原子力プラント2強（GEと）",
           "description": "Lumada（DX）、送変電、原子力。グリッド近代化の中核。"
         },
-        "certifications": ["原子力規制委員会認可", "電力会社認定"],
-        "barriers_to_entry": ["原子力技術（GE連携）", "社会インフラ実績", "パテント群"],
-        "competitors": ["Siemens", "三菱電機", "東芝"]
+        "certifications": [
+          "原子力規制委員会認可",
+          "電力会社認定"
+        ],
+        "barriers_to_entry": [
+          "原子力技術（GE連携）",
+          "社会インフラ実績",
+          "パテント群"
+        ],
+        "competitors": [
+          "Siemens",
+          "三菱電機",
+          "東芝"
+        ]
       },
       "quarterly": {
         "market_cap": "20-24兆円",
@@ -218,10 +299,19 @@
         "debt_ebitda": "0.5x"
       },
       "monthly": {
-        "recent_contracts": ["AI infra project（Dec 2025, 200B円）"],
-        "recent_orders": ["300B円 エネルギー（Jan 2026）"],
-        "policy_tailwinds": ["GXグリッド投資", "BWRX-300（GE日立）推進"],
-        "key_developments": ["BWRX-300 SMR推進"]
+        "recent_contracts": [
+          "AI infra project（Dec 2025, 200B円）"
+        ],
+        "recent_orders": [
+          "300B円 エネルギー（Jan 2026）"
+        ],
+        "policy_tailwinds": [
+          "GXグリッド投資",
+          "BWRX-300（GE日立）推進"
+        ],
+        "key_developments": [
+          "BWRX-300 SMR推進"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -241,16 +331,31 @@
       "ticker": "9432.T",
       "name": "日本電信電話（NTT）",
       "name_en": "NTT",
-      "domains": ["AI", "サイバー"],
+      "domains": [
+        "AI",
+        "サイバー"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "日本DC市場60%。国内最大の固定・移動通信インフラ。",
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "通信・DCインフラ独占",
           "market_share": "日本DC市場60%、国内最大固定・移動インフラ",
           "description": "IOWN光電融合2030年商用化目標。デジタルインフラの根幹。"
         },
-        "certifications": ["総務省認定"],
-        "barriers_to_entry": ["規制・免許", "全国設備投資", "運用ノウハウ"],
-        "competitors": ["KDDI", "ソフトバンク"]
+        "certifications": [
+          "総務省認定"
+        ],
+        "barriers_to_entry": [
+          "規制・免許",
+          "全国設備投資",
+          "運用ノウハウ"
+        ],
+        "competitors": [
+          "KDDI",
+          "ソフトバンク"
+        ]
       },
       "quarterly": {
         "market_cap": "約14兆円",
@@ -262,7 +367,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["AIデータセンター国内誘致", "IOWN構想政府支援"]
+        "policy_tailwinds": [
+          "AIデータセンター国内誘致",
+          "IOWN構想政府支援"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -282,7 +390,11 @@
       "ticker": "6506.T",
       "name": "安川電機",
       "name_en": "Yaskawa Electric",
-      "domains": ["ロボティクス"],
+      "domains": [
+        "ロボティクス"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "ACサーボ世界首位",
@@ -290,8 +402,16 @@
           "description": "ロボット・サーボ・インバータの三本柱。モーション制御のリーダー。"
         },
         "certifications": [],
-        "barriers_to_entry": ["モーション制御技術", "グローバルサービス網", "品質・顧客認定"],
-        "competitors": ["ファナック", "ABB", "KUKA"]
+        "barriers_to_entry": [
+          "モーション制御技術",
+          "グローバルサービス網",
+          "品質・顧客認定"
+        ],
+        "competitors": [
+          "ファナック",
+          "ABB",
+          "KUKA"
+        ]
       },
       "quarterly": {
         "market_cap": "約1.2-1.3兆円",
@@ -303,10 +423,19 @@
         "debt_ebitda": "0.4-0.5x"
       },
       "monthly": {
-        "recent_contracts": ["Automation deal（Dec 2025, ~10B円）"],
+        "recent_contracts": [
+          "Automation deal（Dec 2025, ~10B円）"
+        ],
         "recent_orders": [],
-        "policy_tailwinds": ["防衛予算UUV", "製造業自動化"],
-        "key_developments": ["MOTOMAN-HMヒューマノイド（アステラス製薬共同開発）", "ソフトバンク提携", "NVIDIA Isaac活用"]
+        "policy_tailwinds": [
+          "防衛予算UUV",
+          "製造業自動化"
+        ],
+        "key_developments": [
+          "MOTOMAN-HMヒューマノイド（アステラス製薬共同開発）",
+          "ソフトバンク提携",
+          "NVIDIA Isaac活用"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -315,7 +444,9 @@
         "weight": 0.85,
         "notes": "Grokが安川/ハーモニックの財務データを混同（CTR-JP017）。売上278.4B円はGrokエラー、実際は~5,500億円。PER 29.5xは安川に適用可能。"
       },
-      "change_alerts": ["Grok財務データ信頼度-15%調整済み"],
+      "change_alerts": [
+        "Grok財務データ信頼度-15%調整済み"
+      ],
       "freshness": {
         "permanent_updated": "2026-01-31",
         "quarterly_updated": "2026-01-31",
@@ -326,16 +457,34 @@
       "ticker": "6701.T",
       "name": "NEC",
       "name_en": "NEC Corporation",
-      "domains": ["サイバー", "防衛", "AI", "宇宙"],
+      "domains": [
+        "サイバー",
+        "防衛",
+        "AI",
+        "宇宙"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "防衛センサー60%。量子暗号通信世界最先端、政府向けサイバーセキュリティ国内首位級。",
+      "cross_domain_convergence": 4,
       "permanent": {
         "moat": {
           "type": "サイバーセキュリティ・防衛通信",
           "market_share": "防衛センサー60%（Grok）、政府向けサイバーセキュリティ国内首位級",
           "description": "量子暗号通信世界最先端、防衛通信システム、顔認証、海底ケーブル。"
         },
-        "certifications": ["防衛省認定", "政府情報システム認定"],
-        "barriers_to_entry": ["政府調達実績", "秘密保全適格性", "量子技術"],
-        "competitors": ["富士通", "日立"]
+        "certifications": [
+          "防衛省認定",
+          "政府情報システム認定"
+        ],
+        "barriers_to_entry": [
+          "政府調達実績",
+          "秘密保全適格性",
+          "量子技術"
+        ],
+        "competitors": [
+          "富士通",
+          "日立"
+        ]
       },
       "quarterly": {
         "market_cap": "約2.5兆円",
@@ -345,9 +494,15 @@
         "equity_ratio": "40-50%"
       },
       "monthly": {
-        "recent_contracts": ["KDDI-NEC合弁「Protect.jp」（国内最大サイバーセキュリティ）"],
+        "recent_contracts": [
+          "KDDI-NEC合弁「Protect.jp」（国内最大サイバーセキュリティ）"
+        ],
         "recent_orders": [],
-        "policy_tailwinds": ["経済安保推進法", "能動的サイバー防御法整備", "防衛予算増"]
+        "policy_tailwinds": [
+          "経済安保推進法",
+          "能動的サイバー防御法整備",
+          "防衛予算増"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -367,16 +522,31 @@
       "ticker": "7012.T",
       "name": "川崎重工業",
       "name_en": "Kawasaki Heavy Industries",
-      "domains": ["防衛", "ロボティクス", "エネルギー"],
+      "domains": [
+        "防衛",
+        "ロボティクス",
+        "エネルギー"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "潜水艦建造2社独占（三菱重工と）。P-1哨戒機、C-2輸送機の主契約者。",
+      "cross_domain_convergence": 3,
       "permanent": {
         "moat": {
           "type": "防衛・航空・水素の多角化",
           "market_share": "潜水艦建造2社独占（三菱重工と）、P-1哨戒機、C-2輸送機",
           "description": "潜水艦、航空機体、水素液化プラント。"
         },
-        "certifications": ["防衛省認定", "原子力規制委員会認可"],
-        "barriers_to_entry": ["潜水艦建造技術", "航空機体製造認定"],
-        "competitors": ["三菱重工"]
+        "certifications": [
+          "防衛省認定",
+          "原子力規制委員会認可"
+        ],
+        "barriers_to_entry": [
+          "潜水艦建造技術",
+          "航空機体製造認定"
+        ],
+        "competitors": [
+          "三菱重工"
+        ]
       },
       "quarterly": {
         "market_cap": "約1兆円",
@@ -385,9 +555,14 @@
         "debt_ebitda": "2.5x"
       },
       "monthly": {
-        "recent_contracts": ["次期戦闘機参画"],
+        "recent_contracts": [
+          "次期戦闘機参画"
+        ],
         "recent_orders": [],
-        "policy_tailwinds": ["防衛予算増（9兆円超）", "水素サプライチェーン"]
+        "policy_tailwinds": [
+          "防衛予算増（9兆円超）",
+          "水素サプライチェーン"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -407,16 +582,32 @@
       "ticker": "7013.T",
       "name": "IHI",
       "name_en": "IHI Corporation",
-      "domains": ["防衛", "エネルギー", "宇宙"],
+      "domains": [
+        "防衛",
+        "エネルギー",
+        "宇宙"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "航空機エンジン国内唯一の量産メーカー。ロケットエンジン50%。",
+      "cross_domain_convergence": 3,
       "permanent": {
         "moat": {
           "type": "航空エンジン国内独占",
           "market_share": "航空機エンジン国内唯一の量産メーカー、ロケットエンジン50%",
           "description": "F110/F135エンジンライセンス生産。GE/P&Wとの提携。NuScale SMRパートナー。"
         },
-        "certifications": ["防衛省認定", "JAXA認定", "原子力規制委員会認可"],
-        "barriers_to_entry": ["航空エンジン技術", "ライセンス生産権"],
-        "competitors": ["なし（国内航空エンジン量産では唯一）"]
+        "certifications": [
+          "防衛省認定",
+          "JAXA認定",
+          "原子力規制委員会認可"
+        ],
+        "barriers_to_entry": [
+          "航空エンジン技術",
+          "ライセンス生産権"
+        ],
+        "competitors": [
+          "なし（国内航空エンジン量産では唯一）"
+        ]
       },
       "quarterly": {
         "market_cap": "約5,000-8,000億円",
@@ -428,9 +619,15 @@
         "debt_ebitda": "2.0x"
       },
       "monthly": {
-        "recent_contracts": ["NuScale Power出資$20M+追加$20M可能", "JNI設立（JGCと共同）"],
+        "recent_contracts": [
+          "NuScale Power出資$20M+追加$20M可能",
+          "JNI設立（JGCと共同）"
+        ],
         "recent_orders": [],
-        "policy_tailwinds": ["防衛予算増", "SMR推進"]
+        "policy_tailwinds": [
+          "防衛予算増",
+          "SMR推進"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -450,7 +647,12 @@
       "ticker": "186A.T",
       "name": "アストロスケールホールディングス",
       "name_en": "Astroscale Holdings",
-      "domains": ["宇宙"],
+      "domains": [
+        "宇宙"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "軌道上サービス（商用デブリ除去）で世界唯一の実績。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "宇宙デブリ除去世界唯一",
@@ -458,8 +660,14 @@
           "description": "世界初の商用デブリ除去企業。JAXA Kプログラム参画。"
         },
         "certifications": [],
-        "barriers_to_entry": ["軌道デブリ除去技術実証済み", "官需連携", "資本"],
-        "competitors": ["なし（商用デブリ除去では先行）"]
+        "barriers_to_entry": [
+          "軌道デブリ除去技術実証済み",
+          "官需連携",
+          "資本"
+        ],
+        "competitors": [
+          "なし（商用デブリ除去では先行）"
+        ]
       },
       "quarterly": {
         "market_cap": "約1,000億円",
@@ -467,9 +675,14 @@
         "equity_ratio": "成長投資段階"
       },
       "monthly": {
-        "recent_contracts": ["JAXA Kプログラム軌道上給油事業支援"],
+        "recent_contracts": [
+          "JAXA Kプログラム軌道上給油事業支援"
+        ],
         "recent_orders": [],
-        "policy_tailwinds": ["宇宙安全保障構想", "デブリ除去国際規制形成"]
+        "policy_tailwinds": [
+          "宇宙安全保障構想",
+          "デブリ除去国際規制形成"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -489,7 +702,12 @@
       "ticker": "6920.T",
       "name": "レーザーテック",
       "name_en": "Lasertec",
-      "domains": ["AI"],
+      "domains": [
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "EUVマスクブランクス検査装置世界シェア100%。唯一の供給者。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "EUVマスク検査装置唯一の供給者",
@@ -497,8 +715,14 @@
           "description": "EUV量産に不可欠な唯一の検査装置メーカー。TSMC、Samsung、Intel全社が依存。"
         },
         "certifications": [],
-        "barriers_to_entry": ["光学技術の独自性", "TSMCとの共同開発", "代替なし"],
-        "competitors": ["なし（EUVマスク検査では唯一）"]
+        "barriers_to_entry": [
+          "光学技術の独自性",
+          "TSMCとの共同開発",
+          "代替なし"
+        ],
+        "competitors": [
+          "なし（EUVマスク検査では唯一）"
+        ]
       },
       "quarterly": {
         "market_cap": "高水準",
@@ -510,7 +734,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["先端半導体需要拡大"]
+        "policy_tailwinds": [
+          "先端半導体需要拡大"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -530,7 +756,12 @@
       "ticker": "6857.T",
       "name": "アドバンテスト",
       "name_en": "Advantest",
-      "domains": ["AI"],
+      "domains": [
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "メモリテスタ世界シェア50%+。HBM/AI半導体テストで不可欠。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "半導体テスタ世界首位",
@@ -538,8 +769,13 @@
           "description": "HBM/AI半導体テストで不可欠。Teradyneと世界市場を二分。"
         },
         "certifications": [],
-        "barriers_to_entry": ["テスト技術の複雑性", "顧客認定プロセス"],
-        "competitors": ["Teradyne"]
+        "barriers_to_entry": [
+          "テスト技術の複雑性",
+          "顧客認定プロセス"
+        ],
+        "competitors": [
+          "Teradyne"
+        ]
       },
       "quarterly": {
         "fcf_positive": true,
@@ -549,7 +785,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["HBM/先端パッケージ需要拡大"]
+        "policy_tailwinds": [
+          "HBM/先端パッケージ需要拡大"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -569,7 +807,13 @@
       "ticker": "6861.T",
       "name": "キーエンス",
       "name_en": "Keyence",
-      "domains": ["ロボティクス", "AI"],
+      "domains": [
+        "ロボティクス",
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "FAセンサー国内シェア首位。直販モデルで営業利益率50%+の圧倒的ブランド力。",
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "FAセンサー国内独占",
@@ -577,8 +821,15 @@
           "description": "直販モデルで営業利益率50%+。代替困難な高精度センサー。ファブレスモデル。"
         },
         "certifications": [],
-        "barriers_to_entry": ["直販モデル", "顧客密着提案力", "製品開発スピード"],
-        "competitors": ["オムロン", "パナソニック（一部）"]
+        "barriers_to_entry": [
+          "直販モデル",
+          "顧客密着提案力",
+          "製品開発スピード"
+        ],
+        "competitors": [
+          "オムロン",
+          "パナソニック（一部）"
+        ]
       },
       "quarterly": {
         "market_cap": "約13.5兆円",
@@ -592,7 +843,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["FA投資サイクル", "製造業自動化"]
+        "policy_tailwinds": [
+          "FA投資サイクル",
+          "製造業自動化"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -612,7 +866,12 @@
       "ticker": "7735.T",
       "name": "SCREENホールディングス",
       "name_en": "SCREEN Holdings",
-      "domains": ["AI"],
+      "domains": [
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "半導体洗浄装置世界No.1シェア。製造工程の約3割が洗浄。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "半導体洗浄装置世界No.1",
@@ -620,8 +879,14 @@
           "description": "半導体クリーンルーム製造の不可欠工程。"
         },
         "certifications": [],
-        "barriers_to_entry": ["顧客認定", "プロセス知見"],
-        "competitors": ["DNS（グループ内）", "Tokyo Electron（一部）"]
+        "barriers_to_entry": [
+          "顧客認定",
+          "プロセス知見"
+        ],
+        "competitors": [
+          "DNS（グループ内）",
+          "Tokyo Electron（一部）"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -629,7 +894,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["メモリ投資回復"]
+        "policy_tailwinds": [
+          "メモリ投資回復"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -649,7 +916,12 @@
       "ticker": "6273.T",
       "name": "SMC",
       "name_en": "SMC Corporation",
-      "domains": ["ロボティクス"],
+      "domains": [
+        "ロボティクス"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "空圧機器国内約60%、世界シェア39-40%。70万品目で製造ラインの血管。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "空圧機器世界首位",
@@ -657,8 +929,14 @@
           "description": "製造ラインの血管。自動化に不可欠。"
         },
         "certifications": [],
-        "barriers_to_entry": ["製品ラインナップ80万種", "グローバルネットワーク"],
-        "competitors": ["Festo", "Parker Hannifin"]
+        "barriers_to_entry": [
+          "製品ラインナップ80万種",
+          "グローバルネットワーク"
+        ],
+        "competitors": [
+          "Festo",
+          "Parker Hannifin"
+        ]
       },
       "quarterly": {
         "fcf_positive": true,
@@ -669,7 +947,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["工場自動化投資"]
+        "policy_tailwinds": [
+          "工場自動化投資"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -689,16 +969,35 @@
       "ticker": "6503.T",
       "name": "三菱電機",
       "name_en": "Mitsubishi Electric",
-      "domains": ["防衛", "宇宙", "ロボティクス", "エネルギー"],
+      "domains": [
+        "防衛",
+        "宇宙",
+        "ロボティクス",
+        "エネルギー"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "防衛電子機器国内首位、衛星システム50%。レーダー・誘導装置の中核。",
+      "cross_domain_convergence": 4,
       "permanent": {
         "moat": {
           "type": "防衛電子機器・衛星",
           "market_share": "防衛電子機器国内首位、衛星システム50%（Grok）、FA機器国内2位",
           "description": "レーダー、誘導装置、パワー半導体。衛星・地上局統合力。"
         },
-        "certifications": ["防衛省認定", "特定秘密取扱適格性", "JAXA認定"],
-        "barriers_to_entry": ["防衛電子技術", "認定プロセス", "量子セキュリティ"],
-        "competitors": ["NEC（一部）", "富士通（一部）"]
+        "certifications": [
+          "防衛省認定",
+          "特定秘密取扱適格性",
+          "JAXA認定"
+        ],
+        "barriers_to_entry": [
+          "防衛電子技術",
+          "認定プロセス",
+          "量子セキュリティ"
+        ],
+        "competitors": [
+          "NEC（一部）",
+          "富士通（一部）"
+        ]
       },
       "quarterly": {
         "market_cap": "約3.5兆円",
@@ -715,9 +1014,16 @@
         "debt_ebitda": "0.1-0.5x"
       },
       "monthly": {
-        "recent_contracts": ["Quantum network（Nov 2025, 20B円）"],
-        "recent_orders": ["30B円 systems（Jan 2026）"],
-        "policy_tailwinds": ["防衛予算増", "宇宙安全保障"]
+        "recent_contracts": [
+          "Quantum network（Nov 2025, 20B円）"
+        ],
+        "recent_orders": [
+          "30B円 systems（Jan 2026）"
+        ],
+        "policy_tailwinds": [
+          "防衛予算増",
+          "宇宙安全保障"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -737,16 +1043,32 @@
       "ticker": "6702.T",
       "name": "富士通",
       "name_en": "Fujitsu",
-      "domains": ["サイバー", "防衛", "AI"],
+      "domains": [
+        "サイバー",
+        "防衛",
+        "AI"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 3,
       "permanent": {
         "moat": {
           "type": "官公庁IT・量子",
           "market_share": "サイバーセキュリティ40%（Grok）、量子コンピュータ先端",
           "description": "官公庁・重要インフラの大規模運用。量子セキュアネットワーク。"
         },
-        "certifications": ["認証", "長期契約", "移行コスト"],
-        "barriers_to_entry": ["官公庁実績", "長期運用契約"],
-        "competitors": ["NEC", "NTTデータ"]
+        "certifications": [
+          "認証",
+          "長期契約",
+          "移行コスト"
+        ],
+        "barriers_to_entry": [
+          "官公庁実績",
+          "長期運用契約"
+        ],
+        "competitors": [
+          "NEC",
+          "NTTデータ"
+        ]
       },
       "quarterly": {
         "revenue": "3,560億円（YoY+4%推定）",
@@ -757,7 +1079,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["経済安保", "サイバーセキュリティ基本法"]
+        "policy_tailwinds": [
+          "経済安保",
+          "サイバーセキュリティ基本法"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -777,7 +1102,12 @@
       "ticker": "9433.T",
       "name": "KDDI",
       "name_en": "KDDI Corporation",
-      "domains": ["AI", "サイバー"],
+      "domains": [
+        "AI",
+        "サイバー"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "通信インフラ",
@@ -785,16 +1115,26 @@
           "description": "通信×セキュリティのシナジー。Protect.jp合弁（NEC）。"
         },
         "certifications": [],
-        "barriers_to_entry": ["周波数・設備・販売網"],
-        "competitors": ["NTT", "ソフトバンク"]
+        "barriers_to_entry": [
+          "周波数・設備・販売網"
+        ],
+        "competitors": [
+          "NTT",
+          "ソフトバンク"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
       },
       "monthly": {
-        "recent_contracts": ["NEC合弁Protect.jp設立"],
+        "recent_contracts": [
+          "NEC合弁Protect.jp設立"
+        ],
         "recent_orders": [],
-        "policy_tailwinds": ["5G展開", "DC需要"]
+        "policy_tailwinds": [
+          "5G展開",
+          "DC需要"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -814,7 +1154,12 @@
       "ticker": "6758.T",
       "name": "ソニーグループ",
       "name_en": "Sony Group",
-      "domains": ["AI"],
+      "domains": [
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "CMOSイメージセンサ世界シェア50%+。スマートフォン・車載カメラ向けで独占的地位。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "CMOSイメージセンサ世界首位",
@@ -822,8 +1167,15 @@
           "description": "スマートフォン・車載カメラ向けセンサーで独占的地位。"
         },
         "certifications": [],
-        "barriers_to_entry": ["積層技術", "量産能力", "顧客関係"],
-        "competitors": ["Samsung", "OmniVision"]
+        "barriers_to_entry": [
+          "積層技術",
+          "量産能力",
+          "顧客関係"
+        ],
+        "competitors": [
+          "Samsung",
+          "OmniVision"
+        ]
       },
       "quarterly": {
         "fcf_positive": true,
@@ -833,7 +1185,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["車載センサー需要"]
+        "policy_tailwinds": [
+          "車載センサー需要"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -853,16 +1207,30 @@
       "ticker": "5631.T",
       "name": "日本製鋼所",
       "name_en": "Japan Steel Works",
-      "domains": ["防衛", "エネルギー"],
+      "domains": [
+        "防衛",
+        "エネルギー"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "原子炉圧力容器等の大型鍛造部材で世界シェア約80%独占（室蘭の奇跡）。",
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "原子炉圧力容器世界独占",
           "market_share": "大型鍛造部材世界シェア約80%（室蘭の奇跡）",
           "description": "原子炉圧力容器等の大型鍛造部材で世界独占。"
         },
-        "certifications": ["原子力規制委員会認可"],
-        "barriers_to_entry": ["巨大設備", "品質・認証", "製造能力"],
-        "competitors": ["なし（大型鍛造では独占的）"]
+        "certifications": [
+          "原子力規制委員会認可"
+        ],
+        "barriers_to_entry": [
+          "巨大設備",
+          "品質・認証",
+          "製造能力"
+        ],
+        "competitors": [
+          "なし（大型鍛造では独占的）"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -870,7 +1238,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["原子力復活", "SMR推進"]
+        "policy_tailwinds": [
+          "原子力復活",
+          "SMR推進"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -890,7 +1261,11 @@
       "ticker": "6141.T",
       "name": "DMG森精機",
       "name_en": "DMG Mori",
-      "domains": ["ロボティクス"],
+      "domains": [
+        "ロボティクス"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "工作機械世界トップクラス",
@@ -898,8 +1273,14 @@
           "description": "5軸加工機、統合製造ソリューション。"
         },
         "certifications": [],
-        "barriers_to_entry": ["技術蓄積", "グローバルネットワーク"],
-        "competitors": ["ファナック（CNC）", "オークマ"]
+        "barriers_to_entry": [
+          "技術蓄積",
+          "グローバルネットワーク"
+        ],
+        "competitors": [
+          "ファナック（CNC）",
+          "オークマ"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -907,7 +1288,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["製造業自動化"]
+        "policy_tailwinds": [
+          "製造業自動化"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -927,7 +1310,12 @@
       "ticker": "6645.T",
       "name": "オムロン",
       "name_en": "OMRON",
-      "domains": ["ロボティクス", "AI"],
+      "domains": [
+        "ロボティクス",
+        "AI"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "FA制御・センシング",
@@ -935,8 +1323,14 @@
           "description": "工場のセンシング/制御でスイッチングコストが高い。"
         },
         "certifications": [],
-        "barriers_to_entry": ["現場適用ノウハウ", "販売網"],
-        "competitors": ["キーエンス", "三菱電機"]
+        "barriers_to_entry": [
+          "現場適用ノウハウ",
+          "販売網"
+        ],
+        "competitors": [
+          "キーエンス",
+          "三菱電機"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -944,7 +1338,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["FA投資サイクル"]
+        "policy_tailwinds": [
+          "FA投資サイクル"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -964,7 +1360,12 @@
       "ticker": "6723.T",
       "name": "ルネサスエレクトロニクス",
       "name_en": "Renesas Electronics",
-      "domains": ["AI"],
+      "domains": [
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "車載マイコン世界シェア首位級。車載半導体のリーダー。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "車載マイコン世界首位",
@@ -972,8 +1373,14 @@
           "description": "車載半導体のリーダー。"
         },
         "certifications": [],
-        "barriers_to_entry": ["車載認定プロセス", "設計IP"],
-        "competitors": ["NXP", "Infineon"]
+        "barriers_to_entry": [
+          "車載認定プロセス",
+          "設計IP"
+        ],
+        "competitors": [
+          "NXP",
+          "Infineon"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -981,7 +1388,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["車載半導体需要"]
+        "policy_tailwinds": [
+          "車載半導体需要"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1001,16 +1410,29 @@
       "ticker": "6807.T",
       "name": "日本航空電子工業",
       "name_en": "Japan Aviation Electronics (JAE)",
-      "domains": ["防衛", "宇宙"],
+      "domains": [
+        "防衛",
+        "宇宙"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "慣性センサ（リングレーザージャイロ・加速度計）で日本唯一の供給者。ミサイル・ロケット誘導に不可欠。",
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "慣性センサ日本唯一",
           "market_share": "リングレーザージャイロ・加速度計等の慣性センサ技術で日本唯一",
           "description": "ミサイル・航空機・ロケットの姿勢制御・誘導に不可欠。スタンドオフ・ミサイル開発の中核。"
         },
-        "certifications": ["防衛省認定"],
-        "barriers_to_entry": ["慣性航法技術", "防衛・宇宙認定"],
-        "competitors": ["なし（国内唯一の慣性センサ供給者）"]
+        "certifications": [
+          "防衛省認定"
+        ],
+        "barriers_to_entry": [
+          "慣性航法技術",
+          "防衛・宇宙認定"
+        ],
+        "competitors": [
+          "なし（国内唯一の慣性センサ供給者）"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -1018,7 +1440,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["スタンドオフミサイル9,700億円", "防衛予算増"]
+        "policy_tailwinds": [
+          "スタンドオフミサイル9,700億円",
+          "防衛予算増"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1038,7 +1463,12 @@
       "ticker": "6361.T",
       "name": "荏原製作所",
       "name_en": "Ebara Corporation",
-      "domains": ["エネルギー", "AI"],
+      "domains": [
+        "エネルギー",
+        "AI"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "ポンプ・CMP装置",
@@ -1046,8 +1476,12 @@
           "description": "半導体製造向けCMP装置とインフラ用ポンプ。"
         },
         "certifications": [],
-        "barriers_to_entry": ["精密製造技術"],
-        "competitors": ["Entegris（一部）"]
+        "barriers_to_entry": [
+          "精密製造技術"
+        ],
+        "competitors": [
+          "Entegris（一部）"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -1055,7 +1489,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["半導体投資", "インフラ更新"]
+        "policy_tailwinds": [
+          "半導体投資",
+          "インフラ更新"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1075,16 +1512,28 @@
       "ticker": "9501.T",
       "name": "東京電力ホールディングス",
       "name_en": "TEPCO Holdings",
-      "domains": ["エネルギー"],
+      "domains": [
+        "エネルギー"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "柏崎刈羽原発（7基合計821.2万kW）は世界最大。関東圏電力供給の要。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "柏崎刈羽原発（世界最大）",
           "market_share": "関東圏電力供給",
           "description": "7基合計821.2万kWの世界最大原発。再稼働で収益大幅改善見込み。"
         },
-        "certifications": ["原子力規制委員会認可"],
-        "barriers_to_entry": ["原子力免許", "送配電インフラ"],
-        "competitors": ["他電力会社"]
+        "certifications": [
+          "原子力規制委員会認可"
+        ],
+        "barriers_to_entry": [
+          "原子力免許",
+          "送配電インフラ"
+        ],
+        "competitors": [
+          "他電力会社"
+        ]
       },
       "quarterly": {
         "kashiwazaki_status": "作業停止中（2026-01-22~）",
@@ -1093,8 +1542,12 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["原発再稼働推進"],
-        "key_developments": ["柏崎刈羽6号機: 1/21再稼働→1/22制御棒不具合で停止。30年前設定ミス判明。"]
+        "policy_tailwinds": [
+          "原発再稼働推進"
+        ],
+        "key_developments": [
+          "柏崎刈羽6号機: 1/21再稼働→1/22制御棒不具合で停止。30年前設定ミス判明。"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -1103,7 +1556,9 @@
         "weight": 1.0,
         "notes": "柏崎刈羽状況は全ソース一致。再稼働の不確実性が最大リスク。"
       },
-      "change_alerts": ["柏崎刈羽6号機作業停止中（調査継続）"],
+      "change_alerts": [
+        "柏崎刈羽6号機作業停止中（調査継続）"
+      ],
       "freshness": {
         "permanent_updated": "2026-01-31",
         "quarterly_updated": "2026-01-31",
@@ -1114,16 +1569,28 @@
       "ticker": "7224.T",
       "name": "新明和工業",
       "name_en": "ShinMaywa Industries",
-      "domains": ["防衛"],
+      "domains": [
+        "防衛"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "US-2救難飛行艇の世界唯一の量産メーカー。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "飛行艇世界唯一",
           "market_share": "US-2救難飛行艇（世界唯一の量産メーカー）",
           "description": "水陸両用飛行艇。防衛・救難で独占。"
         },
-        "certifications": ["防衛省認定"],
-        "barriers_to_entry": ["飛行艇技術", "製造能力"],
-        "competitors": ["なし"]
+        "certifications": [
+          "防衛省認定"
+        ],
+        "barriers_to_entry": [
+          "飛行艇技術",
+          "製造能力"
+        ],
+        "competitors": [
+          "なし"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -1131,7 +1598,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["防衛予算増"]
+        "policy_tailwinds": [
+          "防衛予算増"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1151,7 +1620,11 @@
       "ticker": "7739.T",
       "name": "キヤノン電子",
       "name_en": "Canon Electronics",
-      "domains": ["宇宙"],
+      "domains": [
+        "宇宙"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "光学・精密加工",
@@ -1159,7 +1632,10 @@
           "description": "光学技術・精密加工技術を活かした小型衛星部品。"
         },
         "certifications": [],
-        "barriers_to_entry": ["光学技術", "精密加工"],
+        "barriers_to_entry": [
+          "光学技術",
+          "精密加工"
+        ],
         "competitors": []
       },
       "quarterly": {
@@ -1168,7 +1644,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["宇宙関連予算増"]
+        "policy_tailwinds": [
+          "宇宙関連予算増"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1188,7 +1666,11 @@
       "ticker": "1963.T",
       "name": "日揮ホールディングス",
       "name_en": "JGC Holdings",
-      "domains": ["エネルギー"],
+      "domains": [
+        "エネルギー"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "EPC世界トップクラス",
@@ -1196,16 +1678,27 @@
           "description": "水素・アンモニアサプライチェーン構築最前線。IHIとJNI設立。"
         },
         "certifications": [],
-        "barriers_to_entry": ["大型EPC遂行力", "人材・調達網", "リスク管理"],
-        "competitors": ["千代田化工建設"]
+        "barriers_to_entry": [
+          "大型EPC遂行力",
+          "人材・調達網",
+          "リスク管理"
+        ],
+        "competitors": [
+          "千代田化工建設"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
       },
       "monthly": {
-        "recent_contracts": ["JNI設立（IHIと共同、NuScale SMR）"],
+        "recent_contracts": [
+          "JNI設立（IHIと共同、NuScale SMR）"
+        ],
         "recent_orders": [],
-        "policy_tailwinds": ["GX推進", "水素サプライチェーン"]
+        "policy_tailwinds": [
+          "GX推進",
+          "水素サプライチェーン"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1225,7 +1718,12 @@
       "ticker": "6779.T",
       "name": "日本電波工業",
       "name_en": "NDK",
-      "domains": ["AI", "サイバー"],
+      "domains": [
+        "AI",
+        "サイバー"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "水晶デバイス",
@@ -1233,8 +1731,12 @@
           "description": "高精度周波数制御部品。"
         },
         "certifications": [],
-        "barriers_to_entry": ["精密製造技術"],
-        "competitors": ["日本電波（国内競合）"]
+        "barriers_to_entry": [
+          "精密製造技術"
+        ],
+        "competitors": [
+          "日本電波（国内競合）"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -1242,7 +1744,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["5G/通信投資"]
+        "policy_tailwinds": [
+          "5G/通信投資"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1264,7 +1768,12 @@
       "ticker": "6315.T",
       "name": "TOWA",
       "name_en": "TOWA Corporation",
-      "domains": ["AI"],
+      "domains": [
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "半導体モールディング装置世界シェア約60-66%。HBMコンプレッション成形技術の事実上の業界標準。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "HBMモールディング装置独占",
@@ -1272,8 +1781,13 @@
           "description": "HBM製造の「コンプレッション成形技術」事実上の業界標準。"
         },
         "certifications": [],
-        "barriers_to_entry": ["高度な金型技術", "装置設計のすり合わせ"],
-        "competitors": ["APIC Yamada（一部）"]
+        "barriers_to_entry": [
+          "高度な金型技術",
+          "装置設計のすり合わせ"
+        ],
+        "competitors": [
+          "APIC Yamada（一部）"
+        ]
       },
       "quarterly": {
         "op_margin": "高水準",
@@ -1281,8 +1795,12 @@
       },
       "monthly": {
         "recent_contracts": [],
-        "recent_orders": ["HBM向け装置受注急増"],
-        "policy_tailwinds": ["HBM需要急拡大（SK Hynix、Samsung、Micron）"]
+        "recent_orders": [
+          "HBM向け装置受注急増"
+        ],
+        "policy_tailwinds": [
+          "HBM需要急拡大（SK Hynix、Samsung、Micron）"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1302,7 +1820,12 @@
       "ticker": "6268.T",
       "name": "ナブテスコ",
       "name_en": "Nabtesco",
-      "domains": ["ロボティクス"],
+      "domains": [
+        "ロボティクス"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "精密減速機RV世界シェア約60%。中・大型ロボット向けで事実上独占。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "RV精密減速機世界独占",
@@ -1310,8 +1833,12 @@
           "description": "ファナック・安川の信頼性はナブテスコの減速機が支える。"
         },
         "certifications": [],
-        "barriers_to_entry": ["高剛性・耐衝撃性・耐久性技術"],
-        "competitors": ["ハーモニック・ドライブ（異なるサイズ帯）"]
+        "barriers_to_entry": [
+          "高剛性・耐衝撃性・耐久性技術"
+        ],
+        "competitors": [
+          "ハーモニック・ドライブ（異なるサイズ帯）"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -1319,7 +1846,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["ロボット需要拡大"]
+        "policy_tailwinds": [
+          "ロボット需要拡大"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1339,7 +1868,12 @@
       "ticker": "6146.T",
       "name": "ディスコ",
       "name_en": "Disco Corporation",
-      "domains": ["AI"],
+      "domains": [
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "ダイシングソー世界シェア70-80%、グラインダ70%+。消耗品ブレードがリカーリング収益。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "ダイシング装置世界独占",
@@ -1347,8 +1881,13 @@
           "description": "Kiru/Kezuru/Migaku特化。消耗品ブレードがリカーリング収益。"
         },
         "certifications": [],
-        "barriers_to_entry": ["精密加工技術", "消耗品ビジネスモデル"],
-        "competitors": ["TOKYO SEIMITSU（一部）"]
+        "barriers_to_entry": [
+          "精密加工技術",
+          "消耗品ビジネスモデル"
+        ],
+        "competitors": [
+          "TOKYO SEIMITSU（一部）"
+        ]
       },
       "quarterly": {
         "op_margin": "38%",
@@ -1359,7 +1898,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["先端パッケージ需要"]
+        "policy_tailwinds": [
+          "先端パッケージ需要"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -1379,16 +1920,29 @@
       "ticker": "6490.T",
       "name": "日本ピラー工業",
       "name_en": "Nippon Pillar Packing",
-      "domains": ["エネルギー", "AI"],
+      "domains": [
+        "エネルギー",
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "メカニカルシール市場寡占。原子力+半導体分野のシール技術で代替困難。",
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "メカニカルシール寡占",
           "market_share": "メカニカルシール市場寡占",
           "description": "原子力+半導体分野のシール技術。営業利益率約19%。"
         },
-        "certifications": ["原子力認定"],
-        "barriers_to_entry": ["シール技術", "認証"],
-        "competitors": ["イーグル工業"]
+        "certifications": [
+          "原子力認定"
+        ],
+        "barriers_to_entry": [
+          "シール技術",
+          "認証"
+        ],
+        "competitors": [
+          "イーグル工業"
+        ]
       },
       "quarterly": {
         "op_margin": "19%",
@@ -1397,7 +1951,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["原発再稼働", "半導体投資"]
+        "policy_tailwinds": [
+          "原発再稼働",
+          "半導体投資"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1417,16 +1974,28 @@
       "ticker": "6492.T",
       "name": "岡野バルブ製造",
       "name_en": "Okano Valve Manufacturing",
-      "domains": ["エネルギー"],
+      "domains": [
+        "エネルギー"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "国内原子力発電所向け重要弁で圧倒的シェア。独占的ポジション。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "原子力バルブ独占",
           "market_share": "国内原子力発電所向け重要弁で圧倒的シェア",
           "description": "再稼働審査・60年超運転延長でメンテナンス需要が安定収益源。"
         },
-        "certifications": ["原子力規制委員会認可"],
-        "barriers_to_entry": ["原子力認証", "60年+の実績"],
-        "competitors": ["なし（原子力弁で独占的）"]
+        "certifications": [
+          "原子力規制委員会認可"
+        ],
+        "barriers_to_entry": [
+          "原子力認証",
+          "60年+の実績"
+        ],
+        "competitors": [
+          "なし（原子力弁で独占的）"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -1434,7 +2003,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["原発再稼働推進", "運転期間延長"]
+        "policy_tailwinds": [
+          "原発再稼働推進",
+          "運転期間延長"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1454,7 +2026,12 @@
       "ticker": "6481.T",
       "name": "THK",
       "name_en": "THK Co., Ltd.",
-      "domains": ["ロボティクス"],
+      "domains": [
+        "ロボティクス"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "LMガイド世界シェア約50%。直動案内で産業機械の基盤部材。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "LMガイドパイオニア",
@@ -1462,7 +2039,9 @@
           "description": "直動案内で機械の基盤部材。産業機械に不可欠。"
         },
         "certifications": [],
-        "barriers_to_entry": ["精密加工・品質保証"],
+        "barriers_to_entry": [
+          "精密加工・品質保証"
+        ],
         "competitors": []
       },
       "quarterly": {
@@ -1471,7 +2050,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["産業機械需要"]
+        "policy_tailwinds": [
+          "産業機械需要"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1491,16 +2072,30 @@
       "ticker": "6324.T",
       "name": "ハーモニック・ドライブ・システムズ",
       "name_en": "Harmonic Drive Systems",
-      "domains": ["ロボティクス", "宇宙"],
+      "domains": [
+        "ロボティクス",
+        "宇宙"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "波動歯車装置世界シェア~80%。小型ロボット・宇宙用アクチュエータの核心部品。",
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "波動歯車装置世界独占",
           "market_share": "波動歯車装置（精密減速機）世界シェア大部分（~80%）",
           "description": "小型ロボット・宇宙用アクチュエータの核心部品。ヒューマノイド需要にも対応。"
         },
-        "certifications": ["JAXA認定（宇宙用）"],
-        "barriers_to_entry": ["特許", "資本集約", "精密技術"],
-        "competitors": ["ナブテスコ（異なるサイズ帯）"]
+        "certifications": [
+          "JAXA認定（宇宙用）"
+        ],
+        "barriers_to_entry": [
+          "特許",
+          "資本集約",
+          "精密技術"
+        ],
+        "competitors": [
+          "ナブテスコ（異なるサイズ帯）"
+        ]
       },
       "quarterly": {
         "market_cap": "約1,000-1,100億円",
@@ -1512,9 +2107,14 @@
         "equity_ratio": "69.5%"
       },
       "monthly": {
-        "recent_contracts": ["ファナックへの減速機供給（Jan 2026, 10B円）"],
+        "recent_contracts": [
+          "ファナックへの減速機供給（Jan 2026, 10B円）"
+        ],
         "recent_orders": [],
-        "policy_tailwinds": ["防衛予算UUV/ドローン", "ヒューマノイドロボット需要"]
+        "policy_tailwinds": [
+          "防衛予算UUV/ドローン",
+          "ヒューマノイドロボット需要"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -1523,7 +2123,9 @@
         "weight": 0.8,
         "notes": "80%シェアはGrok/Gemini一致。Grok財務(Revenue 278.4B、Backlog 384B)は安川からのコピーエラー確認（CTR-JP017）。実際の売上は~600億円。"
       },
-      "change_alerts": ["Grok財務データは使用不可（コピーエラー確認済み）"],
+      "change_alerts": [
+        "Grok財務データは使用不可（コピーエラー確認済み）"
+      ],
       "freshness": {
         "permanent_updated": "2026-01-31",
         "quarterly_updated": "2026-01-31",
@@ -1534,7 +2136,12 @@
       "ticker": "4187.T",
       "name": "大阪有機化学工業",
       "name_en": "Osaka Organic Chemical Industry",
-      "domains": ["AI"],
+      "domains": [
+        "AI"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "特殊アクリレートモノマー世界シェア約70%。フォトレジスト原料で半導体製造に不可欠。",
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "フォトレジスト原料独占",
@@ -1542,7 +2149,10 @@
           "description": "フォトレジスト原料で半導体製造に不可欠。"
         },
         "certifications": [],
-        "barriers_to_entry": ["化学合成技術", "品質認定"],
+        "barriers_to_entry": [
+          "化学合成技術",
+          "品質認定"
+        ],
         "competitors": []
       },
       "quarterly": {
@@ -1551,7 +2161,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["先端半導体需要"]
+        "policy_tailwinds": [
+          "先端半導体需要"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1571,16 +2183,27 @@
       "ticker": "3692.T",
       "name": "FFRIセキュリティ",
       "name_en": "FFRI Security",
-      "domains": ["サイバー"],
+      "domains": [
+        "サイバー"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "純国産エンドポイントセキュリティ",
           "market_share": "重要インフラ・政府機関向け純国産セキュリティ",
           "description": "FFRI yarai。経済安保の観点で重要。"
         },
-        "certifications": ["政府機関認定"],
-        "barriers_to_entry": ["国産技術", "政府調達実績"],
-        "competitors": ["トレンドマイクロ（グローバル）"]
+        "certifications": [
+          "政府機関認定"
+        ],
+        "barriers_to_entry": [
+          "国産技術",
+          "政府調達実績"
+        ],
+        "competitors": [
+          "トレンドマイクロ（グローバル）"
+        ]
       },
       "quarterly": {
         "fcf_positive": true
@@ -1588,7 +2211,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["経済安保推進法", "能動的サイバー防御"]
+        "policy_tailwinds": [
+          "経済安保推進法",
+          "能動的サイバー防御"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1608,16 +2234,29 @@
       "ticker": "6282.T",
       "name": "オイレス工業",
       "name_en": "Oiles Corporation",
-      "domains": ["AI", "防衛"],
+      "domains": [
+        "AI",
+        "防衛"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "免震装置国内シェア50%。地震国日本のDCインフラに不可欠。",
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "免震装置国内独占",
           "market_share": "免震装置50%国内シェア（データセンター向け）",
           "description": "地震国日本のDCインフラに不可欠な免震装置。"
         },
-        "certifications": ["防衛省認定"],
-        "barriers_to_entry": ["特許・精密ベアリング", "油無し技術"],
-        "competitors": ["KYB（一部）"]
+        "certifications": [
+          "防衛省認定"
+        ],
+        "barriers_to_entry": [
+          "特許・精密ベアリング",
+          "油無し技術"
+        ],
+        "competitors": [
+          "KYB（一部）"
+        ]
       },
       "quarterly": {
         "market_cap": "500-800億円（レンジ推定）",
@@ -1634,9 +2273,16 @@
         "debt_ebitda": "0.1x（実質無借金）"
       },
       "monthly": {
-        "recent_contracts": ["DC冷却案件（Jan 2026, ~5B円）"],
-        "recent_orders": ["10B円 免震装置（Dec 2025）"],
-        "policy_tailwinds": ["GXインフラ投資", "DC国内増設"]
+        "recent_contracts": [
+          "DC冷却案件（Jan 2026, ~5B円）"
+        ],
+        "recent_orders": [
+          "10B円 免震装置（Dec 2025）"
+        ],
+        "policy_tailwinds": [
+          "GXインフラ投資",
+          "DC国内増設"
+        ]
       },
       "information_quality": {
         "sources_count": 1,
@@ -1645,7 +2291,9 @@
         "weight": 0.7,
         "notes": "Grok詳述。時価総額812B円はGrok単位変換ミス（正しくは812億円、さらにPER逆算で500-800億円レンジ）。Grok財務-15%信頼度。"
       },
-      "change_alerts": ["時価総額要確認（Yahoo Finance 6282.T）"],
+      "change_alerts": [
+        "時価総額要確認（Yahoo Finance 6282.T）"
+      ],
       "freshness": {
         "permanent_updated": "2026-01-31",
         "quarterly_updated": "2026-01-31",
@@ -1656,16 +2304,27 @@
       "ticker": "5595.T",
       "name": "QPS研究所",
       "name_en": "QPS Institute",
-      "domains": ["宇宙"],
+      "domains": [
+        "宇宙"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "小型SAR衛星",
           "market_share": "SAR衛星30%（日本）",
           "description": "小型SAR衛星コンステレーション。安全保障向け準リアルタイム監視。"
         },
-        "certifications": ["JAXA認定"],
-        "barriers_to_entry": ["マイクロ波レーダー技術", "衛星運用実績"],
-        "competitors": ["Synspective"]
+        "certifications": [
+          "JAXA認定"
+        ],
+        "barriers_to_entry": [
+          "マイクロ波レーダー技術",
+          "衛星運用実績"
+        ],
+        "competitors": [
+          "Synspective"
+        ]
       },
       "quarterly": {
         "market_cap": "約231億円",
@@ -1677,9 +2336,16 @@
         "eps": "-68円（赤字）"
       },
       "monthly": {
-        "recent_contracts": ["JAXA衛星案件（Dec 2025, 5B円）"],
-        "recent_orders": ["2.8B円 地上システム（Jan 2026）"],
-        "policy_tailwinds": ["宇宙安全保障", "防衛予算増"]
+        "recent_contracts": [
+          "JAXA衛星案件（Dec 2025, 5B円）"
+        ],
+        "recent_orders": [
+          "2.8B円 地上システム（Jan 2026）"
+        ],
+        "policy_tailwinds": [
+          "宇宙安全保障",
+          "防衛予算増"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1699,7 +2365,12 @@
       "ticker": "5802.T",
       "name": "住友電気工業",
       "name_en": "Sumitomo Electric Industries",
-      "domains": ["エネルギー", "AI"],
+      "domains": [
+        "エネルギー",
+        "AI"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "HVDCケーブル/光ファイバー",
@@ -1707,8 +2378,15 @@
           "description": "HVDC送電・光ファイバーでインフラの要。"
         },
         "certifications": [],
-        "barriers_to_entry": ["品質・認証", "巨額設備", "長期採用"],
-        "competitors": ["古河電工", "Prysmian"]
+        "barriers_to_entry": [
+          "品質・認証",
+          "巨額設備",
+          "長期採用"
+        ],
+        "competitors": [
+          "古河電工",
+          "Prysmian"
+        ]
       },
       "quarterly": {
         "op_margin": "7%",
@@ -1718,7 +2396,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["GXグリッド投資", "海底ケーブル需要"]
+        "policy_tailwinds": [
+          "GXグリッド投資",
+          "海底ケーブル需要"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1738,7 +2419,12 @@
       "ticker": "5801.T",
       "name": "古河電気工業",
       "name_en": "Furukawa Electric",
-      "domains": ["AI", "エネルギー"],
+      "domains": [
+        "AI",
+        "エネルギー"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "海底ケーブル",
@@ -1746,8 +2432,14 @@
           "description": "データセンター接続・HVDC用海底ケーブル。"
         },
         "certifications": [],
-        "barriers_to_entry": ["品質/認証", "長期供給"],
-        "competitors": ["住友電工", "Prysmian"]
+        "barriers_to_entry": [
+          "品質/認証",
+          "長期供給"
+        ],
+        "competitors": [
+          "住友電工",
+          "Prysmian"
+        ]
       },
       "quarterly": {
         "op_margin": "1.1%",
@@ -1758,7 +2450,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["DC接続需要"]
+        "policy_tailwinds": [
+          "DC接続需要"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1778,16 +2472,30 @@
       "ticker": "6622.T",
       "name": "ダイヘン",
       "name_en": "Daihen Corporation",
-      "domains": ["エネルギー", "ロボティクス"],
+      "domains": [
+        "エネルギー",
+        "ロボティクス"
+      ],
+      "chokepoint": true,
+      "chokepoint_detail": "変圧器国内トップシェア。グリッド・蓄電インフラの中核。",
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "変圧器国内トップ",
           "market_share": "変圧器国内トップシェア。EV急速充電器も拡大",
           "description": "グリッド・蓄電インフラの中核。溶接ロボットも。"
         },
-        "certifications": ["原子力認定"],
-        "barriers_to_entry": ["認証", "品質", "長期保守"],
-        "competitors": ["明電舎"]
+        "certifications": [
+          "原子力認定"
+        ],
+        "barriers_to_entry": [
+          "認証",
+          "品質",
+          "長期保守"
+        ],
+        "competitors": [
+          "明電舎"
+        ]
       },
       "quarterly": {
         "market_cap": "約3,000億円",
@@ -1804,9 +2512,16 @@
         "debt_ebitda": "0.5x"
       },
       "monthly": {
-        "recent_contracts": ["ESS案件（Jan 2026, 5B円）"],
-        "recent_orders": ["10B円 変圧器（Dec 2025）"],
-        "policy_tailwinds": ["GX蓄電投資", "EV充電インフラ"]
+        "recent_contracts": [
+          "ESS案件（Jan 2026, 5B円）"
+        ],
+        "recent_orders": [
+          "10B円 変圧器（Dec 2025）"
+        ],
+        "policy_tailwinds": [
+          "GX蓄電投資",
+          "EV充電インフラ"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1826,7 +2541,11 @@
       "ticker": "4704.T",
       "name": "トレンドマイクロ",
       "name_en": "Trend Micro",
-      "domains": ["サイバー"],
+      "domains": [
+        "サイバー"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 1,
       "permanent": {
         "moat": {
           "type": "エンドポイントセキュリティ・グローバルリーダー",
@@ -1834,8 +2553,15 @@
           "description": "脅威データ蓄積・スイッチングコスト高。"
         },
         "certifications": [],
-        "barriers_to_entry": ["ブランド信頼", "研究開発", "顧客基盤"],
-        "competitors": ["CrowdStrike", "Palo Alto"]
+        "barriers_to_entry": [
+          "ブランド信頼",
+          "研究開発",
+          "顧客基盤"
+        ],
+        "competitors": [
+          "CrowdStrike",
+          "Palo Alto"
+        ]
       },
       "quarterly": {
         "market_cap": "約8,000億円",
@@ -1847,7 +2573,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["サイバーセキュリティ基本法", "経済安保"]
+        "policy_tailwinds": [
+          "サイバーセキュリティ基本法",
+          "経済安保"
+        ]
       },
       "information_quality": {
         "sources_count": 3,
@@ -1867,16 +2596,30 @@
       "ticker": "6502.T",
       "name": "東芝",
       "name_en": "Toshiba Corporation",
-      "domains": ["エネルギー", "サイバー"],
+      "domains": [
+        "エネルギー",
+        "サイバー"
+      ],
+      "chokepoint": false,
+      "cross_domain_convergence": 2,
       "permanent": {
         "moat": {
           "type": "原子力・量子暗号",
           "market_share": "核燃料サイクル技術、QKD世界トップクラス",
           "description": "電力機器・制御、社会インフラ組込。量子暗号通信でBT等と実証。"
         },
-        "certifications": ["原子力規制委員会認可"],
-        "barriers_to_entry": ["認証", "実績", "長期保守"],
-        "competitors": ["三菱重工", "日立"]
+        "certifications": [
+          "原子力規制委員会認可"
+        ],
+        "barriers_to_entry": [
+          "認証",
+          "実績",
+          "長期保守"
+        ],
+        "competitors": [
+          "三菱重工",
+          "日立"
+        ]
       },
       "quarterly": {
         "note": "非上場化後、開示限定"
@@ -1884,7 +2627,10 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["原子力復活", "量子暗号需要"]
+        "policy_tailwinds": [
+          "原子力復活",
+          "量子暗号需要"
+        ]
       },
       "information_quality": {
         "sources_count": 2,
@@ -1893,7 +2639,9 @@
         "weight": 0.7,
         "notes": "Gemini/ChatGPT一致。非上場化後の情報制限。"
       },
-      "change_alerts": ["非上場化（情報開示限定）"],
+      "change_alerts": [
+        "非上場化（情報開示限定）"
+      ],
       "freshness": {
         "permanent_updated": "2026-01-31",
         "quarterly_updated": "2026-01-31",
@@ -1905,7 +2653,10 @@
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corporation",
-      "domains": ["AI", "データセンター"],
+      "domains": [
+        "AI",
+        "データセンター"
+      ],
       "permanent": {
         "moat": {
           "type": "独占的技術・エコシステム",
@@ -1913,8 +2664,14 @@
           "description": "CUDA独占、HBM統合、Blackwell/Rubin技術リード。"
         },
         "certifications": [],
-        "barriers_to_entry": ["CUDA 20年のエコシステム", "HBM統合技術", "TSMCパートナーシップ"],
-        "competitors": ["AMD MI300シリーズ（シェア2-5%）"]
+        "barriers_to_entry": [
+          "CUDA 20年のエコシステム",
+          "HBM統合技術",
+          "TSMCパートナーシップ"
+        ],
+        "competitors": [
+          "AMD MI300シリーズ（シェア2-5%）"
+        ]
       },
       "quarterly": {
         "period": "Q3 FY2026",
@@ -1927,7 +2684,9 @@
       "monthly": {
         "recent_contracts": [],
         "recent_orders": [],
-        "policy_tailwinds": ["Hyperscaler CapEx $600B+"]
+        "policy_tailwinds": [
+          "Hyperscaler CapEx $600B+"
+        ]
       },
       "information_quality": {
         "sources_count": 4,
@@ -1935,46 +2694,89 @@
         "confidence": "A",
         "weight": 1.0
       },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "LEU",
       "name": "Centrus Energy Corp",
-      "domains": ["エネルギー", "原子力"],
+      "domains": [
+        "エネルギー",
+        "原子力"
+      ],
       "permanent": {
         "moat": {
           "type": "唯一の供給者",
           "market_share": "100%（米国内HALEU商用生産）",
           "description": "米国内唯一のHALEU商用生産者。NRC認証済み施設。"
         },
-        "certifications": ["NRC License（Piketon, Ohio）"],
-        "barriers_to_entry": ["NRC認証（取得に数年）", "HALEU製造技術", "DOEパートナーシップ"],
-        "competitors": ["なし（米国内商用では唯一）"]
+        "certifications": [
+          "NRC License（Piketon, Ohio）"
+        ],
+        "barriers_to_entry": [
+          "NRC認証（取得に数年）",
+          "HALEU製造技術",
+          "DOEパートナーシップ"
+        ],
+        "competitors": [
+          "なし（米国内商用では唯一）"
+        ]
       },
       "quarterly": {
         "haleu_contract": "$110M through June 2026 + $900M expansion",
         "production_rate": "900kg HALEU/year"
       },
       "monthly": {
-        "recent_contracts": ["DOE HALEU Phase III ($110M)", "DOE HALEU Expansion ($900M)"],
-        "policy_tailwinds": ["DOEプログラム$2.7B"]
+        "recent_contracts": [
+          "DOE HALEU Phase III ($110M)",
+          "DOE HALEU Expansion ($900M)"
+        ],
+        "policy_tailwinds": [
+          "DOEプログラム$2.7B"
+        ]
       },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "A", "weight": 1.0 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "A",
+        "weight": 1.0
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "BWXT",
       "name": "BWX Technologies, Inc.",
-      "domains": ["エネルギー", "防衛", "原子力"],
+      "domains": [
+        "エネルギー",
+        "防衛",
+        "原子力"
+      ],
       "permanent": {
         "moat": {
           "type": "唯一の認定供給者",
           "market_share": "100%（米海軍原子炉部品）",
           "description": "米海軍原子炉部品の唯一の国内認定製造者。70年以上の実績。"
         },
-        "certifications": ["Naval Nuclear Propulsion Program認定", "NRC License", "NNSA契約者"],
-        "barriers_to_entry": ["海軍認定（競合参入ほぼ不可能）", "70年の技術蓄積", "機密クリアランス"],
-        "competitors": ["なし（海軍原子炉では唯一）"]
+        "certifications": [
+          "Naval Nuclear Propulsion Program認定",
+          "NRC License",
+          "NNSA契約者"
+        ],
+        "barriers_to_entry": [
+          "海軍認定（競合参入ほぼ不可能）",
+          "70年の技術蓄積",
+          "機密クリアランス"
+        ],
+        "competitors": [
+          "なし（海軍原子炉では唯一）"
+        ]
       },
       "quarterly": {
         "revenue_yoy": "+29%",
@@ -1982,16 +2784,33 @@
         "guidance_2026": "Low-double-digit to low-teens EBITDA growth"
       },
       "monthly": {
-        "recent_contracts": ["Naval Nuclear Reactor Components ($2.6B)"],
-        "policy_tailwinds": ["海軍拡張計画", "SMR商用化"]
+        "recent_contracts": [
+          "Naval Nuclear Reactor Components ($2.6B)"
+        ],
+        "policy_tailwinds": [
+          "海軍拡張計画",
+          "SMR商用化"
+        ]
       },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "A", "weight": 1.0 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "A",
+        "weight": 1.0
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "VRT",
       "name": "Vertiv Holdings Co",
-      "domains": ["AI", "データセンター"],
+      "domains": [
+        "AI",
+        "データセンター"
+      ],
       "permanent": {
         "moat": {
           "type": "技術的リーダーシップ",
@@ -1999,8 +2818,14 @@
           "description": "液冷技術リーダー。NVIDIA GB200参照アーキテクチャ共同開発。"
         },
         "certifications": [],
-        "barriers_to_entry": ["液冷技術先行", "NVIDIAパートナーシップ"],
-        "competitors": ["Schneider Electric", "Eaton"]
+        "barriers_to_entry": [
+          "液冷技術先行",
+          "NVIDIAパートナーシップ"
+        ],
+        "competitors": [
+          "Schneider Electric",
+          "Eaton"
+        ]
       },
       "quarterly": {
         "revenue": "$2,676M (+29% YoY)",
@@ -2008,180 +2833,462 @@
         "orders_yoy": "+60% organic",
         "book_to_bill": "1.4x"
       },
-      "monthly": { "recent_contracts": [], "policy_tailwinds": ["AI DC投資$600B+"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "B", "weight": 0.9 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "monthly": {
+        "recent_contracts": [],
+        "policy_tailwinds": [
+          "AI DC投資$600B+"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "B",
+        "weight": 0.9
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "AVAV",
       "name": "AeroVironment, Inc.",
-      "domains": ["防衛", "ロボティクス"],
+      "domains": [
+        "防衛",
+        "ロボティクス"
+      ],
       "permanent": {
         "moat": {
           "type": "Replicator選定・量産能力",
           "market_share": "徘徊型弾薬（Switchblade）市場リーダー",
           "description": "Replicator公式選定。12州製造拠点。"
         },
-        "certifications": ["ITAR対応", "DoD認定"],
-        "barriers_to_entry": ["Replicator選定", "量産ノウハウ", "実戦実績"],
-        "competitors": ["Anduril（異なるセグメント）"]
+        "certifications": [
+          "ITAR対応",
+          "DoD認定"
+        ],
+        "barriers_to_entry": [
+          "Replicator選定",
+          "量産ノウハウ",
+          "実戦実績"
+        ],
+        "competitors": [
+          "Anduril（異なるセグメント）"
+        ]
       },
-      "quarterly": { "switchblade_contract": "$990M + $743M ceiling", "production_expansion": "2x by FY27" },
-      "monthly": { "recent_contracts": ["Switchblade IDIQ"], "policy_tailwinds": ["Golden Dome SHIELD"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "A", "weight": 1.0 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "quarterly": {
+        "switchblade_contract": "$990M + $743M ceiling",
+        "production_expansion": "2x by FY27"
+      },
+      "monthly": {
+        "recent_contracts": [
+          "Switchblade IDIQ"
+        ],
+        "policy_tailwinds": [
+          "Golden Dome SHIELD"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "A",
+        "weight": 1.0
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "RKLB",
       "name": "Rocket Lab USA, Inc.",
-      "domains": ["宇宙", "防衛"],
+      "domains": [
+        "宇宙",
+        "防衛"
+      ],
       "permanent": {
         "moat": {
           "type": "小型打上げ市場リーダー",
           "market_share": "小型衛星打上げ市場シェア2位（SpaceX次点）",
           "description": "Electron商業化成功。SDA契約$1.3B+。"
         },
-        "certifications": ["FAA Launch License", "SDA認定"],
-        "barriers_to_entry": ["打上げ実績100+", "垂直統合", "Photon衛星バス"],
-        "competitors": ["SpaceX（大型）"]
+        "certifications": [
+          "FAA Launch License",
+          "SDA認定"
+        ],
+        "barriers_to_entry": [
+          "打上げ実績100+",
+          "垂直統合",
+          "Photon衛星バス"
+        ],
+        "competitors": [
+          "SpaceX（大型）"
+        ]
       },
-      "quarterly": { "backlog": ">$2B", "sda_contracts": "$1.3B+" },
-      "monthly": { "recent_contracts": ["SDA Tranche 3 ($816M)"], "policy_tailwinds": ["宇宙防衛拡大"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "B", "weight": 0.85 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "quarterly": {
+        "backlog": ">$2B",
+        "sda_contracts": "$1.3B+"
+      },
+      "monthly": {
+        "recent_contracts": [
+          "SDA Tranche 3 ($816M)"
+        ],
+        "policy_tailwinds": [
+          "宇宙防衛拡大"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "B",
+        "weight": 0.85
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "LHX",
       "name": "L3Harris Technologies, Inc.",
-      "domains": ["防衛", "宇宙"],
+      "domains": [
+        "防衛",
+        "宇宙"
+      ],
       "permanent": {
         "moat": {
           "type": "戦略ミサイル独占",
           "market_share": "SRM（固体ロケットモーター）RTXと複占",
           "description": "RS-25、PAC-3、THAAD、Tomahawk、SM製造。"
         },
-        "certifications": ["ITAR", "DoD認定プライム", "NASA認定"],
-        "barriers_to_entry": ["SRM技術独占", "70年の実績"],
-        "competitors": ["RTX（Aerojet Rocketdyne）"]
+        "certifications": [
+          "ITAR",
+          "DoD認定プライム",
+          "NASA認定"
+        ],
+        "barriers_to_entry": [
+          "SRM技術独占",
+          "70年の実績"
+        ],
+        "competitors": [
+          "RTX（Aerojet Rocketdyne）"
+        ]
       },
-      "quarterly": { "missile_solutions_revenue": "$3.6-3.8B", "pentagon_investment": "$1B" },
-      "monthly": { "recent_contracts": ["Pentagon Missile Solutions Investment ($1B)"], "policy_tailwinds": ["Golden Dome"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "A", "weight": 1.0 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "quarterly": {
+        "missile_solutions_revenue": "$3.6-3.8B",
+        "pentagon_investment": "$1B"
+      },
+      "monthly": {
+        "recent_contracts": [
+          "Pentagon Missile Solutions Investment ($1B)"
+        ],
+        "policy_tailwinds": [
+          "Golden Dome"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "A",
+        "weight": 1.0
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "VST",
       "name": "Vistra Corp",
-      "domains": ["エネルギー", "原子力"],
+      "domains": [
+        "エネルギー",
+        "原子力"
+      ],
       "permanent": {
         "moat": {
           "type": "原子力フリート保有",
           "market_share": "米国最大の競争的電力事業者（41GW）",
           "description": "Meta 20年PPA（2.1GW+）。"
         },
-        "certifications": ["NRC原子炉ライセンス"],
-        "barriers_to_entry": ["原子炉ライセンス", "20年PPA固定"],
-        "competitors": ["Constellation Energy"]
+        "certifications": [
+          "NRC原子炉ライセンス"
+        ],
+        "barriers_to_entry": [
+          "原子炉ライセンス",
+          "20年PPA固定"
+        ],
+        "competitors": [
+          "Constellation Energy"
+        ]
       },
-      "quarterly": { "total_capacity": "41GW", "meta_ppa": "2.1GW+ (20-year)" },
-      "monthly": { "recent_contracts": ["Meta Nuclear PPA"], "policy_tailwinds": ["AI電力需要"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "B", "weight": 0.9 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "quarterly": {
+        "total_capacity": "41GW",
+        "meta_ppa": "2.1GW+ (20-year)"
+      },
+      "monthly": {
+        "recent_contracts": [
+          "Meta Nuclear PPA"
+        ],
+        "policy_tailwinds": [
+          "AI電力需要"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "B",
+        "weight": 0.9
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "CEG",
       "name": "Constellation Energy",
-      "domains": ["エネルギー", "原子力"],
+      "domains": [
+        "エネルギー",
+        "原子力"
+      ],
       "permanent": {
         "moat": {
           "type": "米国最大の原子力フリート",
           "market_share": "発電量の70%が原子力",
           "description": "Meta Clinton PPA、Microsoft Three Mile Island契約。"
         },
-        "certifications": ["NRC原子炉ライセンス"],
-        "barriers_to_entry": ["原子炉ライセンス", "長期PPA契約"],
-        "competitors": ["Vistra"]
+        "certifications": [
+          "NRC原子炉ライセンス"
+        ],
+        "barriers_to_entry": [
+          "原子炉ライセンス",
+          "長期PPA契約"
+        ],
+        "competitors": [
+          "Vistra"
+        ]
       },
-      "quarterly": { "nuclear_pct": "70%" },
-      "monthly": { "recent_contracts": ["Meta Clinton PPA", "Microsoft TMI PPA"], "policy_tailwinds": ["ハイパースケーラー需要"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "A", "weight": 1.0 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "quarterly": {
+        "nuclear_pct": "70%"
+      },
+      "monthly": {
+        "recent_contracts": [
+          "Meta Clinton PPA",
+          "Microsoft TMI PPA"
+        ],
+        "policy_tailwinds": [
+          "ハイパースケーラー需要"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "A",
+        "weight": 1.0
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "TDG",
       "name": "TransDigm Group",
-      "domains": ["防衛", "航空宇宙"],
+      "domains": [
+        "防衛",
+        "航空宇宙"
+      ],
       "permanent": {
         "moat": {
           "type": "独占的アフターマーケット部品",
           "market_share": "売上の90%が独占的製品",
           "description": "EBITDAマージン約50%。代替不可能な認証済み航空機部品。"
         },
-        "certifications": ["FAA PMA認証", "DoD認定"],
-        "barriers_to_entry": ["FAA認証", "OEM設計ロックイン"],
-        "competitors": ["HEICO（一部）"]
+        "certifications": [
+          "FAA PMA認証",
+          "DoD認定"
+        ],
+        "barriers_to_entry": [
+          "FAA認証",
+          "OEM設計ロックイン"
+        ],
+        "competitors": [
+          "HEICO（一部）"
+        ]
       },
-      "quarterly": { "proprietary_revenue_pct": "90%", "ebitda_margin": "~50%" },
-      "monthly": { "recent_contracts": [], "policy_tailwinds": ["航空アフターマーケット需要"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "A", "weight": 1.0 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "quarterly": {
+        "proprietary_revenue_pct": "90%",
+        "ebitda_margin": "~50%"
+      },
+      "monthly": {
+        "recent_contracts": [],
+        "policy_tailwinds": [
+          "航空アフターマーケット需要"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "A",
+        "weight": 1.0
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "ETN",
       "name": "Eaton Corporation",
-      "domains": ["エネルギー", "AI", "防衛"],
+      "domains": [
+        "エネルギー",
+        "AI",
+        "防衛"
+      ],
       "permanent": {
         "moat": {
           "type": "電気インフラリーダー",
           "market_share": "配電・変圧器市場トップ3",
           "description": "グリッド近代化とAIインフラ双方を捕捉。変圧器リードタイム2年。"
         },
-        "certifications": ["UL認証", "DoD認定"],
-        "barriers_to_entry": ["製造能力制約", "長期顧客関係"],
-        "competitors": ["Schneider Electric", "ABB"]
+        "certifications": [
+          "UL認証",
+          "DoD認定"
+        ],
+        "barriers_to_entry": [
+          "製造能力制約",
+          "長期顧客関係"
+        ],
+        "competitors": [
+          "Schneider Electric",
+          "ABB"
+        ]
       },
-      "quarterly": { "electrical_orders_yoy": "+25%", "aerospace_orders_yoy": "+24%" },
-      "monthly": { "recent_contracts": [], "policy_tailwinds": ["グリッド近代化", "AI DC投資"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "A", "weight": 1.0 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "quarterly": {
+        "electrical_orders_yoy": "+25%",
+        "aerospace_orders_yoy": "+24%"
+      },
+      "monthly": {
+        "recent_contracts": [],
+        "policy_tailwinds": [
+          "グリッド近代化",
+          "AI DC投資"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "A",
+        "weight": 1.0
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "CW",
       "name": "Curtiss-Wright Corporation",
-      "domains": ["防衛", "エネルギー", "原子力"],
+      "domains": [
+        "防衛",
+        "エネルギー",
+        "原子力"
+      ],
       "permanent": {
         "moat": {
           "type": "海軍原子力独占サプライヤー",
           "market_share": "米海軍原子力艦艇ポンプ・バルブ独占",
           "description": "Rolls-Royce SMR、X-energy戦略提携。"
         },
-        "certifications": ["Naval Nuclear認定", "NRC認証"],
-        "barriers_to_entry": ["海軍認定", "原子力品質規格"],
-        "competitors": ["なし（ニッチ独占）"]
+        "certifications": [
+          "Naval Nuclear認定",
+          "NRC認証"
+        ],
+        "barriers_to_entry": [
+          "海軍認定",
+          "原子力品質規格"
+        ],
+        "competitors": [
+          "なし（ニッチ独占）"
+        ]
       },
-      "quarterly": { "defense_segment_growth": "+12%" },
-      "monthly": { "recent_contracts": [], "policy_tailwinds": ["SMR商用化"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "B", "weight": 0.9 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "quarterly": {
+        "defense_segment_growth": "+12%"
+      },
+      "monthly": {
+        "recent_contracts": [],
+        "policy_tailwinds": [
+          "SMR商用化"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "B",
+        "weight": 0.9
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     },
     {
       "ticker": "APH",
       "name": "Amphenol Corporation",
-      "domains": ["AI", "防衛", "ロボティクス"],
+      "domains": [
+        "AI",
+        "防衛",
+        "ロボティクス"
+      ],
       "permanent": {
         "moat": {
           "type": "高速コネクタ技術リーダー",
           "market_share": "軍用コネクタ市場22.1%シェア",
           "description": "AIサーバー内高速通信、軍用コネクタ。"
         },
-        "certifications": ["MIL-SPEC認証", "AS9100"],
-        "barriers_to_entry": ["技術集積（M&A）", "顧客認定"],
-        "competitors": ["TE Connectivity", "Molex"]
+        "certifications": [
+          "MIL-SPEC認証",
+          "AS9100"
+        ],
+        "barriers_to_entry": [
+          "技術集積（M&A）",
+          "顧客認定"
+        ],
+        "competitors": [
+          "TE Connectivity",
+          "Molex"
+        ]
       },
-      "quarterly": { "revenue_yoy": "+53%", "organic_growth": "+41%" },
-      "monthly": { "recent_contracts": [], "policy_tailwinds": ["AI関連コネクタ需要"] },
-      "information_quality": { "sources_count": 3, "consensus_level": "3LLM一致", "confidence": "B", "weight": 0.9 },
-      "freshness": { "permanent_updated": "2026-01-31", "quarterly_updated": "2026-01-31", "monthly_updated": "2026-01-31" }
+      "quarterly": {
+        "revenue_yoy": "+53%",
+        "organic_growth": "+41%"
+      },
+      "monthly": {
+        "recent_contracts": [],
+        "policy_tailwinds": [
+          "AI関連コネクタ需要"
+        ]
+      },
+      "information_quality": {
+        "sources_count": 3,
+        "consensus_level": "3LLM一致",
+        "confidence": "B",
+        "weight": 0.9
+      },
+      "freshness": {
+        "permanent_updated": "2026-01-31",
+        "quarterly_updated": "2026-01-31",
+        "monthly_updated": "2026-01-31"
+      }
     }
   ]
 }
