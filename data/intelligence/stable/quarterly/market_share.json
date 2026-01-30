@@ -1,9 +1,241 @@
 {
   "metadata": {
     "description": "市場シェア情報 - 四半期で更新",
-    "last_updated": null,
-    "sources": [],
-    "schema_version": "1.0"
+    "last_updated": "2026-01-31",
+    "sources": ["Grok収集", "Gemini収集", "ChatGPT収集", "Claude収集", "SEMI", "各社IR", "Industry reports"],
+    "schema_version": "1.0",
+    "next_review": "2026-04-30"
   },
-  "markets": {}
+  "markets": {
+    "semiconductor_equipment": {
+      "description": "半導体製造装置関連",
+      "entries": [
+        {
+          "ticker": "6315.T",
+          "company": "TOWA",
+          "product": "HBMモールド装置",
+          "market_share": "66%",
+          "scope": "global",
+          "confidence": "B",
+          "notes": "コンプレッションモールド装置でHBM製造に不可欠",
+          "sources": ["Grok", "Gemini"]
+        },
+        {
+          "ticker": "6146.T",
+          "company": "ディスコ",
+          "product": "ダイシングソー",
+          "market_share": "80%+",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "半導体ウェハ切断装置で圧倒的独占",
+          "sources": ["有価証券報告書", "SEMI"]
+        },
+        {
+          "ticker": "6146.T",
+          "company": "ディスコ",
+          "product": "グラインダ",
+          "market_share": "70%+",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "半導体ウェハ研削装置",
+          "sources": ["有価証券報告書", "SEMI"]
+        },
+        {
+          "ticker": "6920.T",
+          "company": "レーザーテック",
+          "product": "EUVマスク欠陥検査装置",
+          "market_share": "100%",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "唯一の供給者。EUV量産に不可欠。",
+          "sources": ["有価証券報告書", "SEMI"]
+        },
+        {
+          "ticker": "8035.T",
+          "company": "東京エレクトロン",
+          "product": "コータ/デベロッパ",
+          "market_share": "90%+",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "フォトレジスト塗布・現像装置で世界独占",
+          "sources": ["有価証券報告書", "SEMI", "Gartner"]
+        },
+        {
+          "ticker": "6857.T",
+          "company": "アドバンテスト",
+          "product": "メモリテスタ",
+          "market_share": "50%+",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "HBM/AI半導体テストで不可欠",
+          "sources": ["有価証券報告書", "SEMI"]
+        },
+        {
+          "ticker": "7729.T",
+          "company": "SCREEN ホールディングス",
+          "product": "半導体洗浄装置",
+          "market_share": "首位",
+          "scope": "global",
+          "confidence": "B",
+          "notes": "ウェハ洗浄装置で世界首位。微細化で洗浄回数増加。",
+          "sources": ["SEMI", "Industry reports"]
+        }
+      ]
+    },
+    "semiconductor_materials": {
+      "description": "半導体材料関連",
+      "entries": [
+        {
+          "ticker": "4063.T",
+          "company": "信越化学工業",
+          "product": "シリコンウェハ",
+          "market_share": "30%+",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "半導体基板材料で世界首位",
+          "sources": ["有価証券報告書"]
+        },
+        {
+          "ticker": "4187.T",
+          "company": "大阪有機化学工業",
+          "product": "フォトレジスト用モノマー",
+          "market_share": "70%",
+          "scope": "global",
+          "confidence": "B",
+          "notes": "EUVフォトレジストの原料アクリル酸エステルモノマー",
+          "sources": ["Gemini収集"]
+        }
+      ]
+    },
+    "robotics_components": {
+      "description": "ロボティクス部品関連",
+      "entries": [
+        {
+          "ticker": "6268.T",
+          "company": "ナブテスコ",
+          "product": "RV減速機",
+          "market_share": "60%",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "産業用ロボット関節の主力減速機",
+          "sources": ["有価証券報告書", "Industry reports"]
+        },
+        {
+          "ticker": "6324.T",
+          "company": "ハーモニック・ドライブ・システムズ",
+          "product": "波動歯車（ハーモニックドライブ）",
+          "market_share": "80%+",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "小型高精度ロボット関節用減速機で圧倒的独占",
+          "sources": ["有価証券報告書", "Industry reports"]
+        }
+      ]
+    },
+    "factory_automation": {
+      "description": "ファクトリーオートメーション関連",
+      "entries": [
+        {
+          "ticker": "6954.T",
+          "company": "ファナック",
+          "product": "CNC装置",
+          "market_share": "50%+",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "工作機械の頭脳。40年+のソフトウェア蓄積。",
+          "sources": ["有価証券報告書", "Industry reports"]
+        },
+        {
+          "ticker": "6506.T",
+          "company": "安川電機",
+          "product": "ACサーボモータ",
+          "market_share": "20%+",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "世界首位級。ロボット・インバータとの三本柱。",
+          "sources": ["有価証券報告書"]
+        },
+        {
+          "ticker": "6861.T",
+          "company": "キーエンス",
+          "product": "FAセンサー",
+          "market_share": "国内首位",
+          "scope": "domestic",
+          "confidence": "A",
+          "notes": "直販モデルで営業利益率55%。代替困難。",
+          "sources": ["有価証券報告書"]
+        },
+        {
+          "ticker": "6273.T",
+          "company": "SMC",
+          "product": "空圧機器",
+          "market_share": "40%",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "製造ラインの血管。製品80万種。",
+          "sources": ["有価証券報告書"]
+        }
+      ]
+    },
+    "defense": {
+      "description": "防衛関連",
+      "entries": [
+        {
+          "ticker": "7011.T",
+          "company": "三菱重工業",
+          "product": "防衛装備品（総合）",
+          "market_share": "国内首位（約25%）",
+          "scope": "domestic",
+          "confidence": "A",
+          "notes": "国内唯一の総合防衛プライム。GCAP主契約者。",
+          "sources": ["防衛省調達情報"]
+        },
+        {
+          "ticker": "6807.T",
+          "company": "日本航空電子工業（JAE）",
+          "product": "慣性航法センサ",
+          "market_share": "唯一の国内供給者",
+          "scope": "domestic_defense",
+          "confidence": "B",
+          "notes": "ミサイル・航空機の慣性航法に不可欠。代替不可。",
+          "sources": ["防衛省調達情報"]
+        },
+        {
+          "ticker": "6492.T",
+          "company": "岡野バルブ製造",
+          "product": "原子力バルブ",
+          "market_share": "国内独占的地位",
+          "scope": "domestic_nuclear",
+          "confidence": "B",
+          "notes": "原子力発電所向け高温高圧バルブの専門メーカー",
+          "sources": ["Grok収集"]
+        }
+      ]
+    },
+    "energy_infrastructure": {
+      "description": "エネルギーインフラ関連",
+      "entries": [
+        {
+          "ticker": "5631.T",
+          "company": "日本製鋼所",
+          "product": "原子力圧力容器",
+          "market_share": "80%+",
+          "scope": "global",
+          "confidence": "A",
+          "notes": "14,000トンプレスで製造。世界で同等能力を持つ企業は極めて限定的。",
+          "sources": ["有価証券報告書", "Industry reports"]
+        },
+        {
+          "ticker": "6490.T",
+          "company": "日本ピラー工業",
+          "product": "メカニカルシール（原子力級）",
+          "market_share": "国内首位級",
+          "scope": "domestic",
+          "confidence": "B",
+          "notes": "原子力・半導体用高品質シール。OP margin 19%。",
+          "sources": ["Grok/Gemini収集"]
+        }
+      ]
+    }
+  }
 }

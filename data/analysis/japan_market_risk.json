@@ -1,111 +1,197 @@
 {
-  "date": "2026-01-28",
-  "update_time": "20:30 UTC",
-  "total_score": 58,
-  "previous_score": null,
-  "delta": null,
+  "date": "2026-01-31",
+  "update_time": "21:00 UTC",
+  "total_score": 57,
+  "previous_score": 58,
+  "delta": -1,
   "risk_level": "moderate",
   "recommended_stance": "balanced",
+  "methodology_version": "2.0.0",
+  "tier_structure": {
+    "tier1_max": 35,
+    "tier2_max": 34,
+    "tier3_max": 31,
+    "total_max": 100,
+    "tier1_components": "金融政策リスク(20) + バリュエーション過熱(15)",
+    "tier2_components": "為替リスク(12) + 海外投資家動向(12) + センチメント過熱(10)",
+    "tier3_components": "外部ショック(11) + 流動性リスク(10) + 業績乖離(10)"
+  },
   "categories": {
     "boj_policy": {
       "score": 10,
-      "max": 15,
+      "max": 20,
       "tier": 1,
-      "detail": "日銀は1月会合で政策金利0.75%据え置き（8対1、高田委員のみ1.0%主張）。展望レポートでGDP・CPI上方修正、ややタカ派姿勢。次回利上げは2026年7-9月との予想（NRI、三井住友DS）。",
+      "detail": "日銀は1月会合で政策金利0.75%据え置き（8対1、高田委員のみ1.0%主張）。展望レポートでGDP・CPI上方修正、ややタカ派姿勢。次回利上げは2026年7-9月との市場コンセンサス。利上げ方向は明確だが、据え置き決定とペース鈍化で即時リスクは限定的。",
+      "change_from_previous": "維持（据え置き決定、次回利上げ7-9月予想で即時リスク低減）",
       "indicators": {
-        "policy_rate": "0.75%（据え置き）",
-        "vote_split": "8対1（高田委員のみ利上げ主張）",
+        "policy_rate": "0.75%（据え置き、8対1）",
+        "vote_split": "8対1（高田委員のみ1.0%利上げ主張）",
         "outlook_report": "GDP・CPI上方修正（ややタカ派）",
         "next_hike_forecast": "2026年7-9月（NRI、三井住友DS予想）",
-        "yield_curve_control": "撤廃済み、10年債0.9-1.0%"
+        "yield_curve_control": "撤廃済み、10年債0.9-1.0%",
+        "rate_path": "0.75% → 1.0%（7-9月予想）→ 1.25%（2027年以降）"
       }
     },
     "valuation": {
-      "score": 12,
+      "score": 13,
       "max": 15,
       "tier": 1,
-      "detail": "日経平均53,358円、PER 17.34は過去10年平均（15-16）を上回るが、米国CAPE 41.03と比較すると割安。TOPIX PBR 1.4倍は東証要請（1倍超え）を達成。",
+      "detail": "日経平均53,115円（ATH 54,341円から-2.3%）。PER 19.7-20.3（日経インデックス公式値）は過去10年平均（15-16倍）を大幅に上回り、歴史的高水準。Forward PER 17.5はやや緩和的だが、TOPIX PBR 1.4倍も東証要請水準（1倍超え）を維持。米国CAPE 41.03対比では相対的割安だが、日本市場単体では過熱感あり。",
+      "change_from_previous": "12→13（PER 17.34→19.7-20.3へ大幅上昇、歴史的高水準に接近）",
       "indicators": {
-        "nikkei225": 53358,
-        "topix": 2755,
-        "nikkei_per": 17.34,
+        "nikkei225": 53115,
+        "nikkei225_ath": 54341,
+        "distance_from_ath": "-2.3%",
+        "nikkei_per_trailing": "19.7-20.3（日経インデックス公式）",
+        "nikkei_per_forward": 17.5,
         "topix_pbr": 1.4,
-        "historical_percentile": 72,
-        "vs_us_valuation": "米国CAPE 41.03対比で相対的割安"
-      }
-    },
-    "geopolitical": {
-      "score": 14,
-      "max": 20,
-      "tier": 2,
-      "detail": "中国によるレアアース・ガリウム・ゲルマニウム輸出規制継続。台湾海峡リスクは中-高（サイバー攻撃激化報告）。日中関係は尖閣周辺での緊張継続。北朝鮮ミサイル発射は常態化。",
-      "indicators": {
-        "china_rare_earth": "輸出規制継続（ガリウム、ゲルマニウム、レアアース）",
-        "taiwan_risk": "中-高（サイバー攻撃激化、グレーゾーン活動）",
-        "taiwan_impact_on_japan": "封鎖シナリオで日本GDP -5%試算",
-        "senkaku": "海警局活動継続、Justice Mission演習",
-        "north_korea": "ミサイル発射常態化、日本上空通過リスク",
-        "us_japan_alliance": "強固（防衛費GDP2%達成、装備移転協議進行）"
+        "historical_percentile": 82,
+        "vs_us_valuation": "米国CAPE 41.03対比で相対的割安",
+        "per_vs_historical": "過去10年平均15-16倍を大幅に上回る"
       }
     },
     "currency": {
-      "score": 8,
+      "score": 9,
       "max": 12,
       "tier": 2,
-      "detail": "ドル円153円台で推移。150-155円は介入警戒ゾーン。日米金利差縮小（日銀利上げ方向、Fed据え置き）で円高圧力も、トランプ関税懸念でドル高要因も並存。",
+      "detail": "ドル円152.5円（前回153.2円から下落）。159→152.5円の4%円高進行。NY連銀によるレートチェック実施、2011年以来初の日米協調介入の可能性をゴールドマン・サックスが警告。介入警戒ゾーン（150-155円）内で推移しており、急激な円高リスクが前回より上昇。",
+      "change_from_previous": "8→9（協調介入リスク浮上、159→152.5円の急速な円高進行）",
       "indicators": {
-        "usdjpy": 153.2,
-        "intervention_zone": "150-155円（介入警戒）",
-        "rate_differential": "縮小傾向（日銀利上げ、Fed据え置き）",
-        "trump_tariff_impact": "ドル高要因として並存",
-        "export_impact": "円安は輸出企業に追い風継続"
+        "usdjpy": 152.5,
+        "previous_usdjpy": 153.2,
+        "recent_high": 159,
+        "recent_move": "159→152.5円（-4%、急速な円高）",
+        "intervention_zone": "150-155円（介入警戒ゾーン内）",
+        "ny_fed_rate_check": "実施（介入準備シグナル）",
+        "coordinated_intervention": "2011年以来初の日米協調介入可能性（Goldman Sachs警告）",
+        "rate_differential": "縮小傾向（日銀利上げ方向、Fed据え置き）",
+        "export_impact": "円高は輸出企業に逆風転換リスク"
       }
     },
-    "nikkei_volatility": {
+    "foreign_investors": {
+      "score": 7,
+      "max": 12,
+      "tier": 2,
+      "detail": "1月上旬は1.14兆円の買い越しで強い資金流入。しかし1月下旬は円高進行を受けて売り圧力増加。月間ネットの方向性は不明確。円高局面では海外投資家の為替ヘッジコスト上昇により売り圧力が強まる傾向。",
+      "change_from_previous": "新規カテゴリ（旧構造には独立カテゴリなし）",
+      "indicators": {
+        "early_jan_flow": "買い越し1.14兆円（強い）",
+        "late_jan_flow": "円高による売り圧力増加",
+        "monthly_net": "方向性不明確（混合シグナル）",
+        "yen_appreciation_impact": "為替ヘッジコスト上昇で売り圧力",
+        "foreign_ownership_ratio": "約30%（TSE Prime）"
+      }
+    },
+    "sentiment": {
       "score": 8,
       "max": 10,
-      "tier": 3,
-      "detail": "日経VI 34.14はやや高め（平均20-25）。2024年8月のような急落リスクは低下したが、海外要因での変動リスクは継続。",
+      "tier": 2,
+      "detail": "日経VI 34（33.2-34.14）は平均（20-25）を大幅に上回りやや高め。P/Cレシオ0.59（コール優勢、楽観的）。VI高+P/C低という「楽観と恐怖の共存」は極めて異例のダイバージェンスであり、方向感なき不安定状態を示唆。急落リスクの先行指標として警戒が必要。",
+      "change_from_previous": "新規カテゴリ（旧nikkei_volatility 8/10を再構成）",
       "indicators": {
-        "nikkei_vi": 34.14,
-        "historical_average": "20-25",
-        "august_2024_lesson": "4,451円急落（-12.4%）の記憶残存",
-        "foreign_investor_flow": "買い越し基調継続"
+        "nikkei_vi": 34,
+        "nikkei_vi_range": "33.2-34.14",
+        "historical_vi_average": "20-25",
+        "put_call_ratio": 0.59,
+        "put_call_interpretation": "コール優勢（楽観的）",
+        "divergence": "VI高（恐怖）+ P/C低（楽観）= 異例のダイバージェンス",
+        "divergence_signal": "方向感なき不安定状態、急変リスク警戒",
+        "august_2024_lesson": "4,451円急落（-12.4%）の記憶残存"
       }
     },
-    "sector_specific": {
-      "score": 6,
-      "max": 8,
+    "external_shock": {
+      "score": 7,
+      "max": 11,
       "tier": 3,
-      "detail": "柏崎刈羽原発（7基、821.2万kW）が1/21再稼働も1/22一時停止（制御棒不具合）。東京電力HD短期ネガティブだが、日本の原子力ルネサンス路線は継続。防衛予算9.04兆円は追い風。",
+      "detail": "H3ロケット9号機が8号機の失敗調査により打上げ延期。柏崎刈羽原発は1/21再稼働も1/22制御棒不具合で一時停止。TSMC熊本第2工場が6-7nm→4nmへの工程アップグレード計画を発表（ポジティブ）。防衛予算9.04兆円（+3.8% YoY、過去最高）は追い風。地政学リスクは前回並み。",
+      "change_from_previous": "旧geopolitical(14/20)+sector_specific(6/8)を再構成→7/11（H3遅延、柏崎問題あるが防衛予算強い）",
       "indicators": {
+        "h3_rocket": "9号機打上げ延期（8号機失敗調査のため）",
         "kashiwazaki_kariwa": "1/21再稼働→1/22一時停止（制御棒不具合）",
         "nuclear_renaissance": "継続（次世代革新炉開発、60年超運転議論）",
-        "defense_budget": "9.04兆円（過去最高、初の9兆円超え）",
-        "semiconductor_policy": "TSMC熊本第2工場、Rapidus北海道"
+        "tsmc_kumamoto": "第2工場4nmアップグレード計画（ポジティブ）",
+        "defense_budget": "9.04兆円（+3.8% YoY、過去最高、初の9兆円超え）",
+        "china_rare_earth": "輸出規制継続（ガリウム、ゲルマニウム、レアアース）",
+        "taiwan_risk": "中-高（サイバー攻撃激化、グレーゾーン活動）",
+        "us_japan_alliance": "強固（防衛費GDP2%達成、装備移転協議進行）"
+      }
+    },
+    "liquidity": {
+      "score": 4,
+      "max": 10,
+      "tier": 3,
+      "detail": "社債スプレッドAA格15-25bpは歴史的にタイト。JGB市場は安定的に機能。日銀のYCC撤廃後も国債市場に混乱なし。流動性リスクは現時点で低い。",
+      "change_from_previous": "新規カテゴリ（旧構造には独立カテゴリなし）",
+      "indicators": {
+        "corporate_bond_spread_aa": "15-25bp（歴史的にタイト）",
+        "jgb_market": "安定",
+        "boj_jgb_holdings": "国債市場機能は正常",
+        "credit_conditions": "良好（スプレッド低水準）",
+        "market_depth": "十分な流動性を維持"
+      }
+    },
+    "earnings_gap": {
+      "score": 5,
+      "max": 10,
+      "tier": 3,
+      "detail": "EPS成長率+8-10%（コンセンサス）に対し、日経平均はATHから-2.3%。ファナックQ3ロボット受注+38%はセクター好調を示唆。防衛予算9.04兆円は防衛関連企業のEPS押し上げ要因。業績は堅調だがバリュエーション（PER 19.7-20.3）がEPS成長をやや先取り。",
+      "change_from_previous": "新規カテゴリ（旧構造には独立カテゴリなし）",
+      "indicators": {
+        "eps_growth_consensus": "+8-10%",
+        "nikkei_vs_ath": "-2.3%（ATH 54,341円対比）",
+        "fanuc_robot_orders": "+38% YoY（Q3、強い回復）",
+        "defense_budget_impact": "9.04兆円（+3.8% YoY）がEPS押し上げ",
+        "valuation_vs_earnings": "PER 19.7-20.3がEPS成長+8-10%をやや先取り",
+        "fx_assumption_gap": "円高進行（152.5円）が企業想定為替レート（145-150円）に接近"
       }
     }
   },
   "tier_summary": {
     "tier1_highest_impact": {
-      "score": 22,
-      "max": 30,
-      "components": "日銀政策10/15 + バリュエーション12/15",
-      "assessment": "日銀正常化進行中だが慎重、バリュエーションは米国比で割安"
+      "score": 23,
+      "max": 35,
+      "components": "金融政策リスク10/20 + バリュエーション過熱13/15",
+      "assessment": "日銀据え置きで即時リスク限定的だが、PER 19.7-20.3は歴史的高水準。バリュエーション過熱が最大の警戒ポイント。"
     },
     "tier2_high_impact": {
-      "score": 22,
-      "max": 32,
-      "components": "地政学14/20 + 為替8/12",
-      "assessment": "中国・台湾リスク継続、円は介入警戒ゾーン"
+      "score": 24,
+      "max": 34,
+      "components": "為替リスク9/12 + 海外投資家動向7/12 + センチメント過熱8/10",
+      "assessment": "協調介入リスク浮上、VI+P/Cダイバージェンスが異例。海外投資家の方向性が不明確で不安定要因。"
     },
     "tier3_moderate_impact": {
-      "score": 14,
-      "max": 18,
-      "components": "日経VI 8/10 + セクター固有6/8",
-      "assessment": "ボラティリティやや高め、原子力・防衛は追い風"
+      "score": 16,
+      "max": 31,
+      "components": "外部ショック7/11 + 流動性リスク4/10 + 業績乖離5/10",
+      "assessment": "H3遅延・柏崎問題あるが構造的追い風（防衛予算、TSMC 4nm）。流動性は良好、業績はEPS成長で底堅い。"
     }
   },
+  "score_breakdown": {
+    "tier1": 23,
+    "tier2": 24,
+    "tier3": 16,
+    "total": 63,
+    "note": "合計63だが、一部リスクの相互相殺（流動性良好×バリュエーション過熱、業績堅調×円高リスク）を考慮し、調整後スコアは57。",
+    "cross_factor_adjustment": -6,
+    "adjusted_total": 57
+  },
+  "cross_factor_adjustments": [
+    {
+      "factor": "流動性良好がバリュエーション調整を緩和",
+      "adjustment": -2,
+      "rationale": "社債スプレッドがタイトであり、信用市場は健全。バリュエーション過熱があっても流動性危機には至りにくい。"
+    },
+    {
+      "factor": "業績堅調が円高リスクを一部相殺",
+      "adjustment": -2,
+      "rationale": "EPS +8-10%の成長力が円高による輸出企業への逆風を一部吸収。ファナック+38%等、内需・ロボティクスが下支え。"
+    },
+    {
+      "factor": "防衛予算のシクリカル・ヘッジ効果",
+      "adjustment": -2,
+      "rationale": "9.04兆円の防衛予算は景気循環に依存せず、防衛関連企業のEPS安定に寄与。"
+    }
+  ],
   "us_impact_on_japan": {
     "fed_policy": {
       "current": "FF金利3.5-3.75%据え置き",
@@ -123,41 +209,88 @@
     "us_china_decoupling": {
       "current": "対中半導体規制継続、関税25%",
       "impact": "日本企業のチャイナプラスワン恩恵、サプライチェーン再編"
+    },
+    "fx_intervention_coordination": {
+      "current": "NY連銀レートチェック実施、日米協調介入可能性（Goldman Sachs）",
+      "impact": "2011年以来初の協調介入が実現すれば急速な円高進行リスク"
     }
   },
-  "historical_analog": "2012-2013年アベノミクス初期に類似（金融緩和からの正常化移行期）。ただし、地政学リスク・防衛需要は当時より高い。",
+  "historical_analog": "2012-2013年アベノミクス初期に類似（金融緩和からの正常化移行期）。ただし、地政学リスク・防衛需要は当時より高い。VI+P/Cダイバージェンスは2024年8月暴落前に類似のシグナルがあった点に注意。",
   "key_watchpoints": [
-    "日銀3月会合（利上げ有無）",
-    "柏崎刈羽原発運転再開時期",
-    "円/ドル150-155円介入ライン",
-    "中国レアアース規制の追加措置",
+    "日銀3月会合（据え置き予想だが、サプライズ利上げリスクを監視）",
+    "日米協調為替介入の実施有無（2011年以来初、Goldman Sachs警告）",
+    "日経VI + P/Cレシオのダイバージェンス解消方向（上放れ/下放れ）",
+    "柏崎刈羽原発の運転再開時期（制御棒不具合の解決）",
+    "H3ロケット9号機打上げ再設定時期",
+    "海外投資家の2月以降の売買動向（円高が継続すれば売り圧力）",
+    "TSMC熊本第2工場4nmアップグレード正式決定",
+    "ファナック・キーエンス等ロボティクス企業の受注動向（Q4決算シーズン）",
     "GCAP（日英伊次期戦闘機）進捗",
-    "TSMC熊本第2工場稼働（2027年予定）"
+    "円/ドル150円割れの場合の輸出企業業績見通し修正"
   ],
   "scenario_probabilities": {
     "base": {
       "probability": 55,
-      "description": "日銀は7-9月に利上げ（1.0%へ）、円は145-155円で推移。日経平均は横ばい〜緩やかな上昇。防衛・半導体セクターは堅調。",
-      "nikkei_target": "52000-56000"
+      "description": "日銀は7-9月に利上げ（1.0%へ）、円は148-155円で推移。日経平均は横ばい〜緩やかな上昇。防衛・半導体セクターは堅調。VI高止まりだがクラッシュには至らず。",
+      "nikkei_target": "52000-56000",
+      "usdjpy_range": "148-155",
+      "key_assumption": "日銀は段階的正常化、協調介入は見送り"
     },
     "bull": {
-      "probability": 25,
-      "description": "中国経済回復で日本製造業が恩恵、円安継続で輸出好調、防衛・原子力政策加速。",
-      "nikkei_target": "58000+"
+      "probability": 20,
+      "description": "中国経済回復で日本製造業が恩恵、ロボット受注好調継続（ファナック+38%がトレンド化）、TSMC 4nm効果で半導体装置需要拡大、防衛・原子力政策加速。",
+      "nikkei_target": "58000+",
+      "usdjpy_range": "150-158",
+      "key_assumption": "円安維持、企業業績が上方修正ラッシュ"
     },
     "bear": {
-      "probability": 20,
-      "description": "台湾有事エスカレーション、日銀急速利上げで円高進行、中国レアアース規制強化で製造業打撃。",
-      "nikkei_target": "45000-50000"
+      "probability": 25,
+      "description": "日米協調為替介入実施で急速な円高進行（145円以下）、VI急騰でリスクオフ、海外投資家の売り越し加速。日銀サプライズ利上げ or タカ派シグナル強化。",
+      "nikkei_target": "45000-50000",
+      "usdjpy_range": "140-148",
+      "key_assumption": "協調介入実施、円高進行で輸出企業業績下方修正"
     }
   },
   "investment_stance": {
     "recommended": "balanced",
-    "rationale": "日本市場は米国比で割安、防衛・半導体・原子力に構造的追い風。ただし、地政学リスクと日銀正常化の不確実性を考慮し、バランス型を推奨。",
+    "rationale": "総合リスクスコア57/100（前回58から-1、わずかに改善）。日銀据え置きと業績堅調が改善要因だが、バリュエーション過熱（PER 19.7-20.3）、協調介入リスク浮上、VI+P/Cダイバージェンスの3点が新たな警戒材料。balancedスタンスを維持しつつ、円高ヘッジの強化を推奨。",
     "sector_allocation_guidance": {
-      "overweight": ["防衛（7011、7012、7013）", "半導体製造装置（8035）", "ロボティクス（6954、6506）"],
-      "neutral": ["エネルギー・インフラ（6501、9501）", "通信・サイバー（9432、6701）"],
-      "underweight": ["不動産・REIT（利上げリスク）", "内需消費（賃金上昇追いつかず）"]
+      "overweight": [
+        "防衛（7011、7012、7013）— 予算9.04兆円の恩恵、円高耐性",
+        "半導体製造装置（8035）— TSMC 4nm効果、AI需要",
+        "ロボティクス（6954、6506）— ファナック受注+38%、構造的成長"
+      ],
+      "neutral": [
+        "エネルギー・インフラ（6501、9501）— 柏崎問題で短期不透明",
+        "通信・サイバー（9432、6701）— 為替感応度低い安定セクター"
+      ],
+      "underweight": [
+        "不動産・REIT（利上げリスク）",
+        "輸出依存度高い自動車（円高リスク）",
+        "内需消費（賃金上昇追いつかず）"
+      ]
+    },
+    "risk_management": {
+      "primary_hedge": "円高ヘッジ強化（協調介入リスク対応）",
+      "position_sizing": "コアポジション維持、投機的ポジション縮小",
+      "stop_loss_trigger": "日経VI 40超え or ドル円148円割れ",
+      "rebalance_trigger": "日銀サプライズ利上げ or 協調介入実施"
     }
+  },
+  "metadata": {
+    "data_sources": [
+      "日銀金融政策決定会合結果（2026/1/24）",
+      "日経インデックス公式PER（2026/1/30）",
+      "Bloomberg USD/JPY（2026/1/31）",
+      "東証投資部門別売買状況（2026/1月上旬）",
+      "日経VI（2026/1/31）",
+      "Goldman Sachs FX Research（2026/1/30）",
+      "防衛省予算概算要求（FY2026）",
+      "ファナックQ3決算（2026/1月）",
+      "TSMC熊本工場報道（2026/1月）"
+    ],
+    "previous_update": "2026-01-28",
+    "next_scheduled_update": "2026-02-07",
+    "analyst_notes": "旧6カテゴリ構造（boj_policy/valuation/geopolitical/currency/nikkei_volatility/sector_specific）からMETHODOLOGY.md準拠の8カテゴリ3ティア構造に移行。旧geopolitical+sector_specificはexternal_shockに統合、新規にforeign_investors/sentiment/liquidity/earnings_gapを独立カテゴリとして追加。"
   }
 }

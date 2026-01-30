@@ -1,0 +1,158 @@
+{
+  "date": "2026-01-31",
+  "methodology_version": "2.0.0",
+  "overall_assessment": "地政学リスクは構造的に高水準で固定化。台湾有事の実戦準備フェーズ移行が最大のテールリスク。一方、日本の防衛・半導体産業には追い風が持続。",
+  "regions": {
+    "japan_china": {
+      "status": "緊張拡大（構造的固定化）",
+      "risk_level": "high",
+      "key_developments": [
+        "2026年1月9日：日本キャッチオール規制強化（外為法改正）、対中輸出に個別許可が広範に必要に",
+        "2026年1月6日：中国ジクロロシラン反ダンピング調査開始（報復措置）",
+        "中国レアアース輸出規制段階強化（ガリウム、ゲルマニウム、黒鉛、アンチモン）",
+        "日本のレアアース中国依存度63%（2024年時点）",
+        "大和総研試算：レアアース規制で日本実質GDP 1.3〜3.2%減少リスク"
+      ],
+      "structural_dynamics": {
+        "mutual_assured_disruption": "日本は半導体材料（レジスト、フッ化水素等）で高世界シェアだが、原料（蛍石、金属シリコン等）の上流は中国依存。相互確証破壊的構造",
+        "semiconductor_encirclement": "日米欧（オランダ含む）の対中半導体包囲網が法執行レベルで統合",
+        "uscc_action": "対中輸出管理と制裁の統合執行機関設立の動き"
+      },
+      "impact_on_portfolio": {
+        "positive": [
+          "防衛予算増（9.04兆円、+3.8%）→ 7011.T, 7012.T, 7013.T, 6503.T",
+          "チャイナプラスワン加速 → TSMC熊本恩恵 → 8035.T",
+          "サプライチェーン再編 → 国内半導体材料企業に恩恵"
+        ],
+        "negative": [
+          "レアアース供給リスク → 電子部品・材料企業への逆風",
+          "対中貿易縮小 → GDP -0.2pp押し下げ",
+          "中国報復拡大リスク（デュアルユース品禁止等）"
+        ]
+      },
+      "confidence": "A"
+    },
+    "taiwan_strait": {
+      "status": "高警戒（実戦準備フェーズ移行）",
+      "risk_level": "high",
+      "key_developments": [
+        "PLA Justice Mission 2025演習：封鎖・機雷敷設・制空権確保をシミュレート",
+        "中間線越えの常態化・接近化",
+        "米国$11.1B規模武器パッケージ（史上最大級）",
+        "サイバー攻撃2倍増（グレーゾーン活動の激化）"
+      ],
+      "tail_risk_assessment": {
+        "conflict_probability_2yr": "10-15%",
+        "blockade_probability_2yr": "20-25%",
+        "economic_impact": "封鎖で世界GDP損失$2.7T推定",
+        "japan_specific_impact": "シーレーン遮断リスク（エネルギー輸入代替ルート必須）、南西諸島防衛の直接的課題化"
+      },
+      "impact_on_portfolio": {
+        "positive": [
+          "TSMC地政学リスクヘッジとしての熊本工場重要性増大 → 8035.T, 6920.T, 6857.T",
+          "防衛需要加速 → 7011.T（護衛艦、ミサイル）、7012.T（航空機エンジン）",
+          "宇宙ISR需要 → 186A.T, 7011.T"
+        ],
+        "negative": [
+          "有事時の株式市場急落リスク（日経VI 60+想定）",
+          "半導体供給途絶リスク（先端チップのTSMC依存）"
+        ]
+      },
+      "confidence": "A"
+    },
+    "middle_east_energy": {
+      "status": "高リスク持続（原油地政学プレミアム維持）",
+      "risk_level": "medium-high",
+      "key_developments": [
+        "ホルムズ海峡リスク継続（イラン核交渉の行方不透明）",
+        "紅海フーシ派攻撃によるシーレーンコスト上昇",
+        "OPEC+減産延長の不確実性",
+        "日本のエネルギー中東依存度90%（原油）"
+      ],
+      "impact_on_portfolio": {
+        "positive": [
+          "原子力再稼働の政策追い風 → 9501.T, 5631.T",
+          "LNG・再エネ分散投資加速 → エネルギー安全保障関連",
+          "蓄電・グリッド投資 → 6622.T（変圧器）"
+        ],
+        "negative": [
+          "原油高→輸入コスト増→経常収支悪化→円安圧力",
+          "エネルギーコスト上昇→製造業利益圧迫"
+        ]
+      },
+      "confidence": "B"
+    },
+    "us_policy": {
+      "status": "日本にとって構造的追い風（ただし通商リスクあり）",
+      "risk_level": "medium",
+      "key_developments": [
+        "FY2027 国防予算$1.5T提案、Golden Dome $151B",
+        "Fed金利3.5-3.75%据え置き。Powell任期2026年5月満了",
+        "ハイパースケーラーCapEx $475B（2026年）→半導体装置需要",
+        "対中半導体規制継続・強化、関税25%維持",
+        "NY Fed レートチェック実施（日米協調介入可能性）"
+      ],
+      "structural_dynamics": {
+        "defense_cooperation": "日米同盟強化、装備移転協議進行、もがみ型フリゲート豪州受注（日本初主要水上艦輸出）",
+        "tech_alliance": "半導体、AI、量子における日米協力深化",
+        "trade_friction_risk": "自動車関税リスク（日本車への25%適用可能性）",
+        "fed_chair_transition": "Powell後任人事の不確実性→金融市場変動要因"
+      },
+      "impact_on_portfolio": {
+        "positive": [
+          "防衛装備品対米輸出拡大機会 → 7011.T（PAC-3部品）、7012.T",
+          "半導体製造装置需要 → 8035.T, 6920.T",
+          "AI/DC投資恩恵 → 半導体関連全般"
+        ],
+        "negative": [
+          "円高リスク（協調介入、金利差縮小）→ 輸出企業に逆風",
+          "自動車関税リスク → トヨタ等（当フレームワーク対象外だが市場全体への影響）"
+        ]
+      },
+      "confidence": "B"
+    }
+  },
+  "cross_regional_themes": {
+    "defense_supercycle": {
+      "assessment": "日本防衛予算12年連続最高更新（9.04兆円）、5年間43兆円の投資計画が進行中。米国Golden Dome構想と連動し、ミサイル防衛・ISR・宇宙防衛が長期テーマ化",
+      "beneficiaries": ["7011.T", "7012.T", "7013.T", "6503.T", "6807.T", "186A.T"],
+      "confidence": "A"
+    },
+    "semiconductor_reshoring": {
+      "assessment": "TSMC熊本、Rapidus北海道を軸に日本半導体製造能力の復権が進行。4nm計画変更はAI半導体需要への直接対応で、装置メーカーに追加需要",
+      "beneficiaries": ["8035.T", "6920.T", "6857.T", "7735.T", "6315.T"],
+      "confidence": "A"
+    },
+    "robotics_convergence": {
+      "assessment": "ファナックCRX-H1、安川MOTOMAN-HMの発表でヒューマノイドロボット時代の到来。AI×ロボティクスの収束は6ドメインフレームワークの核心テーマ",
+      "beneficiaries": ["6954.T", "6506.T", "6268.T", "6324.T", "6273.T"],
+      "confidence": "B"
+    },
+    "energy_transition": {
+      "assessment": "柏崎刈羽の再稼働と停止は原子力復興の複雑さを象徴。一方でAIデータセンター電力需要がベースロード電源としての原発再稼働を不可避に",
+      "beneficiaries": ["9501.T", "5631.T", "6622.T"],
+      "confidence": "B"
+    }
+  },
+  "net_assessment": {
+    "overall_direction": "日本にとって地政学環境はnet positive（短期リスクはあるが構造的追い風が勝る）",
+    "rationale": "防衛予算増・半導体再編・AI投資の3大テーマが6ドメイン全てに恩恵。台湾リスクはテールイベントだがヘッジとしてのTSMC熊本が機能。レアアース報復は注視必要",
+    "risk_adjusted_outlook": "ベースシナリオでは6ドメイン企業への投資環境は良好。ベアシナリオ（協調介入+台湾緊張激化）でも防衛セクターは底堅い"
+  },
+  "metadata": {
+    "data_sources": [
+      "JAXA公式発表",
+      "NISC サイバーセキュリティ戦略",
+      "防衛省FY2026予算案",
+      "経産省外為法改正",
+      "日銀展望レポート2026年1月",
+      "Goldman Sachs FX Research",
+      "Air University（台湾分析）",
+      "CFR（Council on Foreign Relations）",
+      "USCC（US-China Economic and Security Review Commission）",
+      "大和総研 レアアース影響試算"
+    ],
+    "previous_update": "2026-01-28",
+    "next_review": "2026-02-14"
+  }
+}

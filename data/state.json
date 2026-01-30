@@ -1,7 +1,7 @@
 {
-  "last_execution": "2026-01-30T12:00:00Z",
-  "session": "run_analysis_full_v3.2_japan_focused",
-  "version": "3.2",
+  "last_execution": "2026-01-31T21:00:00Z",
+  "session": "run_analysis_full_v2.0.0_japan_focused",
+  "version": "2.0.0",
   "framework": {
     "version": "2.0.0",
     "name": "Graham分類体系統合版",
@@ -17,28 +17,29 @@
       "required_fields": ["investment_factors", "speculative_factors", "confidence", "graham_buffett_note"]
     },
     "deprecated_axes": ["monopoly", "resilience", "synergy", "asymmetry", "capital"],
-    "migration_status": "pending_first_run",
-    "first_run_completed": null,
-    "last_validated": null
+    "migration_status": "completed",
+    "first_run_completed": "2026-01-31",
+    "last_validated": "2026-01-31"
   },
   "events": {
-    "last_collected": "2026-01-30",
+    "last_collected": "2026-01-31",
     "total_count": 48,
-    "last_event_id": "evt_20260130_004"
+    "last_event_id": "evt_20260131_012"
   },
   "broad_intelligence": {
-    "last_collected": "2026-01-30",
-    "total_items": 134,
-    "japan_items": 28
+    "last_collected": "2026-01-31",
+    "total_items": 142,
+    "japan_items": 32
   },
   "information_quality": {
-    "last_check": "2026-01-30",
+    "last_check": "2026-01-31",
     "us_quality_score": 92,
     "japan_quality_score": 93,
-    "active_alerts": 0
+    "active_alerts": 1,
+    "active_alert_details": ["CHG-012: Grokデータ品質問題（-15%信頼度調整適用済み）"]
   },
   "structural_advantage_map": {
-    "last_update": "2026-01-30",
+    "last_update": "2026-01-31",
     "update_reason": "三菱重工時価総額確認、TSMC熊本4nm確定、H3延期、ヒューマノイドロボット開発",
     "pending_triggers": []
   },
@@ -49,12 +50,12 @@
     "_note": "v2.0.0でstructural_advantage_mapに移行済み"
   },
   "market_state": {
-    "last_update": "2026-01-30",
+    "last_update": "2026-01-31",
     "us_market_risk": 58,
     "japan_market_risk": 57
   },
   "stable_update": {
-    "last_update": "2026-01-30",
+    "last_update": "2026-01-31",
     "permanent_companies": 14,
     "quarterly_financials": 20,
     "monthly_contracts": 17,
@@ -69,29 +70,31 @@
   },
   "analysis": {
     "market_risk": {
-      "last_update": "2026-01-30",
+      "last_update": "2026-01-31",
       "us_score": 58,
       "japan_score": 57,
       "us_previous": 58,
       "japan_previous": 58
     },
     "top30": {
-      "last_update": "2026-01-30",
+      "last_update": "2026-01-31",
       "us_top_conviction": "NVDA",
       "japan_top_conviction": "7011.T",
       "us_thesis_updates": 12,
-      "japan_thesis_updates": 8
+      "japan_thesis_updates": 12,
+      "japan_new_entries": ["6315.T", "6268.T"],
+      "japan_framework_migration": "v3.0→v2.0.0完了"
     }
   },
   "gap_analysis": {
-    "last_check": "2026-01-30",
+    "last_check": "2026-01-31",
     "companies_supplemented": 16,
     "gaps_filled": 24,
     "gaps_partial": 2,
     "gaps_pending": 1
   },
   "contradictions": {
-    "last_check": "2026-01-30",
+    "last_check": "2026-01-31",
     "us_total": 7,
     "us_resolved": 7,
     "japan_total": 8,
@@ -107,6 +110,10 @@
     "【2026-01-30】HALEU：日本企業直接製造なし確認（SMR経由の間接恩恵のみ）",
     "【2026-01-30】市場リスク：58→57（-1）継続改善、バランス型維持",
     "【継続】日経平均53,115円（過去最高54,341から-2.3%）、日経VI 34（高警戒）",
+    "【2026-01-31】TOWA HBMモールド66%シェア新規発見（Top30 Rank5）",
+    "【2026-01-31】ナブテスコRV減速機60%シェア新規発見（Top30 Rank21）",
+    "【2026-01-31】Grokデータ品質問題検出（-15%信頼度調整）",
+    "【2026-01-31】Graham分類体系統合版v2.0.0初回運用完了",
     "【継続】日銀0.75%据え置き確定（8対1）、次回利上げ7-9月予想",
     "【継続】防衛予算9兆円超（FY2026）承認済み",
     "【継続】柏崎刈羽6号機：調査継続中、再稼働時期不透明"
@@ -117,27 +124,27 @@
   },
   "performance_verification": {
     "predictions_recorded": true,
-    "snapshot_date": "2026-01-30",
-    "snapshot_path": "data/performance/predictions/2026-01-30/",
+    "snapshot_date": "2026-01-31",
+    "snapshot_path": "data/performance/predictions/2026-01-31/",
     "verification_schedule": {
-      "1_month": {"date": "2026-03-01", "status": "pending"},
+      "1_month": {"date": "2026-03-02", "status": "pending"},
       "3_months": {"date": "2026-04-30", "status": "pending"},
-      "6_months": {"date": "2026-07-30", "status": "pending"},
-      "1_year": {"date": "2027-01-30", "status": "pending"}
+      "6_months": {"date": "2026-07-31", "status": "pending"},
+      "1_year": {"date": "2027-01-31", "status": "pending"}
     },
     "last_verified": null
   },
   "approval_workflow": {
     "top30_status": "approved",
-    "approved_date": "2026-01-30",
+    "approved_date": "2026-01-31",
     "approved_by": "system_auto",
     "pending_review": false,
-    "notes": "v3.2更新：矛盾全件解消、ギャップ補完完了"
+    "notes": "v2.0.0初回運用：Graham分類体系統合版移行完了、矛盾全件解消、ギャップ補完完了、TOWA・ナブテスコ新規参入"
   },
   "escalation_log": [],
   "scenario_status": {
     "current_scenario": "base",
-    "last_evaluated": "2026-01-30",
+    "last_evaluated": "2026-01-31",
     "scenario_probabilities": {
       "base": 55,
       "bull": 20,
@@ -146,7 +153,7 @@
     "key_indicators": {
       "boj_policy_rate": 0.75,
       "usd_jpy": 152.5,
-      "nikkei_per": 16.5,
+      "nikkei_per": "19.7-20.3",
       "nikkei_vi": 34,
       "foreign_investor_trend": "neutral"
     },

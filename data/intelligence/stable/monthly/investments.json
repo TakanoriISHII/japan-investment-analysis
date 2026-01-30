@@ -1,9 +1,38 @@
 {
   "metadata": {
     "description": "投資・M&A情報 - 月次で更新",
-    "last_updated": null,
-    "next_update": null,
+    "last_updated": "2026-01-31",
+    "next_update": "2026-02-28",
     "schema_version": "1.0"
   },
-  "investments": []
+  "investments": [
+    {
+      "id": "INV-JP001",
+      "company": "TSMC/JASM",
+      "ticker": "JASM（非上場）/ TSM",
+      "type": "設備投資・計画変更",
+      "value": "~$23B（投資総額）",
+      "description": "TSMC/JASM熊本第2工場計画変更: 当初6-7nm → 4nm（AI向け）に変更検討中",
+      "date_announced": "2026-01（報道）",
+      "status": "planning_change",
+      "certainty": 90,
+      "impact_on_japan": "東京エレクトロン、SCREEN、ディスコ等半導体装置メーカーへ追加需要。熊本経済圏拡大。",
+      "counterparty": "日本政府（補助金）",
+      "notes": "建設一時停止中。4nm変更はApple/NVIDIA向けAIチップ需要対応。日本政府追加補助金の可能性。"
+    },
+    {
+      "id": "INV-JP002",
+      "company": "NEC・KDDI",
+      "ticker": "6701.T / 9433.T",
+      "type": "合弁事業（JV）",
+      "value": "非公開",
+      "description": "NEC-KDDI合弁「Protect.jp」サイバーセキュリティJV設立",
+      "date_announced": "2026-01",
+      "status": "active",
+      "certainty": 99,
+      "impact_on_japan": "国内最大級のサイバーセキュリティ事業体誕生。政府・企業向けセキュリティ需要取込み。",
+      "counterparty": "KDDI",
+      "notes": "生成AI「cotomi」による90%自動化。国内サイバーセキュリティ市場の構造変化を促す。"
+    }
+  ]
 }

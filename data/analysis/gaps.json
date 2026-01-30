@@ -2,9 +2,13 @@
   "metadata": {
     "description": "LLM出力間のギャップ検出結果",
     "created": "2026-01-27",
-    "last_updated": "2026-01-29",
+    "last_updated": "2026-01-31",
     "phase": "フェーズ3: Claude比較分析",
-    "session": "フル分析 2026-01-29"
+    "session": "フル分析 2026-01-31",
+    "sources_compared": {
+      "company_info": ["grok.md", "gemini.md", "claude.md", "chatgpt.md"],
+      "broad_info": ["grok.md", "gemini.md", "claude.md", "chatgpt.md"]
+    }
   },
   "gaps": {
     "companies": [
@@ -84,37 +88,37 @@
       {
         "id": "GAP-C007",
         "company": "JASM (TSMC熊本)",
-        "status": "new_discovery",
+        "status": "updated",
         "issue": "第2工場計画変更が発覚。当初計画（6-7nm自動車向け）から4nm AI向けへ検討中。建設一時停止。",
         "details": {
           "phase1": "12月より量産開始（12/16nm、55,000枚/月）",
           "phase2_original": "6-7nm（自動車/イメージセンサー）、2027年稼働予定",
           "phase2_new": "4nm（AI向け）検討中、需要変化対応",
-          "status": "建設一時停止、重機撤収、2026年通年で新規装置発注なし",
+          "status": "建設一時停止",
           "investment": "$23B（政府補助1.2兆円含む）"
         },
-        "action": "日本半導体サプライチェーン分析に反映。AI向け4nmは日本企業（東京エレクトロン等）への追加需要となる可能性。",
+        "action": "日本半導体サプライチェーン分析に反映。4LLM中3LLMが言及（Claude/Gemini/ChatGPT）。Grokは言及なし。",
         "filled": true
       },
       {
         "id": "GAP-C008",
-        "company": "KDDI-NEC",
-        "status": "new_discovery",
-        "issue": "サイバーセキュリティ合弁会社「Protect.jp」設立。国内最大規模のサイバーセキュリティ事業。",
+        "company": "KDDI-NEC合弁 Protect.jp",
+        "status": "updated",
+        "issue": "サイバーセキュリティ合弁会社「Protect.jp」設立。",
         "details": {
           "platform": "WAKONX（KDDI）+ BluStellar（NEC）統合",
           "ai": "生成AI「cotomi」活用、分析〜対応90%自動化",
           "global_expansion": "FY2026〜：APAC、欧州、米国にCyber Intelligence Center展開",
           "regulation": "経済安全保障推進法対応"
         },
-        "action": "NEC（6701.T）、KDDI（9433.T）のサイバーセキュリティ評価を上方修正",
+        "action": "Claude broad/companyで確認済み。他LLMでの言及は限定的。",
         "filled": true
       },
       {
         "id": "GAP-C009",
         "company": "Rapidusサプライチェーン",
-        "status": "new_discovery",
-        "issue": "Gemini broadで詳細なTier 1-3サプライチェーン構造が明らかに",
+        "status": "updated",
+        "issue": "Gemini broadで詳細なTier 1-3サプライチェーン構造が明らかに。Claude broadも統合済み。",
         "details": {
           "prime": "Rapidus（2nm、2027年量産目標）",
           "tier1_equipment": "ASML（EUV）、東京エレクトロン、SCREEN HD",
@@ -123,14 +127,14 @@
           "tier2_3": "味の素ファインテクノ（ABF）、新光電気工業",
           "milestone": "2024年12月ASML EUV搬入完了、2025年4月パイロットライン稼働"
         },
-        "action": "半導体素材・装置銘柄の評価に反映",
+        "action": "Gemini/Claude broadで確認。Grok/ChatGPTには詳細なし。",
         "filled": true
       },
       {
         "id": "GAP-C010",
         "company": "GCAP/JAIEC",
-        "status": "new_discovery",
-        "issue": "次期戦闘機GCAPの産業構造が明確化。JAIECが日本航空宇宙サプライチェーン強化のハブとして設立。",
+        "status": "updated",
+        "issue": "次期戦闘機GCAPの産業構造が明確化。",
         "details": {
           "gigo": "日英伊政府間機関、英国本部、初代CEO日本人",
           "jv": "三菱重工×BAE Systems×Leonardo",
@@ -141,14 +145,14 @@
             "avionics": "三菱電機×レオナルド（ISANKE & ICS）"
           }
         },
-        "action": "防衛関連企業（MHI、IHI、三菱電機、東レ）の評価に反映",
+        "action": "Gemini/Claude broadで確認。ChatGPTにも言及あり。",
         "filled": true
       },
       {
         "id": "GAP-C011",
         "company": "合成生物学スタートアップ",
-        "status": "new_discovery",
-        "issue": "Gemini broadで日本のバイオものづくり市場（CAGR 18.3%、2兆円規模）と主要スタートアップを特定",
+        "status": "updated",
+        "issue": "日本のバイオものづくり市場（CAGR 18.3%、2兆円規模）と主要スタートアップを特定",
         "details": {
           "market_size": "2030年に2兆円規模（CAGR 18.3%）",
           "startups": [
@@ -159,8 +163,107 @@
             "bitBiome（早稲田大発、シングルセルゲノム解析）"
           ]
         },
-        "action": "見逃しスキャン銘柄として監視リストに追加",
+        "action": "Gemini/Claude broadで確認。Grok/ChatGPTには言及なし。",
         "filled": true
+      },
+      {
+        "id": "GAP-C012",
+        "company": "Gemini独自カバレッジ企業群",
+        "status": "new_discovery",
+        "issue": "Geminiが他LLMより大幅に多くの企業をカバー（50社+）。以下の企業はGemini company_infoにのみ登場:",
+        "details": {
+          "ai_semiconductor": [
+            "TOWA (6315) - モールディング装置66%",
+            "日本マイクロニクス (6871) - プローブカード33%",
+            "トリケミカル研究所 (4369) - High-k材料",
+            "大阪有機化学工業 (4187) - フォトレジスト原料70%",
+            "ローツェ (6323) - ウェーハ搬送ロボット",
+            "日本電子 JEOL (6951) - 電子顕微鏡"
+          ],
+          "energy_nuclear": [
+            "岡野バルブ (6492) - 原子力バルブ",
+            "イーグル工業 (6486) - メカニカルシール",
+            "日本ピラー工業 (6490) - メカニカルシール",
+            "東亜バルブ (6466) - 原子力バルブ",
+            "東光高岳 (6617) - 配電機器",
+            "日本ガイシ (5333) - NAS電池"
+          ],
+          "defense_aerospace": [
+            "日本航空電子工業 JAE (6807) - 慣性センサ",
+            "東京計器 (7721) - レーダー警戒装置",
+            "日本アビオニクス (6946) - 指揮管制",
+            "大阪チタニウム (5726) - スポンジチタン",
+            "東邦チタニウム (5727) - スポンジチタン",
+            "ジャムコ (7408) - 航空機内装50%",
+            "豊和工業 (6203) - 小銃",
+            "石川製作所 (6208) - 機雷"
+          ],
+          "robotics": [
+            "ナブテスコ (6268) - RV減速機60%",
+            "ニッセイ (6271) - ギアモータ",
+            "オプテックス (6914) - 侵入検知センサ40%",
+            "平田機工 (6258) - 生産設備",
+            "竹内製作所 (6432) - ミニショベル",
+            "THK (6481) - LMガイド50%",
+            "ダイフク (6383) - マテハン"
+          ],
+          "cyber": [
+            "デジタルアーツ (2326) - Webフィルタリング",
+            "HENNGE (4475) - IDaaS",
+            "GMOグローバルサイン (3788) - SSL証明書",
+            "サイバーセキュリティクラウド (4493) - WAF",
+            "FFRIセキュリティ (3692) - 国産エンドポイント"
+          ]
+        },
+        "action": "Gemini独自発見企業をPhase 5で統合候補に追加。特にTOWA(66%)、ナブテスコ(60%)、JAE(慣性センサ唯一)、大阪有機化学(70%)は高優先。",
+        "filled": false
+      },
+      {
+        "id": "GAP-C013",
+        "company": "ChatGPT独自カバレッジ企業群",
+        "status": "new_discovery",
+        "issue": "ChatGPT company_infoは60社+をスキャン形式でカバー。以下の企業はChatGPTにのみ（またはChatGPT+他1LLMのみ）登場:",
+        "details": {
+          "additional_coverage": [
+            "明電舎 (6508) - 変圧器",
+            "日新電機 (6641) - 開閉装置",
+            "横河電機 (6841) - DCS/計装",
+            "アズビル (6845) - 制御/計装",
+            "東洋エンジニアリング (6330) - EPC",
+            "ミスミG (9962) - 標準部品",
+            "日東工器 (6151) - 接続部品",
+            "ヤマハ発動機 (7272) - 産業ロボ",
+            "スカパーJSAT (9412) - 衛星通信",
+            "セコム (9735) - サイバーセキュリティ",
+            "ALSOK (2331) - サイバーセキュリティ",
+            "サイバーエージェント (4751) - AI/広告",
+            "小松製作所 (6301) - 防衛車両",
+            "NTTデータ (9613) - 防衛IT"
+          ]
+        },
+        "action": "ChatGPTの幅広いスキャンは候補発掘に有用。Phase 5でドメイン適合性を精査。",
+        "filled": false
+      },
+      {
+        "id": "GAP-C014",
+        "company": "ispace (9348)",
+        "status": "new_discovery",
+        "issue": "Geminiのみが言及。月面探査スタートアップ。HAKUTO-R推進、NASAアルテミス計画参画。",
+        "details": {
+          "domain": "宇宙（月面探査）",
+          "program": "HAKUTO-R",
+          "partnership": "NASAアルテミス計画"
+        },
+        "action": "宇宙ドメインの候補として監視リストに追加",
+        "filled": false
+      },
+      {
+        "id": "GAP-C015",
+        "company": "キヤノン電子 (7739)",
+        "status": "new_discovery",
+        "issue": "Geminiのみが言及。光学技術を活かした小型衛星部品製造。",
+        "action": "宇宙ドメインのTier 2/3候補として記録",
+        "filled": false
       }
     ],
     "domains": [
@@ -175,44 +278,82 @@
           "cagr": "12-13%",
           "key_players": {
             "LLY": {"share": "53%", "recommendation": "推奨", "fwd_pe": 32.36, "peg": 0.97},
-            "NVO": {"share": "47%", "recommendation": "中立", "fwd_pe": 17.67, "peg": 3.10},
-            "AMGN": {"share": "<1%", "recommendation": "中立", "pipeline": "MariTide Phase 2"},
-            "VKTX": {"share": "<1%", "recommendation": "回避", "pipeline": "VK2735 Phase 3"}
-          },
-          "biosimilar_risk": "2026年3月〜中国・インド・ブラジル・カナダで特許切れ"
+            "NVO": {"share": "47%", "recommendation": "中立", "fwd_pe": 17.67, "peg": 3.10}
+          }
         },
-        "action": "LLYを6ドメイン外の有望銘柄として監視リストに追加",
+        "action": "LLYを監視リストに追加",
         "filled": true
       },
       {
         "id": "GAP-D002",
         "domain": "ペロブスカイト太陽電池",
         "status": "filled",
-        "issue": "Grok補強調査で詳細企業分析完了",
+        "issue": "日本企業では積水化学が2027年100MW量産計画",
         "details": {
-          "technology": "Si-ペロブスカイトタンデムで効率32.38%達成",
-          "challenges": "耐久性、スケーラビリティ、鉛毒性",
-          "commercial_timeline": "2026年パイロットライン",
-          "us_stocks": {
-            "FSLR": {"exposure": "10-15%", "strategy": "Evolar買収、CdTeからペロブスカイトへ移行"},
-            "ENPH": {"exposure": "<5%", "strategy": "マイクロインバーター（間接エクスポージャー）"},
-            "ALB": {"exposure": "<1%", "strategy": "リチウム・特殊化学品（間接）"}
-          },
-          "ipo_watch": [
-            {"name": "Oxford PV", "tech": "ペロブスカイト-Siタンデム 25%効率", "ipo_likelihood": "高"},
-            {"name": "Swift Solar", "tech": "軽量フレキシブル", "ipo_likelihood": "中"}
-          ]
+          "japan_player": "積水化学 (4204.T) - 2027年100MW級量産計画",
+          "japan_advantage": "ヨウ素生産世界2位（資源自給率向上）",
+          "global": "Oxford PV等もIPO準備中"
         },
-        "action": "FSLRを見逃しスキャン銘柄として記録、Oxford PVをIPO監視",
+        "action": "積水化学をエネルギードメインで評価",
         "filled": true
       },
       {
         "id": "GAP-D003",
         "domain": "Replicator/自律システム",
         "status": "coverage_updated",
-        "issue": "Claude調査でAeroVironment詳細追加: Switchblade 600 Block 2が2026年から納品、1000基以上調達予定",
-        "action": "AeroVironmentの評価を強化",
+        "issue": "日本版としてドローン・UUV投資が加速",
+        "action": "防衛ドメインで無人アセット関連を拡大カバー",
         "filled": true
+      },
+      {
+        "id": "GAP-D004",
+        "domain": "サイバーセキュリティ（日本特化）",
+        "status": "new_coverage_gap",
+        "issue": "Geminiが5社の国産サイバーセキュリティ企業を特定（デジタルアーツ、HENNGE、GMOグローバルサイン、サイバーセキュリティクラウド、FFRIセキュリティ）。他LLMは大手（NEC、富士通、トレンドマイクロ）のみカバー。",
+        "details": {
+          "gemini_only": ["デジタルアーツ (2326)", "HENNGE (4475)", "GMOグローバルサイン (3788)", "サイバーセキュリティクラウド (4493)", "FFRIセキュリティ (3692)"],
+          "all_llms": ["NEC (6701)", "トレンドマイクロ (4704)", "富士通 (6702)"],
+          "claude_only": ["ソリトン (3040)"]
+        },
+        "action": "Gemini発見の国産サイバー5社をPhase 5で評価。特にFFRI（政府向け純国産）は経済安保の文脈で重要。",
+        "filled": false
+      },
+      {
+        "id": "GAP-D005",
+        "domain": "防衛Tier 2/3（精密部品・素材）",
+        "status": "new_coverage_gap",
+        "issue": "Geminiが防衛の下請け・部品企業を詳細にカバー。JAE（慣性センサ）、東京計器（レーダー警戒）、豊和工業（小銃）、石川製作所（機雷）等は他LLMになし。",
+        "details": {
+          "gemini_unique": ["日本航空電子工業 JAE (6807)", "東京計器 (7721)", "日本アビオニクス (6946)", "豊和工業 (6203)", "石川製作所 (6208)", "大阪チタニウム (5726)", "東邦チタニウム (5727)"],
+          "importance": "スタンドオフミサイル9,700億円超の恩恵を受けるTier 2/3企業群"
+        },
+        "action": "JAE（ミサイル誘導の慣性センサ唯一）は最重要。Phase 5で評価。",
+        "filled": false
+      },
+      {
+        "id": "GAP-D006",
+        "domain": "エネルギーTier 2/3（バルブ・シール・配電）",
+        "status": "new_coverage_gap",
+        "issue": "Geminiが原子力再稼働の恩恵を受けるバルブ・シール企業を特定。岡野バルブ、イーグル工業、日本ピラー工業等は他LLMになし。",
+        "details": {
+          "gemini_unique": ["岡野バルブ (6492)", "イーグル工業 (6486)", "日本ピラー工業 (6490)", "東亜バルブ (6466)", "東光高岳 (6617)"],
+          "importance": "原発再稼働・60年超運転延長でメンテナンス需要増。安定的リカーリング収益。"
+        },
+        "action": "原子力バルブ企業群をPhase 5でエネルギードメインに追加。特に日本ピラー（営業利益率19%）は注目。",
+        "filled": false
+      },
+      {
+        "id": "GAP-D007",
+        "domain": "先端パッケージング",
+        "status": "new_coverage_gap",
+        "issue": "Geminiが先端パッケージング（HBM/CoWoS関連）でTOWA（66%）を最重要企業として特定。他LLMはTOWAを未カバー。",
+        "details": {
+          "towa_share": "モールディング装置66%",
+          "importance": "HBM製造のコンプレッション成形技術で事実上の業界標準。AI需要の直接受益者。",
+          "comparison": "ディスコ（70-80%）、レーザーテック（100%）に匹敵するボトルネック企業"
+        },
+        "action": "TOWA (6315)をAIドメインの重要候補として追加。Phase 5で詳細評価。",
+        "filled": false
       }
     ],
     "information_categories": [
@@ -221,91 +362,220 @@
         "category": "A: 国際情勢",
         "status": "well_covered",
         "coverage_score": 96,
-        "notes": "Gemini/Grok/Claude broadで十分にカバー。中国輸出規制強化、台湾海峡緊張、日本輸出管理強化（キャッチオール規制）を詳細に収集"
+        "llm_coverage": {
+          "grok_broad": "日中関係、台湾海峡、米国政策をカバー",
+          "gemini_broad": "輸出規制の深層メカニズム、PLA活動詳細を最も詳しくカバー",
+          "claude_broad": "全LLMデータを統合。レアアース影響（GDP 1.3-3.2%減）等を追加",
+          "chatgpt_broad": "米台対話、ドル安テーマ等を一次ソース中心にカバー"
+        },
+        "notes": "4LLM全てが国際情勢をカバー。Geminiが最も構造的分析を提供。"
       },
       {
         "id": "GAP-I002",
         "category": "B: 市場リスク",
         "status": "well_covered",
         "coverage_score": 92,
-        "notes": "CAPE最新値(41.03)、Fed政策、HYスプレッドを検証済み"
+        "llm_coverage": {
+          "grok_broad": "日銀詳細分析（歴史的変遷含む）、セクターPER/PBR/ROE提供",
+          "gemini_broad": "市場過熱度スコアリング（8.5/10等）を独自提供",
+          "claude_broad": "PERソース乖離を特定。Nikkei Indexes公式値を優先判定",
+          "chatgpt_broad": "Nikkei VI、PERの一次ソース参照URL提供"
+        },
+        "gap_detail": "PER値のソース間乖離（17.5 vs 19.7-20.3）は今回解決済み。信用スプレッドの定量値（bp）は依然として定性的記述にとどまる。",
+        "notes": "日銀政策・為替・VIは4LLM高品質で一致。PERは一次ソース優先で解決。"
       },
       {
         "id": "GAP-I003",
-        "category": "C: メガトレンド",
+        "category": "C: メガトレンド（6ドメイン）",
         "status": "well_covered",
-        "coverage_score": 94,
-        "notes": "AI CapEx($475B)、原子力ルネサンス、防衛予算($1.5T提案)を更新"
+        "coverage_score": 95,
+        "llm_coverage": {
+          "grok_broad": "TAM/CAGR数値を全ドメインで提供",
+          "gemini_broad": "企業別チョークポイント分析。サプライチェーン構造を最も詳細に",
+          "claude_broad": "ファナックQ3決算、京セラ×マクセル等のリアルタイムイベント",
+          "chatgpt_broad": "6ドメイン横断のイベントカレンダー提供"
+        },
+        "notes": "ドメインカバレッジは十分。Geminiの企業深堀り（50社+）が他LLMを大幅に凌駕。"
       },
       {
         "id": "GAP-I004",
         "category": "D: 6ドメイン成長",
         "status": "well_covered",
         "coverage_score": 90,
-        "notes": "各ドメインの成長予測は複数ソースで確認"
+        "llm_coverage": {
+          "grok_broad": "TAM/CAGR数値提供（AI $100-500B、Defense $50B等）",
+          "claude_broad": "各ドメインテーブル形式で整理",
+          "gemini_broad": "定性的成長論を提供",
+          "chatgpt_broad": "政策関連の定量値（GX 20兆円、防衛43兆円等）"
+        },
+        "notes": "TAM/CAGR数値は複数ソースで確認済み。"
       },
       {
         "id": "GAP-I005",
         "category": "E: 大型投資",
         "status": "well_covered",
-        "coverage_score": 96,
-        "notes": "Meta核契約(6.6GW)、SDA Tranche 3($3.5B)、Golden Dome($10.8B+)を追加"
+        "coverage_score": 94,
+        "llm_coverage": {
+          "grok_broad": "半導体1.7兆円、GX投資等",
+          "gemini_broad": "GX経済移行債20兆円の詳細、設備投資国内回帰を分析",
+          "claude_broad": "企業設備投資テーブル（TEL 2,400億円、SoftBank $22.5B等）",
+          "chatgpt_broad": "政府プログラムを構造化"
+        },
+        "notes": "政府・企業の大型投資パイプラインは十分にカバー。"
       },
       {
         "id": "GAP-I006",
         "category": "F: 見逃しスキャン",
-        "status": "adequate",
-        "coverage_score": 75,
-        "notes": "バイオ、量子、クリーンテックは言及あるが詳細な銘柄分析なし"
+        "status": "improved",
+        "coverage_score": 82,
+        "previous_score": 75,
+        "llm_coverage": {
+          "grok_broad": "GNT企業リスト、バイオ5社、量子3社",
+          "gemini_broad": "50社+の包括的チョークポイント企業リスト（最も広範）",
+          "claude_broad": "合成生物学5社追加、モビリティ/EV追加、GNT企業9社",
+          "chatgpt_broad": "60社+の横断スキャン（最も幅広い候補）"
+        },
+        "gap_detail": "Gemini/ChatGPTの幅広いカバレッジにより、前回のスキャン範囲を大幅に拡大。ただし多くの企業は定性的記述にとどまり、財務詳細が不足。",
+        "notes": "今回のスキャンで合計100社+の候補を特定。次フェーズで上位30社に絞り込みが必要。"
       },
       {
         "id": "GAP-I007",
-        "category": "G: その他",
+        "category": "G: その他指標",
         "status": "well_covered",
-        "coverage_score": 85,
-        "notes": "Fed金利(3.5-3.75%)、Powell任期満了(2026年5月)、インフレ見通しを更新"
+        "coverage_score": 88,
+        "llm_coverage": {
+          "grok_broad": "セクター別バリュエーション表（PER/PBR/ROE/配当利回り）を独自提供",
+          "gemini_broad": "マクロ指標と市場リスクスコアリング",
+          "claude_broad": "マクロ指標テーブル（GDP、CPI、失業率、貿易収支）",
+          "chatgpt_broad": "一次ソースURL付きで指標を提供"
+        },
+        "gap_detail": "Put/Call Ratioの一次ソース（OSE）は未取得のまま。Xセンチメントは定性的。",
+        "notes": "マクロ指標は4LLMで十分カバー。"
+      },
+      {
+        "id": "GAP-I008",
+        "category": "H: メガ契約",
+        "status": "well_covered",
+        "coverage_score": 92,
+        "llm_coverage": {
+          "grok_broad": "政府・防衛契約概要",
+          "gemini_broad": "SoftBank×OpenAI詳細分析、トヨタ×出光戦略的意義",
+          "claude_broad": "政府契約テーブル（GCAP、イージス、スタンドオフ等）",
+          "chatgpt_broad": "台湾向け$11.1B武器パッケージ"
+        },
+        "notes": "メガ契約カバレッジは十分。"
       }
-    ]
+    ],
+    "llm_coverage_comparison": {
+      "company_coverage": {
+        "grok_company": {
+          "total_companies": 20,
+          "unique_strength": "財務詳細（Graham-Buffett指標：PER/PBR/PEG/ROE/EPS）を個社レベルで提供",
+          "weakness": "データ重複ミス（安川/ハーモニック）、時価総額のずれ（MHI、IHI）"
+        },
+        "gemini_company": {
+          "total_companies": 59,
+          "unique_strength": "最も幅広いカバレッジ。チョークポイント企業の定性分析が秀逸。防衛Tier2/3、原子力バルブ/シール等を独自発掘",
+          "weakness": "財務詳細（PER/EPS等）が不足。定量データよりも定性的分析が中心"
+        },
+        "claude_company": {
+          "total_companies": 14,
+          "unique_strength": "最新イベント情報（決算、契約、政策変更）の鮮度が高い。確度評価（95%等）を付与",
+          "weakness": "カバレッジ数が少ない。主要大型株に集中"
+        },
+        "chatgpt_company": {
+          "total_companies": 65,
+          "unique_strength": "最も幅広い候補スキャン（60社+）。鮮度タグ運用が厳密。モート/参入障壁の構造的記述",
+          "weakness": "財務詳細なし。「スキャン」目的で数値を最小化している"
+        }
+      },
+      "broad_coverage": {
+        "grok_broad": {
+          "unique_strength": "日銀政策の歴史的分析、Abenomics評価、QE影響の定量分析",
+          "weakness": "防衛予算増加率の誤差（+3.8% vs 実際+9.4%）"
+        },
+        "gemini_broad": {
+          "unique_strength": "戦略的分析の深度（エコノミック・ステイトクラフト、チョークポイント戦略）、Rapidusサプライチェーンの詳細構造図",
+          "weakness": "定量的市場指標の一部欠落（PER具体値等）"
+        },
+        "claude_broad": {
+          "unique_strength": "ソース間クロスバリデーションを自ら実施。情報品質評価を体系化。全カテゴリをバランスよくカバー",
+          "weakness": "Web検索非使用のため一部データは他LLMからの統合"
+        },
+        "chatgpt_broad": {
+          "unique_strength": "一次ソースURL付きで情報を提供（Nikkei Indexes、BOJ日次FX等）。検証可能性が最も高い",
+          "weakness": "深度は浅い。速報中心で構造分析は限定的"
+        }
+      }
+    },
+    "confidence_distribution": {
+      "description": "主要データポイントのLLM間合意レベル",
+      "highest_confidence_4llm": [
+        "日銀政策金利0.75%（4LLM一致）",
+        "JGB 10Y 2.24-2.25%（4LLM一致）",
+        "日経VI 33-34台（4LLM一致方向）",
+        "防衛予算FY2026 9兆円超（3-4LLM一致）",
+        "ファナックロボット受注+38% YoY（2-3LLM確認、公式決算）",
+        "東京エレクトロン コータ/デベロッパ90%（3LLM一致）",
+        "TSMC熊本第2工場一時停止・4nm検討（3LLM確認）",
+        "GDP FY2026 +1.0%（3LLM一致、日銀展望レポート）"
+      ],
+      "high_confidence_3llm": [
+        "三菱重工 時価総額15兆円台（Grok確認、Claude古いデータ修正）",
+        "Rapidus 2nm 2027年量産目標（Gemini/Claude/ChatGPT）",
+        "GCAP FY2026予算1,600億円（Claude/Gemini/ChatGPT）",
+        "SoftBank×OpenAI $22.5B（Claude/Gemini/ChatGPT）",
+        "水素コスト目標 2030年30円/Nm3（Claude/Gemini/ChatGPT）",
+        "ペロブスカイト積水化学2027年量産（Claude/Gemini/ChatGPT）"
+      ],
+      "medium_confidence_2llm": [
+        "日経平均PER 19.7-20.3倍（Claude/ChatGPT一致、Grok異なる算出法）",
+        "KDDI-NEC Protect.jp設立（Claude のみ詳細）",
+        "ナブテスコRV減速機60%（Geminiのみ定量値）",
+        "TOWA モールディング装置66%（Geminiのみ）",
+        "外国人投資家1月初旬買越し1.14兆円（Grok/Claude）"
+      ],
+      "needs_verification_1llm": [
+        "Grok: 安川電機/ハーモニック財務データ（重複コピーの疑い - 要全面再検証）",
+        "Grok: 防衛予算増加率+3.8%（他LLMと矛盾、+9.4%が正しい）",
+        "Grok: EPS成長率+9.1%（Claude broadで「検証が必要」と指摘）",
+        "Gemini: TOWA 66%（他LLMで確認できず、Gemini単独情報）",
+        "Claude: MHI時価総額5兆円（古いデータ、15兆円に修正済み）"
+      ]
+    }
   },
   "summary": {
-    "total_gaps": 20,
-    "filled": 20,
-    "pending": 0,
+    "total_gaps": 26,
+    "filled": 17,
+    "pending": 9,
+    "new_discoveries": 7,
     "coverage_assessment": {
-      "overall_score": 96,
+      "overall_score": 91,
+      "previous_score": 96,
+      "score_change_notes": "前回はグローバル投資分析スコア。今回は日本市場特化のため、日本企業の詳細カバレッジ基準で再評価。Geminiの50社+発見により候補プールは大幅拡大したが、財務詳細の穴埋めが残存。",
       "strong_areas": [
-        "国際情勢（日中関係緊張、輸出規制、キャッチオール規制強化）",
-        "市場リスク（日銀政策、為替介入リスク、VI 34高警戒）",
-        "大型投資パイプライン",
-        "AI/エネルギー/防衛セクター",
-        "原子力（柏崎刈羽再稼働動向）",
-        "バイオ/GLP-1（Grok補強調査完了）",
-        "ペロブスカイト太陽電池（Grok補強調査完了）",
-        "日本サイバーセキュリティ（KDDI-NEC合弁）",
-        "半導体サプライチェーン（Rapidus、東京エレクトロン90%独占）",
-        "防衛産業（GCAP、JAIEC設立、9兆円予算）",
-        "全固体電池（トヨタ-出光提携）"
+        "国際情勢（4LLM高品質カバー、輸出規制・台湾情勢の詳細）",
+        "市場リスク（日銀政策、PER/VI/JGB全て4LLMで検証済み）",
+        "AI/半導体サプライチェーン（Rapidus Tier1-3、TSMC熊本、東京エレクトロン90%）",
+        "防衛産業（GCAP産業構造、9兆円予算、プライムコントラクター分析）",
+        "ロボティクス（ファナック決算、減速機2社体制、キーエンス高収益）",
+        "エネルギー（柏崎刈羽、水素ロードマップ、GX 20兆円）",
+        "サイバー（KDDI-NEC合弁、能動的サイバー防御法案）",
+        "宇宙（Astroscale、QPS、H3ロケット状況）"
       ],
       "weak_areas": [
-        "日経平均PER: 複数ソース間で乖離あり（Grok 19.88 vs Claude 16倍超）- 要検証"
+        "Grokの財務データ信頼性（安川/ハーモニック重複、MHI時価総額誤差）",
+        "Gemini発掘企業（50社+）の財務定量データ不足",
+        "信用スプレッドの日本市場定量値（bp）未取得",
+        "Put/Call Ratioの一次ソース（OSE）未確認",
+        "外国人投資家の1月月間ネットフロー最終値未確定"
       ],
-      "completed_actions": [
-        "Meta核契約受益企業（Vistra, Constellation）の評価強化済み",
-        "BWXT受注残$6B反映済み",
-        "AeroVironment Replicator選定反映済み",
-        "Wolfspeed除外確定",
-        "量子コンピューティング銘柄（Quantinuum）IPO監視中",
-        "GLP-1銘柄分析完了（LLY推奨、NVO中立）",
-        "ペロブスカイト銘柄特定（FSLR監視、Oxford PV IPO監視）",
-        "TSMC熊本第2工場計画変更（4nm AI向け検討）反映済み",
-        "KDDI-NEC合弁「Protect.jp」発見・反映済み",
-        "ファナックQ3決算（+38%、ガイダンス上方修正）確認済み",
-        "日米協調為替介入リスク反映済み",
-        "Rapidusサプライチェーン（東京応化、Resonac等）特定済み",
-        "GCAP/JAIEC産業構造（日英伊分業体制）整理済み",
-        "日本合成生物学スタートアップ5社特定済み",
-        "東京エレクトロン90%独占確認済み",
-        "MHI/IHI受注残高を正確な数値に修正済み"
+      "phase4_priority_tasks": [
+        "Grok財務データの全面検証（安川、ハーモニック、MHI、日立、IHI）",
+        "Gemini発掘企業の上位10社について財務詳細取得（TOWA、ナブテスコ、JAE、岡野バルブ、日本ピラー等）",
+        "日経平均PERの一次ソース確定（Nikkei Indexes直接確認）",
+        "外国人投資家月間フローのMOF/JPX一次統計確認",
+        "防衛Tier 2/3企業のスタンドオフミサイル受注可能性評価"
       ]
     }
   }

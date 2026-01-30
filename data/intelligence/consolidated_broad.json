@@ -1,270 +1,804 @@
 {
   "metadata": {
-    "description": "統合広域情報（全LLM出力 + stable + reinforcement をマージ）",
-    "created": "2026-01-28T18:00:00Z",
-    "last_updated": "2026-01-30T12:00:00Z",
-    "phase": "フェーズ5: 統合・確度整理（2026-01-30更新）",
-    "sources": {
-      "raw_claude": "data/intelligence/raw/broad_info/claude.md",
-      "raw_grok": "data/intelligence/raw/broad_info/grok.md",
-      "raw_gemini": "data/intelligence/raw/broad_info/gemini.md",
-      "reinforcement": "reinforcement/results/claude_auto/2026-01-28_v2.md"
+    "description": "統合広域情報",
+    "last_updated": "2026-01-31",
+    "sources": ["Grok", "Gemini", "ChatGPT", "Claude"],
+    "source_files": {
+      "grok": "data/intelligence/raw/broad_info/grok.md",
+      "gemini": "data/intelligence/raw/broad_info/gemini.md",
+      "chatgpt": "data/intelligence/raw/broad_info/chatgpt.md",
+      "claude": "data/intelligence/raw/broad_info/CLAUDE.md",
+      "claude_supplemental": "data/intelligence/raw/claude_supplemental.md"
     },
-    "merge_priority": "1.一次情報源確認済み > 2.3LLM一致 > 3.reinforcement検証済み"
+    "merge_priority": "1.一次情報源URL明示 > 2.複数LLM合意 > 3.単一LLM（確度注記付き）",
+    "total_items": 187,
+    "framework_version": "2.0.0"
   },
-  "categories": {
-    "A_geopolitics": [
-      {
-        "topic": "Taiwan-China",
-        "freshness": "REALTIME",
-        "items": [
-          {"item": "サイバー攻撃2倍増（日平均240万件）", "confidence": 85},
-          {"item": "主要ターゲット: 政府機関、通信、半導体", "confidence": 85},
-          {"item": "Trump-Xi首脳会談で短期リスク低下", "confidence": 80},
-          {"item": "封鎖シナリオ損失: $2.7T", "confidence": 75}
-        ],
-        "tension_level": "medium",
-        "sources": ["CSIS", "複数シンクタンク"]
+  "japan_macro": {
+    "gdp": {
+      "forecast_fy2025": "+0.9%",
+      "forecast_fy2026": "+1.0%",
+      "forecast_fy2027": "+0.8%",
+      "revision": "FY2025/FY2026ともに前回+0.7%から上方修正（2026年1月展望レポート）",
+      "drivers": "個人消費（+0.9%）、設備投資が牽引。外需は米関税で-0.2pp",
+      "consensus_level": "high",
+      "confidence": "A",
+      "sources": ["日銀展望レポート2026年1月", "IMF WEO", "Deloitte Japan"]
+    },
+    "inflation": {
+      "headline_cpi_fy2025": "+2.7%",
+      "core_cpi_fy2025": "+2.7%",
+      "core_cpi_fy2026": "+1.9%",
+      "core_cpi_fy2027": "+2.0%",
+      "h1_2026_outlook": "食料品価格効果減衰・政府対策で2%を下回る見込み",
+      "h2_2026_outlook": "賃金上昇（低3%台）と人手不足で基調的上昇率が高まる",
+      "trimmed_mean": "1.9%",
+      "weighted_median": "1.3%",
+      "consensus_level": "high",
+      "confidence": "A",
+      "sources": ["日銀展望レポート2026年1月"]
+    },
+    "boj_policy": {
+      "rate": 0.75,
+      "last_decision": "2026-01-23（据え置き、8対1。高田委員のみ1.0%主張）",
+      "historical_context": "1995年9月以来の高水準（30年ぶり）",
+      "next_meeting": "2026-03-18/19",
+      "next_move": "利上げ",
+      "timing": {
+        "main_scenario": "2026年6月・12月に+0.25%ずつ→年末1.25%",
+        "risk_scenario": "円安加速時は4月前倒し、2027年末1.75%",
+        "terminal_rate": "1.5%（市場コンセンサス）"
       },
-      {
-        "topic": "US-China Relations",
-        "freshness": "REALTIME",
-        "items": [
-          {"item": "関税: 欧州同盟国への脅威", "confidence": 80},
-          {"item": "首脳会談: 緊張緩和シグナル", "confidence": 80},
-          {"item": "半導体規制: 継続強化", "confidence": 90}
-        ],
-        "sources": ["複数報道"]
-      }
-    ],
-    "B_market_risk": [
-      {
-        "tier": 1,
-        "category": "政策転換リスク",
-        "score": 12,
-        "max_score": 20,
-        "freshness": "REALTIME",
-        "items": [
-          {"item": "FF金利: 3.5-3.75%", "confidence": 95, "source": "Federal Reserve"},
-          {"item": "FOMC 1/28: 据え置き予想", "confidence": 90},
-          {"item": "Powell後任人事: 今週発表予想", "confidence": 75},
-          {"item": "Powell任期: 2026年5月満了", "confidence": 100}
-        ]
-      },
-      {
-        "tier": 1,
-        "category": "バリュエーション過熱",
-        "score": 15,
-        "max_score": 15,
-        "freshness": "REALTIME",
-        "items": [
-          {"item": "CAPE: 41.03（長期平均17.3の135%プレミアム）", "confidence": 95, "source": "multpl.com"},
-          {"item": "Forward P/E: 22x（2021年ピーク同等）", "confidence": 90},
-          {"item": "S&P 500: ~6,950 (YTD +1.4%)", "confidence": 95}
-        ]
-      },
-      {
-        "tier": 2,
-        "category": "市場集中",
-        "score": 10,
-        "max_score": 12,
-        "freshness": "QUARTERLY",
-        "items": [
-          {"item": "Mag7比率: 35%", "confidence": 90},
-          {"item": "トップ10比率: 高集中維持", "confidence": 85}
-        ]
-      },
-      {
-        "tier": 2,
-        "category": "クレジット/レバレッジ",
-        "score": 3,
-        "max_score": 12,
-        "freshness": "REALTIME",
-        "items": [
-          {"item": "HY Spread: 2.64-2.96%（歴史的低水準）", "confidence": 95, "source": "FRED"},
-          {"item": "IG Spread: ~74bps", "confidence": 90}
-        ]
-      },
-      {
-        "tier": 2,
-        "category": "センチメント",
-        "score": 6,
-        "max_score": 10,
-        "freshness": "REALTIME",
-        "items": [
-          {"item": "VIX: 15-16（前回18.6から低下）", "confidence": 95, "source": "CBOE"}
-        ]
-      },
-      {
-        "tier": 3,
-        "category": "外部ショック",
-        "score": 7,
-        "max_score": 11,
-        "freshness": "REALTIME",
-        "items": [
-          {"item": "台湾緊張: 一時緩和（Trump-Xi会談）", "confidence": 80},
-          {"item": "サプライチェーン: TSMCリスク継続", "confidence": 85}
-        ]
-      },
-      {
-        "tier": 3,
-        "category": "流動性",
-        "score": 3,
-        "max_score": 10,
-        "freshness": "REALTIME",
-        "items": [
-          {"item": "債券市場: 正常", "confidence": 90}
-        ]
-      },
-      {
-        "tier": 3,
-        "category": "業績乖離",
-        "score": 7,
-        "max_score": 10,
-        "freshness": "QUARTERLY",
-        "items": [
-          {"item": "S&P 500 YTD vs EPS成長: 乖離継続", "confidence": 85}
-        ]
-      }
-    ],
-    "C_megatrends": [
-      {
-        "domain": "AI",
-        "freshness": "QUARTERLY",
-        "items": [
-          {"item": "ハイパースケーラーCapEx: $475B (+35% YoY)", "confidence": 90},
-          {"item": "Stargate: $500B計画、$450B+コミット", "confidence": 90},
-          {"item": "NVIDIA可視性: $500B (Blackwell+Rubin)", "confidence": 95},
-          {"item": "電力需要: 2030年+30%増予測", "confidence": 85}
-        ]
-      },
-      {
-        "domain": "エネルギー",
-        "freshness": "QUARTERLY",
-        "items": [
-          {"item": "Meta: 6.6GW原子力契約", "confidence": 90},
-          {"item": "Microsoft: Three Mile Island再稼働（20年契約）", "confidence": 95},
-          {"item": "HALEU: ロシア禁輸2028年", "confidence": 90}
-        ]
-      },
-      {
-        "domain": "防衛",
-        "freshness": "PERMANENT",
-        "items": [
-          {"item": "FY2027提案: $1.5T (+50%)", "confidence": 75},
-          {"item": "FY2026 NDAA: $900.6B", "confidence": 95},
-          {"item": "Golden Dome: $151B契約発表", "confidence": 90}
-        ]
-      }
-    ],
-    "D_domain_growth": [
-      {"domain": "AI", "tam_2024": "$200B", "tam_2030": "$1.8T", "cagr": "44%", "confidence": 85},
-      {"domain": "エネルギー（原子力）", "tam_2024": "$40B", "tam_2030": "$120B", "cagr": "20%", "confidence": 80},
-      {"domain": "防衛", "tam_2024": "$900B", "tam_2030": "$1.5T", "cagr": "9%", "confidence": 85},
-      {"domain": "宇宙", "tam_2024": "$470B", "tam_2030": "$800B", "cagr": "9%", "confidence": 80},
-      {"domain": "サイバー", "tam_2024": "$200B", "tam_2030": "$500B", "cagr": "16%", "confidence": 85}
-    ],
-    "E_investment_pipeline": [
-      {"program": "CHIPS Act", "amount": "$52B+", "status": "実行中", "beneficiaries": ["INTC", "TSMC", "Samsung"]},
-      {"program": "IRA", "amount": "$369B+", "status": "実行中", "beneficiaries": ["LEU", "BWXT", "再エネ企業"]},
-      {"program": "Stargate", "amount": "$500B", "status": "$450B+コミット", "beneficiaries": ["NVDA", "VRT", "電力関連"]},
-      {"program": "FY2026 NDAA", "amount": "$900.6B", "status": "成立", "beneficiaries": ["LMT", "RTX", "NOC", "AVAV"]},
-      {"program": "Golden Dome", "amount": "$151B", "status": "契約発表", "beneficiaries": ["Redwire", "Anduril", "AVAV", "Palantir"]}
-    ],
-    "F_overlooked_scan": [
-      {
-        "topic": "Quantinuum IPO",
-        "freshness": "MONTHLY",
-        "items": [
-          {"item": "S-1提出: 2026-01-14", "confidence": 95},
-          {"item": "評価額: ~$20B", "confidence": 85},
-          {"item": "調達: ~$1B予定", "confidence": 80}
-        ],
-        "domain_intersection": ["サイバー", "防衛"]
-      }
-    ],
-    "G_other": [
-      {"item": "10Y Treasury: ~4.5%", "freshness": "REALTIME", "confidence": 95},
-      {"item": "DXY: ~108", "freshness": "REALTIME", "confidence": 95}
-    ],
-    "H_mega_contracts": [
-      {
-        "name": "Golden Dome",
-        "value": "$151B",
-        "type": "政府契約",
-        "beneficiaries": ["Redwire", "Anduril", "LMT", "AVAV", "Palantir", "Blue Origin"],
-        "date_announced": "2026-01",
-        "confidence": 90
-      },
-      {
-        "name": "Stargate",
-        "value": "$500B（$450B+コミット）",
-        "type": "企業投資",
-        "beneficiaries": ["SoftBank", "OpenAI", "Oracle", "MGX"],
-        "date_announced": "2025-01",
-        "confidence": 90
-      }
-    ]
+      "stance": "金融正常化継続。ビハインド・ザ・カーブ回避を強調。データ駆動型運営",
+      "qt_status": "国債買入れ段階的減額中（2027年1-3月期に月間2.1兆円へ）",
+      "consensus_level": "high",
+      "confidence": "A",
+      "sources": ["日銀決定会合", "野村證券", "NRI", "三井住友DSアセットマネジメント"]
+    },
+    "fx": {
+      "usd_jpy": 152.5,
+      "range_jan2026": "152-159円",
+      "recent_move": "1/26-27にドル円4%下落（159.2→152.5円）",
+      "intervention_risk": "155-160円で介入警戒。NY Fed rate check実施（1/24）、日米協調介入の可能性（GS分析）",
+      "carry_trade_risk": "日米金利差縮小で円キャリートレード巻き戻し圧力",
+      "drivers": "ドル安テーマ化（トランプ発言「ドル売り容認」解釈）、日銀利上げ路線",
+      "consensus_level": "medium",
+      "confidence": "B",
+      "sources": ["BOJ日次FX", "Reuters", "Goldman Sachs"]
+    },
+    "labor": {
+      "unemployment": "2.6%",
+      "historical_context": "歴史的低水準",
+      "wage_growth": "低3%台（春闘見込み）",
+      "real_wages": "インフレ動向次第で圧迫リスク",
+      "labor_shortage": "構造的人手不足が継続。賃金上昇の持続性を支えるが企業コスト圧力",
+      "confidence": "A",
+      "sources": ["総務省", "連合"]
+    },
+    "fiscal": {
+      "election": "2月総選挙。財政拡大・減税観測が国債市場を不安定化",
+      "defense_budget_fy2026": "9.04兆円（$58B）",
+      "defense_budget_yoy": "+3.8%（前年度本予算比）",
+      "defense_5yr_plan": "43兆円（2023-2027年度）",
+      "gx_bonds": "20兆円（2023-2032年）",
+      "public_debt_gdp": "約226%（2025年IMF推計）",
+      "trade_balance_dec2025": "+1,057億円（黒字だが縮小傾向）",
+      "confidence": "A",
+      "sources": ["防衛省", "財務省", "IMF", "Naval News"]
+    }
   },
-  "market_risk_total": {
-    "score": 58,
-    "max_score": 100,
-    "previous_score": 63,
-    "delta": -5,
-    "assessment": "バランス型（日本市場リスク）",
-    "last_updated": "2026-01-29",
-    "japan_specific": {
-      "nikkei_225": 53115,
-      "nikkei_ath": 54341,
-      "nikkei_per": "16-17",
-      "nikkei_vi": 34,
-      "usdjpy": 152.5,
-      "boj_rate": 0.75,
-      "next_hike_expected": "2026-07 to 2026-09",
-      "key_risks": [
-        "日米協調為替介入リスク",
-        "中国対日輸出規制（レアアース等）",
-        "柏崎刈羽原発再稼働の不確実性",
-        "高市政権の財政政策懸念"
+  "japan_market": {
+    "nikkei_level": "53,115",
+    "nikkei_ath": "54,341（2026年1月14日）",
+    "nikkei_ytd": "+4.8%（年初51,833円から）",
+    "nikkei_per": {
+      "nikkei_indexes_official": "19.7-20.3倍（1月レンジ、一次ソース優先）",
+      "forward_per": "17.5倍（Grok、予想利益ベース）",
+      "weighted_average": "16-17倍（ニッセイ基礎研、時価総額加重）",
+      "historical_average": "14.8-15倍（過去10年）",
+      "deviation_from_average": "+30-37%（一次ソースベース）",
+      "note": "計算方法の違いで値が乖離。Nikkei Indexes公式値を優先。脱デフレプレミアムで一部正当化されるが歴史的に割高",
+      "confidence": "A（一次ソースURL確認済み）"
+    },
+    "topix_pbr": 1.4,
+    "topix_pbr_context": "歴史的レンジ1.2-1.4の上端。JPX月1回更新",
+    "nikkei_vi": {
+      "value": "33.2-34.14",
+      "date": "2026-01-27",
+      "thirty_day_avg": 34.3,
+      "normal_range": "15-25",
+      "alert_threshold": 20,
+      "panic_threshold": 30,
+      "assessment": "株価高値更新中のVI 30超は極めて異例。「パニック」ではなく「極度の不確実性」。市場参加者がヘッジコストを支払ってでも急落に備えている状態",
+      "historical_comparison": "COVID-19ショック（2020年3月）VI 60超、円キャリー巻き戻し（2024年8月）VI 85.38",
+      "confidence": "A",
+      "sources": ["Nikkei Indexes公式（nk225vi）"]
+    },
+    "foreign_investors": {
+      "jan_early": "純買越し約1.14兆円（1月初旬、第1-2週）",
+      "jan_late": "円高進行（4%下落）で売り圧力増加傾向",
+      "monthly_net": "不明（JPX週次統計集計が必要）",
+      "structural_view": "日本株に構造的強気維持（東証PBR改革、ガバナンス改善評価）",
+      "confidence": "C",
+      "note": "Grok単独の具体値。方向性は複数ソース一致。月後半の動向は未確認",
+      "sources": ["JPX Statistics", "MOF国際証券投資統計"]
+    },
+    "credit_spreads": {
+      "aa_5y_estimated": "15-25bp",
+      "assessment": "歴史的低水準（タイト）。全ソース定性的に一致",
+      "risk_note": "金利上昇による中小企業倒産リスクに注意。「嵐の前の静けさ」の可能性",
+      "cp_issuance": "良好",
+      "corporate_funding_demand": "増加中",
+      "confidence": "D",
+      "note": "具体的bp値は全ソースで欠落。推定値は日銀金融システムレポート（2025年10月）からの外挿",
+      "sources": ["日銀金融システムレポート", "Penn Mutual AM"]
+    },
+    "put_call_ratio": {
+      "value": 0.59,
+      "assessment": "コール優位（楽観的）。P/C < 0.7 は楽観的レンジ",
+      "anomaly": "P/C 0.59 + VI 34 = 「楽観と恐怖の共存」。極めて特異な状態。ヘッジはプット購入よりVI先物/ストラドル等の複合戦略で行われている可能性",
+      "confidence": "C",
+      "note": "Grok単独値。OSE日次オプション統計での直接確認が必要",
+      "sources": ["Grok/OSE"]
+    },
+    "jgb_10y": {
+      "value": 2.25,
+      "weekly_change": "+5bp",
+      "context": "27年ぶり高水準。YCC撤廃後の金利形成が定着",
+      "risk": "選挙公約・財政不安で上振れしやすい局面。日米金利差縮小がキャリートレード巻き戻し圧力",
+      "confidence": "A",
+      "sources": ["Trading Economics", "Reuters"]
+    },
+    "eps_growth": {
+      "forward_estimate": "+8-10%（コンセンサスレンジ）",
+      "grok_value": "+9.1%",
+      "ytd_vs_eps": "日経YTD +4.8-6% vs EPS予想+9.1%。株価は利益成長を完全に織り込んでいない可能性（やや割安シグナル）。ただし地政学・為替・金利のリスクプレミアムを割引中",
+      "confidence": "C",
+      "note": "Grok単独値。データプロバイダー不明。方向性は企業業績と整合"
+    },
+    "sentiment": {
+      "overall": "熱狂と恐怖の共存（euphoria + fear coexistence）",
+      "bull_factors": ["脱デフレ確定", "企業業績好調", "外国人投資家の構造的強気", "東証改革", "賃金上昇"],
+      "bear_factors": ["VI 34異常高水準", "PER歴史的高水準", "地政学リスク（台湾・中国）", "為替急変リスク", "金利上昇"],
+      "x_sentiment": {
+        "AI": "実装・収益化フェーズへ。投資継続だが選別が進む",
+        "defense": "台湾装備供与・地政学で短期的に関心上昇",
+        "nuclear": "賛否混在だが再評価の空気は継続",
+        "market": "金利上昇・選挙・ドル安が同時進行。リスクオンと警戒が混在"
+      }
+    }
+  },
+  "sector_valuations": {
+    "electrical_machinery": {
+      "per_median": 18.2,
+      "pbr_median": 1.45,
+      "roe_median": "8.5%",
+      "dividend_yield_median": "2.1%",
+      "confidence": "B",
+      "source": "Grok"
+    },
+    "machinery": {
+      "per_median": 16.7,
+      "pbr_median": 1.32,
+      "roe_median": "7.8%",
+      "dividend_yield_median": "1.9%",
+      "confidence": "B",
+      "source": "Grok"
+    },
+    "precision_instruments": {
+      "per_median": 21.5,
+      "pbr_median": 1.68,
+      "roe_median": "9.2%",
+      "dividend_yield_median": "1.7%",
+      "confidence": "B",
+      "source": "Grok"
+    },
+    "information_communication": {
+      "per_median": 19.4,
+      "pbr_median": 1.52,
+      "roe_median": "8.9%",
+      "dividend_yield_median": "2.0%",
+      "confidence": "B",
+      "source": "Grok"
+    },
+    "transportation_equipment": {
+      "per_median": 15.9,
+      "pbr_median": 1.28,
+      "roe_median": "7.4%",
+      "dividend_yield_median": "2.3%",
+      "confidence": "B",
+      "source": "Grok"
+    }
+  },
+  "mega_trends": {
+    "AI": {
+      "tam": "$100B→$500B",
+      "cagr": "25%",
+      "japan_impact": "データセンター電力需要急増（北海道・九州に立地集中）。国産LLM開発（NTT/NEC/SoftBank/富士通）推進。TSMC熊本が4nmへ計画変更でAI半導体の国内製造拠点化。Rapidus 2nm量産2027年目標",
+      "key_developments": [
+        "TSMC熊本第2工場: 6-7nmからAI向け4nmへ計画変更検討中（建設一時停止）",
+        "ソフトバンク×OpenAI: $22.5B追加投資完了（日本向けAI優先提供・Arm技術融合）",
+        "Rapidus: 2025年4月パイロットライン稼働、ASML EUV搬入完了、IBM/imec提携",
+        "東京エレクトロン: 設備投資計画2,400億円、コータ/デベロッパ世界シェア90%+",
+        "WFE市場: 2桁成長継続（2026年予想）"
       ],
-      "key_catalysts": [
-        "防衛予算9兆円超（FY2026）",
-        "TSMC熊本第1工場稼働開始",
-        "ファナック業績回復（中国+87%）",
-        "KDDI-NECサイバーセキュリティ合弁"
+      "japan_companies": ["8035.T（東京エレクトロン）", "6920.T（レーザーテック）", "6857.T（アドバンテスト）", "6146.T（ディスコ）"],
+      "confidence": "A",
+      "sources": ["TrendForce", "経産省", "JETRO", "SoftBank Group"]
+    },
+    "energy": {
+      "tam": "$200B（グリッド・蓄電含む）",
+      "cagr": "15%",
+      "japan_impact": "原子力回帰が不可避トレンド。AIデータセンター電力需要対応のベースロード電源として再稼働推進。GX経済移行債20兆円で官民150兆円投資目標",
+      "key_developments": [
+        "柏崎刈羽6号機: 2026年1月21日再稼働→翌22日制御棒不具合で停止（30年前の設定ミス判明）",
+        "水素ロードマップ: 2030年供給コスト30円/Nm3、2050年20円/Nm3",
+        "ペロブスカイト太陽電池: 積水化学2027年100MW量産ライン計画（日本はヨウ素世界2位）",
+        "GXトランジションボンド: 積水化学、北海道電力、栗田工業、JR東日本が発行",
+        "川崎重工（液化水素運搬船）、千代田化工（MCH法）、岩谷産業が大量輸送実証"
+      ],
+      "japan_companies": ["9501.T（東京電力HD）", "7011.T（三菱重工）", "8088.T（岩谷産業）", "4204.T（積水化学）"],
+      "confidence": "A",
+      "sources": ["Enerdata", "Baker McKenzie", "経産省", "積水化学IR"]
+    },
+    "defense": {
+      "tam": "$50B",
+      "cagr": "5%（国内は+9%以上）",
+      "japan_impact": "防衛予算9.04兆円（12年連続過去最高）。世界3位の防衛支出国へ。GCAP次期戦闘機で日本の防衛産業構造を根本変革。防衛装備移転三原則改定で輸出拡大",
+      "key_developments": [
+        "防衛予算FY2026: 9.04兆円（+3.8%）、GDP2%目標は2027年度",
+        "GCAP次期戦闘機: FY2026予算1,600億円以上。日英伊共同開発、2035年配備予定",
+        "GIGO政府間機関: 英国設置、初代CEOは日本人。MHI/BAE/Leonardo JV設立",
+        "JAIEC（日本航空機産業振興）: Tier2/3企業のGCAP参入支援ハブ",
+        "スタンドオフミサイル: 9,700億円（12式改良型、射程1,000km）",
+        "GPI滑空段階迎撃弾: 開発契約560億円（2024年11月）",
+        "三菱重工 豪州フリゲート受注（日本初の主要水上艦輸出）"
+      ],
+      "japan_companies": ["7011.T（三菱重工）", "7012.T（川崎重工）", "7013.T（IHI）", "6503.T（三菱電機）"],
+      "confidence": "A",
+      "sources": ["防衛省予算案", "JAIEC", "Reuters", "Naval News"]
+    },
+    "robotics": {
+      "tam": "$150B",
+      "cagr": "20%",
+      "japan_impact": "日本企業の産業用ロボット世界シェア50%超。ファナック・安川電機・川崎重工で約60%。ヒューマノイドロボット（フィジカルAI）が2026年日本株の本命テーマ",
+      "key_developments": [
+        "ファナックQ3: ロボット受注+38% YoY、中国売上+87%（大幅回復）、営業利益ガイダンス10%上方修正",
+        "ファナックCRX-H1: ヒューマノイドロボット（2026年後半発表予定、NVIDIA共同開発）",
+        "安川電機MOTOMAN-HM: 医薬品製造用ヒューマノイド（アステラス製薬と共同、ソフトバンク提携）",
+        "京セラ×マクセル: 全固体電池モジュール搭載産業用ロボの実証開始（2026年1月27日）"
+      ],
+      "japan_companies": ["6954.T（ファナック）", "6506.T（安川電機）", "6273.T（SMC）", "6861.T（キーエンス）"],
+      "confidence": "A",
+      "sources": ["ファナック決算資料", "京セラ公式", "IFR", "ダイヤモンド"]
+    },
+    "space": {
+      "tam": "$30B",
+      "cagr": "10%",
+      "japan_impact": "2030年代早期に宇宙産業8兆円目標。H3ロケット安定化とコストダウンが必須。衛星スタートアップ（Synspective、アクセルスペース等）が海外展開加速",
+      "key_developments": [
+        "H3ロケット9号機: みちびき7号機搭載打上げ延期（8号機2025/12/22失敗の調査継続）",
+        "MMX火星衛星探査機: FY2026打上げ予定",
+        "Astroscale: JAXA Kプログラムで軌道上給油事業支援",
+        "宇宙安全保障: SSA（宇宙状況監視）、早期警戒衛星整備",
+        "みちびき7機体制: 2026年度運用開始目標、将来11機体制（日本版GPS自立化）"
+      ],
+      "japan_companies": ["186A.T（Astroscale HD）", "7011.T（三菱重工）", "6503.T（三菱電機）"],
+      "confidence": "B",
+      "sources": ["JAXA", "Greenberg Traurig", "内閣府"]
+    },
+    "cyber": {
+      "tam": "$50B",
+      "cagr": "15%",
+      "japan_impact": "日本IT・通信サイバーセキュリティ市場CAGR 14.1%。能動的サイバー防御の法整備推進。KDDI-NEC合弁Protect.jpで純国産プラットフォーム構築",
+      "key_developments": [
+        "KDDI-NEC合弁「Protect.jp」設立: 国内最大規模サイバーセキュリティ事業（生成AI cotomi活用、90%自動化）",
+        "NEC: グローバルCyber Intelligence Center展開（FY2026～APAC、欧州、米国）",
+        "新サイバーセキュリティ戦略（5年）: NISC 2025年12月23日策定",
+        "能動的サイバー防御: 関連法案整備進行中（通信の秘密との兼ね合いが論点）",
+        "経済安全保障推進法対応の重要インフラ防護強化"
+      ],
+      "japan_companies": ["6701.T（NEC）", "9433.T（KDDI）", "6702.T（富士通）"],
+      "confidence": "A",
+      "sources": ["NEC", "KDDI", "NISC", "Grand View Research"]
+    }
+  },
+  "geopolitical_risks": {
+    "taiwan_strait": {
+      "alert_level": "high",
+      "alert_change": "前回「中～高」から引き上げ",
+      "pla_activity": "中間線越えの常態化・接近化。Justice Mission 2025演習で封鎖・機雷敷設・制空権確保をシミュレート（実戦準備フェーズへ移行）",
+      "tsmc_factor": "TSMC熊本は地政学リスクヘッジ。第2工場4nm計画変更でAI半導体の国内拠点としての重要性増大",
+      "us_arms_package": "$11.1B規模の武器パッケージ（史上最大級）、追加案件もパイプライン",
+      "japan_impact": "南西諸島防衛の直接的課題化。シーレーン遮断リスク（台湾海峡経由エネルギー輸入の代替ルート策定必須）",
+      "封鎖損失推定": "$2.7T",
+      "confidence": "A",
+      "sources": ["Air University", "CFR", "Reuters", "CSIS"]
+    },
+    "us_china": {
+      "status": "経済戦争への変質。ハイテク覇権を巡る対立が貿易摩擦を超え国家ぐるみの構造的固定化",
+      "trade_impact": "米関税で日本GDP -0.2pp押し下げリスク",
+      "semiconductor_controls": "日米欧（オランダ含む）による対中半導体包囲網が法執行レベルで統合",
+      "uscc_recommendation": "対中輸出管理と制裁の統合執行機関設立の動き",
+      "confidence": "A",
+      "sources": ["USCC", "Reuters", "Deloitte Japan"]
+    },
+    "export_controls": {
+      "japan_action": "2026年1月9日キャッチオール規制強化。工作機械・先端電子部品・炭素繊維・UAV部品等に個別許可必要（経産省外為法改正）",
+      "china_retaliation": {
+        "rare_earth": "ガリウム・ゲルマニウムに加えレアアース・黒鉛・アンチモン等の輸出管理を段階的に強化（2025年10月～2026年1月）",
+        "dual_use": "日本へのデュアルユース製品輸出禁止（軍事用途向け）",
+        "anti_dumping": "ジクロロシラン反ダンピング調査開始（2026年1月6日）",
+        "japan_rare_earth_dependency": "63%（2024年時点）",
+        "gdp_impact": "レアアース規制で日本実質GDP 1.3～3.2%減少リスク（大和総研試算）"
+      },
+      "mutual_assured_disruption": "日本は半導体材料（レジスト、フッ化水素等）で高世界シェアだが原料（蛍石、金属シリコン等）上流は中国依存。「相互確証破壊」的構造",
+      "confidence": "A",
+      "sources": ["EC Compliance", "King & Wood Mallesons", "CSIS", "大和総研", "IEA"]
+    },
+    "north_korea": {
+      "status": "ミサイル活動継続",
+      "japan_impact": "サプライチェーン脆弱性と合わせGDP -0.2pp減少リスク",
+      "confidence": "B",
+      "sources": ["Deloitte Japan"]
+    },
+    "domestic_political": {
+      "election": "2月総選挙",
+      "fiscal_concern": "高市政権の財政拡大・減税公約でJGB不安定化",
+      "japan_bond_market": "長期金利上振れしやすい局面（27年ぶり高水準）",
+      "confidence": "B",
+      "sources": ["Reuters"]
+    }
+  },
+  "policy_catalysts": {
+    "defense_budget": {
+      "fy2026": "9.04兆円",
+      "fy2026_usd": "$58B",
+      "yoy": "+3.8%",
+      "gdp_target": "2% by 2027",
+      "5yr_total": "43兆円（2023-2027年度）",
+      "record": "12年連続過去最高、初の9兆円超え",
+      "key_allocations": {
+        "standoff_missiles": "9,700億円（12式改良型、射程1,000km）",
+        "gcap_fighter": "1,600億円以上",
+        "mq9b_uav": "489億円（4機）",
+        "gpi": "560億円（開発契約2024年11月）"
+      },
+      "confidence": "A",
+      "sources": ["防衛省予算案", "Naval News", "The Diplomat"]
+    },
+    "gx_bonds": {
+      "scale": "20兆円（2023-2032年）",
+      "private_target": "150兆円/10年",
+      "fy2026_allocation": "1.2兆円（GX投資）",
+      "issuers": ["積水化学", "北海道電力", "栗田工業", "JR東日本"],
+      "uses": "水素還元製鉄、アンモニア混焼発電、省エネビル建設",
+      "confidence": "A",
+      "sources": ["環境省グリーンファイナンスポータル", "経産省"]
+    },
+    "semiconductor_strategy": {
+      "committed": "1.7兆円",
+      "tsmc_subsidy": "1.2兆円",
+      "rapidus_support": "IIM-1建設中、EUV装置搬入完了",
+      "tsmc_kumamoto": {
+        "fab1": "2025年12月量産開始（12/16nm、55,000枚/月）",
+        "fab2": "建設一時停止。6-7nmからAI向け4nmへ計画変更検討中（投資総額$23B）",
+        "fab2_delay_risk": "2027年→2029年頃の可能性",
+        "certainty": "90%（日経報道等複数ソース確認）"
+      },
+      "confidence": "A",
+      "sources": ["経産省", "TrendForce", "日経新聞"]
+    },
+    "nuclear_restart": {
+      "kashiwazaki_kariwa": {
+        "event": "6号機2026年1月21日再稼働→翌22日制御棒不具合で停止",
+        "detail": "30年前からの設定ミスが判明。再開時期未定（調査継続中）",
+        "capacity": "世界最大（7基合計821.2万kW）",
+        "certainty": "95%（複数ソース確認）",
+        "significance": "原子力政策転換の象徴。長期停止原発の再稼働の技術的・人的困難さを象徴"
+      },
+      "policy_direction": "AIデータセンター電力需要急増でベースロード電源として原発再稼働は不可避トレンド",
+      "confidence": "A",
+      "sources": ["Enerdata", "Al Jazeera", "UPI"]
+    },
+    "cyber_strategy": {
+      "new_5yr_strategy": "NISC 2025年12月23日策定",
+      "active_cyber_defense": "関連法案整備進行中（通信の秘密との兼ね合い）",
+      "kddi_nec_jv": "Protect.jp設立（国内最大規模サイバー事業）",
+      "confidence": "A",
+      "sources": ["NISC", "Japan Times"]
+    },
+    "defense_export_reform": {
+      "status": "防衛装備移転三原則改定済み",
+      "significance": "殺傷能力のある武器の輸出条件緩和",
+      "landmark_deal": "三菱重工 もがみ型フリゲート豪州受注（日本初の主要水上艦輸出）",
+      "confidence": "A",
+      "sources": ["Reuters", "防衛省"]
+    }
+  },
+  "key_events": [
+    {
+      "date": "2025-12-22",
+      "event": "H3ロケット8号機打上げ失敗（2段目エンジン早期停止）",
+      "impact": "9号機延期（新日程未定）。三菱重工の宇宙事業に短期懸念",
+      "confidence": "A",
+      "sources": ["JAXA"]
+    },
+    {
+      "date": "2025-12-23",
+      "event": "新サイバーセキュリティ戦略（5年計画）策定",
+      "impact": "量子暗号/PQCへの関心底上げ。公共・重要インフラ向け予算・調達の継続性向上",
+      "confidence": "A",
+      "sources": ["NISC"]
+    },
+    {
+      "date": "2025-12-31",
+      "event": "ソフトバンク×OpenAI $22.5B追加投資完了",
+      "impact": "日本向けAIサービス優先提供・Arm技術融合の可能性。AI専用チップ開発構想",
+      "confidence": "A",
+      "sources": ["SoftBank Group公式"]
+    },
+    {
+      "date": "2026-01-06",
+      "event": "中国、ジクロロシラン反ダンピング調査開始",
+      "impact": "半導体製造材料の供給リスク",
+      "confidence": "A",
+      "sources": ["Bloomberg"]
+    },
+    {
+      "date": "2026-01-09",
+      "event": "日本キャッチオール規制強化（外為法改正）",
+      "impact": "対中輸出に個別許可が広範に必要に。中国報復リスクの触媒",
+      "confidence": "A",
+      "sources": ["EC Compliance", "経産省"]
+    },
+    {
+      "date": "2026-01-14",
+      "event": "日経平均 史上最高値54,341円",
+      "impact": "過去最高値更新。脱デフレ相場の象徴",
+      "confidence": "A",
+      "sources": ["Nikkei"]
+    },
+    {
+      "date": "2026-01-21",
+      "event": "柏崎刈羽原発6号機再稼働（13年10ヶ月ぶり）",
+      "impact": "原子力政策転換の象徴。世界最大原発の運転再開",
+      "confidence": "A",
+      "sources": ["Enerdata", "Al Jazeera"]
+    },
+    {
+      "date": "2026-01-22",
+      "event": "柏崎刈羽原発6号機 制御棒不具合で作業停止",
+      "impact": "30年前の設定ミス判明。再開時期未定。長期停止原発の再稼働困難さを露呈",
+      "confidence": "A",
+      "sources": ["Enerdata", "UPI"]
+    },
+    {
+      "date": "2026-01-23",
+      "event": "日銀政策金利0.75%据え置き（8対1、高田委員のみ1.0%主張）",
+      "impact": "金融正常化路線継続確認。次回利上げは2026年6-9月がメインシナリオ",
+      "confidence": "A",
+      "sources": ["日銀決定会合"]
+    },
+    {
+      "date": "2026-01-24",
+      "event": "NY Fed ドル円rate check実施",
+      "impact": "2011年以来の日米協調介入の可能性浮上（GS分析）",
+      "confidence": "B",
+      "sources": ["Reuters", "Goldman Sachs"]
+    },
+    {
+      "date": "2026-01-26",
+      "event": "ファナックQ3決算発表（FY2025）",
+      "impact": "ロボット受注+38% YoY、中国+87%。営業利益ガイダンス10%上方修正",
+      "confidence": "A",
+      "sources": ["ファナックIR"]
+    },
+    {
+      "date": "2026-01-26/27",
+      "event": "ドル円急落（159.2→152.5円、4%下落）",
+      "impact": "キャリートレード巻き戻し。輸出企業に逆風、内需・円高メリット銘柄に追い風",
+      "confidence": "A",
+      "sources": ["Reuters", "BOJ日次FX"]
+    },
+    {
+      "date": "2026-01-27",
+      "event": "京セラ×マクセル 全固体電池モジュール搭載産業用ロボ実証開始",
+      "impact": "全固体電池の産業用途実用化。工場自律稼働・保守性改善",
+      "confidence": "A",
+      "sources": ["京セラ公式"]
+    },
+    {
+      "date": "2026-01-28",
+      "event": "米台高官対話（AI・半導体・ドローン・海底ケーブル）",
+      "impact": "経済安全保障協力の深化。LEO通信冗長化需要の後押し",
+      "confidence": "A",
+      "sources": ["Reuters"]
+    },
+    {
+      "date": "2026-02-04",
+      "event": "三菱重工業 Q3決算発表予定",
+      "impact": "防衛受注残10兆円超の確認。宇宙事業の影響",
+      "confidence": "A",
+      "sources": ["MHI IR"]
+    },
+    {
+      "date": "2026-02-06",
+      "event": "東京エレクトロン Q3決算発表予定",
+      "impact": "WFE市場動向・設備投資計画2,400億円の進捗確認",
+      "confidence": "A",
+      "sources": ["TEL IR"]
+    },
+    {
+      "date": "2026-03-18/19",
+      "event": "日銀金融政策決定会合（次回）",
+      "impact": "利上げ判断の次の分岐点",
+      "confidence": "A",
+      "sources": ["日銀"]
+    }
+  ],
+  "scenario_indicators": {
+    "base_case": {
+      "probability": 55,
+      "label": "緩やかな成長継続",
+      "conditions": [
+        "日銀が年内1-2回利上げ（年末1.0-1.25%）",
+        "日経平均50,000-56,000円レンジ",
+        "ドル円145-158円レンジ",
+        "企業業績EPS+8-10%成長",
+        "賃金上昇が物価上昇を持続的に上回る",
+        "地政学リスクは管理可能範囲",
+        "TSMC熊本第1工場が安定量産"
+      ]
+    },
+    "bull_case": {
+      "probability": 20,
+      "label": "脱デフレ加速・構造改革進展",
+      "conditions": [
+        "春闘で4%超の賃上げ実現",
+        "東証改革で企業ガバナンス大幅改善",
+        "AI投資の恩恵が日本製造業に波及",
+        "外国人投資家の構造的買い越し継続",
+        "日経平均60,000円突破",
+        "防衛・宇宙の大型契約が前倒し",
+        "柏崎刈羽原発の安定再稼働"
+      ]
+    },
+    "bear_case": {
+      "probability": 25,
+      "label": "地政学ショック・金利急騰",
+      "conditions": [
+        "台湾有事の顕在化（シーレーン遮断）",
+        "中国レアアース全面禁輸（GDP -1.3～3.2%）",
+        "日銀利上げペース加速で円高急進（140円台）",
+        "日経VI 50超のパニック局面",
+        "外国人投資家の大量売却",
+        "日経平均40,000円台へ急落",
+        "キャリートレード巻き戻しの連鎖"
       ]
     }
   },
-  "summary": {
-    "total_items": 56,
-    "by_confidence": {
-      "high": 38,
-      "medium": 14,
-      "low": 4
+  "overlooked_sectors": {
+    "gnt_companies": {
+      "description": "グローバルニッチトップ企業群",
+      "companies": [
+        "信越化学（4063.T）: シリコンウェハ世界首位",
+        "ディスコ（6146.T）: 精密切断・研削・研磨装置世界首位",
+        "レーザーテック（6920.T）: EUVマスク検査装置独占",
+        "HOYA（7741.T）: EUVマスクブランクス世界シェア90%+",
+        "アドバンテスト（6857.T）: 半導体テスタ世界首位級（HBM検査需要急増）",
+        "SMC（6273.T）: 空気圧機器世界首位（シェア36%+）",
+        "味の素ファインテクノ: ABF（層間絶縁材料）独占",
+        "TOWA（6315.T）: モールディング装置世界シェア約60-66%（確度B）",
+        "東京応化工業: EUVフォトレジスト世界シェアトップ",
+        "東レ（3402.T）: 炭素繊維世界シェア60%+"
+      ],
+      "confidence": "A"
     },
-    "data_freshness": {
-      "realtime": "2026-01-29",
-      "quarterly": "Q3-Q4 2025",
-      "permanent": "2026-01-29"
+    "biotech": {
+      "description": "バイオ/ヘルスケア",
+      "companies": ["中外製薬（4519.T）", "テルモ（4543.T）", "シスメックス（6869.T）", "第一三共（4568.T）", "オリンパス（7733.T）"],
+      "confidence": "B"
     },
-    "japan_updates_20260129": [
-      "日経平均53,115円（過去最高54,341から下落）",
-      "日経VI 34（高警戒水準）",
-      "日銀0.75%据え置き（8対1、次回利上げ7-9月予想）",
-      "ドル円152.5円（日米介入警戒）",
-      "柏崎刈羽6号機：1/21再稼働→1/22制御棒警報で停止",
-      "TSMC熊本第2工場：6-7nm→4nm（AI向け）計画変更検討",
-      "防衛予算9兆円超（FY2026）承認",
-      "ファナックQ3：ロボット受注+38%、中国+87%",
-      "KDDI-NEC合弁「Protect.jp」設立",
-      "中国対日輸出規制強化（レアアース、ジクロロシラン）"
+    "quantum": {
+      "description": "量子技術",
+      "companies": ["NEC: 量子暗号通信世界最先端", "東芝: QKDシステム", "富士通: 2026年1024量子ビット目標（理研連携）", "NTT: 光量子コンピューティング"],
+      "confidence": "B"
+    },
+    "synthetic_biology": {
+      "description": "合成生物学（日本市場CAGR 18.3%、2030年2兆円規模）",
+      "companies": ["Bacchus Bio Innovation（神戸大発）", "Spiber（構造タンパク質）", "Chitose Bio Evolution（藻類）", "Logomix（ゲノム編集、NEDO）", "bitBiome（早稲田大発、NEDO）"],
+      "confidence": "B",
+      "sources": ["Grand View Research"]
+    },
+    "solid_state_battery": {
+      "description": "全固体電池",
+      "key_partnership": "トヨタ×出光興産（硫化物系固体電解質、2027-2028年市場投入目標）",
+      "other_players": ["パナソニック", "村田製作所"],
+      "idemitsu_transition": "石油精製副産物から硫化リチウム製造（脱炭素素材産業への転換モデル）",
+      "confidence": "B"
+    },
+    "hydrogen_ccus": {
+      "description": "水素/CCUS",
+      "companies": ["岩谷産業（8088.T）", "IHI（7013.T）: アンモニア燃焼", "川崎重工: 液化水素運搬船", "千代田化工: MCH法"],
+      "cost_target": "2030年30円/Nm3、2050年20円/Nm3",
+      "confidence": "B"
+    }
+  },
+  "rapidus_ecosystem": {
+    "description": "Rapidus/シリコン・アイランド北海道のサプライチェーン構造",
+    "prime": "Rapidus（2nmファウンドリ、2027年量産目標）",
+    "location": "北海道千歳市「美々ワールド」",
+    "milestones": {
+      "2023-09": "IIM-1着工",
+      "2024-12": "ASML EUV搬入・設置完了",
+      "2025-04": "パイロットライン稼働",
+      "2027": "量産開始目標"
+    },
+    "tech_partners": ["米IBM（2nm GAA技術）", "ベルギーimec（先端プロセス研究）"],
+    "tier1_equipment": [
+      "ASML: EUV露光装置（独占供給）",
+      "東京エレクトロン（TEL）: コータ/デベロッパ、エッチング",
+      "SCREEN HD: 洗浄装置"
     ],
-    "japan_updates_20260130": [
-      "三菱重工業時価総額15.7兆円確認（Yahoo Finance）",
-      "TSMC熊本第2工場：4nm計画変更（確度90%、日経報道）",
-      "H3ロケット9号機延期（8号機失敗、JAXA調査中）",
-      "ファナック/安川電機ヒューマノイドロボット開発進行",
-      "日本企業HALEU直接製造なし（IHI/MHIはSMR経由の間接恩恵）"
+    "tier1_materials": [
+      "東京応化工業（TOK）: EUVフォトレジスト世界シェアトップ",
+      "JSR: フォトレジスト",
+      "大日本印刷（DNP）: フォトマスク",
+      "Resonac（JOINT2）: パッケージング材料（チップレット2.5D/3D実装）"
+    ],
+    "tier2_3": [
+      "味の素ファインテクノ: ABF層間絶縁材料",
+      "新光電気工業: FC-BGA基板",
+      "北海道電力: 電力供給・再エネ"
+    ],
+    "bottlenecks": [
+      "人材不足（数千人規模のエンジニアが必要、道内だけでは不足）",
+      "水資源（超純水大量必要、千歳川水系の水利権調整）",
+      "Tier2/3の層の薄さ（部品加工、配管工事、メンテナンス企業の育成急務）"
+    ],
+    "confidence": "A",
+    "sources": ["JETRO", "Rapidus公式", "TrendForce"]
+  },
+  "mega_contracts": {
+    "government": [
+      {
+        "name": "GCAP次期戦闘機",
+        "parties": "防衛省/MHI/BAE Systems/Leonardo",
+        "scale": "数兆円規模（FY2026: 1,600億円）",
+        "status": "active",
+        "confidence": "A"
+      },
+      {
+        "name": "スタンドオフミサイル",
+        "parties": "防衛省",
+        "scale": "9,700億円（FY2026）",
+        "status": "active",
+        "confidence": "A"
+      },
+      {
+        "name": "半導体戦略（TSMC/Rapidus）",
+        "parties": "経産省",
+        "scale": "1.7兆円コミット",
+        "status": "active",
+        "confidence": "A"
+      },
+      {
+        "name": "GX経済移行債",
+        "parties": "環境省/経産省",
+        "scale": "20兆円（10年）",
+        "status": "active",
+        "confidence": "A"
+      },
+      {
+        "name": "防衛費5年計画",
+        "parties": "防衛省",
+        "scale": "43兆円（2023-2027年度）",
+        "status": "active",
+        "confidence": "A"
+      },
+      {
+        "name": "イージス・システム搭載艦",
+        "parties": "防衛省",
+        "scale": "継続",
+        "status": "active",
+        "confidence": "A"
+      }
+    ],
+    "corporate": [
+      {
+        "name": "TSMC熊本（JASM）",
+        "parties": "TSMC/日本政府",
+        "scale": "$23B（政府補助1.2兆円含む）",
+        "status": "第1工場量産開始、第2工場計画変更中",
+        "confidence": "A"
+      },
+      {
+        "name": "SoftBank×OpenAI",
+        "parties": "SoftBank Group",
+        "scale": "$22.5B",
+        "status": "完了（2025年12月）",
+        "confidence": "A"
+      },
+      {
+        "name": "三菱重工 豪州フリゲート",
+        "parties": "MHI/豪州海軍",
+        "scale": "数千億円規模推定",
+        "status": "active",
+        "confidence": "B"
+      },
+      {
+        "name": "トヨタ×出光 全固体電池",
+        "parties": "トヨタ/出光興産",
+        "scale": "数千億円規模推定",
+        "status": "開発中（2027-2028年市場投入目標）",
+        "confidence": "B"
+      }
+    ],
+    "pipeline": [
+      "Rapidus量産投資: 2nm FAB本格投資（数兆円規模見込み）",
+      "AIデータセンター投資: ハイパースケーラーの日本拠点投資（規模未確定）",
+      "原発再稼働関連投資: 安全対策・設備更新（数千億円規模）"
+    ]
+  },
+  "information_quality": {
+    "consensus_items": 142,
+    "consensus_items_description": "複数LLMが一致した情報（日銀政策、防衛予算、柏崎刈羽等）",
+    "disputed_items": 12,
+    "disputed_items_description": "LLM間で乖離があった情報（PER値、防衛予算増加率、外国人フロー等）",
+    "single_source_items": 33,
+    "single_source_items_description": "1つのLLMのみが報告（P/C ratio、EPS成長率、TOWA世界シェア等）",
+    "resolved_contradictions": [
+      "CTR-JP003: 日経PER → 計算方法の違い（一次ソース19.7-20.3倍を優先、フォワード17.5倍を補助値）",
+      "CTR-JP019: 防衛予算YoY → +3.8%が正確（+9.4%は別ベース計算による誤記）",
+      "CTR-JP021: 外国人投資家 → 時期差（月初買越し→月後半売り圧力、両方正確）",
+      "CTR-JP016: 日立時価総額 → Grok正確（20-24兆円、2024年株式分割考慮）",
+      "CTR-JP017: 安川/ハーモニック重複 → Grokの系統的コピーエラー確認"
+    ],
+    "verification_results": {
+      "VER-001": "TOWA世界シェア66% → 条件付き採用（60-66%、確度B）",
+      "VER-002": "日経EPS+9.1% → 暫定採用（+8-10%レンジ、確度C）",
+      "VER-003": "日経PER → 一次ソース確認（19.7-20.3倍、確度A）",
+      "VER-004": "外国人投資家1.14兆円 → 暫定採用（月初旬限定、確度C）",
+      "VER-005": "社債スプレッド → 推定値採用（AA5Y 15-25bp、確度D）",
+      "VER-006": "P/C ratio 0.59 → 暫定採用（VI乖離に注記、確度C）",
+      "VER-007": "日経VI 33-34 → 確認済み（確度A）"
+    },
+    "known_data_gaps": [
+      "社債スプレッド具体的bp値（全ソースで欠落）",
+      "外国人投資家月後半フロー（JPX週次統計で要確認）",
+      "EPS成長率の精密値（データプロバイダー確認必要）",
+      "1月最終週の市場データ（1/30-31のリアルタイム株価未反映）"
+    ],
+    "source_reliability_notes": [
+      "Grok: 財務データに系統的コピーエラーあり（CTR-JP017）。企業別数値は二重検証必須",
+      "Claude: 防衛予算増加率で内部矛盾あり（broad_info +9.4% vs supplemental +3.8%）",
+      "ChatGPT: 一次ソースURL明示が最も多く、PERデータで最高精度",
+      "Gemini: 半導体パッケージング・サプライチェーン分析で最も詳細"
+    ],
+    "overall_quality": "90/100",
+    "quality_breakdown": {
+      "A_geopolitics": "93/100（複数ソース統合、輸出管理詳細を大幅強化）",
+      "B_market_risk": "88/100（PERソース乖離を特定・注記、VI確認済み）",
+      "C_megatrends": "95/100（6ドメイン全てで詳細情報取得）",
+      "D_domain_growth": "87/100（TAM/CAGR揃う、一部推定値含む）",
+      "E_investment_pipeline": "90/100（政府・企業両面カバー）",
+      "F_overlooked": "90/100（合成生物学・モビリティ等新規追加）",
+      "G_indicators": "88/100（定量値改善、一部要確認）",
+      "H_mega_contracts": "90/100（公式発表確認済み）"
+    }
+  },
+  "cross_validation_matrix": {
+    "description": "4LLM間データ整合性チェック",
+    "items": [
+      {"data_point": "日銀金利0.75%", "grok": true, "gemini": true, "chatgpt": true, "claude": true, "status": "一致"},
+      {"data_point": "日経PER", "grok": "17.5", "gemini": "定性的", "chatgpt": "19.7-20.3", "claude": "16-17", "status": "計算方法差異で解消（一次ソース19.7-20.3採用）"},
+      {"data_point": "USD/JPY", "grok": "154.5", "gemini": "-", "chatgpt": "152-159", "claude": "152.5", "status": "レンジ内（日内変動幅大）"},
+      {"data_point": "日経VI", "grok": "33.2", "gemini": "34.14", "chatgpt": "34.14", "claude": "33.2-34.14", "status": "一致（30超の警戒水準）"},
+      {"data_point": "防衛FY2026", "grok": "9兆円(+3.8%)", "gemini": "9兆円超", "chatgpt": "-", "claude": "9兆円超(+3.8%修正済)", "status": "一致"},
+      {"data_point": "JGB10Y", "grok": "2.25%", "gemini": "2.24%", "chatgpt": "27年ぶり高水準", "claude": "2.24-2.25%", "status": "一致"},
+      {"data_point": "外国人投資家", "grok": "買越し1.14T", "gemini": "-", "chatgpt": "買越し観測", "claude": "月初買→月後半売り圧力", "status": "時期差で解消"},
+      {"data_point": "TSMC熊本2F", "grok": "-", "gemini": "4nm変更検討", "chatgpt": "-", "claude": "一時停止・4nm変更", "status": "補完（停止理由=計画変更）"}
     ]
   }
 }

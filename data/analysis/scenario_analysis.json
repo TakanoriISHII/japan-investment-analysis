@@ -1,0 +1,167 @@
+{
+  "date": "2026-01-31",
+  "methodology_version": "2.0.0",
+  "current_scenario": "base",
+  "scenarios": {
+    "base": {
+      "probability": 55,
+      "label": "段階的正常化シナリオ",
+      "description": "日銀は7-9月に利上げ（1.0%へ）、円は148-155円で推移。日経平均は横ばい〜緩やかな上昇。防衛・半導体セクターは堅調。VI高止まりだがクラッシュには至らず。",
+      "trigger_conditions": [
+        "日銀が段階的正常化を継続（急変なし）",
+        "日米協調為替介入は見送り",
+        "台湾海峡で軍事衝突なし",
+        "企業業績がコンセンサス（EPS +8-10%）通り"
+      ],
+      "market_parameters": {
+        "nikkei_target": "52000-56000",
+        "usdjpy_range": "148-155",
+        "boj_rate_eoy": "1.0%",
+        "nikkei_vi_range": "25-35"
+      },
+      "top30_impact": {
+        "winners": [
+          {"ticker": "7011.T", "reason": "防衛9兆円恩恵、時価総額15.7兆円の再評価進行", "expected_return": "+5-15%"},
+          {"ticker": "8035.T", "reason": "TSMC 4nm効果、AI半導体需要持続", "expected_return": "+5-10%"},
+          {"ticker": "6954.T", "reason": "ロボット受注+38%トレンド継続、CRX-H1話題性", "expected_return": "+5-15%"},
+          {"ticker": "6506.T", "reason": "ヒューマノイド開発進展、サーボモータ好調", "expected_return": "+5-10%"}
+        ],
+        "losers": [
+          {"ticker": "9501.T", "reason": "柏崎問題長期化、再稼働時期不透明", "expected_return": "-5-0%"},
+          {"ticker": "6779.T", "reason": "円高が輸出依存度高い企業に逆風", "expected_return": "-5-0%"}
+        ]
+      },
+      "recommended_positioning": {
+        "stance": "balanced",
+        "overweight": ["防衛", "半導体製造装置", "ロボティクス"],
+        "neutral": ["エネルギー", "通信/サイバー"],
+        "underweight": ["円高感応度高い輸出関連"],
+        "risk_budget": "70% コアポジション、30% 機動的ポジション"
+      },
+      "leading_indicators": [
+        "日銀3月会合（据え置き予想→確認で安心感）",
+        "ファナックQ4受注動向（+38%の持続性）",
+        "TSMC熊本第2工場4nm正式決定（2026年Q2予想）",
+        "防衛装備品調達契約の進捗"
+      ]
+    },
+    "bull": {
+      "probability": 20,
+      "label": "成長加速シナリオ",
+      "description": "中国経済回復で日本製造業が恩恵、ロボット受注好調継続、TSMC 4nm効果で半導体装置需要拡大、防衛・原子力政策加速。円安維持で企業業績上方修正ラッシュ。",
+      "trigger_conditions": [
+        "中国景気対策が効果を発揮（PMI 52+持続）",
+        "ファナック受注+38%がトレンド化（製造業スーパーサイクル）",
+        "TSMC熊本4nm正式決定で追加設備投資決定",
+        "防衛装備移転で大型受注（GCAP進展）",
+        "日銀が利上げを見送り（円安150-158円で推移）"
+      ],
+      "market_parameters": {
+        "nikkei_target": "58000+",
+        "usdjpy_range": "150-158",
+        "boj_rate_eoy": "0.75-1.0%",
+        "nikkei_vi_range": "18-25"
+      },
+      "top30_impact": {
+        "winners": [
+          {"ticker": "6954.T", "reason": "ロボット需要ブーム、ヒューマノイドTAM100兆円の初期評価", "expected_return": "+20-30%"},
+          {"ticker": "8035.T", "reason": "4nm装置需要で受注1.5倍、中国向け回復", "expected_return": "+15-25%"},
+          {"ticker": "7011.T", "reason": "GCAP進展+護衛艦輸出実績→グローバル防衛プレミアム", "expected_return": "+15-25%"},
+          {"ticker": "6315.T", "reason": "HBM4需要でモールド装置需要急増", "expected_return": "+25-40%"},
+          {"ticker": "6506.T", "reason": "サーボモータ+ヒューマノイドのダブルドライバー", "expected_return": "+15-25%"}
+        ],
+        "losers": []
+      },
+      "recommended_positioning": {
+        "stance": "aggressive（ただし市場リスク40以下が条件）",
+        "overweight": ["ロボティクス", "半導体製造装置", "防衛", "GNT小型株"],
+        "neutral": [],
+        "underweight": ["ディフェンシブ"],
+        "risk_budget": "50% コアポジション、50% アグレッシブポジション"
+      },
+      "leading_indicators": [
+        "中国PMI 52+の2ヶ月連続維持",
+        "ファナック/キーエンスQ4ガイダンス上方修正",
+        "海外投資家の大幅買い越し（2月以降月2兆円+）",
+        "TSMC熊本第2工場4nm投資額正式発表"
+      ]
+    },
+    "bear": {
+      "probability": 25,
+      "label": "リスクオフシナリオ",
+      "description": "日米協調為替介入実施で急速な円高進行（145円以下）、VI急騰でリスクオフ、海外投資家の売り越し加速。日銀サプライズ利上げまたはタカ派シグナル強化。",
+      "trigger_conditions": [
+        "日米協調為替介入実施（2011年以来初）",
+        "日銀サプライズ利上げ（3月会合で0.75%→1.0%へ前倒し）",
+        "台湾海峡での軍事的エスカレーション（封鎖演習等）",
+        "中国レアアース全面輸出禁止",
+        "VI 40超え持続（2024年8月急落の再現懸念）"
+      ],
+      "market_parameters": {
+        "nikkei_target": "45000-50000",
+        "usdjpy_range": "140-148",
+        "boj_rate_eoy": "1.0-1.25%",
+        "nikkei_vi_range": "35-55"
+      },
+      "top30_impact": {
+        "winners": [
+          {"ticker": "7011.T", "reason": "防衛予算は景気循環に非依存。円高でも国内売上90%", "expected_return": "-5-+5%（相対的アウトパフォーム）"},
+          {"ticker": "9432.T", "reason": "ディフェンシブ、内需中心、高配当", "expected_return": "-5-+5%"},
+          {"ticker": "6701.T", "reason": "防衛電子機器の安定受注", "expected_return": "-5-+5%"}
+        ],
+        "losers": [
+          {"ticker": "8035.T", "reason": "円高で海外売上比率80%+に逆風、中国規制影響", "expected_return": "-15-25%"},
+          {"ticker": "6954.T", "reason": "設備投資サイクル鈍化、円高", "expected_return": "-10-20%"},
+          {"ticker": "6920.T", "reason": "半導体サイクルのダウンターン懸念", "expected_return": "-20-30%"},
+          {"ticker": "186A.T", "reason": "成長株のバリュエーション圧縮", "expected_return": "-15-25%"}
+        ]
+      },
+      "recommended_positioning": {
+        "stance": "conservative（market_risk 70+の場合はdefensive）",
+        "overweight": ["防衛（円高耐性）", "内需ディフェンシブ"],
+        "neutral": ["エネルギー（原子力路線は不変）"],
+        "underweight": ["半導体（サイクル鈍化）", "輸出関連", "高PER成長株"],
+        "risk_budget": "90% コアポジション（高配当・低ベータ中心）、10% 機動的ポジション"
+      },
+      "leading_indicators": [
+        "ドル円148円割れ（介入後の追随売り加速シグナル）",
+        "日経VI 40超え（パニック領域への移行）",
+        "海外投資家の2週連続売り越し（週5000億円+）",
+        "日銀総裁の緊急会見・臨時会合召集",
+        "台湾周辺でのPLA大規模演習開始"
+      ]
+    }
+  },
+  "scenario_transition_rules": {
+    "base_to_bull": {
+      "conditions": ["中国PMI 52+の2M連続", "海外投資家月2兆円+買越し", "ファナック受注+30%以上の継続"],
+      "probability_shift": "base 45% → bull 35% → bear 20%"
+    },
+    "base_to_bear": {
+      "conditions": ["ドル円148円割れ", "VI 40超え持続", "海外投資家2週連続大幅売越し"],
+      "probability_shift": "base 35% → bull 10% → bear 55%"
+    },
+    "monitoring_frequency": "週次（金曜クローズ時点で判定）"
+  },
+  "hedging_strategy": {
+    "base_scenario": {
+      "primary": "円高ヘッジ強化（協調介入リスク対応）",
+      "secondary": "セクター分散（防衛×半導体×ロボティクスの3本柱）"
+    },
+    "bear_trigger_response": {
+      "immediate": "投機的ポジション50%縮小",
+      "secondary": "高ベータ銘柄→低ベータ銘柄への入替",
+      "stop_loss": "日経VI 40超え or ドル円148円割れで自動発動"
+    }
+  },
+  "metadata": {
+    "data_sources": [
+      "japan_market_risk.json (2026-01-31)",
+      "international_affairs.json (2026-01-31)",
+      "consolidated_broad.json (2026-01-31)",
+      "change_alerts.json (2026-01-31)"
+    ],
+    "next_review": "2026-02-07",
+    "review_trigger": "東京エレクトロンQ3決算発表"
+  }
+}

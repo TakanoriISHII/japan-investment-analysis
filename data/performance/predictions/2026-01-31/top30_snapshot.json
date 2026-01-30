@@ -1,0 +1,65 @@
+{
+  "snapshot_date": "2026-01-31",
+  "framework_version": "2.0.0",
+  "framework_name": "Graham分類体系統合版",
+  "market": "japan",
+  "market_risk_score": 57,
+  "recommended_stance": "balanced",
+  "top30_rankings": [
+    {"rank": 1, "ticker": "7011.T", "name": "三菱重工業", "total_score": 79, "investment_factors": 32, "speculative_factors": 47, "quadrant": "prime", "confidence": "B"},
+    {"rank": 2, "ticker": "8035.T", "name": "東京エレクトロン", "total_score": 72, "investment_factors": 32, "speculative_factors": 40, "quadrant": "stable", "confidence": "A"},
+    {"rank": 3, "ticker": "6954.T", "name": "ファナック", "total_score": 71, "investment_factors": 30, "speculative_factors": 41, "quadrant": "prime", "confidence": "A"},
+    {"rank": 4, "ticker": "6501.T", "name": "日立製作所", "total_score": 69, "investment_factors": 29, "speculative_factors": 40, "quadrant": "prime", "confidence": "B"},
+    {"rank": 5, "ticker": "6315.T", "name": "TOWA", "total_score": 69, "investment_factors": 27, "speculative_factors": 42, "quadrant": "speculative", "confidence": "B"},
+    {"rank": 6, "ticker": "6506.T", "name": "安川電機", "total_score": 68, "investment_factors": 27, "speculative_factors": 41, "quadrant": "prime", "confidence": "B"},
+    {"rank": 7, "ticker": "9432.T", "name": "NTT", "total_score": 67, "investment_factors": 29, "speculative_factors": 38, "quadrant": "stable", "confidence": "A"},
+    {"rank": 8, "ticker": "6701.T", "name": "NEC", "total_score": 66, "investment_factors": 27, "speculative_factors": 39, "quadrant": "prime", "confidence": "B"},
+    {"rank": 9, "ticker": "7012.T", "name": "川崎重工業", "total_score": 65, "investment_factors": 26, "speculative_factors": 39, "quadrant": "prime", "confidence": "B"},
+    {"rank": 10, "ticker": "7013.T", "name": "IHI", "total_score": 64, "investment_factors": 25, "speculative_factors": 39, "quadrant": "prime", "confidence": "B"},
+    {"rank": 11, "ticker": "6920.T", "name": "レーザーテック", "total_score": 63, "investment_factors": 30, "speculative_factors": 33, "quadrant": "stable", "confidence": "A"},
+    {"rank": 12, "ticker": "186A.T", "name": "Astroscale HD", "total_score": 63, "investment_factors": 20, "speculative_factors": 43, "quadrant": "speculative", "confidence": "C"},
+    {"rank": 13, "ticker": "6503.T", "name": "三菱電機", "total_score": 62, "investment_factors": 27, "speculative_factors": 35, "quadrant": "stable", "confidence": "B"},
+    {"rank": 14, "ticker": "6146.T", "name": "ディスコ", "total_score": 62, "investment_factors": 30, "speculative_factors": 32, "quadrant": "stable", "confidence": "A"},
+    {"rank": 15, "ticker": "6857.T", "name": "アドバンテスト", "total_score": 61, "investment_factors": 28, "speculative_factors": 33, "quadrant": "stable", "confidence": "A"},
+    {"rank": 16, "ticker": "6758.T", "name": "ソニーグループ", "total_score": 60, "investment_factors": 28, "speculative_factors": 32, "quadrant": "stable", "confidence": "B"},
+    {"rank": 17, "ticker": "5631.T", "name": "日本製鋼所", "total_score": 60, "investment_factors": 26, "speculative_factors": 34, "quadrant": "prime", "confidence": "B"},
+    {"rank": 18, "ticker": "6861.T", "name": "キーエンス", "total_score": 59, "investment_factors": 29, "speculative_factors": 30, "quadrant": "stable", "confidence": "A"},
+    {"rank": 19, "ticker": "6723.T", "name": "ルネサスエレクトロニクス", "total_score": 59, "investment_factors": 25, "speculative_factors": 34, "quadrant": "prime", "confidence": "B"},
+    {"rank": 20, "ticker": "7735.T", "name": "SCREEN HD", "total_score": 58, "investment_factors": 27, "speculative_factors": 31, "quadrant": "stable", "confidence": "B"},
+    {"rank": 21, "ticker": "6268.T", "name": "ナブテスコ", "total_score": 57, "investment_factors": 26, "speculative_factors": 31, "quadrant": "stable", "confidence": "B"},
+    {"rank": 22, "ticker": "6273.T", "name": "SMC", "total_score": 57, "investment_factors": 28, "speculative_factors": 29, "quadrant": "stable", "confidence": "A"},
+    {"rank": 23, "ticker": "9501.T", "name": "東京電力HD", "total_score": 56, "investment_factors": 21, "speculative_factors": 35, "quadrant": "speculative", "confidence": "C"},
+    {"rank": 24, "ticker": "6324.T", "name": "ハーモニック・ドライブ", "total_score": 56, "investment_factors": 24, "speculative_factors": 32, "quadrant": "speculative", "confidence": "C"},
+    {"rank": 25, "ticker": "6702.T", "name": "富士通", "total_score": 55, "investment_factors": 24, "speculative_factors": 31, "quadrant": "stable", "confidence": "B"},
+    {"rank": 26, "ticker": "9348.T", "name": "ispace", "total_score": 55, "investment_factors": 18, "speculative_factors": 37, "quadrant": "speculative", "confidence": "C"},
+    {"rank": 27, "ticker": "1963.T", "name": "日揮HD", "total_score": 54, "investment_factors": 23, "speculative_factors": 31, "quadrant": "prime", "confidence": "B"},
+    {"rank": 28, "ticker": "6481.T", "name": "THK", "total_score": 54, "investment_factors": 25, "speculative_factors": 29, "quadrant": "stable", "confidence": "B"},
+    {"rank": 29, "ticker": "4704.T", "name": "トレンドマイクロ", "total_score": 53, "investment_factors": 24, "speculative_factors": 29, "quadrant": "stable", "confidence": "B"},
+    {"rank": 30, "ticker": "9503.T", "name": "関西電力", "total_score": 52, "investment_factors": 24, "speculative_factors": 28, "quadrant": "stable", "confidence": "B"}
+  ],
+  "key_predictions": {
+    "scenario_probabilities": {
+      "base": 55,
+      "bull": 20,
+      "bear": 25
+    },
+    "market_targets": {
+      "base": {"nikkei": "52000-56000", "usdjpy": "148-155"},
+      "bull": {"nikkei": "58000+", "usdjpy": "150-158"},
+      "bear": {"nikkei": "45000-50000", "usdjpy": "140-148"}
+    },
+    "key_catalysts": [
+      {"event": "東京エレクトロンQ3決算", "date": "2026-02-06", "impact": "半導体装置セクター全体"},
+      {"event": "日銀3月会合", "date": "2026-03-20", "impact": "金利・為替動向"},
+      {"event": "TSMC熊本4nm正式決定", "date": "2026-Q2", "impact": "装置メーカー追加需要"},
+      {"event": "防衛予算FY2027概算要求", "date": "2026-Q2", "impact": "防衛セクター"},
+      {"event": "CRX-H1プロトタイプ公開", "date": "2026-H2", "impact": "ロボティクスセクター"}
+    ]
+  },
+  "verification_schedule": {
+    "1_month": {"date": "2026-03-02", "status": "pending"},
+    "3_months": {"date": "2026-04-30", "status": "pending"},
+    "6_months": {"date": "2026-07-31", "status": "pending"},
+    "1_year": {"date": "2027-01-31", "status": "pending"}
+  }
+}

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "企業財務情報（売上、利益、ガイダンス）- 四半期で更新",
-    "last_updated": "2026-01-30",
+    "last_updated": "2026-01-31",
     "quarter": "Q3 FY2026 / Q3 CY2025",
     "next_update": "2026-04-XX (Q4 earnings)",
     "schema_version": "1.0"
@@ -135,7 +135,9 @@
       "op_profit_fy_forecast": "1,729億円（+10%上方修正）",
       "robot_orders_yoy": "+38%",
       "china_sales_yoy": "+87%",
-      "key_notes": "ロボット受注好調、中国EV投資回復。CRX-H1ヒューマノイド発表。",
+      "nvidia_partnership": "NVIDIA AI Robot joint development (Jan 2026)",
+      "humanoid": "CRX-H1ヒューマノイドロボット発表（H2 2026目標）",
+      "key_notes": "Q3ロボット受注+38%、中国+87%。OP guidance +10%上方修正。NVIDIA共同開発でAIロボット強化。CRX-H1ヒューマノイド発表。",
       "confidence": 99
     },
     "8035.T": {
@@ -168,6 +170,55 @@
       "kashiwazaki_restart": "2026-01-21（13年10ヶ月ぶり）→1/22停止",
       "key_notes": "制御棒設定ミス（30年前から）で調査中。再稼働時期不透明。",
       "confidence": 95
+    },
+    "6315.T": {
+      "name": "TOWA",
+      "last_quarter": "FY2024推定",
+      "revenue": "HBMブーム恩恵で高成長",
+      "market_share_hbm_mold": "66%",
+      "key_notes": "HBMモールド装置66%シェア。AI半導体需要で受注急増。高成長継続見込み。",
+      "confidence": 80
+    },
+    "6268.T": {
+      "name": "ナブテスコ",
+      "last_quarter": "FY2024推定",
+      "market_share_rv_reducer": "60%",
+      "key_notes": "RV減速機世界60%シェア。ロボット需要回復で恩恵。ヒューマノイド向け新需要期待。",
+      "confidence": 80
+    },
+    "6324.T": {
+      "name": "ハーモニック・ドライブ・システムズ",
+      "last_quarter": "FY2024推定",
+      "revenue": "278.4億円",
+      "op_margin": "25%",
+      "market_share_wave_gear": "80%+",
+      "key_notes": "波動歯車世界80%+シェア。ヒューマノイドロボット需要で注目。高利益率。",
+      "confidence": 75
+    },
+    "6282.T": {
+      "name": "オイレス工業",
+      "last_quarter": "FY2024推定",
+      "revenue": "334.6億円",
+      "op_margin": "18%",
+      "market_share_seismic": "50%（国内免震）",
+      "key_notes": "免震装置国内50%シェア。インフラ投資・防災需要で安定成長。",
+      "confidence": 75
+    },
+    "6622.T": {
+      "name": "ダイヘン",
+      "last_quarter": "FY2024推定",
+      "revenue": "226.4億円",
+      "op_margin": "7.1%",
+      "key_notes": "変圧器国内トップシェア。グリッド近代化・EV充電インフラ需要で成長期待。",
+      "confidence": 75
+    },
+    "6503.T": {
+      "name": "三菱電機",
+      "last_quarter": "FY2024推定",
+      "revenue": "5,257.9億円",
+      "op_margin": "7.1%",
+      "key_notes": "防衛電子機器国内首位。FA事業・パワー半導体でAI/ロボティクス需要取込み。",
+      "confidence": 85
     }
   }
 }

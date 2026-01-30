@@ -1,14 +1,20 @@
 {
   "metadata": {
     "created": "2026-01-28",
-    "last_updated": "2026-01-30T12:00:00Z",
-    "source": "フル分析 Phase 8 v3.2（2026-01-30更新）",
-    "total_tasks": 14,
+    "last_updated": "2026-01-31T21:00:00Z",
+    "source": "フル分析 Phase 8 v2.0.0（2026-01-31更新）",
+    "total_tasks": 18,
     "priority_distribution": {
-      "high": 4,
-      "medium": 9,
+      "high": 6,
+      "medium": 11,
       "low": 1
-    }
+    },
+    "new_tasks_added": [
+      "RF-JP009: TOWAシェア一次検証",
+      "RF-JP010: ナブテスコシェア一次検証",
+      "RF-JP011: Grokデータ品質再検証",
+      "RF-JP012: ヒューマノイドTAM分析"
+    ]
   },
   "tasks": [
     {
@@ -164,6 +170,51 @@
       "rationale": "宇宙セクター評価に直接影響。三菱重工業の宇宙事業収益にも影響。",
       "status": "pending",
       "due_date": "2026-03-31"
+    }
+    ,
+    {
+      "id": "RF-JP009",
+      "priority": "high",
+      "category": "verification",
+      "domain": "日本/AI",
+      "description": "TOWAのHBMモールド装置66%シェアを一次検証",
+      "action": "TOWA IR資料、SEMI統計でシェアデータを確認。競合ASMPT等の動向も追跡。",
+      "rationale": "新規Top30（rank 5）。HBMモールド装置の独占度がスコアの根拠。",
+      "status": "pending",
+      "due_date": "2026-02-15"
+    },
+    {
+      "id": "RF-JP010",
+      "priority": "high",
+      "category": "verification",
+      "domain": "日本/ロボティクス",
+      "description": "ナブテスコRV減速機60%シェアを一次検証",
+      "action": "ナブテスコIR資料、産業ロボット工業会統計で確認。",
+      "rationale": "新規Top30（rank 21）。ロボティクスドメインの重要コンポーネント。",
+      "status": "pending",
+      "due_date": "2026-02-15"
+    },
+    {
+      "id": "RF-JP011",
+      "priority": "high",
+      "category": "verification",
+      "domain": "日本/データ品質",
+      "description": "Grok系統的コピーエラー影響範囲の完全確認",
+      "action": "Grok単一情報源の15社すべてで財務データの正確性を他ソースと照合。Grokプロンプトに出力検証ステップを追加。",
+      "rationale": "CHG-012で検出。-15%信頼度調整の妥当性を検証。",
+      "status": "pending",
+      "due_date": "2026-02-07"
+    },
+    {
+      "id": "RF-JP012",
+      "priority": "medium",
+      "category": "deep_research",
+      "domain": "日本/ロボティクス",
+      "description": "ヒューマノイドロボットTAM分析",
+      "action": "ファナックCRX-H1、安川MOTOMAN-HM、Tesla Optimus、Agility Digit等の比較分析。TAM推定、日本企業の競争力評価。",
+      "rationale": "CHG-003/004の将来の価値スコアへの反映精度を高める。",
+      "status": "pending",
+      "due_date": "2026-02-28"
     }
   ],
   "completed_tasks": [

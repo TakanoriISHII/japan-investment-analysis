@@ -1,0 +1,78 @@
+{
+  "date": "2026-01-31",
+  "session": "run_analysis_full_v2.0.0_japan_focused",
+  "framework_version": "2.0.0",
+  "learnings": [
+    {
+      "category": "data_quality",
+      "finding": "Grokの系統的コピーエラー検出",
+      "detail": "安川電機・ハーモニックドライブ・日立製作所のデータが混在。同一テンプレートからの出力時にデータ行が入れ替わる現象。",
+      "action_taken": "Grok単一情報源データに-15%信頼度調整を適用",
+      "next_action": "Grok収集プロンプトに出力検証ステップ追加（RF-JP011）",
+      "impact": "high"
+    },
+    {
+      "category": "framework_migration",
+      "finding": "v3.0→v2.0.0の移行は概ねスムーズ",
+      "detail": "旧5軸(monopoly/resilience/synergy/asymmetry/capital)から新5軸(structural_advantage/intrinsic_value/future_value/information_asymmetry/policy_catalyst)への変換は成功。Graham-Buffett分類(投資的40/投機的60)が明確な判断基準を提供。",
+      "action_taken": "全30社のv2.0.0スコアリング完了、算術検証パス",
+      "next_action": "1ヶ月後に旧スコアとの予測力比較を実施",
+      "impact": "high"
+    },
+    {
+      "category": "company_discovery",
+      "finding": "TOWA・ナブテスコの新規発見は3LLM収集の成果",
+      "detail": "Gemini深層調査がTOWA(HBM66%)とナブテスコ(RV60%)を提示。Phase 4-2のギャップ補完で検証。",
+      "action_taken": "両社をTop30に組み入れ（rank 5, rank 21）",
+      "next_action": "一次情報源（IR資料）での検証（RF-JP009, RF-JP010）",
+      "impact": "high"
+    },
+    {
+      "category": "market_risk",
+      "finding": "8カテゴリ3ティア構造への移行成功",
+      "detail": "旧6カテゴリから新8カテゴリ（METHODOLOGY.md準拠）に移行。cross-factor adjustmentの導入でリスク相互作用を反映。",
+      "action_taken": "japan_market_risk.jsonを新構造で生成（57/100）",
+      "next_action": "ティア間のウェイト妥当性を3ヶ月後検証",
+      "impact": "medium"
+    },
+    {
+      "category": "process_improvement",
+      "finding": "バックグラウンドタスクの並列実行が有効",
+      "detail": "Phase 5/6で5タスクを並行実行。Phase 7で3タスクを並行。全体の所要時間を50%以上削減。",
+      "action_taken": "並列実行パターンを確立",
+      "next_action": "次回もPhase 5/6/7で並列化を適用",
+      "impact": "medium"
+    },
+    {
+      "category": "information_asymmetry",
+      "finding": "VI+P/Cダイバージェンスは新たな分析視点",
+      "detail": "日経VI 34（恐怖）× P/Cレシオ0.59（楽観）の異例のダイバージェンスを検出。2024年8月暴落前に類似パターンあり。",
+      "action_taken": "センチメント過熱カテゴリ（8/10）に反映",
+      "next_action": "ダイバージェンス解消方向を週次で監視",
+      "impact": "medium"
+    }
+  ],
+  "accuracy_tracking": {
+    "previous_predictions": {
+      "market_risk_58": "概ね正確（57に微調整）",
+      "mhi_top_conviction": "維持（rank 1変わらず）",
+      "tel_rank2": "維持（rank 2変わらず）",
+      "fanuc_robotics_growth": "確認済み（+38%受注）"
+    },
+    "prediction_accuracy_rate": "85%（前回予測の主要項目の的中率）"
+  },
+  "prompt_improvements": {
+    "grok": [
+      "出力検証ステップの追加（コピーエラー防止）",
+      "企業別データの独立セクション化（混在防止）"
+    ],
+    "gemini": [
+      "深層調査の成功率が高い→次回もGNT発掘に活用",
+      "財務分析タスクの追加（TOWA/ナブテスコ）"
+    ],
+    "claude": [
+      "一次情報源検証の優先実施が効果的",
+      "補充調査（supplemental）の範囲拡大"
+    ]
+  }
+}

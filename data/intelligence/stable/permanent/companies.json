@@ -1,9 +1,9 @@
 {
   "metadata": {
     "description": "企業基礎情報（認証、モート、競争構造）- 年単位で変化",
-    "last_updated": "2026-01-28",
-    "update_reason": "Phase 5統合: raw/company_info/*からPERMANENT情報を抽出",
-    "next_review": "2027-01-28",
+    "last_updated": "2026-01-31",
+    "update_reason": "Phase 5統合: 4LLM収集結果から新規企業15社追加、既存2社更新",
+    "next_review": "2027-01-31",
     "schema_version": "1.0"
   },
   "companies": {
@@ -195,6 +195,7 @@
         "debt_ebitda": 1.8,
         "equity_ratio": 35
       },
+      "market_cap_note": "15.7兆円 (Yahoo Finance 2026-01-30 confirmed)",
       "sources": ["有価証券報告書", "防衛省契約情報"]
     },
     "8035.T": {
@@ -402,6 +403,7 @@
         "debt_ebitda": 1.5,
         "equity_ratio": 42
       },
+      "market_cap_note": "20-24兆円 (post-2024 stock split 1:5)",
       "sources": ["有価証券報告書"]
     },
     "6503.T": {
@@ -479,6 +481,214 @@
         "note": "無借金"
       },
       "sources": ["有価証券報告書"]
+    },
+    "6315.T": {
+      "name": "TOWA",
+      "domain": ["AI"],
+      "moat": {
+        "type": "HBMモールド装置独占",
+        "market_share": "HBMモールド装置世界シェア66%",
+        "description": "HBM製造に不可欠なコンプレッションモールド装置で圧倒的シェア。AI半導体需要の恩恵を直接享受。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["コンプレッションモールド技術", "HBM顧客認定", "先行者優位"],
+      "competitors": ["ASMPT（一部）"],
+      "sources": ["有価証券報告書", "SEMI", "Grok/Gemini収集"]
+    },
+    "6268.T": {
+      "name": "ナブテスコ",
+      "domain": ["ロボティクス"],
+      "moat": {
+        "type": "RV減速機世界首位",
+        "market_share": "RV減速機世界シェア60%",
+        "description": "産業用ロボットの関節に不可欠な精密減速機で圧倒的シェア。ファナック、ABB等主要ロボットメーカーに供給。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["精密加工技術", "30年+の製造ノウハウ", "顧客認定プロセス"],
+      "competitors": ["ハーモニック・ドライブ・システムズ（異なる種類）", "中国新興メーカー"],
+      "sources": ["有価証券報告書", "Industry reports"]
+    },
+    "6490.T": {
+      "name": "日本ピラー工業",
+      "domain": ["エネルギー", "AI"],
+      "moat": {
+        "type": "原子力・半導体用シール",
+        "market_share": "原子力級メカニカルシール国内首位級",
+        "description": "原子力プラント及び半導体製造装置向け高品質シール製品。OP margin 19%。"
+      },
+      "certifications": ["原子力規制対応品質規格"],
+      "barriers_to_entry": ["原子力品質規格", "半導体純度要求", "顧客認定"],
+      "competitors": ["イーグル工業"],
+      "sources": ["有価証券報告書", "Grok/Gemini収集"]
+    },
+    "6492.T": {
+      "name": "岡野バルブ製造",
+      "domain": ["エネルギー"],
+      "moat": {
+        "type": "原子力バルブ国内独占",
+        "market_share": "原子力発電所向けバルブ国内独占的地位",
+        "description": "原子力プラント向け高温高圧バルブの専門メーカー。原発再稼働で恩恵。"
+      },
+      "certifications": ["原子力規制委員会品質規格対応"],
+      "barriers_to_entry": ["原子力品質認証", "50年+の供給実績", "代替供給者不在"],
+      "competitors": ["なし（国内原子力バルブでは独占的）"],
+      "sources": ["有価証券報告書", "Grok収集"]
+    },
+    "6481.T": {
+      "name": "THK",
+      "domain": ["ロボティクス", "AI"],
+      "moat": {
+        "type": "LMガイド世界首位",
+        "market_share": "LMガイド（リニアモーションガイド）世界シェア50%",
+        "description": "直動案内システムの発明者。ロボット、工作機械、半導体装置の精密動作に不可欠。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["リニアモーション技術の先行者優位", "特許群", "グローバル供給網"],
+      "competitors": ["NSK", "日本トムソン"],
+      "sources": ["有価証券報告書", "Industry reports"]
+    },
+    "4187.T": {
+      "name": "大阪有機化学工業",
+      "domain": ["AI"],
+      "moat": {
+        "type": "フォトレジスト原料独占",
+        "market_share": "フォトレジスト用アクリル酸エステルモノマー世界シェア70%",
+        "description": "EUVフォトレジストの原料モノマーで圧倒的シェア。半導体微細化の進展に直結。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["高純度合成技術", "半導体純度規格", "顧客認定プロセス（変更困難）"],
+      "competitors": ["限定的"],
+      "sources": ["有価証券報告書", "Gemini収集"]
+    },
+    "3692.T": {
+      "name": "FFRI セキュリティ",
+      "domain": ["サイバー"],
+      "moat": {
+        "type": "純国産エンドポイントセキュリティ",
+        "market_share": "国産エンドポイントセキュリティ首位級",
+        "description": "日本政府・防衛省向け純国産サイバーセキュリティ製品。海外依存リスク回避の受け皿。"
+      },
+      "certifications": ["防衛省向け納入実績", "政府情報システム対応"],
+      "barriers_to_entry": ["国産要件", "政府調達実績", "セキュリティクリアランス"],
+      "competitors": ["トレンドマイクロ（外資系）", "NEC（総合）"],
+      "sources": ["有価証券報告書", "Claude収集"]
+    },
+    "6324.T": {
+      "name": "ハーモニック・ドライブ・システムズ",
+      "domain": ["ロボティクス"],
+      "moat": {
+        "type": "波動歯車装置世界独占",
+        "market_share": "波動歯車（ハーモニックドライブ）世界シェア80%+",
+        "description": "小型・高精度ロボット関節用減速機で圧倒的独占。ヒューマノイドロボット需要で注目。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["波動歯車の基本特許（期限切れだが製造ノウハウ残存）", "精密加工技術", "ブランド・信頼性"],
+      "competitors": ["中国新興メーカー（品質差あり）", "ナブテスコ（RV減速機、異なる用途）"],
+      "sources": ["有価証券報告書", "Industry reports"]
+    },
+    "6282.T": {
+      "name": "オイレス工業",
+      "domain": ["防衛", "エネルギー"],
+      "moat": {
+        "type": "免震装置国内首位",
+        "market_share": "免震・制振装置国内シェア50%",
+        "description": "建築・橋梁の免震装置で圧倒的シェア。オイルレスベアリングも主力。"
+      },
+      "certifications": ["建築基準法対応認定"],
+      "barriers_to_entry": ["免震技術の実績", "建築法規対応", "長期メンテナンス体制"],
+      "competitors": ["ブリヂストン（免震ゴム）"],
+      "sources": ["有価証券報告書", "Grok収集"]
+    },
+    "6807.T": {
+      "name": "日本航空電子工業（JAE）",
+      "domain": ["防衛", "宇宙"],
+      "moat": {
+        "type": "慣性センサ唯一の国内供給者",
+        "market_share": "防衛向け慣性航法センサ国内唯一の供給者",
+        "description": "ミサイル・航空機の慣性航法装置に不可欠。NECグループ。コネクタ事業も強い。"
+      },
+      "certifications": ["防衛省認定サプライヤー", "特定秘密取扱適格性"],
+      "barriers_to_entry": ["慣性センサ技術", "防衛省認定", "代替供給者不在"],
+      "competitors": ["なし（国内防衛向け慣性センサでは唯一）"],
+      "sources": ["有価証券報告書", "防衛省調達情報"]
+    },
+    "5802.T": {
+      "name": "住友電気工業",
+      "domain": ["エネルギー"],
+      "moat": {
+        "type": "HVDCケーブルリーダー",
+        "market_share": "HVDC（高圧直流送電）ケーブル世界トップ3",
+        "description": "大容量長距離送電ケーブルのリーダー。洋上風力・グリッド接続で需要拡大。"
+      },
+      "certifications": ["電力会社認定"],
+      "barriers_to_entry": ["HVDC技術", "大型製造設備", "実績・信頼性"],
+      "competitors": ["Prysmian", "Nexans", "古河電気工業"],
+      "sources": ["有価証券報告書", "Industry reports"]
+    },
+    "5801.T": {
+      "name": "古河電気工業",
+      "domain": ["エネルギー"],
+      "moat": {
+        "type": "海底ケーブル国内首位級",
+        "market_share": "海底ケーブル国内首位級",
+        "description": "海底光ケーブル・送電ケーブルで強み。洋上風力接続ケーブル需要拡大。"
+      },
+      "certifications": ["電力会社認定"],
+      "barriers_to_entry": ["海底ケーブル敷設技術", "大型製造設備", "深海対応技術"],
+      "competitors": ["住友電工", "Prysmian", "Nexans"],
+      "sources": ["有価証券報告書"]
+    },
+    "6622.T": {
+      "name": "ダイヘン",
+      "domain": ["エネルギー", "ロボティクス"],
+      "moat": {
+        "type": "変圧器国内トップシェア",
+        "market_share": "変圧器国内トップシェア",
+        "description": "電力用変圧器で国内首位。ワイヤレス給電、溶接ロボットも展開。グリッド近代化の恩恵。"
+      },
+      "certifications": ["電力会社認定"],
+      "barriers_to_entry": ["電力インフラ実績", "変圧器製造技術", "顧客関係"],
+      "competitors": ["日立", "東芝", "明電舎"],
+      "sources": ["有価証券報告書", "Grok/Gemini収集"]
+    },
+    "4704.T": {
+      "name": "トレンドマイクロ",
+      "domain": ["サイバー"],
+      "moat": {
+        "type": "エンドポイントセキュリティグローバルリーダー",
+        "market_share": "エンドポイントセキュリティ世界トップ3",
+        "description": "Vision One XDRプラットフォームで企業向けセキュリティ統合。日本拠点のグローバル企業。"
+      },
+      "certifications": ["各国政府認定", "ISO 27001"],
+      "barriers_to_entry": ["脅威インテリジェンス蓄積", "グローバル顧客基盤", "ブランド"],
+      "competitors": ["CrowdStrike", "Palo Alto Networks", "Microsoft"],
+      "sources": ["有価証券報告書", "Gartner"]
+    },
+    "5631.T": {
+      "name": "日本製鋼所",
+      "domain": ["エネルギー", "防衛"],
+      "moat": {
+        "type": "原子力圧力容器世界独占",
+        "market_share": "原子力圧力容器世界シェア80%+",
+        "description": "原発の心臓部である圧力容器を製造できる世界で唯一に近い存在。防衛向け砲身製造も。"
+      },
+      "certifications": ["原子力規制委員会品質規格", "ASME認証"],
+      "barriers_to_entry": ["超大型鍛造設備（14,000トンプレス）", "原子力品質認証", "製造技術の独自性"],
+      "competitors": ["なし（同規模の鍛造能力を持つ企業は極めて限定的）"],
+      "sources": ["有価証券報告書", "Industry reports"]
+    },
+    "7729.T": {
+      "name": "SCREEN ホールディングス",
+      "domain": ["AI"],
+      "moat": {
+        "type": "半導体洗浄装置世界首位",
+        "market_share": "半導体ウェハ洗浄装置世界シェア首位",
+        "description": "先端半導体製造の洗浄工程で不可欠。微細化進展で洗浄回数増加、需要構造的成長。"
+      },
+      "certifications": [],
+      "barriers_to_entry": ["洗浄プロセス技術", "顧客認定", "クリーンルーム技術"],
+      "competitors": ["東京エレクトロン（一部）", "Lam Research（一部）"],
+      "sources": ["有価証券報告書", "SEMI"]
     }
   }
 }

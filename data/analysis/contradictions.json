@@ -2,9 +2,13 @@
   "metadata": {
     "description": "LLM出力間の矛盾検出結果",
     "created": "2026-01-27",
-    "last_updated": "2026-01-29",
+    "last_updated": "2026-01-31",
     "phase": "フェーズ3: Claude比較分析",
-    "session": "フル分析 2026-01-29"
+    "session": "フル分析 2026-01-31",
+    "sources_compared": {
+      "company_info": ["grok.md", "gemini.md", "claude.md", "chatgpt.md"],
+      "broad_info": ["grok.md", "gemini.md", "claude.md", "chatgpt.md"]
+    }
   },
   "contradictions": [
     {
@@ -55,7 +59,7 @@
       "resolution": {
         "status": "resolved",
         "correct_value": "41.03（2026年1月28日時点、最新）",
-        "notes": "前回分析(40.58)からさらに上昇。過去155年で2度目の40超え継続。歴史的にCAOE39超え後は2年で-20%、3年で-30%のリターン。",
+        "notes": "前回分析(40.58)からさらに上昇。過去155年で2度目の40超え継続。",
         "verification_source": "Multpl.com, GuruFocus",
         "action": "市場リスク評価のバリュエーション項目を最高リスクに維持"
       }
@@ -104,7 +108,7 @@
       "resolution": {
         "status": "resolved",
         "correct_value": "65/100（今回推定）",
-        "notes": "CAPE上昇(40.58→41.03)、Fed不確実性（Powell任期2026年5月満了）を反映。Grokの73は保守的過ぎる可能性。",
+        "notes": "CAPE上昇(40.58→41.03)、Fed不確実性を反映。Grokの73は保守的過ぎる可能性。",
         "verification_source": "複合分析",
         "action": "保守的スタンスを維持"
       }
@@ -128,126 +132,23 @@
       }
     }
   ],
-  "summary": {
-    "total_contradictions": 15,
-    "resolved": 14,
-    "pending": 1,
-    "critical_findings": [
-      "Wolfspeed Chapter 11破産: 投資候補から除外確定",
-      "CAPE 41.03: 前回からさらに上昇、歴史的極値継続",
-      "NVIDIA独占強化: シェア90-98%、Q3 FY2026で$57B売上",
-      "Vertiv受注残$9.5B: AI冷却需要の強さを確認",
-      "日銀1月会合: 据え置き決定、高田委員のみ1.0%への利上げ主張（8対1）",
-      "柏崎刈羽原発: 2026/1/21再稼働→1/22制御棒不具合で一時停止（30年前からの設定ミス判明）",
-      "MHI受注高: 防衛・宇宙1兆8,768億円（2024年度）、全社10兆円超",
-      "日経平均: 53,115円（1/29）、過去最高54,341円（1/14）記録",
-      "日米協調介入: NY Fed rate check実施、1/26-27で4%円高",
-      "TSMC熊本第2工場: 6-7nm→4nm（AI向け）へ計画変更検討中",
-      "ファナックQ3: ロボット受注+38% YoY、ガイダンス+10%上方修正",
-      "東京エレクトロン: コータ/デベロッパ90%独占確認",
-      "IHI受注残: 1.9兆円（航空宇宙・防衛+69.9%）確定"
-    ]
-  },
   "japan_market_contradictions": [
     {
       "id": "CTR-JP001",
       "type": "market_data",
       "field": "日経平均株価",
       "sources": {
-        "gemini": "53,358円（2026年1月28日）",
-        "grok": "53,000円台",
-        "claude": "53,115円（2026年1月29日）"
+        "gemini_broad": "53,358円（2026年1月28日）",
+        "grok_broad": "53,000円台",
+        "claude_broad": "53,115円（2026年1月29日）",
+        "chatgpt_broad": "53,358円（1月28日基準）"
       },
       "resolution": {
         "status": "resolved",
-        "correct_value": "53,115円（2026年1月29日）、過去最高値54,341円（1月14日）",
-        "verification_source": "Trading Economics, CNBC",
+        "correct_value": "53,115円（2026年1月29日終値）、過去最高値54,341円（1月14日）",
+        "notes": "日付差で説明可能。1/28 53,358円→1/29 53,115円。全LLM一致方向。",
+        "verification_source": "Trading Economics, Nikkei",
         "action": "市場リスク評価に反映"
-      }
-    },
-    {
-      "id": "CTR-JP006",
-      "type": "company_data",
-      "company": "三菱重工業 (7011.T)",
-      "field": "受注残高",
-      "sources": {
-        "grok": "18兆円（YoY +20%）",
-        "gemini": ">10兆円（YoY +5.8%）",
-        "claude": "防衛受注残1.87兆円（防衛のみ）"
-      },
-      "resolution": {
-        "status": "resolved",
-        "correct_value": "全体10兆円超（Gemini）、防衛・宇宙セグメントのみ1.87兆円",
-        "notes": "Grokの18兆円は過大評価。Geminiの>10兆円が公式IR報告と一致。Claudeは防衛セグメントのみの数字。",
-        "verification_source": "MHI IR Report 2025",
-        "action": "Gemini値を採用、セグメント別で整理"
-      }
-    },
-    {
-      "id": "CTR-JP007",
-      "type": "company_data",
-      "company": "IHI (7013.T)",
-      "field": "受注残高",
-      "sources": {
-        "grok": "4兆円（YoY +15%）",
-        "gemini": "1.896兆円（Aero/Defense +69.9% YoY）"
-      },
-      "resolution": {
-        "status": "resolved",
-        "correct_value": "約1.9兆円（航空宇宙・防衛セグメント、+69.9% YoY）",
-        "notes": "Grokの4兆円は全社合計の可能性があるが、Geminiの1.896兆円は公式レポートと一致",
-        "verification_source": "IHI Integrated Report 2025",
-        "action": "Gemini値を採用"
-      }
-    },
-    {
-      "id": "CTR-JP008",
-      "type": "company_data",
-      "company": "東京エレクトロン (8035.T)",
-      "field": "市場シェア（コータ/デベロッパ）",
-      "sources": {
-        "gemini": "約90%（独占的）",
-        "grok": "データなし",
-        "claude": "90%"
-      },
-      "resolution": {
-        "status": "resolved",
-        "correct_value": "約90%（コータ/デベロッパで世界独占）",
-        "notes": "Gemini・Claude一致。複数業界ソースで確認済み。",
-        "verification_source": "業界レポート、TEL IR",
-        "action": "90%を採用、モート評価に反映"
-      }
-    },
-    {
-      "id": "CTR-JP004",
-      "type": "market_data",
-      "field": "日経平均PER",
-      "sources": {
-        "gemini": "歴史的平均上回る",
-        "grok": "19.88（過去平均15、乖離+32%）",
-        "claude": "16倍超（脱デフレプレミアム）"
-      },
-      "resolution": {
-        "status": "pending_verification",
-        "notes": "Grokの19.88は過大評価の可能性。IG証券など複数ソースで16倍台の報告あり。",
-        "action": "次回分析で一次情報源（日経、JPX）で検証"
-      }
-    },
-    {
-      "id": "CTR-JP005",
-      "type": "market_data",
-      "field": "日経VI",
-      "sources": {
-        "gemini": "34.14",
-        "grok": "34.78（30日平均33）",
-        "claude": "安定（具体値未確認）"
-      },
-      "resolution": {
-        "status": "resolved",
-        "correct_value": "34前後（高警戒水準）",
-        "notes": "株価高値更新中にVI30超えは市場の不安定性を示唆",
-        "verification_source": "Gemini/Grokクロス検証",
-        "action": "市場リスクスコアに反映"
       }
     },
     {
@@ -255,15 +156,17 @@
       "type": "policy",
       "field": "日銀政策金利",
       "sources": {
-        "gemini": "0.75%、利上げ観測あり",
-        "grok": "0.75%据え置き",
-        "claude": "0.75%据え置き（1月会合8対1で決定）"
+        "grok_broad": "0.75%据え置き（8対1、高田委員1.0%主張）",
+        "gemini_broad": "0.75%据え置き",
+        "claude_broad": "0.75%据え置き（8対1）",
+        "chatgpt_broad": "0.75%据え置き"
       },
       "resolution": {
         "status": "resolved",
-        "correct_value": "0.75%据え置き、高田委員のみ1.0%への引上げ主張",
+        "correct_value": "0.75%据え置き、高田委員のみ1.0%への引上げ主張（8対1の多数決）",
+        "notes": "4LLM完全一致。日銀公式発表で確認済み。",
         "verification_source": "日銀公式発表、NRI分析",
-        "action": "次回利上げは2026年7-9月と予想"
+        "action": "次回利上げ予想: 2026年6月（メインシナリオ）"
       }
     },
     {
@@ -272,16 +175,401 @@
       "company": "三菱重工業 (7011.T)",
       "field": "時価総額",
       "sources": {
-        "grok": "$50B（約7.5兆円）",
-        "claude": "約5兆円"
+        "grok_company": "15.18兆円",
+        "claude_company": "約5兆円",
+        "chatgpt_company": "記載なし"
+      },
+      "resolution": {
+        "status": "updated",
+        "correct_value": "約15兆円（2026年1月時点）",
+        "notes": "前回分析ではClaude値（5兆円）を採用したが、Grokの15.18兆円が株価4,500円x発行済33.7億株=約15.2兆円と整合。Claudeの5兆円は古いデータまたは誤り。",
+        "verification_source": "Yahoo Finance 7011.T、IRBANK",
+        "action": "Grok値（15兆円台）を採用。前回の判定を修正。"
+      }
+    },
+    {
+      "id": "CTR-JP004",
+      "type": "market_data",
+      "field": "日経平均PER",
+      "sources": {
+        "grok_broad": "17.5倍（過去10年平均14.8）",
+        "claude_broad": "17.5-20.3倍（Nikkei Indexes公式レンジ優先で19.7-20.3倍）",
+        "chatgpt_broad": "19.7-20.3倍（Nikkei Indexes公表値）",
+        "gemini_broad": "歴史的平均上回る（具体値なし）"
       },
       "resolution": {
         "status": "resolved",
-        "correct_value": "約5兆円（2026年1月時点、最新確認）",
-        "notes": "Grokの$50Bは過大評価の可能性",
-        "verification_source": "株価x発行済株式数で再計算",
-        "action": "Claude値を採用"
+        "correct_value": "19.7-20.3倍（Nikkei Indexes公式値）",
+        "notes": "Grokの17.5倍は算出方法の違い（予想EPSベース vs 実績ベースの差異）。Nikkei Indexes公式アーカイブ（chatgpt_broadが参照）を一次ソースとして優先。過去10年平均14.8-15倍に対し+32-37%の乖離。",
+        "verification_source": "Nikkei Indexes PERアーカイブ",
+        "action": "19.7-20.3倍を採用。バリュエーションリスクを「中～高」に設定。"
+      }
+    },
+    {
+      "id": "CTR-JP005",
+      "type": "market_data",
+      "field": "日経VI",
+      "sources": {
+        "grok_broad": "33.2（30日平均34.3）",
+        "claude_broad": "33.2-34.14",
+        "chatgpt_broad": "34.14（2026年1月27日15:50）",
+        "gemini_broad": "34.14（2026年1月27日）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "33.2-34.14（2026年1月27日時点、30日平均34.3）",
+        "notes": "4LLM一致方向。33-34台は株価高値更新中としては異常に高い。30超はパニック水準。市場参加者が急落リスクをヘッジしている証拠。",
+        "verification_source": "Nikkei Indexes nk225vi",
+        "action": "市場リスクスコアの重要ファクターとして反映"
+      }
+    },
+    {
+      "id": "CTR-JP006",
+      "type": "company_data",
+      "company": "三菱重工業 (7011.T)",
+      "field": "受注残高",
+      "sources": {
+        "grok_company": "~5兆円（YoY +10%）、防衛受注残1.87兆円（別所）",
+        "claude_company": "防衛受注残1.87兆円",
+        "chatgpt_broad": "記載なし",
+        "gemini_company": "受注残詳細なし"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "全体約10兆円超（IR報告ベース）、防衛・宇宙セグメント1.87兆円",
+        "notes": "前回Gemini値（>10兆円）を採用していたが、Grokの最新データ（5兆円）は単一セグメントの可能性。全社の受注残は10兆円超が公式IR報告と整合。",
+        "verification_source": "MHI IR Report",
+        "action": "全社10兆円超、防衛1.87兆円を採用"
+      }
+    },
+    {
+      "id": "CTR-JP007",
+      "type": "company_data",
+      "company": "IHI (7013.T)",
+      "field": "受注残高・時価総額",
+      "sources": {
+        "grok_company": "時価総額0.5兆円、FCF 143.5B円",
+        "claude_company": "時価総額約8,000億円",
+        "chatgpt_company": "記載なし"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "時価総額約8,000億円（Claude値採用）。FCF 143.5B円はGrok company_infoで報告。",
+        "notes": "Grokの0.5兆円（5,000億円）は古い数値。2025-2026年の株価上昇で8,000億円に到達。航空宇宙・防衛セグメント受注残+69.9% YoYは前回確認済み。",
+        "verification_source": "IHI IR Report, 株価検証",
+        "action": "時価総額8,000億円、受注残約1.9兆円（航空宇宙・防衛セグメント）を採用"
+      }
+    },
+    {
+      "id": "CTR-JP008",
+      "type": "company_data",
+      "company": "東京エレクトロン (8035.T)",
+      "field": "コータ/デベロッパ市場シェア",
+      "sources": {
+        "gemini_company": "約90%独占",
+        "claude_company": "90%",
+        "grok_company": "記載あり（上位）",
+        "chatgpt_company": "記載あり（前工程装置中核）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "約90%（コータ/デベロッパで世界独占）",
+        "notes": "Gemini・Claude完全一致。ChatGPTも方向性一致。複数業界ソースで確認済み。",
+        "verification_source": "業界レポート、TEL IR",
+        "action": "90%を採用、モート評価で最高レベル"
+      }
+    },
+    {
+      "id": "CTR-JP009",
+      "type": "company_data",
+      "company": "ハーモニック・ドライブ・システムズ (6324)",
+      "field": "精密減速機世界シェア",
+      "sources": {
+        "grok_company": "80%（精密減速機）",
+        "gemini_company": "世界シェア大部分（具体値未記載）",
+        "claude_company": "記載なし",
+        "chatgpt_company": "記載なし"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "世界シェア大部分（波動歯車装置）。ただしナブテスコ（RV減速機で60%）との棲み分けに注意。",
+        "notes": "Grokの80%は波動歯車装置（Harmonic Gear）限定のシェア。ナブテスコ（6268）がRV減速機で60%を持つため、減速機全体としてはより低い。Geminiはナブテスコについてもカバー。",
+        "verification_source": "IFR、各社IR",
+        "action": "波動歯車80%、ナブテスコRV 60%を個別に記録"
+      }
+    },
+    {
+      "id": "CTR-JP010",
+      "type": "company_data",
+      "company": "ファナック (6954.T)",
+      "field": "CNC世界シェアと産業用ロボット順位",
+      "sources": {
+        "grok_company": "CNC首位、産業用ロボット世界シェア30%",
+        "gemini_company": "CNC世界シェア50%超",
+        "claude_company": "CNC首位、産業用ロボット2-3位",
+        "chatgpt_company": "産業用ロボット世界級"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "CNC世界シェア約50%超（Gemini値、IFR/IR整合）、産業用ロボット世界2-3位",
+        "notes": "Grokの30%は産業用ロボット全体のシェア。CNCではGeminiの50%超が公式データと整合。Claudeの2-3位も業界通説と一致。",
+        "verification_source": "IFR, ファナックIR",
+        "action": "CNC 50%超、ロボット2-3位を採用"
+      }
+    },
+    {
+      "id": "CTR-JP011",
+      "type": "company_data",
+      "company": "日本製鋼所 (5631)",
+      "field": "原子炉圧力容器シェア",
+      "sources": {
+        "grok_company": "原子炉圧力容器独占",
+        "gemini_company": "世界シェア約80%（室蘭の奇跡）",
+        "claude_company": "記載なし",
+        "chatgpt_company": "大型鍛造・高信頼部材（参入困難）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "大型鍛造部材で世界シェア約80%",
+        "notes": "Grokの「独占」は誇張。Geminiの80%がより正確。ChatGPTも方向性一致。Japan Steel Worksの室蘭工場は世界最大級の鍛造設備を保有。",
+        "verification_source": "Geminiレポート、業界分析",
+        "action": "80%を採用"
+      }
+    },
+    {
+      "id": "CTR-JP012",
+      "type": "company_data",
+      "company": "SMC (6273)",
+      "field": "空気圧機器世界シェア",
+      "sources": {
+        "grok_company": "記載なし（明示的シェアなし）",
+        "gemini_company": "世界シェア約39%、国内約60%",
+        "claude_broad": "世界首位（シェア36%+）",
+        "chatgpt_company": "世界級（品質・品揃え）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "世界シェア36-39%、国内約60%",
+        "notes": "Gemini（39%）とClaude（36%+）は近似値。レンジとして36-39%を採用。SMC IR公式では38%前後。",
+        "verification_source": "SMC IR、Gemini/Claude比較",
+        "action": "36-39%を採用"
+      }
+    },
+    {
+      "id": "CTR-JP013",
+      "type": "market_data",
+      "field": "USD/JPY",
+      "sources": {
+        "grok_broad": "154.5円",
+        "claude_broad": "152.5-154.5円レンジ",
+        "chatgpt_broad": "152-159円（レンジ）",
+        "gemini_broad": "152円近辺"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "152-155円レンジ（2026年1月下旬）",
+        "notes": "日内・日間変動が大きいため矛盾ではなくレンジ内変動。介入警戒ラインは155-160円で複数ソース一致。",
+        "verification_source": "BOJ日次FX、Reuters",
+        "action": "152-155円レンジを採用、160円以上で介入リスク拡大"
+      }
+    },
+    {
+      "id": "CTR-JP014",
+      "type": "market_data",
+      "field": "JGB 10年利回り",
+      "sources": {
+        "grok_broad": "2.25%（+5bp/週）",
+        "claude_broad": "2.24-2.25%",
+        "gemini_broad": "2.24%",
+        "chatgpt_broad": "27年ぶり高水準"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "2.24-2.25%（2026年1月下旬、27年ぶり高水準）",
+        "notes": "4LLM一致。数bpの差は日内変動で説明可能。",
+        "verification_source": "Trading Economics、日銀",
+        "action": "2.24-2.25%を採用"
+      }
+    },
+    {
+      "id": "CTR-JP015",
+      "type": "market_data",
+      "field": "GDP成長率予測",
+      "sources": {
+        "grok_broad": "0.8%（2026年暦年）",
+        "claude_broad": "FY2025 +0.9%、FY2026 +1.0%（日銀展望レポート）",
+        "gemini_broad": "FY2025 +0.9%、FY2026 +1.0%（日銀上方修正）",
+        "chatgpt_broad": "FY2025 +0.9%、FY2026 +1.0%"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "FY2025 +0.9%、FY2026 +1.0%（日銀展望レポート、2026年1月上方修正）",
+        "notes": "Grokの0.8%は暦年ベースの可能性。日銀展望レポートの年度ベース（FY）値をClaude/Gemini/ChatGPTが一致して報告。",
+        "verification_source": "日銀展望レポート2026年1月",
+        "action": "日銀展望レポート値を採用"
+      }
+    },
+    {
+      "id": "CTR-JP016",
+      "type": "company_data",
+      "company": "日立製作所 (6501.T)",
+      "field": "時価総額",
+      "sources": {
+        "grok_company": "24.18兆円",
+        "claude_company": "約12兆円",
+        "chatgpt_company": "記載なし"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "約20-24兆円（2026年1月時点）",
+        "notes": "Grokの24.18兆円が正確。2024年株式分割（1:5）後、発行済株式約46.2億株×株価5,000円台=23兆円台と整合。Claudeの12兆円は分割前ベースの古いデータ。",
+        "verification_source": "Grok company_info（52週レンジ・分割後株数で論理検証）",
+        "action": "Grok値（20-24兆円レンジ）を採用。Claudeの12兆円を破棄。",
+        "resolved_date": "2026-01-31",
+        "resolved_by": "Phase 4-1 クロスバリデーション"
+      }
+    },
+    {
+      "id": "CTR-JP017",
+      "type": "company_data",
+      "company": "安川電機 (6506.T) / ハーモニック・ドライブ (6324)",
+      "field": "財務データの重複・混同",
+      "sources": {
+        "grok_company": "安川: 収益278.4B円、営業利益率9.3%、バックログ384B円、PER 29.5x、PBR 2.16x",
+        "grok_company_harmonic": "ハーモニック: 収益278.4B円、営業利益率25%、バックログ384B円、PER 29.5x、PBR 2.16x"
+      },
+      "resolution": {
+        "status": "partially_resolved",
+        "correct_value": "安川: 売上~5,500億円、時価総額1.2-1.3兆円。ハーモニック: 売上~600億円、時価総額~1,100億円",
+        "notes": "Grokの系統的コピーエラーを確認。Revenue 278.4B円は安川の四半期データまたは別企業のコピー。バックログ384B円はハーモニック側→安川側にもコピー。PBR 2.16xはHitachi（6501.T）のデータ混入の疑い。安川の営業利益率9.3%のみ実態と整合。ハーモニックの営業利益率25%はピーク水準であり好況時のみ達成。Grokの企業財務データには系統的信頼性問題あり。",
+        "verification_source": "LLM間クロスバリデーション、論理検証",
+        "action": "安川・ハーモニックの正確な財務データは公式IR（EDINET）で再取得が必要。Grok財務データのconfidenceを一律-15%調整。",
+        "resolved_date": "2026-01-31",
+        "resolved_by": "Phase 4-1 クロスバリデーション",
+        "remaining_gap": "正確なFY2024/2025売上高・バックログの公式IR確認が未完"
+      }
+    },
+    {
+      "id": "CTR-JP018",
+      "type": "company_data",
+      "company": "オイレス (6282)",
+      "field": "時価総額",
+      "sources": {
+        "grok_company": "812億円（billion yenと記載だが文脈から億円）"
+      },
+      "resolution": {
+        "status": "partially_resolved",
+        "correct_value": "約500-800億円（レンジ、PER/EPS逆算で中央値600億円）",
+        "notes": "Grokの'812 billion yen'は812億円の意味（日英単位変換ミス）。PER 17.3x × EPS 150円 = 株価2,595円、発行済株式2,000-2,400万株で520-620億円と推定。812億円はやや過大の可能性あるが、直近株価次第では到達可能。",
+        "verification_source": "PER/EPS逆算、Grok内部データの論理検証",
+        "action": "Yahoo Finance 6282.Tで正確な時価総額を確認（次回Phase 4）",
+        "resolved_date": "2026-01-31",
+        "resolved_by": "Phase 4-1 論理検証"
+      }
+    },
+    {
+      "id": "CTR-JP019",
+      "type": "policy",
+      "field": "防衛予算FY2026増加率",
+      "sources": {
+        "grok_broad": "+3.8%",
+        "claude_broad": "+9.4%",
+        "claude_supplemental": "+3.8%（Naval News/The Diplomat）",
+        "chatgpt_broad": "過去最高（具体率なし）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "+3.8%（前年度比、本予算ベース）、9.04兆円",
+        "notes": "重要発見: Claude自体のデータに矛盾（broad_info: +9.4% vs supplemental: +3.8%）。計算検証: FY2025 8.696兆円→FY2026 9.04兆円 = +3.96% ≈ +3.8%。+9.4%は5年間倍増計画の年平均増加率、または異なるベース年度からの計算の可能性。前年度比の標準的指標としては+3.8%が正確。",
+        "verification_source": "Naval News, The Diplomat, 計算検証（8.696T→9.04T = +3.96%）",
+        "action": "+3.8%（前年度比）を採用。+9.4%は「5年間計画の構造的成長率」として別途注記。",
+        "resolved_date": "2026-01-31",
+        "resolved_by": "Phase 4-1 計算検証・クロスバリデーション"
+      }
+    },
+    {
+      "id": "CTR-JP020",
+      "type": "company_data",
+      "company": "ディスコ (6146)",
+      "field": "世界シェア",
+      "sources": {
+        "gemini_company": "70-80%（ダイシングソー・グラインダ・研磨装置）",
+        "claude_broad": "精密切断・研削・研磨装置世界首位",
+        "grok_company": "記載なし",
+        "chatgpt_company": "精密加工のノウハウ（具体値なし）"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "70-80%（ダイシング・研削・研磨分野）",
+        "notes": "Geminiが最も詳細な数値を提供。Claude/ChatGPTも方向性一致。",
+        "verification_source": "Geminiレポート、ディスコIR",
+        "action": "70-80%を採用"
+      }
+    },
+    {
+      "id": "CTR-JP021",
+      "type": "market_data",
+      "field": "外国人投資家動向（2026年1月）",
+      "sources": {
+        "grok_broad": "純買越し1.14兆円（1月初旬）",
+        "claude_broad": "1月初旬買越し、ただし円高進行で売り圧力増加傾向",
+        "chatgpt_broad": "買越し観測"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "1月初旬は純買越し1.14兆円（日経最高値54,341円の1/14前後と一致）。月後半はUSD/JPY急落（159.2→152.5円）で売り圧力増加。月間ネットは要確認。",
+        "notes": "真の矛盾ではなく時期差。3LLMとも正確（異なる時期を記述）。月初の新年資金流入→月後半の円キャリー巻き戻しという月内方向転換パターン。",
+        "verification_source": "LLM間クロスバリデーション、為替データとの時系列整合性確認",
+        "action": "両方の記述を統合して採用。JPX週次統計で1月第3-4週のネットフローを次回確認。",
+        "resolved_date": "2026-01-31",
+        "resolved_by": "Phase 4-1 時系列分析"
+      }
+    },
+    {
+      "id": "CTR-JP022",
+      "type": "company_data",
+      "company": "ナブテスコ (6268) vs ハーモニック・ドライブ (6324)",
+      "field": "減速機市場構造",
+      "sources": {
+        "gemini_company": "ナブテスコRV減速機60%（中大型ロボット事実上独占）",
+        "grok_company": "ハーモニック80%（精密減速機）",
+        "claude_company": "記載なし",
+        "chatgpt_company": "記載なし"
+      },
+      "resolution": {
+        "status": "resolved",
+        "correct_value": "ナブテスコ: RV減速機60%（中大型）、ハーモニック: 波動歯車80%（小型・精密）",
+        "notes": "矛盾ではなく異なる製品カテゴリ。GeminiがRV/波動歯車の棲み分けを最も正確にカバー。Grokはハーモニックのみ記載でナブテスコを欠落。",
+        "verification_source": "IFR、各社IR",
+        "action": "2社を別カテゴリとして記録"
       }
     }
-  ]
+  ],
+  "summary": {
+    "total_contradictions": 29,
+    "global_contradictions": 7,
+    "japan_contradictions": 22,
+    "resolved": 27,
+    "partially_resolved": 2,
+    "new_critical": 0,
+    "new_pending": 0,
+    "phase_4_1_resolved": 5,
+    "phase_4_1_date": "2026-01-31",
+    "critical_findings": [
+      "CTR-JP017: Grokの系統的コピーエラー確認 - 安川/ハーモニック/日立のデータが相互混在。Grok財務データの信頼度を一律-15%調整",
+      "CTR-JP019: 防衛予算+3.8%が正確（前年度比）。Claude broad_infoの+9.4%は誤り - Claude自身のデータにも矛盾あり",
+      "CTR-JP016: 日立時価総額20-24兆円（Grok正確）。2024年株式分割（1:5）後ベースで整合確認",
+      "CTR-JP003: 三菱重工時価総額を5兆円→15兆円に修正（前回分析の誤りを訂正）",
+      "CTR-JP004: 日経PER 19.7-20.3倍（Nikkei Indexes公式）vs 17.5倍（Grok）- 一次ソース優先で19.7-20.3倍を採用",
+      "CTR-JP005: 日経VI 33-34台は4LLM一致。高値圏でのVI30超は極めて異常",
+      "日銀金利0.75%: 4LLM完全一致",
+      "JGB 10Y 2.24-2.25%: 4LLM完全一致",
+      "CAPE 41.03: 歴史的極値継続"
+    ],
+    "remaining_actions": [
+      "CTR-JP017: 安川/ハーモニックの正確な売上高・バックログを公式IRで確認",
+      "CTR-JP018: オイレス工業の時価総額をYahoo Finance 6282.Tで確認",
+      "CTR-JP021: 外国人投資家1月第3-4週のJPX週次統計を確認"
+    ]
+  }
 }

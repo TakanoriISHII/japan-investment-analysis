@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "description": "変化検知アラート - stable/とLLM収集の差異を記録",
+    "generated": "2026-01-31",
+    "phase": "5-7",
+    "total_alerts": 12
+  },
+  "alerts": [
+    {
+      "id": "CHG-001",
+      "type": "market_cap_correction",
+      "company": "7011.T",
+      "name": "三菱重工業",
+      "previous_stable": "5兆円（Claude）/ 13兆円（Grok旧）",
+      "new_value": "15.7兆円",
+      "source": "Yahoo Finance 2026-01-30",
+      "change_magnitude": "3倍以上の修正",
+      "priority": "critical",
+      "action": "stable/permanent更新済み。Phase 6スコアリングに反映必須",
+      "confidence": "A"
+    },
+    {
+      "id": "CHG-002",
+      "type": "market_cap_correction",
+      "company": "6501.T",
+      "name": "日立製作所",
+      "previous_stable": "12兆円（Claude）",
+      "new_value": "20-24兆円",
+      "source": "2024年株式分割(1:5)後の時価総額、Grok確認",
+      "change_magnitude": "2倍の修正",
+      "priority": "high",
+      "action": "stable/permanent更新。分割後株価でPER再計算必要",
+      "confidence": "B"
+    },
+    {
+      "id": "CHG-003",
+      "type": "new_product_launch",
+      "company": "6954.T",
+      "name": "ファナック",
+      "previous_stable": "CNC/産業用ロボット中心",
+      "new_value": "CRX-H1ヒューマノイドロボット発表、NVIDIA AI協業",
+      "source": "ダイヤモンド社報道、NVIDIA発表",
+      "change_magnitude": "新カテゴリー参入",
+      "priority": "high",
+      "action": "将来の価値(軸3)スコアへ上方反映。ヒューマノイドロボットTAM追加",
+      "confidence": "B"
+    },
+    {
+      "id": "CHG-004",
+      "type": "new_product_launch",
+      "company": "6506.T",
+      "name": "安川電機",
+      "previous_stable": "サーボモータ/産業用ロボット中心",
+      "new_value": "MOTOMAN-HMヒューマノイド開発、ソフトバンク提携",
+      "source": "アステラス製薬共同開発、ソフトバンク発表",
+      "change_magnitude": "新カテゴリー参入",
+      "priority": "high",
+      "action": "将来の価値(軸3)スコアへ上方反映",
+      "confidence": "B"
+    },
+    {
+      "id": "CHG-005",
+      "type": "project_delay",
+      "company": "7011.T",
+      "name": "三菱重工業（宇宙事業）",
+      "previous_stable": "H3ロケット打ち上げスケジュール正常",
+      "new_value": "9号機延期（8号機失敗原因調査中）",
+      "source": "JAXA公式発表 2026-01-07",
+      "change_magnitude": "宇宙事業短期ネガティブ",
+      "priority": "medium",
+      "action": "構造的優位性（軸1）宇宙部分を-1調整検討",
+      "confidence": "A"
+    },
+    {
+      "id": "CHG-006",
+      "type": "supply_chain_change",
+      "company": "8035.T",
+      "name": "東京エレクトロン",
+      "previous_stable": "TSMC熊本第2工場6-7nm計画",
+      "new_value": "4nm（AI向け）に計画変更検討中",
+      "source": "日経新聞報道、DigiTimes",
+      "change_magnitude": "4nm移行で追加装置需要",
+      "priority": "high",
+      "action": "将来の価値(軸3)で追加需要を反映。ただし2027年遅延リスクも考慮",
+      "confidence": "B"
+    },
+    {
+      "id": "CHG-007",
+      "type": "nuclear_restart",
+      "company": "9501.T",
+      "name": "東京電力HD",
+      "previous_stable": "柏崎刈羽再稼働準備中",
+      "new_value": "2026-01-21再稼働→翌日停止（制御棒30年前の設定ミス判明）",
+      "source": "複数報道、JAXA、規制委員会",
+      "change_magnitude": "再稼働時期不透明化",
+      "priority": "medium",
+      "action": "構造的優位性(軸1)で再稼働不確実性を反映。政策触媒(軸5)は原子力路線継続で維持",
+      "confidence": "A"
+    },
+    {
+      "id": "CHG-008",
+      "type": "fx_intervention_risk",
+      "company": "MARKET",
+      "name": "為替市場",
+      "previous_stable": "USD/JPY 153.2",
+      "new_value": "NY Fed rate check実施、159→152.5円（4%下落）、日米協調介入可能性",
+      "source": "ゴールドマン・サックス、財務省発言",
+      "change_magnitude": "2011年以来初の協調介入可能性",
+      "priority": "high",
+      "action": "市場リスク分析の為替リスクカテゴリーを更新",
+      "confidence": "C"
+    },
+    {
+      "id": "CHG-009",
+      "type": "new_company_discovery",
+      "company": "6315.T",
+      "name": "TOWA",
+      "previous_stable": "stable/にデータなし",
+      "new_value": "HBMモールディング装置世界66%シェア、AI半導体後工程の中核",
+      "source": "Gemini深層調査、Phase 4-2検証",
+      "change_magnitude": "新規Top30候補",
+      "priority": "high",
+      "action": "Phase 6でTop30候補プールに追加。5軸スコアリング実施",
+      "confidence": "B"
+    },
+    {
+      "id": "CHG-010",
+      "type": "new_company_discovery",
+      "company": "6268.T",
+      "name": "ナブテスコ",
+      "previous_stable": "stable/にデータなし",
+      "new_value": "RV精密減速機世界60%シェア。ロボット関節の事実上の独占",
+      "source": "Gemini深層調査",
+      "change_magnitude": "新規Top30候補",
+      "priority": "high",
+      "action": "Phase 6でTop30候補プールに追加",
+      "confidence": "B"
+    },
+    {
+      "id": "CHG-011",
+      "type": "new_company_discovery",
+      "company": "6807.T",
+      "name": "日本航空電子工業（JAE）",
+      "previous_stable": "追跡済みだが詳細不足",
+      "new_value": "慣性センサ日本唯一の供給者。スタンドオフミサイル開発の中核部品",
+      "source": "Gemini深層調査、Phase 4-2検証",
+      "change_magnitude": "防衛Tier2として高評価",
+      "priority": "medium",
+      "action": "Phase 6で防衛ドメインTier2として評価",
+      "confidence": "B"
+    },
+    {
+      "id": "CHG-012",
+      "type": "data_quality_alert",
+      "company": "GROK_SOURCE",
+      "name": "Grokデータ品質",
+      "previous_stable": "標準信頼度",
+      "new_value": "系統的コピーエラー検出（安川/ハーモニック/日立データ混在）",
+      "source": "Phase 4-1矛盾解消",
+      "change_magnitude": "Grok単一データに-15%信頼度調整",
+      "priority": "high",
+      "action": "Phase 6スコアリング時にGrok単一情報源データの重みを50%→35%に引き下げ",
+      "confidence": "A"
+    }
+  ],
+  "summary": {
+    "critical": 1,
+    "high": 7,
+    "medium": 3,
+    "low": 1,
+    "action_required_for_phase6": [
+      "MHI時価総額15.7兆円をスコアリングに反映",
+      "Hitachi時価総額20-24兆円に修正",
+      "ファナック・安川ヒューマノイド参入を将来の価値に反映",
+      "TOWA・ナブテスコを候補プールに追加",
+      "Graham分類体系v2.0.0への5軸移行を実施",
+      "Grokデータ信頼度-15%調整を適用"
+    ]
+  }
+}

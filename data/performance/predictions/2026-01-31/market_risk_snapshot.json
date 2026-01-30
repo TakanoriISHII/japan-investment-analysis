@@ -1,0 +1,45 @@
+{
+  "snapshot_date": "2026-01-31",
+  "framework_version": "2.0.0",
+  "market": "japan",
+  "total_score": 57,
+  "previous_score": 58,
+  "delta": -1,
+  "risk_level": "moderate",
+  "recommended_stance": "balanced",
+  "tier_scores": {
+    "tier1": {"score": 23, "max": 35, "components": {"boj_policy": 10, "valuation": 13}},
+    "tier2": {"score": 24, "max": 34, "components": {"currency": 9, "foreign_investors": 7, "sentiment": 8}},
+    "tier3": {"score": 16, "max": 31, "components": {"external_shock": 7, "liquidity": 4, "earnings_deviation": 5}}
+  },
+  "raw_score": 63,
+  "cross_factor_adjustments": -6,
+  "adjustment_details": [
+    {"factor": "liquidity_x_valuation", "adjustment": -2, "reason": "低流動性×高バリュエーションの複合リスク"},
+    {"factor": "earnings_x_yen", "adjustment": -2, "reason": "業績乖離×円高進行の連鎖リスク"},
+    {"factor": "defense_hedge", "adjustment": -2, "reason": "防衛セクター（対象企業の30%）がベアシナリオでの緩衝材"}
+  ],
+  "key_indicators": {
+    "nikkei225": 53115,
+    "nikkei225_ath": 54341,
+    "distance_from_ath_pct": -2.3,
+    "nikkei_per_trailing": "19.7-20.3",
+    "nikkei_per_forward": 17.5,
+    "usdjpy": 152.5,
+    "boj_rate": 0.75,
+    "nikkei_vi": 34,
+    "put_call_ratio": 0.59
+  },
+  "scenario_probabilities": {
+    "base": 55,
+    "bull": 20,
+    "bear": 25
+  },
+  "anomaly_flag": "VI高水準(34) × P/Cレシオ低(0.59)のダイバージェンス。2024年8月暴落前に類似シグナル。",
+  "verification_schedule": {
+    "1_month": {"date": "2026-03-02", "status": "pending"},
+    "3_months": {"date": "2026-04-30", "status": "pending"},
+    "6_months": {"date": "2026-07-31", "status": "pending"},
+    "1_year": {"date": "2027-01-31", "status": "pending"}
+  }
+}

@@ -1,9 +1,10 @@
 {
   "metadata": {
     "description": "契約・受注情報 - 月次で更新",
-    "last_updated": "2026-01-30",
+    "last_updated": "2026-01-31",
     "next_update": "2026-02-28",
-    "schema_version": "1.0"
+    "schema_version": "1.0",
+    "stale_review_2026-01-31": "6件が3ヶ月超経過: CON-001(7M), CON-002(6M), CON-004(17M), CON-010(14M), CON-JP002(14M), CON-JP005(不明確)。全件Multi-year/継続契約のため保持。次回更新時に進捗確認推奨。"
   },
   "contracts": [
     {
@@ -16,6 +17,7 @@
       "duration": "Through June 30, 2026",
       "date_announced": "2025-06-17",
       "status": "active",
+      "_stale_review": "7ヶ月経過（2025-06-17発表）。契約自体は2026-06まで有効。状態確認推奨。",
       "notes": "唯一の米国内HALEU商用生産者。年900kg生産。"
     },
     {
@@ -28,6 +30,7 @@
       "duration": "Multi-year with options",
       "date_announced": "2025-07",
       "status": "active",
+      "_stale_review": "6ヶ月経過（2025-07発表）。Multi-year契約のため有効。受注残更新推奨。",
       "notes": "潜水艦・空母向け原子炉部品。受注残$7.4B。"
     },
     {
@@ -52,6 +55,7 @@
       "duration": "Multi-year",
       "date_announced": "2024-08",
       "status": "active",
+      "_stale_review": "17ヶ月経過（2024-08発表）。IDIQ契約のため有効。進捗状況・追加発注確認推奨。",
       "notes": "Replicator選定。1000基以上調達予定。"
     },
     {
@@ -125,6 +129,7 @@
       "duration": "10-year",
       "date_announced": "2024-11",
       "status": "active",
+      "_stale_review": "14ヶ月経過（2024-11発表）。10年契約のため有効。実行進捗確認推奨。",
       "notes": "ソフトウェア企業初の防衛プライム。Azure統合。"
     },
     {
@@ -149,6 +154,7 @@
       "duration": "Multi-year",
       "date_announced": "2024-11",
       "status": "active",
+      "_stale_review": "14ヶ月経過（2024-11発表）。Multi-year開発契約のため有効。開発進捗確認推奨。",
       "notes": "極超音速ミサイル迎撃システム開発。"
     },
     {
@@ -185,6 +191,7 @@
       "duration": "継続",
       "date_announced": "2025",
       "status": "active",
+      "_stale_review": "日付不明確（2025発表）。継続的パートナーシップ。追加出資・進捗確認推奨。",
       "notes": "SMR格納容器・構造物製造パートナー。JGCと共同JNI設立。"
     },
     {
@@ -212,6 +219,54 @@
       "status": "delayed",
       "certainty": 99,
       "notes": "8号機失敗（2026-01-08）を受け9号機延期。原因調査中。"
+    },
+    {
+      "id": "CON-JP008",
+      "company": "ファナック",
+      "ticker": "6954.T",
+      "contract_name": "NVIDIA AI Robot共同開発",
+      "value": "非公開",
+      "counterparty": "NVIDIA",
+      "duration": "継続",
+      "date_announced": "2026-01",
+      "status": "active",
+      "notes": "NVIDIAとAIロボット技術の共同開発。CNC/ロボットへのAI統合加速。"
+    },
+    {
+      "id": "CON-JP009",
+      "company": "安川電機",
+      "ticker": "6506.T",
+      "contract_name": "ソフトバンク ヒューマノイドロボット提携",
+      "value": "非公開",
+      "counterparty": "ソフトバンク",
+      "duration": "継続",
+      "date_announced": "2026-01",
+      "status": "active",
+      "notes": "ソフトバンクとヒューマノイドロボット分野で提携。AI/ロボティクス融合。"
+    },
+    {
+      "id": "CON-JP010",
+      "company": "ファナック",
+      "ticker": "6954.T",
+      "contract_name": "CRX-H1 ヒューマノイドロボット発表",
+      "value": "非公開",
+      "counterparty": "自社開発",
+      "duration": "H2 2026出荷目標",
+      "date_announced": "2026-01",
+      "status": "development",
+      "notes": "ファナック初のヒューマノイドロボット「CRX-H1」発表。2026年下半期出荷目標。"
+    },
+    {
+      "id": "CON-JP011",
+      "company": "安川電機",
+      "ticker": "6506.T",
+      "contract_name": "MOTOMAN-HM ヒューマノイド開発（アステラス製薬協業）",
+      "value": "非公開",
+      "counterparty": "アステラス製薬",
+      "duration": "継続",
+      "date_announced": "2026-01",
+      "status": "development",
+      "notes": "MOTOMAN-HMヒューマノイドロボット開発。アステラス製薬との協業で製薬分野適用。"
     }
   ]
 }
