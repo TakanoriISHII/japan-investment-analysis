@@ -34,12 +34,14 @@
         /*
         マルチドメイン・コンバージェンス分析フレームワーク（100点満点）
 
-        【5軸評価】
-        1. 物理的独占力（30点）: 市場シェア、代替不可能性
-        2. 政策耐性（20点）: 超党派支持、規制リスク
-        3. クロスドメイン・シナジー（25点）: 6ドメイン横断需要
-        4. 情報非対称性（15点）: 認識ギャップ、カタリスト
-        5. 資本効率（10点）: FCF、希薄化リスク
+        【5軸評価（Graham分類体系統合版）】
+        B. 投資的要因 (40点)
+          1. 構造的優位性（20点）: 市場シェア、参入障壁、モート財務裏付け
+          2. 本質的価値（20点）: 収益力、資産・資本構成、バリュエーション適正度
+        A. 投機的要因 (60点)
+          3. 将来の価値（25点）: シナジー、成長確度、経営能力
+          4. 情報非対称性（20点）: 認識ギャップ、全体性プレミアム、認識トリガー
+          5. 政策・触媒（15点）: 政策アクセラレーション、外部カタリスト
 
         【4象限分類】
         - Prime（最優先投資）: certainty>=80 AND upside>=58
@@ -136,7 +138,7 @@
                             fontWeight: "bold",
                             boxShadow: `0 4px 15px ${riskColor}66`
                         }}>
-                            市場リスク {marketRiskScore}/100（{marketRiskLevel}）| 評価軸: 独占力(30)+政策耐性(20)+シナジー(25)+非対称性(15)+資本効率(10)
+                            市場リスク {marketRiskScore}/100（{marketRiskLevel}）| 評価: 投資的(40)=構造的優位性+本質的価値 / 投機的(60)=将来の価値+情報非対称性+政策・触媒
                         </div>
                     </div>
 
@@ -295,7 +297,7 @@
                                 {(() => {
                                     const stock = hoveredStockData;
                                     const color = domainColors[stock.domain] || "#888";
-                                    const isHighMonopoly = stock.monopoly >= 27;
+                                    const isHighMonopoly = stock.structural_advantage >= 16;
                                     return (
                                         <>
                                             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -317,9 +319,11 @@
                                                 </div>
 
                                                 <div style={{ marginTop: "6px", paddingTop: "6px", borderTop: "1px solid #475569", fontSize: "11px" }}>
-                                                    <div>独占力: {stock.monopoly}/30 | 政策耐性: {stock.resilience}/20</div>
-                                                    <div>シナジー: {stock.synergy}/25 | 非対称性: {stock.asymmetry}/15</div>
-                                                    <div>資本効率: {stock.capital}/10</div>
+                                                    <div style={{ color: "#93c5fd" }}>投資的(B): {stock.investment_factors}/40</div>
+                                                    <div>構造的優位性: {stock.structural_advantage}/20 | 本質的価値: {stock.intrinsic_value}/20</div>
+                                                    <div style={{ color: "#c4b5fd", marginTop: "2px" }}>投機的(A): {stock.speculative_factors}/60</div>
+                                                    <div>将来の価値: {stock.future_value}/25 | 非対称性: {stock.information_asymmetry}/20</div>
+                                                    <div>政策・触媒: {stock.policy_catalyst}/15</div>
                                                 </div>
 
                                                 <div style={{ marginTop: "6px", color: "#fbbf24" }}>{stock.note}</div>
@@ -342,7 +346,7 @@
                         ))}
                         <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                             <div style={{ width: "12px", height: "12px", borderRadius: "50%", border: "2px solid #ff6b6b", background: "transparent" }} />
-                            <span style={{ fontSize: "12px", color: "#ff6b6b" }}>高独占(27+)</span>
+                            <span style={{ fontSize: "12px", color: "#ff6b6b" }}>高構造的優位性(16+)</span>
                         </div>
                     </div>
 
@@ -356,14 +360,13 @@
                         fontSize: "11px",
                         color: "#94a3b8"
                     }}>
-                        <div style={{ fontWeight: "bold", marginBottom: "4px" }}>マルチドメイン・コンバージェンス評価フレームワーク（100点満点）</div>
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
-                            <div><span style={{ color: "#ff6b6b" }}>物理的独占力(30点)</span>: 市場シェア + 代替不可能性</div>
-                            <div><span style={{ color: "#3b82f6" }}>政策耐性(20点)</span>: 超党派支持 + 規制リスク耐性</div>
-                            <div><span style={{ color: "#22c55e" }}>シナジー(25点)</span>: 6ドメイン横断需要 + 相乗効果</div>
+                        <div style={{ fontWeight: "bold", marginBottom: "4px" }}>Graham分類体系統合版 評価フレームワーク（100点満点）</div>
+                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+                            <div><span style={{ color: "#3b82f6" }}>投資的要因 B(40点)</span>: 構造的優位性(20) + 本質的価値(20)</div>
+                            <div><span style={{ color: "#a855f7" }}>投機的要因 A(60点)</span>: 将来の価値(25) + 情報非対称性(20) + 政策・触媒(15)</div>
                         </div>
                         <div style={{ marginTop: "4px" }}>
-                            <span style={{ color: "#f97316" }}>核心の問い</span>: この技術がなくなったら何が止まるか？ / 何社が依存？ / 競合が追いつくのに何年？
+                            <span style={{ color: "#f97316" }}>核心の問い</span>: この技術がなくなったら何が止まるか？ / 本質的価値に対して割安か？ / 市場が見落としている価値は？
                         </div>
                     </div>
 
@@ -397,10 +400,10 @@
                         padding: "12px"
                     }}>
                         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                            <span style={{ fontSize: "14px", fontWeight: "bold", color: "#ff6b6b" }}>高独占銘柄（27点以上）</span>
+                            <span style={{ fontSize: "14px", fontWeight: "bold", color: "#ff6b6b" }}>高構造的優位性銘柄（16点以上/20点）</span>
                         </div>
                         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px", fontSize: "11px", color: "#cbd5e1" }}>
-                            {allStocks.filter(s => s.monopoly >= 27).map(stock => (
+                            {allStocks.filter(s => s.structural_advantage >= 16).map(stock => (
                                 <div key={stock.ticker}>
                                     <span style={{ color: "#ff6b6b" }}>{stock.ticker}</span> {stock.name.split(' ')[0]}: {stock.note}
                                 </div>

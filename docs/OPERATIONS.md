@@ -722,11 +722,14 @@ git commit "統合完了: N社、M情報項目、stable更新"
   certainty: 95,                  // 確実性
   upside: 45,                     // アップサイド
   total: 88,                      // 総合スコア
-  monopoly: 28,                   // 独占力
-  resilience: 19,                 // 政策耐性
-  synergy: 22,                    // シナジー
-  asymmetry: 12,                  // 非対称性
-  capital: 7,                     // 資本効率
+  structural_advantage: 18,       // 構造的優位性
+  intrinsic_value: 16,            // 本質的価値
+  future_value: 20,               // 将来の価値
+  information_asymmetry: 15,      // 情報非対称性
+  policy_catalyst: 12,            // 政策・触媒
+  investment_factors: 34,         // 投資的要因(B)
+  speculative_factors: 47,        // 投機的要因(A)
+  confidence_summary: "A/B/B/C/B", // 軸別確度
   domain: "防衛",                  // domains_impacted[0]（主ドメイン）
   core_tech: "防衛装備品、原子力、航空宇宙",  // core_technology
   thesis: "防衛装備品契約首位..."   // thesis（投資テーゼ）
@@ -1592,11 +1595,11 @@ reinforcement/
 判定例:
 | 軸 | 相関係数 | 判定 | アクション |
 |----|---------|------|-----------|
-| 独占力 | 0.45 | 有効 | 現状維持 |
-| 耐性 | 0.32 | 要観察 | 次回も確認 |
-| シナジー | 0.41 | 有効 | 現状維持 |
-| 非対称性 | 0.55 | 高有効 | 重み増加検討 |
-| 資本効率 | 0.15 | 無効 | 重み削減検討 |
+| 構造的優位性 | 0.45 | 有効 | 現状維持 |
+| 本質的価値 | 0.38 | 有効 | 次回も確認 |
+| 将来の価値 | 0.41 | 有効 | 現状維持 |
+| 情報非対称性 | 0.55 | 高有効 | 重み増加検討 |
+| 政策・触媒 | 0.32 | 要観察 | 次回も確認 |
 ```
 
 ---

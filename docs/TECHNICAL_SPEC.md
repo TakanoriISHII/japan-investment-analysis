@@ -216,14 +216,16 @@ Top 30企業の評価結果。
 {
   "metadata": {
     "date": "YYYY-MM-DD",
-    "evaluation_system": "5軸評価（100点満点）",
+    "evaluation_system": "Graham分類体系統合版（100点満点）",
     "axes": {
-      "monopoly": {"max": 30, "description": "物理的独占力"},
-      "resilience": {"max": 20, "description": "政策耐性"},
-      "synergy": {"max": 25, "description": "クロスドメイン・シナジー"},
-      "asymmetry": {"max": 15, "description": "情報非対称性"},
-      "capital": {"max": 10, "description": "資本効率"}
+      "structural_advantage": {"max": 20, "description": "構造的優位性", "category": "investment_factors"},
+      "intrinsic_value": {"max": 20, "description": "本質的価値", "category": "investment_factors"},
+      "future_value": {"max": 25, "description": "将来の価値", "category": "speculative_factors"},
+      "information_asymmetry": {"max": 20, "description": "情報非対称性", "category": "speculative_factors"},
+      "policy_catalyst": {"max": 15, "description": "政策・触媒", "category": "speculative_factors"}
     },
+    "investment_factors_max": 40,
+    "speculative_factors_max": 60,
     "market_risk_score": 45,
     "attack_defense_stance": "balanced"
   },

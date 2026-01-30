@@ -67,22 +67,21 @@
 3. 4象限配置              → 確実性 × アップサイドでポジション決定
 ```
 
-### 5軸相対評価の原則
+### 5軸評価の原則（Graham分類体系統合版）
 
-5軸（独占力・政策耐性・シナジー・非対称性・資本効率）は**相対的**に評価する:
+5軸は**投資的要因**と**投機的要因**に分類し、**相対的**に評価する:
 
-| 相対要因 | 内容 | 例 |
-|---------|------|-----|
-| 競合動向 | ライバルの追い上げ/撤退 | 海外勢追い上げ → 国内企業評価下方修正 |
-| 情勢変化 | 政策転換/技術革新 | 経産省補助金増額 → エネルギー企業上方修正 |
-| 前回比 | 改善/悪化/停滞 | シェア拡大トレンド → 上方修正 |
+| 分類 | 軸 | 配点 |
+|------|-----|------|
+| B. 投資的要因(40) | 構造的優位性 / 本質的価値 | 20 + 20 |
+| A. 投機的要因(60) | 将来の価値 / 情報非対称性 / 政策・触媒 | 25 + 20 + 15 |
 
-**評価手順**: ベーススコア（絶対位置）→ 相対調整 → 最終スコア
+**評価手順**: ベーススコア → 相対調整 → 情報確度(A-E)適用 → 最終スコア
 
 | 評価 | 詳細 |
 |------|------|
 | 市場リスク分析 | [METHODOLOGY.md - 市場リスク分析](./docs/METHODOLOGY.md#市場リスク分析) |
-| 5軸相対評価 | [METHODOLOGY.md - 企業評価](./docs/METHODOLOGY.md#企業評価-5軸フレームワーク) |
+| 5軸評価 | [METHODOLOGY.md - 企業評価](./docs/METHODOLOGY.md#企業評価-5軸フレームワークgraham分類体系統合版) |
 | 4象限マトリックス | [METHODOLOGY.md - 4象限マトリックス](./docs/METHODOLOGY.md#4象限マトリックス) |
 
 ---
@@ -146,6 +145,25 @@
 
 → 詳細: [OPERATIONS.md](./docs/OPERATIONS.md#フル分析プロトコル)
 
+### Phase 1 フレームワーク整合性検証ゲート【v2.0.0〜】
+- `state.json` の `framework.version` が "2.0.0" であること
+- METHODOLOGY.md / OPERATIONS.md / TECHNICAL_SPEC.md に新5軸名が存在すること
+- 収集プロンプト（Grok/Gemini）に Graham-Buffett指標セクションが存在すること
+- 旧軸名（"物理的独占力", "資本効率"等）がスコア定義として残留していないこと
+- → HALT / WARN / PASS を判定
+
+### Phase 5 必須検証ゲート
+- `stable/permanent/domains.json` の6ドメイン × 3項目にnullが残っていないこと
+- `stable/quarterly/financials.json` にTop 30全社が登録されていること
+- Top 30全社にバリュエーション項目（PER, EPS, 52週レンジ等）があること
+
+### Phase 6 スキーマ検証ゲート【v2.0.0〜】
+- `top30.json` のメタデータに Graham分類体系統合版の5軸定義が存在すること
+- 旧フィールド（monopoly, resilience, synergy, asymmetry, capital）が不在であること
+- 全Top 30社に: 5軸スコア、investment_factors、speculative_factors、confidence（5軸+サマリー）、graham_buffett_note が存在すること
+- 配点整合性: 各軸≤上限、投資的=軸1+軸2、投機的=軸3+軸4+軸5、合計=投資的+投機的
+- → FAIL の場合 Phase 7 に進まない
+
 ### Phase 7 必須出力
 - `reports/[DATE]/executive_summary.md`
 - `reports/[DATE]/final_report.md`
@@ -157,6 +175,12 @@
 - `reinforcement/results/claude_auto/[DATE].md`
 - `reinforcement/prompts/grok/[DATE]_tasks.md`（未完了Grokタスクがあれば）
 - `reinforcement/prompts/gemini/[DATE]_tasks.md`（未完了Geminiタスクがあれば）
+- **情報範囲拡大タスク**（domains.json null検査、financials.json全社登録検査）
+
+### Phase 9 フレームワーク移行完了【v2.0.0〜】
+- `framework.migration_status` を `"completed"` に更新
+- `monopoly_map` → `structural_advantage_map` のリネーム（初回のみ）
+- `framework.last_validated` を更新
 
 ---
 

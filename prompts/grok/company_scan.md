@@ -88,6 +88,16 @@
 - 政策追い風: [GX投資/防衛費増額/経済安全保障等]
 - 新規受注: [金額と内容]
 
+### Graham-Buffett指標 [QUARTERLY]【v2.0.0必須】
+- PER: X.X倍（セクター中央値: X.X倍）
+- PBR: X.X倍
+- PEG: X.X倍
+- ROE: XX%
+- EPS（直近4Q）: XXX円
+- EPS成長率（YoY）: +XX%
+- 52週レンジ: XXX-XXX円（現在位置: X%）
+- 配当利回り: X.X%
+
 ### 情報源
 - EDINET/TDnet: [URL]
 - 会社IR: [URL]

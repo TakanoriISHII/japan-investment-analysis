@@ -1,0 +1,244 @@
+{
+  "_metadata": {
+    "description": "日本の非上場・非公開競合企業マップ（6ドメイン別）",
+    "version": "2.0.0",
+    "framework": "Graham分類体系統合版",
+    "last_updated": null,
+    "update_frequency": "permanent（年次以下）",
+    "notes": "日本は米国と異なり「公開企業の非公開部門」が多い。また非上場のスタートアップ（AI、宇宙等）が増加中"
+  },
+  "domains": {
+    "AI": {
+      "non_listed_competitors": [
+        {
+          "company": "Preferred Networks (PFN)",
+          "status": "非上場",
+          "description": "日本最大のAIスタートアップ。深層学習フレームワーク、半導体（MN-Core）開発",
+          "relevance": "東京エレクトロン、ファナックの競合/パートナー",
+          "estimated_valuation": null,
+          "ipo_outlook": null,
+          "last_verified": null,
+          "confidence": "C"
+        },
+        {
+          "company": "Sakana AI",
+          "status": "非上場",
+          "description": "元Google研究者設立。基盤モデル開発、東京拠点",
+          "relevance": "日本AI基盤モデル開発の競合",
+          "estimated_valuation": null,
+          "ipo_outlook": null,
+          "last_verified": null,
+          "confidence": "D"
+        }
+      ],
+      "unlisted_divisions": [
+        {
+          "parent_company": "NTT (9432.T)",
+          "division": "NTT研究所・IOWN構想",
+          "description": "光電融合技術、次世代通信基盤。AI推論向けインフラ",
+          "revenue_disclosure": "セグメント別開示限定",
+          "competitive_impact": "データセンター電力効率で差別化",
+          "confidence": "B"
+        }
+      ]
+    },
+    "エネルギー": {
+      "non_listed_competitors": [
+        {
+          "company": "日本原燃",
+          "status": "非上場（電力会社共同出資）",
+          "description": "核燃料サイクル事業（六ヶ所再処理工場）",
+          "relevance": "原子力サプライチェーンの中核、上場企業では代替不可",
+          "estimated_valuation": null,
+          "ipo_outlook": "なし",
+          "last_verified": null,
+          "confidence": "B"
+        },
+        {
+          "company": "電源開発 (J-POWER, 9513.T)",
+          "status": "上場（参考：大間原発関連）",
+          "description": "大間原子力発電所（フルMOX）建設中",
+          "relevance": "次世代原子力の動向指標",
+          "estimated_valuation": null,
+          "ipo_outlook": "上場済",
+          "last_verified": null,
+          "confidence": "B"
+        }
+      ],
+      "unlisted_divisions": [
+        {
+          "parent_company": "三菱重工 (7011.T)",
+          "division": "原子力事業部",
+          "description": "PWR型原子炉設計・製造。SMR（革新軽水炉）開発",
+          "revenue_disclosure": "エナジー事業セグメントに含む（個別非開示）",
+          "competitive_impact": "日本唯一のPWR型原子炉メーカー",
+          "confidence": "B"
+        }
+      ]
+    },
+    "防衛": {
+      "non_listed_competitors": [],
+      "unlisted_divisions": [
+        {
+          "parent_company": "三菱重工 (7011.T)",
+          "division": "防衛・宇宙セグメント",
+          "description": "次期戦闘機（GCAP）、イージス艦、ミサイル防衛。防衛売上約6,000億円",
+          "revenue_disclosure": "セグメント開示あり（防衛・宇宙）",
+          "competitive_impact": "日本最大の防衛プライム",
+          "confidence": "A"
+        },
+        {
+          "parent_company": "川崎重工 (7012.T)",
+          "division": "航空宇宙システム事業",
+          "description": "P-1哨戒機、C-2輸送機、潜水艦。防衛売上約3,000億円",
+          "revenue_disclosure": "セグメント開示あり",
+          "competitive_impact": "潜水艦・航空機で三菱重工と双璧",
+          "confidence": "A"
+        },
+        {
+          "parent_company": "IHI (7013.T)",
+          "division": "航空・宇宙・防衛事業",
+          "description": "航空エンジン（F-35用F135関連）、ロケットエンジン",
+          "revenue_disclosure": "セグメント開示あり",
+          "competitive_impact": "航空エンジンで日本唯一の主要サプライヤー",
+          "confidence": "A"
+        },
+        {
+          "parent_company": "NEC (6701.T)",
+          "division": "防衛事業部",
+          "description": "防衛通信システム、レーダー、サイバー防衛",
+          "revenue_disclosure": "限定開示（社会インフラセグメント内）",
+          "competitive_impact": "防衛エレクトロニクスのリーダー",
+          "confidence": "B"
+        },
+        {
+          "parent_company": "三菱電機 (6503.T)",
+          "division": "防衛・宇宙システム事業",
+          "description": "防衛用レーダー、誘導弾、衛星",
+          "revenue_disclosure": "セグメント開示あり",
+          "competitive_impact": "防衛エレクトロニクスで三菱重工を補完",
+          "confidence": "A"
+        }
+      ],
+      "notes": "日本の防衛産業は非上場専業企業が少なく、大手製造業の一部門として存在する特殊構造"
+    },
+    "ロボティクス": {
+      "non_listed_competitors": [
+        {
+          "company": "GITAI Japan",
+          "status": "非上場",
+          "description": "宇宙用ロボット開発。ISS実証済み",
+          "relevance": "宇宙×ロボティクスの交差点",
+          "estimated_valuation": null,
+          "ipo_outlook": null,
+          "last_verified": null,
+          "confidence": "D"
+        }
+      ],
+      "unlisted_divisions": [
+        {
+          "parent_company": "ファナック (6954.T)",
+          "division": "ロボット事業",
+          "description": "産業用ロボット世界トップクラス。CRX協働ロボット",
+          "revenue_disclosure": "セグメント開示あり",
+          "competitive_impact": "産業用ロボット世界シェアトップ級",
+          "confidence": "A"
+        },
+        {
+          "parent_company": "安川電機 (6506.T)",
+          "division": "ロボティクス事業",
+          "description": "MOTOMAN産業用ロボット。サーボモーター世界シェアトップ",
+          "revenue_disclosure": "セグメント開示あり",
+          "competitive_impact": "サーボモーターで世界独占的地位",
+          "confidence": "A"
+        }
+      ]
+    },
+    "宇宙": {
+      "non_listed_competitors": [
+        {
+          "company": "インターステラテクノロジズ",
+          "status": "非上場",
+          "description": "小型ロケット「MOMO」「ZERO」開発。堀江貴文出資",
+          "relevance": "日本版SpaceXを目指す民間ロケット企業",
+          "estimated_valuation": null,
+          "ipo_outlook": null,
+          "last_verified": null,
+          "confidence": "D"
+        },
+        {
+          "company": "スペースワン",
+          "status": "非上場（キヤノン電子等出資）",
+          "description": "小型ロケット「カイロス」開発",
+          "relevance": "民間小型衛星打上げ市場への参入",
+          "estimated_valuation": null,
+          "ipo_outlook": null,
+          "last_verified": null,
+          "confidence": "D"
+        },
+        {
+          "company": "ispace (9348.T)",
+          "status": "上場（参考）",
+          "description": "月面探査・輸送。HAKUTO-R計画",
+          "relevance": "日本唯一の月面探査上場企業",
+          "estimated_valuation": null,
+          "ipo_outlook": "上場済",
+          "last_verified": null,
+          "confidence": "C"
+        },
+        {
+          "company": "AstroScale (186A.T)",
+          "status": "上場",
+          "description": "スペースデブリ除去技術。世界初の商用デブリ除去企業",
+          "relevance": "宇宙持続可能性の独占的ポジション",
+          "estimated_valuation": null,
+          "ipo_outlook": "上場済",
+          "last_verified": null,
+          "confidence": "B"
+        }
+      ],
+      "unlisted_divisions": [
+        {
+          "parent_company": "三菱重工 (7011.T)",
+          "division": "宇宙事業（H3ロケット）",
+          "description": "H3ロケット主契約者。JAXA主要パートナー",
+          "revenue_disclosure": "防衛・宇宙セグメントに含む（個別非開示）",
+          "competitive_impact": "日本の基幹ロケットメーカー",
+          "confidence": "A"
+        }
+      ]
+    },
+    "サイバー": {
+      "non_listed_competitors": [
+        {
+          "company": "NICT（情報通信研究機構）",
+          "status": "国立研究開発法人",
+          "description": "量子暗号通信の基礎研究。東京QKDネットワーク",
+          "relevance": "量子暗号の基盤技術供給源",
+          "estimated_valuation": null,
+          "ipo_outlook": "なし（公的機関）",
+          "last_verified": null,
+          "confidence": "B"
+        }
+      ],
+      "unlisted_divisions": [
+        {
+          "parent_company": "NEC (6701.T)",
+          "division": "サイバーセキュリティ事業",
+          "description": "量子暗号通信商用化、政府向けサイバー防衛",
+          "revenue_disclosure": "限定開示",
+          "competitive_impact": "量子暗号で世界先端",
+          "confidence": "B"
+        },
+        {
+          "parent_company": "東芝 (未上場化)",
+          "division": "量子暗号通信事業",
+          "description": "QKD（量子鍵配送）商用製品。英国BT等と実証",
+          "revenue_disclosure": "非公開（未上場化後）",
+          "competitive_impact": "QKD技術で世界トップクラス",
+          "confidence": "C"
+        }
+      ]
+    }
+  }
+}

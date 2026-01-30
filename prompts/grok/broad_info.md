@@ -271,6 +271,37 @@
 
 ---
 
+## カテゴリI: セクター別バリュエーション基準【v2.0.0追加】
+
+**Graham-Buffett評価に必要なセクター別基準値を収集**:
+
+### TSE主要セクター中央値
+
+| セクター | PER中央値 | PBR中央値 | ROE中央値 | 配当利回り中央値 |
+|---------|----------|----------|----------|----------------|
+| 電気機器 | X.X | X.X | X.X% | X.X% |
+| 機械 | X.X | X.X | X.X% | X.X% |
+| 精密機器 | X.X | X.X | X.X% | X.X% |
+| 情報・通信 | X.X | X.X | X.X% | X.X% |
+| 輸送用機器 | X.X | X.X | X.X% | X.X% |
+
+出力形式:
+```
+## I: セクター別バリュエーション
+### TSE 33業種分類（6ドメイン関連セクター）
+- [QUARTERLY] 電気機器: PER [X.X], PBR [X.X], ROE [X.X%] (情報源: JPX統計)
+- [QUARTERLY] 機械: PER [X.X], PBR [X.X], ROE [X.X%]
+- [QUARTERLY] 精密機器: PER [X.X], PBR [X.X], ROE [X.X%]
+- [QUARTERLY] 情報・通信: PER [X.X], PBR [X.X], ROE [X.X%]
+- [QUARTERLY] 輸送用機器: PER [X.X], PBR [X.X], ROE [X.X%]
+
+### 日経平均全体
+- [QUARTERLY] 日経平均PER: [X.X] (過去10年平均: 15-17倍)
+- [QUARTERLY] TOPIX PBR: [X.X] (過去10年平均: 1.2-1.4倍)
+```
+
+---
+
 ## X/Twitterセンチメント（Grok独自）
 
 **直近48時間** のトピック別センチメント:

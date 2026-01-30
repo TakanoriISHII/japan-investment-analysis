@@ -2,6 +2,25 @@
   "last_execution": "2026-01-30T12:00:00Z",
   "session": "run_analysis_full_v3.2_japan_focused",
   "version": "3.2",
+  "framework": {
+    "version": "2.0.0",
+    "name": "Graham分類体系統合版",
+    "activated": "2026-01-30",
+    "previous_version": "3.2",
+    "schema": {
+      "axes": ["structural_advantage", "intrinsic_value", "future_value", "information_asymmetry", "policy_catalyst"],
+      "max_scores": {"structural_advantage": 20, "intrinsic_value": 20, "future_value": 25, "information_asymmetry": 20, "policy_catalyst": 15},
+      "investment_factors_max": 40,
+      "speculative_factors_max": 60,
+      "total_max": 100,
+      "confidence_levels": ["A", "B", "C", "D", "E"],
+      "required_fields": ["investment_factors", "speculative_factors", "confidence", "graham_buffett_note"]
+    },
+    "deprecated_axes": ["monopoly", "resilience", "synergy", "asymmetry", "capital"],
+    "migration_status": "pending_first_run",
+    "first_run_completed": null,
+    "last_validated": null
+  },
   "events": {
     "last_collected": "2026-01-30",
     "total_count": 48,
@@ -18,10 +37,16 @@
     "japan_quality_score": 93,
     "active_alerts": 0
   },
-  "monopoly_map": {
+  "structural_advantage_map": {
     "last_update": "2026-01-30",
     "update_reason": "三菱重工時価総額確認、TSMC熊本4nm確定、H3延期、ヒューマノイドロボット開発",
     "pending_triggers": []
+  },
+  "_deprecated_monopoly_map": {
+    "last_update": "2026-01-30",
+    "update_reason": "三菱重工時価総額確認、TSMC熊本4nm確定、H3延期、ヒューマノイドロボット開発",
+    "pending_triggers": [],
+    "_note": "v2.0.0でstructural_advantage_mapに移行済み"
   },
   "market_state": {
     "last_update": "2026-01-30",
