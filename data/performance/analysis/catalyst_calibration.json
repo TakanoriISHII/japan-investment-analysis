@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "framework_version": "3.0.0",
+    "market": "japan",
+    "created_at": "2026-01-31T12:00:00Z",
+    "methodology": "Compare predicted probability bands with actual realization rates"
+  },
+  "calibration_bands": {
+    "high_probability_70plus": {"expected_realization": "65-80%", "actual_realization": null, "status": "pending"},
+    "medium_probability_40_69": {"expected_realization": "35-65%", "actual_realization": null, "status": "pending"},
+    "low_probability_under_40": {"expected_realization": "20-45%", "actual_realization": null, "status": "pending"}
+  },
+  "key_catalysts_tracked": [
+    {"event": "東京エレクトロンQ3決算", "date": "2026-02-06", "probability_band": "high", "status": "pending"},
+    {"event": "日銀3月会合", "date": "2026-03-20", "probability_band": "high", "status": "pending"},
+    {"event": "TSMC熊本4nm正式決定", "date": "2026-Q2", "probability_band": "medium", "status": "pending"},
+    {"event": "防衛予算FY2027概算要求", "date": "2026-Q2", "probability_band": "high", "status": "pending"},
+    {"event": "ファナックCRX-H1プロトタイプ", "date": "2026-H2", "probability_band": "medium", "status": "pending"},
+    {"event": "柏崎刈羽再稼働判断", "date": "2026-H2", "probability_band": "low", "status": "pending"},
+    {"event": "H3ロケット再開", "date": "2026-Q2", "probability_band": "medium", "status": "pending"}
+  ],
+  "next_review": "2026-04-30"
+}

@@ -2679,6 +2679,9 @@
         "revenue_yoy": "+62%",
         "data_center": "$51.2B (89.8%)",
         "guidance_q4": "$65B (+14% QoQ)",
+        "per": "~25x",
+        "stock_52w_high": "$212.19",
+        "stock_52w_low": "$86.62",
         "key_notes": "Blackwell完売、$500B visibility through CY2026"
       },
       "monthly": {
@@ -2727,7 +2730,9 @@
       },
       "quarterly": {
         "haleu_contract": "$110M through June 2026 + $900M expansion",
-        "production_rate": "900kg HALEU/year"
+        "production_rate": "900kg HALEU/year",
+        "per": "~46x",
+        "roe": "~10-20%（推定）"
       },
       "monthly": {
         "recent_contracts": [
@@ -2781,7 +2786,9 @@
       "quarterly": {
         "revenue_yoy": "+29%",
         "backlog": "$7.4B (+119% YoY)",
-        "guidance_2026": "Low-double-digit to low-teens EBITDA growth"
+        "guidance_2026": "Low-double-digit to low-teens EBITDA growth",
+        "stock_52w_high": "$220.57",
+        "stock_52w_low": "$84.21"
       },
       "monthly": {
         "recent_contracts": [
@@ -2831,7 +2838,9 @@
         "revenue": "$2,676M (+29% YoY)",
         "backlog": "$9.5B",
         "orders_yoy": "+60% organic",
-        "book_to_bill": "1.4x"
+        "book_to_bill": "1.4x",
+        "stock_52w_high": "$202.45",
+        "stock_52w_low": "$53.60"
       },
       "monthly": {
         "recent_contracts": [],
@@ -2879,7 +2888,10 @@
       },
       "quarterly": {
         "switchblade_contract": "$990M + $743M ceiling",
-        "production_expansion": "2x by FY27"
+        "production_expansion": "2x by FY27",
+        "per": "赤字（P/E -244.77）",
+        "stock_52w_high": "$417.86",
+        "stock_52w_low": "$102.25"
       },
       "monthly": {
         "recent_contracts": [
@@ -2929,7 +2941,10 @@
       },
       "quarterly": {
         "backlog": ">$2B",
-        "sda_contracts": "$1.3B+"
+        "sda_contracts": "$1.3B+",
+        "per": "赤字継続（EPS -$0.09予想）",
+        "stock_52w_high": "$99.58",
+        "stock_52w_low": "$14.71"
       },
       "monthly": {
         "recent_contracts": [
@@ -2979,7 +2994,10 @@
       },
       "quarterly": {
         "missile_solutions_revenue": "$3.6-3.8B",
-        "pentagon_investment": "$1B"
+        "pentagon_investment": "$1B",
+        "per": "38.03x",
+        "stock_52w_high": "$369.59",
+        "stock_52w_low": "$193.09"
       },
       "monthly": {
         "recent_contracts": [
@@ -3027,7 +3045,10 @@
       },
       "quarterly": {
         "total_capacity": "41GW",
-        "meta_ppa": "2.1GW+ (20-year)"
+        "meta_ppa": "2.1GW+ (20-year)",
+        "ev_ebitda": "11x",
+        "stock_52w_high": "$217",
+        "stock_52w_low": "$100"
       },
       "monthly": {
         "recent_contracts": [
@@ -3074,7 +3095,9 @@
         ]
       },
       "quarterly": {
-        "nuclear_pct": "70%"
+        "nuclear_pct": "70%",
+        "stock_52w_high": "$412.70",
+        "stock_52w_low": "$161.35"
       },
       "monthly": {
         "recent_contracts": [
@@ -3124,7 +3147,9 @@
       },
       "quarterly": {
         "proprietary_revenue_pct": "90%",
-        "ebitda_margin": "~50%"
+        "ebitda_margin": "~50%",
+        "per": "~75x（trailing）/ ~38-40x（forward）",
+        "roce": "20%"
       },
       "monthly": {
         "recent_contracts": [],
@@ -3173,7 +3198,10 @@
       },
       "quarterly": {
         "electrical_orders_yoy": "+25%",
-        "aerospace_orders_yoy": "+24%"
+        "aerospace_orders_yoy": "+24%",
+        "per": "28x",
+        "stock_52w_high": "$399.56",
+        "stock_52w_low": "$231.85"
       },
       "monthly": {
         "recent_contracts": [],
@@ -3221,7 +3249,10 @@
         ]
       },
       "quarterly": {
-        "defense_segment_growth": "+12%"
+        "defense_segment_growth": "+28.9%",
+        "per": "~35x（trailing）",
+        "stock_52w_high": "$673.19",
+        "stock_52w_low": "$266.51"
       },
       "monthly": {
         "recent_contracts": [],
@@ -3270,7 +3301,10 @@
       },
       "quarterly": {
         "revenue_yoy": "+53%",
-        "organic_growth": "+41%"
+        "organic_growth": "+41%",
+        "per": "~35x（forward）/ ~49x（trailing）",
+        "stock_52w_high": "$167.04",
+        "stock_52w_low": "$56.45"
       },
       "monthly": {
         "recent_contracts": [],

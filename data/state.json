@@ -152,6 +152,17 @@
     "notes": "v2.0.0初回運用：Graham分類体系統合版移行完了、矛盾全件解消、ギャップ補完完了、TOWA・ナブテスコ新規参入"
   },
   "escalation_log": [],
+  "features": {
+    "exit_signals": {"status": "implemented", "date": "2026-01-31", "note": "3 yellow alerts (Keyence/SCREEN/SMC), Soros reflexivity check operational"},
+    "cross_market_integration": {"status": "implemented", "date": "2026-01-31", "note": "17 supply chain links, 8 relative valuation pairs, bidirectional summaries"},
+    "catalyst_probability": {"status": "implemented", "date": "2026-01-31", "note": "Simons EV calculation integrated in top30 scoring"},
+    "portfolio_construction": {"status": "implemented", "date": "2026-01-31", "note": "Allocation model with position sizing, domain constraints, exit signal adjustment"},
+    "backtesting": {"status": "scaffold_only", "date": "2026-01-31", "note": "Framework and catalyst tracking established. Awaiting first verification period (2026-04-30)"},
+    "real_time_signals": {"status": "implemented_as_analysis_time", "date": "2026-01-31", "note": "Reframed as analysis-time check in Phase 1. 3 watchlist items active."},
+    "jp_governance_quantification": {"status": "implemented", "date": "2026-01-31", "note": "30 companies scored on 4-component framework (TSE Prime, capital efficiency, shareholder return, Buffett quality)"},
+    "score_validation": {"status": "implemented", "date": "2026-01-31", "note": "scripts/validate_scores.py for automated schema checking"},
+    "currency_sensitivity": {"status": "implemented", "date": "2026-01-31", "note": "Overseas revenue ratio and USD/JPY EPS impact for all Top 30"}
+  },
   "scenario_status": {
     "current_scenario": "base",
     "last_evaluated": "2026-01-31",

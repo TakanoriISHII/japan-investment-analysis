@@ -1,0 +1,908 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-31T12:30:00Z",
+    "date": "2026-01-31",
+    "market": "japan",
+    "market_risk_score": 57,
+    "risk_band": "51-75",
+    "recommended_stance": "balanced",
+    "model_version": "3.0.0",
+    "framework": "Graham分類体系統合版",
+    "source_files": {
+      "top30_snapshot": "data/performance/predictions/2026-01-31/top30_snapshot.json",
+      "exit_signals": "data/analysis/exit_signals.json",
+      "top30_analysis": "data/analysis/japan_top30.json"
+    }
+  },
+  "global_parameters": {
+    "total_companies": 30,
+    "cash_target": 0.20,
+    "cash_range": {"min": 0.15, "max": 0.25},
+    "equity_target": 0.80,
+    "base_weight": 0.033333,
+    "market_risk_factor": 0.80,
+    "tier_multipliers": {
+      "tier_1_rank_1_10": 1.5,
+      "tier_2_rank_11_20": 1.0,
+      "tier_3_rank_21_30": 0.7
+    },
+    "quadrant_multipliers": {
+      "prime": 1.2,
+      "stable": 1.0,
+      "speculative": 0.5
+    },
+    "exit_signal_adjustments": {
+      "none": 1.0,
+      "yellow": 0.5,
+      "red": 0.0
+    },
+    "constraints": {
+      "single_position_max": 0.08,
+      "domain_concentration_max": 0.30,
+      "speculative_quadrant_total_max": 0.15
+    },
+    "normalization": {
+      "raw_weight_sum": 0.8264,
+      "normalization_factor": 0.96802,
+      "target_sum": 0.80
+    }
+  },
+  "quadrant_allocation": {
+    "prime": {
+      "company_count": 10,
+      "target_total": 0.4294,
+      "actual_total": 0.4294,
+      "range": {"min": 0.35, "max": 0.50},
+      "note": "高確実性×高アップサイド。ポートフォリオの中核"
+    },
+    "stable": {
+      "company_count": 15,
+      "target_total": 0.3400,
+      "actual_total": 0.3399,
+      "range": {"min": 0.25, "max": 0.40},
+      "note": "安定した投資的価値。堅実なリターン"
+    },
+    "speculative": {
+      "company_count": 5,
+      "target_total": 0.0593,
+      "actual_total": 0.0593,
+      "range": {"min": 0.00, "max": 0.15},
+      "note": "高アップサイドだが確実性低い。50%スケーリング適用"
+    },
+    "cash": {
+      "target": 0.20,
+      "range": {"min": 0.15, "max": 0.25},
+      "note": "市場リスク57点(conservative帯)に基づく防御的キャッシュ水準"
+    }
+  },
+  "company_allocations": [
+    {
+      "rank": 1,
+      "ticker": "7011.T",
+      "name": "三菱重工業",
+      "domain": "防衛",
+      "quadrant": "prime",
+      "tier": 1,
+      "total_score": 79,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.04800,
+        "normalized_weight": 0.04647
+      },
+      "final_weight": 0.0465,
+      "final_weight_pct": "4.65%",
+      "sizing_rationale": "Tier1 Prime: 最高ランク防衛コンバージェンス企業。防衛・エネルギー・宇宙の3ドメイン収束。スコア79点はTop30首位。フルウェイト配分。"
+    },
+    {
+      "rank": 2,
+      "ticker": "8035.T",
+      "name": "東京エレクトロン",
+      "domain": "AI/半導体",
+      "quadrant": "stable",
+      "tier": 1,
+      "total_score": 72,
+      "confidence": "A",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.04000,
+        "normalized_weight": 0.03872
+      },
+      "final_weight": 0.0387,
+      "final_weight_pct": "3.87%",
+      "sizing_rationale": "Tier1 Stable: 半導体装置グローバルTop3。情報確度A。Primeではなく Stableのため×1.0。安定的コア保有。"
+    },
+    {
+      "rank": 3,
+      "ticker": "6954.T",
+      "name": "ファナック",
+      "domain": "ロボティクス",
+      "quadrant": "prime",
+      "tier": 1,
+      "total_score": 71,
+      "confidence": "A",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.04800,
+        "normalized_weight": 0.04647
+      },
+      "final_weight": 0.0465,
+      "final_weight_pct": "4.65%",
+      "sizing_rationale": "Tier1 Prime: ロボティクスドメイン首位。CNC/産業ロボットのグローバルシェア圧倒的。AI×ロボティクス収束の中核。"
+    },
+    {
+      "rank": 4,
+      "ticker": "6501.T",
+      "name": "日立製作所",
+      "domain": "エネルギー",
+      "quadrant": "prime",
+      "tier": 1,
+      "total_score": 69,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.04800,
+        "normalized_weight": 0.04647
+      },
+      "final_weight": 0.0465,
+      "final_weight_pct": "4.65%",
+      "sizing_rationale": "Tier1 Prime: エネルギー×AI×防衛のマルチドメイン企業。変圧器/グリッド/原子力で構造的優位性。"
+    },
+    {
+      "rank": 5,
+      "ticker": "6315.T",
+      "name": "TOWA",
+      "domain": "AI/半導体",
+      "quadrant": "speculative",
+      "tier": 1,
+      "total_score": 69,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 0.5,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.02000,
+        "normalized_weight": 0.01936
+      },
+      "final_weight": 0.0194,
+      "final_weight_pct": "1.94%",
+      "sizing_rationale": "Tier1 Speculative: 半導体モールディング装置で高スコアだがSpeculative象限。投機的要因42/60が牽引。50%スケーリング適用。新規参入銘柄。"
+    },
+    {
+      "rank": 6,
+      "ticker": "6506.T",
+      "name": "安川電機",
+      "domain": "ロボティクス",
+      "quadrant": "prime",
+      "tier": 1,
+      "total_score": 68,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.04800,
+        "normalized_weight": 0.04647
+      },
+      "final_weight": 0.0465,
+      "final_weight_pct": "4.65%",
+      "sizing_rationale": "Tier1 Prime: ロボティクス×AI収束。サーボモーター/インバーター世界首位級。ファナックと並びロボティクスドメインの双璧。"
+    },
+    {
+      "rank": 7,
+      "ticker": "9432.T",
+      "name": "NTT",
+      "domain": "AI",
+      "quadrant": "stable",
+      "tier": 1,
+      "total_score": 67,
+      "confidence": "A",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.04000,
+        "normalized_weight": 0.03872
+      },
+      "final_weight": 0.0387,
+      "final_weight_pct": "3.87%",
+      "sizing_rationale": "Tier1 Stable: IOWN/データセンターでAIインフラの中核。情報確度A。Stable象限のため×1.0。ディフェンシブなコア保有。"
+    },
+    {
+      "rank": 8,
+      "ticker": "6701.T",
+      "name": "NEC",
+      "domain": "防衛",
+      "quadrant": "prime",
+      "tier": 1,
+      "total_score": 66,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.04800,
+        "normalized_weight": 0.04647
+      },
+      "final_weight": 0.0465,
+      "final_weight_pct": "4.65%",
+      "sizing_rationale": "Tier1 Prime: 防衛エレクトロニクス×サイバー×AI。防衛通信/レーダーのプラットフォーム企業。マルチドメイン収束度高い。"
+    },
+    {
+      "rank": 9,
+      "ticker": "7012.T",
+      "name": "川崎重工業",
+      "domain": "防衛",
+      "quadrant": "prime",
+      "tier": 1,
+      "total_score": 65,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.04800,
+        "normalized_weight": 0.04647
+      },
+      "final_weight": 0.0465,
+      "final_weight_pct": "4.65%",
+      "sizing_rationale": "Tier1 Prime: 防衛（潜水艦/航空機）×ロボティクス×エネルギー。3ドメイン収束。防衛予算拡大の直接受益者。"
+    },
+    {
+      "rank": 10,
+      "ticker": "7013.T",
+      "name": "IHI",
+      "domain": "防衛",
+      "quadrant": "prime",
+      "tier": 1,
+      "total_score": 64,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.5,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.04800,
+        "normalized_weight": 0.04647
+      },
+      "final_weight": 0.0465,
+      "final_weight_pct": "4.65%",
+      "sizing_rationale": "Tier1 Prime: ジェットエンジン×防衛×エネルギー。航空エンジンのGE/P&W協業。防衛・宇宙ロケットエンジン。"
+    },
+    {
+      "rank": 11,
+      "ticker": "6920.T",
+      "name": "レーザーテック",
+      "domain": "AI/半導体",
+      "quadrant": "stable",
+      "tier": 2,
+      "total_score": 63,
+      "confidence": "A",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.026667,
+        "normalized_weight": 0.025814
+      },
+      "final_weight": 0.0258,
+      "final_weight_pct": "2.58%",
+      "sizing_rationale": "Tier2 Stable: EUVマスク検査装置で独占的地位。情報確度A。Tier2のためTier1よりウェイト低減。"
+    },
+    {
+      "rank": 12,
+      "ticker": "186A.T",
+      "name": "Astroscale HD",
+      "domain": "宇宙",
+      "quadrant": "speculative",
+      "tier": 2,
+      "total_score": 63,
+      "confidence": "C",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 0.5,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.013333,
+        "normalized_weight": 0.012907
+      },
+      "final_weight": 0.0129,
+      "final_weight_pct": "1.29%",
+      "sizing_rationale": "Tier2 Speculative: 宇宙デブリ除去の先駆者。高い投機的要因(43/60)だが情報確度C。小さいポジション。"
+    },
+    {
+      "rank": 13,
+      "ticker": "6503.T",
+      "name": "三菱電機",
+      "domain": "防衛",
+      "quadrant": "stable",
+      "tier": 2,
+      "total_score": 62,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.026667,
+        "normalized_weight": 0.025814
+      },
+      "final_weight": 0.0258,
+      "final_weight_pct": "2.58%",
+      "sizing_rationale": "Tier2 Stable: 防衛エレクトロニクス（ミサイル/レーダー）×宇宙。防衛セクターの安定的Tier2ポジション。"
+    },
+    {
+      "rank": 14,
+      "ticker": "6146.T",
+      "name": "ディスコ",
+      "domain": "AI/半導体",
+      "quadrant": "stable",
+      "tier": 2,
+      "total_score": 62,
+      "confidence": "A",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.026667,
+        "normalized_weight": 0.025814
+      },
+      "final_weight": 0.0258,
+      "final_weight_pct": "2.58%",
+      "sizing_rationale": "Tier2 Stable: 半導体ダイシング/グラインディングで圧倒的シェア。情報確度A。バリュエーション面でStable。"
+    },
+    {
+      "rank": 15,
+      "ticker": "6857.T",
+      "name": "アドバンテスト",
+      "domain": "AI/半導体",
+      "quadrant": "stable",
+      "tier": 2,
+      "total_score": 61,
+      "confidence": "A",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.026667,
+        "normalized_weight": 0.025814
+      },
+      "final_weight": 0.0258,
+      "final_weight_pct": "2.58%",
+      "sizing_rationale": "Tier2 Stable: 半導体テスターでグローバルシェア50%+。AI半導体テスト需要の直接受益者。情報確度A。"
+    },
+    {
+      "rank": 16,
+      "ticker": "6758.T",
+      "name": "ソニーグループ",
+      "domain": "マルチドメイン",
+      "quadrant": "stable",
+      "tier": 2,
+      "total_score": 60,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.026667,
+        "normalized_weight": 0.025814
+      },
+      "final_weight": 0.0258,
+      "final_weight_pct": "2.58%",
+      "sizing_rationale": "Tier2 Stable: イメージセンサー×AI×ロボティクス。マルチドメイン収束のStableポジション。"
+    },
+    {
+      "rank": 17,
+      "ticker": "5631.T",
+      "name": "日本製鋼所",
+      "domain": "防衛",
+      "quadrant": "prime",
+      "tier": 2,
+      "total_score": 60,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.032000,
+        "normalized_weight": 0.030977
+      },
+      "final_weight": 0.0310,
+      "final_weight_pct": "3.10%",
+      "sizing_rationale": "Tier2 Prime: 防弾鋼板/砲身の独占的サプライヤー。防衛生産基盤の代替不可能企業。Prime象限×1.2適用。"
+    },
+    {
+      "rank": 18,
+      "ticker": "6861.T",
+      "name": "キーエンス",
+      "domain": "ロボティクス",
+      "quadrant": "stable",
+      "tier": 2,
+      "total_score": 59,
+      "confidence": "A",
+      "exit_signal": "yellow",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 0.5,
+        "raw_weight": 0.013333,
+        "normalized_weight": 0.012907
+      },
+      "final_weight": 0.0129,
+      "final_weight_pct": "1.29%",
+      "sizing_rationale": "Tier2 Stable Yellow: 55%営業利益率のモートは健在だが、5ランク低下によりイエローアラート発動。ウェイト50%削減。相対的魅力低下を反映。"
+    },
+    {
+      "rank": 19,
+      "ticker": "6723.T",
+      "name": "ルネサスエレクトロニクス",
+      "domain": "AI/半導体",
+      "quadrant": "prime",
+      "tier": 2,
+      "total_score": 59,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.032000,
+        "normalized_weight": 0.030977
+      },
+      "final_weight": 0.0310,
+      "final_weight_pct": "3.10%",
+      "sizing_rationale": "Tier2 Prime: 車載半導体×AI edge。自動運転/ロボティクス半導体の日本代表。Prime象限×1.2適用。"
+    },
+    {
+      "rank": 20,
+      "ticker": "7735.T",
+      "name": "SCREEN HD",
+      "domain": "AI/半導体",
+      "quadrant": "stable",
+      "tier": 2,
+      "total_score": 58,
+      "confidence": "B",
+      "exit_signal": "yellow",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 1.0,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 0.5,
+        "raw_weight": 0.013333,
+        "normalized_weight": 0.012907
+      },
+      "final_weight": 0.0129,
+      "final_weight_pct": "1.29%",
+      "sizing_rationale": "Tier2 Stable Yellow: 洗浄装置60%シェアだが6ランク低下。イエローアラート。ウェイト50%削減。Rapidus/TSMC熊本触媒は有効だが監視継続。"
+    },
+    {
+      "rank": 21,
+      "ticker": "6268.T",
+      "name": "ナブテスコ",
+      "domain": "ロボティクス",
+      "quadrant": "stable",
+      "tier": 3,
+      "total_score": 57,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.018667,
+        "normalized_weight": 0.018069
+      },
+      "final_weight": 0.0181,
+      "final_weight_pct": "1.81%",
+      "sizing_rationale": "Tier3 Stable: 精密減速機60%シェア。ロボティクスドメインの重要コンポーネント企業。新規参入銘柄。Tier3ウェイト。"
+    },
+    {
+      "rank": 22,
+      "ticker": "6273.T",
+      "name": "SMC",
+      "domain": "ロボティクス",
+      "quadrant": "stable",
+      "tier": 3,
+      "total_score": 57,
+      "confidence": "A",
+      "exit_signal": "yellow",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 0.5,
+        "raw_weight": 0.009333,
+        "normalized_weight": 0.009035
+      },
+      "final_weight": 0.0090,
+      "final_weight_pct": "0.90%",
+      "sizing_rationale": "Tier3 Stable Yellow: 空圧機器40%グローバルシェアは不変だが7ランク低下。イエローアラート×Tier3で最小ウェイト。触媒進捗を次回重点確認。"
+    },
+    {
+      "rank": 23,
+      "ticker": "9501.T",
+      "name": "東京電力HD",
+      "domain": "エネルギー",
+      "quadrant": "speculative",
+      "tier": 3,
+      "total_score": 56,
+      "confidence": "C",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 0.5,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.009333,
+        "normalized_weight": 0.009035
+      },
+      "final_weight": 0.0090,
+      "final_weight_pct": "0.90%",
+      "sizing_rationale": "Tier3 Speculative: 柏崎刈羽原発再稼働触媒。情報確度C。Tier3×Speculative×0.5で最小ウェイト。テーゼは原子力再稼働一点。"
+    },
+    {
+      "rank": 24,
+      "ticker": "6324.T",
+      "name": "ハーモニック・ドライブ",
+      "domain": "ロボティクス",
+      "quadrant": "speculative",
+      "tier": 3,
+      "total_score": 56,
+      "confidence": "C",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 0.5,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.009333,
+        "normalized_weight": 0.009035
+      },
+      "final_weight": 0.0090,
+      "final_weight_pct": "0.90%",
+      "sizing_rationale": "Tier3 Speculative: 波動歯車減速機で独占的だがヒューマノイドロボット需要は不確実。情報確度C。最小ウェイト。"
+    },
+    {
+      "rank": 25,
+      "ticker": "6702.T",
+      "name": "富士通",
+      "domain": "マルチドメイン",
+      "quadrant": "stable",
+      "tier": 3,
+      "total_score": 55,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.018667,
+        "normalized_weight": 0.018069
+      },
+      "final_weight": 0.0181,
+      "final_weight_pct": "1.81%",
+      "sizing_rationale": "Tier3 Stable: AI×サイバー×防衛のマルチドメイン。量子コンピューティング/富岳後継。Tier3のためウェイト限定的。"
+    },
+    {
+      "rank": 26,
+      "ticker": "9348.T",
+      "name": "ispace",
+      "domain": "宇宙",
+      "quadrant": "speculative",
+      "tier": 3,
+      "total_score": 55,
+      "confidence": "C",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 0.5,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.009333,
+        "normalized_weight": 0.009035
+      },
+      "final_weight": 0.0090,
+      "final_weight_pct": "0.90%",
+      "sizing_rationale": "Tier3 Speculative: 月面着陸ミッション2/3。情報確度C。宇宙ドメインの投機的ポジション。最小ウェイト。"
+    },
+    {
+      "rank": 27,
+      "ticker": "1963.T",
+      "name": "日揮HD",
+      "domain": "エネルギー",
+      "quadrant": "prime",
+      "tier": 3,
+      "total_score": 54,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 1.2,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.022400,
+        "normalized_weight": 0.021684
+      },
+      "final_weight": 0.0217,
+      "final_weight_pct": "2.17%",
+      "sizing_rationale": "Tier3 Prime: エネルギーEPC×原子力。SMR/次世代原子力のプラント建設能力。Tier3だがPrime象限×1.2でやや高めのウェイト。"
+    },
+    {
+      "rank": 28,
+      "ticker": "6481.T",
+      "name": "THK",
+      "domain": "ロボティクス",
+      "quadrant": "stable",
+      "tier": 3,
+      "total_score": 54,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.018667,
+        "normalized_weight": 0.018069
+      },
+      "final_weight": 0.0181,
+      "final_weight_pct": "1.81%",
+      "sizing_rationale": "Tier3 Stable: LMガイド世界シェア首位。ロボティクス/半導体装置のコンポーネント企業。Tier3安定枠。"
+    },
+    {
+      "rank": 29,
+      "ticker": "4704.T",
+      "name": "トレンドマイクロ",
+      "domain": "サイバー",
+      "quadrant": "stable",
+      "tier": 3,
+      "total_score": 53,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.018667,
+        "normalized_weight": 0.018069
+      },
+      "final_weight": 0.0181,
+      "final_weight_pct": "1.81%",
+      "sizing_rationale": "Tier3 Stable: サイバーセキュリティドメインの唯一の代表。サイバードメインへのエクスポージャー確保。Tier3ウェイト。"
+    },
+    {
+      "rank": 30,
+      "ticker": "9503.T",
+      "name": "関西電力",
+      "domain": "エネルギー",
+      "quadrant": "stable",
+      "tier": 3,
+      "total_score": 52,
+      "confidence": "B",
+      "exit_signal": "none",
+      "weight_calculation": {
+        "base_weight": 0.033333,
+        "tier_multiplier": 0.7,
+        "quadrant_multiplier": 1.0,
+        "market_risk_factor": 0.80,
+        "exit_signal_adj": 1.0,
+        "raw_weight": 0.018667,
+        "normalized_weight": 0.018069
+      },
+      "final_weight": 0.0181,
+      "final_weight_pct": "1.81%",
+      "sizing_rationale": "Tier3 Stable: 原子力稼働率最高の電力会社。エネルギードメインの安定枠。原子力再稼働の実績ある受益者。"
+    }
+  ],
+  "domain_balance": {
+    "防衛": {
+      "tickers": ["7011.T", "6701.T", "7012.T", "7013.T", "5631.T", "6503.T"],
+      "total_weight": 0.2428,
+      "total_weight_pct": "24.28%",
+      "max_constraint": 0.30,
+      "status": "OK",
+      "note": "6社。Tier1に4社集中。防衛予算拡大の主要受益者群"
+    },
+    "AI/半導体": {
+      "tickers": ["8035.T", "6315.T", "6920.T", "6146.T", "6857.T", "7735.T", "6723.T"],
+      "total_weight": 0.1796,
+      "total_weight_pct": "17.96%",
+      "max_constraint": 0.30,
+      "status": "OK",
+      "note": "7社。TSMC熊本/Rapidus触媒。TEL/ディスコ/アドバンテストがコア"
+    },
+    "ロボティクス": {
+      "tickers": ["6954.T", "6506.T", "6861.T", "6268.T", "6273.T", "6324.T", "6481.T"],
+      "total_weight": 0.1601,
+      "total_weight_pct": "16.01%",
+      "max_constraint": 0.30,
+      "status": "OK",
+      "note": "7社。ファナック/安川がコア。キーエンス/SMCはイエロー減額"
+    },
+    "エネルギー": {
+      "tickers": ["6501.T", "9501.T", "1963.T", "9503.T"],
+      "total_weight": 0.0953,
+      "total_weight_pct": "9.53%",
+      "max_constraint": 0.30,
+      "status": "OK",
+      "note": "4社。日立がコア。原子力再稼働/グリッド投資テーマ"
+    },
+    "宇宙": {
+      "tickers": ["186A.T", "9348.T"],
+      "total_weight": 0.0219,
+      "total_weight_pct": "2.19%",
+      "max_constraint": 0.30,
+      "status": "OK",
+      "note": "2社。両社ともSpeculative。小さいエクスポージャー"
+    },
+    "サイバー": {
+      "tickers": ["4704.T"],
+      "total_weight": 0.0181,
+      "total_weight_pct": "1.81%",
+      "max_constraint": 0.30,
+      "status": "OK",
+      "note": "1社。トレンドマイクロのみ。ドメインカバレッジ確保目的"
+    },
+    "マルチドメイン": {
+      "tickers": ["6758.T", "6702.T"],
+      "total_weight": 0.0439,
+      "total_weight_pct": "4.39%",
+      "max_constraint": 0.30,
+      "status": "OK",
+      "note": "2社。ソニー(AI+ロボティクス)/富士通(AI+サイバー)。複数ドメイン横断"
+    }
+  },
+  "constraint_check": {
+    "single_position_max_8pct": {
+      "status": "PASS",
+      "max_position": {"ticker": "7011.T", "weight": 0.0465, "weight_pct": "4.65%"},
+      "violations": []
+    },
+    "domain_concentration_max_30pct": {
+      "status": "PASS",
+      "max_domain": {"domain": "防衛", "weight": 0.2428, "weight_pct": "24.28%"},
+      "violations": []
+    },
+    "speculative_quadrant_max_15pct": {
+      "status": "PASS",
+      "speculative_total": 0.0593,
+      "speculative_total_pct": "5.93%",
+      "speculative_companies": [
+        {"ticker": "6315.T", "weight": 0.0194},
+        {"ticker": "186A.T", "weight": 0.0129},
+        {"ticker": "9501.T", "weight": 0.0090},
+        {"ticker": "6324.T", "weight": 0.0090},
+        {"ticker": "9348.T", "weight": 0.0090}
+      ],
+      "violations": []
+    },
+    "total_equity_check": {
+      "target": 0.80,
+      "actual": 0.8016,
+      "status": "PASS",
+      "note": "正規化後の丸め誤差により0.16%の差異。許容範囲内。"
+    },
+    "overall_status": "ALL_CONSTRAINTS_PASSED"
+  },
+  "allocation_summary": {
+    "equity_allocation": 0.80,
+    "cash_allocation": 0.20,
+    "tier_breakdown": {
+      "tier_1": {
+        "companies": 10,
+        "total_weight": 0.4336,
+        "avg_weight": 0.0434,
+        "weight_pct": "43.36%"
+      },
+      "tier_2": {
+        "companies": 10,
+        "total_weight": 0.2347,
+        "avg_weight": 0.0235,
+        "weight_pct": "23.47%"
+      },
+      "tier_3": {
+        "companies": 10,
+        "total_weight": 0.1333,
+        "avg_weight": 0.0133,
+        "weight_pct": "13.33%"
+      }
+    },
+    "quadrant_breakdown": {
+      "prime": {"companies": 10, "total_weight": 0.4294, "weight_pct": "42.94%"},
+      "stable": {"companies": 15, "total_weight": 0.3399, "weight_pct": "33.99%"},
+      "speculative": {"companies": 5, "total_weight": 0.0593, "weight_pct": "5.93%"}
+    },
+    "exit_signal_impact": {
+      "yellow_alerts": 3,
+      "red_alerts": 0,
+      "weight_reduced_by_yellow": {
+        "6861.T_keyence": {"without_yellow": 0.0258, "with_yellow": 0.0129, "reduction": 0.0129},
+        "7735.T_screen": {"without_yellow": 0.0258, "with_yellow": 0.0129, "reduction": 0.0129},
+        "6273.T_smc": {"without_yellow": 0.0181, "with_yellow": 0.0090, "reduction": 0.0091}
+      },
+      "total_weight_reduction_from_exits": 0.0349,
+      "note": "イエローアラート3件で合計3.49%のウェイト削減。全てテーゼ崩壊ではなく相対的ランク低下による。"
+    },
+    "key_observations": [
+      "防衛ドメインが最大(24.28%)。6ドメイン中最も多い6社が所属し、Tier1に4社集中",
+      "AI/半導体(17.96%)とロボティクス(16.01%)が次に続く。3ドメインで58%を占める",
+      "投機的象限は5.93%と15%上限を大きく下回る。市場リスク57点の保守的スタンスを反映",
+      "イエローアラート3件(キーエンス/SCREEN/SMC)はウェイト50%減で対応。テーゼ崩壊ではない",
+      "宇宙(2.19%)とサイバー(1.81%)はエクスポージャー確保目的の最小配分",
+      "キャッシュ20%はVI=34とP/C=0.59のダイバージェンスリスクに対する防御水準"
+    ]
+  }
+}

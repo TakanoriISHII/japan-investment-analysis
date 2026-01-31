@@ -1,15 +1,149 @@
 {
   "metadata": {
-    "generated_at": null,
+    "generated_at": "2026-01-31T12:00:00Z",
     "source_repo": "japan-investment-analysis",
-    "framework_version": "3.0.0"
+    "target_repo": "us-investment-analysis",
+    "framework_version": "3.0.0",
+    "direction": "JP -> US"
   },
   "market_snapshot": {
-    "market_risk_score": null,
-    "stance": null,
-    "top_conviction": null
+    "market_risk_score": 57,
+    "stance": "balanced",
+    "top_conviction": "MHI (7011.T) - defense spending inflection + GCAP + missile defense"
   },
-  "top10_summary": [],
-  "domain_signals": {},
-  "key_catalysts": []
+  "market_risk_comparison": {
+    "jp_score": 57,
+    "us_score": 63,
+    "differential": -6,
+    "interpretation": "Japan market slightly more favorable (lower risk) than US. JP balanced stance vs US conservative. JP benefits from yen weakness tailwind and defense spending structural shift. US elevated by tariff uncertainty and stretched valuations."
+  },
+  "top5_summary": [
+    {
+      "rank": 1,
+      "ticker": "7011.T",
+      "name": "Mitsubishi Heavy Industries",
+      "total_score": 79,
+      "quadrant": "prime",
+      "confidence": "B",
+      "key_thesis": "Japan #1 defense prime. GCAP fighter + missile defense + nuclear. Defense budget doubling to 2% GDP.",
+      "us_relevance": "Competitor/ally to RTX (#8 US) and LMT (#10 US). Shared F-35/Patriot/SM-3 programs. Japan defense budget growth signals parallel to US defense spending."
+    },
+    {
+      "rank": 2,
+      "ticker": "8035.T",
+      "name": "Tokyo Electron",
+      "total_score": 72,
+      "quadrant": "stable",
+      "confidence": "A",
+      "key_thesis": "Global #3 semi equipment. TSMC Kumamoto catalyst. Coater/developer near-monopoly.",
+      "us_relevance": "Direct competitor to LRCX and AMAT. TEL quarterly results are leading indicator for US semi equipment demand. TSMC Japan expansion creates new demand vector."
+    },
+    {
+      "rank": 3,
+      "ticker": "6954.T",
+      "name": "Fanuc",
+      "total_score": 71,
+      "quadrant": "prime",
+      "confidence": "A",
+      "key_thesis": "Global robotics/CNC leader. Humanoid robotics optionality. Factory automation recovery play.",
+      "us_relevance": "Competitor to ROK in industrial automation. Fanuc factory orders are global manufacturing health indicator. Humanoid robotics development parallels US automation narrative."
+    },
+    {
+      "rank": 4,
+      "ticker": "6501.T",
+      "name": "Hitachi",
+      "total_score": 69,
+      "quadrant": "prime",
+      "confidence": "B",
+      "key_thesis": "Grid/power equipment via Hitachi Energy. Data center power. Nuclear (ABWR). Diversified industrial leader.",
+      "us_relevance": "Competitor to GEV in grid equipment and transformers. Global transformer shortage is shared tailwind. Hitachi Energy order trends signal grid modernization demand."
+    },
+    {
+      "rank": 5,
+      "ticker": "6315.T",
+      "name": "TOWA",
+      "total_score": 69,
+      "quadrant": "speculative",
+      "confidence": "B",
+      "key_thesis": "HBM compression mold monopoly (80%+ share). Direct NVIDIA AI supply chain beneficiary.",
+      "us_relevance": "Direct supplier/beneficiary of NVDA (#2 US). TOWA order flow is proxy for HBM production rate and NVIDIA GPU demand. Critical hidden link in AI supply chain."
+    }
+  ],
+  "domain_distribution": {
+    "defense": {
+      "jp_companies_in_top30": 5,
+      "key_names": ["MHI", "KHI", "IHI", "MELCO", "NEC"],
+      "theme": "Japan defense budget doubling (1% to 2% GDP). GCAP next-gen fighter. Missile defense expansion.",
+      "us_signal": "Japan defense spending growth validates global defense upcycle thesis. MHI/KHI order book trends are leading indicators for allied defense demand."
+    },
+    "AI_semiconductor": {
+      "jp_companies_in_top30": 8,
+      "key_names": ["TEL", "TOWA", "Advantest", "Lasertec", "DISCO", "SCREEN", "Renesas", "Keyence"],
+      "theme": "Semi equipment demand driven by TSMC Japan expansion, HBM for AI, and EUV adoption.",
+      "us_signal": "JP semi equipment orders validate NVDA/AMD demand strength. TEL/Advantest results are forward indicators for US semi equipment cycle. TOWA is direct NVDA HBM supply chain proxy."
+    },
+    "energy_nuclear": {
+      "jp_companies_in_top30": 4,
+      "key_names": ["TEPCO", "Kansai EP", "Hitachi", "JSW"],
+      "theme": "Nuclear restart program (Kashiwazaki-Kariwa 7.0GW). Grid modernization. Data center power demand.",
+      "us_signal": "Japan nuclear restarts validate global nuclear renaissance. TEPCO restart would be transformative signal for CEG/VST. Grid equipment demand parallels US grid modernization."
+    },
+    "robotics": {
+      "jp_companies_in_top30": 5,
+      "key_names": ["Fanuc", "Yaskawa", "Nabtesco", "Harmonic Drive", "SMC"],
+      "theme": "Factory automation recovery. Humanoid robotics development. China demand recovery.",
+      "us_signal": "JP robotics orders are global manufacturing health bellwether. Fanuc/Yaskawa monthly orders are leading indicators for ROK and global factory automation cycle."
+    },
+    "cyber": {
+      "jp_companies_in_top30": 3,
+      "key_names": ["NEC", "Trend Micro", "Fujitsu"],
+      "theme": "Active Cyber Defense legislation. Japan cybersecurity spending acceleration.",
+      "us_signal": "Japan cybersecurity regulation growth validates PANW/CRWD global expansion thesis. NEC government contracts signal APAC cybersecurity demand."
+    },
+    "space": {
+      "jp_companies_in_top30": 2,
+      "key_names": ["Astroscale", "ispace"],
+      "theme": "Orbital debris removal (Astroscale). Lunar exploration (ispace). Japan space agency expansion.",
+      "us_signal": "Astroscale debris removal capabilities relevant to US space sustainability. ispace lunar lander progress signals commercial lunar economy development parallel to RKLB/LUNR."
+    }
+  },
+  "supply_chain_signals": [
+    {
+      "signal": "TEL Q3 FY2025 results (2026-02-06) will reveal semi equipment demand trajectory",
+      "impact_on_us": "Leading indicator for LRCX/AMAT order outlook. If TEL guides up, positive for US semi equipment stocks.",
+      "confidence": "A",
+      "timeline": "2026-02-06"
+    },
+    {
+      "signal": "Japan FY2027 defense budget request (Q2 2026) will confirm 2% GDP trajectory",
+      "impact_on_us": "Validates global defense upcycle. Positive for RTX/LMT if Japan confirms increased spending on US-origin systems.",
+      "confidence": "B",
+      "timeline": "2026-Q2"
+    },
+    {
+      "signal": "TEPCO Kashiwazaki-Kariwa restart decision expected H1 2026",
+      "impact_on_us": "Major catalyst for global nuclear sentiment. Positive for CEG/VST/BWXT if approved. Validates nuclear renaissance narrative.",
+      "confidence": "C",
+      "timeline": "2026-H1"
+    },
+    {
+      "signal": "Fanuc monthly order data shows China factory automation recovery trajectory",
+      "impact_on_us": "Leading indicator for global manufacturing capex cycle. Positive for ROK and broader industrial automation if recovery confirmed.",
+      "confidence": "B",
+      "timeline": "monthly"
+    },
+    {
+      "signal": "TOWA order book growth directly tracks HBM packaging demand for NVIDIA GPUs",
+      "impact_on_us": "Proxy signal for NVDA Blackwell/Rubin HBM demand strength. TOWA order acceleration = NVDA supply chain healthy.",
+      "confidence": "B",
+      "timeline": "quarterly"
+    }
+  ],
+  "key_catalysts_next_6m": [
+    {"event": "TEL Q3 FY2025 earnings", "date": "2026-02-06", "cross_market_impact": "Semi equipment demand signal for LRCX/AMAT"},
+    {"event": "BOJ March meeting", "date": "2026-03-20", "cross_market_impact": "JPY movement affects JP company valuations in USD terms"},
+    {"event": "TSMC Kumamoto 4nm formal decision", "date": "2026-Q2", "cross_market_impact": "Confirms additional semi equipment demand for TEL/Advantest/SCREEN"},
+    {"event": "Japan FY2027 defense budget request", "date": "2026-Q2", "cross_market_impact": "Validates allied defense spending growth for RTX/LMT"},
+    {"event": "Fanuc CRX-H1 humanoid prototype", "date": "2026-H2", "cross_market_impact": "Signals JP robotics industry humanoid capabilities, competitive to US humanoid efforts"}
+  ]
 }

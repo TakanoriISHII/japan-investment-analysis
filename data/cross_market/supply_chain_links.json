@@ -1,9 +1,432 @@
 {
   "metadata": {
-    "last_updated": null,
-    "total_links": 0,
+    "last_updated": "2026-01-31",
     "framework_version": "3.0.0",
-    "note": "日米クロスマーケットのサプライチェーンリンク。Phase 9.5で更新。"
+    "total_links": 17,
+    "note": "JP-US cross-market supply chain and competitive links. Updated at Phase 9.5."
   },
-  "links": []
+  "links": [
+    {
+      "id": "SCL-001",
+      "jp_ticker": "8035.T",
+      "jp_name": "Tokyo Electron",
+      "jp_rank": 2,
+      "us_ticker": "LRCX",
+      "us_name": "Lam Research",
+      "us_rank": null,
+      "relationship": "competitor",
+      "domain": "AI",
+      "sub_segment": "semiconductor_equipment_deposition_etch",
+      "relative_valuation": {
+        "jp_per": 28.5,
+        "us_per": 22.0,
+        "premium": "JP +29.5%"
+      },
+      "correlation": 0.75,
+      "information_flow": "US semi capex guidance -> JP equipment order trajectory",
+      "catalyst_links": [
+        "LRCX/AMAT quarterly capex guidance is leading indicator for TEL orders",
+        "TSMC/Samsung capex announcements affect both simultaneously"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-002",
+      "jp_ticker": "8035.T",
+      "jp_name": "Tokyo Electron",
+      "jp_rank": 2,
+      "us_ticker": "AMAT",
+      "us_name": "Applied Materials",
+      "us_rank": null,
+      "relationship": "competitor",
+      "domain": "AI",
+      "sub_segment": "semiconductor_equipment_deposition_cvd",
+      "relative_valuation": {
+        "jp_per": 28.5,
+        "us_per": 20.0,
+        "premium": "JP +42.5%"
+      },
+      "correlation": 0.78,
+      "information_flow": "AMAT quarterly results -> TEL demand outlook validation",
+      "catalyst_links": [
+        "AMAT China revenue restrictions create share shift opportunity for TEL",
+        "Shared exposure to TSMC advanced node expansion"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-003",
+      "jp_ticker": "6857.T",
+      "jp_name": "Advantest",
+      "jp_rank": 15,
+      "us_ticker": "KLAC",
+      "us_name": "KLA Corporation",
+      "us_rank": null,
+      "relationship": "complementary",
+      "domain": "AI",
+      "sub_segment": "semiconductor_test_inspection",
+      "relative_valuation": {
+        "jp_per": 35.0,
+        "us_per": 25.0,
+        "premium": "JP +40.0%"
+      },
+      "correlation": 0.65,
+      "information_flow": "KLAC inspection demand -> Advantest test demand (sequential in fab flow)",
+      "catalyst_links": [
+        "HBM test demand driven by NVIDIA Blackwell/Rubin ramp benefits Advantest directly",
+        "KLAC yield management data provides leading signal on fab utilization"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-004",
+      "jp_ticker": "7011.T",
+      "jp_name": "Mitsubishi Heavy Industries",
+      "jp_rank": 1,
+      "us_ticker": "RTX",
+      "us_name": "RTX Corporation",
+      "us_rank": 8,
+      "relationship": "competitor_ally",
+      "domain": "defense",
+      "sub_segment": "defense_prime_fighter_missile",
+      "relative_valuation": {
+        "jp_per": 55.0,
+        "us_per": 35.0,
+        "premium": "JP +57.1%"
+      },
+      "correlation": 0.55,
+      "information_flow": "US defense budget/F-35 production rate -> MHI licensed production volume",
+      "catalyst_links": [
+        "GCAP (Global Combat Air Programme) progress affects MHI next-gen fighter timeline",
+        "RTX Patriot/SM-3 co-production with MHI creates shared order book",
+        "Japan defense budget growth (2% GDP target) parallels US $1.01T budget"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-005",
+      "jp_ticker": "7011.T",
+      "jp_name": "Mitsubishi Heavy Industries",
+      "jp_rank": 1,
+      "us_ticker": "LMT",
+      "us_name": "Lockheed Martin",
+      "us_rank": 10,
+      "relationship": "competitor_ally",
+      "domain": "defense",
+      "sub_segment": "defense_fighter_aircraft",
+      "relative_valuation": {
+        "jp_per": 55.0,
+        "us_per": 18.0,
+        "premium": "JP +205.6%"
+      },
+      "correlation": 0.50,
+      "information_flow": "LMT F-35 production rate -> MHI FACO assembly volume",
+      "catalyst_links": [
+        "F-35 Block 4 TR-3 delays affect MHI delivery timeline",
+        "Japan GCAP vs F-35 follow-on creates competitive dynamic",
+        "LMT PAC-3 orders correlate with MHI missile defense demand"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-006",
+      "jp_ticker": "7012.T",
+      "jp_name": "Kawasaki Heavy Industries",
+      "jp_rank": 9,
+      "us_ticker": "RTX",
+      "us_name": "RTX Corporation",
+      "us_rank": 8,
+      "relationship": "supplier_competitor",
+      "domain": "defense",
+      "sub_segment": "aerospace_engines_defense",
+      "relative_valuation": {
+        "jp_per": 30.0,
+        "us_per": 35.0,
+        "premium": "JP -14.3%"
+      },
+      "correlation": 0.45,
+      "information_flow": "Pratt & Whitney (RTX) engine delivery -> KHI component supply schedule",
+      "catalyst_links": [
+        "KHI produces components for Pratt & Whitney engines (supplier relationship)",
+        "Japan P-1/C-2 domestic engine development vs RTX engine imports",
+        "KHI submarine/defense vessel orders track Japan-US defense alignment"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-007",
+      "jp_ticker": "6954.T",
+      "jp_name": "Fanuc",
+      "jp_rank": 3,
+      "us_ticker": "ROK",
+      "us_name": "Rockwell Automation",
+      "us_rank": null,
+      "relationship": "competitor",
+      "domain": "robotics",
+      "sub_segment": "industrial_automation_robotics",
+      "relative_valuation": {
+        "jp_per": 40.0,
+        "us_per": 25.0,
+        "premium": "JP +60.0%"
+      },
+      "correlation": 0.60,
+      "information_flow": "ROK North America factory automation orders -> Fanuc global demand signal",
+      "catalyst_links": [
+        "US reshoring/nearshoring capex drives both companies' order books",
+        "ROK quarterly automation orders leading indicator for Fanuc NA demand",
+        "Humanoid robotics development creates new competitive frontier"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-008",
+      "jp_ticker": "6506.T",
+      "jp_name": "Yaskawa Electric",
+      "jp_rank": 6,
+      "us_ticker": "ROK",
+      "us_name": "Rockwell Automation",
+      "us_rank": null,
+      "relationship": "competitor",
+      "domain": "robotics",
+      "sub_segment": "servo_motors_industrial_automation",
+      "relative_valuation": {
+        "jp_per": 35.0,
+        "us_per": 25.0,
+        "premium": "JP +40.0%"
+      },
+      "correlation": 0.55,
+      "information_flow": "ROK automation backlog -> Yaskawa servo/drive demand outlook",
+      "catalyst_links": [
+        "Yaskawa servo motor dominance in robotics joints (complementary to ROK PLCs)",
+        "Both benefit from EV/battery factory automation wave",
+        "China factory automation recovery affects Yaskawa more directly than ROK"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-009",
+      "jp_ticker": "6920.T",
+      "jp_name": "Lasertec",
+      "jp_rank": 11,
+      "us_ticker": "KLAC",
+      "us_name": "KLA Corporation",
+      "us_rank": null,
+      "relationship": "complementary",
+      "domain": "AI",
+      "sub_segment": "semiconductor_mask_inspection",
+      "relative_valuation": {
+        "jp_per": 25.0,
+        "us_per": 25.0,
+        "premium": "JP 0.0%"
+      },
+      "correlation": 0.70,
+      "information_flow": "KLAC wafer inspection trends -> Lasertec mask inspection demand",
+      "catalyst_links": [
+        "Lasertec EUV mask inspection monopoly (100% share) vs KLAC wafer inspection",
+        "EUV adoption rate at TSMC/Samsung drives both companies",
+        "High-NA EUV introduction creates step-change demand for Lasertec"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-010",
+      "jp_ticker": "5631.T",
+      "jp_name": "Japan Steel Works",
+      "jp_rank": 17,
+      "us_ticker": "BWXT",
+      "us_name": "BWX Technologies",
+      "us_rank": 1,
+      "relationship": "competitor",
+      "domain": "energy",
+      "sub_segment": "nuclear_pressure_vessels_components",
+      "relative_valuation": {
+        "jp_per": 30.0,
+        "us_per": 45.0,
+        "premium": "JP -33.3%"
+      },
+      "correlation": 0.40,
+      "information_flow": "BWXT naval reactor orders -> JSW nuclear vessel demand signal (different markets but shared nuclear renaissance theme)",
+      "catalyst_links": [
+        "Global nuclear renaissance benefits both (JSW: commercial reactors, BWXT: naval + SMR)",
+        "JSW is one of few companies globally that can forge large nuclear pressure vessels",
+        "SMR component demand could create new overlap between JSW and BWXT supply chains"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-011",
+      "jp_ticker": "6701.T",
+      "jp_name": "NEC",
+      "jp_rank": 8,
+      "us_ticker": "PANW",
+      "us_name": "Palo Alto Networks",
+      "us_rank": 18,
+      "relationship": "competitor",
+      "domain": "cyber",
+      "sub_segment": "cybersecurity_enterprise",
+      "relative_valuation": {
+        "jp_per": 20.0,
+        "us_per": 60.0,
+        "premium": "JP -66.7%"
+      },
+      "correlation": 0.30,
+      "information_flow": "PANW threat intelligence/market trends -> NEC Japan cybersecurity demand",
+      "catalyst_links": [
+        "Japan Active Cyber Defense legislation drives NEC government cybersecurity orders",
+        "PANW enterprise cybersecurity trends indicate global threat landscape evolution",
+        "NEC and PANW compete in APAC enterprise cybersecurity market"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-012",
+      "jp_ticker": "6701.T",
+      "jp_name": "NEC",
+      "jp_rank": 8,
+      "us_ticker": "CRWD",
+      "us_name": "CrowdStrike",
+      "us_rank": 27,
+      "relationship": "competitor",
+      "domain": "cyber",
+      "sub_segment": "cybersecurity_endpoint_xdr",
+      "relative_valuation": {
+        "jp_per": 20.0,
+        "us_per": 70.0,
+        "premium": "JP -71.4%"
+      },
+      "correlation": 0.25,
+      "information_flow": "CRWD breach data/threat trends -> Japan cybersecurity urgency indicator",
+      "catalyst_links": [
+        "CRWD global threat reports drive Japan government cybersecurity spending",
+        "NEC endpoint security competes with CRWD in Japan enterprise market",
+        "Post-CRWD July 2024 outage, Japan enterprises diversifying toward domestic solutions"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-013",
+      "jp_ticker": "9501.T",
+      "jp_name": "Tokyo Electric Power (TEPCO)",
+      "jp_rank": 23,
+      "us_ticker": "CEG",
+      "us_name": "Constellation Energy",
+      "us_rank": 17,
+      "relationship": "peer",
+      "domain": "energy",
+      "sub_segment": "nuclear_utility",
+      "relative_valuation": {
+        "jp_per": 12.0,
+        "us_per": 30.0,
+        "premium": "JP -60.0%"
+      },
+      "correlation": 0.35,
+      "information_flow": "CEG nuclear PPA deals (Microsoft) -> TEPCO Kashiwazaki-Kariwa restart value signal",
+      "catalyst_links": [
+        "CEG-Microsoft nuclear PPA sets precedent for Japan hyperscaler nuclear deals",
+        "TEPCO Kashiwazaki-Kariwa restart timeline is key catalyst (7.0GW capacity)",
+        "US nuclear renaissance sentiment lifts Japan nuclear utility valuations"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-014",
+      "jp_ticker": "9503.T",
+      "jp_name": "Kansai Electric Power",
+      "jp_rank": 30,
+      "us_ticker": "VST",
+      "us_name": "Vistra Corp",
+      "us_rank": 13,
+      "relationship": "peer",
+      "domain": "energy",
+      "sub_segment": "nuclear_power_utility",
+      "relative_valuation": {
+        "jp_per": 10.0,
+        "us_per": 18.0,
+        "premium": "JP -44.4%"
+      },
+      "correlation": 0.30,
+      "information_flow": "VST nuclear asset repricing -> Kansai EP nuclear fleet revaluation signal",
+      "catalyst_links": [
+        "VST Comanche Peak nuclear valuation surge signals undervaluation of JP nuclear fleet",
+        "Kansai EP has Japan's highest nuclear restart ratio (7 of 11 reactors restarted)",
+        "US data center power demand trends apply to Japan DC buildout"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-015",
+      "jp_ticker": "6501.T",
+      "jp_name": "Hitachi",
+      "jp_rank": 4,
+      "us_ticker": "GEV",
+      "us_name": "GE Vernova",
+      "us_rank": null,
+      "relationship": "competitor",
+      "domain": "energy",
+      "sub_segment": "grid_power_equipment_transformers",
+      "relative_valuation": {
+        "jp_per": 25.0,
+        "us_per": 40.0,
+        "premium": "JP -37.5%"
+      },
+      "correlation": 0.50,
+      "information_flow": "GEV grid equipment orders/backlog -> Hitachi Energy grid demand outlook",
+      "catalyst_links": [
+        "Hitachi Energy (via ABB acquisition) and GEV compete in global grid equipment",
+        "US grid modernization ($65B IRA) and Japan grid upgrades create parallel demand",
+        "Transformer shortage globally benefits both companies"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-016",
+      "jp_ticker": "6315.T",
+      "jp_name": "TOWA",
+      "jp_rank": 5,
+      "us_ticker": "NVDA",
+      "us_name": "NVIDIA",
+      "us_rank": 2,
+      "relationship": "supplier_beneficiary",
+      "domain": "AI",
+      "sub_segment": "hbm_mold_packaging_for_ai_chips",
+      "relative_valuation": {
+        "jp_per": 45.0,
+        "us_per": 25.0,
+        "premium": "JP +80.0%"
+      },
+      "correlation": 0.70,
+      "information_flow": "NVDA GPU demand/Blackwell ramp -> TOWA compression mold equipment orders",
+      "catalyst_links": [
+        "TOWA compression mold equipment is critical for HBM packaging (SK Hynix/Samsung)",
+        "NVDA Blackwell/Rubin ramp directly drives HBM demand -> TOWA order flow",
+        "TOWA's 80%+ market share in compression mold makes it de facto NVDA supply chain"
+      ],
+      "last_verified": "2026-01-31"
+    },
+    {
+      "id": "SCL-017",
+      "jp_ticker": "4704.T",
+      "jp_name": "Trend Micro",
+      "jp_rank": 29,
+      "us_ticker": "PANW",
+      "us_name": "Palo Alto Networks",
+      "us_rank": 18,
+      "relationship": "competitor",
+      "domain": "cyber",
+      "sub_segment": "cybersecurity_enterprise_platform",
+      "relative_valuation": {
+        "jp_per": 18.0,
+        "us_per": 60.0,
+        "premium": "JP -70.0%"
+      },
+      "correlation": 0.40,
+      "information_flow": "PANW platformization strategy -> Trend Micro competitive positioning signal",
+      "catalyst_links": [
+        "PANW platformization strategy pressures Trend Micro's point-solution model",
+        "Trend Micro's Vision One platform competes directly with PANW Cortex XSIAM",
+        "Japan enterprise cybersecurity regulation creates protected domestic demand for Trend Micro"
+      ],
+      "last_verified": "2026-01-31"
+    }
+  ]
 }

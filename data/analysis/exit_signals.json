@@ -1,25 +1,192 @@
 {
   "metadata": {
-    "generated_at": null,
+    "generated_at": "2026-01-31T12:00:00Z",
     "framework_version": "3.0.0",
-    "market_risk_score": null
+    "market": "japan",
+    "market_risk_score": 57,
+    "previous_market_risk_score": 58,
+    "comparison_period": {
+      "current": "2026-01-31",
+      "previous": "2026-01-29"
+    }
   },
-  "rank_based_alerts": [],
+  "rank_based_alerts": [
+    {
+      "ticker": "6861.T",
+      "name": "キーエンス",
+      "current_rank": 18,
+      "previous_rank": 13,
+      "rank_drop": 5,
+      "score_change": -12,
+      "alert_level": "yellow",
+      "drop_drivers": [
+        {"axis": "information_asymmetry", "change": -3, "reason": "FA市場の認知度向上により情報非対称性が縮小"},
+        {"axis": "future_value", "change": -4, "reason": "TOWA/Nabtesco新規発見により相対的魅力低下"},
+        {"axis": "policy_catalyst", "change": -2, "reason": "直接的な政策触媒が他社対比で弱い"}
+      ],
+      "catalyst_failures": [],
+      "thesis_status": "intact",
+      "recommended_action": "monitor",
+      "rationale": "構造的優位性（55%営業利益率）は健在。ランク低下はTOWA/Nabtesco新規参入による相対評価の変動であり、テーゼ崩壊ではない。"
+    },
+    {
+      "ticker": "7735.T",
+      "name": "SCREEN HD",
+      "current_rank": 20,
+      "previous_rank": 14,
+      "rank_drop": 6,
+      "score_change": -12,
+      "alert_level": "yellow",
+      "drop_drivers": [
+        {"axis": "structural_advantage", "change": -2, "reason": "洗浄装置60%シェアだがTELほどの独占度ではない"},
+        {"axis": "information_asymmetry", "change": -4, "reason": "半導体装置セクター全般の認知度向上"},
+        {"axis": "future_value", "change": -3, "reason": "新規発見企業との相対比較で下方修正"}
+      ],
+      "catalyst_failures": [],
+      "thesis_status": "intact",
+      "recommended_action": "monitor",
+      "rationale": "洗浄装置60%シェアは健在。Rapidus/TSMC熊本という触媒は有効。ランク低下は相対的。"
+    },
+    {
+      "ticker": "6273.T",
+      "name": "SMC",
+      "current_rank": 22,
+      "previous_rank": 15,
+      "rank_drop": 7,
+      "score_change": -12,
+      "alert_level": "yellow",
+      "drop_drivers": [
+        {"axis": "information_asymmetry", "change": -5, "reason": "空圧機器40%シェアは広く認知済み"},
+        {"axis": "future_value", "change": -3, "reason": "成長ドライバーが他社対比で限定的"},
+        {"axis": "policy_catalyst", "change": -2, "reason": "直接的な政策支援の対象外"}
+      ],
+      "catalyst_failures": [],
+      "thesis_status": "intact",
+      "recommended_action": "monitor",
+      "rationale": "グローバル空圧機器40%シェアの独占的地位は不変。相対的な魅力低下。"
+    }
+  ],
   "market_risk_alerts": {
-    "current_score": null,
+    "current_risk": 57,
+    "previous_risk": 58,
+    "risk_level": "conservative",
+    "risk_band": "51-75",
     "cash_recommendation": {
-      "target_ratio": null,
-      "current_ratio": null,
-      "action": null
+      "target_ratio": 0.20,
+      "range": {"min": 0.15, "max": 0.25},
+      "action": "maintain_cash_at_20pct"
     },
     "position_scaling": {
-      "overall_factor": 1.0,
-      "speculative_quadrant_factor": 1.0
+      "overall_factor": 0.80,
+      "prime_quadrant_factor": 0.90,
+      "stable_quadrant_factor": 0.80,
+      "speculative_quadrant_factor": 0.50
     },
     "soros_reflexivity_check": {
       "narrative_intact": true,
-      "concerns": []
+      "primary_narrative": "マルチドメイン・コンバージェンスによる日本企業の構造的再評価",
+      "narrative_strength": "strong",
+      "concerns": [
+        {
+          "concern": "VI=34とP/C=0.59の異例のダイバージェンス",
+          "severity": "medium",
+          "detail": "2024年8月暴落前と類似パターン。市場はテールリスクを過小評価している可能性。",
+          "action": "投機的象限ポジションの50%スケーリングを維持"
+        },
+        {
+          "concern": "日銀利上げサイクル継続リスク",
+          "severity": "medium",
+          "detail": "0.75%据え置きだが7-9月に追加利上げ予想。急激な利上げは2024年8月の再現リスク。",
+          "action": "次回日銀会合（3/20）前にポジション再評価"
+        }
+      ]
     }
   },
-  "composite_exit_signals": []
+  "composite_exit_signals": [
+    {
+      "ticker": "6861.T",
+      "name": "キーエンス",
+      "signal_strength": "weak",
+      "factors": {
+        "rank_drop": {"triggered": true, "value": 5, "weight": 0.30, "score": 0.30},
+        "catalyst_failure": {"triggered": false, "count": 0, "weight": 0.20, "score": 0.00},
+        "score_decay": {"triggered": false, "periods": 1, "weight": 0.20, "score": 0.00},
+        "market_risk_high": {"triggered": false, "value": 57, "threshold": 60, "weight": 0.15, "score": 0.00},
+        "thesis_invalidation": {"triggered": false, "weight": 0.15, "score": 0.00}
+      },
+      "composite_score": 0.09,
+      "interpretation": "hold",
+      "action": "通常保有。ランク低下は相対的。55%営業利益率のモートは健在。"
+    },
+    {
+      "ticker": "7735.T",
+      "name": "SCREEN HD",
+      "signal_strength": "weak",
+      "factors": {
+        "rank_drop": {"triggered": true, "value": 6, "weight": 0.30, "score": 0.30},
+        "catalyst_failure": {"triggered": false, "count": 0, "weight": 0.20, "score": 0.00},
+        "score_decay": {"triggered": false, "periods": 1, "weight": 0.20, "score": 0.00},
+        "market_risk_high": {"triggered": false, "value": 57, "threshold": 60, "weight": 0.15, "score": 0.00},
+        "thesis_invalidation": {"triggered": false, "weight": 0.15, "score": 0.00}
+      },
+      "composite_score": 0.09,
+      "interpretation": "hold",
+      "action": "通常保有。Rapidus/TSMC熊本の触媒は有効。監視継続。"
+    },
+    {
+      "ticker": "6273.T",
+      "name": "SMC",
+      "signal_strength": "weak",
+      "factors": {
+        "rank_drop": {"triggered": true, "value": 7, "weight": 0.30, "score": 0.30},
+        "catalyst_failure": {"triggered": false, "count": 0, "weight": 0.20, "score": 0.00},
+        "score_decay": {"triggered": false, "periods": 1, "weight": 0.20, "score": 0.00},
+        "market_risk_high": {"triggered": false, "value": 57, "threshold": 60, "weight": 0.15, "score": 0.00},
+        "thesis_invalidation": {"triggered": false, "weight": 0.15, "score": 0.00}
+      },
+      "composite_score": 0.09,
+      "interpretation": "hold",
+      "action": "通常保有だが相対的魅力低下を認識。次回分析で触媒進捗を重点確認。"
+    }
+  ],
+  "no_alert_companies": [
+    {"ticker": "7011.T", "name": "三菱重工業", "rank_change": 0, "status": "stable"},
+    {"ticker": "8035.T", "name": "東京エレクトロン", "rank_change": 0, "status": "stable"},
+    {"ticker": "6954.T", "name": "ファナック", "rank_change": 0, "status": "stable"},
+    {"ticker": "6501.T", "name": "日立製作所", "rank_change": 0, "status": "stable"},
+    {"ticker": "6315.T", "name": "TOWA", "rank_change": null, "status": "new_entry"},
+    {"ticker": "6506.T", "name": "安川電機", "rank_change": 0, "status": "stable"},
+    {"ticker": "9432.T", "name": "NTT", "rank_change": -2, "status": "minor_decline"},
+    {"ticker": "6701.T", "name": "NEC", "rank_change": -1, "status": "stable"},
+    {"ticker": "7012.T", "name": "川崎重工業", "rank_change": -1, "status": "stable"},
+    {"ticker": "7013.T", "name": "IHI", "rank_change": -1, "status": "stable"},
+    {"ticker": "6920.T", "name": "レーザーテック", "rank_change": 0, "status": "stable"},
+    {"ticker": "186A.T", "name": "Astroscale HD", "rank_change": -2, "status": "minor_decline"},
+    {"ticker": "6268.T", "name": "ナブテスコ", "rank_change": null, "status": "new_entry"},
+    {"ticker": "9501.T", "name": "東京電力HD", "rank_change": 3, "status": "improved"}
+  ],
+  "thresholds": {
+    "rank_drop_yellow": 5,
+    "rank_drop_red": 10,
+    "composite_score_ranges": {
+      "hold": [0.00, 0.30],
+      "monitor": [0.31, 0.50],
+      "reduce": [0.51, 0.70],
+      "exit": [0.71, 1.00]
+    },
+    "market_risk_cash_mapping": {
+      "0-25": {"cash": 0.05, "position_scale": 1.0},
+      "26-50": {"cash": 0.10, "position_scale": 1.0},
+      "51-75": {"cash": 0.20, "position_scale": 0.80},
+      "76-100": {"cash": 0.35, "position_scale": 0.50}
+    }
+  },
+  "summary": {
+    "total_alerts": 3,
+    "yellow_alerts": 3,
+    "red_alerts": 0,
+    "exit_recommended": 0,
+    "new_entries": ["6315.T (TOWA)", "6268.T (ナブテスコ)"],
+    "overall_assessment": "ポートフォリオ安定。3件のイエローアラートは全てTOWA/Nabtesco新規参入による相対的ランク低下。テーゼ崩壊ではない。市場リスク57点に基づきキャッシュ20%維持、投機的象限50%スケーリング推奨。"
+  }
 }

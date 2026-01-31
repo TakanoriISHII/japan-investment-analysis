@@ -1,8 +1,258 @@
 {
   "metadata": {
-    "last_updated": null,
+    "last_updated": "2026-01-31",
     "framework_version": "3.0.0",
-    "total_pairs": 0
+    "total_pairs": 8,
+    "note": "Cross-market relative valuation comparisons for JP-US company pairs. PER values are approximate trailing/forward blended estimates."
   },
-  "pairs": []
+  "pairs": [
+    {
+      "id": "RV-001",
+      "jp_company": {
+        "ticker": "8035.T",
+        "name": "Tokyo Electron",
+        "jp_rank": 2,
+        "per": 28.5,
+        "domain": "AI",
+        "market_cap_usd_approx": "85B",
+        "revenue_growth_yoy": "+15%",
+        "margin_profile": "Operating margin ~28%"
+      },
+      "us_company": {
+        "ticker": "LRCX",
+        "name": "Lam Research",
+        "us_rank": null,
+        "per": 22.0,
+        "domain": "AI",
+        "market_cap_usd_approx": "95B",
+        "revenue_growth_yoy": "+20%",
+        "margin_profile": "Operating margin ~30%"
+      },
+      "comparison": {
+        "per_differential": "+29.5%",
+        "jp_premium": true,
+        "valuation_thesis": "TEL trades at premium reflecting Japan semi equipment scarcity value and TSMC Kumamoto catalyst. LRCX offers better value on pure fundamentals. TEL has broader process coverage (coater/developer monopoly); LRCX dominates etch.",
+        "convergence_catalyst": "TSMC Japan expansion announcements could further widen premium; US semi slowdown could narrow it.",
+        "recommendation": "TEL premium justified by domestic catalyst but watch for mean reversion if TSMC capex decelerates"
+      },
+      "scl_reference": "SCL-001"
+    },
+    {
+      "id": "RV-002",
+      "jp_company": {
+        "ticker": "7011.T",
+        "name": "Mitsubishi Heavy Industries",
+        "jp_rank": 1,
+        "per": 55.0,
+        "domain": "defense",
+        "market_cap_usd_approx": "55B",
+        "revenue_growth_yoy": "+12%",
+        "margin_profile": "Operating margin ~7%"
+      },
+      "us_company": {
+        "ticker": "RTX",
+        "name": "RTX Corporation",
+        "us_rank": 8,
+        "per": 35.0,
+        "domain": "defense",
+        "market_cap_usd_approx": "160B",
+        "revenue_growth_yoy": "+8%",
+        "margin_profile": "Operating margin ~11%"
+      },
+      "comparison": {
+        "per_differential": "+57.1%",
+        "jp_premium": true,
+        "valuation_thesis": "MHI premium reflects Japan defense spending inflection (1% to 2% GDP) repricing. RTX is mature defense prime at steady-state. MHI has higher growth trajectory but lower margins. Market pricing in Japan defense structural shift.",
+        "convergence_catalyst": "Japan FY2027 defense budget confirmation could sustain premium. Any GCAP delays or budget shortfall would compress valuation.",
+        "recommendation": "MHI premium is stretched vs RTX on fundamentals but justified if 2% GDP defense target is maintained"
+      },
+      "scl_reference": "SCL-004"
+    },
+    {
+      "id": "RV-003",
+      "jp_company": {
+        "ticker": "6954.T",
+        "name": "Fanuc",
+        "jp_rank": 3,
+        "per": 40.0,
+        "domain": "robotics",
+        "market_cap_usd_approx": "35B",
+        "revenue_growth_yoy": "+8%",
+        "margin_profile": "Operating margin ~20%"
+      },
+      "us_company": {
+        "ticker": "ROK",
+        "name": "Rockwell Automation",
+        "us_rank": null,
+        "per": 25.0,
+        "domain": "robotics",
+        "market_cap_usd_approx": "28B",
+        "revenue_growth_yoy": "+3%",
+        "margin_profile": "Operating margin ~18%"
+      },
+      "comparison": {
+        "per_differential": "+60.0%",
+        "jp_premium": true,
+        "valuation_thesis": "Fanuc premium reflects global robotics leadership (CNC + robot) and humanoid robotics optionality. ROK is US-centric PLC/automation play in cyclical trough. Fanuc has superior IP moat (servo, CNC, robots) vs ROK (software/PLC).",
+        "convergence_catalyst": "China factory automation recovery lifts Fanuc more. US reshoring capex cycle favors ROK. Humanoid robotics announcements could widen Fanuc premium.",
+        "recommendation": "ROK offers better near-term value at cyclical bottom; Fanuc has superior structural positioning and humanoid upside"
+      },
+      "scl_reference": "SCL-007"
+    },
+    {
+      "id": "RV-004",
+      "jp_company": {
+        "ticker": "6701.T",
+        "name": "NEC",
+        "jp_rank": 8,
+        "per": 20.0,
+        "domain": "cyber",
+        "market_cap_usd_approx": "18B",
+        "revenue_growth_yoy": "+6%",
+        "margin_profile": "Operating margin ~8%"
+      },
+      "us_company": {
+        "ticker": "PANW",
+        "name": "Palo Alto Networks",
+        "us_rank": 18,
+        "per": 60.0,
+        "domain": "cyber",
+        "market_cap_usd_approx": "120B",
+        "revenue_growth_yoy": "+14%",
+        "margin_profile": "Operating margin ~25%"
+      },
+      "comparison": {
+        "per_differential": "-66.7%",
+        "jp_premium": false,
+        "valuation_thesis": "Massive valuation gap reflects US cybersecurity premium pricing (pure-play, platform model) vs NEC as diversified IT conglomerate. NEC cybersecurity is embedded within broader IT services. PANW has superior growth, margins, and SaaS economics.",
+        "convergence_catalyst": "Japan Active Cyber Defense law could lift NEC cybersecurity segment valuation. NEC spin-off or segment disclosure could narrow gap. PANW growth deceleration narrows from other side.",
+        "recommendation": "NEC is deep value if Japan cybersecurity policy accelerates; PANW is quality premium worth paying for pure-play exposure"
+      },
+      "scl_reference": "SCL-011"
+    },
+    {
+      "id": "RV-005",
+      "jp_company": {
+        "ticker": "6501.T",
+        "name": "Hitachi",
+        "jp_rank": 4,
+        "per": 25.0,
+        "domain": "energy",
+        "market_cap_usd_approx": "95B",
+        "revenue_growth_yoy": "+10%",
+        "margin_profile": "Operating margin ~10%"
+      },
+      "us_company": {
+        "ticker": "GEV",
+        "name": "GE Vernova",
+        "us_rank": null,
+        "per": 40.0,
+        "domain": "energy",
+        "market_cap_usd_approx": "85B",
+        "revenue_growth_yoy": "+8%",
+        "margin_profile": "Operating margin ~8%"
+      },
+      "comparison": {
+        "per_differential": "-37.5%",
+        "jp_premium": false,
+        "valuation_thesis": "GEV premium reflects pure-play grid/power narrative post-GE spin-off. Hitachi Energy is comparable but embedded in diversified conglomerate. Both face same global transformer shortage tailwind. GEV benefits from US IRA grid spending.",
+        "convergence_catalyst": "Hitachi Energy segment reporting improvement could narrow discount. Global transformer shortage worsening benefits both equally. GEV margin expansion could widen gap.",
+        "recommendation": "Hitachi offers better value with diversification benefit; GEV is pure-play premium for grid/energy transition exposure"
+      },
+      "scl_reference": "SCL-015"
+    },
+    {
+      "id": "RV-006",
+      "jp_company": {
+        "ticker": "6315.T",
+        "name": "TOWA",
+        "jp_rank": 5,
+        "per": 45.0,
+        "domain": "AI",
+        "market_cap_usd_approx": "3B",
+        "revenue_growth_yoy": "+40%",
+        "margin_profile": "Operating margin ~25%"
+      },
+      "us_company": {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "us_rank": 2,
+        "per": 25.0,
+        "domain": "AI",
+        "market_cap_usd_approx": "3200B",
+        "revenue_growth_yoy": "+62%",
+        "margin_profile": "Operating margin ~65%"
+      },
+      "comparison": {
+        "per_differential": "+80.0%",
+        "jp_premium": true,
+        "valuation_thesis": "TOWA trades at significant premium to NVDA on PER, reflecting small-cap HBM packaging niche monopoly (80%+ compression mold share). NVDA is cheaper on PER due to massive earnings power. TOWA is a leveraged play on NVDA's AI GPU demand via HBM supply chain.",
+        "convergence_catalyst": "Any HBM demand slowdown would compress TOWA premium sharply. NVDA Blackwell/Rubin ramp sustains TOWA order book. TOWA capacity expansion announcements are key.",
+        "recommendation": "TOWA is high-conviction leveraged NVDA play but premium is vulnerable to HBM cycle deceleration"
+      },
+      "scl_reference": "SCL-016"
+    },
+    {
+      "id": "RV-007",
+      "jp_company": {
+        "ticker": "5631.T",
+        "name": "Japan Steel Works",
+        "jp_rank": 17,
+        "per": 30.0,
+        "domain": "energy",
+        "market_cap_usd_approx": "4B",
+        "revenue_growth_yoy": "+12%",
+        "margin_profile": "Operating margin ~12%"
+      },
+      "us_company": {
+        "ticker": "BWXT",
+        "name": "BWX Technologies",
+        "us_rank": 1,
+        "per": 45.0,
+        "domain": "energy",
+        "market_cap_usd_approx": "12B",
+        "revenue_growth_yoy": "+15%",
+        "margin_profile": "Operating margin ~17%"
+      },
+      "comparison": {
+        "per_differential": "-33.3%",
+        "jp_premium": false,
+        "valuation_thesis": "BWXT premium reflects sole-source naval nuclear monopoly and US defense spending visibility. JSW has nuclear pressure vessel capability but is more diversified (plastics machinery, steel products). BWXT has $7.4B backlog providing multi-year earnings visibility. JSW is a value play on nuclear renaissance.",
+        "convergence_catalyst": "SMR commercialization could lift JSW if it wins component orders. Japan nuclear restart acceleration helps JSW. BWXT premium could compress if SMR timeline extends.",
+        "recommendation": "BWXT is premium-quality nuclear monopoly; JSW offers value entry to nuclear renaissance theme at 33% discount"
+      },
+      "scl_reference": "SCL-010"
+    },
+    {
+      "id": "RV-008",
+      "jp_company": {
+        "ticker": "9501.T",
+        "name": "TEPCO",
+        "jp_rank": 23,
+        "per": 12.0,
+        "domain": "energy",
+        "market_cap_usd_approx": "12B",
+        "revenue_growth_yoy": "+5%",
+        "margin_profile": "Operating margin ~6%"
+      },
+      "us_company": {
+        "ticker": "CEG",
+        "name": "Constellation Energy",
+        "us_rank": 17,
+        "per": 30.0,
+        "domain": "energy",
+        "market_cap_usd_approx": "75B",
+        "revenue_growth_yoy": "+12%",
+        "margin_profile": "Operating margin ~18%"
+      },
+      "comparison": {
+        "per_differential": "-60.0%",
+        "jp_premium": false,
+        "valuation_thesis": "Massive discount reflects TEPCO Fukushima legacy overhang, regulatory uncertainty, and Kashiwazaki-Kariwa restart risk. CEG premium from Microsoft nuclear PPA and clean nuclear fleet. TEPCO has 7.0GW Kashiwazaki-Kariwa capacity (largest nuclear plant globally) as dormant asset. If restart succeeds, revaluation potential is enormous.",
+        "convergence_catalyst": "Kashiwazaki-Kariwa restart approval would be transformative for TEPCO. Hyperscaler nuclear PPA deals in Japan would validate CEG-like repricing. Fukushima decommissioning cost increases could widen gap.",
+        "recommendation": "TEPCO is highest asymmetry nuclear play globally - 60% PER discount to CEG with 7.0GW restart optionality, but binary risk"
+      },
+      "scl_reference": "SCL-013"
+    }
+  ]
 }

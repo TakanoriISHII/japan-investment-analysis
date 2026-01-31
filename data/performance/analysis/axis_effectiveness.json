@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "framework_version": "3.0.0",
+    "market": "japan",
+    "period": "pending_first_review",
+    "methodology": "Top 10 by axis score vs Bottom 10 actual return correlation",
+    "created_at": "2026-01-31T12:00:00Z"
+  },
+  "axes": {
+    "structural_advantage": {"max_score": 20, "correlation": null, "spread": null, "prediction_power": null, "action": "pending"},
+    "intrinsic_value": {"max_score": 20, "correlation": null, "spread": null, "prediction_power": null, "action": "pending"},
+    "future_value": {"max_score": 25, "correlation": null, "spread": null, "prediction_power": null, "action": "pending"},
+    "information_asymmetry": {"max_score": 20, "correlation": null, "spread": null, "prediction_power": null, "action": "pending"},
+    "policy_catalyst": {"max_score": 15, "correlation": null, "spread": null, "prediction_power": null, "action": "pending"}
+  },
+  "thresholds": {
+    "effective_correlation_min": 0.3,
+    "weight_adjustment_trigger": "correlation < 0.3 for 2 consecutive periods"
+  }
+}

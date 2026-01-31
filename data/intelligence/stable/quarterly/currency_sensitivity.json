@@ -1,0 +1,334 @@
+{
+  "metadata": {
+    "description": "Top 30 JP企業の為替感応度モデル",
+    "framework_version": "3.0.0",
+    "last_updated": "2026-01-31",
+    "base_rate": {"usd_jpy": 152.5},
+    "methodology": "海外売上比率 × 為替弾性値 → USD/JPY ±5円シナリオでのEPS影響を試算",
+    "note": "海外売上比率はIR資料・有報に基づく。EPS影響は一般的な弾性値（海外売上1%あたり0.5-1.0%のEPS影響）を使用した推定値。"
+  },
+  "companies": {
+    "7011.T": {
+      "name": "三菱重工業",
+      "overseas_revenue_ratio": 0.35,
+      "primary_currency_exposure": "USD",
+      "secondary_exposure": "GBP/EUR (GCAP関連)",
+      "usdjpy_eps_impact_per_5yen": "+2.5%",
+      "hedging_status": "active",
+      "sensitivity_category": "low",
+      "notes": "防衛事業は円建て（国内70%）。エネルギー・宇宙は一部ドル建て。"
+    },
+    "8035.T": {
+      "name": "東京エレクトロン",
+      "overseas_revenue_ratio": 0.65,
+      "primary_currency_exposure": "USD/KRW/TWD",
+      "secondary_exposure": "CNY",
+      "usdjpy_eps_impact_per_5yen": "+5.0%",
+      "hedging_status": "partial",
+      "sensitivity_category": "high",
+      "notes": "半導体装置は海外売上65%。TSMC/Samsung/SK等からの受注がドル建て中心。"
+    },
+    "6954.T": {
+      "name": "ファナック",
+      "overseas_revenue_ratio": 0.70,
+      "primary_currency_exposure": "USD/CNY/EUR",
+      "secondary_exposure": "KRW",
+      "usdjpy_eps_impact_per_5yen": "+5.5%",
+      "hedging_status": "partial",
+      "sensitivity_category": "high",
+      "notes": "中国35%、米州20%、欧州15%。為替ヘッジは一部のみ。"
+    },
+    "6501.T": {
+      "name": "日立製作所",
+      "overseas_revenue_ratio": 0.60,
+      "primary_currency_exposure": "USD/EUR/GBP",
+      "secondary_exposure": "AUD/SGD",
+      "usdjpy_eps_impact_per_5yen": "+4.5%",
+      "hedging_status": "active",
+      "sensitivity_category": "medium_high",
+      "notes": "GlobalLogic、Hitachi Energy等の海外子会社が主要ドライバー。"
+    },
+    "6315.T": {
+      "name": "TOWA",
+      "overseas_revenue_ratio": 0.80,
+      "primary_currency_exposure": "USD/KRW/TWD",
+      "secondary_exposure": "CNY",
+      "usdjpy_eps_impact_per_5yen": "+6.0%",
+      "hedging_status": "limited",
+      "sensitivity_category": "very_high",
+      "notes": "HBMモールド装置の顧客はSK Hynix、Samsung等。海外比率80%超。"
+    },
+    "6506.T": {
+      "name": "安川電機",
+      "overseas_revenue_ratio": 0.65,
+      "primary_currency_exposure": "CNY/USD/EUR",
+      "secondary_exposure": "KRW",
+      "usdjpy_eps_impact_per_5yen": "+5.0%",
+      "hedging_status": "partial",
+      "sensitivity_category": "high",
+      "notes": "中国40%、米州・欧州各10-15%。中国人民元がドル以上に重要。"
+    },
+    "9432.T": {
+      "name": "NTT",
+      "overseas_revenue_ratio": 0.15,
+      "primary_currency_exposure": "USD",
+      "secondary_exposure": "EUR/GBP",
+      "usdjpy_eps_impact_per_5yen": "+1.0%",
+      "hedging_status": "minimal",
+      "sensitivity_category": "very_low",
+      "notes": "国内通信事業が85%。NTT DATA海外事業が唯一のドル露出。"
+    },
+    "6701.T": {
+      "name": "NEC",
+      "overseas_revenue_ratio": 0.25,
+      "primary_currency_exposure": "USD",
+      "secondary_exposure": "EUR/AUD",
+      "usdjpy_eps_impact_per_5yen": "+1.8%",
+      "hedging_status": "partial",
+      "sensitivity_category": "low",
+      "notes": "主力は国内政府・通信向け。海外はIT/サイバー事業の一部。"
+    },
+    "7012.T": {
+      "name": "川崎重工業",
+      "overseas_revenue_ratio": 0.45,
+      "primary_currency_exposure": "USD",
+      "secondary_exposure": "GBP/EUR",
+      "usdjpy_eps_impact_per_5yen": "+3.5%",
+      "hedging_status": "active",
+      "sensitivity_category": "medium",
+      "notes": "航空エンジン（P&W向けOEM）と二輪車が海外中心。防衛は国内。"
+    },
+    "7013.T": {
+      "name": "IHI",
+      "overseas_revenue_ratio": 0.40,
+      "primary_currency_exposure": "USD",
+      "secondary_exposure": "EUR",
+      "usdjpy_eps_impact_per_5yen": "+3.0%",
+      "hedging_status": "active",
+      "sensitivity_category": "medium",
+      "notes": "航空エンジン（GE/PW向け部品）が主な海外売上。ターボ事業も海外。"
+    },
+    "6920.T": {
+      "name": "レーザーテック",
+      "overseas_revenue_ratio": 0.85,
+      "primary_currency_exposure": "USD/EUR",
+      "secondary_exposure": "TWD/KRW",
+      "usdjpy_eps_impact_per_5yen": "+6.5%",
+      "hedging_status": "limited",
+      "sensitivity_category": "very_high",
+      "notes": "EUVマスク検査装置はASML経由で世界中に納入。海外比率85%超。"
+    },
+    "186A.T": {
+      "name": "Astroscale HD",
+      "overseas_revenue_ratio": 0.30,
+      "primary_currency_exposure": "USD/GBP",
+      "secondary_exposure": "EUR",
+      "usdjpy_eps_impact_per_5yen": "+2.0%",
+      "hedging_status": "minimal",
+      "sensitivity_category": "low_medium",
+      "notes": "英国・日本デュアル拠点。JAXAと欧州宇宙機関が主顧客。"
+    },
+    "6503.T": {
+      "name": "三菱電機",
+      "overseas_revenue_ratio": 0.45,
+      "primary_currency_exposure": "USD/CNY/EUR",
+      "secondary_exposure": "THB/SGD",
+      "usdjpy_eps_impact_per_5yen": "+3.5%",
+      "hedging_status": "active",
+      "sensitivity_category": "medium",
+      "notes": "FA、自動車機器が海外中心。防衛・宇宙は国内。"
+    },
+    "6146.T": {
+      "name": "ディスコ",
+      "overseas_revenue_ratio": 0.80,
+      "primary_currency_exposure": "USD/TWD/KRW",
+      "secondary_exposure": "CNY",
+      "usdjpy_eps_impact_per_5yen": "+6.0%",
+      "hedging_status": "partial",
+      "sensitivity_category": "very_high",
+      "notes": "ダイシングソー/グラインダの顧客は台湾・韓国・中国の半導体メーカー。"
+    },
+    "6857.T": {
+      "name": "アドバンテスト",
+      "overseas_revenue_ratio": 0.80,
+      "primary_currency_exposure": "USD/TWD/KRW",
+      "secondary_exposure": "CNY/EUR",
+      "usdjpy_eps_impact_per_5yen": "+6.0%",
+      "hedging_status": "partial",
+      "sensitivity_category": "very_high",
+      "notes": "メモリテスタの顧客はSK Hynix、Samsung、Micron等。海外80%超。"
+    },
+    "6758.T": {
+      "name": "ソニーグループ",
+      "overseas_revenue_ratio": 0.70,
+      "primary_currency_exposure": "USD/EUR",
+      "secondary_exposure": "GBP/CNY",
+      "usdjpy_eps_impact_per_5yen": "+5.5%",
+      "hedging_status": "active",
+      "sensitivity_category": "high",
+      "notes": "ゲーム・映画・音楽は米ドル建て中心。CMOSセンサーも海外比率高い。"
+    },
+    "5631.T": {
+      "name": "日本製鋼所",
+      "overseas_revenue_ratio": 0.25,
+      "primary_currency_exposure": "USD/EUR",
+      "secondary_exposure": null,
+      "usdjpy_eps_impact_per_5yen": "+1.8%",
+      "hedging_status": "partial",
+      "sensitivity_category": "low",
+      "notes": "原子力圧力容器は国内中心。樹脂機械に一部海外売上。"
+    },
+    "6861.T": {
+      "name": "キーエンス",
+      "overseas_revenue_ratio": 0.60,
+      "primary_currency_exposure": "USD/CNY/EUR",
+      "secondary_exposure": "KRW/TWD",
+      "usdjpy_eps_impact_per_5yen": "+4.5%",
+      "hedging_status": "minimal",
+      "sensitivity_category": "medium_high",
+      "notes": "FAセンサー・計測機器は世界中に直販。為替ヘッジは限定的。"
+    },
+    "6723.T": {
+      "name": "ルネサスエレクトロニクス",
+      "overseas_revenue_ratio": 0.75,
+      "primary_currency_exposure": "USD/EUR/CNY",
+      "secondary_exposure": "KRW",
+      "usdjpy_eps_impact_per_5yen": "+5.5%",
+      "hedging_status": "active",
+      "sensitivity_category": "high",
+      "notes": "自動車MCU・パワー半導体は海外OEM向け。Dialog/IDT買収で海外比率上昇。"
+    },
+    "7735.T": {
+      "name": "SCREEN HD",
+      "overseas_revenue_ratio": 0.75,
+      "primary_currency_exposure": "USD/TWD/KRW",
+      "secondary_exposure": "CNY",
+      "usdjpy_eps_impact_per_5yen": "+5.5%",
+      "hedging_status": "partial",
+      "sensitivity_category": "high",
+      "notes": "洗浄装置はTSMC/Samsung/Intel向け。海外比率75%。"
+    },
+    "6268.T": {
+      "name": "ナブテスコ",
+      "overseas_revenue_ratio": 0.50,
+      "primary_currency_exposure": "USD/EUR/CNY",
+      "secondary_exposure": "KRW",
+      "usdjpy_eps_impact_per_5yen": "+3.8%",
+      "hedging_status": "partial",
+      "sensitivity_category": "medium",
+      "notes": "RV減速機はFanuc/安川等経由で間接的に海外へ。直接海外売上も50%。"
+    },
+    "6273.T": {
+      "name": "SMC",
+      "overseas_revenue_ratio": 0.60,
+      "primary_currency_exposure": "USD/EUR/CNY",
+      "secondary_exposure": "KRW/TWD",
+      "usdjpy_eps_impact_per_5yen": "+4.5%",
+      "hedging_status": "partial",
+      "sensitivity_category": "medium_high",
+      "notes": "空圧機器のグローバル40%シェア。海外現地法人から直接販売。"
+    },
+    "9501.T": {
+      "name": "東京電力HD",
+      "overseas_revenue_ratio": 0.00,
+      "primary_currency_exposure": null,
+      "secondary_exposure": null,
+      "usdjpy_eps_impact_per_5yen": "+0.0%",
+      "hedging_status": "none",
+      "sensitivity_category": "none",
+      "notes": "100%国内電力事業。燃料輸入コスト（LNG/石炭）は円安でマイナス影響あり。"
+    },
+    "6324.T": {
+      "name": "ハーモニック・ドライブ",
+      "overseas_revenue_ratio": 0.65,
+      "primary_currency_exposure": "USD/EUR/CNY",
+      "secondary_exposure": "KRW",
+      "usdjpy_eps_impact_per_5yen": "+5.0%",
+      "hedging_status": "limited",
+      "sensitivity_category": "high",
+      "notes": "波動歯車はロボットメーカー経由で間接的に海外へ。直接海外売上65%。"
+    },
+    "6702.T": {
+      "name": "富士通",
+      "overseas_revenue_ratio": 0.35,
+      "primary_currency_exposure": "USD/GBP/EUR",
+      "secondary_exposure": "AUD",
+      "usdjpy_eps_impact_per_5yen": "+2.5%",
+      "hedging_status": "active",
+      "sensitivity_category": "low_medium",
+      "notes": "国内SI/サービスが65%。海外はFujitsu UK、豪州事業。"
+    },
+    "9348.T": {
+      "name": "ispace",
+      "overseas_revenue_ratio": 0.40,
+      "primary_currency_exposure": "USD",
+      "secondary_exposure": "EUR",
+      "usdjpy_eps_impact_per_5yen": "+3.0%",
+      "hedging_status": "minimal",
+      "sensitivity_category": "medium",
+      "notes": "米国子会社経由でNASA/商業契約。ルクセンブルク拠点も。赤字企業のため影響は限定的。"
+    },
+    "1963.T": {
+      "name": "日揮HD",
+      "overseas_revenue_ratio": 0.55,
+      "primary_currency_exposure": "USD",
+      "secondary_exposure": "EUR/SAR",
+      "usdjpy_eps_impact_per_5yen": "+4.0%",
+      "hedging_status": "active",
+      "sensitivity_category": "medium_high",
+      "notes": "中東LNG/水素プラントがドル建て中心。為替ヘッジは積極的。"
+    },
+    "6481.T": {
+      "name": "THK",
+      "overseas_revenue_ratio": 0.55,
+      "primary_currency_exposure": "USD/EUR/CNY",
+      "secondary_exposure": "KRW",
+      "usdjpy_eps_impact_per_5yen": "+4.0%",
+      "hedging_status": "partial",
+      "sensitivity_category": "medium_high",
+      "notes": "LMガイドは半導体装置・工作機械向け。海外55%。"
+    },
+    "4704.T": {
+      "name": "トレンドマイクロ",
+      "overseas_revenue_ratio": 0.70,
+      "primary_currency_exposure": "USD",
+      "secondary_exposure": "EUR/GBP",
+      "usdjpy_eps_impact_per_5yen": "+5.5%",
+      "hedging_status": "active",
+      "sensitivity_category": "high",
+      "notes": "サイバーセキュリティはグローバル。日本30%、米州40%、欧州20%。"
+    },
+    "9503.T": {
+      "name": "関西電力",
+      "overseas_revenue_ratio": 0.00,
+      "primary_currency_exposure": null,
+      "secondary_exposure": null,
+      "usdjpy_eps_impact_per_5yen": "+0.0%",
+      "hedging_status": "none",
+      "sensitivity_category": "none",
+      "notes": "100%国内電力事業。原子力比率高く燃料輸入影響はTEPCO比で軽微。"
+    }
+  },
+  "sensitivity_summary": {
+    "very_high": ["6315.T (TOWA 80%)", "6920.T (Lasertec 85%)", "6146.T (Disco 80%)", "6857.T (Advantest 80%)"],
+    "high": ["8035.T (TEL 65%)", "6954.T (Fanuc 70%)", "6506.T (Yaskawa 65%)", "6758.T (Sony 70%)", "6723.T (Renesas 75%)", "7735.T (SCREEN 75%)", "6324.T (HD 65%)", "4704.T (TM 70%)"],
+    "medium_high": ["6501.T (Hitachi 60%)", "6861.T (Keyence 60%)", "6273.T (SMC 60%)", "1963.T (JGC 55%)", "6481.T (THK 55%)"],
+    "medium": ["7012.T (KHI 45%)", "7013.T (IHI 40%)", "6503.T (MELCO 45%)", "6268.T (Nabtesco 50%)", "9348.T (ispace 40%)"],
+    "low": ["7011.T (MHI 35%)", "6701.T (NEC 25%)", "5631.T (JSW 25%)", "186A.T (Astro 30%)", "6702.T (Fujitsu 35%)"],
+    "none": ["9432.T (NTT 15%)", "9501.T (TEPCO 0%)", "9503.T (Kansai 0%)"]
+  },
+  "scenario_impact": {
+    "yen_weakening_5yen": {
+      "description": "USD/JPY 152.5 → 157.5",
+      "portfolio_weighted_eps_impact": "+3.5%",
+      "biggest_beneficiaries": ["6920.T (+6.5%)", "6315.T (+6.0%)", "6146.T (+6.0%)", "6857.T (+6.0%)"],
+      "biggest_losers": ["9501.T (0%, but fuel cost increase)", "9503.T (0%)"]
+    },
+    "yen_strengthening_5yen": {
+      "description": "USD/JPY 152.5 → 147.5",
+      "portfolio_weighted_eps_impact": "-3.5%",
+      "biggest_losers": ["6920.T (-6.5%)", "6315.T (-6.0%)", "6146.T (-6.0%)", "6857.T (-6.0%)"],
+      "biggest_beneficiaries": ["9501.T (0%, but fuel cost decrease)", "9503.T (0%)"]
+    }
+  }
+}

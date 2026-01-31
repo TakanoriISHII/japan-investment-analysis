@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-31T12:00:00Z",
+    "source_repo": "us-investment-analysis",
+    "target_repo": "japan-investment-analysis",
+    "framework_version": "3.0.0",
+    "direction": "US -> JP"
+  },
+  "market_snapshot": {
+    "market_risk_score": 63,
+    "stance": "conservative",
+    "top_conviction": "BWXT - sole-source naval nuclear monopoly + SMR civil conversion"
+  },
+  "market_risk_comparison": {
+    "us_score": 63,
+    "jp_score": 57,
+    "differential": 6,
+    "interpretation": "US market slightly more elevated risk than Japan. US conservative stance driven by tariff uncertainty (Section 232), stretched valuations in AI/defense, and policy regime change risks. Japan more favorable with balanced stance, yen weakness tailwind, and structural defense/semi catalysts."
+  },
+  "top5_summary": [
+    {
+      "rank": 1,
+      "ticker": "BWXT",
+      "name": "BWX Technologies",
+      "total_score": 78,
+      "quadrant": "prime",
+      "confidence": "B+",
+      "key_thesis": "US sole naval nuclear reactor manufacturer. $7.4B backlog (+119% YoY). TRISO fuel + SMR civil conversion.",
+      "jp_relevance": "Competitor to JSW (#17 JP) in nuclear components. BWXT naval reactor demand signals global nuclear renaissance. SMR commercialization timeline affects JSW nuclear vessel orders."
+    },
+    {
+      "rank": 2,
+      "ticker": "NVDA",
+      "name": "NVIDIA",
+      "total_score": 73,
+      "quadrant": "stable_growth",
+      "confidence": "B+",
+      "key_thesis": "90-98% DC GPU monopoly. Blackwell sold out, Rubin 2026. Stargate $450B+ AI capex pipeline.",
+      "jp_relevance": "TOWA (#5 JP) is direct supply chain beneficiary via HBM compression mold. Advantest (#15 JP) provides AI chip testing. NVDA demand trajectory drives entire JP semi equipment sector (TEL, DISCO, SCREEN)."
+    },
+    {
+      "rank": 3,
+      "ticker": "LEU",
+      "name": "Centrus Energy",
+      "total_score": 73,
+      "quadrant": "speculative",
+      "confidence": "B+",
+      "key_thesis": "US sole commercial HALEU producer. DOE contract extension. Nuclear fuel chokepoint for all next-gen SMRs.",
+      "jp_relevance": "HALEU supply signals affect Japan nuclear fuel strategy. Japan nuclear restart program creates parallel fuel demand. LEU progress validates global nuclear supply chain thesis relevant to TEPCO/Kansai EP."
+    },
+    {
+      "rank": 4,
+      "ticker": "VRT",
+      "name": "Vertiv Holdings",
+      "total_score": 72,
+      "quadrant": "prime",
+      "confidence": "B",
+      "key_thesis": "DC liquid cooling leader. $9.5B record backlog. NVIDIA GB200 NVL72 certified partner. AI infrastructure backbone.",
+      "jp_relevance": "Data center cooling demand in Japan growing with hyperscaler expansion. VRT backlog trends signal global DC buildout pace relevant to NTT (#7 JP) and Hitachi (#4 JP) DC power demand."
+    },
+    {
+      "rank": 5,
+      "ticker": "AVAV",
+      "name": "AeroVironment",
+      "total_score": 70,
+      "quadrant": "prime",
+      "confidence": "B+",
+      "key_thesis": "Switchblade 600 Replicator selected. $990M+$743M orders. Drone warfare paradigm shift.",
+      "jp_relevance": "Japan drone/UAS defense procurement decisions influenced by US Replicator success. KHI (#9 JP) developing competing unmanned systems. AVAV combat validation accelerates Japan drone defense spending."
+    }
+  ],
+  "domain_distribution": {
+    "defense": {
+      "us_companies_in_top30": 10,
+      "key_names": ["BWXT", "AVAV", "TDG", "RTX", "LMT", "NOC", "LHX", "GD", "KTOS", "MOG.A"],
+      "theme": "FY2026 $1.01T defense budget. Golden Dome $151B. Replicator drone warfare. AUKUS submarines.",
+      "jp_signal": "US defense budget growth validates Japan's 2% GDP defense target. RTX/LMT order trends directly affect MHI/KHI co-production programs. Replicator success drives Japan drone procurement."
+    },
+    "AI_compute": {
+      "us_companies_in_top30": 5,
+      "key_names": ["NVDA", "VRT", "AMD", "AVGO", "APH"],
+      "theme": "Stargate $450B+ AI capex. Blackwell/Rubin GPU ramp. Data center infrastructure buildout.",
+      "jp_signal": "NVDA demand directly drives TOWA/Advantest/TEL orders. VRT DC cooling demand signals Japan DC power/cooling demand for Hitachi. AVGO networking demand validates NTT infrastructure thesis."
+    },
+    "energy_nuclear": {
+      "us_companies_in_top30": 5,
+      "key_names": ["BWXT", "LEU", "CEG", "VST", "CCJ"],
+      "theme": "Naval nuclear expansion. SMR commercialization. Nuclear renaissance. Hyperscaler nuclear PPAs.",
+      "jp_signal": "CEG-Microsoft nuclear PPA model could replicate in Japan. Nuclear sentiment lifts TEPCO/Kansai EP. BWXT SMR timeline affects JSW component demand. CCJ uranium prices affect Japan nuclear fuel costs."
+    },
+    "cyber": {
+      "us_companies_in_top30": 3,
+      "key_names": ["PANW", "CRWD", "CYBR"],
+      "theme": "Enterprise platformization. AI-driven security. Government cybersecurity mandates.",
+      "jp_signal": "PANW/CRWD threat landscape data drives Japan cybersecurity urgency. Platformization trend pressures NEC/Trend Micro competitive positioning. Global cyber threat escalation benefits Japan cyber spending."
+    },
+    "space": {
+      "us_companies_in_top30": 3,
+      "key_names": ["RKLB", "PL", "LUNR"],
+      "theme": "Commercial launch (Electron/Neutron). Earth observation. Lunar economy.",
+      "jp_signal": "RKLB Neutron launch competes with Japan H3 rocket for small/medium payloads. PL Earth observation parallels Japan ISR satellite development. LUNR lunar economy validates ispace business model."
+    },
+    "robotics_industrial": {
+      "us_companies_in_top30": 2,
+      "key_names": ["SYM", "ISRG"],
+      "theme": "Warehouse automation. Surgical robotics. AI-driven manufacturing.",
+      "jp_signal": "US automation adoption trends signal global demand for Fanuc/Yaskawa. ISRG surgical robotics validates Japan medical robotics thesis."
+    }
+  },
+  "supply_chain_signals": [
+    {
+      "signal": "NVDA Q4 FY2026 earnings will reveal Blackwell ramp trajectory and Rubin timeline",
+      "impact_on_jp": "Directly affects TOWA order book (HBM compression mold), Advantest (AI chip test), TEL (advanced process equipment). Strong NVDA guidance = JP semi equipment sector positive.",
+      "confidence": "A",
+      "timeline": "2026-02-26 (estimated)"
+    },
+    {
+      "signal": "RTX Q1 2026 defense backlog update will signal F-35/Patriot production rates",
+      "impact_on_jp": "MHI F-35 FACO assembly volume and Patriot/SM-3 co-production directly tied to RTX production rates. Strong RTX defense backlog = MHI order visibility.",
+      "confidence": "B",
+      "timeline": "2026-Q1"
+    },
+    {
+      "signal": "CEG/VST nuclear PPA announcements signal hyperscaler nuclear demand trend",
+      "impact_on_jp": "Validates nuclear asset value globally. Positive for TEPCO Kashiwazaki-Kariwa restart case and Kansai EP nuclear fleet. New US nuclear PPAs = Japan nuclear utility revaluation catalyst.",
+      "confidence": "B",
+      "timeline": "2026-H1"
+    },
+    {
+      "signal": "PANW/CRWD quarterly threat reports and enterprise spending data",
+      "impact_on_jp": "Global cybersecurity threat escalation drives Japan Active Cyber Defense legislation urgency. NEC and Trend Micro benefit from heightened threat environment.",
+      "confidence": "B",
+      "timeline": "quarterly"
+    },
+    {
+      "signal": "US tariff policy developments (Section 232, China trade) affect global supply chains",
+      "impact_on_jp": "Japan semi equipment companies could benefit from China restrictions on US competitors. Tariff uncertainty affects JPY and Japan export competitiveness. US tariffs on China benefit Japan as alternative supplier.",
+      "confidence": "C",
+      "timeline": "ongoing"
+    }
+  ],
+  "key_catalysts_next_6m": [
+    {"event": "NVDA Q4 FY2026 earnings", "date": "2026-02-26", "cross_market_impact": "Blackwell ramp data drives TOWA/Advantest/TEL order expectations"},
+    {"event": "US tariff/trade policy announcements", "date": "2026-Q1", "cross_market_impact": "China restrictions could shift semi equipment demand toward JP companies"},
+    {"event": "BWXT SMR civil contract announcements", "date": "2026-H1", "cross_market_impact": "SMR commercialization timeline affects JSW nuclear component demand"},
+    {"event": "CEG additional nuclear PPA deals", "date": "2026-H1", "cross_market_impact": "Validates Japan nuclear utility revaluation thesis (TEPCO/Kansai EP)"},
+    {"event": "Replicator full-scale procurement decisions", "date": "2026-H1", "cross_market_impact": "Drone warfare adoption signals influence Japan UAS defense procurement"}
+  ]
+}

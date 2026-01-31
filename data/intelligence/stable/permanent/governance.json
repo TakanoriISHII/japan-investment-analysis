@@ -3,9 +3,1219 @@
     "description": "JP Corporate Governance Reform Quantification",
     "framework": "TSE Prime Requirements + Buffett Management Quality",
     "version": "3.0.0",
-    "last_updated": null,
+    "last_updated": "2026-01-31",
     "max_score": 5,
-    "note": "governance_score = 4コンポーネント平均。軸3の経営能力スコアの入力として使用。Phase 2で収集、Phase 5で更新。"
+    "components": ["tse_prime_compliance", "capital_efficiency", "shareholder_return", "buffett_management_quality"],
+    "note": "governance_score = 4コンポーネント平均。軸3の経営能力スコアの入力として使用。Phase 2で収集、Phase 5で更新。",
+    "total_companies": 30,
+    "average_score": 3.28,
+    "score_distribution": {
+      "excellent_4plus": 4,
+      "good_3_5_to_3_99": 8,
+      "average_3_0_to_3_49": 12,
+      "below_average_sub_3": 6
+    }
   },
-  "companies": {}
+  "companies": {
+    "7011.T": {
+      "name": "三菱重工業",
+      "governance_score": 3.75,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 3.5,
+          "pb_above_1": true,
+          "roe_target": "12%以上",
+          "roe_actual": "10.2%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.42,
+          "english_disclosure": true,
+          "notes": "PBR 3.5倍。ROE 10.2%で目標12%にやや未達。独立取締役5/12名（42%）。英文IR充実。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "buyback_history": "FY2024: 500億円、FY2023: 300億円",
+          "dividend_policy": "配当性向30%目標、累進配当",
+          "cross_shareholding_reduction": "in_progress",
+          "notes": "自社株買い積極的。配当性向30%で増配傾向。GCAP等成長投資との両立を図る。持合い株式は段階的縮小。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 0.35,
+          "doe_adoption": false,
+          "notes": "総還元性向35%。増配傾向だが防衛投資拡大で還元余力はやや限定的。IR活動積極的。アナリストカバレッジ20社+。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 4,
+          "track_record_vs_guidance": "consistently_meets",
+          "notes": "泉澤社長（2022年就任）。GCAP/SpaceJet撤退の損切り判断は合理的。防衛受注の大幅積み上げ。ガスタービン高採算化。ガイダンス達成率高い。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "8035.T": {
+      "name": "東京エレクトロン",
+      "governance_score": 4.25,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 5,
+          "pb_ratio": 7.5,
+          "pb_above_1": true,
+          "roe_target": "30%以上",
+          "roe_actual": "28.5%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.50,
+          "english_disclosure": true,
+          "notes": "PBR 7.5倍。ROE 28.5%と極めて高水準。独立取締役6/12名（50%）で過半数。英文IR最高水準。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "buyback_history": "FY2024: 1,000億円、FY2023: 500億円",
+          "dividend_policy": "配当性向50%目標で業績連動型高配当",
+          "cross_shareholding_reduction": "completed",
+          "notes": "自社株買い積極的。配当性向50%目標で業績連動型高配当。持合い株式は実質解消済み。実質無借金経営。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 0.65,
+          "doe_adoption": false,
+          "notes": "総還元性向65%と高水準。日経IR Award受賞歴あり。アナリストカバレッジ25社+。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "excellent",
+          "ceo_tenure_years": 5,
+          "track_record_vs_guidance": "consistently_meets",
+          "notes": "河合社長。コータ/デベロッパ90%シェアの技術投資を継続しつつ高還元。ガイダンス達成率が高く上方修正傾向。半導体サイクルの読みが的確。"
+        }
+      },
+      "governance_trend": "stable_high",
+      "confidence": "A",
+      "last_verified": "2026-01-31"
+    },
+    "6954.T": {
+      "name": "ファナック",
+      "governance_score": 4.00,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 5,
+          "pb_ratio": 4.2,
+          "pb_above_1": true,
+          "roe_target": "10%以上",
+          "roe_actual": "10.5%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.45,
+          "english_disclosure": true,
+          "notes": "PBR 4.2倍。ROE 10.5%で目標達成。独立社外取締役5/11名（45%）。英文IR・決算説明会英語同時配信。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "buyback_history": "FY2024: 500億円、FY2023: 400億円",
+          "dividend_policy": "配当性向60%目標（安定配当）",
+          "cross_shareholding_reduction": "completed",
+          "notes": "配当性向60%目標で高水準。自社株買い継続。持合い株式は実質なし。無借金経営、自己資本比率87-89%。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 0.72,
+          "doe_adoption": false,
+          "notes": "総還元性向約72%と非常に高い。IR活動充実。アナリストカバレッジ20社+。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 8,
+          "track_record_vs_guidance": "sometimes_conservative",
+          "notes": "山口社長。保守的なガイダンスで上方修正傾向。CRX-H1ヒューマノイドとNVIDIA提携は新たな資本配分方向。研究開発重視の文化は強みだが市場変化への対応はやや遅い傾向。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "6501.T": {
+      "name": "日立製作所",
+      "governance_score": 4.50,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 5,
+          "pb_ratio": 3.2,
+          "pb_above_1": true,
+          "roe_target": "12-14%",
+          "roe_actual": "13.7%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.58,
+          "english_disclosure": true,
+          "notes": "PBR 3.2倍。ROE 13.7%で中計目標達成。独立社外取締役7/12名（58%）で過半数。英文開示は最高水準。グローバルガバナンス。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 5,
+          "buyback_history": "FY2024: 2,000億円、FY2023: 1,000億円",
+          "dividend_policy": "累進配当（中計で配当性向40%目標）",
+          "cross_shareholding_reduction": "completed",
+          "notes": "自社株買い積極的。上場子会社完全子会社化完了（22社売却/統合済み）。持合い解消実質完了。事業ポートフォリオ変革の模範。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 0.50,
+          "doe_adoption": false,
+          "notes": "総還元性向約50%。大型自社株買いで還元拡大。IR品質は国内最高水準。日経IR Award、METI企業価値大賞受賞歴。アナリスト30社+カバー。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "excellent",
+          "ceo_tenure_years": 4,
+          "track_record_vs_guidance": "consistently_meets",
+          "notes": "小島社長。上場子会社22社売却・統合の事業再編は日本企業ガバナンス改革の教科書的事例。Lumada中心の成長戦略が明確。ガイダンス達成率高い。"
+        }
+      },
+      "governance_trend": "stable_high",
+      "confidence": "A",
+      "last_verified": "2026-01-31"
+    },
+    "6315.T": {
+      "name": "TOWA",
+      "governance_score": 2.75,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 5.5,
+          "pb_above_1": true,
+          "roe_target": "15%以上",
+          "roe_actual": "18.0%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.33,
+          "english_disclosure": false,
+          "notes": "PBR 5.5倍。ROE 18%で高水準。独立取締役3/9名（33%）で最低ライン。英文IR開示は限定的。"
+        },
+        "capital_efficiency": {
+          "score": 2,
+          "buyback_history": "限定的（小型株で実績少ない）",
+          "dividend_policy": "配当性向30%目安",
+          "cross_shareholding_reduction": "limited_disclosure",
+          "notes": "小型株のため自社株買い実績は限定的。配当性向30%目安だが成長投資優先。"
+        },
+        "shareholder_return": {
+          "score": 2,
+          "total_return_ratio_3yr_avg": 0.30,
+          "doe_adoption": false,
+          "notes": "総還元性向30%程度。成長投資段階のため還元は控えめ。IR活動は大型株に比べ限定的。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 6,
+          "track_record_vs_guidance": "sometimes_beats",
+          "notes": "岡田社長。HBMモールド市場66%シェア獲得の経営判断は優秀。コンプレッション成形技術への先行投資が奏功。ガイダンスは保守的で上方修正傾向。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "6506.T": {
+      "name": "安川電機",
+      "governance_score": 3.50,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 4.0,
+          "pb_above_1": true,
+          "roe_target": "12%",
+          "roe_actual": "10.2%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.42,
+          "english_disclosure": true,
+          "notes": "PBR 4.0倍。ROE 10.2%で目標12%は未達だが改善中。独立取締役5/12名（42%）。英文IR・統合報告書あり。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "FY2024: 200億円（初の大型自社株買い）",
+          "dividend_policy": "配当性向35-40%目標",
+          "cross_shareholding_reduction": "in_progress",
+          "notes": "自社株買いをFY2024から本格化。配当性向35-40%目標。持合い解消は進行中。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 0.38,
+          "doe_adoption": false,
+          "notes": "総還元性向38%。自社株買い開始で改善中。IR活動は標準的。アナリストカバレッジ15社+。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 3,
+          "track_record_vs_guidance": "consistently_meets",
+          "notes": "小笠原社長。MOTOMAN-HMヒューマノイド開発決定とSoftBank提携は戦略的資本配分。ガイダンス達成率は良好。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "9432.T": {
+      "name": "NTT",
+      "governance_score": 4.00,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 1.5,
+          "pb_above_1": true,
+          "roe_target": "14%",
+          "roe_actual": "13.8%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.47,
+          "english_disclosure": true,
+          "notes": "PBR 1.5倍。ROE 13.8%で目標概ね達成。独立取締役7/15名（47%）。英文IR・統合報告書・ESGレポート充実。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "buyback_history": "FY2024: 3,000億円、FY2023: 2,500億円",
+          "dividend_policy": "14期連続増配、累進配当",
+          "cross_shareholding_reduction": "in_progress",
+          "notes": "大規模自社株買い継続。14期連続増配。NTTデータ完全子会社化済み。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 0.55,
+          "doe_adoption": false,
+          "notes": "総還元性向55%と高水準。14期連続増配の安定性。IR品質高い。日経IR Award複数回受賞。アナリストカバレッジ25社+。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 4,
+          "track_record_vs_guidance": "consistently_meets",
+          "notes": "島田社長。IOWN構想への大型投資と株主還元の両立。NTTデータ完全子会社化でグローバルIT強化。株式25分割で個人投資家基盤拡大。"
+        }
+      },
+      "governance_trend": "stable_high",
+      "confidence": "A",
+      "last_verified": "2026-01-31"
+    },
+    "6701.T": {
+      "name": "NEC",
+      "governance_score": 3.50,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 2.5,
+          "pb_above_1": true,
+          "roe_target": "12%以上",
+          "roe_actual": "11.5%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.50,
+          "english_disclosure": true,
+          "notes": "PBR 2.5倍。ROE 11.5%で目標12%にやや未達。独立取締役6/12名（50%）で過半数。英文IR充実。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "FY2024: 300億円、FY2023: 200億円",
+          "dividend_policy": "配当性向40%目標",
+          "cross_shareholding_reduction": "in_progress",
+          "notes": "自社株買い増加傾向。配当性向40%目標設定。持合い解消は進行中。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 0.40,
+          "doe_adoption": false,
+          "notes": "総還元性向40%。配当+自社株買いで還元姿勢を示す。IR活動は標準的。アナリストカバレッジ15社+。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 5,
+          "track_record_vs_guidance": "consistently_meets",
+          "notes": "森田社長。サイバーセキュリティ・防衛通信への集中投資が明確。KDDI-NEC合弁設立の戦略判断。ガイダンス達成率良好。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "7012.T": {
+      "name": "川崎重工業",
+      "governance_score": 2.75,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 3,
+          "pb_ratio": 1.5,
+          "pb_above_1": true,
+          "roe_target": "10%以上",
+          "roe_actual": "7.5%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.38,
+          "english_disclosure": true,
+          "notes": "PBR 1.5倍。ROE 7.5%で目標10%に未達。独立取締役5/13名（38%）。英文IR・統合報告書あり。D/E 2.5xと財務レバレッジ高い。"
+        },
+        "capital_efficiency": {
+          "score": 2,
+          "buyback_history": "限定的（財務レバレッジ高く余力少ない）",
+          "dividend_policy": "安定配当（配当性向30%目安）",
+          "cross_shareholding_reduction": "in_progress",
+          "notes": "自社株買いは限定的。D/E 2.5xと高レバレッジのため資本効率改善余地大。"
+        },
+        "shareholder_return": {
+          "score": 2,
+          "total_return_ratio_3yr_avg": 0.28,
+          "doe_adoption": false,
+          "notes": "総還元性向28%と低め。財務レバレッジ制約で還元余力が限定的。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 4,
+          "track_record_vs_guidance": "sometimes_beats",
+          "notes": "橋本社長。防衛・水素・ロボティクスへの戦略的投資方針が明確。潜水艦建造の安定受注。水素液化プラントへの先行投資は評価。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "7013.T": {
+      "name": "IHI",
+      "governance_score": 2.75,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 3,
+          "pb_ratio": 2.0,
+          "pb_above_1": true,
+          "roe_target": "10%以上",
+          "roe_actual": "8.5%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.36,
+          "english_disclosure": true,
+          "notes": "PBR 2.0倍。ROE 8.5%で目標10%に未達だが改善傾向。独立取締役4/11名（36%）。自己資本比率21.5-28%と低い。"
+        },
+        "capital_efficiency": {
+          "score": 2,
+          "buyback_history": "限定的（自己資本比率低く余力少ない）",
+          "dividend_policy": "安定配当維持",
+          "cross_shareholding_reduction": "in_progress",
+          "notes": "自社株買いは限定的。D/E 2.0xで財務余力が乏しい。受注残急増（+70%YoY）で将来の収益改善が見込まれる。"
+        },
+        "shareholder_return": {
+          "score": 2,
+          "total_return_ratio_3yr_avg": 0.25,
+          "doe_adoption": false,
+          "notes": "総還元性向25%と低め。財務レバレッジ制約で還元余力が限定的。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 4,
+          "track_record_vs_guidance": "sometimes_beats",
+          "notes": "井手社長。NuScale SMRへの$40M投資は先見性のある資本配分。航空宇宙防衛受注残1.896兆円（+70%YoY）の積み上げは経営力。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "6920.T": {
+      "name": "レーザーテック",
+      "governance_score": 3.50,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 8.0,
+          "pb_above_1": true,
+          "roe_target": "20%以上",
+          "roe_actual": "25.0%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.43,
+          "english_disclosure": true,
+          "notes": "PBR 8.0倍。ROE 25%と極めて高水準。独立取締役3/7名（43%）。英文IR・決算説明資料あり。無借金経営。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "FY2024: 100億円（初の自社株買い）",
+          "dividend_policy": "配当性向50%目標",
+          "cross_shareholding_reduction": "not_applicable",
+          "notes": "自社株買いを開始。配当性向50%目標は高水準。無借金、自己資本比率75%。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 0.52,
+          "doe_adoption": false,
+          "notes": "総還元性向52%。配当性向50%+自社株買い開始で還元強化。空売りレポート対応の経緯あり。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 10,
+          "track_record_vs_guidance": "sometimes_misses",
+          "notes": "岡林社長。EUVマスク検査装置100%独占の技術選択は卓越。空売りレポート対応での情報開示に課題。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "186A.T": {
+      "name": "Astroscale HD",
+      "governance_score": 2.25,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 2,
+          "pb_ratio": 15.0,
+          "pb_above_1": true,
+          "roe_target": "N/A（赤字段階）",
+          "roe_actual": "-25.0%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.40,
+          "english_disclosure": true,
+          "notes": "PBR>1だが赤字のためROEはマイナス。2024年4月TSEグロース市場上場。独立取締役2/5名（40%）。英文開示あり。"
+        },
+        "capital_efficiency": {
+          "score": 1,
+          "buyback_history": "なし（赤字段階）",
+          "dividend_policy": "無配（成長投資優先）",
+          "cross_shareholding_reduction": "not_applicable",
+          "notes": "FCF赤字の成長投資段階。自社株買い・配当ともになし。エクイティファイナンスによる資金調達。"
+        },
+        "shareholder_return": {
+          "score": 2,
+          "total_return_ratio_3yr_avg": 0.0,
+          "doe_adoption": false,
+          "notes": "無配・自社株買いなし。成長ステージの宇宙スタートアップとして還元は期待されていない。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "good_for_stage",
+          "ceo_tenure_years": 11,
+          "track_record_vs_guidance": "on_track_milestones",
+          "notes": "岡田光信CEO（創業者）。JAXA Kプログラム受注、ELSA-dミッション成功等の技術マイルストーン達成。グローバル展開（日英米仏）の戦略判断は優秀。"
+        }
+      },
+      "governance_trend": "developing",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "6503.T": {
+      "name": "三菱電機",
+      "governance_score": 3.25,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 3,
+          "pb_ratio": 2.0,
+          "pb_above_1": true,
+          "roe_target": "10%以上",
+          "roe_actual": "8.4%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.46,
+          "english_disclosure": true,
+          "notes": "PBR 2.0倍。ROE 8.4%で目標10%に未達。品質不正問題後のガバナンス改革中。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "FY2024: 500億円、FY2023: 300億円",
+          "dividend_policy": "配当性向35-40%目標、累進配当",
+          "cross_shareholding_reduction": "in_progress",
+          "notes": "自社株買い増加傾向。品質不正後の信頼回復で資本効率改善を強調。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 0.38,
+          "doe_adoption": false,
+          "notes": "総還元性向38%。自社株買い拡大で改善中。品質不正問題後のIR強化に注力。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "improving",
+          "ceo_tenure_years": 3,
+          "track_record_vs_guidance": "consistently_meets",
+          "notes": "漆間社長。品質不正問題からの立て直しを推進。防衛エレクトロニクス・SiCパワー半導体への集中投資。ガバナンス改革で外部評価改善中。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "6146.T": {
+      "name": "ディスコ",
+      "governance_score": 4.00,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 5,
+          "pb_ratio": 12.0,
+          "pb_above_1": true,
+          "roe_target": "20%以上",
+          "roe_actual": "28.0%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.43,
+          "english_disclosure": true,
+          "notes": "PBR 12.0倍。ROE 28%と極めて高水準。独立取締役3/7名（43%）。英文IR充実。無借金、自己資本比率85%。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "buyback_history": "FY2024: 300億円、FY2023: 200億円",
+          "dividend_policy": "配当性向50%以上目標",
+          "cross_shareholding_reduction": "not_applicable",
+          "notes": "自社株買い積極的。配当性向50%以上の高水準。無借金経営で資本効率極めて高い。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 0.60,
+          "doe_adoption": false,
+          "notes": "総還元性向60%と高水準。独自のWill会計システム（社内通貨）でコスト意識高い。IR活動充実。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 8,
+          "track_record_vs_guidance": "consistently_meets",
+          "notes": "関家社長。ダイシング80%・グラインダ70%の独占維持は経営力。消耗品リカーリングモデルの構築は秀逸。"
+        }
+      },
+      "governance_trend": "stable_high",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "6857.T": {
+      "name": "アドバンテスト",
+      "governance_score": 3.75,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 5,
+          "pb_ratio": 10.0,
+          "pb_above_1": true,
+          "roe_target": "15%以上",
+          "roe_actual": "22.0%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.50,
+          "english_disclosure": true,
+          "notes": "PBR 10.0倍。ROE 22%と高水準。独立取締役5/10名（50%）で過半数。英文IR・統合報告書充実。実質無借金。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "FY2024: 200億円",
+          "dividend_policy": "配当性向30%目安",
+          "cross_shareholding_reduction": "completed",
+          "notes": "自社株買いは実施。配当性向30%目安と保守的。持合い株式は実質解消済み。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 0.38,
+          "doe_adoption": false,
+          "notes": "総還元性向38%。半導体サイクルに合わせた保守的な還元。IR活動は充実。アナリストカバレッジ20社+。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 4,
+          "track_record_vs_guidance": "consistently_meets",
+          "notes": "ダグラス・ラフェーヴ社長（外国人CEO）。テスタ市場でTeradyneとの2強体制を維持しながらHBMテスト新市場を開拓。グローバル経営の実践。"
+        }
+      },
+      "governance_trend": "stable_high",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "6758.T": {
+      "name": "ソニーグループ",
+      "governance_score": 4.30,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 5,
+          "pb_ratio": 2.8,
+          "pb_above_1": true,
+          "roe_target": "10%以上",
+          "roe_actual": "12-15%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.60,
+          "english_disclosure": true,
+          "notes": "PBR2.8倍。ROE12-15%達成。独立取締役60%（NYSE上場基準）。英文開示は最高水準。NY上場。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "buyback_history": "大規模自社株買い実績あり（2024年に2,000億円規模）",
+          "dividend_policy": "累進配当方針、配当性向を段階的に引上げ",
+          "cross_shareholding_reduction": "completed",
+          "notes": "持合い解消実質完了。大型自社株買い+増配方針。事業ポートフォリオ再編（金融事業分離）進行中。自己資本比率は金融除くで改善。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 50,
+          "doe_adoption": false,
+          "notes": "総還元性向50%。大型自社株買い+増配で還元強化。IR活動はグローバル水準。アナリストカバレッジ25社+。金融分離で純粋テック企業としての評価向上が進む。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "吉田→十時体制でのエンタテインメント・半導体への集中投資は合理的。Bungie買収はやや高値掴みの指摘あり",
+          "ceo_tenure_years": 2,
+          "track_record_vs_guidance": "ガイダンス達成率高い。セグメント別の見通しが正確",
+          "notes": "十時社長。金融事業分離決定はポートフォリオ最適化として評価。イメージセンサーの継続投資は適切。ゲーム事業のサブスクリプション転換は進行中。"
+        }
+      },
+      "governance_trend": "stable",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "5631.T": {
+      "name": "日本製鋼所",
+      "governance_score": 3.00,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 3,
+          "pb_ratio": 1.2,
+          "pb_above_1": true,
+          "roe_target": "10%",
+          "roe_actual": "8-10%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.38,
+          "english_disclosure": true,
+          "notes": "PBR1倍超は維持。ROE目標は10%だが安定的達成には至っていない。独立取締役は1/3超。英文開示あり。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "小規模な自社株買い実績あり",
+          "dividend_policy": "配当性向30%目標",
+          "cross_shareholding_reduction": "段階的に縮小中",
+          "notes": "中計でROE10%目標設定。設備投資（室蘭工場近代化）との両立が課題。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 32,
+          "doe_adoption": false,
+          "notes": "配当性向30%を維持。総還元は標準的水準。原子力・防衛需要期待で市場評価は改善。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "原子力圧力容器の独占ポジション維持は評価。樹脂機械への多角化は合理的",
+          "ceo_tenure_years": 5,
+          "track_record_vs_guidance": "ガイダンスはまちまち。受注変動が大きい",
+          "notes": "室蘭の超大型鍛造設備という唯一無二の資産を保有。経営は堅実だが成長投資の積極性に欠ける面あり。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "6861.T": {
+      "name": "キーエンス",
+      "governance_score": 3.30,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 5,
+          "pb_ratio": 7.0,
+          "pb_above_1": true,
+          "roe_target": "明示なし（実績で達成）",
+          "roe_actual": "18-22%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.33,
+          "english_disclosure": true,
+          "notes": "PBR7倍超。ROE18-22%と極めて高水準。独立取締役は1/3。営業利益率55%で日本最高水準。無借金経営。"
+        },
+        "capital_efficiency": {
+          "score": 2,
+          "buyback_history": "自社株買い消極的（伝統的にほぼ実施せず）",
+          "dividend_policy": "配当性向は低水準（15-20%程度）、キャッシュ蓄積型",
+          "cross_shareholding_reduction": "持合いなし",
+          "notes": "キャッシュリッチだが株主還元は伝統的に消極的。余剰キャッシュの使途が不明瞭。"
+        },
+        "shareholder_return": {
+          "score": 2,
+          "total_return_ratio_3yr_avg": 18,
+          "doe_adoption": false,
+          "notes": "総還元性向は20%未満と低水準。高利益率だが株主還元に回さない方針。IR活動は最低限。決算説明会も開催せず。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "ファブレスモデルの徹底、直販体制の構築は経営手腕として高評価。M&Aなしで有機成長",
+          "ceo_tenure_years": 15,
+          "track_record_vs_guidance": "ガイダンス非開示。実績は常に市場予想上回る",
+          "notes": "創業者一族の影響力。独特の企業文化。ビジネスモデルとしては極めて優秀だが、株主との対話姿勢が課題。"
+        }
+      },
+      "governance_trend": "stable",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "6723.T": {
+      "name": "ルネサスエレクトロニクス",
+      "governance_score": 3.80,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 2.0,
+          "pb_above_1": true,
+          "roe_target": "15%+",
+          "roe_actual": "10-15%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.50,
+          "english_disclosure": true,
+          "notes": "PBR2倍前後。柴田社長体制でガバナンス改革。取締役の過半数が社外。英文開示完備。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "buyback_history": "2023-2025年に複数回の大型自社株買い実施",
+          "dividend_policy": "配当再開・増配方針",
+          "cross_shareholding_reduction": "持合い解消済み（INCJからの売却完了）",
+          "notes": "旧INCJ出資分の売却完了。積極的なM&A（Dialog、Intersil等）で成長投資。自社株買いも実施。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 30,
+          "doe_adoption": false,
+          "notes": "配当再開は2022年。総還元は改善中だが過去の無配期間が長かった。IR活動は積極的。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "柴田社長のM&A統合手腕は高評価。Dialog、Intersil、Celeno統合成功。車載マイコンの競争力回復",
+          "ceo_tenure_years": 5,
+          "track_record_vs_guidance": "ガイダンス達成率高い。車載サイクル回復に沿った見通し",
+          "notes": "旧ルネサスからの劇的な経営改善。グローバル競争力回復は経営の質の証明。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "7735.T": {
+      "name": "SCREENホールディングス",
+      "governance_score": 3.50,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 2.5,
+          "pb_above_1": true,
+          "roe_target": "15%",
+          "roe_actual": "15-18%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.43,
+          "english_disclosure": true,
+          "notes": "PBR2倍超。ROE15%+達成。独立取締役比率40%超。英文開示あり。半導体装置メーカーとして高ROE。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "自社株買い実績あり（中規模）",
+          "dividend_policy": "配当性向30-35%",
+          "cross_shareholding_reduction": "段階的に縮小中",
+          "notes": "中計でROE15%目標。設備投資と株主還元の両立を志向。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 35,
+          "doe_adoption": false,
+          "notes": "配当性向は標準的。増配傾向。IR活動は積極的。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "洗浄装置への集中投資が奏功。シェア拡大と高収益化を実現",
+          "ceo_tenure_years": 4,
+          "track_record_vs_guidance": "ガイダンス達成率高い。半導体サイクルに連動",
+          "notes": "純粋持株会社体制。半導体事業への集中度が高い。経営判断は合理的。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "6268.T": {
+      "name": "ナブテスコ",
+      "governance_score": 3.50,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 3,
+          "pb_ratio": 1.5,
+          "pb_above_1": true,
+          "roe_target": "10%",
+          "roe_actual": "7-9%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.40,
+          "english_disclosure": true,
+          "notes": "PBR1.5倍前後。ROE目標10%だが7-9%で未達。独立取締役40%。英文開示あり。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "自社株買い実績あり（中規模）",
+          "dividend_policy": "配当性向35-40%",
+          "cross_shareholding_reduction": "進行中",
+          "notes": "中計でROE10%目標。精密減速機の設備投資と株主還元のバランス。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 42,
+          "doe_adoption": false,
+          "notes": "総還元性向40%超と比較的高水準。配当は安定的。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "RV減速機への集中投資でシェア60%維持。中国競合対策としての品質投資は合理的",
+          "ceo_tenure_years": 4,
+          "track_record_vs_guidance": "ガイダンス概ね達成。ロボット需要サイクルに連動",
+          "notes": "ヒューマノイド向け新需要対応に期待。"
+        }
+      },
+      "governance_trend": "stable",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "6273.T": {
+      "name": "SMC",
+      "governance_score": 3.00,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 2.8,
+          "pb_above_1": true,
+          "roe_target": "明示なし",
+          "roe_actual": "10-12%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.33,
+          "english_disclosure": true,
+          "notes": "PBR2.8倍。ROE10-12%。独立取締役1/3。英文開示あり。無借金、自己資本比率90%。"
+        },
+        "capital_efficiency": {
+          "score": 2,
+          "buyback_history": "自社株買い実績は限定的（キャッシュ蓄積型）",
+          "dividend_policy": "配当性向は低水準（安定配当だが15-20%程度）",
+          "cross_shareholding_reduction": "持合いほぼなし",
+          "notes": "現金・投資有価証券が潤沢すぎるとの指摘あり。資本効率への明示的コミットメントが弱い。"
+        },
+        "shareholder_return": {
+          "score": 2,
+          "total_return_ratio_3yr_avg": 20,
+          "doe_adoption": false,
+          "notes": "総還元性向20%前後と低水準。活動家投資家からの圧力あり。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "世界シェア40%維持のための生産拡大投資は合理的。M&Aなしの有機成長路線",
+          "ceo_tenure_years": 10,
+          "track_record_vs_guidance": "ガイダンスは保守的だが達成率高い",
+          "notes": "創業者系の経営。空圧機器世界首位の競争力維持は経営手腕として評価。ValueAct等アクティビストの関与あり。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "9501.T": {
+      "name": "東京電力ホールディングス",
+      "governance_score": 1.80,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 2,
+          "pb_ratio": 0.6,
+          "pb_above_1": false,
+          "roe_target": "ROE改善計画あり",
+          "roe_actual": "3-5%（変動大）",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.50,
+          "english_disclosure": true,
+          "notes": "PBR1倍未満。ROE低水準で変動大。独立取締役は過半数（福島事故後の改革）。実質国有（原賠機構が過半数保有）。"
+        },
+        "capital_efficiency": {
+          "score": 1,
+          "buyback_history": "自社株買い実施不可（公的資金注入状態）",
+          "dividend_policy": "無配継続（2011年福島事故以降）",
+          "cross_shareholding_reduction": "持合い解消済み",
+          "notes": "賠償・廃炉費用が最優先。配当再開は柏崎再稼働・収益安定後の長期課題。"
+        },
+        "shareholder_return": {
+          "score": 1,
+          "total_return_ratio_3yr_avg": 0,
+          "doe_adoption": false,
+          "notes": "無配継続。自社株買いなし。株主還元は事実上ゼロ。再稼働による収益改善が先決。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "廃炉・賠償という制約下での経営。柏崎再稼働への取り組みは評価するが制御棒問題で後退",
+          "ceo_tenure_years": 2,
+          "track_record_vs_guidance": "柏崎再稼働の延期が繰り返され、ガイダンス信頼性は低い",
+          "notes": "柏崎刈羽6号機は2026-01-21に13年10ヶ月ぶりに再稼働したが翌日停止。30年前の制御棒設定ミス判明。"
+        }
+      },
+      "governance_trend": "stable",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "6324.T": {
+      "name": "ハーモニック・ドライブ・システムズ",
+      "governance_score": 3.00,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 3,
+          "pb_ratio": 3.5,
+          "pb_above_1": true,
+          "roe_target": "10%",
+          "roe_actual": "4-10%（回復途上）",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.40,
+          "english_disclosure": true,
+          "notes": "PBR高い（成長期待プレミアム）。ROEは回復途上。独立取締役40%。英文開示あり。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "小規模自社株買い実績あり",
+          "dividend_policy": "配当性向30%目標",
+          "cross_shareholding_reduction": "大きな持合いなし",
+          "notes": "長野工場への設備投資が優先。株主還元は標準的水準。自己資本比率69.5%と健全。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 30,
+          "doe_adoption": false,
+          "notes": "配当は安定的。業績回復に伴い増配期待。IR活動は標準的。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "波動歯車の技術リーダーシップ維持。中国競合対策として品質・高付加価値路線は合理的",
+          "ceo_tenure_years": 6,
+          "track_record_vs_guidance": "ガイダンスはまちまち。需要サイクルへの依存度が高い",
+          "notes": "ヒューマノイド需要期待で評価されるが実績はこれから。中国競合の台頭が経営課題。"
+        }
+      },
+      "governance_trend": "stable",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "6702.T": {
+      "name": "富士通",
+      "governance_score": 3.80,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 2.5,
+          "pb_above_1": true,
+          "roe_target": "12%+",
+          "roe_actual": "9-12%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.50,
+          "english_disclosure": true,
+          "notes": "PBR2倍超。ROE改善中。独立取締役過半数。英文開示完備。指名委員会等設置会社に移行。"
+        },
+        "capital_efficiency": {
+          "score": 4,
+          "buyback_history": "大型自社株買い実施（2023-2025年に3,000億円規模）",
+          "dividend_policy": "累進配当方針、配当性向40%目標",
+          "cross_shareholding_reduction": "持合い解消を積極推進。政策保有株式の大幅売却",
+          "notes": "ガバナンス改革の一環として資本効率改善に注力。事業ポートフォリオ再編進行中。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 55,
+          "doe_adoption": false,
+          "notes": "総還元性向50%超。大型自社株買い+増配で還元強化。IR活動も積極化。アナリストカバレッジ15社+。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "サービス・ソリューションへの事業転換は進行中だが、レガシーIT依存からの脱却は道半ば",
+          "ceo_tenure_years": 4,
+          "track_record_vs_guidance": "ガイダンスはまちまち。英国郵便局問題の影響",
+          "notes": "時田社長体制でガバナンス改革推進。事業ポートフォリオ再編は評価。英国Post Office問題の負の遺産が経営リスク。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "9348.T": {
+      "name": "ispace",
+      "governance_score": 2.30,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 2,
+          "pb_ratio": 5.0,
+          "pb_above_1": true,
+          "roe_target": "黒字化が先決（赤字企業）",
+          "roe_actual": "マイナス",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.40,
+          "english_disclosure": true,
+          "notes": "PBRは高いが赤字企業のため実態を反映していない。グロース市場上場。"
+        },
+        "capital_efficiency": {
+          "score": 2,
+          "buyback_history": "なし（赤字企業で資金調達フェーズ）",
+          "dividend_policy": "無配（成長投資フェーズ）",
+          "cross_shareholding_reduction": "該当なし",
+          "notes": "度重なる増資による資金調達。黒字化・FCF黒字化が最優先課題。株式希薄化リスクあり。"
+        },
+        "shareholder_return": {
+          "score": 2,
+          "total_return_ratio_3yr_avg": 0,
+          "doe_adoption": false,
+          "notes": "還元なし。成長投資フェーズ。IR活動はグローバル向けに積極的。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "月面着陸という技術的マイルストーン達成（Mission 2）。ただし商業化までの道のりは長い",
+          "ceo_tenure_years": 10,
+          "track_record_vs_guidance": "技術マイルストーンは概ね達成。商業収益化の見通しは不透明",
+          "notes": "袴田CEO（創業者）。ビジョンと技術力は評価。バーンレートが高く継続的な資金調達が必要。"
+        }
+      },
+      "governance_trend": "stable",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "1963.T": {
+      "name": "日揮ホールディングス",
+      "governance_score": 3.30,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 3,
+          "pb_ratio": 1.0,
+          "pb_above_1": true,
+          "roe_target": "10%",
+          "roe_actual": "8-10%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.43,
+          "english_disclosure": true,
+          "notes": "PBR1倍前後で推移。ROE改善傾向だが安定的達成には至っていない。独立取締役は40%超。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "自社株買い実績あり（中規模）",
+          "dividend_policy": "配当性向30-35%",
+          "cross_shareholding_reduction": "段階的に縮小中",
+          "notes": "EPC事業の性質上、大型案件の進捗で収益が変動。資本効率改善は中計で目標設定。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 35,
+          "doe_adoption": false,
+          "notes": "総還元は標準的水準。配当は安定的。IR活動は積極的。"
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "LNG/水素プラントEPCでの競争力維持。IHIとのJNI設立（NuScale SMR）は戦略的投資として評価",
+          "ceo_tenure_years": 5,
+          "track_record_vs_guidance": "大型案件の進捗に依存するがガイダンスは概ね達成",
+          "notes": "水素・アンモニアサプライチェーンへの先行投資。JNI設立でSMR市場参入。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "6481.T": {
+      "name": "THK",
+      "governance_score": 3.00,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 3,
+          "pb_ratio": 1.2,
+          "pb_above_1": true,
+          "roe_target": "10%",
+          "roe_actual": "5-8%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.38,
+          "english_disclosure": true,
+          "notes": "PBR1倍超だが低水準。ROEは改善中だが目標未達。独立取締役1/3超。英文開示あり。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "自社株買い実績あり（中規模）",
+          "dividend_policy": "配当性向30%目標",
+          "cross_shareholding_reduction": "段階的縮小中",
+          "notes": "LMガイド世界首位の設備投資と株主還元のバランス。サイクル依存度が高い。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 32,
+          "doe_adoption": false,
+          "notes": "配当は安定的だが業績連動で変動。IR活動は標準的。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "LMガイド世界首位の維持は評価。ロボティクス・半導体分野への展開は合理的",
+          "ceo_tenure_years": 8,
+          "track_record_vs_guidance": "ガイダンスは業績変動で未達も多い",
+          "notes": "寺町会長（創業者）の影響力。直動案内の発明者としての技術優位性。サイクル銘柄としての変動リスク管理に課題。"
+        }
+      },
+      "governance_trend": "stable",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    },
+    "4704.T": {
+      "name": "トレンドマイクロ",
+      "governance_score": 3.50,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_ratio": 4.0,
+          "pb_above_1": true,
+          "roe_target": "15%+",
+          "roe_actual": "15-20%",
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.50,
+          "english_disclosure": true,
+          "notes": "PBR4倍。ROE15-20%達成。独立取締役50%。英文開示完備。日本発グローバル企業。女性取締役あり。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "自社株買い実績あり（2023-2025年に複数回実施）",
+          "dividend_policy": "配当性向50%前後",
+          "cross_shareholding_reduction": "持合いなし（グローバル企業）",
+          "notes": "自己資本比率29.2%とやや低水準（M&A等による）。自社株買いは実施するが規模は中程度。"
+        },
+        "shareholder_return": {
+          "score": 4,
+          "total_return_ratio_3yr_avg": 55,
+          "doe_adoption": false,
+          "notes": "総還元性向50%超。配当性向も高い。IR活動はグローバル水準。アナリストカバレッジ15社+。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "Vision One XDRへのプラットフォーム転換は戦略的に正しいが、CrowdStrike/Palo Alto Networksとの競争激化",
+          "ceo_tenure_years": 20,
+          "track_record_vs_guidance": "ガイダンスは概ね達成。サブスクリプション転換は進行中",
+          "notes": "エバ・チェンCEOの長期在任。サイバーセキュリティ市場でのポジション維持が課題。"
+        }
+      },
+      "governance_trend": "stable",
+      "confidence": "B",
+      "last_verified": "2026-01-31"
+    },
+    "9503.T": {
+      "name": "関西電力",
+      "governance_score": 3.00,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 3,
+          "pb_ratio": 0.9,
+          "pb_above_1": false,
+          "roe_target": "10%",
+          "roe_actual": "8-10%",
+          "roe_target_met": false,
+          "independent_directors_ratio": 0.50,
+          "english_disclosure": true,
+          "notes": "PBR1倍前後。ROE改善中だが安定的達成には至っていない。独立取締役50%（旧役員金品受領問題後のガバナンス改革）。"
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "自社株買い実施（2024年に1,000億円規模）",
+          "dividend_policy": "配当性向30%目標、増配方針",
+          "cross_shareholding_reduction": "持合い縮小推進中",
+          "notes": "原子力7基稼働（国内最高）による安定収益基盤。設備投資とのバランス。"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 35,
+          "doe_adoption": false,
+          "notes": "配当は増配傾向。自社株買いも実施。総還元は電力セクターとしては標準以上。"
+        },
+        "buffett_management_quality": {
+          "score": 3,
+          "capital_allocation_track_record": "原子力7基の安定稼働は経営力の証明。旧役員の金品受領問題からの回復途上",
+          "ceo_tenure_years": 3,
+          "track_record_vs_guidance": "ガイダンスは概ね達成。原子力稼働率に依存",
+          "notes": "森本社長体制。金品受領問題後のガバナンス改革は進展。原子力7基稼働は国内電力で最高水準。AIデータセンター向け電力供給の有力候補。"
+        }
+      },
+      "governance_trend": "improving",
+      "confidence": "C",
+      "last_verified": "2026-01-31"
+    }
+  }
 }

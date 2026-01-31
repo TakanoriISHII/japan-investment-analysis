@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "period": "2026-01-31 to 2026-04-30",
+    "type": "awaiting_first_verification",
+    "market": "japan",
+    "benchmark": "TOPIX",
+    "framework_version": "3.0.0",
+    "created_at": "2026-01-31T12:00:00Z"
+  },
+  "portfolio_performance": {
+    "top30_equal_weight_return": null,
+    "top30_score_weighted_return": null,
+    "benchmark_return": null,
+    "excess_return": null,
+    "sharpe_ratio": null,
+    "max_drawdown": null
+  },
+  "axis_effectiveness": {
+    "structural_advantage": {"correlation": null, "spread": null, "assessment": null, "weight": 20},
+    "intrinsic_value": {"correlation": null, "spread": null, "assessment": null, "weight": 20},
+    "future_value": {"correlation": null, "spread": null, "assessment": null, "weight": 25},
+    "information_asymmetry": {"correlation": null, "spread": null, "assessment": null, "weight": 20},
+    "policy_catalyst": {"correlation": null, "spread": null, "assessment": null, "weight": 15}
+  },
+  "catalyst_verification": {
+    "total_predicted": 63,
+    "realized": 0,
+    "failed": 0,
+    "pending": 63,
+    "hit_rate": null,
+    "probability_calibration": {
+      "high_70plus": {"predicted": 0, "realized": 0, "rate": null},
+      "medium_40_69": {"predicted": 0, "realized": 0, "rate": null},
+      "low_under_40": {"predicted": 0, "realized": 0, "rate": null}
+    }
+  },
+  "exit_signal_verification": {
+    "red_alerts_issued": 0,
+    "red_alerts_justified": 0,
+    "yellow_alerts_issued": 3,
+    "yellow_alerts_justified": null,
+    "false_positive_rate": null,
+    "miss_rate": null
+  },
+  "recommendations": {
+    "weight_adjustments": [],
+    "threshold_adjustments": [],
+    "next_review": "2026-04-30"
+  }
+}

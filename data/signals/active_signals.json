@@ -1,8 +1,46 @@
 {
   "metadata": {
-    "last_checked": null,
+    "last_checked": "2026-01-31T12:00:00Z",
     "active_count": 0,
-    "framework_version": "3.0.0"
+    "framework_version": "3.0.0",
+    "market": "japan",
+    "check_type": "analysis_time"
   },
-  "signals": []
+  "signals": [],
+  "watchlist": [
+    {
+      "signal_id": "WL-JP-001",
+      "signal_type": "nikkei_vi_elevated",
+      "description": "日経VIが閾値40未満だが高水準",
+      "current_value": 34,
+      "threshold": 40,
+      "proximity_pct": 85,
+      "trend": "elevated_stable",
+      "action_if_triggered": "投機的象限ポジション全削減、キャッシュ比率25%+へ",
+      "last_checked": "2026-01-31"
+    },
+    {
+      "signal_id": "WL-JP-002",
+      "signal_type": "vi_putcall_divergence",
+      "description": "VI高水準(34)とP/C低水準(0.59)の異例のダイバージェンス",
+      "vi_value": 34,
+      "putcall_value": 0.59,
+      "historical_precedent": "2024年8月暴落前と類似",
+      "severity": "medium",
+      "action_if_pattern_completes": "全ポジション20%縮小検討",
+      "last_checked": "2026-01-31"
+    },
+    {
+      "signal_id": "WL-JP-003",
+      "signal_type": "boj_rate_proximity",
+      "description": "次回利上げ(7-9月)への警戒",
+      "current_rate": 0.75,
+      "expected_next_change": "2026-Q3",
+      "probability": 0.65,
+      "impact": "急激な利上げは2024年8月の再現リスク",
+      "last_checked": "2026-01-31"
+    }
+  ],
+  "next_check": "2026-02-06",
+  "next_check_trigger": "東京エレクトロンQ3決算"
 }
