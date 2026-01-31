@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "generated_at": null,
+    "framework_version": "3.0.0",
+    "market_risk_score": null
+  },
+  "rank_based_alerts": [],
+  "market_risk_alerts": {
+    "current_score": null,
+    "cash_recommendation": {
+      "target_ratio": null,
+      "current_ratio": null,
+      "action": null
+    },
+    "position_scaling": {
+      "overall_factor": 1.0,
+      "speculative_quadrant_factor": 1.0
+    },
+    "soros_reflexivity_check": {
+      "narrative_intact": true,
+      "concerns": []
+    }
+  },
+  "composite_exit_signals": []
+}

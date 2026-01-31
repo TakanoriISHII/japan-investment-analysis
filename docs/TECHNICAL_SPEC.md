@@ -9,9 +9,10 @@
 
 1. [ディレクトリ構造](#ディレクトリ構造)
 2. [データファイル仕様](#データファイル仕様)
-3. [差分追跡仕様](#差分追跡仕様)
-4. [アラートシステム](#アラートシステム)
-5. [用語集](#用語集)
+3. [v3.0.0新規スキーマ](#v300新規スキーマ) — exit_signals, governance, portfolio, cross_market, signals, backtest
+4. [差分追跡仕様](#差分追跡仕様)
+5. [アラートシステム](#アラートシステム)
+6. [用語集](#用語集)
 
 ---
 
@@ -84,7 +85,8 @@ japan-investment-analysis/
 │   │   │   ├── permanent/              # 永続情報（年次確認）
 │   │   │   │   ├── certifications.json
 │   │   │   │   ├── moats.json
-│   │   │   │   └── market_structure.json
+│   │   │   │   ├── market_structure.json
+│   │   │   │   └── governance.json     # ガバナンス定量化【v3.0.0〜】
 │   │   │   ├── quarterly/              # 安定情報（四半期更新）
 │   │   │   │   ├── market_share.json
 │   │   │   │   ├── financials.json
@@ -109,9 +111,27 @@ japan-investment-analysis/
 │   │   ├── gaps.json                   # ギャップ検出結果
 │   │   ├── gap_analysis.json
 │   │   ├── market_risk.json
-│   │   └── top30.json
+│   │   ├── top30.json
+│   │   └── exit_signals.json           # エグジットシグナル出力【v3.0.0〜】
 │   │
-│   └── performance/                    # パフォーマンス検証（新規）
+│   ├── portfolio/                      # ポートフォリオ管理【v3.0.0〜】
+│   │   ├── holdings.json               # ユーザー入力（現保有データ）
+│   │   ├── allocation_model.json       # 推奨配分
+│   │   └── rebalance_recommendations.json # リバランス推奨
+│   │
+│   ├── cross_market/                   # クロスマーケット統合【v3.0.0〜】
+│   │   ├── incoming/                   # 他リポジトリからの受信データ
+│   │   ├── outgoing/                   # 他リポジトリへの送信データ
+│   │   ├── supply_chain_links.json     # サプライチェーンリンク
+│   │   ├── relative_valuation.json     # JP vs US比較ペア
+│   │   └── cross_market_summary.json   # 統合サマリー
+│   │
+│   ├── signals/                        # リアルタイムシグナル【v3.0.0〜】
+│   │   ├── signal_config.json          # モニタリング設定
+│   │   ├── active_signals.json         # アクティブシグナル
+│   │   └── signal_history.json         # シグナル履歴
+│   │
+│   └── performance/                    # パフォーマンス検証
 │       ├── predictions/                # 予測記録
 │       │   └── [YYYY-MM-DD]/
 │       │       ├── top30_snapshot.json
@@ -125,7 +145,10 @@ japan-investment-analysis/
 │       └── analysis/                   # 検証分析
 │           ├── monthly_review.json
 │           ├── quarterly_review.json
-│           └── annual_review.json
+│           ├── annual_review.json
+│           ├── backtest_results.json   # バックテスト結果【v3.0.0〜】
+│           ├── axis_effectiveness.json # 軸有効性分析【v3.0.0〜】
+│           └── framework_calibration.json # キャリブレーション【v3.0.0〜】
 │
 ├── reports/
 │   └── [YYYY-MM-DD]/
@@ -842,6 +865,375 @@ Japan Top 30企業の評価結果（Graham分類体系統合版 v2.0.0）。
       "rationale": "相関が低く、予測力が弱い"
     }
   ]
+}
+```
+
+---
+
+### exit_signals.json【v3.0.0〜】
+
+エグジットシグナルの評価結果。Phase 6.5で生成。
+
+```json
+{
+  "metadata": {
+    "date": "2026-01-31",
+    "market": "japan",
+    "market_risk_score": 57,
+    "previous_market_risk_score": 58,
+    "framework_version": "3.0.0"
+  },
+  "rank_based_alerts": [
+    {
+      "ticker": "XXXX",
+      "name": "企業名",
+      "current_rank": 25,
+      "previous_rank": 14,
+      "rank_drop": 11,
+      "alert_level": "red",
+      "score_change": -12,
+      "drop_drivers": [
+        {"axis": "intrinsic_value", "change": -5, "reason": "Q3業績ミス"}
+      ],
+      "catalyst_failures": ["Q1契約未実現"],
+      "recommended_action": "reduce_position"
+    }
+  ],
+  "market_risk_alerts": {
+    "current_risk": 57,
+    "risk_level": "conservative",
+    "cash_recommendation": {"target_ratio": 0.20},
+    "position_scaling": {
+      "overall_factor": 0.80,
+      "prime_quadrant_factor": 0.90,
+      "speculative_quadrant_factor": 0.50
+    },
+    "soros_reflexivity_check": {
+      "narrative_intact": true,
+      "narrative_description": "マルチドメイン収束テーゼは有効",
+      "counter_evidence": []
+    }
+  },
+  "composite_exit_signals": [
+    {
+      "ticker": "XXXX",
+      "signal_strength": "strong",
+      "factors": {
+        "rank_drop": {"triggered": true, "value": 11, "weight": 0.30},
+        "catalyst_failure": {"triggered": true, "count": 1, "weight": 0.20},
+        "score_decay": {"triggered": false, "weight": 0.20},
+        "market_risk_high": {"triggered": true, "weight": 0.15},
+        "thesis_invalidation": {"triggered": false, "weight": 0.15}
+      },
+      "composite_score": 0.72,
+      "action": "exit"
+    }
+  ],
+  "thresholds": {
+    "rank_drop_yellow": 5,
+    "rank_drop_red": 10,
+    "market_risk_cash_increase": {"51-75": 0.20, "76-100": 0.35},
+    "market_risk_position_scale": {"51-75": 0.80, "76-100": 0.50}
+  }
+}
+```
+
+---
+
+### governance.json【v3.0.0〜, Japan only】
+
+ガバナンス定量化データ。`data/intelligence/stable/permanent/`に配置。
+
+```json
+{
+  "metadata": {
+    "description": "JP Corporate Governance Reform Quantification",
+    "framework": "TSE Prime Requirements + Buffett Management Quality",
+    "last_updated": "2026-01-31",
+    "max_score": 5
+  },
+  "companies": {
+    "7011.T": {
+      "name": "三菱重工業",
+      "governance_score": 3.5,
+      "components": {
+        "tse_prime_compliance": {
+          "score": 4,
+          "pb_above_1": true,
+          "roe_target_met": true,
+          "independent_directors_ratio": 0.42,
+          "english_disclosure": true
+        },
+        "capital_efficiency": {
+          "score": 3,
+          "buyback_history": "2024: 50B JPY",
+          "dividend_policy": "progressive",
+          "cross_shareholding_reduction": "in_progress"
+        },
+        "shareholder_return": {
+          "score": 3,
+          "total_return_ratio_3yr_avg": 0.35
+        },
+        "buffett_management_quality": {
+          "score": 4,
+          "capital_allocation_track_record": "good",
+          "ceo_tenure_years": 5,
+          "track_record_vs_guidance": "consistently_meets"
+        }
+      },
+      "governance_trend": "improving",
+      "last_verified": "2026-01-31",
+      "confidence": "B"
+    }
+  }
+}
+```
+
+---
+
+### portfolio/holdings.json【v3.0.0〜】
+
+ユーザー入力のポートフォリオデータ。
+
+```json
+{
+  "metadata": {
+    "as_of_date": "2026-01-31",
+    "market": "japan",
+    "total_portfolio_value": 10000000,
+    "currency": "JPY",
+    "cash_balance": 1500000,
+    "cash_ratio": 0.15
+  },
+  "positions": [
+    {
+      "ticker": "7011.T",
+      "name": "三菱重工業",
+      "shares": 100,
+      "avg_cost": 2500,
+      "current_price": 2850,
+      "market_value": 285000,
+      "weight": 0.0285,
+      "domain_primary": "防衛"
+    }
+  ]
+}
+```
+
+---
+
+### portfolio/allocation_model.json【v3.0.0〜】
+
+フレームワーク出力の推奨配分。
+
+```json
+{
+  "metadata": {
+    "date": "2026-01-31",
+    "market": "japan",
+    "market_risk_score": 57,
+    "stance": "conservative",
+    "model_version": "1.0"
+  },
+  "global_parameters": {
+    "cash_target": {"min": 0.15, "max": 0.25, "recommended": 0.20},
+    "max_single_position": 0.08,
+    "max_domain_concentration": 0.30,
+    "max_quadrant_speculative": 0.15,
+    "position_count_target": {"min": 15, "max": 25}
+  },
+  "quadrant_allocation": {
+    "prime": {"target": 0.45, "range": [0.35, 0.55], "max_per_position": 0.08},
+    "stable_growth": {"target": 0.25, "range": [0.20, 0.35], "max_per_position": 0.06},
+    "speculative": {"target": 0.10, "range": [0.05, 0.15], "max_per_position": 0.03},
+    "cash": {"target": 0.20, "range": [0.15, 0.25]}
+  },
+  "company_allocations": [
+    {
+      "ticker": "7011.T",
+      "rank": 1,
+      "tier": 1,
+      "quadrant": "prime",
+      "total_score": 79,
+      "recommended_weight": {"min": 0.04, "max": 0.08, "target": 0.06},
+      "sizing_rationale": "Rank 1, Tier 1, Prime象限。6ドメイン収束。",
+      "exit_signal_status": "none"
+    }
+  ],
+  "domain_balance": {
+    "防衛": {"target": 0.20},
+    "AI": {"target": 0.20},
+    "エネルギー": {"target": 0.15},
+    "ロボティクス": {"target": 0.15},
+    "宇宙": {"target": 0.10},
+    "サイバー": {"target": 0.05}
+  }
+}
+```
+
+---
+
+### cross_market/supply_chain_links.json【v3.0.0〜】
+
+日米クロスマーケットのサプライチェーンリンク。
+
+```json
+{
+  "metadata": {
+    "last_updated": "2026-01-31",
+    "total_links": 15
+  },
+  "links": [
+    {
+      "id": "SCL-001",
+      "jp_ticker": "8035.T",
+      "jp_name": "Tokyo Electron",
+      "us_ticker": "LRCX",
+      "us_name": "Lam Research",
+      "relationship": "competitor",
+      "domain": "AI",
+      "sub_segment": "semiconductor_equipment",
+      "relative_valuation": {"jp_per": 25.0, "us_per": 22.0},
+      "correlation": 0.72,
+      "information_flow": "US決算がJP需要の先行指標",
+      "catalyst_links": ["LRCX Q1ガイダンスがTEL需要軌道を示唆"],
+      "last_verified": "2026-01-31"
+    }
+  ]
+}
+```
+
+---
+
+### cross_market/cross_market_summary.json【v3.0.0〜】
+
+分析完了後に生成し、他リポジトリにプッシュするサマリー。
+
+```json
+{
+  "metadata": {
+    "source_market": "japan",
+    "generated_at": "2026-01-31T12:00:00Z",
+    "target_market": "us"
+  },
+  "market_risk_comparison": {
+    "jp_risk": 57,
+    "us_risk": null,
+    "risk_differential": null
+  },
+  "top30_summary": {
+    "top5": [
+      {"rank": 1, "ticker": "7011.T", "name": "三菱重工業", "score": 79}
+    ],
+    "score_range": {"max": 79, "min": 52, "median": 60},
+    "domain_distribution": {"防衛": 8, "AI": 7, "エネルギー": 5}
+  },
+  "supply_chain_signals": [
+    {
+      "signal": "TEL Q3売上+15%、コータ受注好調",
+      "impact_on_target": "LRCX需要環境の確認",
+      "confidence": "B"
+    }
+  ]
+}
+```
+
+---
+
+### signals/signal_config.json【v3.0.0〜】
+
+リアルタイムシグナルのモニタリング設定。
+
+```json
+{
+  "metadata": {
+    "version": "1.0",
+    "market": "japan",
+    "last_updated": "2026-01-31"
+  },
+  "market_signals": {
+    "boj_rate_change": {"threshold": "any change", "frequency": "per_meeting", "impact": "tier1"},
+    "nikkei_vi_spike": {"threshold": ">40", "frequency": "daily", "impact": "tier2"},
+    "usdjpy_breakout": {"threshold": "<140 or >165", "frequency": "daily", "impact": "tier2"},
+    "foreign_investor_sell": {"threshold": "3-week consecutive net sell", "frequency": "weekly", "impact": "tier2"},
+    "put_call_ratio_spike": {"threshold": ">1.2", "frequency": "daily", "impact": "tier2"}
+  },
+  "company_signals": {
+    "earnings_surprise": {"threshold": ">10% beat or miss", "applies_to": "top30", "impact": "high"},
+    "contract_announcement": {"threshold": ">100億円", "applies_to": "top30", "impact": "high"},
+    "guidance_revision": {"threshold": "any revision", "applies_to": "top30", "impact": "medium"},
+    "insider_trading": {"threshold": ">10億円", "applies_to": "top30", "impact": "medium"}
+  },
+  "domain_signals": {
+    "defense_budget_change": {"threshold": "any change", "domains": ["防衛"], "impact": "high"},
+    "semiconductor_capex": {"threshold": ">5% revision", "domains": ["AI"], "impact": "high"},
+    "nuclear_policy": {"threshold": "any regulation change", "domains": ["エネルギー"], "impact": "high"}
+  }
+}
+```
+
+---
+
+### signals/active_signals.json【v3.0.0〜】
+
+現在アクティブなシグナル。
+
+```json
+{
+  "metadata": {
+    "last_checked": "2026-01-31T12:00:00Z",
+    "active_count": 0
+  },
+  "signals": []
+}
+```
+
+---
+
+### backtest_results.json【v3.0.0〜】
+
+バックテスト結果。`data/performance/analysis/`に配置。
+
+```json
+{
+  "metadata": {
+    "period": "2026-01-31 to 2026-04-30",
+    "type": "3_month",
+    "market": "japan",
+    "benchmark": "TOPIX",
+    "framework_version": "3.0.0"
+  },
+  "portfolio_performance": {
+    "top30_equal_weight_return": null,
+    "top30_score_weighted_return": null,
+    "benchmark_return": null,
+    "excess_return": null,
+    "sharpe_ratio": null
+  },
+  "axis_effectiveness": {
+    "structural_advantage": {"correlation": null, "spread": null, "assessment": null},
+    "intrinsic_value": {"correlation": null, "spread": null, "assessment": null},
+    "future_value": {"correlation": null, "spread": null, "assessment": null},
+    "information_asymmetry": {"correlation": null, "spread": null, "assessment": null},
+    "policy_catalyst": {"correlation": null, "spread": null, "assessment": null}
+  },
+  "catalyst_verification": {
+    "total_predicted": 0,
+    "realized": 0,
+    "failed": 0,
+    "pending": 0,
+    "hit_rate": null,
+    "probability_calibration": {}
+  },
+  "exit_signal_verification": {
+    "red_alerts_issued": 0,
+    "red_alerts_justified": 0,
+    "false_positive_rate": null
+  },
+  "recommendations": {
+    "weight_adjustments": [],
+    "threshold_adjustments": []
+  }
 }
 ```
 

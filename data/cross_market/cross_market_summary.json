@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "generated_at": null,
+    "source_repo": "japan-investment-analysis",
+    "framework_version": "3.0.0"
+  },
+  "market_snapshot": {
+    "market_risk_score": null,
+    "stance": null,
+    "top_conviction": null
+  },
+  "top10_summary": [],
+  "domain_signals": {},
+  "key_catalysts": []
+}

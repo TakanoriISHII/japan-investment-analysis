@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "market": "japan",
+    "framework_version": "3.0.0",
+    "last_updated": null
+  },
+  "market_signals": {
+    "boj_rate_change": {
+      "threshold": "any change",
+      "frequency": "per_meeting",
+      "impact": "tier1",
+      "sources": ["日銀HP", "Bloomberg"],
+      "soros_reflexivity": "利上げ→円高→海外投資家売り→さらなる円高の自己強化ループリスク"
+    },
+    "nikkei_vi_spike": {
+      "threshold": ">40",
+      "frequency": "daily",
+      "impact": "tier2",
+      "sources": ["大阪取引所"],
+      "soros_reflexivity": "VI上昇→リスクパリティ売り→流動性低下→さらにVI上昇"
+    },
+    "usdjpy_breakout": {
+      "threshold": "<140 or >165",
+      "frequency": "daily",
+      "impact": "tier2",
+      "sources": ["Bloomberg", "日銀"],
+      "soros_reflexivity": "急激な円高→輸出企業業績下方修正→海外勢売り→さらなる円高"
+    },
+    "foreign_investor_sell": {
+      "threshold": "3-week consecutive net sell",
+      "frequency": "weekly",
+      "impact": "tier2",
+      "sources": ["東証投資部門別売買状況"]
+    },
+    "put_call_ratio_spike": {
+      "threshold": ">1.2",
+      "frequency": "daily",
+      "impact": "tier2",
+      "sources": ["大阪取引所"]
+    }
+  },
+  "company_signals": {
+    "earnings_surprise": {
+      "threshold": ">10% beat or miss",
+      "applies_to": "top30",
+      "impact": "high",
+      "action": "スコア再評価"
+    },
+    "contract_announcement": {
+      "threshold": ">100億円",
+      "applies_to": "top30",
+      "impact": "high",
+      "action": "触媒確率更新"
+    },
+    "guidance_revision": {
+      "threshold": "any revision",
+      "applies_to": "top30",
+      "impact": "medium",
+      "action": "スコア再評価"
+    },
+    "insider_trading": {
+      "threshold": ">10億円",
+      "applies_to": "top30",
+      "impact": "medium",
+      "action": "情報非対称性確認"
+    },
+    "analyst_upgrade_downgrade": {
+      "threshold": "top5 analyst firms only",
+      "applies_to": "top10",
+      "impact": "low",
+      "action": "記録のみ"
+    }
+  },
+  "domain_signals": {
+    "defense_budget_change": {
+      "threshold": "any change",
+      "domains": ["防衛"],
+      "impact": "high",
+      "sources": ["防衛省", "財務省"]
+    },
+    "semiconductor_capex": {
+      "threshold": ">5% revision",
+      "domains": ["AI"],
+      "impact": "high",
+      "sources": ["TSMC", "Samsung", "各社IR"]
+    },
+    "nuclear_policy": {
+      "threshold": "any regulation change",
+      "domains": ["エネルギー"],
+      "impact": "high",
+      "sources": ["原子力規制委員会", "経産省"]
+    },
+    "space_policy_budget": {
+      "threshold": "any change",
+      "domains": ["宇宙"],
+      "impact": "medium",
+      "sources": ["JAXA", "内閣府宇宙政策"]
+    }
+  }
+}

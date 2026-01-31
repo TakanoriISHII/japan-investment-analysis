@@ -187,6 +187,22 @@
 | `escalate [reason]` | 重要判断のエスカレーション記録 |
 | `show escalation log` | エスカレーション履歴を表示 |
 
+### v3.0.0新規コマンド
+
+| コマンド | 動作 | 出力 |
+|---------|------|------|
+| `check exit signals` | エグジットシグナル評価 | exit_signals.json |
+| `load portfolio` | holdings.jsonロード | - |
+| `show allocation` | 配分モデル表示 | allocation_model.json |
+| `recommend rebalance` | リバランス推奨 | rebalance_recommendations.json |
+| `run backtest [period]` | バックテスト実行 | backtest_results.json |
+| `show calibration` | キャリブレーション結果 | framework_calibration.json |
+| `show axis effectiveness` | 軸予測力表示 | axis_effectiveness.json |
+| `check signals` | リアルタイムシグナル確認 | active_signals.json |
+| `push cross-market` | クロスマーケットデータ送信 | cross_market_summary.json |
+| `compare [JP] vs [US]` | 企業ペア比較 | - |
+| `show governance [ticker]` | ガバナンススコア表示 | - |
+
 ---
 
 ## フル分析プロトコル
@@ -222,6 +238,9 @@
 2. 前回実行日時、コンポーネント状態を確認
 3. data/information_quality.json のアラートをレビュー
 4. 未完了の補強タスクを確認（reinforcement/pending_tasks.json）
+5. incoming/ディレクトリの新データ確認【v3.0.0〜】
+6. active_signals.jsonの未解決シグナル確認【v3.0.0〜】
+7. 検証スケジュールの期限確認（バックテスト促進）【v3.0.0〜】
 ```
 
 #### ✅ Phase 1 完了チェックリスト
@@ -232,6 +251,9 @@
 | 1-2 | 品質アラート確認 | 前回の改善ポイントをレビューした |
 | 1-3 | 未完了タスク確認 | pending_tasks.jsonの残タスクを把握した |
 | 1-4 | 補強結果確認 | reinforcement/results/に新規結果があれば確認した |
+| 1-5 | incoming確認 | incoming/ディレクトリに他市場からの新データがあれば取り込んだ【v3.0.0〜】 |
+| 1-6 | 未解決シグナル確認 | active_signals.jsonの未解決シグナルをレビューした【v3.0.0〜】 |
+| 1-7 | 検証スケジュール確認 | バックテスト期限が到来していないか確認した【v3.0.0〜】 |
 
 ---
 
@@ -593,6 +615,40 @@ git commit "統合完了: N社、M情報項目、stable更新"
 | 6-5 | 5軸スコア | 全Top 30銘柄の5軸スコアを算出した |
 | 6-6 | シナリオ分析 | ベース/ブル/ベアの3シナリオを作成した |
 | 6-7 | ドメインバランス | 6ドメインのカバレッジを確認した |
+| 6-8 | 触媒確率割当 | Top 30全社の`catalysts_next_6m`を確率付きオブジェクトに変換した |
+| 6-9 | エグジットシグナル評価 | 前回ランクとの比較、アラート生成、キャッシュ/ポジション推奨を計算した |
+| 6-10 | ポートフォリオ配分生成 | holdings.json提供時のみ: 配分モデルとリバランス推奨を生成した |
+
+#### Phase 6.3: 触媒確率割当【v3.0.0〜】
+
+1. Top 30全社の`catalysts_next_6m`を確率付きオブジェクト配列に変換
+2. 各触媒に`probability`(0.0-1.0)、`probability_basis`、`magnitude`を割当
+3. `simons_ev` = probability × expected_score_impact中央値 を計算
+4. `catalyst_expected_value`フィールドを企業レベルで集計
+5. 同スコア企業のタイブレーカーとしてCatalyst EVを使用
+
+#### Phase 6.4: エグジットシグナル評価【v3.0.0〜】
+
+1. 前回の`top30_snapshot.json`から前回ランクを取得
+2. ランクデルタを計算: current_rank - previous_rank
+3. アラート生成:
+   - delta ≥ 5: イエロー
+   - delta ≥ 10: レッド
+4. 市場リスクベースのキャッシュ/ポジション推奨を計算
+5. 複合エグジットスコアを5要因で計算
+6. `exit_signals.json`を生成
+7. 各社の`exit_signals`フィールドを更新
+
+#### Phase 6.5: ポートフォリオ配分【v3.0.0〜】
+
+前提: `data/portfolio/holdings.json`がユーザーから提供されていること
+
+1. holdings.jsonを読み込み
+2. ポジションサイジング公式を適用:
+   weight = base_weight × tier_multiplier × quadrant_multiplier × market_risk_factor × exit_signal_adj
+3. 制約条件チェック（単一銘柄8%上限、ドメイン30%上限等）
+4. `allocation_model.json`を生成
+5. 現保有との差分から`rebalance_recommendations.json`を生成
 
 ---
 
@@ -649,6 +705,21 @@ git commit "統合完了: N社、M情報項目、stable更新"
 ├─────────────────────────────────────────────────────────────────────────┤
 │ 第9部: 前回からの変更サマリー                                            │
 │   └── 主要項目の前回比較表                                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│ 第10部: エグジットシグナルサマリー【v3.0.0〜】                            │
+│   ├── ランクデルタ一覧（イエロー/レッドアラート）                       │
+│   ├── 複合エグジットスコア上位銘柄                                      │
+│   └── キャッシュ/ポジション推奨                                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│ 第11部: ポートフォリオ推奨（holdings.json提供時）【v3.0.0〜】             │
+│   ├── 配分モデルサマリー                                                │
+│   ├── リバランス推奨                                                    │
+│   └── 制約条件違反チェック結果                                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│ 第12部: クロスマーケットインサイト（incoming/データがある場合）【v3.0.0〜】│
+│   ├── 他市場との比較サマリー                                            │
+│   ├── 企業ペア比較（JP vs US等）                                        │
+│   └── クロスマーケット触媒の影響評価                                    │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -960,6 +1031,20 @@ git commit "Claude自動補強完了・外部LLMタスク生成"
 | 9-7 | プッシュ | リモートにプッシュした |
 | 9-8 | 次回引継ぎ | 次回分析への監視項目を記録した |
 | 9-9 | 検証スケジュール確認 | 次回検証日（1ヶ月後: [DATE]）を確認した |
+| 9-10 | exit_signals記録 | exit_signals状態をstate.jsonに記録した |
+| 9-11 | クロスマーケットプッシュ | cross_market_summary.json生成 → 他リポジトリのincoming/にコピーした |
+
+---
+
+### 分析間モニタリング【v3.0.0〜】
+
+フル分析の間に`check signals`コマンドで随時監視:
+
+1. Web検索で閾値ブレイクを確認
+2. ブレイク検出時: active_signals.jsonに記録
+3. 重大度「高」: 投資責任者に即時エスカレーション
+4. 重大度「中」: 次回分析のPhase 1で対応
+5. 重大度「低」: signal_history.jsonに記録のみ
 
 ---
 

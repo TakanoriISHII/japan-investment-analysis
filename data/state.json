@@ -1,12 +1,12 @@
 {
   "last_execution": "2026-01-31T21:00:00Z",
   "session": "run_analysis_full_v2.0.0_japan_focused",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "framework": {
-    "version": "2.0.0",
-    "name": "Graham分類体系統合版",
-    "activated": "2026-01-30",
-    "previous_version": "3.2",
+    "version": "3.0.0",
+    "name": "Graham分類体系統合版 + Multi-Signal Integration",
+    "activated": "2026-01-31",
+    "previous_version": "2.0.0",
     "schema": {
       "axes": ["structural_advantage", "intrinsic_value", "future_value", "information_asymmetry", "policy_catalyst"],
       "max_scores": {"structural_advantage": 20, "intrinsic_value": 20, "future_value": 25, "information_asymmetry": 20, "policy_catalyst": 15},
@@ -16,8 +16,18 @@
       "confidence_levels": ["A", "B", "C", "D", "E"],
       "required_fields": ["investment_factors", "speculative_factors", "confidence", "graham_buffett_note"]
     },
+    "new_capabilities": [
+      "exit_signals",
+      "cross_market_integration",
+      "catalyst_probability",
+      "portfolio_construction",
+      "backtesting",
+      "real_time_signals",
+      "jp_governance_quantification"
+    ],
     "deprecated_axes": ["monopoly", "resilience", "synergy", "asymmetry", "capital"],
     "migration_status": "completed",
+    "v3_migration_date": "2026-01-31",
     "first_run_completed": "2026-01-31",
     "last_validated": "2026-01-31"
   },

@@ -14,6 +14,13 @@
 | 前回との差分を確認 | `diff report` | [OPERATIONS.md](./docs/OPERATIONS.md#差分追跡) |
 | 企業をスコアリング | `score companies` | [METHODOLOGY.md](./docs/METHODOLOGY.md#企業評価-5軸フレームワーク) |
 | 市場環境を判断 | `analyze market risk` | [METHODOLOGY.md](./docs/METHODOLOGY.md#市場リスク分析) |
+| エグジットシグナル確認 | `check exit signals` | [METHODOLOGY.md](./docs/METHODOLOGY.md#エグジットシグナルフレームワーク) |
+| ポートフォリオ配分表示 | `show allocation` | [METHODOLOGY.md](./docs/METHODOLOGY.md#ポートフォリオ構築フレームワーク) |
+| リバランス推奨 | `recommend rebalance` | [METHODOLOGY.md](./docs/METHODOLOGY.md#ポートフォリオ構築フレームワーク) |
+| リアルタイムシグナル確認 | `check signals` | [METHODOLOGY.md](./docs/METHODOLOGY.md#リアルタイムシグナルフレームワーク) |
+| バックテスト実行 | `run backtest [period]` | [METHODOLOGY.md](./docs/METHODOLOGY.md#パフォーマンス検証サイクルバックテスト統合版) |
+| クロスマーケット比較 | `compare [JP] vs [US]` | [METHODOLOGY.md](./docs/METHODOLOGY.md#クロスマーケット相対バリュエーション) |
+| ガバナンス表示 | `show governance [ticker]` | [METHODOLOGY.md](./docs/METHODOLOGY.md#経営能力5点-ガバナンス定量化フレームワーク) |
 
 ---
 
@@ -65,6 +72,8 @@
 1. 市場リスク分析（100点） → 今は投資すべきタイミングか？
 2. 企業評価（5軸/100点）   → どの企業が最も優位か？【相対評価】
 3. 4象限配置              → 確実性 × アップサイドでポジション決定
+4. エグジットシグナル      → 売り/ポジション縮小すべきか？ 【v3.0.0〜】
+5. ポートフォリオ構築      → 推奨配分レンジの算出 【v3.0.0〜】
 ```
 
 ### 5軸評価の原則（Graham分類体系統合版）
@@ -76,13 +85,19 @@
 | B. 投資的要因(40) | 構造的優位性 / 本質的価値 | 20 + 20 |
 | A. 投機的要因(60) | 将来の価値 / 情報非対称性 / 政策・触媒 | 25 + 20 + 15 |
 
-**評価手順**: ベーススコア → 相対調整 → 情報確度(A-E)適用 → 最終スコア
+**評価手順**: ベーススコア → 相対調整 → 情報確度(A-E)適用 → 触媒確率(EV)計算 → 最終スコア
+
+**参照投資家**: Buffett（価値/モート）、Soros（再帰性/マクロ）、Dalio（全天候型/リスクパリティ）、Lynch（GARP）、Simons（定量的/体系的）
 
 | 評価 | 詳細 |
 |------|------|
 | 市場リスク分析 | [METHODOLOGY.md - 市場リスク分析](./docs/METHODOLOGY.md#市場リスク分析) |
 | 5軸評価 | [METHODOLOGY.md - 企業評価](./docs/METHODOLOGY.md#企業評価-5軸フレームワークgraham分類体系統合版) |
 | 4象限マトリックス | [METHODOLOGY.md - 4象限マトリックス](./docs/METHODOLOGY.md#4象限マトリックス) |
+| エグジットシグナル | [METHODOLOGY.md - エグジットシグナル](./docs/METHODOLOGY.md#エグジットシグナルフレームワーク) |
+| ポートフォリオ構築 | [METHODOLOGY.md - ポートフォリオ構築](./docs/METHODOLOGY.md#ポートフォリオ構築フレームワーク) |
+| クロスマーケット | [METHODOLOGY.md - クロスマーケット](./docs/METHODOLOGY.md#クロスマーケット相対バリュエーション) |
+| バックテスト | [METHODOLOGY.md - バックテスト](./docs/METHODOLOGY.md#パフォーマンス検証サイクルバックテスト統合版) |
 
 ---
 
@@ -98,9 +113,13 @@
 | 4 | 補足調査 | `claude_supplemental.md` |
 | 5 | 統合・確度整理・stable更新 | `consolidated_*.json`, `stable/*` |
 | 6 | 分析・評価 | `market_risk.json`, `top30.json` |
+| 6.3 | 触媒確率割当【v3.0.0〜】 | 触媒のprobability, simons_ev |
+| 6.4 | エグジットシグナル評価【v3.0.0〜】 | `exit_signals.json` |
+| 6.5 | ポートフォリオ配分【v3.0.0〜】 | `allocation_model.json` |
 | 7 | レポート生成 | `reports/[DATE]/` |
 | 8 | 継続的改善 | `reinforcement/` |
 | 9 | 完了 | `state.json` 更新 |
+| 9.5 | クロスマーケットプッシュ【v3.0.0〜】 | `cross_market_summary.json` |
 
 → 詳細: [OPERATIONS.md - フル分析プロトコル](./docs/OPERATIONS.md#フル分析プロトコル)
 
@@ -194,6 +213,12 @@
 | 分析 | `score companies`, `analyze market risk`, `generate report` |
 | 改善 | `show quality issues`, `run reinforcement`, `show pending tasks` |
 | 検証 | `record predictions`, `verify performance` |
+| **エグジット【v3.0.0〜】** | `check exit signals` |
+| **ポートフォリオ【v3.0.0〜】** | `load portfolio`, `show allocation`, `recommend rebalance` |
+| **シグナル【v3.0.0〜】** | `check signals` |
+| **バックテスト【v3.0.0〜】** | `run backtest [period]`, `show calibration`, `show axis effectiveness` |
+| **クロスマーケット【v3.0.0〜】** | `push cross-market`, `compare [JP] vs [US]` |
+| **ガバナンス【v3.0.0〜】** | `show governance [ticker]` |
 
 ---
 
@@ -210,8 +235,14 @@ japan-investment-analysis/
 │   ├── intelligence/
 │   │   ├── raw/                 # LLM収集結果
 │   │   ├── stable/              # 蓄積情報（permanent/quarterly/monthly）
+│   │   │   └── permanent/governance.json  # ガバナンス定量化【v3.0.0〜】
 │   │   └── consolidated_*.json  # 統合結果
-│   └── analysis/                # 分析結果
+│   ├── analysis/                # 分析結果
+│   │   └── exit_signals.json    # エグジットシグナル【v3.0.0〜】
+│   ├── portfolio/               # ポートフォリオ管理【v3.0.0〜】
+│   ├── cross_market/            # クロスマーケット統合【v3.0.0〜】
+│   ├── signals/                 # リアルタイムシグナル【v3.0.0〜】
+│   └── performance/             # バックテスト
 ├── reinforcement/               # 継続的改善
 ├── reports/                     # レポート
 └── latest/                      # 最新レポート（シンボリックリンク）
@@ -226,6 +257,11 @@ japan-investment-analysis/
 | 決定事項 | AI | 人間 |
 |---------|:--:|:----:|
 | 候補企業の発掘 | 自動 | - |
-| 5軸スコアリング | 自動 | レビュー |
+| 5軸スコアリング・触媒確率割当 | 自動 | レビュー |
+| エグジットシグナル生成 | 自動 | レビュー |
+| 推奨配分レンジ計算 | 自動 | レビュー |
 | Top 30選定 | - | **承認** |
 | ポジションサイズ・売買タイミング | - | **最終判断** |
+| エグジット判断 | シグナル生成 | **最終判断** |
+| クロスマーケット情報プッシュ | 自動 | - |
+| バックテスト・軸重み調整 | 実行 | **承認** |

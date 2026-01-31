@@ -1,0 +1,11 @@
+{
+  "metadata": {
+    "description": "JP Corporate Governance Reform Quantification",
+    "framework": "TSE Prime Requirements + Buffett Management Quality",
+    "version": "3.0.0",
+    "last_updated": null,
+    "max_score": 5,
+    "note": "governance_score = 4コンポーネント平均。軸3の経営能力スコアの入力として使用。Phase 2で収集、Phase 5で更新。"
+  },
+  "companies": {}
+}
